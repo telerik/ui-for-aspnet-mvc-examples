@@ -1,0 +1,56 @@
+﻿@using KendoUIMVC5.ViewModels
+@model IEnumerable<EmployeeViewModel>
+@{
+    ViewBag.Title = "Custom styles on data bound demo";
+}
+
+@(Html.Kendo().Grid<EmployeeViewModel>()
+              .Name("mvcGrid")
+              .Columns(columns =>
+              {
+                  columns.Bound(p => p.EmployeeId).Width(100);
+                  columns.Bound(p => p.FirstName).Width(75);
+                  columns.Bound(p => p.LastName).Width(75);
+                  columns.Bound(p => p.Address);
+              })
+              .Events(e => e.DataBound("onDataBound"))
+              .Filterable()
+              .Pageable()
+              .DataSource(dataSource => dataSource
+                .Ajax()                                
+                .PageSize(5)
+                .Read(read => read.Action("Employees_Read", "Home"))
+            )
+)
+
+<style>
+    #mvcGrid
+    {
+        width: 600px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .customClass
+    {
+        background-color: #d88;
+    }
+</style>
+<script>
+    function onDataBound(e) {
+        var grid = $("#mvcGrid").data("kendoGrid");
+        var gridData = grid.dataSource.view();
+
+        for (var i = 0; i < gridData.length; i++) {
+            //get the item uid
+            var currentUid = gridData[i].uid;
+            //if the record fits the custom condition
+            if (gridData[i].EmployeeId % 2 == 0) {
+                //find the row based on the uid and the custom class
+                var currenRow = grid.table.find("tr[data-uid='" + currentUid + "']");
+                $(currenRow).addClass("customClass");
+            }
+        }
+    }
+</script>
