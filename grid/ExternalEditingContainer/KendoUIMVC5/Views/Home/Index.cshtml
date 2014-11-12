@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@(Html.Kendo().Grid<KendoMVCWrappers.Models.Person>()
+    .Name("ContactGrid")
+    .Columns(columns =>
+    {
+        columns.Bound(x => x.Name).Title("Name");
+        columns.Bound(x => x.BirthDate).Title("Name").Format("{0:dd/MM/yyyy HH:mm}");
+
+        columns.ForeignKey(x => x.EyeColorIndex, new SelectList(new List<object> { 
+        new {id="1",text="green"},
+        new {id="2",text="blue"},
+        new {id="3",text="brown"},
+    }, "id", "text"), "Value", "Text").Title("Eye Color");
+
+    })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(100)
+            .Model(model =>
+            {
+                model.Id(p => p.PersonID);
+            })
+        .Read("GetPersons", "Home")
+        .Update("UpdatePerson", "Home")
+        .Create("CreatePerson", "Home")
+        .Batch(true)
+    )
+        .ToolBar(tb =>
+        {
+            tb.Template(@<text>
+                <button class="k-button" id="add">Add new</button>
+                @item.SaveButton()
+            </text>);
+        })
+    .Editable(editable => editable.Mode(GridEditMode.InCell).DisplayDeleteConfirmation(true))
+    .Sortable()
+    .Events(e => e.Save("save").Change("onSelect"))
+    .Selectable()
+)
+<br />
+<br />
+<div id="externalEditor" data-role="window" id="win" style="display:none" data-visible="true">  
+    <input data-bind="value:Name" />
+    <input data-bind="value:BirthDate" data-role="datetimepicker" />
+    <input data-role="dropdownlist" data-bind="source:values,value:EyeColorIndex" data-value-field="value" data-text-field="text" data-option-label="Please choose..."/>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('#ContactGrid').data().kendoGrid.tbody.click(function (e) {
+            e.stopImmediatePropagation();
+        })
+
+        $('#add').click(function () {
+            $('#ContactGrid').data().kendoGrid.dataSource.add();
+        });
+    })
+
+    function save(e) {
+        var val = $("#EyeColorIndex").data().kendoDropDownList.value();
+        e.model.set("EyeColorIndex", val);
+    }
+
+    function onSelect(e) {
+        var dataItem = this.dataItem(this.select());
+        if (!dataItem.EyeColorIndex) {
+            dataItem.EyeColorIndex = 0;
+        }
+        dataItem.values = new kendo.data.ObservableArray(this.columns[2].values);
+
+        kendo.bind($('#externalEditor'), dataItem);
+        $('[data-role=window]').data('kendoWindow').open();
+    }
+</script>
+
+
