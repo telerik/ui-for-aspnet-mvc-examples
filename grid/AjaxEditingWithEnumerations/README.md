@@ -1,0 +1,1 @@
+# Ajax editing with enumeration
