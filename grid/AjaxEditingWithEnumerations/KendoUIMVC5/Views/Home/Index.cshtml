@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ID);
+        columns.Bound(p => p.Name);
+        columns.Bound(p => p.Category);
+    })
+    .ToolBar(toolbar =>
+    {
+        toolbar.Create();
+        toolbar.Save();
+    })
+    .Editable(editable => editable.Mode(GridEditMode.InCell))
+    .Pageable()
+    .Sortable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Batch(true)
+        .ServerOperation(false)
+        .Model(model =>
+            {
+                model.Id(p => p.ID);
+                model.Field(p => p.ID).Editable(false);
+            })
+        .Read("Read", "Home")
+        .Create("Create", "Home")
+        .Update("Update", "Home")
+    )
+)

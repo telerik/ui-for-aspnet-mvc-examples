@@ -5,6 +5,7 @@
 *.swp
 *.user
 *.mdb
+*.suo
 obj/
 bin/
 packages/

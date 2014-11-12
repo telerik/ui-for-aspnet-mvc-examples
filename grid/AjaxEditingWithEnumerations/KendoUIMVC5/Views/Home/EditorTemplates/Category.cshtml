@@ -1,0 +1,22 @@
+﻿@model Category
+@using KendoUIMVC5.Models
+@{
+    List<SelectListItem> list = new List<SelectListItem>();
+    foreach (var value in Enum.GetValues(typeof(Category)))
+    {
+        list.Add(new SelectListItem()
+        {
+
+            Text = value.ToString(),
+            Value = ((int)value).ToString()
+        });
+    }
+}
+
+@(
+    Html.Kendo().DropDownListFor(m=> m)
+        .DataTextField("Text")
+        .DataValueField("Value")
+        .BindTo(list)
+)
+
