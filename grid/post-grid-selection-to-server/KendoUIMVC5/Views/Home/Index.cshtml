@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h3>All Products</h3>
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()
+      .Name("grid")
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Read("Read", "Home")
+      )
+      .Columns(cols=> {
+          cols.Bound(model => model.ProductID);
+          cols.Bound(model => model.ProductName);
+          cols.Bound(model => model.UnitPrice);
+          cols.Bound(model => model.UnitsInStock);
+      })
+      .Events(e => e.Change("selection_change"))
+      .Selectable(selection => selection.Mode(GridSelectionMode.Multiple))
+      .Pageable()
+)
+
+<h3>Selected Products:</h3>
+
+<div id="selectedProducts"></div>
+
+@if (ViewData.ContainsKey("SelectedProducts"))
+{
+    foreach (var product in (IEnumerable<KendoUIMVC5.Product>)ViewData["SelectedProducts"])
+    {
+        <fieldset style="border:1px solid red">
+            <legend>@product.ProductName</legend>
+            <div>ProductID: @product.ProductID</div>
+            <div>Unit Pruce: @product.UnitPrice</div>
+        </fieldset>
+    }
+}
+
+@using (Html.BeginForm())
+{
+    <button class="k-button">Post to display selected product details</button>
+}
+
+<script>
+
+    // The "change" event is raised when the user selects grid rows
+    function selection_change() {
+        var grid = this;
+
+        // Get selected grid rows using the select method: http://docs.kendoui.com/api/web/grid#select
+        var selectedRows = grid.select();
+
+        // Map all selected rows to data items using jQuery.map and the dataItem method: http://docs.kendoui.com/api/web/grid#dataitem
+        var selectedDataItems = $.map(selectedRows, function (row) {
+            return grid.dataItem(row);
+        });
+
+        // Clean any previously hidden inputs
+        $("form").find("[name=productID]").remove();
+
+        // Create a hidden input for every selected ProductID. Will be used to post the selected products to the Index(int[] productID) action method.
+        for (var i = 0; i < selectedDataItems.length; i++) {
+            $('<input type="hidden" name="productID" />')
+                    .val(selectedDataItems[i].ProductID)
+                    .appendTo("form");
+        }
+
+        // get all ProductName fields of the selected data items
+        var selectedProductNames = $.map(selectedDataItems, function (dataItem) {
+            return dataItem.ProductName;
+        });
+
+        // display the ProductName field of the selected data items
+        $("#selectedProducts").text(selectedProductNames.join(", "));
+    }
+
+</script>
