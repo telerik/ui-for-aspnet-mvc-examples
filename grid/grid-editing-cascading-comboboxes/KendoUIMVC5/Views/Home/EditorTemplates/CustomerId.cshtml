@@ -1,0 +1,14 @@
+﻿@model int
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .AutoBind(false)
+                  .OptionLabel("Select Customer...")
+                  .DataTextField("CustomerName")
+                  .DataValueField("CustomerId")
+                  .DataSource(dataSource =>
+                  {
+                      dataSource.Read(read => read.Action("GetCustomers", "Home"))
+                                .ServerFiltering(true);
+                  })
+            )
+            @Html.ValidationMessageFor(m => m)

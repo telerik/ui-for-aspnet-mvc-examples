@@ -1,0 +1,76 @@
+﻿@using KendoUIMVC5.Models;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>Popup Editing</h1>
+
+@(Html.Kendo().Grid<License>()
+      .Name("popupGrid")
+      .Columns(columns =>
+      {
+          columns.Bound(p => p.LicenseId).Width(20).Hidden().HeaderHtmlAttributes(new { @title = "License" });
+          columns.Bound(p => p.CustomerId).Width(20).HeaderHtmlAttributes(new { @title = "Customer" });
+          columns.Bound(p => p.VendorId).Width(20).HeaderHtmlAttributes(new { @title = "Vendor" });
+          columns.Bound(p => p.ProductId).Width(20).HeaderHtmlAttributes(new { @title = "Product" });
+          columns.Command(p => p.Edit().Text("Edit").HtmlAttributes(new { @title = "Edit" })).Width(80);
+      })
+      .ToolBar(toolbar => toolbar.Create().Text("Add").HtmlAttributes(new { @title = "Add" }))
+      .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("PopupEditView"))
+      .Events(e => e.Edit("onEdit"))
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.LicenseId))
+              .Create(create => create.Action("Create", "Home").Type(HttpVerbs.Post))
+              .Read(read => read.Action("Read", "Home").Type(HttpVerbs.Post))
+              .Update(update => update.Action("Update", "Home").Type(HttpVerbs.Post))
+          )
+)
+
+<script>
+    function onEdit(e) {
+        //attach validator to the PopUp window
+        $("[data-role=window]").kendoValidator();
+    }
+</script>
+
+
+
+
+<h1>InLine Editing</h1>
+
+@(Html.Kendo().Grid<License>()
+      .Name("inlineGrid")
+      .Columns(columns =>
+      {
+          columns.Bound(p => p.LicenseId).Width(20).Hidden().HeaderHtmlAttributes(new { @title = "License" });
+          columns.Bound(p => p.CustomerId).Width(20).HeaderHtmlAttributes(new { @title = "Customer" }).Width(300);
+          columns.Bound(p => p.VendorId).Width(20).HeaderHtmlAttributes(new { @title = "Vendor" }).Width(300);
+          columns.Bound(p => p.ProductId).Width(20).HeaderHtmlAttributes(new { @title = "Product" }).Width(300);
+          columns.Command(p => p.Edit().Text("Edit").HtmlAttributes(new { @title = "Edit" })).Width(220);
+      })
+      .ToolBar(toolbar => toolbar.Create().Text("Add").HtmlAttributes(new { @title = "Add" }))
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .Pageable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.LicenseId))
+              .Create(create => create.Action("Create", "Home").Type(HttpVerbs.Post))
+              .Read(read => read.Action("Read", "Home").Type(HttpVerbs.Post))
+              .Update(update => update.Action("Update", "Home").Type(HttpVerbs.Post))
+          )
+)
+
+<script>
+    function filterVendors() {
+        return {
+            customerId: $("#CustomerId").data("kendoDropDownList").value()
+        };
+    }
+
+    function filterProducts() {
+        return {
+            vendorId: $("#VendorId").data("kendoDropDownList").value()
+        };
+    }
+</script>

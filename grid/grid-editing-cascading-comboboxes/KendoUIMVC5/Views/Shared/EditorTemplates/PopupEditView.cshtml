@@ -1,0 +1,78 @@
+﻿@model KendoUIMVC5.Models.License
+
+<script type="text/javascript">
+    function filterVendors() {
+        return {
+            customerId: $("#CustomerId").data("kendoDropDownList").value()
+        };
+    }
+
+    function filterProducts() {
+        return {
+            vendorId: $("#VendorId").data("kendoDropDownList").value()
+        };
+    }
+</script>
+
+<fieldset>
+    <legend>Cascading DropDownLists:</legend>
+    <dl>
+        <dt>
+            @Html.LabelFor(m => m.CustomerId): 
+        </dt>
+        <dd>
+            @(Html.Kendo().DropDownListFor(m => m.CustomerId)
+                  .AutoBind(false)
+                  .OptionLabel("Select Customer...")
+                  .DataTextField("CustomerName")
+                  .DataValueField("CustomerId")
+                  .DataSource(dataSource =>
+                  {
+                      dataSource.Read(read => read.Action("GetCustomers", "Home"))
+                                .ServerFiltering(true);
+                  })
+            )
+            @Html.ValidationMessageFor(m => m.CustomerId)
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            @Html.LabelFor(m => m.VendorId):
+        </dt>
+        <dd>
+            @(Html.Kendo().DropDownListFor(m => m.VendorId)
+                  .AutoBind(false)
+                  .OptionLabel("Select Vendor...")
+                  .DataTextField("VendorName")
+                  .DataValueField("VendorId")
+                  .DataSource(dataSource =>
+                  {
+                      dataSource.Read(read => read.Action("GetVendors", "Home").Data("filterVendors"))
+                                .ServerFiltering(true);
+                  })
+                  .CascadeFrom("CustomerId")
+            )
+            @Html.ValidationMessageFor(m => m.VendorId)
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            @Html.LabelFor(m => m.ProductId): 
+        </dt>
+        <dd>
+            @(Html.Kendo().DropDownListFor(m => m.ProductId)
+                  .AutoBind(false)
+                  .OptionLabel("Select Product...")
+                  .DataTextField("ProductName")
+                  .DataValueField("ProductId")
+                  .DataSource(dataSource =>
+                  {
+                      dataSource.Read(read => read.Action("GetProducts", "Home").Data("filterProducts"))
+                                .ServerFiltering(true);
+                  })
+                  .CascadeFrom("VendorId")
+            )
+            @Html.ValidationMessageFor(m => m.ProductId)
+        </dd>
+    </dl>
+</fieldset>
