@@ -1,1 +1,0 @@
-#  External editor for batch editable grid #
