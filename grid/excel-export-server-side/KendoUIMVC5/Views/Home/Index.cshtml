@@ -1,0 +1,98 @@
+﻿<h2>Excel export via <a href="http://npoi.codeplex.com/">NPOI</a></h2>
+<br />
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()
+      .Name("Grid")
+        .DataSource(ds => 
+            ds.Ajax()
+                .Model(m =>
+                    {
+                        m.Id(p => p.ProductID);
+                    })
+                .Read(r => r.Action("Read", "Home"))
+        )
+        .ToolBar(toolBar =>
+            toolBar.Custom()
+                .Text("Export To Excel")
+                .HtmlAttributes(new { @class = "export" })
+                .Url(Url.Action("ExportWithNPOI", "Home", new { page = 1, pageSize = "~", filter = "~", sort = "~" }))
+        )
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.ProductID);
+            columns.Bound(p => p.ProductName);
+            columns.Bound(p => p.UnitPrice).Format("{0:c}");
+            columns.Bound(p => p.QuantityPerUnit);
+        })
+        .Events(ev => ev.DataBound("onDataBound"))
+        .Pageable()
+        .Sortable()
+        .Filterable()
+)
+
+<h2>Excel export via <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30425">Open XML SDK 2.5 for Microsoft Office</a></h2>
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()
+        .Name("Grid2")
+        .DataSource(ds => 
+            ds.Ajax()
+                .Model(m =>
+                    {
+                        m.Id(p => p.ProductID);
+                    })
+                .Read(r => r.Action("Read", "Home"))
+        )
+        .ToolBar(toolBar =>
+            toolBar.Custom()
+                .Text("Export To Excel")
+                .HtmlAttributes(new { @class = "export" })
+                .Url(Url.Action("ExportWithOpenXML", "Home", new { page = 1, pageSize = "~", filter = "~", sort = "~" }))
+        )
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.ProductID);
+            columns.Bound(p => p.ProductName);
+            columns.Bound(p => p.UnitPrice).Format("{0:c}");
+            columns.Bound(p => p.QuantityPerUnit);
+        })
+        .Events(ev => ev.DataBound("onDataBound"))
+        .Pageable()
+        .Sortable()
+        .Filterable()
+)
+</h2>
+
+<script>
+    function onDataBound(e) {
+        var grid = this;
+
+        // ask the parameterMap to create the request object for you
+        var requestObject = (new kendo.data.transports["aspnetmvc-server"]({ prefix: "" }))
+        .options.parameterMap({
+            page: grid.dataSource.page(),
+            sort: grid.dataSource.sort(),
+            filter: grid.dataSource.filter()
+        });
+
+        // Get the export link as jQuery object
+        var $exportLink = grid.element.find('.export');
+
+        // Get its 'href' attribute - the URL where it would navigate to
+        var href = $exportLink.attr('href');
+
+        // Update the 'page' parameter with the grid's current page
+        href = href.replace(/page=([^&]*)/, 'page=' + requestObject.page || '~');
+
+        // Update the 'sort' parameter with the grid's current sort descriptor
+        href = href.replace(/sort=([^&]*)/, 'sort=' + requestObject.sort || '~');
+
+        // Update the 'pageSize' parameter with the grid's current pageSize
+        href = href.replace(/pageSize=([^&]*)/, 'pageSize=' + grid.dataSource._pageSize);
+
+        //update filter descriptor with the filters applied
+
+        href = href.replace(/filter=([^&]*)/, 'filter=' + (requestObject.filter || '~'));
+
+        // Update the 'href' attribute
+        $exportLink.attr('href', href);
+    }
+</script>
