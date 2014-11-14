@@ -1,0 +1,57 @@
+﻿<p>
+    To see the custom validation message:
+</p>
+<ol>
+    <li>Click <strong>Edit</strong> to edit a record</li>
+    <li>Change the <strong>Name</strong> property</li>
+    <li>Click <strong>Update</strong></li>
+</ol>
+@(Html.Kendo()
+    .Grid<KendoUIMVC5.Models.Product>()
+    .Name("grid")
+    .Columns(columns =>
+        {
+            columns.Bound(p => p.Id);
+            columns.Bound(p => p.Name);
+            columns.Command(command => command.Edit()).Width(100);
+        })
+   .ToolBar(toolbar => toolbar.Create())
+   .Editable(editable => editable.Mode(GridEditMode.PopUp))   
+   .DataSource(dataSource => dataSource
+       .Ajax()
+       .Model(model => model.Id(p => p.Id))
+       .Read("Products_Read", "Home")
+       .Update("Products_Update", "Home")
+       .Create("Products_Create", "Home")
+       .Events(events => events.Error("error"))
+   )
+)
+
+<script type="text/kendo-template" id="message">
+<div class="k-widget k-tooltip k-tooltip-validation k-invalid-msg field-validation-error" 
+     style="margin: 0.5em; display: block; " data-for="#=field#" data-valmsg-for="#=field#" id="#=field#_validationMessage">
+        <span class="k-icon k-warning"> </span>#=message#<div class="k-callout k-callout-n"></div></div>
+</script>
+
+<script type="text/javascript">
+    var validationMessageTmpl = kendo.template($("#message").html());    
+
+    function error(args) {        
+        if (args.errors) {
+            var grid = $("#grid").data("kendoGrid");
+            grid.one("dataBinding", function (e) {   
+                e.preventDefault();   // cancel grid rebind if error occurs                             
+                
+                for (var error in args.errors) {
+                    showMessage(grid.editable.element, error, args.errors[error].errors);
+                }                    
+            });
+        }
+    }
+
+    function showMessage(container, name, errors) {
+        //add the validation message to the form
+        container.find("[data-valmsg-for=" + name + "],[data-val-msg-for=" + name + "]")
+                 .replaceWith(validationMessageTmpl({ field: name, message: errors[0] }))
+    }
+</script>
