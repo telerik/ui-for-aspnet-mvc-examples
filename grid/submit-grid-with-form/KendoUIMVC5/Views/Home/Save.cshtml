@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Save";
+}
+
+@model KendoUIMVC5.Models.Category
+
+<h2>Category data (@Model.CategoryID)</h2>
+
+@Html.LabelFor(category => category.Name): @Html.DisplayFor(category => category.Name) 
+
+@Html.LabelFor(category => category.Products):
+<ul>
+@foreach (var product in Model.Products)
+{
+    <li>
+        @Html.LabelFor(category => product.Name): @Html.DisplayFor(category => product.Name)
+    </li>
+}
+</ul>
