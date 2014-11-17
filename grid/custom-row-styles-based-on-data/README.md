@@ -1,0 +1,2 @@
+# Add custom styles to the row elements of the Grid based on the data model.
+This approach can be used in scenarios where the Grid rows should have different color or other classes/styles based on the different values shown inside the corresponding row.
