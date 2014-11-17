@@ -1,0 +1,2 @@
+# Grid commands as images
+This project shows how to change the built-in buttons of the Grid with images and also how to create custom buttons which do the same with the help of the client API. The same method can be applied to replace the default grid buttons with any other button type.

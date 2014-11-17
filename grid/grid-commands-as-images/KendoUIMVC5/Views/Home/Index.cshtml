@@ -1,0 +1,131 @@
+﻿<style>
+    /*Style build-in commands*/
+    .abutton,
+    div.k-grid .k-grid-edit,
+    div.k-grid .k-grid-delete,
+    div.k-grid .k-grid-cancel,
+    div.k-grid .k-grid-update  {
+        display:inline-block;
+        width:16px;
+        height:16px;
+        text-align:center;
+        text-indent:-4444px;
+        min-width:0;
+        border:0;
+    }
+
+    div.k-grid .k-grid-edit {
+        background: url('@Url.Content("~/Content/icons/edit.png")');
+    }
+
+    div.k-grid .k-grid-delete {
+        background: url('@Url.Content("~/Content/icons/cancel.png")');
+    }
+
+    div.k-grid .k-grid-cancel {
+        background: url('@Url.Content("~/Content/icons/cancel.png")');
+    }
+
+    div.k-grid .k-grid-update {
+        background: url('@Url.Content("~/Content/icons/ok.png")');
+    }
+
+
+    /*Style custom buttons*/
+    .abutton.delete {
+        background: url('@Url.Content("~/Content/icons/cancel.png")');
+    }
+
+    .abutton.edit {
+       background: url('@Url.Content("~/Content/icons/edit.png")');
+    }
+
+    .abutton.update {
+        background: url('@Url.Content("~/Content/icons/ok.png")');
+    }
+
+    .abutton.cancel {
+        background: url('@Url.Content("~/Content/icons/cancel.png")');
+    }
+
+    .abutton.create {
+        background: url('@Url.Content("~/Content/icons/add.png")');
+    }
+</style>
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Order>()
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.OrderID);
+        columns.ForeignKey(p => p.EmployeeId, (System.Collections.IEnumerable)ViewData["employees"], "EmployeeId", "Name");
+        columns.Bound(p => p.OrderDescription);
+        columns.Bound(p => p.OrderDate).Format("{0:d}");
+        columns.Command(cmd => {
+                cmd.Edit();
+                cmd.Destroy();
+            })
+            .Title("Build-in commands")
+            .Width(150);
+        //Creating custom edit and delete image buttons
+        columns.Template(t => { }).HeaderTemplate("").ClientTemplate(@"
+                        <a href='javascript: void(0)' class='abutton edit' onclick='editRow(this)' title='button edit'>button edit</a>
+                        <a href='javascript: void(0)' class='abutton delete' onclick='deleteRow(this)' title='button delete'>button delete</a>")
+            .Width(150)
+            .Title("Custom buttons");
+    })
+    //Creating custom Create button in the toolbar
+    .ToolBar(toolBar => toolBar.Template("<a href='javascript: void(0)' class='abutton create' onclick='createRow()' title='button create'>button create</a>"))
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .Events(e => e.Edit("onEdit"))
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .ServerOperation(false)
+        .Model(model =>
+        {
+            model.Id(p => p.OrderID);
+            model.Field(p => p.OrderID).Editable(false);
+        })
+        .Create(create => create.Action("ForeignKeyColumn_Create", "Home"))
+        .Destroy(destroy => destroy.Action("ForeignKeyColumn_Delete", "Home"))
+        .Read(read => read.Action("ForeignKeyColumn_Read", "Home"))
+        .Update(update => update.Action("ForeignKeyColumn_Update", "Home"))
+    )
+)
+
+<script>
+    function onEdit(e) {
+        //on row edit replace the Delete and Edit buttons with Update and Cancel
+        $(e.container).find("td:last").html("<a href='javascript: void(0)' class='abutton update' onclick='updateRow()' title='button update'>button update</a> " +
+            "<a href='javascript: void(0)' class='abutton cancel' onclick='cancelRow()' title='button cancel'>button cancel</a>");
+    }
+
+    function cancelRow() {
+        grid = $("#Grid").data("kendoGrid");
+        grid.cancelRow();
+    }
+
+    function editRow(element) {
+        grid = $("#Grid").data("kendoGrid");
+        grid.editRow($(element).closest("tr"));
+    }
+
+    function updateRow() {
+        grid = $("#Grid").data("kendoGrid");
+        grid.saveRow();
+    }
+
+    function deleteRow(element) {
+        grid = $("#Grid").data("kendoGrid");
+        grid.removeRow($(element).closest("tr"));
+    }
+
+    function createRow() {
+        grid = $("#Grid").data("kendoGrid");
+        grid.addRow();
+    }
+</script>
