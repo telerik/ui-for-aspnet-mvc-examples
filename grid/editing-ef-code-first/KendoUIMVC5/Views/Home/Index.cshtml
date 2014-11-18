@@ -1,0 +1,22 @@
+﻿@(Html.Kendo().Grid<KendoUIMVC5.Models.Customer>()
+    .Name("Customers")
+    .ToolBar(tb => tb.Create())
+    .Pageable()
+    .DataSource(dataSource => dataSource.Ajax()
+        .Model(model => model.Id(c => c.CustomerID))
+        .Read("GetCustomers", "Home")
+        .Update("UpdateCustomer", "Home")
+        .Create("InsertCustomer", "Home")
+        .Destroy("DeleteCustomer", "Home"))
+    .Columns(cols =>
+    {
+        cols.Bound(c => c.Name).Width(300);
+        cols.Bound(c => c.Phone);
+        cols.Bound(c => c.Email);        
+        cols.Command(cmd =>
+        {
+            cmd.Edit();
+            cmd.Destroy();
+        });
+    })
+)
