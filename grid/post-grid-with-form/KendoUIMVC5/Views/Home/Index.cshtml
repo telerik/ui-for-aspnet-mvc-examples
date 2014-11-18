@@ -1,0 +1,49 @@
+﻿@model KendoUIMVC5.Models.Category
+
+@using(Html.BeginForm("Save", "Home"))
+{
+    <fieldset>
+        <legend>Editing Category (@Model.CategoryID)</legend>
+
+        @Html.LabelFor(category => category.Name)
+        @Html.EditorFor(category => category.Name)
+
+        @(Html.Kendo().Grid(Model.Products)
+              .Name("Products")
+              .ToolBar(tools => tools.Create().Text("Add new product"))
+              .Editable(editable => editable.Mode(GridEditMode.InCell).CreateAt(GridInsertRowPosition.Bottom))
+              .Columns(columns =>
+              {
+                  columns.Bound(p => p.Name).ClientTemplate("#= Name #" + 
+                    "<input type='hidden' name='Products[#= index(data)#].Name' value='#= Name #' />"
+                  );
+
+                  columns.Bound(p => p.ProductID).Hidden().ClientTemplate("#= ProductID #" +
+                    "<input type='hidden' name='Products[#= index(data)#].ProductID' value='#= ProductID #' />"
+                  );
+
+                  columns.Command(command => command.Destroy()).Width(100);
+              })
+              .DataSource(dataSource => dataSource.Ajax()
+                   .Model(model => 
+                       {
+                           model.Id(p => p.ProductID);
+                           model.Field(p => p.ProductID).Editable(false);
+                       })
+                   .ServerOperation(false)
+              )
+        )
+    </fieldset>
+
+    <input type="submit" value="Save" />
+}
+
+<script>
+
+function index(dataItem) {
+    var data = $("#Products").data("kendoGrid").dataSource.data();
+
+    return data.indexOf(dataItem);
+}
+
+</script>
