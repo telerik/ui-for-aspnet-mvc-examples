@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Person>().Name("persons")
+            .DataSource(dataSource => dataSource
+                
+                .Ajax()                
+                .Events(ev=>ev.RequestEnd("onRequestEnd"))
+                .Model(model=>model.Id(m=>m.PersonID))
+                    .Read(read => read.Action("GetPersons","Home"))
+                    .Update(up=>up.Action("UpdatePerson","Home"))
+            )
+            .Filterable()
+            .Columns(columns =>
+            {
+                columns.Bound(c => c.PersonID);
+                columns.Bound(c => c.Name);
+                columns.Bound(c => c.BirthDate);
+                columns.Command(cmd => cmd.Edit());
+            }) 
+            .Groupable()
+            .Pageable()
+            .Sortable()
+        )
+        
+
+<script type="text/javascript">
+    (function () {
+        window.onRequestEnd = function(e) {
+            if (e.response.Data && e.response.Data.length) {
+                var data = e.response.Data;
+                if (this.group().length && e.type == "read") {
+                    handleGroups(data);
+                } else {
+                    loopRecords(data);
+                }
+            }
+        }
+
+        function handleGroups(groups) {
+            for (var i = 0; i < groups.length; i++) {
+                var gr = groups[i];
+                offsetDateFields(gr); //handle the Key variable as well
+                if (gr.HasSubgroups) {
+                    handleGroups(gr.Items)
+                } else {
+                    loopRecords(gr.Items);
+                }
+            }
+        }
+
+        function loopRecords(persons) {
+            for (var i = 0; i < persons.length; i++) {
+                var person = persons[i];
+                offsetDateFields(person);
+            }
+        }
+
+        function offsetDateFields(obj) {
+            for (var name in obj) {
+                var prop = obj[name];
+                if (typeof (prop) === "string" && prop.indexOf("/Date(") == 0) {
+                    obj[name] = prop.replace(/\d+/, function (n) {
+                        var offsetMiliseconds = new Date(parseInt(n)).getTimezoneOffset() * 60000;
+                        return parseInt(n) + offsetMiliseconds
+                    });
+                }
+            }
+        }
+    })();
+</script>
