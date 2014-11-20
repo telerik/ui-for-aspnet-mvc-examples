@@ -1,0 +1,2 @@
+# Custom popup editor
+This project shows how to use a custom editor template in the grid popup editing form. It is inspired by the excellent [blog post](http://www.telerik.com/support/code-library/custom-popup-editor-52debd2ced8d) of Brad Wilson which explains how custom display and editor templates work. 

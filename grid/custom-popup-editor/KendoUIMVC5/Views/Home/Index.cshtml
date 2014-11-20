@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Person>().Name("persons")
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model => model.Id(m => m.PersonID))
+            .Read(read => read.Action("GetPersons", "Home"))
+            .Update(up => up.Action("UpdatePerson", "Home"))
+    )
+
+    .Columns(columns =>
+    {
+        columns.Bound(c => c.PersonID).Width(200);
+        columns.Bound(c => c.Name);
+        columns.Bound(c => c.BirthDate).Format("{0:g}");
+        columns.Command(cmd => cmd.Edit());
+    })
+
+    .Pageable()
+    .Sortable()
+    .Editable(ed => ed.Mode(GridEditMode.PopUp).TemplateName("Person"))
+)
