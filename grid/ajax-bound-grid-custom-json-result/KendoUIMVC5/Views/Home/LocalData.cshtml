@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Local data";
+}
+
+@model IEnumerable<KendoUIMVC5.Models.Product>
+
+<h2>Bound to local data</h2>
+
+@(Html.Kendo().Grid(Model)
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ID);
+        columns.Bound(p => p.Name);
+    })
+    .Pageable()
+    .Sortable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .ServerOperation(false)
+    )
+)
