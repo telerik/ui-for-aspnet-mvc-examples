@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Person>().Name("persons")
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .Model(model => model.Id(m => m.PersonID))
+                    .Batch(true)
+                    .Read(read => read.Action("GetPersons", "Home"))
+                    .Update(up => up.Action("UpdatePersons", "Home"))
+            )
+
+            .Columns(columns =>
+            {
+                columns.Bound(c => c.PersonID).Width(200);
+                columns.Bound(c => c.Name).Width(200);
+                columns.Template(@<text></text>).ClientTemplate("<input type='checkbox' #= IsAdmin ? checked='checked':'' # class='chkbx' />")
+                    .HeaderTemplate("<input type='checkbox' id='masterCheckBox' onclick='checkAll(this)'/>").Width(200);
+            })
+                .Editable(ed => ed.Mode(GridEditMode.InCell))
+                .ToolBar(tb => tb.Save())
+
+                .Sortable()
+)
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#persons').on('click', '.chkbx', function () {
+            var checked = $(this).is(':checked');
+            var grid = $('#persons').data().kendoGrid;
+            var dataItem = grid.dataItem($(this).closest('tr'));
+            dataItem.set('IsAdmin', checked);
+        })
+    })
+
+    function checkAll(ele) {
+        var state = $(ele).is(':checked');
+        var grid = $('#persons').data().kendoGrid;
+        $.each(grid.dataSource.view(), function () {
+            if (this['IsAdmin'] != state)
+                this.dirty=true;
+            this['IsAdmin'] = state;
+        });
+        grid.refresh();
+    }
+
+</script>

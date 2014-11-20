@@ -1,0 +1,22 @@
+﻿@model KendoUIMVC5.Models.Person
+
+        <h3>Customized Person edit template</h3>
+        <br />
+        @Html.HiddenFor(model => model.PersonID)
+
+        <div>
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.BirthDate)
+        </div>
+        <div>
+            @Html.Kendo().DateTimePickerFor(model => model.BirthDate)
+            @Html.ValidationMessageFor(model => model.BirthDate)
+        </div>
+
