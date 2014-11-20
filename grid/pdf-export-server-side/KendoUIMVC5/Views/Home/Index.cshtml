@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model IEnumerable<KendoUIMVC5.Models.Product>
+
+@(
+ Html.Kendo().Grid(Model).Name("Grid")
+                .DataSource(ds => ds.Ajax()
+                                .Model(m =>
+                                {
+                                    m.Id(p => p.ProductID);
+                                })
+                        .Read(r => r.Action("Read", "Home"))
+                )
+                .ToolBar(toolBar =>
+                    toolBar.Custom()
+                        .Text("Export To PDF")
+                        .HtmlAttributes(new { id = "export" })
+                        .Url(Url.Action("Export", "Home", new { page = 1, pageSize = "~", filter = "~", sort = "~" }))
+                )
+                .Columns(columns =>
+                {
+                    columns.Bound(p => p.ProductID);
+                    columns.Bound(p => p.ProductName);
+                    columns.Bound(p => p.UnitPrice).Format("{0:c}");
+                    columns.Bound(p => p.QuantityPerUnit);
+                })
+                .Events(ev => ev.DataBound("onDataBound"))
+                .Pageable()
+                .Sortable()
+                .Filterable()
+)
+
+<script type="text/javascript">
+    function onDataBound(e) {
+        var grid = $('#Grid').data('kendoGrid');
+
+        // ask the parameterMap to create the request object for you
+        var requestObject = (new kendo.data.transports["aspnetmvc-server"]({ prefix: "" }))
+        .options.parameterMap({
+            page: grid.dataSource.page(),
+            sort: grid.dataSource.sort(),
+            filter: grid.dataSource.filter()
+        });
+
+        // Get the export link as jQuery object
+        var $exportLink = $('#export');
+
+        // Get its 'href' attribute - the URL where it would navigate to
+        var href = $exportLink.attr('href');
+
+        // Update the 'page' parameter with the grid's current page
+        href = href.replace(/page=([^&]*)/, 'page=' + requestObject.page || '~');
+
+        // Update the 'sort' parameter with the grid's current sort descriptor
+        href = href.replace(/sort=([^&]*)/, 'sort=' + requestObject.sort || '~');
+
+        // Update the 'pageSize' parameter with the grid's current pageSize
+        href = href.replace(/pageSize=([^&]*)/, 'pageSize=' + grid.dataSource._pageSize);
+
+        //update filter descriptor with the filters applied
+
+        href = href.replace(/filter=([^&]*)/, 'filter=' + (requestObject.filter || '~'));
+
+        // Update the 'href' attribute
+        $exportLink.attr('href', href);
+    }
+</script>
