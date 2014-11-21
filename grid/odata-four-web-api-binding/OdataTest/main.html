@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.dataviz.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.dataviz.default.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.mobile.all.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2014.3.1119/js/kendo.all.min.js"></script>
+    <meta charset=utf-8 />
+    <title>Odata 4 with WebAPI</title>
+</head>
+<body>
+    <div id="products"></div>
+    <div id="employees"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#products").kendoGrid({
+                dataSource: {
+                    type: "odata-v4",
+                    transport: {
+                        read: {
+                            url: "/odata/Products",
+                            data: {
+                                $expand: "Category"
+                            }                            
+                        },
+                        update: {
+                            url: function (data) {
+                                return "/odata/Products(" + data.ProductID + ")";
+                            }
+                        },
+                        create: {
+                            url: "/odata/Products"
+                        }
+                    },                   
+                    schema: {
+                        model: {
+                            id: "ProductID",
+                            fields: {
+                                UnitPrice: { type: "number" },
+                                SupplierID: { type: "number" },
+                                UnitsInStock: { type: "number" },
+                                UnitsOnOrder: { type: "number" },
+                                ProductID: { type: "number" },
+                                Discontinued: { type: "boolean" }
+                            }
+                        }
+
+                    },
+                    requestEnd: function(e) { //this is no longer needed in latest internal build
+                        if (e.type == "create") {                               
+                            delete e.response["@odata.context"];
+                        }
+                    },
+                    pageSize: 10,
+                    serverFiltering: true,
+                    serverPaging: true,
+                    serverSorting: true
+                },
+                height: 550,
+                toolbar: ["create"],
+                groupable: true,
+                sortable: true,
+                filterable: {
+                    mode: "row"
+                },
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5
+                },
+                columns: [{
+                    field: "ProductName",
+                    width: 300
+                }, {
+                    field: "ProductID"
+                }, 
+                "UnitPrice", "UnitsOnOrder", "Discontinued", { command: "edit" }
+                ],
+                editable: "inline"
+            });
+
+
+
+            $("#employees").kendoGrid({
+                dataSource: {
+                    type: "odata-v4",
+                    transport: {
+                        read: {
+                            url: "/odata/Employees"                            
+                        },
+                        update: {
+                            url: function (data) {
+                                return "/odata/Employees(" + data.EmployeeID + ")";
+                            }
+                        }
+                    },
+                    schema: {
+                        model: {
+                            id: "EmployeeID",
+                            fields: {
+                                Firstname: { type: "string" },
+                                BirthDate: { type: "date" },
+                                EmployeeID: { type: "number" }
+                            }
+                        }
+
+                    },
+                    pageSize: 10,
+                    serverFiltering: true,
+                    serverPaging: true,
+                    serverSorting: true
+                },
+                height: 550,
+                
+                groupable: true,
+                sortable: true,
+                filterable: {
+                    mode: "row"
+                },
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5
+                },
+                columns: [
+                    { field: "FirstName", width: 300 },
+                    { field: "LastName", width: 300 },
+                    { field: "BirthDate", width: 300, format: "{0: MM/dd/yyyy}" },
+                    {  command: ["edit", "destroy"] }
+                ],
+                editable: "inline"
+            });
+        });
+
+    </script>
+</body>
+</html>
