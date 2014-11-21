@@ -19,7 +19,11 @@
         .Custom()
         .Schema(sch =>
         {
-            sch.Model(m => m.Id("ProductID"));
+            sch.Model(m=>{
+                m.Id("ProductID");
+                m.Field(f=>f.ProductID).Editable(false);
+                m.Field("UnitPrice", typeof(Decimal));
+            });
         })
         .Type("odata-v4")
         .Transport(transport =>
@@ -61,8 +65,8 @@
         .Custom()
         .Schema(sch =>
         {
-            sch.Model(m => { 
-                m.Id("EmployeeID"); 
+            sch.Model(m => {
+                m.Id("EmployeeID");
                 m.Field("BirthDate", typeof(DateTime));
             });
         })
