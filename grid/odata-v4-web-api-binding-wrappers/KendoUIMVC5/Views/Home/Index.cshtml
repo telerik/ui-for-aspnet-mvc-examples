@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()
+    .Name("products")
+    .Columns(columns =>
+    {
+        columns.Bound(e => e.ProductName).Width(200);
+        columns.Bound(e => e.ProductID).Width(300);
+        columns.Bound(e => e.UnitPrice).Width(300);
+        columns.Bound(e => e.UnitsOnOrder).Width(300);
+        columns.Bound(e => e.Discontinued).Width(200);
+        columns.Command(cmd => cmd.Edit()).Width(300);
+    })
+    .Scrollable()
+    .ToolBar(tb => tb.Create())
+    .DataSource(dataSource => dataSource
+        .Custom()
+        .Schema(sch =>
+        {
+            sch.Model(m => m.Id("ProductID"));
+        })
+        .Type("odata-v4")
+        .Transport(transport =>
+        {
+            transport.Create(create => create.Url("/odata/Products"));
+            transport.Read(read => read.Url("/odata/Products").Data("function() {return {'$expand': 'Category'} }"));
+            transport.Update(new
+            {
+                url = new Kendo.Mvc.ClientHandlerDescriptor
+                {
+                    HandlerName = @"function(data) {
+                                            return '/odata/Products(' + data.ProductID + ')';
+                                       }"
+                }
+            });
+        })
+        .Events(ev => ev.RequestEnd("onRequestEnd"))
+        .PageSize(20)
+        .ServerPaging(true)
+        .ServerSorting(true)
+        .ServerFiltering(true)
+    )
+    .Sortable()
+    .Pageable()
+    .Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+)
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Employee>()
+    .Name("employees")
+    .Columns(columns =>
+    {
+        columns.Bound(e => e.FirstName).Width(200);
+        columns.Bound(e => e.LastName).Width(300);
+        columns.Bound(e => e.BirthDate).EditorTemplateName("DateTimeOffset").Format("{0: MM/dd/yyyy}").Width(300);
+        columns.Command(cmd => cmd.Edit()).Width(300);
+    })
+    .Scrollable()
+    .DataSource(dataSource => dataSource
+        .Custom()
+        .Schema(sch =>
+        {
+            sch.Model(m => { 
+                m.Id("EmployeeID"); 
+                m.Field("BirthDate", typeof(DateTime));
+            });
+        })
+        .Type("odata-v4")
+        .Transport(transport =>
+        {
+            transport.Read(read => read.Url("/odata/Employees"));
+            transport.Create(create => create.Url("/odata/Employees"));
+            transport.Update(new
+            {
+                url = new Kendo.Mvc.ClientHandlerDescriptor
+                {
+                    HandlerName = @"function(data) {
+                                            return '/odata/Employees(' + data.EmployeeID + ')';
+                                       }"
+                }
+            });
+        })
+        .Events(ev => ev.RequestEnd("onRequestEnd"))
+        .PageSize(20)
+        .ServerPaging(true)
+        .ServerSorting(true)
+        .ServerFiltering(true)
+    )
+    .Sortable()
+    .Pageable()
+    .Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+)
+
+<script>
+    function onRequestEnd(e) { //this is no longer needed in latest after Q3 internal build
+        if (e.type == "create") {
+            delete e.response["@@odata.context"];
+        }
+    }
+</script>
