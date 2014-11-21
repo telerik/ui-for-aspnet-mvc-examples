@@ -1,0 +1,61 @@
+﻿@model KendoUIMVC5.Models.ForeignKeyValues
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.License>()
+      .Name("Grid")
+      .Columns(columns =>
+      {
+          columns.ForeignKey(p => p.CustomerId, Model.Customers, "CustomerId", "CustomerName").Width(300).EditorTemplateName("CustomerId");
+          columns.ForeignKey(p => p.VendorId, Model.Vendors, "VendorId", "VendorName").Width(300).EditorTemplateName("VendorId");
+          columns.ForeignKey(p => p.ProductId, Model.Products, "ProductId", "ProductName").Width(300).EditorTemplateName("ProductId");
+      })
+      .ToolBar(toolbar => {
+          toolbar.Create();
+          toolbar.Save();
+      })
+      .Editable(editable => editable.Mode(GridEditMode.InCell))
+      .Pageable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Events(e => e.Change("onChange"))
+          .Model(model => model.Id(p => p.LicenseId))
+              .Create("Create", "Home")
+              .Read("Read", "Home")
+              .Update("Update", "Home")
+          )
+)
+
+<script>
+    function onChange(e) {
+        if (e.action == "itemchange") {
+            if (e.field == "CustomerId") {
+                var model = e.items[0];
+                model.set("VendorId", 0);
+            }
+
+            if (e.field == "VendorId") {
+                var model = e.items[0];
+                model.set("ProductId", 0);
+            }
+        }
+    }
+
+    function getCurrentEditedModel() {
+        var grid = $("#Grid").data("kendoGrid");
+        var editRow = grid.tbody.find("tr:has(.k-edit-cell)");
+        return grid.dataItem(editRow);
+    }
+
+    function filterVendors() {
+        var model = getCurrentEditedModel();
+        return {
+            customerId: model.CustomerId
+        };
+    }
+
+    function filterProducts() {
+        var model = getCurrentEditedModel();
+        return {
+            vendorId: model.VendorId
+        };
+    }
+</script>
