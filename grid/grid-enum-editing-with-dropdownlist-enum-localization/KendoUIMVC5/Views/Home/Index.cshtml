@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Showing localized enum texts in columns</h2>
+
+@{
+    var values = KendoUIMVC5.Models.LocalizedEnumConverter.GetValues(typeof(KendoUIMVC5.Models.Role));
+    List<SelectListItem> data = new List<SelectListItem>();
+    for (int i = 0; i < values.Count; i++) {
+        data.Add(new SelectListItem() {
+            Text = values[i].Value,
+            Value = values[i].Key.ToString()
+        });
+    }
+}
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Person>().Name("persons")
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model => {
+            model.Id(m => m.PersonID);
+            model.Field("Role", typeof(string));
+        })
+        .Batch(true)
+        .Read(read => read.Action("GetPersons", "Home"))
+        .Update(up => up.Action("UpdatePersons", "Home"))
+    )
+    .Columns(columns =>
+    {
+        columns.Bound(c => c.PersonID).Width(200);
+        columns.Bound(c => c.Name).Width(200);
+        columns.ForeignKey(c => c.Role, data, "Value", "Text");
+    })
+    .Editable(ed => ed.Mode(GridEditMode.InCell))
+    .ToolBar(tb => tb.Save())
+    .Sortable()
+)
