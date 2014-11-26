@@ -1,0 +1,18 @@
+﻿@model KendoUIMVC5.Models.Category        
+
+@(
+ Html.Kendo().ComboBoxFor(m => m)
+        //use the data-skip attribute to prevent adding the default value binding and add the data-bind attribute for the custom binder
+        .HtmlAttributes(new { data_skip = "true", data_bind = "defferedValue: Category" })
+        .Placeholder("Select a category")
+        .DataSource(source =>
+        {
+            source.Read("_GetCategories", "Home")
+                  .ServerFiltering();
+        })
+        .MinLength(3)
+        .AutoBind(false)
+        .Filter(FilterType.Contains)
+        .DataValueField("CategoryID")
+        .DataTextField("CategoryName")
+)

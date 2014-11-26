@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Grid editing using ComboBox with remote binding and filtering</h2>
+
+<script type="text/javascript">
+    //create a custom binder that works only with Objects and honours "autoBind:false" state
+    kendo.data.binders.widget.defferedValue = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            this.widget = widget;
+            this._change = $.proxy(this.change, this);
+            this.widget.bind("change", this._change);
+        },
+        refresh: function () {
+            if (!this._initChange) {
+                var widget = this.widget;
+                var value = this.bindings.defferedValue.get();
+
+                if (value) {
+                    if (widget.options.autoBind === false) {
+                        //Bind the widget with single item if deffered binding is used
+                        widget.dataSource.data([value]);
+                        widget.value(value[widget.options.dataValueField]);
+                    } else {
+                        //set widget value directly
+                        this.widget.value(value[widget.options.dataValueField]);
+                    }
+                }
+            }
+        },
+        change: function () {
+            this._initChange = true;
+            this.bindings.defferedValue.set(this.widget.dataItem() || null);
+            this._initChange = false;
+        },
+        destroy: function () {
+            this.widget.unbind("change", this._change);
+        }
+    });
+
+</script>
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ProductID).Width(60);
+        columns.Bound(p => p.ProductName);
+        columns.Bound(p => p.Category)
+            .ClientTemplate("#: data.Category ? data.Category.CategoryName : '[None]' #")
+            .EditorTemplateName("ComboBoxLookup")
+            .Filterable(false)
+            .Sortable(false)
+            .Width(200);
+        columns.Command(commands =>
+        {
+            commands.Edit();            
+        }).Width(200); 
+    })    
+    .Pageable()
+    .Sortable()
+    .Filterable()    
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model =>
+            {
+                model.Id(p=> p.ProductID);
+                model.Field(p => p.ProductID).Editable(false);                
+            })
+        .Read(read => read.Action("Read", "Home"))
+        .Update(update => update.Action("Update", "Home"))
+    )
+)
