@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Grid self-referencing hierarchy</h2>
+<hr />
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Customer>()
+         .Name("grid")
+         .Columns(columns =>
+         {
+             columns.Bound(c => c.Id).Width(100);
+             columns.Bound(c => c.Name);
+             columns.Bound(c => c.Sales).Width(200);
+         })
+        // Initialize the child grid in the detailInit handler
+         .Events(e => e.DetailInit("detailInit"))
+         .DataSource(dataSource => dataSource
+             .Ajax()
+             // Apply operations at the client-side - paging, filtering etc.
+             .ServerOperation(false)
+             // Set initial filter to display only parent records (ParentId = 0)
+             .Filter(filter => filter.Add(c => c.ParentId).IsEqualTo(0))
+             .Read("Read", "Home")
+         )
+    )
+<script>
+    function detailInit(e) {
+        // get the root grid
+        var grid = $("#grid").data("kendoGrid");
+        // get its data source
+        var dataSource = grid.dataSource;
+        // get the current Id
+        var parentId = e.data.Id;
+        // create new data source which contains only child items
+        var children = new kendo.data.DataSource({
+            // use the parent data source data
+            data: dataSource.data(),
+            // filter to leave only the child items
+            filter: {
+                field: "ParentId",
+                operator: "eq",
+                value: parentId
+            }
+        });
+        // read the data
+        children.read();
+        // check if there are any child items
+        if (children.view().length > 0) {
+            // clone the root grid options
+            var options = $.extend(grid.options, { dataSource: children });
+            // create a new child grid and append it to the detail cell
+            $("<div>").appendTo(e.detailCell)
+                      .kendoGrid(options)
+        } else {
+            // Item has no children. Remove the detail row and expand/collapse icon.
+            e.detailRow.remove();
+            e.masterRow.find(".k-icon").remove();
+        }
+
+    }
+</script>
