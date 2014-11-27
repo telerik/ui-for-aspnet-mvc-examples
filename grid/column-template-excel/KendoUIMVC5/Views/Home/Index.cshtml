@@ -1,0 +1,31 @@
+﻿@(Html.Kendo().Grid<KendoUIMVC5.Models.Order>()    
+    .Name("grid")
+    .ToolBar(tools => tools.Excel())
+    .Events(e => e.ExcelExport("excelExport"))
+    .Columns(columns => {
+        columns.Bound(p => p.OrderID).Filterable(false).Width(100);
+        columns.Bound(p => p.Freight).ClientTemplate("Freight: #: kendo.format('{0:c}', Freight) #");
+        columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}").Width(140);
+        columns.Bound(p => p.ShipName);
+        columns.Bound(p => p.ShipCity).Width(150);
+    })
+    .Pageable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("Orders_Read", "Home"))
+     )
+)
+<script>
+    function excelExport(e) {
+        var sheet = e.workbook.sheets[0];
+
+        var template = kendo.template(this.columns[1].template);
+
+        var data = this.dataSource.view();
+
+        for (var i = 0; i < data.length; i++) {
+            sheet.rows[i + 1].cells[1].value = template(data[i]);
+        }
+    }
+</script>
