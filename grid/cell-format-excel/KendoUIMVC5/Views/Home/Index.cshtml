@@ -1,0 +1,31 @@
+﻿@(Html.Kendo().Grid<KendoUIMVC5.Models.Order>()    
+    .Name("grid")
+    .ToolBar(tools => tools.Excel())
+    .Events(e => e.ExcelExport("excelExport"))
+    .Columns(columns => {
+        columns.Bound(p => p.OrderID).Filterable(false).Width(100);
+        columns.Bound(p => p.Freight).Width(100);
+        columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}").Width(140);
+        columns.Bound(p => p.ShipName);
+        columns.Bound(p => p.ShipCity).Width(150);
+    })
+    .Pageable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("Orders_Read", "Home"))
+     )
+)
+<script>
+    function excelExport(e) {
+        var sheet = e.workbook.sheets[0];
+        for (var rowIndex = 1; rowIndex < sheet.rows.length; rowIndex++) {
+            var sheet = e.workbook.sheets[0];
+
+            for (var rowIndex = 1; rowIndex < sheet.rows.length; rowIndex++) {
+                var row = sheet.rows[rowIndex];
+                row.cells[1].format = "[Blue]#,##0.0_);[Red](#,##0.0);0.0;"
+            }
+        }
+    }
+</script>
