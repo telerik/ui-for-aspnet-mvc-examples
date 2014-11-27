@@ -1,0 +1,84 @@
+﻿<button id="export" class="k-button"><span class="k-icon k-i-excel"></span>Export to Excel</button>
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()    
+    .Name("products")
+    .Events(e => e.ExcelExport("products_excelExport"))
+    .Columns(columns => {
+        columns.Bound(p => p.ProductID).Width(100);
+        columns.Bound(p => p.ProductName);
+        columns.Bound(p => p.UnitsInStock);
+        columns.Bound(p => p.UnitPrice);
+    })
+    .Pageable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("Products_Read", "Home"))
+     )
+)
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Order>()    
+    .Name("orders")
+    .Events(e => e.ExcelExport("orders_excelExport"))
+    .Columns(columns => {
+        columns.Bound(p => p.OrderID).Filterable(false).Width(100);
+        columns.Bound(p => p.Freight).ClientTemplate("Freight: #: kendo.format('{0:c}', Freight) #");
+        columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}").Width(140);
+        columns.Bound(p => p.ShipName);
+        columns.Bound(p => p.ShipCity).Width(150);
+    })
+    .Pageable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("Orders_Read", "Home"))
+     )
+)
+<script>
+    // used to sync the exports
+    var promises = [
+      $.Deferred(),
+      $.Deferred()
+    ];
+
+    $("#export").click(function (e) {
+        // trigger export of the products grid
+        $("#products").data("kendoGrid").saveAsExcel();
+        // trigger export of the orders grid
+        $("#orders").data("kendoGrid").saveAsExcel();
+        // wait for both exports to finish
+        $.when.apply(null, promises)
+         .then(function (productsWorkbook, ordersWorkbook) {
+
+             // create a new workbook using the sheets of the products and orders workbooks
+             var sheets = [
+               productsWorkbook.sheets[0],
+               ordersWorkbook.sheets[0]
+             ];
+
+             sheets[0].title = "Products";
+             sheets[1].title = "Orders";
+
+             var workbook = new kendo.ooxml.Workbook({
+                 sheets: sheets
+             });
+
+             // save the new workbook,b
+             kendo.saveAs({
+                 dataURI: workbook.toDataURL(),
+                 fileName: "ProductsAndOrders.xlsx"
+             })
+         });
+    });
+
+    function products_excelExport(e) {
+        e.preventDefault();
+
+        promises[0].resolve(e.workbook);
+    }
+
+    function orders_excelExport(e) {
+        e.preventDefault();
+
+        promises[1].resolve(e.workbook);
+    }
+</script>
