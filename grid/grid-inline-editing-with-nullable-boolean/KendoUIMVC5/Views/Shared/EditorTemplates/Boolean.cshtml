@@ -1,0 +1,17 @@
+﻿@model bool?
+ 
+@if (ViewData.ModelMetadata.IsNullableValueType) {
+    @(
+        Html.Kendo().DropDownListFor(model => model)
+            .Items(items =>
+            {
+                items.Add().Text("Not Set");
+                items.Add().Text("True").Value("true");
+                items.Add().Text("False").Value("false");
+            })
+            //specify that the default value binidng should not be set and set the nullableBoolean binding
+            .HtmlAttributes(new { data_skip = true, data_bind = "nullableBoolean:" + ViewData.TemplateInfo.GetFullHtmlFieldName(string.Empty)})
+    )
+} else {
+    <input type="checkbox" @(Model.Value ? "checked='checked'" : "") />
+}

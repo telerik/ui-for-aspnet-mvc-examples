@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Grid editing of Nullable Boolean</h2>
+
+<script type="text/javascript">
+    //define custom nullable boolean binder so the DropDownList can update the model and vice-versa
+    kendo.data.binders.widget.nullableBoolean = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+
+            this.widget = widget;
+            this._change = $.proxy(this.change, this);
+            widget.bind("change", this._change);
+        },
+
+        refresh: function () {
+            var that = this,
+                value = that.bindings.nullableBoolean.get();
+
+            that.widget.value(value !== null ? value.toString() : "");
+        },
+
+        change: function () {
+            var that = this,
+                value = that.widget.value(),
+                modelValue = value === "true" ? true : value === "false" ? false : null;
+            that.bindings.nullableBoolean.set(modelValue);
+        },
+
+        destroy: function () {
+            this.widget.unbind("change", this._change);
+        }
+    });
+</script>
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ProductName);
+        columns.Bound(p => p.UnitsInStock).Width(100);
+        columns.Bound(p => p.Available).Width(100);
+        columns.Command(command => command.Edit()).Width(100); 
+    })
+    .Pageable()
+    .Sortable()
+    .Filterable()    
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model =>
+            {
+                model.Id(p => p.ProductID);
+            })
+        .Read(read => read.Action("Read", "Home"))
+        .Update(update => update.Action("Update", "Home"))
+    )
+)
