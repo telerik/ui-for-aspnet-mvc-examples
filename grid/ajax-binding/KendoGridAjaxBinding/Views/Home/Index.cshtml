@@ -1,0 +1,18 @@
+﻿@(Html.Kendo().Grid<KendoGridAjaxBinding.Models.Product>()
+      .Name("grid")
+      .DataSource(dataSource => dataSource // Configure the grid data source
+          .Ajax() // Specify that ajax binding is used
+          .Read(read => read.Action("Products_Read", "Home")) // Set the action method which will return the data in JSON format
+       )
+      .Columns(columns =>
+      {
+          // Create a column bound to the ProductID property
+          columns.Bound(product => product.ProductID);
+          // Create a column bound to the ProductName property
+          columns.Bound(product => product.ProductName);
+          // Create a column bound to the UnitsInStock property
+          columns.Bound(product => product.UnitsInStock);
+      })
+      .Pageable() // Enable paging
+      .Sortable() // Enable sorting
+)
