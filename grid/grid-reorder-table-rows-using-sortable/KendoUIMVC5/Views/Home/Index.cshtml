@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Using Sortable widget to reorder Grid table rows</h2>
+
+@(Html.Kendo().Grid<KendoUIMVC5.Models.Product>()    
+    .Name("Grid")    
+    .Columns(columns => {
+        columns.Bound(p => p.Order).Width(60);   
+        columns.Bound(p => p.ProductName);
+        columns.Bound(p => p.UnitsInStock).Width(140);
+    })
+    .DataSource(dataSource => dataSource        
+        .Ajax()       
+        .Batch(true)  
+        .ServerOperation(false)                
+        .Model(model => {
+            model.Id(p => p.ProductID);
+        })
+        .Read("Read", "Home")
+        .Update("Update", "Home")
+        .Sort(s => s.Add(m => m.Order))
+    )
+)
+
+@(Html.Kendo().Sortable()
+    .For("#Grid")
+    .Filter("table > tbody > tr")
+    .Cursor("move")
+    .HintHandler("noHint")
+    .PlaceholderHandler("placeholder")
+    .ContainerSelector("#Grid tbody")
+    .Events(events => events.Change("onChange"))
+)
+
+<script>
+    var noHint = $.noop;
+
+    function placeholder(element) {
+        return element.clone().addClass("k-state-selected").css("opacity", 0.65);
+    }
+
+    function onChange(e) {
+        var grid = e.sender.element.data("kendoGrid"),            
+            oldIndex = e.oldIndex ,
+            newIndex = e.newIndex ,
+            view = grid.dataSource.view(),
+            dataItem = grid.dataSource.getByUid(e.item.data("uid"));
+
+        dataItem.Order = newIndex;
+        dataItem.dirty = true;
+
+        if (oldIndex < newIndex) {
+            for (var i = oldIndex + 1; i <= newIndex; i++) {
+                view[i].Order--;
+                view[i].dirty = true;
+            }
+        } else {
+            for (var i = oldIndex - 1; i >= newIndex; i--) {
+                view[i].Order++;
+                view[i].dirty = true;
+            }
+        }
+
+        grid.dataSource.sync();
+    }
+</script>
