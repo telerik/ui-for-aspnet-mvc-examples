@@ -1,0 +1,17 @@
+﻿@model IEnumerable<KendoGridCustomServerBinding.Models.Order>
+
+@(Html.Kendo().Grid(Model)
+    .Name("Grid")
+    .EnableCustomBinding(true)
+    .Columns(columns => {
+        columns.Bound(o => o.OrderID);
+        columns.Bound(o => o.ShipAddress);
+    })
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .DataSource(dataSource => dataSource
+        .Server()
+        .Total((int)ViewData["total"]) // set the total number of records
+    )
+)
