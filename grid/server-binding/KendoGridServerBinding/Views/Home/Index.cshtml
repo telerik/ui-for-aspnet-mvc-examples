@@ -1,0 +1,13 @@
+﻿@model IEnumerable<KendoGridServerBinding.Models.Product>
+
+@(Html.Kendo().Grid(Model) // Bind the grid to the Model property of the view
+      .Name("Grid")
+      .Columns(columns =>
+      {
+          columns.Bound(p => p.ProductID);   //Create a column bound to the "ProductID" property
+          columns.Bound(p => p.ProductName); //Create a column bound to the "ProductName" property
+          columns.Bound(p => p.UnitPrice);   //Create a column bound to the "UnitPrice" property
+          columns.Bound(p => p.UnitsInStock);//Create a column bound to the "UnitsInStock" property
+      })
+     .Pageable() //Enable paging
+)
