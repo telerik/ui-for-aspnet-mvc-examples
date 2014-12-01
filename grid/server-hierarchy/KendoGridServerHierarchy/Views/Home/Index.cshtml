@@ -1,0 +1,20 @@
+﻿@(Html.Kendo().Grid((IEnumerable<KendoGridServerHierarchy.Models.Category>)ViewBag.Categories)
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(category => category.CategoryID);
+          columns.Bound(category => category.CategoryName);
+      })
+      .Pageable()
+      .DetailTemplate(@<text>
+        @(Html.Kendo().Grid(item.Products)
+              .Name(string.Format("product_grid_{0}", item.CategoryID)) // the Name() should be unique
+              .Columns(columns =>
+              {
+                  columns.Bound(product => product.ProductID);
+                  columns.Bound(product => product.ProductName);
+              })
+              .Pageable()
+        )
+      </text>)
+)
