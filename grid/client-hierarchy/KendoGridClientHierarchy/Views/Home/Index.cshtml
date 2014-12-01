@@ -1,0 +1,28 @@
+﻿@(Html.Kendo().Grid<KendoGridClientHierarchy.Models.Category>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(category => category.CategoryID);
+          columns.Bound(category => category.CategoryName);
+      })
+      .DataSource(dataSource =>
+          dataSource.Ajax().Read(read => read.Action("Categories_Read", "Home"))
+      )
+      .ClientDetailTemplateId("client-template")
+)
+<script id="client-template" type="text/x-kendo-template">
+@(Html.Kendo().Grid<KendoGridClientHierarchy.Models.Product>()
+      .Name("grid_#=CategoryID#") // make sure the Name is unuque
+      .Columns(columns =>
+      {
+          columns.Bound(product => product.ProductID);
+          columns.Bound(product => product.ProductName).ClientTemplate("<strong>\\#:ProductName\\#</strong>"); // escape the "#" characters
+      })
+      .DataSource(dataSource =>
+          // Make request to Products_Read and provide the current CategoryID as a route parameter
+          dataSource.Ajax().Read(read => read.Action("Products_Read", "Home", new { categoryId = "#=CategoryID#" }))
+      )
+      .Pageable()
+      .ToClientTemplate()
+)
+</script>
