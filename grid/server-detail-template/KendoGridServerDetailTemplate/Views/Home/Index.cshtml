@@ -1,0 +1,17 @@
+﻿@(Html.Kendo().Grid((IEnumerable<KendoGridServerDetailTemplate.Models.Product>)ViewBag.Products)
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(product => product.ProductID);
+          columns.Bound(product => product.ProductName);
+      })
+      .Pageable()
+      .DetailTemplate(@<text>
+          <div>ProductID: @item.ProductID</div>
+          <div>ProductName: @item.ProductName</div>
+          <div>UnitsInStock: @item.UnitsInStock</div>
+          <div>UnitPrice: @item.UnitPrice</div>
+          <div>UnitsOnOrder: @item.UnitsOnOrder</div>
+          <div>Discontinued: @item.Discontinued</div>
+      </text>)
+)
