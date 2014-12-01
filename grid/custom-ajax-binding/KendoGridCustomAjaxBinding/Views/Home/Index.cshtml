@@ -1,0 +1,15 @@
+﻿@(Html.Kendo().Grid<KendoGridCustomAjaxBinding.Models.Order>()
+    .Name("Grid")
+    .EnableCustomBinding(true)
+    .Columns(columns => {
+        columns.Bound(o => o.OrderID);
+        columns.Bound(o => o.ShipAddress);
+    })
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Read("Orders_Read", "Home")
+    )
+)
