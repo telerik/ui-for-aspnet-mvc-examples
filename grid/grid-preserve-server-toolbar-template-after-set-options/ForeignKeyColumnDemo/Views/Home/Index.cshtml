@@ -1,0 +1,107 @@
+﻿@{
+    var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
+}
+
+@helper ToolbarTemplate() {
+    <a class="k-button k-button-icontext k-grid-add" href="/Home/Read?grid-mode=insert"><span class="k-icon k-add"></span>Add</a>
+    <button class="k-button k-button-icontext k-grid-excel"><span class="k-icon k-excel"></span>Export to Excel</button>
+    <button class="k-button k-button-icontext k-grid-pdf"><span class="k-icon k-pdf"></span>Export to PDF</button>
+    <a class="k-button k-button-icontext savesetting" href="/"><span></span>Save Settings</a>
+    <a class="k-button k-button-icontext loadsetting" href="/"><span></span>Load Settings</a>
+    @(Html.Kendo().DropDownList()
+        .Name("ExampleEditor")
+        .OptionLabel("- ExampleEditor -")
+        .DataTextField("Text")
+        .DataTextField("Value")
+        .BindTo(new List<dynamic>() {
+            new {Text = "Item 1", Value= "1"}, 
+            new {Text = "Item 2", Value= "2"} }
+    ))
+}
+
+<script type="text/x-kendo-template" id="toolbarTemplate">    
+   @Html.Raw(@ToolbarTemplate().ToHtmlString().Replace("#", "\\#").Replace("</scr", "<\\/scr"))
+</script>
+
+@(Html.Kendo().Grid<ForeignKeyColumnDemo.Models.Order>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.OrderID);
+        columns.ForeignKey(p => p.EmployeeID, (System.Collections.IEnumerable)ViewData["employees"], "EmployeeID", "Name");
+        columns.Bound(p => p.OrderDescription);
+        columns.Bound(p => p.OrderDate).Format("{0:d}");
+        columns.Bound(p => p.OrderTotal).Format("{0:c}");
+        columns.Bound(p => p.IsCompleted);
+        columns.Command(c =>
+        {
+            c.Edit();
+            c.Destroy();
+        });
+    })
+    .ToolBar(toolbar =>
+    {
+        toolbar.Template(@<text>
+            @ToolbarTemplate()
+        </text>);
+    })
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .ServerOperation(false)
+        .Model(model =>
+        {
+            model.Id(p => p.OrderID);
+            model.Field(p => p.OrderID).Editable(false);
+        })
+        .Events(e => e.RequestEnd("onRequestEnd"))
+        .Create(create => create.Action("Create", "Home").Data("sendCulture"))
+        .Destroy(destroy => destroy.Action("Delete", "Home").Data("sendCulture"))
+        .Read(read => read.Action("Read", "Home").Data("sendCulture"))
+        .Update(update => update.Action("Update", "Home").Data("sendCulture"))
+    )
+)
+
+
+<script>
+    $("#grid").on("click", ".savesetting", function (e) {
+        var grid = $(this).closest("[data-role=grid]").data("kendoGrid");
+        e.preventDefault();
+        localStorage["settings"] = kendo.stringify(grid.getOptions());
+    });
+
+    $("#grid").on("click", ".loadsetting", function (e) {
+        var grid = $(this).closest("[data-role=grid]").data("kendoGrid");
+        e.preventDefault();
+        var options = localStorage["settings"];
+        if (options) {
+            var parsedOptions = JSON.parse(options);
+            parsedOptions.toolbar = [
+                { template: $("#toolbarTemplate").html() }
+            ];
+            grid.setOptions(parsedOptions);
+        }
+    });
+
+    //convert dates to UTC
+    function onRequestEnd(e) {
+        if (e.type == "read") {
+            var offsetMiliseconds = new Date().getTimezoneOffset() * 60000;
+            var orders = e.response.Data;
+            for (var i = 0; i < orders.length; i++) {
+                orders[i].OrderDate = orders[i].OrderDate.replace(/\d+/,
+                    function (n) { return parseInt(n) + offsetMiliseconds }
+                 );
+            }
+        }
+    }
+
+    //send current culture with all ajax requests
+    function sendCulture() {
+        return { culture: "@culture" }
+    }
+</script>

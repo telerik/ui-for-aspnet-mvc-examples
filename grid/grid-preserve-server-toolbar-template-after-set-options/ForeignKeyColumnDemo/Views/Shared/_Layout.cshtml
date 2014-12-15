@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Get current KendoUI culture / version
+        @{
+            var kendoVersion = "2014.3.1119";
+            var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
+        } -->
+
+        <title>@ViewBag.Title - My Telerik MVC Application</title>
+        <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+         <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+	     <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+	     <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+	     <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
+	    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/jquery.min.js"></script>
+        <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/jszip.min.js"></script>
+	    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/kendo.all.min.js"></script>
+	    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/kendo.aspnetmvc.min.js"></script>
+
+        <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/cultures/kendo.culture.@(culture).min.js"></script>
+        <script>
+            kendo.culture("@culture");
+        </script>
+
+	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                <div class="configuration k-widget k-header" style="width: 190px; margin-bottom: 5px">
+                    <div style="margin:5px 0 0 5px">Select culture: </div>
+                    @(Html.Kendo().DropDownList()
+                        .HtmlAttributes(new { style="margin: 5px" })
+                        .Name("CulturesSelector")
+                        .BindTo(new[] { "en-US", "de-DE", "bg-BG", "fr-FR", "pl-PL", "ru-RU", "uk-UA" })
+                        .Value(culture)
+                        .Events(events => events.Change("cultureChange"))
+                    )
+                </div>
+          
+                <script>
+                    //Scripts for changing current culture
+                    var href = window.location.href;
+                    if (href.indexOf('culture') > -1) {
+                        $('#culture').val(href.replace(/(.*)culture=([^&]*)/, '$2'));
+                    }
+
+                    function cultureChange() {
+                        var value = this.value();
+                        if (href.indexOf('culture') > -1) {
+                            href = href.replace(/culture=([^&]*)/, 'culture=' + value);
+                        } else {
+                            href += href.indexOf('?') > -1 ? '&culture=' + value : '?culture=' + value;
+                        }
+                        window.location.href = href;
+                    }
+                </script>
+
+                @RenderBody()
+            </section>
+        </div>
+
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My Telerik MVC Application</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
