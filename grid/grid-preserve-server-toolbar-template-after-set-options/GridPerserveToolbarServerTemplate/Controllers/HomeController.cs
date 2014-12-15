@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ForeignKeyColumnDemo.Models;
+using GridPerserveToolbarServerTemplate.Models;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 using System.Threading;
 using System.Globalization;
 
-namespace ForeignKeyColumnDemo.Controllers
+namespace GridPerserveToolbarServerTemplate.Controllers
 {
     public class HomeController : Controller
     {

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ForeignKeyColumnDemo.Models
+namespace GridPerserveToolbarServerTemplate.Models
 {
     public class Order
     {

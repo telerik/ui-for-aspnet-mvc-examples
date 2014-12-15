@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ForeignKeyColumnDemo.Models
+namespace GridPerserveToolbarServerTemplate.Models
 {
     public class OrderRepository
     {

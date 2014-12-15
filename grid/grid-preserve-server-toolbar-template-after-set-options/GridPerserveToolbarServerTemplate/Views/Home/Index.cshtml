@@ -23,7 +23,7 @@
    @Html.Raw(@ToolbarTemplate().ToHtmlString().Replace("#", "\\#").Replace("</scr", "<\\/scr"))
 </script>
 
-@(Html.Kendo().Grid<ForeignKeyColumnDemo.Models.Order>()
+@(Html.Kendo().Grid<GridPerserveToolbarServerTemplate.Models.Order>()
     .Name("grid")
     .Columns(columns =>
     {
