@@ -1,0 +1,56 @@
+﻿@(Html.Kendo().Scheduler<SchedulerWebApiCrud.Models.TaskViewModel>()
+    .Name("scheduler")
+    .Date(new DateTime(2013, 6, 13))
+    .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
+    .Height(600)
+    .Views(views =>
+    {
+        views.DayView();
+        views.WeekView(weekView => weekView.Selected(true));
+        views.MonthView();
+        views.AgendaView();
+    })
+    .Timezone("Etc/UTC")
+    .Resources(resource =>
+    {
+        resource.Add(m => m.OwnerID)
+            .Title("Owner")
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .DataColorField("Color")
+            .BindTo(new[] { 
+                new { Text = "Alex", Value = 1, Color = "#f8a398" } ,
+                new { Text = "Bob", Value = 2, Color = "#51a0ed" } ,
+                new { Text = "Charlie", Value = 3, Color = "#56ca85" } 
+            });
+    })
+    .DataSource(d => d
+        .Model(m => {
+            m.Id(f => f.TaskID);
+            m.Field(f => f.OwnerID).DefaultValue(1);
+        })
+        .Read(read => read.Url("api/Task").Type(HttpVerbs.Get))
+        .Create(create => create.Url("api/Task").Type(HttpVerbs.Post))
+        .Update(update => update.Url("api/Task").Type(HttpVerbs.Put))
+        .Destroy(destroy => destroy.Url("api/Task").Type(HttpVerbs.Delete))
+    )
+)
+
+
+<script>
+
+$(function() {
+    var scheduler = $("#scheduler").data("kendoScheduler");
+
+    // WebAPI needs the ID of the entity to be part of the URL e.g. PUT /api/Task/80
+    scheduler.dataSource.transport.options.update.url = function (data) {
+        return "api/Task/" + data.TaskID;
+    }
+
+    // WebAPI needs the ID of the entity to be part of the URL e.g. DELETE /api/Task/80
+    scheduler.dataSource.transport.options.destroy.url = function (data) {
+        return "api/Task/" + data.TaskID;
+    }
+});
+
+</script>
