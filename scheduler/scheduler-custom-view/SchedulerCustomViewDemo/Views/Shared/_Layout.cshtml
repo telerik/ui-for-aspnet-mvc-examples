@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>@ViewBag.Title</title>
+	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+	<link href="http://cdn.kendostatic.com/2013.3.1119/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://cdn.kendostatic.com/2013.3.1119/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://cdn.kendostatic.com/2013.3.1119/js/jquery.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.all.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.aspnetmvc.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.timezones.min.js"></script>
+</head>
+
+<body>
+	<div class="page">
+		<header>
+			<div id="title">
+				<h1>My Kendo UI for MVC Application</h1>
+			</div>
+
+			@(Html.Kendo().Menu()
+					.Name("menu")
+					.Items(menu => {
+						menu.Add().Text("Home").Action("Index", "Home");
+						menu.Add().Text("About").Action("About", "Home");
+					}))
+		</header>
+		<section id="main">
+			@RenderBody()
+		</section>
+		<footer>
+		</footer>
+	</div>
+</body>
+</html>
