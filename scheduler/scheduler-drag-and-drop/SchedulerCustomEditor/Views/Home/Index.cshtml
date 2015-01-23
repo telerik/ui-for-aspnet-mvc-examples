@@ -1,0 +1,148 @@
+﻿<div style="width: 50%; margin-left: auto; margin-right: auto;">
+    @(Html.Kendo().Scheduler<SchedulerCustomEditor.Models.MeetingViewModel>()
+        .Name("scheduler")
+        .Date(new DateTime(2013, 6, 13))
+        .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
+        .Height(600)
+        .Views(views => {
+            views.DayView();
+            views.WeekView(weekView => weekView.Selected(true));
+            views.MonthView();
+            views.AgendaView();
+        })
+        .Editable(editable => {
+            editable.TemplateName("CustomEditorTemplate");
+        })
+        .Timezone("Etc/UTC")
+        .Events(e => e.DataBound("onDataBound"))
+        .DataSource(d => d
+            .Model(m => {
+                m.Id(f => f.MeetingID);
+                m.Field(f => f.Title).DefaultValue("No title");
+                m.RecurrenceId(f => f.RecurrenceID);
+            })
+            .Events(e => e.Error("error_handler"))
+            .Read("Meetings_Read", "Home")
+            .Create("Meetings_Create", "Home")
+            .Destroy("Meetings_Destroy", "Home")
+            .Update("Meetings_Update", "Home")
+        )
+    )
+
+    <h3>Drag events from the Grid to the Scheduler:</h3>
+    @(Html.Kendo().Grid<SchedulerCustomEditor.Models.MeetingViewModel>()
+        .Name("grid")
+        .Scrollable()
+        .Columns(columns => {
+            columns.Bound(c => c.Title);
+            columns.Bound(c => c.Description);
+            columns.Bound(c => c.Start).Format("{0:yyyy/MM/dd HH:mm}");
+            columns.Bound(c => c.End).Format("{0:yyyy/MM/dd HH:mm}");
+        })
+        .Selectable()
+        .DataSource(d => d
+            .Ajax()
+            .Model(m => {
+                m.Id(f => f.MeetingID);
+                m.Field(f => f.Title).DefaultValue("No title");
+            })
+            .Events(e => e.Error("error_handler"))
+            .Read("Meetings_Read", "Home")
+            .Destroy("Meetings_Destroy", "Home")
+        )
+    )
+</div>
+
+<script type="text/javascript">
+    function onDataBound(e) {
+        createDropArea(this);
+    }
+
+    function createDropArea(scheduler) {
+        scheduler.view().content.kendoDropTargetArea({
+            filter: ".k-scheduler-table td, .k-event",
+            drop: function (e) {
+                var grid = $("#grid").data("kendoGrid");
+                var scheduler = $("#scheduler").data("kendoScheduler");
+               
+                var offset = $(e.dropTarget).offset();
+               
+                var slot = scheduler.slotByPosition(offset.left, offset.top);
+                var dataItem = grid.dataItem(grid.select());
+
+                if (dataItem && slot) {
+                    var offsetMiliseconds = new Date().getTimezoneOffset() * 60000;
+                    var newEvent = {
+                        title: dataItem.Title,
+                        end: new Date(slot.startDate.getTime() + (dataItem.End - dataItem.Start)),
+                        start: slot.startDate,
+                        isAllDay: slot.isDaySlot,
+                        description: dataItem.Description
+                    };
+
+                    //delete current event:
+                    grid.dataSource.remove(dataItem);
+                    grid.dataSource.sync();
+                    grid.dataSource.read();
+
+                    //Save the new event and sync it with server:
+                    scheduler.dataSource.add(newEvent);
+                    scheduler.dataSource.sync();
+                }
+
+            }
+        });
+    }
+
+    $(function () {
+        var grid = $("#grid").data("kendoGrid"),
+            gridRowOffset = grid.tbody.find("tr:first").offset();
+
+        grid.table.kendoDraggable({
+            filter: "tbody > tr",
+            dragstart: function (e) {
+                //add margin to position correctly the tooltip under the pointer
+                $("#dragTooltip").css("margin-left", e.clientX - gridRowOffset.left - 50);
+            },
+            hint: function (row) {
+
+                //remove old selection
+                row.parent().find(".k-state-selected").each(function () {
+                    $(this).removeClass("k-state-selected")
+                })
+
+                //add selected class to the current row
+                row.addClass("k-state-selected");
+
+                var dataItem = grid.dataItem(row);
+
+                var tooltipHtml = "<div class='k-event' id='dragTooltip'><div class='k-event-template'>" +
+                            kendo.format("{0:t} - {1:t}", dataItem.Start, dataItem.End) +
+                            "</div><div class='k-event-template'>" + dataItem.Title +
+                            "</div></div>";
+
+                return $(tooltipHtml).css("width", 300);
+            }
+        });
+    })
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+
+            var scheduler = $("#scheduler").data("kendoScheduler");
+            scheduler.one("dataBinding", function (e) {
+                //prevent saving if server error is thrown
+                e.preventDefault();
+            })
+        }
+    }
+</script>
