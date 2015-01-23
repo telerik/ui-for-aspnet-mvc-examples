@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a0679d12db7422fac28f28ed55461f2" Name="Diagram1">
+        <EntityTypeShape EntityType="SampleModel.MeetingAtendee" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.Meeting" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.Task" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="SampleModel.FK_MeetingAtendee_Meeting" ManuallyRouted="false" />
+        <AssociationConnector Association="SampleModel.FK_Meetings_Meetings" ManuallyRouted="false" />
+        <AssociationConnector Association="SampleModel.FK_Tasks_Tasks" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
