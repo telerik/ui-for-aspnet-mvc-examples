@@ -36,14 +36,13 @@ namespace KendoUIMVC5.Controllers
         }
 
         // PUT: odata/Products(5)
-        public IHttpActionResult Put([FromODataUri] int key, Product test)
+        public IHttpActionResult Put([FromODataUri] int key, Product product)
         {   
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            Product product = db.Products.Find(key);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -54,6 +53,7 @@ namespace KendoUIMVC5.Controllers
                 return BadRequest();
             }
 
+            db.Products.Attach(product);
             db.Entry(product).State = EntityState.Modified;
 
             try

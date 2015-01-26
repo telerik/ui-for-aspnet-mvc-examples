@@ -35,25 +35,25 @@ namespace KendoUIMVC5.Controllers
         }
 
         // PUT: odata/Employees(5)
-        public IHttpActionResult Put([FromODataUri] int key, Employee test)
+        public IHttpActionResult Put([FromODataUri] int key, Employee employee)
         {   
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            Employee Employee = db.Employees.Find(key);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (key != Employee.EmployeeID)
+            if (key != employee.EmployeeID)
             {
                 return BadRequest();
             }
 
-            db.Entry(Employee).State = EntityState.Modified;
+            db.Employees.Attach(employee);
+            db.Entry(employee).State = EntityState.Modified;
 
             try
             {
@@ -71,7 +71,7 @@ namespace KendoUIMVC5.Controllers
                 }
             }
 
-            return Updated(Employee);
+            return Updated(employee);
         }
 
         private bool EmployeeExists(int key)
