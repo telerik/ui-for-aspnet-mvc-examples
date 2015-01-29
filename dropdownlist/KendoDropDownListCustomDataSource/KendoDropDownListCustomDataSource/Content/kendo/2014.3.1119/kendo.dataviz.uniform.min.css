@@ -1,0 +1,9 @@
+/*
+* Kendo UI v2014.3.1119 (http://www.telerik.com/kendo-ui)
+* Copyright 2014 Telerik AD. All rights reserved.
+*
+* Kendo UI commercial licenses may be obtained at
+* http://www.telerik.com/purchase/license-agreement/kendo-ui-complete
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+.k-chart .k-selection{border-color:#ccc;transition:box-shadow .2s linear,border-color .2s linear;-moz-transition:box-shadow .2s linear,border-color .2s linear;-webkit-transition:box-shadow .2s linear,border-color .2s linear;-o-transition:box-shadow .2s linear,border-color .2s linear}.k-chart .k-selection:hover{border-color:#9e9e9e;-moz-box-shadow:0 1px 4px rgba(0,0,0,0.3);-webkit-box-shadow:0 1px 4px rgba(0,0,0,0.3);box-shadow:0 1px 4px rgba(0,0,0,0.3)}.k-chart .k-handle{background-color:#ebebeb;border:1px solid #ccc;width:5px;height:24px}.k-chart .k-handle:hover{background-color:#fff;border-color:#ccc;-moz-box-shadow:0 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.3);box-shadow:0 1px 2px rgba(0,0,0,0.3)}.k-chart .k-navigator-hint .k-tooltip{border:0;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.3);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3);box-shadow:0 1px 3px rgba(0,0,0,0.3);background:#fff;color:#676767}.k-chart .k-navigator-hint .k-scroll{background:rgba(103,103,103,0.7);height:4px}.k-map .k-marker{background-image:url("Uniform/markers.png")}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2){.k-map .k-marker{background-image:url("Uniform/markers_2x.png")}}
