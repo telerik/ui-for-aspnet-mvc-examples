@@ -48,9 +48,9 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Kendo.Mvc, Version=2013.3.1119.340, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+    <Reference Include="Kendo.Mvc, Version=2014.3.1119.340, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\KENDOUIMVC\2013.3.1119.340\Kendo.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Telerik\UI for ASP.NET MVC Q3 2014\wrappers\aspnetmvc\Binaries\Mvc3\Kendo.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
