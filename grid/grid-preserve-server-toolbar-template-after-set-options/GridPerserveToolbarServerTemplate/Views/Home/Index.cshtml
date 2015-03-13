@@ -19,15 +19,23 @@
     ))
 }
 
+@helper HeaderTemplate() {
+    <span>My Template</span>
+}
+
 <script type="text/x-kendo-template" id="toolbarTemplate">    
    @Html.Raw(@ToolbarTemplate().ToHtmlString().Replace("#", "\\#").Replace("</scr", "<\\/scr"))
+</script>
+
+<script type="text/x-kendo-template" id="headerTemplate">    
+   @Html.Raw(@HeaderTemplate().ToHtmlString().Replace("#", "\\#").Replace("</scr", "<\\/scr"))
 </script>
 
 @(Html.Kendo().Grid<GridPerserveToolbarServerTemplate.Models.Order>()
     .Name("grid")
     .Columns(columns =>
     {
-        columns.Bound(p => p.OrderID);
+        columns.Bound(p => p.OrderID).HeaderTemplate(@<text>@HeaderTemplate()</text>);
         columns.ForeignKey(p => p.EmployeeID, (System.Collections.IEnumerable)ViewData["employees"], "EmployeeID", "Name");
         columns.Bound(p => p.OrderDescription);
         columns.Bound(p => p.OrderDate).Format("{0:d}");
@@ -39,32 +47,32 @@
             c.Destroy();
         });
     })
-    .ToolBar(toolbar =>
-    {
-        toolbar.Template(@<text>
+                .ToolBar(toolbar =>
+                {
+                    toolbar.Template(@<text>
             @ToolbarTemplate()
         </text>);
-    })
-    .Editable(editable => editable.Mode(GridEditMode.InLine))
-    .Pageable()
-    .Sortable()
-    .Scrollable()
-    .Filterable()
-    .DataSource(dataSource => dataSource
-        .Ajax()
-        .ServerOperation(false)
-        .Model(model =>
-        {
-            model.Id(p => p.OrderID);
-            model.Field(p => p.OrderID).Editable(false);
-        })
-        .Events(e => e.RequestEnd("onRequestEnd"))
-        .Create(create => create.Action("Create", "Home").Data("sendCulture"))
-        .Destroy(destroy => destroy.Action("Delete", "Home").Data("sendCulture"))
-        .Read(read => read.Action("Read", "Home").Data("sendCulture"))
-        .Update(update => update.Action("Update", "Home").Data("sendCulture"))
-    )
-)
+                })
+                    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                    .Pageable()
+                    .Sortable()
+                    .Scrollable()
+                    .Filterable()
+                    .DataSource(dataSource => dataSource
+                        .Ajax()
+                        .ServerOperation(false)
+                        .Model(model =>
+                        {
+                            model.Id(p => p.OrderID);
+                            model.Field(p => p.OrderID).Editable(false);
+                        })
+                        .Events(e => e.RequestEnd("onRequestEnd"))
+                        .Create(create => create.Action("Create", "Home").Data("sendCulture"))
+                        .Destroy(destroy => destroy.Action("Delete", "Home").Data("sendCulture"))
+                        .Read(read => read.Action("Read", "Home").Data("sendCulture"))
+                        .Update(update => update.Action("Update", "Home").Data("sendCulture"))
+                    )
+                )
 
 
 <script>
@@ -83,6 +91,7 @@
             parsedOptions.toolbar = [
                 { template: $("#toolbarTemplate").html() }
             ];
+            parsedOptions.columns[0].headerTemplate = $("#headerTemplate").html();
             grid.setOptions(parsedOptions);
         }
     });
