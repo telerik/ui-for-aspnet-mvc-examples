@@ -1,0 +1,167 @@
+﻿@(Html.Kendo().Grid<KendoUIMVC5.Models.EmployeeViewModel>()
+        .Name("employees")
+        .ToolBar(tools => tools.Excel())
+        .Excel(e => e.AllPages(true))
+        .Columns(columns =>
+        {
+            columns.Bound(e => e.FirstName).Width(110);
+            columns.Bound(e => e.LastName).Width(110);
+            columns.Bound(e => e.Country).Width(110);
+            columns.Bound(e => e.City).Width(110);
+            columns.Bound(e => e.Title);
+           
+        })               
+        .Sortable()
+        .Pageable()
+        .Scrollable(s => s.Enabled(false))
+        .ClientDetailTemplateId("template")
+        .Events(e => e.ExcelExport("employees_excelExport"))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(6)
+            .Read(read => read.Action("Employees", "Home"))            
+        )        
+        .Events(events => events.DataBound("dataBound"))
+)
+
+<script id="template" type="text/x-kendo-template">
+    @(Html.Kendo().Grid<KendoUIMVC5.Models.OrderViewModel>()
+            .Name("orders_#=EmployeeID#")
+            .Columns(columns =>
+            {
+                columns.Bound(o => o.OrderID).Width(70);
+                columns.Bound(o => o.ShipCountry).Width(110);
+                columns.Bound(o => o.ShipAddress);
+                columns.Bound(o => o.ShipName).Width(200);
+            })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(10)
+                .Read(read => read.Action("Orders", "Home", new { employeeID = "#=EmployeeID#" }))
+            )
+            .Events(e => e.ExcelExport("orders_excelExport"))
+            .Pageable()
+            .Sortable()
+            .ToClientTemplate()
+    )
+</script>
+<script>
+    var detailExportPromises = [];
+
+    var dataSource = new kendo.data.DataSource({
+        type: "aspnetmvc-ajax",
+        transport: {
+            read: "@Url.Action("Orders", "Home")",
+            type: "POST"
+        },
+        schema: {
+            data: "Data",
+            total: "Total",
+            error: "Errors"
+        }
+    });
+
+    dataSource.read();
+
+    function dataBound() {
+        detailExportPromises = [];
+
+        this.expandRow(this.tbody.find("tr.k-master-row").first());
+    }
+
+    function orders_excelExport(e) {
+        e.preventDefault();
+    }
+
+    function employees_excelExport(e) {
+        e.preventDefault();
+
+        var workbook = e.workbook;
+
+        detailExportPromises = [];
+
+        var masterData = e.data;
+
+        for (var rowIndex = 0; rowIndex < masterData.length; rowIndex++) {
+            exportChildData(masterData[rowIndex].EmployeeID, rowIndex);
+        }
+
+        // wait for all detail grids to finish exporting
+        $.when.apply(null, detailExportPromises)
+        .then(function () {
+            // get the export results
+            var detailExports = $.makeArray(arguments);
+
+            // sort by masterRowIndex
+            detailExports.sort(function (a, b) {
+                return a.masterRowIndex - b.masterRowIndex;
+            });
+
+            // add an empty column
+            workbook.sheets[0].columns.unshift({ width: 30 });
+
+            // prepend an empty cell to each row
+            for (var i = 0; i < workbook.sheets[0].rows.length; i++) {
+                workbook.sheets[0].rows[i].cells.unshift({});
+            }
+
+            // merge the detail export sheet rows with the master sheet rows
+            // loop backwards so the masterRowIndex doesn't need to be updated
+            for (var i = detailExports.length - 1; i >= 0; i--) {
+                var masterRowIndex = detailExports[i].masterRowIndex + 1;
+
+                var sheet = detailExports[i].sheet;
+
+                // prepend an empty cell to each row
+                for (var ci = 0; ci < sheet.rows.length; ci++) {
+                    if (sheet.rows[ci].cells[0].value) {
+                        sheet.rows[ci].cells.unshift({});
+                    }
+                }
+
+                // insert the detail sheet rows after the master row
+                [].splice.apply(workbook.sheets[0].rows, [masterRowIndex + 1, 0].concat(sheet.rows));
+            }
+
+            // save the workbook
+            kendo.saveAs({
+                dataURI: new kendo.ooxml.Workbook(workbook).toDataURL(),
+                fileName: "Export.xlsx"
+            });
+        });
+    }
+
+    function exportChildData(EmployeeID, rowIndex) {
+        var deferred = $.Deferred();
+
+        detailExportPromises.push(deferred);
+
+        var rows = [{
+            cells: [
+                { value: "OrderID" },
+                { value: "ShipCountry" },
+                { value: "ShipAddress" },
+                { value: "ShipName" }
+            ]
+        }];
+        
+        dataSource.filter({ field: "EmployeeID", operator: "eq", value: EmployeeID });
+
+        var exporter = new kendo.ExcelExporter({
+            columns: [
+                { field: "OrderID" },
+                { field: "ShipCountry" },
+                { field: "ShipAddress" },
+                { field: "ShipName" }
+            ],
+            dataSource: dataSource
+        });
+
+        exporter.workbook().then(function (book, data) {
+            deferred.resolve({
+                masterRowIndex: rowIndex,
+                sheet: book.sheets[0]
+            });
+        });
+    }
+</script>
