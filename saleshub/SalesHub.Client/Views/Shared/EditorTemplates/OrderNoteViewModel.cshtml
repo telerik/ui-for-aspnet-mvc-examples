@@ -1,0 +1,9 @@
+﻿@model SalesHub.Client.ViewModels.Api.OrderNoteViewModel
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Note)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Note)
+    @Html.ValidationMessageFor(model => model.Note)
+</div>
