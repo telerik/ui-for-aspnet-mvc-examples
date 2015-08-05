@@ -82,7 +82,8 @@ namespace OdataTest.Controllers
                 return BadRequest(ModelState);
             }
             db.Products.Add(product);
-            //db.SaveChanges();
+            db.SaveChanges();
+
             return Created(product);
         }
 

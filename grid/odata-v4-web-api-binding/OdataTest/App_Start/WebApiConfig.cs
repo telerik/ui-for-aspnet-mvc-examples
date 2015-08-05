@@ -14,7 +14,7 @@ namespace OdataTest
             // Web API configuration and services
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Product>("Products");
-            builder.EntitySet<Employee>("Employees");
+            builder.EntitySet<Category>("Categories");
             config.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
 
             //ODataModelBuilder builderEmployees = new ODataConventionModelBuilder();
