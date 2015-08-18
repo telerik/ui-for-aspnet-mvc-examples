@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+	<link href="http://cdn.kendostatic.com/2015.2.624/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://cdn.kendostatic.com/2015.2.624/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://cdn.kendostatic.com/2015.2.624/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://cdn.kendostatic.com/2015.2.624/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://cdn.kendostatic.com/2015.2.624/styles/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://cdn.kendostatic.com/2015.2.624/js/jquery.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2015.2.624/js/jszip.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2015.2.624/js/kendo.all.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2015.2.624/js/kendo.aspnetmvc.min.js"></script>
+	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Show Error Message", "ErrorMessage", "Home")</li>
+                    <li>@Html.ActionLink("Redirect to Login Page", "RedirectToLogin", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
