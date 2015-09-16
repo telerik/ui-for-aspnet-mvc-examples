@@ -1,4 +1,4 @@
-﻿//Custom View 
+﻿//Custom View
 (function ($, undefined) {
     var kendo = window.kendo,
     ui = kendo.ui,
@@ -64,6 +64,7 @@
         options: {
             title: "To Do",
             selectedDateFormat: "{0:D} - {1:D}",
+            selectedShortDateFormat: "{0:d}",
             dateHeaderTemplate: DATA_HEADER_TEMPLATE,
             eventTemplate: EVENT_TEMPLATE
         },
