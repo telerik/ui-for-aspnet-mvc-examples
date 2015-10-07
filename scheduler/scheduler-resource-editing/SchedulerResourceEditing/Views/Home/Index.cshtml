@@ -1,0 +1,96 @@
+﻿@(Html.Kendo().Scheduler<SchedulerResourceEditing.Models.MeetingViewModel>()
+    .Name("scheduler")
+    .Date(new DateTime(2013, 6, 13))
+    .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
+    .Height(600)
+    .Views(views => {
+        views.DayView();
+        views.WeekView(weekView => weekView.Selected(true));
+        views.MonthView();
+        views.AgendaView();
+    })
+    .Editable(editable => {
+        editable.TemplateName("CustomEditorTemplate");
+    })
+    .Events(e => e.Edit("onEdit"))
+    .Timezone("Etc/UTC")
+    .Resources(resource => {
+             resource.Add(m => m.RoomID)
+                 .Title("Room")
+                 .DataTextField("Text")
+                 .DataValueField("Value")
+                 .DataColorField("Color")
+                 .BindTo(new[] { 
+                    new { Text = "Meeting Room 101", Value = 1, Color = "#6eb3fa" },
+                    new { Text = "Meeting Room 201", Value = 2, Color = "#f58a8a" } 
+                });
+             resource.Add(m => m.Attendees)
+                .Title("Attendees")
+                .Multiple(true)
+                .DataTextField("Text")
+                .DataValueField("Value")
+                .DataColorField("Color")
+                .DataSource(ds => ds
+                    .Custom()
+                    //Required in order to work with ToDataSourceResult
+                    .Type("aspnetmvc-ajax")
+                    .Transport(transport => transport.Read(read => read.Action("Read_Attendees", "Home")))
+                    .Schema(schema => schema
+                        //Required in order to work with ToDataSourceResult
+                        .Data("Data")
+                        .Total("Total")
+                        .Errors("Errors")
+                        .Model(model =>
+                        {
+                            model.Id("Value");
+                            model.Field("Value", typeof(int));
+                            model.Field("Text", typeof(string));
+                            model.Field("Color", typeof(string));
+                        })
+                    )
+                );
+         })
+    .DataSource(d => d
+        .Model(m => {
+            m.Id(f => f.MeetingID);
+            m.Field(f => f.Title).DefaultValue("No title");
+            m.RecurrenceId(f => f.RecurrenceID);
+        })
+        .Events(e => e.Error("error_handler"))
+        .Read("Meetings_Read", "Home")
+        .Create("Meetings_Create", "Home")
+        .Destroy("Meetings_Destroy", "Home")
+        .Update("Meetings_Update", "Home")
+    )
+)
+
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+
+            var scheduler = $("#scheduler").data("kendoScheduler");
+            scheduler.one("dataBinding", function (e) {
+                //prevent saving if server error is thrown
+                e.preventDefault();
+            })
+        }
+    }
+
+    function onEdit(e) {
+        var editorWindow = e.container.getKendoWindow();
+       
+        editorWindow.bind("close", function () {
+            destroyDialog();
+        });
+    }
+</script>

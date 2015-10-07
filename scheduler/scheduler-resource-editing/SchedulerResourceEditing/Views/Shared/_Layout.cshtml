@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Get current KendoUI culture / version
+        @{
+            System.Reflection.AssemblyName assembly = typeof(Kendo.Mvc.AggregateDescriptor).Assembly.GetName();
+            var kendoVersion = string.Format("{0}.{1}.{2}", assembly.Version.Major, assembly.Version.Minor, assembly.Version.Build);
+            var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
+        }-->
+
+    <title>@ViewBag.Title - My Telerik MVC Application</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/kendo.all.min.js"></script>
+    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/kendo.aspnetmvc.min.js"></script>
+    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/kendo.timezones.min.js"></script>
+
+    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/cultures/kendo.culture.@(culture).min.js"></script>
+    <script>
+        kendo.culture("@culture");
+    </script>
+
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>My Kendo UI for MVC Application</h1>
+            </div>
+
+            @(Html.Kendo().Menu()
+                    .Name("menu")
+                    .Items(menu =>
+                    {
+                        menu.Add().Text("Home").Action("Index", "Home");
+                        menu.Add().Text("About").Action("About", "Home");
+                    }))
+        </header>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
