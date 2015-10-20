@@ -1,7 +1,7 @@
 ﻿@model int
 
 @(Html.Kendo().DropDownListFor(m => m)
-                  .AutoBind(false)
+                  .ValuePrimitive(true)
                   .OptionLabel("Select Customer...")
                   .DataTextField("CustomerName")
                   .DataValueField("CustomerId")

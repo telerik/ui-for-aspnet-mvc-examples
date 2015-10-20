@@ -22,7 +22,7 @@
         </dt>
         <dd>
             @(Html.Kendo().DropDownListFor(m => m.CustomerId)
-                  .AutoBind(false)
+                  .ValuePrimitive(true)
                   .OptionLabel("Select Customer...")
                   .DataTextField("CustomerName")
                   .DataValueField("CustomerId")
@@ -42,6 +42,7 @@
         <dd>
             @(Html.Kendo().DropDownListFor(m => m.VendorId)
                   .AutoBind(false)
+                  .ValuePrimitive(true)
                   .OptionLabel("Select Vendor...")
                   .DataTextField("VendorName")
                   .DataValueField("VendorId")
@@ -62,6 +63,7 @@
         <dd>
             @(Html.Kendo().DropDownListFor(m => m.ProductId)
                   .AutoBind(false)
+                  .ValuePrimitive(true)
                   .OptionLabel("Select Product...")
                   .DataTextField("ProductName")
                   .DataValueField("ProductId")
