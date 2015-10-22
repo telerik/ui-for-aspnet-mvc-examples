@@ -1,0 +1,9 @@
+/*
+* Kendo UI v2015.3.930 (http://www.telerik.com/kendo-ui)
+* Copyright 2015 Telerik AD. All rights reserved.
+*
+* Kendo UI commercial licenses may be obtained at
+* http://www.telerik.com/purchase/license-agreement/kendo-ui-complete
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+!function(e,define){define(["./kendo.data.min"],e)}(function(){return function(e){var t=kendo.data.RemoteTransport.extend({init:function(e){var t,n=e&&e.signalr?e.signalr:{},i=n.promise;if(!i)throw Error('The "promise" option must be set.');if("function"!=typeof i.done||"function"!=typeof i.fail)throw Error('The "promise" option must be a Promise.');if(this.promise=i,t=n.hub,!t)throw Error('The "hub" option must be set.');if("function"!=typeof t.on||"function"!=typeof t.invoke)throw Error('The "hub" option is not a valid SignalR hub proxy.');this.hub=t,kendo.data.RemoteTransport.fn.init.call(this,e)},push:function(e){var t=this.options.signalr.client||{};t.create&&this.hub.on(t.create,e.pushCreate),t.update&&this.hub.on(t.update,e.pushUpdate),t.destroy&&this.hub.on(t.destroy,e.pushDestroy)},_crud:function(t,n){var i,r,o=this.hub,a=this.options.signalr.server;if(!a||!a[n])throw Error(kendo.format('The "server.{0}" option must be set.',n));i=[a[n]],r=this.parameterMap(t.data,n),e.isEmptyObject(r)||i.push(r),this.promise.done(function(){o.invoke.apply(o,i).done(t.success).fail(t.error)})},read:function(e){this._crud(e,"read")},create:function(e){this._crud(e,"create")},update:function(e){this._crud(e,"update")},destroy:function(e){this._crud(e,"destroy")}});e.extend(!0,kendo.data,{transports:{signalr:t}})}(window.kendo.jQuery),window.kendo},"function"==typeof define&&define.amd?define:function(e,t){t()});
