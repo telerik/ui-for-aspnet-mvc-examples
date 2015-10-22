@@ -9,7 +9,6 @@ namespace KendoUI_Scheduler_Server_Filtering.Controllers
 {
     public class HomeController : Controller
     {        
-
         private SchedulerTaskService taskService;
 
         public HomeController()
@@ -22,9 +21,9 @@ namespace KendoUI_Scheduler_Server_Filtering.Controllers
             return View();
         }
 
-        public virtual JsonResult Read(DataSourceRequest request, DateTime start, DateTime end)
+        public virtual JsonResult Read(DataSourceRequest request, FilterRange range)
         {
-            var data = taskService.GetRange(start, end);
+            var data = taskService.GetRange(range.Start, range.End);
             return Json(data.ToDataSourceResult(request));
         }
 

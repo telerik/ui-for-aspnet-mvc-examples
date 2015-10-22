@@ -32,9 +32,18 @@
     function getAdditionalData() {
         var scheduler = $("#scheduler").data("kendoScheduler");
 
+        var timezone = scheduler.options.timezone;
+        var startDate = kendo.timezone.convert(scheduler.view().startDate(), timezone, "Etc/UTC");
+        var endDate = kendo.timezone.convert(scheduler.view().endDate(), timezone, "Etc/UTC");
+
+        //optionally add startTime / endTime of the view
+        var startTime = kendo.date.getMilliseconds(scheduler.view().startTime());
+        var endTime = kendo.date.getMilliseconds(scheduler.view().endTime());
+        endTime = endTime == 0 ? kendo.date.MS_PER_DAY : endTime;
+
         var result = {
-            start: scheduler.view().startDate().toISOString(),
-            end: scheduler.view().endDate().toISOString()
+            Start: new Date(startDate.getTime() - (startDate.getTimezoneOffset() * kendo.date.MS_PER_MINUTE) + startTime),
+            End: new Date(endDate.getTime() - (endDate.getTimezoneOffset() * kendo.date.MS_PER_MINUTE) + endTime)
         }
 
         return result;
