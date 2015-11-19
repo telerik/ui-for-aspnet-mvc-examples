@@ -1,0 +1,9 @@
+/*
+* Kendo UI v2015.3.930 (http://www.telerik.com/kendo-ui)
+* Copyright 2015 Telerik AD. All rights reserved.
+*
+* Kendo UI commercial licenses may be obtained at
+* http://www.telerik.com/purchase/license-agreement/kendo-ui-complete
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+!function(e,define){define(["./kendo.core.min"],e)}(function(){return function(e){var t=window.kendo,n=t.mobile.ui,i=n.Widget,o=e.map(t.eventMap,function(e){return e}).join(" ").split(" "),r=i.extend({init:function(t,n){var o=this,r=e('<div class="km-loader"><span class="km-loading km-spin"></span><span class="km-loading-left"></span><span class="km-loading-right"></span></div>');i.fn.init.call(o,r,n),o.container=t,o.captureEvents=!1,o._attachCapture(),r.append(o.options.loading).hide().appendTo(t)},options:{name:"Loader",loading:"<h1>Loading...</h1>",timeout:100},show:function(){var e=this;clearTimeout(e._loading),e.options.loading!==!1&&(e.captureEvents=!0,e._loading=setTimeout(function(){e.element.show()},e.options.timeout))},hide:function(){this.captureEvents=!1,clearTimeout(this._loading),this.element.hide()},changeMessage:function(e){this.options.loading=e,this.element.find(">h1").html(e)},transition:function(){this.captureEvents=!0,this.container.css("pointer-events","none")},transitionDone:function(){this.captureEvents=!1,this.container.css("pointer-events","")},_attachCapture:function(){function e(e){n.captureEvents&&e.preventDefault()}var t,n=this;for(n.captureEvents=!1,t=0;o.length>t;t++)n.container[0].addEventListener(o[t],e,!0)}});n.plugin(r)}(window.kendo.jQuery),window.kendo},"function"==typeof define&&define.amd?define:function(e,t){t()});
