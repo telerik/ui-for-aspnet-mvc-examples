@@ -1,0 +1,9 @@
+/*
+* Kendo UI Complete v2013.1.319 (http://kendoui.com)
+* Copyright 2013 Telerik AD. All rights reserved.
+*
+* Kendo UI Complete commercial licenses may be obtained at
+* https://www.kendoui.com/purchase/license-agreement/kendo-ui-complete-commercial.aspx
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+("function"==typeof define&&define.amd?define:function(e,t){return t()})(["./kendo.mobile.popover.min"],function(){(function(e){var t=window.kendo,n=t.mobile.ui,i=n.Shim,o=n.Popup,a=n.Widget,c="open",p="li>a",r="actionsheetContext",s='<div class="km-actionsheet-wrapper" />',l=t.template('<li class="km-actionsheet-cancel"><a href="\\#">#:cancel#</a></li>'),h=a.extend({init:function(c,r){var h=this,d=t.support.mobileOS,u=d.tablet?o:i;a.fn.init.call(h,c,r),c=h.element,c.addClass("km-actionsheet").append(l({cancel:h.options.cancel})).wrap(s).on("up",p,"_click").on("click",p,t.preventDefault),h.wrapper=c.parent(),h.shim=new u(h.wrapper,e.extend({modal:!(d.android||d.meego||d.wp)},h.options.popup)),t.notify(h,n),t.onResize(function(){var e=h.wrapper.parent(),t=e.parent();e.css({top:t.height()-e.height()+"px",width:t.width()+"px"})})},events:[c],options:{name:"ActionSheet",cancel:"Cancel",popup:{height:"auto"}},open:function(t,n){var i=this;i.target=e(t),i.context=n,i.shim.show(t)},close:function(){this.context=this.target=null,this.shim.hide()},openFor:function(e){var t=this,n=e.data(r);t.open(e,n),t.trigger(c,{target:e,context:n})},destroy:function(){a.fn.destroy.call(this),this.shim.destroy()},_click:function(n){if(!n.isDefaultPrevented()){var i=e(n.currentTarget).data("action");i&&t.getter(i)(window)({target:this.target,context:this.context}),n.preventDefault(),this.close()}}});n.plugin(h)})(window.kendo.jQuery)});

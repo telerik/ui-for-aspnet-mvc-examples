@@ -1,0 +1,9 @@
+/*
+* Kendo UI Complete v2013.1.319 (http://kendoui.com)
+* Copyright 2013 Telerik AD. All rights reserved.
+*
+* Kendo UI Complete commercial licenses may be obtained at
+* https://www.kendoui.com/purchase/license-agreement/kendo-ui-complete-commercial.aspx
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+("function"==typeof define&&define.amd?define:function(n,o){return o()})(["./kendo.popup.min"],function(){(function(n,o){var i=window.kendo,e=i.mobile.ui,t=i.ui.Popup,p='<div class="km-shim"/>',d=e.Widget,s=d.extend({init:function(o,e){var s=this,a=i.mobile.application,u=a?a.os.name:i.support.mobileOS.name,c="ios"===u||"wp"===u,r=e.align||(c?"bottom center":"center center"),f=e.position||(c?"bottom center":"center center"),m=e.effect||(c?"slideIn:up":"fade:in"),h=n(p).handler(s).hide();d.fn.init.call(s,o,e),s.shim=h,s.element=o,s.options.modal||s.shim.on("up","hide"),(a?a.element:n(document.body)).append(h),s.popup=new t(s.element,{anchor:h,appendTo:h,origin:r,position:f,animation:{open:{effects:m,duration:s.options.duration},close:{duration:s.options.duration}},deactivate:function(){h.hide()},open:function(){h.show()}}),i.notify(s)},options:{name:"Shim",modal:!0,align:o,position:o,effect:o,duration:200},show:function(){this.popup.open()},hide:function(o){o&&n.contains(this.shim[0],o.target)||this.popup.close()},destroy:function(){d.fn.destroy.call(this),this.shim.kendoDestroy(),this.popup.destroy()}});e.plugin(s)})(window.kendo.jQuery)});

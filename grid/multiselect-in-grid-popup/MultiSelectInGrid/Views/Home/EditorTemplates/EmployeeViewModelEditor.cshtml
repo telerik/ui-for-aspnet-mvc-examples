@@ -1,0 +1,27 @@
+﻿@model MultiSelectInGrid.Models.EmployeeViewModel
+
+@{
+    //required in order to render validation attributes
+    ViewContext.FormContext = new FormContext();
+}
+
+<div class="k-edit-label">
+    @(Html.LabelFor(model => model.FirstName))
+</div>
+<div data-container-for="title" class="k-edit-field">
+    @(Html.TextBoxFor(model => model.FirstName, new { @class = "k-textbox" }))
+</div>
+
+<div class="k-edit-label">
+    @(Html.LabelFor(model => model.LastName))
+</div>
+<div data-container-for="title" class="k-edit-field">
+    @(Html.TextBoxFor(model => model.LastName, new { @class = "k-textbox" }))
+</div>
+
+<div class="k-edit-label">
+    @(Html.LabelFor(model => model.LastName))
+</div>
+<div data-container-for="title" class="k-edit-field">
+    @(Html.EditorFor(model => model.Territories))
+</div>

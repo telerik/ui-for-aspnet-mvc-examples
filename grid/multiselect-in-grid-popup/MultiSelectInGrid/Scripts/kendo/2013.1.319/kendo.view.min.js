@@ -1,0 +1,9 @@
+/*
+* Kendo UI Complete v2013.1.319 (http://kendoui.com)
+* Copyright 2013 Telerik AD. All rights reserved.
+*
+* Kendo UI Complete commercial licenses may be obtained at
+* https://www.kendoui.com/purchase/license-agreement/kendo-ui-complete-commercial.aspx
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+("function"==typeof define&&define.amd?define:function(e,n){return n()})(["./kendo.core.min"],function(){(function(e){var n=window.kendo,t=n.Observable,i="SCRIPT",o="init",d="show",r="hide",m=t.extend({init:function(e,n){var i=this;n=n||{},t.fn.init.call(i),i.content=e,i.tagName=n.tagName||"div",i.model=n.model,i.bind([o,d,r],n)},render:function(t){var r,m,h=this;return h.element||(r=e("<"+h.tagName+" />"),m=e(document.getElementById(h.content)||h.content),r.append(m[0].tagName===i?m.html():m),h.element=r,n.bind(h.element,h.model),this.trigger(o)),t&&(this.trigger(d),e(t).append(h.element)),h.element},hide:function(){this.element.detach(),this.trigger(r)},destroy:function(){this.element&&(n.unbind(this.element),this.element.remove())}}),h=m.extend({init:function(e,n){m.fn.init.call(this,e,n),this.regions={}},showIn:function(e,n){var t=this.regions[e];t&&t.hide(),n.render(this.render().find(e),t),this.regions[e]=n}});n.Layout=h,n.View=m})(window.kendo.jQuery)});

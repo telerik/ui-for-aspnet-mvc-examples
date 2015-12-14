@@ -1,0 +1,9 @@
+/*
+* Kendo UI Complete v2013.1.319 (http://kendoui.com)
+* Copyright 2013 Telerik AD. All rights reserved.
+*
+* Kendo UI Complete commercial licenses may be obtained at
+* https://www.kendoui.com/purchase/license-agreement/kendo-ui-complete-commercial.aspx
+* If you do not own a commercial license, this file shall be governed by the trial license terms.
+*/
+("function"==typeof define&&define.amd?define:function(e,i){return i()})(["./kendo.mobile.application.min"],function(){(function(e){function i(i,t){var l=t.find("["+n.attr("align")+"="+i+"]");l[0]&&t.prepend(e('<div class="km-'+i+'item" />').append(l))}function t(i){var t=i.siblings();i.toggleClass("km-show-title",!!t[0]&&""===e.trim(i.text())),i.toggleClass("km-no-title",!!i.children("ul")[0]),i.toggleClass("km-hide-title","hidden"==i.css("visibility")&&!t.children().is(":visible"))}var n=window.kendo,l=n.mobile.ui,o=n.roleSelector,s=l.Widget,r=s.extend({init:function(t,n){var l=this;s.fn.init.call(l,t,n),t=l.element,l.container().bind("show",e.proxy(this,"refresh")),t.addClass("km-navbar").wrapInner(e('<div class="km-view-title" />')),i("left",t),i("right",t),l.centerElement=t.find(".km-view-title")},options:{name:"NavBar"},title:function(e){this.element.find(o("view-title")).text(e),t(this.centerElement)},refresh:function(e){var i=e.view;i.options.title?this.title(i.options.title):t(this.centerElement)},destroy:function(){s.fn.destroy.call(this),n.destroy(this.element)}});l.plugin(r)})(window.kendo.jQuery)});
