@@ -43,11 +43,6 @@ namespace KendoUIMVC5.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             if (key != product.ProductID)
             {
                 return BadRequest();
