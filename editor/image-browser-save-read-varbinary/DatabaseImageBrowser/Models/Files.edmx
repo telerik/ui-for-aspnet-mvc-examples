@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ImageBrowserModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ImageBrowserModelStoreContainer">
+          <EntitySet Name="Folders" EntityType="ImageBrowserModel.Store.Folders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Images" EntityType="ImageBrowserModel.Store.Images" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Folders_Folders" Association="ImageBrowserModel.Store.FK_Folders_Folders">
+            <End Role="Folders" EntitySet="Folders" />
+            <End Role="Folders1" EntitySet="Folders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Images_Folders" Association="ImageBrowserModel.Store.FK_Images_Folders">
+            <End Role="Folders" EntitySet="Folders" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Folders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+          <Property Name="FolderId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Folders_Folders">
+          <End Role="Folders" Type="ImageBrowserModel.Store.Folders" Multiplicity="0..1" />
+          <End Role="Folders1" Type="ImageBrowserModel.Store.Folders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Folders1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Images_Folders">
+          <End Role="Folders" Type="ImageBrowserModel.Store.Folders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Images" Type="ImageBrowserModel.Store.Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="FolderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ImageBrowserModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ImageBrowserEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Folders" EntityType="ImageBrowserModel.Folder" />
+          <EntitySet Name="Images" EntityType="ImageBrowserModel.Image" />
+          <AssociationSet Name="FK_Folders_Folders" Association="ImageBrowserModel.FK_Folders_Folders">
+            <End Role="Folders" EntitySet="Folders" />
+            <End Role="Folders1" EntitySet="Folders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Images_Folders" Association="ImageBrowserModel.FK_Images_Folders">
+            <End Role="Folders" EntitySet="Folders" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Folder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ChildFolders" Relationship="ImageBrowserModel.FK_Folders_Folders" FromRole="Folders" ToRole="Folders1" />
+          <NavigationProperty Name="Parent" Relationship="ImageBrowserModel.FK_Folders_Folders" FromRole="Folders1" ToRole="Folders" />
+          <NavigationProperty Name="Images" Relationship="ImageBrowserModel.FK_Images_Folders" FromRole="Folders" ToRole="Images" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Image1" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="FolderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Folder" Relationship="ImageBrowserModel.FK_Images_Folders" FromRole="Images" ToRole="Folders" />
+        </EntityType>
+        <Association Name="FK_Folders_Folders">
+          <End Role="Folders" Type="ImageBrowserModel.Folder" Multiplicity="0..1" />
+          <End Role="Folders1" Type="ImageBrowserModel.Folder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Folders1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Images_Folders">
+          <End Role="Folders" Type="ImageBrowserModel.Folder" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Images" Type="ImageBrowserModel.Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="FolderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ImageBrowserModelStoreContainer" CdmEntityContainer="ImageBrowserEntities">
+          <EntitySetMapping Name="Folders">
+            <EntityTypeMapping TypeName="ImageBrowserModel.Folder">
+              <MappingFragment StoreEntitySet="Folders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="ImageBrowserModel.Image">
+              <MappingFragment StoreEntitySet="Images">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image1" ColumnName="Image" />
+                <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
