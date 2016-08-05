@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e89cbeaba1a04da9aa891db679ad14b3" Name="Diagram1">
+        <EntityTypeShape EntityType="SampleModel.Category" Width="1.5" PointX="3.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.Customer" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.Employee" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.EmployeeTerritory" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.Order_Detail" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.Order" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.Product" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="SampleModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="SampleModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="SampleModel.FK_Employees_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="SampleModel.FK_EmployeeTerritories_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="SampleModel.FK_Orders_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="SampleModel.FK_Order_Details_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="SampleModel.FK_Order_Details_Products" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SampleModel.MeetingAttendee" Width="1.5" PointX="8.8018522545703917" PointY="24.777737837646967" />
+        <EntityTypeShape EntityType="SampleModel.Meeting" Width="1.5" PointX="5.7818350222808474" PointY="15.352953456040916" />
+        <EntityTypeShape EntityType="SampleModel.Task" Width="1.5" PointX="9.31352829435539" PointY="23.65976461379778" />
+        <AssociationConnector Association="SampleModel.FK_MeetingAtendee_Meeting" />
+        <AssociationConnector Association="SampleModel.FK_Meetings_Meetings" />
+        <AssociationConnector Association="SampleModel.FK_Tasks_Tasks" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
