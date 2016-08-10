@@ -1,0 +1,3 @@
+# Using ASP.NET bundles with Kendo UI
+
+You can check in `Views\Shared\_Layout.cshtml` and `App_Start\BundleConfig.cs` how to setup teh CSS and JS bundling for **Kendo UI for MVC**.
