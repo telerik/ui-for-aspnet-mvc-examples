@@ -1,0 +1,165 @@
+﻿@{
+    var culture =  System.Globalization.CultureInfo.CurrentCulture.ToString();
+}
+<div id="grid" style="height: 400px"></div>
+
+<div id="progressWindow">
+    <div id="progress"></div>
+    <script>
+        $(function () {
+            $("#progress").kendoProgressBar({
+                max: 100,
+                min: 0,
+                value: 0
+            });
+        });
+    </script>
+</div>
+
+<script>
+    $(function () {
+        $("#progressWindow").kendoWindow({
+            modal: true,
+            iframe: false,
+            draggable: true,
+            pinned: false,
+            title: "Grid progress",
+            resizable: false,
+            content: null,
+            actions: ["Close"]
+        });
+    });
+</script>
+<script>    
+    $(function () {
+        $("#grid").kendoGrid({
+            columns: [{
+                title: "Order ID",
+                field: "OrderID"
+            }, {
+                title: "Employee ID",
+                field: "EmployeeID",
+                values: [{
+                    text: "Anrew",
+                    value: "1"
+                }, {
+                    text: "John",
+                    value: "2"
+                }, {
+                    text: "Peter",
+                    value: "3"
+                }, {
+                    text: "Ivan",
+                    value: "4"
+                }, {
+                    text: "Nancy",
+                    value: "5"
+                }, {
+                    text: "Alex",
+                    value: "6"
+                }, {
+                    text: "Brandon",
+                    value: "7"
+                }, {
+                    text: "Bill",
+                    value: "8"
+                }, {
+                    text: "Mila",
+                    value: "9"
+                }]
+            }, {
+                title: "Order Description",
+                field: "OrderDescription"
+               
+            }, {
+                title: "Order Date",
+                field: "OrderDate",
+                format: "{0:d}"
+            }, {
+                title: "Order Total",
+                field: "OrderTotal",
+                format: "{0:c}"
+                
+            }, {
+                title: "Is Completed",
+                field: "IsCompleted"
+            }],
+            scrollable: true,
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Home/Read",
+                        data: sendCulture,
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        xhr: function () {
+                            var xhr = new window.XMLHttpRequest();
+                            $("#progressWindow").data("kendoWindow").open().center();
+                            xhr.addEventListener("progress", function (evt) {
+                                if (evt.lengthComputable) {
+                                    var percentComplete = evt.loaded / evt.total;
+                                    $("#progress").data("kendoProgressBar").value(percentComplete * 100);
+                                }
+                            }, false);
+                            return xhr;
+                        }
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation === "read") {
+                            return JSON.stringify(options);
+                        }
+                    }
+                },
+                pageSize: 1100,
+                page: 1,
+                requestEnd: onRequestEnd,
+                schema: {
+                    data: "Data",
+                    total: "Total",
+                    errors: "Errors",
+                    model: {
+                        id: "OrderID",
+                        fields: {
+                            "OrderID": {
+                                "editable": false,
+                                "type": "number"
+                            },
+                            "OrderDate": {
+                                "type": "date"
+                            },
+                            "OrderDescription": {
+                                "type": "string"
+                            },
+                            "EmployeeID": {
+                                "type": "number"
+                            },
+                            "OrderTotal": {
+                                "type": "number"
+                            },
+                            "IsCompleted": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+
+<script>    
+    function onRequestEnd(e) {
+        if (e.type == "read") {
+            //remove progress window
+            $("#progress").data("kendoProgressBar").value(0);
+            $("#progressWindow").data("kendoWindow").close();
+        }
+    }
+
+    //send current culture with all ajax requests
+    function sendCulture() {
+        return { culture: "@culture" }
+    }
+</script>
