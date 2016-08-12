@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.dataviz.bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://kendo.cdn.telerik.com/2016.2.714/js/jquery.min.js"></script>
+	<script src="http://kendo.cdn.telerik.com/2016.2.714/js/kendo.all.min.js"></script>
+	<script src="http://kendo.cdn.telerik.com/2016.2.714/js/kendo.aspnetmvc.min.js"></script>
+</head>
+
+<body>
+	<div class="page">
+		<header>
+			<div id="title">
+				<h1>My Kendo UI for MVC Application</h1>
+			</div>
+
+			@(Html.Kendo().Menu()
+					.Name("menu")
+					.Items(menu => {
+						menu.Add().Text("Home").Action("Index", "Home");
+					}))
+		</header>
+		<section id="main">
+			@RenderBody()
+		</section>
+		<footer>
+		</footer>
+	</div>
+</body>
+</html>
