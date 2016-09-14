@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>New Page...</title><!--C1 -->
+<meta http-equiv="Content-Type" content="text/html; CHARSET=Windows-1252">
+<meta name="Generator" content="Ezypage 9.58 : Corporate - ImageConverter.pge              UN-REGISTERED VERSION">
+
+
+</head>
+
+<body link="#0000FF" alink="#FF0000" vlink="#800080" Scroll=yes bgcolor="#FFFFFF" >
+
+<Div align="Left" style="Font-Family: Arial; Font-Size:12px; Left:1px; Width:697px; POSITION: absolute; Top:0px;">
+<font color="#000000"><br><b>Introduction<br></b>Image to byte array class:<br><br>Recently I was looking for a class which could convert an System.Drawing.Image to byte[] array and vice versa.&nbsp;&nbsp;After<br>a lot of search on google I realised that it would be faster for me to write this class and also share<br>it with the community.<br><br><br>The class which I wrote is called ImageConverter.cs<br><br>The class has two methods<br><br>First Method : Convert Image to byte[] array<br><br>public byte[] imageToByteArray(System.Drawing.Image imageIn)<br>		{<br>			MemoryStream ms = new MemoryStream();<br>			imageIn.Save(ms,System.Drawing.Imaging.ImageFormat.Gif);<br>			return&nbsp;&nbsp;ms.ToArray();<br>		}<br><br><br>This method uses the System.Drawing.Image.Save method to save the image to a memorystream.<br>The memory stream can then be used to return a byte array using the .ToArray() method in the<br>MemoryStream class.<br><br>Second Method : Convert byte[] array to Image<br><br>public Image byteArrayToImage(byte[] byteArrayIn)<br>		{<br>			MemoryStream ms = new MemoryStream(byteArrayIn);<br>			Image returnImage = Image.FromStream(ms);<br>			return returnImage;<br>	<br>		}<br><br>This method uses the Image.FromStream method in the Image class to create a method from<br>a&nbsp;&nbsp;memorystream which has been created using a byte array.&nbsp;&nbsp;The image thus created is returned<br>in this method.<br><br>The way I happen to use this method was to transport an image to a web service, by converting it<br>to a byte array and vice-versa.<br><br>Hope this class is useful to the community as well.&nbsp;&nbsp;The code of ImageConverter.cs is attached below.<br><br>Rajan Tawate</font>
+</Div>
+
+
+<a name="Page1">
+<Div align="Left" style="Font-Family: Arial; Font-Size:12px; Left:1px; Width:697px; POSITION: absolute; Top:0px;">
+<font color="#000000"><br><b>Introduction<br></b>Image to byte array class:<br><br>Recently I was looking for a class which could convert an System.Drawing.Image to byte[] array and vice versa.&nbsp;&nbsp;After<br>a lot of search on google I realised that it would be faster for me to write this class and also share<br>it with the community.<br><br><br>The class which I wrote is called ImageConverter.cs<br><br>The class has two methods<br><br>First Method : Convert Image to byte[] array<br><br>public byte[] imageToByteArray(System.Drawing.Image imageIn)<br>		{<br>			MemoryStream ms = new MemoryStream();<br>			imageIn.Save(ms,System.Drawing.Imaging.ImageFormat.Gif);<br>			return&nbsp;&nbsp;ms.ToArray();<br>		}<br><br><br>This method uses the System.Drawing.Image.Save method to save the image to a memorystream.<br>The memory stream can then be used to return a byte array using the .ToArray() method in the<br>MemoryStream class.<br><br>Second Method : Convert byte[] array to Image<br><br>public Image byteArrayToImage(byte[] byteArrayIn)<br>		{<br>			MemoryStream ms = new MemoryStream(byteArrayIn);<br>			Image returnImage = Image.FromStream(ms);<br>			return returnImage;<br>	<br>		}<br><br>This method uses the Image.FromStream method in the Image class to create a method from<br>a&nbsp;&nbsp;memorystream which has been created using a byte array.&nbsp;&nbsp;The image thus created is returned<br>in this method.<br><br>The way I happen to use this method was to transport an image to a web service, by converting it<br>to a byte array and vice-versa.<br><br>Hope this class is useful to the community as well.&nbsp;&nbsp;The code of ImageConverter.cs is attached below.<br><br>Rajan Tawate</font>
+</Div>
+</body>
+</html>
+
