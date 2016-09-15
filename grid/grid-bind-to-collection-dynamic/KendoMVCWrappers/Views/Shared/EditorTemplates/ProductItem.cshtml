@@ -1,0 +1,11 @@
+﻿<ul class="edit-form"> 
+    <li>
+        <label for="ProductName">ProductName:</label> @Html.TextBox("ProductName", ViewData["ProductName"] ?? string.Empty)        
+    </li>    
+    <li>
+        <label for="UnitPrice">UnitPrice:</label> @Html.TextBox("UnitPrice", ViewData["UnitPrice"] ?? string.Empty)        
+    </li>
+    <li>
+        <label for="QuantityPerUnit">QuantityPerUnit:</label> @Html.TextBox("QuantityPerUnit", ViewData["QuantityPerUnit"] ?? string.Empty)        
+    </li>
+</ul>

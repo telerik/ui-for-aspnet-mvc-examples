@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model IEnumerable<dynamic>
+@(
+ Html.Kendo().Grid(Model).Name("Grid")
+                .DataSource(ds => ds.Ajax()
+                                .Model(m =>
+                                {
+                                    m.Id("ProductID");
+                                    m.Field("ProductID", typeof(int));
+                                    m.Field("ProductName", typeof(string));
+                                    m.Field("UnitPrice", typeof(decimal));
+                                    m.Field("QuantityPerUnit", typeof(string));                                
+                                })
+                        .Read(r => r.Action("Read", "Home"))
+                        .Update(u => u.Action("Update", "Home"))
+                        .Destroy(u => u.Action("Destroy", "Home"))
+                        .Create(u => u.Action("Create", "Home"))
+                )
+                .ToolBar(toolBar => toolBar.Create())
+                .Columns(columns =>
+                {
+                    columns.Bound("ProductID");
+                    columns.Bound("ProductName");
+                    columns.Bound("UnitPrice").Format("{0:c}");
+                    columns.Bound("QuantityPerUnit");
+                    columns.Command(command =>
+                    {
+                        command.Edit();
+                        command.Destroy();
+                    });
+                })
+                .Editable(editable => editable.TemplateName("ProductItem").Mode(GridEditMode.PopUp))
+                .Pageable()
+                .Sortable()
+                .Groupable()
+                .Filterable()
+)
