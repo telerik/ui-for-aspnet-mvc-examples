@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>MVC Grid and DPL integration</title>
+        <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    	<!--This CSS entry was added by the Telerik VS Extensions for compatibility reasons-->
+	<link href="@Url.Content("~/Content/kendo.compatibility.css")" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.1.412/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.1.412/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.1.412/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.1.412/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.1.412/styles/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://kendo.cdn.telerik.com/2016.1.412/js/jquery.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2016.1.412/js/angular.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2016.1.412/js/jszip.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2016.1.412/js/kendo.all.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2016.1.412/js/kendo.aspnetmvc.min.js"></script>
+	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">MVC Grid and DPL integration</p>
+                </div>
+                <div class="float-right">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("SpreadProcessing", "Index", "Home")</li>
+                            <li>@Html.ActionLink("SpreadStreamProcessing", "Index", "Stream")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My Telerik MVC Application</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
