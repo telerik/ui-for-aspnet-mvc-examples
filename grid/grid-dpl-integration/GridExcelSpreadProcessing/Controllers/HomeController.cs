@@ -28,10 +28,9 @@ namespace GridExcelSpreadProcessing.Controllers
 
             var modelObject = JsonConvert.DeserializeObject<dynamic>(model);
             var dataObject = JsonConvert.DeserializeObject<dynamic>(data);
+            var columnCount = modelObject.Count;
 
-            workbook.ResumeLayoutUpdate();
-
-            for (int idx = 0; idx < modelObject.Count; idx++)
+            for (int idx = 0; idx < columnCount; idx++)
             {
                 var modelCol = modelObject[idx];
                 string columnName = modelCol.title ?? modelCol.field;
@@ -45,6 +44,14 @@ namespace GridExcelSpreadProcessing.Controllers
                     worksheet.Cells[rowIdx, colIdx].SetValue(dataObject[rowIdx - 1][modelObject[colIdx].field.ToString()].ToString());
                 }
             }
+
+            if (format == "XLSX")
+            {
+                ColumnSelection columnSelection = worksheet.Columns[0, columnCount];
+                columnSelection.AutoFitWidth();
+            } 
+
+            workbook.ResumeLayoutUpdate();
 
             IWorkbookFormatProvider formatProvider = null;
             if (format == "XLSX")

@@ -10,7 +10,7 @@ The Home and Stream views are basically the same, but there are major difference
 ### Home controller 
 This is a barebone example of [RadSpreadProcessing](http://docs.telerik.com/devtools/document-processing/libraries/radspreadprocessing/overview) 
 and [Grid](http://docs.telerik.com/kendo-ui/aspnet-mvc/helpers/grid/overview) integration. It supports CSV and XLSX formats and 
-demonstrates how you could create the basic building components of the Workbook. 
+demonstrates how you could create the basic building components of the Workbook. XLSX export utilizes an autofit functionality in this demo.
 There are some performance features enabled like disabling the history and suspending the layout update which 
 are described in the [Performance Tips and Tricks](http://docs.telerik.com/devtools/document-processing/libraries/radspreadprocessing/performance) 
 section. 
@@ -26,7 +26,8 @@ using Telerik.Windows.Documents.Spreadsheet.Model;
 Sometimes we need to get the best performance and minimal resource consumption in order to export greater amounts of records. For cases like that,
 the [RadSpreadStreamProcessing](http://docs.telerik.com/devtools/document-processing/libraries/radspreadstreamprocessing/overview) may be a better choice.
 This simple demo should be a good starting point for integration between [Grid](http://docs.telerik.com/kendo-ui/aspnet-mvc/helpers/grid/overview) 
-and the aforementioned library. Supported format are once again, CSV and XLSX.
+and the aforementioned library. 
+Note that the stream-based library does not support autofit functionality (XLSX). Supported format are once again, CSV and XLSX.
 
 ```
 using Telerik.Documents.SpreadsheetStreaming;
