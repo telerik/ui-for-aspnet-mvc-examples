@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1> Kendo menu security trimming demo </h1>
+    <p> You should be logged in in order to access the "About" and "Contact" pages.</p>
+
+    <h3><a href="http://docs.telerik.com/kendo-ui/aspnet-mvc/helpers/menu/overview#security-trimming">Security Trimming</a></h3>
+    <p>The Kendo UI Menu widget has a built-in security trimming functionality, which is enabled by default. If the URL, which the Menu item points to, is not authorized, then it is hidden. Security trimming depends on the <a href="http://www.asp.net/mvc/tutorials/mvc-music-store/mvc-music-store-part-7">ASP.NET MVC Authorization</a>. Every <code>action</code> method decorated with <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute.aspx"><code>AuthorizeAttribute</code></a> checks whether the user is authorized and allows or forbids the request.</p>
+    <p>For more information on the <a href="http://ASP.NET">ASP.NET</a> MVC Authorization, refer to <a href="http://weblogs.asp.net/jgalloway/archive/2011/04/28/looking-at-how-asp-net-mvc-authorize-interacts-with-asp-net-forms-authorization.aspx">this link</a>.</p>
+    <p>
+        The Menu hides the Menu item if the <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute.onauthorization.aspx"><code>OnAuthorization</code></a> method returns
+        <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.httpunauthorizedresult.aspx"><code>HttpUnauthorizedResult</code></a>.
+    </p>
+    <p>To use a custom <code>AuthorizeAttribute</code>, refer to <a href="https://github.com/telerik/kendo-examples-asp-net-mvc/tree/master/kendo-menu-with-custom-authorization-attribute">this link</a>.</p>
+    <p>When the Menu items are removed because of lacking permissions, a parent item may be left without any children. For such cases, the Menu provides an option to remove the “orphaned” parent items.</p>
+    <h4>Example</h4>
+    <pre>
+    <code>    Html.Kendo().Menu()
+        .Name(&quot;MainMenu&quot;)
+        .SecurityTrimming(s=&gt; s.HideParent(true))
+    </code>
+</pre>
+
+
+</div>
