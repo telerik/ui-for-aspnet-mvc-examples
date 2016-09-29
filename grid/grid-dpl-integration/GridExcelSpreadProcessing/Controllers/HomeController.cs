@@ -6,6 +6,8 @@ using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
 using Telerik.Windows.Documents.Spreadsheet.FormatProviders.TextBased.Csv;
 using Telerik.Windows.Documents.Spreadsheet.Model;
 using Newtonsoft.Json;
+using ExportHelpers;
+using System.Collections.Generic;
 
 namespace GridExcelSpreadProcessing.Controllers
 {
@@ -26,14 +28,14 @@ namespace GridExcelSpreadProcessing.Controllers
             Worksheet worksheet = workbook.ActiveWorksheet;
             worksheet.Name = title;
 
-            var modelObject = JsonConvert.DeserializeObject<dynamic>(model);
+            var modelObject = JsonConvert.DeserializeObject<IList<ColumnSettings>>(model);
             var dataObject = JsonConvert.DeserializeObject<dynamic>(data);
             var columnCount = modelObject.Count;
 
             for (int idx = 0; idx < columnCount; idx++)
             {
                 var modelCol = modelObject[idx];
-                string columnName = modelCol.title ?? modelCol.field;
+                string columnName = modelCol.Title ?? modelCol.Field;
                 worksheet.Cells[0, idx].SetValue(columnName);
             }
 
@@ -41,7 +43,7 @@ namespace GridExcelSpreadProcessing.Controllers
             {
                 for (int colIdx = 0; colIdx < modelObject.Count; colIdx++)
                 {
-                    worksheet.Cells[rowIdx, colIdx].SetValue(dataObject[rowIdx - 1][modelObject[colIdx].field.ToString()].ToString());
+                    worksheet.Cells[rowIdx, colIdx].SetValue(dataObject[rowIdx - 1][modelObject[colIdx].Field].Value);
                 }
             }
 

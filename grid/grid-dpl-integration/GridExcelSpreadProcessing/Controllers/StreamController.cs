@@ -3,6 +3,8 @@ using System.IO;
 using System.Web.Mvc;
 using Telerik.Documents.SpreadsheetStreaming;
 using Newtonsoft.Json;
+using ExportHelpers;
+using System.Collections.Generic;
 
 namespace GridExcelSpreadProcessing.Controllers
 {
@@ -15,7 +17,7 @@ namespace GridExcelSpreadProcessing.Controllers
 
         public JsonResult Export(string model, string data, string format, string title)
         {
-            var modelObject = JsonConvert.DeserializeObject<dynamic>(model);
+            var modelObject = JsonConvert.DeserializeObject<IList<ColumnSettings>>(model);
             var dataObject = JsonConvert.DeserializeObject<dynamic>(data);
 
             SpreadDocumentFormat exportFormat = format == "CSV" ? SpreadDocumentFormat.Csv : SpreadDocumentFormat.Xlsx;
@@ -30,7 +32,7 @@ namespace GridExcelSpreadProcessing.Controllers
                             for (int idx = 0; idx < modelObject.Count; idx++)
                             {
                                 var modelCol = modelObject[idx];
-                                string columnName = modelCol.title ?? modelCol.field;
+                                string columnName = modelCol.Title ?? modelCol.Field;
                                 using (ICellExporter cell = row.CreateCellExporter())
                                 {
                                     cell.SetValue(columnName);
@@ -45,7 +47,7 @@ namespace GridExcelSpreadProcessing.Controllers
                                 {
                                     using (ICellExporter cell = row.CreateCellExporter())
                                     {
-                                        cell.SetValue(dataObject[rowIdx][modelObject[colIdx].field.ToString()].ToString());
+                                        cell.SetValue(dataObject[rowIdx][modelObject[colIdx].Field].Value);
                                     }
                                 }
                             }
