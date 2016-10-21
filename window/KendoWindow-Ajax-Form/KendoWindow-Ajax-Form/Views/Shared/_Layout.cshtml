@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - My Telerik MVC Application</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+
+    <style>
+        .k-header h1 {
+            margin: 0;
+            padding: 30px 15px;
+            font-size: 32px;
+            font-weight: lighter;
+        }
+
+        /* Sticky footer styles
+    -------------------------------------------------- */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /* Set the fixed height of the footer here */
+            height: 60px;
+            background-color: #f5f5f5;
+        }
+
+        .container-fluid .text-muted {
+            margin: 20px 0;
+        }
+
+        .placeholders {
+            margin: 30px auto;
+        }
+
+        .placeholder img {
+            display: inline-block;
+        }
+
+        p .k-button {
+            margin: 0 15px 0 0;
+        }
+        .btn-toggle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: none;
+            height: 48px;
+        }
+
+        .btn-toggle .k-icon {
+            opacity: 1;
+        }
+
+        .btn-toggle,
+        .k-primary.btn-toggle:hover,
+        .btn-toggle:focus:active:not(.k-state-disabled):not([disabled]),
+        .btn-toggle:focus:not(.k-state-disabled):not([disabled]) {
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        .btn-toggle .k-i-hbars,
+        .k-primary.btn-toggle:hover .k-i-hbars,
+        .btn-toggle:focus:active:not(.k-state-disabled):not([disabled]) .k-i-hbars,
+        .btn-toggle:focus:not(.k-state-disabled):not([disabled]) .k-i-hbars {
+            background-position: -80px -32px;
+        }
+        @@media (max-width: 768px) {
+          .k-item {
+            display: block;
+            clear: both;
+            float: none;
+            width: 100%;
+          }
+
+          .k-header h1 {
+            margin: 0;
+            padding: 16px 15px 14px 60px;
+            font-size: 18px;
+            font-weight: lighter;
+           }  
+        }
+    </style>
+	<link href="https://kendo.cdn.telerik.com/2016.3.914/styles/kendo.common-material.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.3.914/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.3.914/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.3.914/styles/kendo.material.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://kendo.cdn.telerik.com/2016.3.914/styles/kendo.dataviz.material.min.css" rel="stylesheet" type="text/css" />
+	
+    <script src="https://kendo.cdn.telerik.com/2016.3.914/js/jquery.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2016.3.914/js/jszip.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2016.3.914/js/kendo.aspnetmvc.min.js"></script>
+	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row k-header">
+            <h1>Project Title</h1>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <p class="text-muted">Copyright © 2002-2015 Telerik. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $("#responsive-panel").kendoResponsivePanel({
+                breakpoint: 768,
+                autoClose: false,
+                orientation: "top"
+            });
+        });
+        function onclick(e) {
+            $("#responsive-panel").getKendoResponsivePanel().toggle();
+        }
+    </script>
+</body>
+</html>
