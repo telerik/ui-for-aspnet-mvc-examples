@@ -5,6 +5,7 @@ using SampleApplication.Models;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using SampleApplication.ViewModels;
+using System.Linq;
 
 namespace SampleApplication.Controllers
 {
@@ -26,7 +27,9 @@ namespace SampleApplication.Controllers
             lookupResults.Add(new ResultEntry("4", "According"));
             lookupResults.Add(new ResultEntry("5", "asdas"));
 
-            return Json(lookupResults, JsonRequestBehavior.AllowGet);
+            var newLookupResults = lookupResults.Where(p => p.Name.Contains(text));
+
+            return Json(newLookupResults, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)

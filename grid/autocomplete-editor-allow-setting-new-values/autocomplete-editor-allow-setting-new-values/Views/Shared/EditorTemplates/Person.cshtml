@@ -8,7 +8,7 @@
 	.Name("Person")
 	.DataTextField("Name")
    
-	.DataSource(dataSource => dataSource.Read(read => read.Action("GetAutocomplete", "Home")).ServerFiltering(true))
+	.DataSource(dataSource => dataSource.Read(read => read.Action("GetAutocomplete", "Home").Data("onAdditionalData")).ServerFiltering(true))
 	.HtmlAttributes(new { @class = "k-widget k-autocomplete k-input", style = string.Format("width:200px") })
 	.Delay(500)
 
