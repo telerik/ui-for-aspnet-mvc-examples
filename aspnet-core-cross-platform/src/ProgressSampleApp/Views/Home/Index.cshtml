@@ -1,0 +1,177 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+  int selectedYear = ViewBag.SelectedYear;
+  var years = ViewBag.Years as IEnumerable<SelectListItem>;
+
+}
+
+<style>
+  .k-popup dl * {
+    font-size: x-small;
+    float: left;
+  }
+
+  .k-popup dt {
+    clear: left;
+  }
+</style>
+
+<div class="row">
+
+  <h2>@ViewBag.SelectedYear US Presidential Results</h2>
+  <div class="col-md-8">
+
+    @(Html.Kendo().Map()
+        .Name("Presidential_Map")
+        .Center(30.2681, -97.7448)
+        .Zoom(3)
+        .Layers(
+          layers =>
+          {
+            layers.Add()
+              .Style(style => style.Fill(fill => fill.Opacity(0.7)))
+              .Type(MapLayerType.Shape)
+              .DataSource(dataSource => dataSource
+                .GeoJson()
+                .Read(read => read.Url(Url.Content("~/js/UsStates.json")))
+              );
+          })
+         .Events(events => events
+            .ShapeCreated("onShapeCreated")
+            .ShapeMouseEnter("onShapeEnter")
+            .ShapeMouseLeave("onShapeLeave")))
+
+  </div>
+
+  <div class="col-md-4">
+
+    <form method="post" action="/">
+      <label for="yearSelector">Change year:</label>
+      <select name="year" asp-for="@selectedYear" asp-items="@years"></select>
+      <kendo-button type="submit" name="submit">Submit</kendo-button>
+    </form>
+
+    <h3>Totals:</h3>
+    <div id="totals"></div>
+  </div>
+
+</div>
+
+@section scripts {
+
+  <script>
+
+    var mapResults = null;
+    var mapProgress = "NotStarted";
+
+    function getResults() {
+
+      console.log("Fetching data...");
+      mapProgress = "Started";
+
+      $.ajax({
+        url: "/api/map?year=" + @selectedYear
+      }).done(function (data) {
+
+        mapResults = data;
+        console.log("Got results");
+        mapProgress = "completed";
+
+        formatTotals(data.totals);
+
+      })
+
+    }
+
+    function onShapeCreated(e) {
+
+      if (mapResults == null) {
+        if (mapProgress == "NotStarted") getResults();
+        window.setTimeout(function () {
+          onShapeCreated(e);
+        }, 500);
+        return;
+      }
+
+      var stateName = e.shape.dataItem.properties.NAME;
+      var stateData = findState(stateName);
+
+      if (stateData) {
+        var color = (stateData.winnerParty == "Republican") ? "red" : "blue";
+        e.shape.options.fill.set("color", color);
+        e.shape.dataItem.properties.votes = stateData.electoralVotes;
+        e.shape.dataItem.properties.winnerName = stateData.winnerName;
+      }
+
+    }
+
+    function findState(name) {
+
+      for (var i = 0; i < mapResults.results.length; i++) {
+
+        if (mapResults.results[i].state.name == name) {
+
+          // console.log(mapResults[i]);
+          return mapResults.results[i];
+
+        }
+
+      }
+
+      return null;
+
+    }
+
+    function onShapeEnter(e) {
+
+      var oe = e.originalEvent;
+      var x = oe.pageX || oe.clientX;
+      var y = oe.pageY || oe.clientY;
+
+      console.log(e.shape.dataItem);
+
+      var name = e.shape.dataItem.properties.NAME;
+      var votes = e.shape.dataItem.properties.votes;
+      var winner = e.shape.dataItem.properties.winnerName;
+      popup.element.html("<div><dl><dt>State:</dt><dd>" + name + "</dd><dt>Votes:</dt><dd>" + votes + "</dd><dt>Winner:</dt><dd>" + winner + "</dd></dl></div>");
+      popup.open(x, y);
+
+    }
+
+    function onShapeLeave(e) {
+
+      if (!$(e.originalEvent.relatedTarget).is(".k-popup, .k-animation-container")) {
+        popup.close();
+
+        // Necessary to stop the animations,
+        // will be fixed in future versions
+        popup.element.kendoStop(true, true);
+      }
+
+    }
+
+    function formatTotals(totals) {
+
+      var outHTML = "<dl>";
+      for (var i in totals) {
+        var total = totals[i];
+        var ev = total.electoralVotes > 270 ? `<b>${total.electoralVotes}</b>` : total.electoralVotes
+        outHTML += `<dt>${total.name}</dt><dd>${total.totalVotes} - Electoral Votes: ${ev}</dd>`;
+
+      }
+
+      $("#totals").html(outHTML);
+
+    }
+
+    var popup = $("<div></div>")
+      .appendTo(document.body)
+      .kendoPopup()
+      .data("kendoPopup");
+
+    $(document).ready(getResults);
+
+  </script>
+
+}
