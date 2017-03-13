@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().Grid<SelectionPersistence.Models.Product>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ProductName);
+        columns.Bound(p => p.UnitPrice).Width(120);
+        columns.Bound(p => p.UnitsInStock).Width(120);
+        columns.Bound(p => p.Discontinued)
+        .ClientTemplate(@"# if (Discontinued) { #
+                            <input type='checkbox' checked='checked' class='checkbox' />
+                          # } else { #
+                            <input type='checkbox' class='checkbox' />
+                          # } #")
+        .HeaderTemplate("<input type='checkbox' class='checkAll' />").Width(120);
+    })
+    .Pageable()
+    .Scrollable()
+    .Events(ev=>ev.DataBound("dataBound"))
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Model(model => model.Id(p => p.ProductID))
+        .Read(read => read.Action("Get_Products", "Home"))
+    )
+)
+
+<script>
+    var allChecked = @Html.Raw(Json.Encode(Model));
+
+    function dataBound(e) {
+        var rows = this.tbody.find("tr");
+        rows.each(function () {
+            var row = $(this);
+            if (row.find("input[checked='checked']").length > 0) {
+                row.addClass("k-state-selected");
+            }
+        });
+    }
+
+    function checkHeader() {
+        if (allChecked) {
+            $(".checkAll").prop("checked", "checked");
+        }
+    }
+
+    $(document).ready(function () {
+        var grid = $("#grid").data("kendoGrid");
+        grid.table.on("click", ".checkbox", selectRow);
+        grid.thead.on("click", ".checkAll", selectAll);
+
+        function selectRow() {
+            var checked = this.checked,
+            row = $(this).closest("tr"),
+            grid = $("#grid").data("kendoGrid"),
+            dataItem = grid.dataItem(row);
+
+            $.ajax({
+                url: '@Url.Action("Select_Product", "Home")',
+                data: {
+                    ProductId: dataItem.ProductID,
+                    ProductName: dataItem.ProductName,
+                    UnitPrice: dataItem.UnitPrice,
+                    UnitsInStock: dataItem.UnitsInStock,
+                    Discontinued: checked
+                },
+                type: "POST",
+                success: function (selectAll) {
+                    if (selectAll) {
+                        grid.thead.find(".checkAll").prop("checked", "checked");
+                    } else {
+                        grid.thead.find(".checkAll").removeProp("checked");
+                    }
+                    grid.dataSource.fetch();
+                }
+            });
+        }
+
+        function selectAll() {
+            var checked = this.checked;
+            $.ajax({
+                url: '@Url.Action("Select_Products", "Home")',
+                data: {
+                    checkAll:checked
+                },
+                type: "POST",
+                success: function () {
+                    grid.dataSource.fetch();
+                }
+            });
+        }
+
+        checkHeader();
+    });
+</script>
