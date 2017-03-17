@@ -52,14 +52,19 @@ namespace SelectionPersistence.Controllers
             return Json(result);
         }
 
-        public ActionResult Select_Product(Product product)
+        public ActionResult Select_Products(List<Product> productsList)
         {
-            var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-            toUpdate.Discontinued = product.Discontinued;
+            foreach (Product product in productsList)
+            {
+                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
+                toUpdate.Discontinued = product.Discontinued;
+
+            }
             return Json(AreAllSelected());
+
         }
 
-        public ActionResult Select_Products(bool checkAll)
+        public ActionResult Select_AllProducts(bool checkAll)
         {
             foreach (var product in products)
             {
