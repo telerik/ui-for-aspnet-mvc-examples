@@ -2,6 +2,15 @@
 <link href="@Url.Content("~/Content/toDoViewStyles.css")" rel="stylesheet" type="text/css" />
 <script src="@Url.Content("~/Scripts/toDoView.js")"></script>
 
+@* Custom Agenda implementation *@
+<script>
+    var CustomAgenda = kendo.ui.AgendaView.extend({
+        endDate: function () {
+            var date = kendo.ui.AgendaView.fn.endDate.call(this);
+            return kendo.date.addDays(date, 31);
+        }
+    });
+</script>
 
 @(Html.Kendo().Scheduler<SchedulerCustomViewDemo.Models.MeetingViewModel>()
     .Name("scheduler")
@@ -13,6 +22,7 @@
         views.WeekView(weekView => weekView.Selected(true));
         views.MonthView();
         views.AgendaView();
+        views.CustomView("CustomAgenda", view => view.Title("Custom Agenda"));
         views.CustomView("kendo.ui.ToDoView", view => view.Title("To Do").Selected(true));
     })
     .Timezone("Etc/UTC")

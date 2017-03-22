@@ -4,6 +4,7 @@
     using System;
     using System.Linq;
     using System.Web.Mvc;
+    using System.Collections.Generic;
 
     public class SchedulerMeetingService : ISchedulerEventService<MeetingViewModel>
     {
@@ -165,6 +166,11 @@
         public void Dispose()
         {
             db.Dispose();
+        }
+
+        IList<MeetingViewModel> ISchedulerEventService<MeetingViewModel>.GetAll()
+        {
+            throw new NotImplementedException();
         }
     }
 }
