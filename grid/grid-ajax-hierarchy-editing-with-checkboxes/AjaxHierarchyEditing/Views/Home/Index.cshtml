@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/kendo" id="OrdersTemplate">
+  @(Html.Kendo().Grid<OrderViewModel>()
+        .Name("Orders_#=EmployeeID#")
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.OrderID).Width(101);
+            columns.Bound(o => o.ShipCountry).Width(140);
+            columns.Bound(o => o.ShipAddress).Width(200);
+            columns.Bound(o => o.ShipName).Width(200);
+            columns.Template(t => { }).ClientTemplate("<input type='checkbox' \\#= IsCompleted ? checked='checked':'' \\# class='chkbx' />")
+                    .HeaderTemplate("<input type='checkbox' id='masterCheckBox' onclick='checkAll(this)'/>").Width(200);
+
+            columns.Command(command =>
+            {
+                command.Destroy();
+            });
+        })
+        .Editable(e => e.Mode(GridEditMode.InCell))
+        .ToolBar(tools => {
+            tools.Create();
+            tools.Save();
+        })
+        .Pageable().Sortable().Filterable()
+        .DataSource(source => source.Ajax()
+            .Model(model =>
+                    {
+                        model.Id(o => o.OrderID);
+                        model.Field(o => o.OrderID).Editable(false);
+                    })
+            .Read(read => read.Action("Read_Orders", "Orders", new { id = "#=EmployeeID#" }))
+            .Update(update => update.Action("Update_Order", "Orders"))
+            .Create(create => create.Action("Create_Order", "Orders", new { id = "#=EmployeeID#" }))
+            .Destroy(destroy => destroy.Action("Destroy_Order", "Orders")))
+        .ToClientTemplate()
+    )
+
+    <script>
+           $(function () {
+            $('\\#Orders_#=EmployeeID#').on('click', '.chkbx', function () {
+                    var checked = $(this).is(':checked');
+                    var grid = $('\\#Orders_#=EmployeeID#').data().kendoGrid;
+                    var dataItem = grid.dataItem($(this).closest('tr'));
+                    dataItem.set('IsCompleted', checked);
+                })
+            })
+
+            function checkAll(ele) {
+                var state = $(ele).is(':checked');
+                var grid = $('\\#Orders_#=EmployeeID#').data().kendoGrid;
+                $.each(grid.dataSource.view(), function () {
+                    if (this['IsCompleted'] != state) 
+                        this.dirty=true;
+                    this['IsCompleted'] = state;
+                });
+                grid.refresh();
+            }
+    <\/script>
+</script>
+
+@(Html.Kendo().Grid<EmployeeViewModel>()
+    .Name("Employees")
+    .Columns(columns =>
+    {
+        columns.Bound(e => e.FirstName).Width(140);
+        columns.Bound(e => e.LastName).Width(140);
+        columns.Bound(e => e.Title).Width(200);
+        columns.Bound(e => e.Country).Width(200);
+        columns.Bound(e => e.City);
+        columns.Command(command =>
+            {
+                command.Edit();
+                command.Destroy();
+            });
+    })
+    .ToolBar(tools => tools.Create())
+    .Pageable().Sortable().Filterable()
+    .DataSource(source => source.Ajax()
+            .Model(model =>
+                {
+                    model.Id(e => e.EmployeeID);
+                    model.Field(e => e.EmployeeID).Editable(false);
+                })
+            .Read(read => read.Action("Read_Employees", "Employees"))
+                .Update(update => update.Action("Update_Employee", "Employees"))
+                .Create(create => create.Action("Create_Employee", "Employees"))
+                .Destroy(destroy => destroy.Action("Destroy_Employee", "Employees")))
+    .ClientDetailTemplateId("OrdersTemplate")
+)  
+
+<script type="text/javascript">
+    //Change Employees with your grid name
+    //the grid should have model ID defined
+    $("#Employees table").on("click", ".k-hierarchy-cell a", function (e) {
+        console.log(e);
+        dataItem = $("#Employees").data("kendoGrid").dataItem($(e.target).closest("tr"));
+        //check if is new record
+        if (dataItem.isNew()) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        }
+    })
+</script>

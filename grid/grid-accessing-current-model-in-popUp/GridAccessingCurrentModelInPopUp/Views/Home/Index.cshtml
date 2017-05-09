@@ -1,0 +1,39 @@
+﻿
+@{
+    string GridName = "Grid";
+}
+
+@(Html.Kendo().Grid<ForeignKeyColumnDemo.Models.Order>()
+    .Name(GridName)
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.OrderID);
+        columns.ForeignKey(p => p.EmployeeId, (System.Collections.IEnumerable)ViewData["employees"], "EmployeeId", "Name");
+        columns.Bound(p => p.OrderDescription);
+        columns.Bound(p => p.OrderDate);
+        columns.Command(c =>
+        {
+            c.Edit();
+            c.Destroy();
+        });
+    })
+    .ToolBar(toolBar => toolBar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("CustomPopUpEditor").AdditionalViewData(new {GridName = GridName}))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .ServerOperation(false)
+        .Model(model =>
+        {
+            model.Id(p => p.OrderID);
+            model.Field(p => p.OrderID).Editable(false);
+        })
+        .Create(create => create.Action("ForeignKeyColumn_Create", "Home"))
+        .Destroy(destroy => destroy.Action("ForeignKeyColumn_Delete", "Home"))
+        .Read(read => read.Action("ForeignKeyColumn_Read", "Home"))
+        .Update(update => update.Action("ForeignKeyColumn_Update", "Home"))
+    )
+)

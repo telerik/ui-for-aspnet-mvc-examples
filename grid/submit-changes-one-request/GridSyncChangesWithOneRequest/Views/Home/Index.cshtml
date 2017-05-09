@@ -1,0 +1,79 @@
+﻿@(Html.Kendo().Grid<GridSyncChangesWithOneRequest.Models.Order>()
+    .Name("Grid")    
+    .Columns(columns => {        
+        columns.Bound(p => p.OrderID);
+        columns.ForeignKey(p => p.EmployeeID, (System.Collections.IEnumerable)ViewData["employees"], "EmployeeID", "Name");
+        columns.Bound(p => p.OrderDescription);
+        columns.Bound(p => p.OrderDate).Format("{0:d}");
+        columns.Command(c => {
+            c.Destroy();
+        });
+    })    
+    .ToolBar(toolBar => toolBar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InCell))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .DataSource(dataSource => dataSource        
+        .Ajax()      
+        .ServerOperation(false)
+        .Model(model => { 
+            model.Id(p => p.OrderID);
+            model.Field(p => p.OrderID).Editable(false);                
+        })
+        .Create(create => create.Action("Create", "Home"))
+        .Destroy(destroy => destroy.Action("Delete", "Home"))
+        .Read(read => read.Action("Read", "Home"))
+        .Update(update => update.Action("Update", "Home"))       
+    )
+)
+
+<p>Pressing the saveChanges will send all current changes to the server:</p>
+<button onclick="sendData()">Save Changes</button>
+
+<script>    
+    function sendData() {
+        var grid = $("#Grid").data("kendoGrid"),
+            parameterMap = grid.dataSource.transport.parameterMap;
+        
+        //get the new and the updated records
+        var currentData = grid.dataSource.data();
+        var updatedRecords = [];
+        var newRecords = [];
+
+        for (var i = 0; i < currentData.length; i++) {
+            if (currentData[i].isNew()) {
+                //this record is new
+                newRecords.push(currentData[i].toJSON());
+            } else if(currentData[i].dirty) {         
+                updatedRecords.push(currentData[i].toJSON());
+            }
+        }
+
+        //this records are deleted
+        var deletedRecords = [];
+        for (var i = 0; i < grid.dataSource._destroyed.length; i++) {
+            deletedRecords.push(grid.dataSource._destroyed[i].toJSON());
+        }
+        
+        var data = {};
+        $.extend(data, parameterMap({ updated: updatedRecords }), parameterMap({ deleted: deletedRecords }), parameterMap({ new: newRecords }));
+
+        $.ajax({
+            url: "/Home/UpdateCreateDelete",
+            data: data,
+            type: "POST",
+            error: function () {
+                //Handle the server errors using the approach from the previous example
+            },
+            success: function () {
+                alert("update on server is completed");
+                
+                grid.dataSource._destroyed = [];
+                //refresh the grid - optional
+                grid.dataSource.read();
+            }
+        })
+    }
+</script>

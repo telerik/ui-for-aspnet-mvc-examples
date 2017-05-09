@@ -1,0 +1,118 @@
+﻿
+@(Html.Kendo().Grid<CascadingDropDownFilters.Models.CustomerViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ContactName).Filterable(false);
+        columns.Bound(p => p.ContactTitle).Filterable(f => f.Cell(cell => cell.Template("contactTitleFilter").ShowOperators(false)));
+        columns.Bound(p => p.Country).Filterable(f => f.Cell(cell => cell.Template("countryFilter").ShowOperators(false)));
+        columns.Bound(p => p.City).Filterable(f=>f.Cell(cell=>cell.Template("cityFilter").ShowOperators(false)));
+    })
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+    .HtmlAttributes(new { style = "height:550px;" })
+    .Events(e=>e.Filter("onFilter"))
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .ServerOperation(true)
+        .Read(read => read.Action("Customers_Read", "Home"))
+     )
+)
+
+<script>
+
+    function onFilter(e) {
+        if (!e.filter) {
+            var city = cityDDL.value();
+            var title = titleDDL.value();
+            var country = countryDDL.value();
+
+            if (e.field == "City") {
+                bindDropDowns("", country, title);
+            }
+
+            if (e.field == "Country") {
+                bindDropDowns(city, "", title);
+            }
+
+            if (e.field == "ContactTitle") {
+                bindDropDowns(city, country, "");
+            }
+            
+        }
+    }
+
+    function contactTitleFilter(args) {
+        titleDDL = args.element.kendoDropDownList({
+            dataSource: {
+                transport: {
+                    read: "@Url.Action("GetTitles", "Home")"
+            }
+        },
+            optionLabel: "--Select Value--",
+            dataTextField: "ContactTitle",
+            dataValueField: "ContactTitle",
+            valuePrimitive: true,
+            change: onChange
+        }).data("kendoDropDownList");
+    }
+
+    function cityFilter(args) {
+        cityDDL = args.element.kendoDropDownList({
+            dataSource: {
+                transport: {
+                    read: "@Url.Action("GetCities", "Home")"
+            }
+        },
+            optionLabel: "--Select Value--",
+            dataTextField: "City",
+            dataValueField: "City",
+            valuePrimitive: true,
+            change: onChange
+        }).data("kendoDropDownList");
+    }
+
+    function countryFilter(args) {
+        countryDDL = args.element.kendoDropDownList({
+            dataSource: {
+                transport: {
+                    read: "@Url.Action("GetCountries", "Home")"
+            }
+        },
+            optionLabel: "--Select Value--",
+            dataTextField: "Country",
+            dataValueField: "Country",
+            valuePrimitive: true,
+            change: onChange
+        }).data("kendoDropDownList");
+    }
+
+    function onChange(e) {
+        var city = cityDDL.value();
+        var title = titleDDL.value();
+        var country = countryDDL.value();
+        
+        bindDropDowns(city, country, title);
+    }
+
+    function bindDropDowns(city, country, title) {
+        cityDDL.dataSource.read({
+            selectedCity: city,
+            selectedCountry: country,
+            selectedTitle: title
+        });
+        countryDDL.dataSource.read({
+            selectedCity: city,
+            selectedCountry: country,
+            selectedTitle: title
+        });
+        titleDDL.dataSource.read({
+            selectedCity: city,
+            selectedCountry: country,
+            selectedTitle: title
+        });
+    }
+</script>

@@ -1,0 +1,31 @@
+﻿@{
+    string ChildGridName = "PopupGrid";    
+}
+<script>  
+    function getCurrentParentId() {
+        var uid = $("#@ChildGridName").closest("[data-uid]").data("uid");
+        var parentGrid = $("#@ViewData["GridName"]").data("kendoGrid");
+        var model = parentGrid.dataSource.getByUid(uid);
+        return { parrentGridRecordId: model.OrderID };
+    }
+</script>
+
+
+@(Html.Kendo().Grid<ForeignKeyColumnDemo.Models.Order>()
+    .Name(ChildGridName)    
+    .Columns(columns => {        
+        columns.Bound(p => p.OrderID);
+        columns.Bound(p => p.OrderDescription);
+        columns.Bound(p => p.OrderDate);
+    })    
+    .Pageable()
+    .Scrollable()
+    .DataSource(dataSource => dataSource        
+        .Ajax()      
+        .ServerOperation(false)
+        .Model(model => { 
+            model.Id(p => p.OrderID);           
+        })
+        .Read(read => read.Action("ForeignKeyColumn_Read", "Home").Data("getCurrentParentId"))
+    )
+)

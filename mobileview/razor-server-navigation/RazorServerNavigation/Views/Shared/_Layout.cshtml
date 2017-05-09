@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<head>
+            <title>@ViewBag.Title</title>
+             <link href="http://cdn.kendostatic.com/2016.3.914/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://cdn.kendostatic.com/2016.3.914/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+	<link href="http://cdn.kendostatic.com/2016.3.914/styles/kendo.dataviz.mobile.all.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://cdn.kendostatic.com/2016.3.914/js/jquery.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2016.3.914/js/kendo.all.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2016.3.914/js/kendo.aspnetmvc.min.js"></script>
+ </head>
+</head>
+	<body>		
+        @RenderBody()
+
+        <!--Layout-->    
+        @{Html.Kendo().MobileLayout()
+            .Name("TabstripLayout")
+            .Header(() =>
+                Html.Kendo().MobileNavBar()
+                    .Content(navbar => @<text> @navbar.ViewTitle("") </text>)
+                    .Render()
+            )
+            .Footer(@<text>
+                @(Html.Kendo().MobileTabStrip()    
+                    .Name("Tabstrip")                
+                    .Items(items => {
+                        items.Add().Icon("home").Text("Index").Url("Index", "Home");
+                        items.Add().Icon("about").Text("About").Url("About", "Home");
+                        items.Add().Icon("contacts").Text("Contact").Url("Contact", "Home");                        
+                    }))
+            </text>)
+            .Render();
+        }
+
+        @(Html.Kendo().MobileApplication()
+            .ServerNavigation(true)     
+            .Layout("TabstripLayout")        
+            .Events(events => events.Init("applicationInit"))                           
+        )        
+
+        <script>
+            function applicationInit() {                
+                var tabStrip = $("#Tabstrip").data("kendoMobileTabStrip");
+                tabStrip.switchTo(this.view().element.attr("id"));
+            }
+        </script>
+	</body>
+</html>

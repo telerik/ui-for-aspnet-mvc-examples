@@ -2,6 +2,7 @@
 {
     using Kendo.Mvc.UI;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
 
@@ -19,7 +20,7 @@
         {
         }
 
-        public virtual IQueryable<MeetingViewModel> GetAll()
+        public virtual IList<MeetingViewModel> GetAll() // IList should be replaced by IQueryable if you are using version prior to Q3 2016 SP1.
         {
             return db.Meetings.ToList().Select(meeting => new MeetingViewModel
                 {
@@ -36,7 +37,7 @@
                     RecurrenceException = meeting.RecurrenceException,
                     RecurrenceID = meeting.RecurrenceID,
                     Attendees = meeting.MeetingAttendees.Select(m => m.AttendeeID).ToArray()
-                }).AsQueryable();
+                }).ToList(); //ToList should be replaced by AsQueryable if you are using version prior to Q3 2016 SP1.   
         }
 
         public virtual void Insert(MeetingViewModel meeting, ModelStateDictionary modelState)

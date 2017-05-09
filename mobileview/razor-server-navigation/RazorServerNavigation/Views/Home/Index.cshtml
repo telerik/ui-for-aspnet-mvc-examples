@@ -1,0 +1,20 @@
+﻿@(Html.Kendo().MobileView()
+    .Title("Home Page")
+    .Name("Index")
+    .Content(@<text>
+        <h3>Getting Started</h3>
+        <form action="@Url.Action("Index", "Home")" method="get">
+            <p>
+                Connection Management Search
+                <table>
+                    <tr>
+                        <td>C Number: </td>
+                        <td>@Html.Kendo().TextBox().Name("SystemId")</td>
+                    </tr>
+                </table>
+                <button class="k-button">Search</button>
+            </p>
+        </form>
+    </text>)
+)
+

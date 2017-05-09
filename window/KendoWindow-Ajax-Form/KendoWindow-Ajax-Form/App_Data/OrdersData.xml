@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <OrderViewModel>
+    <OrderID>1</OrderID>
+    <CustomerID>1</CustomerID>
+    <ContactName>Charles</ContactName>
+    <OrderDate>2016-10-20T14:21:50.1283137+03:00</OrderDate>
+    <ShippedDate>2016-10-21T14:21:50.1283137+03:00</ShippedDate>
+  </OrderViewModel>
+  <OrderViewModel>
+    <OrderID>2</OrderID>
+    <CustomerID>2</CustomerID>
+    <ContactName>John</ContactName>
+    <OrderDate>2016-10-19T14:21:50.1283137+03:00</OrderDate>
+    <ShippedDate>2016-10-21T14:21:50.1283137+03:00</ShippedDate>
+  </OrderViewModel>
+  <OrderViewModel>
+    <OrderID>1</OrderID>
+    <CustomerID>1</CustomerID>
+    <ContactName>asd</ContactName>
+    <OrderDate>2016-10-13T00:00:00+03:00</OrderDate>
+    <ShippedDate>2016-10-14T00:00:00+03:00</ShippedDate>
+  </OrderViewModel>
+</NewDataSet>

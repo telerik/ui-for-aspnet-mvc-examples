@@ -1,0 +1,35 @@
+﻿@model EditNestedGrid.Models.EmployeeViewModel
+
+<div>
+    @Html.LabelFor(m => m.FirstName)
+    @Html.EditorFor(m => m.FirstName)
+</div>
+<div>
+    @Html.LabelFor(m => m.LastName)
+    @Html.EditorFor(m => m.LastName)
+</div>
+<div>
+    @Html.LabelFor(m => m.Title)
+    @Html.EditorFor(m => m.Title)
+</div>
+<div>
+    @Html.LabelFor(m => m.HireDate)
+    @Html.EditorFor(m => m.HireDate)
+</div>
+<hr />
+@(Html.Kendo().Grid<TerritoryViewModel>()
+    .Name("TerritoryGrid")
+    .Sortable()
+        .Columns(cols =>
+        {
+            cols.Bound(b => b.TerritoryID);
+            cols.Bound(b => b.TerritoryDescription);
+        })
+        .Editable(ed=>ed.Mode(GridEditMode.InCell))
+        .AutoBind(false)
+            .DataSource(ds => ds.Ajax().Model(mo => { 
+                mo.Id(m => m.TerritoryID);
+                mo.Field(f => f.TerritoryID).Editable(false);
+            }))
+        .ToClientTemplate()
+)

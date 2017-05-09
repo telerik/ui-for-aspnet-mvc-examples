@@ -1,0 +1,54 @@
+﻿@(Html.Kendo().Grid<GridExcelSpreadProcessing.Models.OrderViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(e => e.OrderID);
+        columns.Bound(e => e.Freight);
+        columns.Bound(e => e.OrderDate).Width(120).Format("{0:MM/dd/yyyy}");
+        columns.Bound(e => e.ShipName).Width(260);
+        columns.Bound(e => e.ShipCity).Width(150);
+    })
+    .Sortable()
+    .Scrollable(scr => scr.Height(500))
+    .DataSource(dataSource => dataSource
+        .Custom()
+        .Type("odata")
+        .Transport(transport =>
+           transport.Read(read => read.Url("http://demos.telerik.com/kendo-ui/service/Northwind.svc/Orders"))
+        )
+     )
+)
+
+<a class='k-button k-grid-export' title='Export to CSV'>CSV</a>
+<a class='k-button k-grid-export' title='Export to XLSX'>XLSX</a>
+
+<script>
+    $(".k-grid-export").on("click", function (e) {
+        exportToExcel(e.target.innerHTML);
+    });
+
+    function exportToExcel(format) {
+        var grid = $("#grid").data("kendoGrid");
+
+        var exportOption = {
+            format: format,
+            title: "MvcExport",
+            createUrl: "/Home/Export",
+            downloadUrl: "/Home/Download"
+        }
+
+        data = {
+            model: JSON.stringify(grid.columns),
+            data: JSON.stringify(grid.dataSource.data().toJSON()),
+            format: exportOption.format,
+            title: exportOption.title
+        };
+
+        $.post(exportOption.createUrl, data, function () {
+            window.location.replace(kendo.format("{0}?format={1}&title={2}", 
+                exportOption.downloadUrl,
+                exportOption.format,
+                exportOption.title));
+        });
+    }
+</script>
