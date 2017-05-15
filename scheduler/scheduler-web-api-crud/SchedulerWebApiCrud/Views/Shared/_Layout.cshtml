@@ -1,21 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>@ViewBag.Title</title>
-	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.common.min.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.default.min.css")" rel="stylesheet" type="text/css" />
-	<script src="@Url.Content("~/Scripts/kendo/2013.3.1119/jquery.min.js")"></script>
-     
-	<script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
-	<script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.aspnetmvc.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.timezones.min.js")"></script>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2017.2.504/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2017.2.504/styles/kendo.default.min.css">
+
+
+    <script src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2017.2.504/js/kendo.all.min.js"></script>
+	<script src="http://kendo.cdn.telerik.com/2017.2.504/js/kendo.aspnetmvc.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2017.2.504/js/kendo.timezones.min.js"></script>
 
     @{
         var culture = System.Threading.Thread.CurrentThread.CurrentCulture.ToString();
     }
 
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/cultures/kendo.culture." + culture + ".min.js")"></script>
+    <script src="http://kendo.cdn.telerik.com/2017.2.504/js/cultures/kendo.culture." + culture + ".min.js"></script>
 
     @* Set the current culture *@
     <script>
