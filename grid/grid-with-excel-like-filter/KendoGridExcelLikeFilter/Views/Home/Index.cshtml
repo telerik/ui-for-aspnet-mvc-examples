@@ -1,0 +1,76 @@
+﻿<script>
+
+
+    function onChange(e) {
+        dataSourceShared.data(e.items);
+    }
+
+    function onFilterMenuInit(e) {
+        var grid = e.sender;
+        e.container.data("kendoPopup").bind("open", function () {
+            dataSourceShared.sort({ field: e.field, dir: "asc" });
+            var uniqueDsResult = removeDuplicates(grid.dataSource.view(), e.field);
+            dataSourceShared.data(uniqueDsResult);
+        })
+
+        function removeDuplicates(items, field) {
+            var getter = function (item) { return item[field] },
+                result = [],
+                index = 0,
+                seen = {};
+
+            while (index < items.length) {
+                var item = items[index++],
+                    text = getter(item);
+
+                if (text !== undefined && text !== null && !seen.hasOwnProperty(text)) {
+                    result.push(item);
+                    seen[text] = true;
+                }
+            }
+
+            return result;
+        }
+    }
+</script>
+
+
+
+@(Html.Kendo().DataSource<KendoGridAjaxBinding.Models.Product>()
+    .Name("dataSourceShared")
+    .Ajax(dataSource => dataSource
+       .Read(read => read.Action("Products_Read", "Home"))
+       .ServerOperation(false)
+    )
+)
+
+
+@(Html.Kendo().Grid<KendoGridAjaxBinding.Models.Product>()
+      .Name("grid")
+      .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Products_Read", "Home"))
+            .PageSize(20)
+            .Events(events => events
+             .Change("onChange")
+      )
+        )
+      .Events(events => events
+       .FilterMenuInit("onFilterMenuInit")
+      )
+      .Columns(columns =>
+      {
+
+          columns.Bound(product => product.ProductID).Filterable(ftb => ftb.Multi(true).DataSource("dataSourceShared"));
+
+          columns.Bound(product => product.ProductName).Filterable(ftb => ftb.Multi(true).DataSource("dataSourceShared"));
+
+          columns.Bound(product => product.UnitsInStock).Filterable(ftb => ftb.Multi(true).DataSource("dataSourceShared"));
+
+          columns.Bound(product => product.UnitPrice).Filterable(ftb => ftb.Multi(true).DataSource("dataSourceShared"));
+      })
+      .Pageable()
+      .Filterable()
+      .Sortable()
+)
+
