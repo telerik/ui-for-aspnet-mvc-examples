@@ -31,4 +31,7 @@
         .Read(read => read.Action("ForeignKeyColumn_Read", "Home"))
         .Update(update => update.Action("ForeignKeyColumn_Update", "Home"))
     )
+    .Events( ev => ev.Edit("changeEditInline") )
 )
+
+<script src="~/Scripts/Views/Home/index.js"></script>
