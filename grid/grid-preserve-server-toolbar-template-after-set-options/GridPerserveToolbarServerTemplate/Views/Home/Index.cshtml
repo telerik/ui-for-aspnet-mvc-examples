@@ -3,11 +3,11 @@
 }
 
 @helper ToolbarTemplate() {
-    <a class="k-button k-button-icontext k-grid-add" href="/Home/Read?grid-mode=insert"><span class="k-icon k-add"></span>Add</a>
-    <button class="k-button k-button-icontext k-grid-excel"><span class="k-icon k-excel"></span>Export to Excel</button>
-    <button class="k-button k-button-icontext k-grid-pdf"><span class="k-icon k-pdf"></span>Export to PDF</button>
-    <a class="k-button k-button-icontext savesetting" href="/"><span></span>Save Settings</a>
-    <a class="k-button k-button-icontext loadsetting" href="/"><span></span>Load Settings</a>
+    <a class="k-button k-grid-add" href="/Home/Read?grid-mode=insert"><span class="k-icon k-i-add"></span>Add</a>
+    <button class="k-button k-grid-excel"><span class="k-icon k-i-excel"></span>Export to Excel</button>
+    <button class="k-button k-grid-pdf"><span class="k-icon k-i-pdf"></span>Export to PDF</button>
+    <a class="k-button savesetting" href="/"><span></span>Save Settings</a>
+    <a class="k-button loadsetting" href="/"><span></span>Load Settings</a>
     @(Html.Kendo().DropDownList()
         .Name("ExampleEditor")
         .OptionLabel("- ExampleEditor -")
@@ -47,32 +47,31 @@
             c.Destroy();
         });
     })
-                .ToolBar(toolbar =>
-                {
-                    toolbar.Template(@<text>
-            @ToolbarTemplate()
-        </text>);
-                })
-                    .Editable(editable => editable.Mode(GridEditMode.InLine))
-                    .Pageable()
-                    .Sortable()
-                    .Scrollable()
-                    .Filterable()
-                    .DataSource(dataSource => dataSource
-                        .Ajax()
-                        .ServerOperation(false)
-                        .Model(model =>
-                        {
-                            model.Id(p => p.OrderID);
-                            model.Field(p => p.OrderID).Editable(false);
-                        })
-                        .Events(e => e.RequestEnd("onRequestEnd"))
-                        .Create(create => create.Action("Create", "Home").Data("sendCulture"))
-                        .Destroy(destroy => destroy.Action("Delete", "Home").Data("sendCulture"))
-                        .Read(read => read.Action("Read", "Home").Data("sendCulture"))
-                        .Update(update => update.Action("Update", "Home").Data("sendCulture"))
-                    )
-                )
+    .ToolBar(toolbar =>
+    {
+        toolbar.Template(@<text>@ToolbarTemplate()</text>);
+    })
+    .HtmlAttributes(new { style="height: 500px;" })
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .ServerOperation(true)
+        .Model(model =>
+        {
+            model.Id(p => p.OrderID);
+            model.Field(p => p.OrderID).Editable(false);
+        })
+        .Events(e => e.RequestEnd("onRequestEnd"))
+        .Create(create => create.Action("Create", "Home").Data("sendCulture"))
+        .Destroy(destroy => destroy.Action("Delete", "Home").Data("sendCulture"))
+        .Read(read => read.Action("Read", "Home").Data("sendCulture"))
+        .Update(update => update.Action("Update", "Home").Data("sendCulture"))
+    )
+)
 
 
 <script>

@@ -4,22 +4,22 @@
 
         <!-- Get current KendoUI culture / version
         @{
-            var kendoVersion = "2014.3.1119";
+            var kendoVersion = "2017.3.1026";
             var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
         } -->
 
         <title>@ViewBag.Title - My Telerik MVC Application</title>
         <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-         <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
-	     <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
-	     <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
-	     <link href="http://cdn.kendostatic.com/@(kendoVersion)/styles/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
-	    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/jquery.min.js"></script>
-        <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/jszip.min.js"></script>
-	    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/kendo.all.min.js"></script>
-	    <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/kendo.aspnetmvc.min.js"></script>
+         <link href="https://kendo.cdn.telerik.com/@(kendoVersion)/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+	     <link href="https://kendo.cdn.telerik.com/@(kendoVersion)/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+	     <link href="https://kendo.cdn.telerik.com/@(kendoVersion)/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+	     <link href="https://kendo.cdn.telerik.com/@(kendoVersion)/styles/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
+	    <script src="https://kendo.cdn.telerik.com/@(kendoVersion)/js/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/@(kendoVersion)/js/jszip.min.js"></script>
+	    <script src="https://kendo.cdn.telerik.com/@(kendoVersion)/js/kendo.all.min.js"></script>
+	    <script src="https://kendo.cdn.telerik.com/@(kendoVersion)/js/kendo.aspnetmvc.min.js"></script>
 
-        <script src="http://cdn.kendostatic.com/@(kendoVersion)/js/cultures/kendo.culture.@(culture).min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/@(kendoVersion)/js/cultures/kendo.culture.@(culture).min.js"></script>
         <script>
             kendo.culture("@culture");
         </script>
@@ -35,9 +35,7 @@
                 <div class="float-right">
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li> 
                         </ul>
                     </nav>
                 </div>
