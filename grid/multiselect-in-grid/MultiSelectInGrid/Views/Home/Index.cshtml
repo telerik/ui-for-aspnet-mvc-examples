@@ -13,7 +13,7 @@
 <script type="text/javascript">
     var territoriesTemplate = kendo.template($("#territoriesTemplate").html(), { useWithBlock: false });
 </script>
-@(Html.Kendo().Grid<EmployeeViewModel>()
+@(Html.Kendo().Grid<MultiSelectInGrid.Models.EmployeeViewModel>()
     .Name("grid")
     .Columns(columns =>
     {
@@ -30,8 +30,7 @@
     })
     .ToolBar(tools=> tools.Create())
     .Pageable()
-    //If uncomment, the widget will use the custom EmployeeViewModel.cshtml editor template
-    //.Editable(e => e.Mode(GridEditMode.PopUp))
+    .Filterable()
     .DataSource(dataSource => dataSource
         .Ajax()
         .PageSize(5)        
@@ -39,7 +38,7 @@
             {
                 model.Id(e => e.EmployeeID);
                 model.Field(e => e.EmployeeID).Editable(false);
-                model.Field(e => e.Territories).DefaultValue(new List<TerritoryViewModel>());
+                model.Field(e => e.Territories).DefaultValue(new List<MultiSelectInGrid.Models.TerritoryViewModel>());
             })
         .Read(read => read.Action("Read", "Home"))
         .Update(update => update.Action("Update", "Home").Data("serialize"))

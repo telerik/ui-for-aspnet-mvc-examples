@@ -21,7 +21,7 @@ namespace MultiSelectInGrid.Controllers
 
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            return Json(repository.Employees.ToDataSourceResult(request));
+            return Json(repository.Employees.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Update(EmployeeViewModel employee)

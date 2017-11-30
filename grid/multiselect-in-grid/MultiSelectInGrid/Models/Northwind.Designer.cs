@@ -159,7 +159,7 @@ namespace MultiSelectInGrid.Models
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -178,7 +178,7 @@ namespace MultiSelectInGrid.Models
                 {
                     OnEmployeeIDChanging(value);
                     ReportPropertyChanging("EmployeeID");
-                    _EmployeeID = StructuralObject.SetValidValue(value);
+                    _EmployeeID = StructuralObject.SetValidValue(value, "EmployeeID");
                     ReportPropertyChanged("EmployeeID");
                     OnEmployeeIDChanged();
                 }
@@ -203,7 +203,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnLastNameChanging(value);
                 ReportPropertyChanging("LastName");
-                _LastName = StructuralObject.SetValidValue(value, false);
+                _LastName = StructuralObject.SetValidValue(value, false, "LastName");
                 ReportPropertyChanged("LastName");
                 OnLastNameChanged();
             }
@@ -227,7 +227,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnFirstNameChanging(value);
                 ReportPropertyChanging("FirstName");
-                _FirstName = StructuralObject.SetValidValue(value, false);
+                _FirstName = StructuralObject.SetValidValue(value, false, "FirstName");
                 ReportPropertyChanged("FirstName");
                 OnFirstNameChanged();
             }
@@ -251,7 +251,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnTitleChanging(value);
                 ReportPropertyChanging("Title");
-                _Title = StructuralObject.SetValidValue(value, true);
+                _Title = StructuralObject.SetValidValue(value, true, "Title");
                 ReportPropertyChanged("Title");
                 OnTitleChanged();
             }
@@ -275,7 +275,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnTitleOfCourtesyChanging(value);
                 ReportPropertyChanging("TitleOfCourtesy");
-                _TitleOfCourtesy = StructuralObject.SetValidValue(value, true);
+                _TitleOfCourtesy = StructuralObject.SetValidValue(value, true, "TitleOfCourtesy");
                 ReportPropertyChanged("TitleOfCourtesy");
                 OnTitleOfCourtesyChanged();
             }
@@ -299,7 +299,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnBirthDateChanging(value);
                 ReportPropertyChanging("BirthDate");
-                _BirthDate = StructuralObject.SetValidValue(value);
+                _BirthDate = StructuralObject.SetValidValue(value, "BirthDate");
                 ReportPropertyChanged("BirthDate");
                 OnBirthDateChanged();
             }
@@ -323,7 +323,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnHireDateChanging(value);
                 ReportPropertyChanging("HireDate");
-                _HireDate = StructuralObject.SetValidValue(value);
+                _HireDate = StructuralObject.SetValidValue(value, "HireDate");
                 ReportPropertyChanged("HireDate");
                 OnHireDateChanged();
             }
@@ -347,7 +347,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnAddressChanging(value);
                 ReportPropertyChanging("Address");
-                _Address = StructuralObject.SetValidValue(value, true);
+                _Address = StructuralObject.SetValidValue(value, true, "Address");
                 ReportPropertyChanged("Address");
                 OnAddressChanged();
             }
@@ -371,7 +371,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnCityChanging(value);
                 ReportPropertyChanging("City");
-                _City = StructuralObject.SetValidValue(value, true);
+                _City = StructuralObject.SetValidValue(value, true, "City");
                 ReportPropertyChanged("City");
                 OnCityChanged();
             }
@@ -395,7 +395,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnRegionChanging(value);
                 ReportPropertyChanging("Region");
-                _Region = StructuralObject.SetValidValue(value, true);
+                _Region = StructuralObject.SetValidValue(value, true, "Region");
                 ReportPropertyChanged("Region");
                 OnRegionChanged();
             }
@@ -419,7 +419,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnPostalCodeChanging(value);
                 ReportPropertyChanging("PostalCode");
-                _PostalCode = StructuralObject.SetValidValue(value, true);
+                _PostalCode = StructuralObject.SetValidValue(value, true, "PostalCode");
                 ReportPropertyChanged("PostalCode");
                 OnPostalCodeChanged();
             }
@@ -443,7 +443,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnCountryChanging(value);
                 ReportPropertyChanging("Country");
-                _Country = StructuralObject.SetValidValue(value, true);
+                _Country = StructuralObject.SetValidValue(value, true, "Country");
                 ReportPropertyChanged("Country");
                 OnCountryChanged();
             }
@@ -467,7 +467,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnHomePhoneChanging(value);
                 ReportPropertyChanging("HomePhone");
-                _HomePhone = StructuralObject.SetValidValue(value, true);
+                _HomePhone = StructuralObject.SetValidValue(value, true, "HomePhone");
                 ReportPropertyChanged("HomePhone");
                 OnHomePhoneChanged();
             }
@@ -491,7 +491,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnExtensionChanging(value);
                 ReportPropertyChanging("Extension");
-                _Extension = StructuralObject.SetValidValue(value, true);
+                _Extension = StructuralObject.SetValidValue(value, true, "Extension");
                 ReportPropertyChanged("Extension");
                 OnExtensionChanged();
             }
@@ -515,7 +515,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnPhotoChanging(value);
                 ReportPropertyChanging("Photo");
-                _Photo = StructuralObject.SetValidValue(value, true);
+                _Photo = StructuralObject.SetValidValue(value, true, "Photo");
                 ReportPropertyChanged("Photo");
                 OnPhotoChanged();
             }
@@ -539,7 +539,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnNotesChanging(value);
                 ReportPropertyChanging("Notes");
-                _Notes = StructuralObject.SetValidValue(value, true);
+                _Notes = StructuralObject.SetValidValue(value, true, "Notes");
                 ReportPropertyChanged("Notes");
                 OnNotesChanged();
             }
@@ -563,7 +563,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnReportsToChanging(value);
                 ReportPropertyChanging("ReportsTo");
-                _ReportsTo = StructuralObject.SetValidValue(value);
+                _ReportsTo = StructuralObject.SetValidValue(value, "ReportsTo");
                 ReportPropertyChanged("ReportsTo");
                 OnReportsToChanged();
             }
@@ -587,7 +587,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnPhotoPathChanging(value);
                 ReportPropertyChanging("PhotoPath");
-                _PhotoPath = StructuralObject.SetValidValue(value, true);
+                _PhotoPath = StructuralObject.SetValidValue(value, true, "PhotoPath");
                 ReportPropertyChanged("PhotoPath");
                 OnPhotoPathChanged();
             }
@@ -598,7 +598,6 @@ namespace MultiSelectInGrid.Models
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -714,7 +713,7 @@ namespace MultiSelectInGrid.Models
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -733,7 +732,7 @@ namespace MultiSelectInGrid.Models
                 {
                     OnTerritoryIDChanging(value);
                     ReportPropertyChanging("TerritoryID");
-                    _TerritoryID = StructuralObject.SetValidValue(value, false);
+                    _TerritoryID = StructuralObject.SetValidValue(value, false, "TerritoryID");
                     ReportPropertyChanged("TerritoryID");
                     OnTerritoryIDChanged();
                 }
@@ -758,7 +757,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnTerritoryDescriptionChanging(value);
                 ReportPropertyChanging("TerritoryDescription");
-                _TerritoryDescription = StructuralObject.SetValidValue(value, false);
+                _TerritoryDescription = StructuralObject.SetValidValue(value, false, "TerritoryDescription");
                 ReportPropertyChanged("TerritoryDescription");
                 OnTerritoryDescriptionChanged();
             }
@@ -782,7 +781,7 @@ namespace MultiSelectInGrid.Models
             {
                 OnRegionIDChanging(value);
                 ReportPropertyChanging("RegionID");
-                _RegionID = StructuralObject.SetValidValue(value);
+                _RegionID = StructuralObject.SetValidValue(value, "RegionID");
                 ReportPropertyChanged("RegionID");
                 OnRegionIDChanged();
             }
@@ -793,7 +792,6 @@ namespace MultiSelectInGrid.Models
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -824,5 +822,4 @@ namespace MultiSelectInGrid.Models
 
     #endregion
 
-    
 }
