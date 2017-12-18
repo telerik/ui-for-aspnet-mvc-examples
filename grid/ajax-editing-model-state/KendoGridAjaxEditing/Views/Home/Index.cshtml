@@ -12,7 +12,7 @@
           }).Title("Commands").Width(200);
       })
       .ToolBar(toolbar => toolbar.Create())
-      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
       .DataSource(dataSource =>
           dataSource.Ajax()
             .Events(events => events.Error("grid_error")) // Handle the "error" event
