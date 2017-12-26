@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>title</h1>
+
+
+@(Html.Kendo().Grid<Product>(Model.Data)
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ProductName).Title("Product Name");
+        columns.Bound(p => p.UnitPrice).Title("Unit Price").Width(130);
+    })
+    .HtmlAttributes(new { style = "height: 550px;" })
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+)
