@@ -18,6 +18,7 @@
                 .Filterable()
                 .HtmlAttributes(new { style = "height:650px;" })
                 .Scrollable()
+                .Navigatable()
                 .Editable(editable => editable.Mode(GridEditMode.InCell))
                 .DataSource(dataSource => dataSource
                     .Custom()
@@ -48,6 +49,7 @@
                     .PageSize(20)
                     .ServerPaging(true)
                     .ServerSorting(true)
+                    .ServerFiltering(true)
                 )
                 .Pageable()
                 .Sortable()
