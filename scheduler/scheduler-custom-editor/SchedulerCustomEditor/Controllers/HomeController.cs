@@ -3,6 +3,8 @@
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using SchedulerCustomEditor.Models;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Web.Mvc;
 
     public class HomeController : Controller
@@ -32,34 +34,62 @@
             return Json(meetingService.GetAll().ToDataSourceResult(request));
         }
 
-        public virtual JsonResult Meetings_Destroy([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
+        public virtual JsonResult Meetings_Destroy([DataSourceRequest] DataSourceRequest request, IEnumerable<MeetingViewModel> models)
         {
             if (ModelState.IsValid)
             {
-                meetingService.Delete(meeting, ModelState);
+                var list = models.ToList();
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    var meeting = list[i];
+
+                    if (meeting.RecurrenceID != null)
+                    {
+                        for (int j = 0; j < list.Count; j++)
+                        {
+                            var potentialParent = list[j];
+
+                            if (meeting.RecurrenceID == potentialParent.MeetingID) {
+                                models = models.Where(m => m.MeetingID != potentialParent.MeetingID);
+                            }
+                        }
+                    }
+                }
+
+                foreach (var meeting in models)
+                {
+                    meetingService.Delete(meeting, ModelState);
+                }
             }
 
-            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
+            return Json(models.ToDataSourceResult(request, ModelState));
         }
 
-        public virtual JsonResult Meetings_Create([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
+        public virtual JsonResult Meetings_Create([DataSourceRequest] DataSourceRequest request, IEnumerable<MeetingViewModel> models)
         {
             if (ModelState.IsValid)
             {
-                meetingService.Insert(meeting, ModelState);
+                foreach (var meeting in models)
+                {
+                    meetingService.Insert(meeting, ModelState);
+                }
             }
 
-            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
+            return Json(models.ToDataSourceResult(request, ModelState));
         }
 
-        public virtual JsonResult Meetings_Update([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
+        public virtual JsonResult Meetings_Update([DataSourceRequest] DataSourceRequest request, IEnumerable<MeetingViewModel> models)
         {
             if (ModelState.IsValid)
             {
-                meetingService.Update(meeting, ModelState);
+                foreach (var meeting in models)
+                {
+                    meetingService.Update(meeting, ModelState);
+                }
             }
 
-            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
+            return Json(models.ToDataSourceResult(request, ModelState));
         }
     }
 }
