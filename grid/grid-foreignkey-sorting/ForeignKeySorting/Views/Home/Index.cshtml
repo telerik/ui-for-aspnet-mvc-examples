@@ -13,12 +13,11 @@
         columns.Bound(p => p.ProductID);
         columns.Bound(p => p.ProductName);
         columns.ForeignKey(p => p.CategoryID, (System.Collections.IEnumerable)ViewData["categories"], 
-            "CategoryID", "CategoryName");        
+            "CategoryID", "CategoryName").Title("Category").Filterable(f=>f.Extra(false));        
     })
     .Pageable()
     .Sortable()
-    .Filterable()
-    .ColumnMenu()    
+    .Filterable()   
     .DataSource(dataSource => dataSource
         .Ajax()
         .Model(model =>
@@ -30,12 +29,4 @@
         .Update(update => update.Action("Update", "Home"))        
     )
 )
-
-<script>
-    $(function () {
-        var grid = $("#grid").data("kendoGrid");
-        var menu = grid.thead.find("th[data-field='CategoryID']").attr("data-field", "CategoryName").data("kendoColumnMenu");
-        menu.field = "CategoryName";
-    });
-
-</script>
+ 
