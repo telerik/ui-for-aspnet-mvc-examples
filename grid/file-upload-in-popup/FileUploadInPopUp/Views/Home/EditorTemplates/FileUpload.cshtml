@@ -1,0 +1,22 @@
+﻿@model string
+
+@Html.HiddenFor(m => m)
+@Html.ValidationMessageFor(m => m)
+
+<script>
+    function success(e) {
+        var imagePath = e.response.ImageUrl;
+
+        $("#ImageUrl").val(imagePath).trigger("change");
+    }
+</script>
+
+@(Html.Kendo().Upload()
+    .Name("file")
+    .Multiple(false)    
+    .Async(a => a
+        .Save("Save", "Home")
+        .AutoUpload(true)
+    )
+    .Events( e => e.Success("success"))
+ )
