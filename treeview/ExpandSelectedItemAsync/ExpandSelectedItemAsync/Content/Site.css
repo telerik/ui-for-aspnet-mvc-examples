@@ -1,0 +1,197 @@
+﻿/* #region Common styles */
+html,
+body,
+.body-content {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+}
+
+body {
+    padding: 50px 0 0;
+}
+
+.body-content {
+    padding: 0 15px 20px;
+    overflow: auto;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column */
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+a.k-link:focus,
+a.navbar-brand:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.container-fluid .text-muted {
+    margin: 20px 0;
+}
+
+.placeholders {
+    margin: 30px auto;
+}
+
+.placeholder img {
+    display: inline-block;
+}
+/* #endregion */
+
+/* #region Header styles */
+.k-header h1 {
+    margin: 0;
+    padding: 30px 15px;
+    font-size: 32px;
+    font-weight: lighter;
+}
+
+html .navbar-fixed-top {
+    border: 0;
+}
+
+/* #region Toggle button styles  */
+html .k-rpanel-toggle {
+    display: none;
+}
+
+html body .btn-toggle,
+html body .k-primary.btn-toggle:hover,
+html body .btn-toggle:focus:active:not(.k-state-disabled):not([disabled]),
+html body .btn-toggle:focus:not(.k-state-disabled):not([disabled]) {
+    box-shadow: none;
+    border-radius: 0;
+}
+/* #endregion */
+
+/* #region Navbar styles */
+.navbar-header {
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+}
+
+html .navbar-header .btn-toggle {
+    padding: 8px;
+    line-height: 20px;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    float: right;
+    margin: 7px;
+    padding: 15px;
+    margin: 0;
+}
+
+    html .navbar-header .btn-toggle:hover {
+        background-color: #444;
+    }
+
+.navbar-header .k-icon.k-i-hbars {
+    width: 24px;
+    height: 20px;
+    line-height: inherit;
+    vertical-align: top;
+    font-size: inherit;
+    background: none;
+}
+
+.navbar-header .k-i-hbars:before {
+    font-size: 24px;
+    content: "\2630";
+    display: inline-block;
+}
+
+/* #endregion */
+
+/* #region Navbar Menu styles */
+.navbar .k-menu {
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    background: none;
+}
+
+    .navbar .k-menu > .k-first,
+    .navbar .k-menu > .k-last {
+        border-radius: 0;
+    }
+
+html .navbar .k-menu .k-item {
+    border: 0;
+}
+
+.navbar .k-item {
+    color: #999999;
+}
+
+.navbar .k-menu .k-state-hover,
+.navbar .k-menu .k-state-highlight,
+.navbar .k-menu .k-link.k-state-active,
+.navbar .k-menu .k-state-hover > .k-link {
+    color: #fff;
+    background: transparent;
+}
+
+html .navbar .k-link {
+    color: inherit;
+}
+
+html body .navbar .navbar-brand {
+    box-sizing: border-box;
+}
+
+/* #endregion */
+
+/* #region Footer styles */
+.footer {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    right: 30px;
+    height: 75px;
+    font-size: 0.85em;
+}
+/* #endregion */
+
+/* #region custom Kendo UI styles */
+html .k-panelbar .k-content {
+    padding: 1em;
+}
+
+p .k-button {
+    margin: 0 15px 0 0;
+}
+
+.k-state-active .label {
+    font-size: 1em;
+    color: #000;
+}
+/* #endregion */
+
+@media (max-width: 767px) {
+    #responsive-panel .k-item {
+        float: none;
+    }
+
+    html .k-rpanel-toggle {
+        display: block;
+    }
+
+    .k-header h1 {
+        margin: 0;
+        padding: 16px 15px 14px 60px;
+        font-size: 18px;
+        font-weight: lighter;
+    }
+}

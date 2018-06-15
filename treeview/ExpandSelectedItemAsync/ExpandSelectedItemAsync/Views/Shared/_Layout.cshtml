@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html> 
+    <head>
+        <title>@ViewBag.Title - My Telerik MVC Application</title>
+        <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+
+        @* Content-box fixes as per http://docs.telerik.com/kendo-ui/third-party/using-kendo-with-twitter-bootstrap article  *@
+        <link href="@Url.Content("~/Content/box-sizing-fixes.css")" rel="stylesheet" type="text/css" />
+
+        <link href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+        <script src="https://kendo.cdn.telerik.com/2018.2.516/js/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2018.2.516/js/jszip.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2018.2.516/js/kendo.all.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2018.2.516/js/kendo.aspnetmvc.min.js"></script>
+        <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+    <body>
+        <div class="body-content">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
