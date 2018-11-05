@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        @{
+            var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
+        } 
+
+        <title>@ViewBag.Title - My Telerik MVC Application</title>
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.911/styles/kendo.common-material.min.css" />
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.911/styles/kendo.material.min.css" />
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.911/styles/kendo.material.mobile.min.css" />
+
+        <script src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="http://kendo.cdn.telerik.com/2018.3.911/js/angular.min.js"></script>
+        <script src="http://kendo.cdn.telerik.com/2018.3.911/js/jszip.min.js"></script>
+        <script src="http://kendo.cdn.telerik.com/2018.3.911/js/kendo.all.min.js"></script>
+        <script src="http://kendo.cdn.telerik.com/2018.3.911/js/kendo.aspnetmvc.min.js"></script>
+        <script src="http://kendo.cdn.telerik.com/2018.3.911/js/cultures/kendo.culture.bg-BG.min.js"></script>
+    </head>
+    <body>
+   
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My Telerik MVC Application</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
