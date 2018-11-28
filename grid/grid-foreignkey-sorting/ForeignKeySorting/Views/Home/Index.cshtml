@@ -12,7 +12,6 @@
         }); 
         columns.Bound(p => p.ProductID);
         columns.Bound(p => p.ProductName);
-        columns.Bound(p => p.CategoryID);
         columns.ForeignKey(p => p.CategoryID, (System.Collections.IEnumerable)ViewData["categories"], 
             "CategoryID", "CategoryName").Title("Category").Filterable(f=>f.Extra(false));        
     })
@@ -33,7 +32,6 @@
  <script>
     $(function () {
         var grid = $("#grid").data("kendoGrid");
-        var menu = grid.thead.find("th[data-field='CategoryID']").attr("data-field", "CategoryName").data("kendoColumnMenu");
-        menu.field = "CategoryName";
+        grid.thead.find("th[data-field='CategoryID']").attr("data-field", "CategoryName");
     });
 </script> 
