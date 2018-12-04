@@ -1,0 +1,24 @@
+﻿@model KendoUIMVC5.Models.Person
+
+<div class="k-edit-form-container">
+    <h3>Customized Person edit template</h3>
+    <br />
+    @Html.HiddenFor(model => model.PersonID)
+
+    <div class="k-edit-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="k-edit-field">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="k-edit-label">
+        @Html.LabelFor(model => model.BirthDate)
+    </div>
+    <div class="k-edit-field">
+        @Html.Kendo().DateTimePickerFor(model => model.BirthDate)
+        @Html.ValidationMessageFor(model => model.BirthDate)
+    </div>
+</div>
+
