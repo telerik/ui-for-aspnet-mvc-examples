@@ -1,0 +1,109 @@
+﻿@model SampleMvcApp.Models.SampleData
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@(Html.Kendo().MultiColumnComboBox()
+						  .Name("multicolumncombobox")
+						  .DataTextField("theText")
+						  .DataValueField("theValue")
+						  .HtmlAttributes(new { style = "width: 400px;" })
+						  .Columns(columns =>
+						  {
+							  columns.Add()
+								  .Field("theValue")
+								  .Title("Value")
+								  .Width("100px");
+
+							  columns.Add()
+								  .Field("theText")
+								  .Title("Description");
+
+							  columns.Add()
+									.Template("<div class=\"btnContainer\" data-info=\"#=theValue#\"><button class=\"k-button editBtn\"><span class=\"k-icon k-i-edit\"></span>Edit</button> <button class=\"k-button deleteBtn\"><span class=\"k-icon k-i-delete\"></span>Delete</button></div>")
+									.Title("Edit/Delete");
+
+						  })
+						  .FooterTemplate("Total <strong>#: instance.dataSource.total() #</strong> items found. <button class=\"k-button addBtn\"><span class=\"k-icon k-i-add\"></span>Add New</button>")
+					  .DataSource(source =>
+					  {
+						  source.Read(read =>
+						  {
+							  read.Action("GetData", "MccbCRUD");
+						  });
+					  })
+					  .Height(300)
+)
+
+@(Html.Kendo().Window()
+						.Name("createEditPopup")
+						.Draggable(true)
+						.Resizable(resizable => resizable.Enabled(true))
+						.Visible(false)
+						.Events(ev => ev.Refresh("centerDialog"))
+)
+
+<script>
+	$(document).ready(function () {
+		var multicolumncombobox = getMccb();
+		var list = multicolumncombobox.list;
+		list.on("mousedown", ".addBtn", openAddDialog);
+		list.on("mousedown", ".editBtn", openEditDialog);
+		list.on("mousedown", ".deleteBtn", deleteItem);
+	});
+
+	function openAddDialog(evt) {
+		getMccb().bind("select", preventSelection);
+		openDialog("Add", { url: "/MccbCRUD/Create/" });
+	}
+
+	function openEditDialog(evt) {
+		getMccb().bind("select", preventSelection);
+		openDialog("Edit", { url: "/MccbCRUD/Edit/" + getItemId(evt.target) });
+	}
+
+	function deleteItem(evt) {
+		evt.preventDefault();
+		$.ajax({
+			url: "/MccbCRUD/Delete/" + getItemId(evt.target),
+			type: "POST",
+			success: updateMccb,
+			error: function () { alert("error deleting, sorry."); }
+		});
+	}
+
+	function updateMccb() {
+		closeDialog();
+		var mccb = getMccb();
+		mccb.dataSource.read();
+		mccb.refresh();
+	}
+
+	function openDialog(title, requestObj) {
+		$("#createEditPopup").data("kendoWindow").center().open().title(title).refresh(requestObj);
+	}
+
+	function closeDialog() {
+		$("#createEditPopup").data("kendoWindow").close();
+	}
+
+	function getItemId(elem) {
+		return $(elem).parents(".btnContainer").first().data("info");
+	}
+
+	function getMccb() {
+		return $("#multicolumncombobox").data("kendoMultiColumnComboBox");
+	}
+
+	function preventSelection(evt) {
+		evt.preventDefault();
+		evt.sender.unbind("select", preventSelection);
+	}
+
+	function centerDialog() {
+		this.center();
+	}
+</script>
