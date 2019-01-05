@@ -1,10 +1,5 @@
-# CRUD operations with MultiColumnComboBox
+# Get MultiSelect data in POST to Controller
 
-The MultiColumnComboBox is a view-only widget by design and does not provide edit, delete and create features.
+The MultiSelect is a `<select multiple>` element and behaves like one in a POST query - the browser will add a form data field with the name of the widget for each selected item, and the value of the form field will be the value of the item. This means that your model needs to expect a List of values for the given field.
 
-You can implement them, however, by adding custom buttons to its [templates](https://docs.telerik.com/kendo-ui/controls/editors/multicolumncombobox/overview#templates) and handling events from them to, for example, show AJAX forms from partial views in a popup.
-
-## Prerequisites
-
-This example steps on the [Using Kendo Window for MVC with AJAX Forms](https://github.com/telerik/ui-for-aspnet-mvc-examples/tree/master/window/KendoWindow-Ajax-Form) example so you should get familiar with its concepts and requirements.
-
+The example also shows how you can get the selected values with JavaScript so you can use them to craft your own query in case you have more specific requirements.
