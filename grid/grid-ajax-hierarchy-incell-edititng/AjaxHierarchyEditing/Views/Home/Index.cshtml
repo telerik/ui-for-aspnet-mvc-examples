@@ -20,7 +20,7 @@
         })
         .ToolBar(tools => tools.Create())
         .Pageable().Sortable()
-        .Filterable()        
+        .Filterable()
         .DataSource(source => source.Ajax()
             .Model(model =>
                     {
@@ -40,7 +40,7 @@
 <script type="text/javascript">
     $(function () {
         //create one empty row
-       
+
         $("#Employees table").on("keydown", function (e) {
             //if current key is Enter
             if (e.keyCode == 13) {
@@ -48,14 +48,16 @@
                 e.stopImmediatePropagation();
                 var grid = $("#Employees").data("kendoGrid");
                 var currentCell = grid.current();
-    
+
                 if (currentCell.is(".k-edit-cell")) {
                     setTimeout(function () {
                         grid.closeCell();
                         grid.table.focus();
-                    });                    
+                    });
                 } else {
-                    grid.editCell(currentCell);
+                    if (!currentCell.hasClass("k-hierarchy-cell")) {
+                        grid.editCell(currentCell);
+                    }
                 }
             }
         })
@@ -98,4 +100,4 @@
                 .Create(create => create.Action("Create_Employee", "Employees"))
                 .Destroy(destroy => destroy.Action("Destroy_Employee", "Employees")))
     .ClientDetailTemplateId("OrdersTemplate")
-)  
+)
