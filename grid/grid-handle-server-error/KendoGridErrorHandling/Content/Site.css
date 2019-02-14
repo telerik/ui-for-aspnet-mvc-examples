@@ -1,0 +1,86 @@
+﻿.k-header h1 {
+    margin: 0;
+    padding: 30px 15px;
+    font-size: 32px;
+    font-weight: lighter;
+}
+
+/* Sticky footer styles
+    -------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.container-fluid .text-muted {
+    margin: 20px 0;
+}
+
+.placeholders {
+    margin: 30px auto;
+}
+
+.placeholder img {
+    display: inline-block;
+}
+
+p .k-button {
+    margin: 0 15px 0 0;
+}
+
+.btn-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    height: 48px;
+}
+
+    .btn-toggle .k-icon {
+        opacity: 1;
+    }
+
+    .btn-toggle,
+    .k-primary.btn-toggle:hover,
+    .btn-toggle:focus:active:not(.k-state-disabled):not([disabled]),
+    .btn-toggle:focus:not(.k-state-disabled):not([disabled]) {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+        .btn-toggle .k-i-hbars,
+        .k-primary.btn-toggle:hover .k-i-hbars,
+        .btn-toggle:focus:active:not(.k-state-disabled):not([disabled]) .k-i-hbars,
+        .btn-toggle:focus:not(.k-state-disabled):not([disabled]) .k-i-hbars {
+            background-position: -80px -32px;
+        }
+
+@media (max-width: 768px) {
+    .k-item {
+        display: block;
+        clear: both;
+        float: none;
+        width: 100%;
+    }
+
+    .k-header h1 {
+        margin: 0;
+        padding: 16px 15px 14px 60px;
+        font-size: 18px;
+        font-weight: lighter;
+    }
+}

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - My Telerik MVC Application</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+    <link href="https://kendo.cdn.telerik.com/2019.1.115/styles/kendo.common-material.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://kendo.cdn.telerik.com/2019.1.115/styles/kendo.material.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://kendo.cdn.telerik.com/2019.1.115/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.115/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.115/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.115/js/kendo.aspnetmvc.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row k-header">
+            <h1>Project Title</h1>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <p class="text-muted">Copyright © @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

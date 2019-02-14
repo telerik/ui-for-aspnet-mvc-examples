@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="tooltip" hidden="hidden"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-18 col-md-12">
+        @(Html.Kendo().Grid<KendoGridErrorHandling.Models.OrderViewModel>()
+            .Name("grid")
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.OrderID).Filterable(false);
+                columns.Bound(p => p.Freight);
+                columns.Bound(p => p.ShipName);
+                columns.Bound(p => p.ShipCity);
+                columns.Bound(p => p.Category).ClientTemplate("#= Category.CategoryName #").EditorTemplateName("ClientCategory") ;
+                columns.Command(p => p.Edit());
+            })
+            .Pageable()
+            .Sortable()
+            .Scrollable()
+            .Filterable()
+            .Editable(editabel => editabel.Mode(GridEditMode.InLine))
+            .HtmlAttributes(new { style = "height:550px;" })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .Model(model => model.Id(p => p.OrderID))
+                .PageSize(20)
+                .Events(events => events.Error("err_handler"))
+                .Read(read => read.Action("Orders_Read", "Home"))
+                .Update(up => up.Action("Orders_Update", "Home"))
+            )
+        )
+      </div>
+    </div>
+</div>
+<script>
+    var tooltip;
+
+    $(function () {
+        tooltip = $("#tooltip").kendoTooltip().data("kendoTooltip");
+    });
+
+    function err_handler(e) {
+        if (e.errors !== undefined) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+
+            tooltip.setOptions({
+                autoHide: false,
+                content: message
+            });
+
+            tooltip.show($("td[data-container-for='Category']"));
+        }
+    }
+</script>
