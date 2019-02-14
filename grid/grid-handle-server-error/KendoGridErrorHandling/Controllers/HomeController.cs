@@ -10,8 +10,6 @@ namespace KendoGridErrorHandling.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
-
             return View();
         }
         public ActionResult Orders_Read([DataSourceRequest]DataSourceRequest request)
@@ -32,19 +30,19 @@ namespace KendoGridErrorHandling.Controllers
             return Json(result.ToDataSourceResult(request));
         }
 
-        public ActionResult Orders_Update([DataSourceRequest] DataSourceRequest request, OrderViewModel model)
+        public ActionResult Orders_Update([DataSourceRequest] DataSourceRequest request, OrderViewModel order)
         {
             bool isValid = false;
             
             // Note: The method below always returns an error
-            // In a real case this would be the result of a custom validation
+            // In a real-world application this would be the result of a custom validation
 
             if (!isValid)
             {
-                ModelState.AddModelError("'" + model.Category.CategoryName + "'", "This is my server error!");
+                ModelState.AddModelError("'" + order.Category.CategoryName + "'", "This is my server error!");
             }
 
-            return Json(new[] { model }.ToDataSourceResult(request, ModelState));
+            return Json(new[] { order }.ToDataSourceResult(request, ModelState));
         }
     }
 }
