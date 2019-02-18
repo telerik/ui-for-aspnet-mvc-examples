@@ -1,0 +1,32 @@
+﻿@using Kendo.Mvc.UI.Fluent
+
+@{
+	ViewBag.Title = "LocalData";
+}
+
+<h2>LocalData</h2>
+
+
+@(Html.Kendo().PanelBar()
+				.Name("PanelBarNavigation")
+				.BindTo((IEnumerable<pre_select_panelbar_item.Models.LocalPanelBarItem>)ViewBag.MyPanelBarItems, (NavigationBindingFactory<PanelBarItem> mappings) =>
+				{
+					mappings.For<pre_select_panelbar_item.Models.LocalPanelBarItem>(binding => binding.ItemDataBound((item, dataItemFromModel) =>
+					{
+						item.Text = dataItemFromModel.MenuName;
+						item.Url = dataItemFromModel.MenuUrl;
+						item.Selected = (dataItemFromModel.IsPreSelected == true);
+						if (item.Selected)
+						{
+							PanelBarItem currItem = item;
+							while (currItem.Parent != null)
+							{
+								currItem.Parent.Expanded = true;
+								currItem = currItem.Parent;
+							}
+						}
+
+					})
+					.Children(itm => itm.ChildItems));
+				})
+)
