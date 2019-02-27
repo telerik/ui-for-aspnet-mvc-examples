@@ -29,21 +29,7 @@
     <RestorePackages>true</RestorePackages>
     <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
     <UseGlobalApplicationHostFile />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,7 +53,6 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Kendo.Mvc">
-
       <HintPath>..\lib\KENDOUIMVC\2017.1.223.545\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -82,7 +67,6 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -172,9 +156,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-
-
-
     <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -228,11 +209,10 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-
-
-
+    <Content Include="Views\Home\EditorTemplates\CustomEditorTemplate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <EntityDeploy Include="Models\Sample.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Sample.Designer.cs</LastGenOutput>
@@ -253,18 +233,6 @@
       <LastGenOutput>Sample.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-
-
-
-
-
-
-
-
-
-
-
-
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

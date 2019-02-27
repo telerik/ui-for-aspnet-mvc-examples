@@ -48,10 +48,20 @@
         .Destroy("Meetings_Destroy", "Home")
         .Update("Meetings_Update", "Home")
     )
+	.Events(e => e.Edit("onEdit"))
 )
 
 
 <script type="text/javascript">
+	function onEdit(e) {
+		var start = e.event.start;
+		var recurrenceEditor = e.container.find('#RecurrenceRule').data('kendoRecurrenceEditor');
+
+		recurrenceEditor.setOptions({
+			start: start
+		});
+	}
+
     function error_handler(e) {
         if (e.errors) {
             var message = "Errors:\n";
