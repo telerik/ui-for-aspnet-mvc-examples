@@ -2,7 +2,7 @@
       .Name("grid")
       .Columns(columns =>
       {
-          columns.Select();
+          columns.Bound(product => product.Discontinued).ClientTemplate("<input type='checkbox' data-bind='checked:Discontinued' />").HeaderTemplate("<input id='checkAll' type='checkbox' onclick='checkAll(this)'/>");
           columns.Bound(product => product.ProductID).Width(100);
           columns.Bound(product => product.ProductName);
           columns.Bound(product => product.UnitsInStock).Width(250);
@@ -22,8 +22,8 @@
                 model.Id(product => product.ProductID); // Specify the property which is the unique identifier of the model
                 model.Field(product => product.ProductID).Editable(false); // Make the ProductID property not editable
             })
-            .Create(create => create.Action("Products_Create", "Home")) // Action invoked when the user saves a new data item
             .Read(read => read.Action("Products_Read", "Home"))  // Action invoked when the grid needs data
+            .Create(create => create.Action("Products_Create", "Home")) // Action invoked when the user saves a new data item
             .Update(update => update.Action("Products_Update", "Home"))  // Action invoked when the user saves an updated data item
             .Destroy(destroy => destroy.Action("Products_Destroy", "Home")) // Action invoked when the user removes a data item
       )
@@ -31,27 +31,29 @@
 )
 
 <script>
-    function onDataBound(e){
-        var grid = $("#grid").getKendoGrid();
-
-        var dataOnCurrentPage = grid.dataSource.view();
-        dataOnCurrentPage.forEach(function (model) {
-            if (model.Discontinued == true) {
-                var uid = model.uid;
-                var row = $("#grid tbody tr[data-uid=" + uid + "]");
-                grid.select(row);
-            }
-        });
-
-        $("input.k-checkbox").on("change", function (e) {
-            var dataItem = grid.dataItem(this.closest("tr"));
-
-            if (dataItem.Discontinued != this.checked) {
-                dataItem.set("Discontinued", this.checked);
+    function checkAll(input) {
+        var grid = $("#grid").data("kendoGrid");
+        var items = grid.items();
+        items.each(function () {
+            var dataItem = grid.dataItem(this);
+            if (dataItem.Discontinued != input.checked) {
+                dataItem.Discontinued = input.checked;
                 dataItem.dirty = true;
             }
+        })
 
-            grid.dataSource.sync();
-        });
+        grid.dataSource.sync();
+    }
+
+    function onDataBound(e) {
+        e.sender.items().each(function () {
+            var dataItem = e.sender.dataItem(this);
+            kendo.bind(this, dataItem);
+            if (dataItem.Discontinued) {
+                $(this).addClass("k-state-selected");
+            }
+        })
+
+        $("#checkAll")[0].checked = e.sender.items().find(":checked").length == e.sender.dataSource.view().length;
     }
 </script>
