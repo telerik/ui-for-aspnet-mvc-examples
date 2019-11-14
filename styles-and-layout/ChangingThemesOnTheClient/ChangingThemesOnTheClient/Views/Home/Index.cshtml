@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-8">
+    @(Html.Kendo().Editor()
+        .Name("editor")
+        .HtmlAttributes(new { style = "height:400px", aria_label = "editor" })
+        .Resizable(resizable => resizable.Content(true).Toolbar(true))
+        .ImageBrowser(imageBrowser => imageBrowser
+            .Image("~/Content/UserFiles/Images/{0}")
+            .Read("Read", "ImageBrowser")
+            .Create("Create", "ImageBrowser")
+            .Destroy("Destroy", "ImageBrowser")
+            .Upload("Upload", "ImageBrowser")
+            .Thumbnail("Thumbnail", "ImageBrowser")
+        )
+        .Value(@<text>
+                <p>
+                    Kendo UI Editor allows your users to edit HTML in a familiar, user-friendly way.<br />
+                    In this version, the Editor provides the core HTML editing engine, which includes basic text formatting, hyperlinks, lists,
+                    and image handling. The widget <strong>outputs identical HTML</strong> across all major browsers, follows
+                    accessibility standards and provides API for content manipulation.
+                </p>
+                <p>Features include:</p>
+                <ul>
+                    <li>Text formatting &amp; alignment</li>
+                    <li>Bulleted and numbered lists</li>
+                    <li>Hyperlink and image dialogs</li>
+                    <li>Cross-browser support</li>
+                    <li>Identical HTML output across browsers</li>
+                    <li>Gracefully degrades to a <code>textarea</code> when JavaScript is turned off</li>
+                </ul>
+                <p>
+                    Read <a href="http://docs.telerik.com/kendo-ui">more details</a> or send us your
+                    <a href="http://www.telerik.com/forums">feedback</a>!
+                </p>
+    </text>)
+        )
+    </div>
+    <div class="col-md-2">
+        @(Html.Kendo().Calendar()
+                .Name("calendar")
+        )
+    </div>
+    <div class="col-md-2">
+        <p>
+            @(Html.Kendo().Slider()
+            .Name("slider")
+            .IncreaseButtonTitle("Right")
+            .DecreaseButtonTitle("Left")
+            .Min(-10)
+            .Max(10)
+            .SmallStep(2)
+            .LargeStep(1)
+            .Value(0)
+            .HtmlAttributes(new { @class = "balSlider", title = "Slider" }))
+        </p>
+        <p>
+            @(Html.Kendo()
+            .Button()
+            .Name("Button")
+            .Content("Button")
+            .HtmlAttributes(new { @class = "textButton" }))
+        </p>
+        <p>
+            @(Html.Kendo().Button()
+            .Name("primaryTextButton")
+            .HtmlAttributes(new { type = "button", @class = "k-primary" })
+            .Content("Primary Button"))
+        </p>
+    </div>
+</div>
+<p></p>
+<div class="row">
+    <div class="col-md-12">
+        @(Html.Kendo().Grid<ChangingThemesOnTheClient.Models.OrderViewModel>()
+            .Name("grid")
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.OrderID).Filterable(false);
+                columns.Bound(p => p.Freight);
+                columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}");
+                columns.Bound(p => p.ShipName);
+                columns.Bound(p => p.ShipCity);
+            })
+            .Pageable()
+            .Sortable()
+            .Scrollable()
+            .Filterable()
+            .Editable()
+            .HtmlAttributes(new { style = "height:550px;" })
+            .DataSource(dataSource => dataSource
+                .Custom()
+                .PageSize(20)
+                .Transport(t=>t
+                .Read(read => read.Action("Orders_Read", "Grid")))
+                .Schema(s=>s.Model(m=>m.Id("OrderId")).Data("Data"))
+            )
+        )
+    </div>
+</div>
+
