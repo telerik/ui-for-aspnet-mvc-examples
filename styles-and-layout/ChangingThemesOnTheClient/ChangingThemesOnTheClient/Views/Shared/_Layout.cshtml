@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - My Telerik MVC Application</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+
+    @{
+        var specialThemes = new string[] { "nova", "bootstrap", "fiori", "material", "materialblack", "office365" };
+        var sassThemes = new string[] { "default-v2", "bootstrap-v4", "material-v2" };
+        var commonThemeName = "common";
+        var mainHref = "https://kendo.cdn.telerik.com/2019.3.917/styles/kendo.";
+        var cookie = Request.Cookies.Get("theme");
+        string selectedTheme;
+
+        if (cookie == null)
+        {
+            selectedTheme = "default";
+        }
+        else
+        {
+            selectedTheme = cookie.Value;
+        }
+
+        var themeHref = mainHref + selectedTheme + ".min.css";
+        var commonThemeHref = mainHref + commonThemeName + ".min.css";
+        if (specialThemes.Any(x => x == selectedTheme))
+        {
+            commonThemeName += "-" + selectedTheme.Replace("materialblack", "material");
+        }
+
+        if (sassThemes.Contains(selectedTheme))
+        {
+            <link href=@themeHref rel="stylesheet" type="text/css" />
+        }
+        else
+        {
+            <link href=@commonThemeHref rel="stylesheet" type="text/css" />
+            <link href=@themeHref rel="stylesheet" type="text/css" />
+        }
+    }
+
+
+    <script src="https://kendo.cdn.telerik.com/2019.3.1023/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.3.1023/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.3.1023/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.3.1023/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body class="k-content">
+    <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-between p-0">
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand d-flex align-items-center">Project Title</a>
+            <button id="configure" class="k-rpanel-toggle k-button k-primary btn-toggle">
+                <span class="k-icon k-i-menu"></span>
+            </button>
+            @(Html.Kendo().DropDownList()
+               .Name("themeSelector")
+               .DataTextField("Name")
+               .DataValueField("ThemeId")
+               .OptionLabel("Select Theme")
+               .Height(300)
+               .AutoWidth(true)
+               .DataSource(source =>
+                   {
+                   source.Read(read =>
+                   {
+                        read.Action("GetThemes", "Home");
+                       });
+                   }).Events(ev => ev.Change("themeSelection"))
+               .HtmlAttributes(new { style = "float: right" })
+            )
+        </div>
+    </nav>
+    
+    <div id="responsive-panel" class="navbar navbar-dark bg-light mb-3">
+        @(Html.Kendo().Menu()
+            .Name("Menu")
+            .HtmlAttributes(new { style="width:100%" })
+            .Items(items =>
+            {
+                items.Add().Text("Item 1");
+                items.Add().Text("Item 2");
+                items.Add().Text("Item 3");
+                items.Add().Text("Disabled item").Enabled(false);
+            })
+        )
+    </div>
+
+    <main>
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="footer text-center d-flex align-items-center">
+        <div class="container-fluid">
+            <p class="text-muted">Copyright © @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $("#responsive-panel").kendoResponsivePanel({
+                breakpoint: 768,
+                autoClose: false,
+                orientation: "top"
+            });
+        });
+        function onclick(e) {
+            $("#responsive-panel").getKendoResponsivePanel().toggle();
+        }
+
+        function themeSelection(e) {
+        var selectedTheme = e.sender.dataItem();
+        $.post({
+            url: "/Home/SetTheme",
+            data: { selection: selectedTheme.ThemeId },
+            success: function (data) {
+                window.location = data.url;
+            }
+            });
+        };
+    </script>
+</body>
+</html>
