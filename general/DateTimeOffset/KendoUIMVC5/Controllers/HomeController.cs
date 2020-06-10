@@ -34,7 +34,8 @@ namespace KendoUIMVC5.Controllers
 
         public ActionResult AllCars([DataSourceRequest] DataSourceRequest request)
         {
-            return Json(service.GetAllCars().ToDataSourceResult(request, car => mapper.Map<CarViewModel>(car)));
+            var result = service.GetAllCars().Select(car => mapper.Map<CarViewModel>(car));
+            return Json(result.ToDataSourceResult(request));
         }
     }
 }
