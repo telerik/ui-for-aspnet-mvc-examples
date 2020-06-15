@@ -118,7 +118,7 @@ namespace KendoUIMVC5.Models
                     Id = Guid.NewGuid(),
                     Make = make.Key,
                     Model = make.Value[random.Next(0, make.Value.Count)],
-                    ProductionDate = new DateTimeOffset(random.Next(2000, 2020), random.Next(1, 11), random.Next(1, 27), random.Next(1, 23), random.Next(1, 59), random.Next(1, 59), TimeSpan.Zero)
+                    ProductionDate = new DateTimeOffset(random.Next(2000, 2020), random.Next(1, 11), random.Next(1, 27), random.Next(1, 23), random.Next(1, 59), random.Next(0,1), TimeSpan.Zero)
                 });
             }
 

@@ -14,6 +14,7 @@ namespace KendoUIMVC5.Controllers
     {
         private static IMapper mapper;
         private readonly CarsService service = new CarsService();
+        public static IEnumerable<CarViewModel> cars;
 
         public HomeController()
         {
@@ -25,16 +26,21 @@ namespace KendoUIMVC5.Controllers
                 });
                 mapper = mappingConfig.CreateMapper();
             }
+
+            if (cars == null)
+            {
+                cars = service.GetAllCars().Select(car => mapper.Map<CarViewModel>(car));
+            }
         }
 
         public ActionResult Index()
         {
-            return View(mapper.Map<CarViewModel>(service.GetAllCars().FirstOrDefault()));
+            return View(mapper.Map<CarViewModel>(cars.FirstOrDefault()));
         }
 
         public ActionResult AllCars([DataSourceRequest] DataSourceRequest request)
         {
-            var result = service.GetAllCars().Select(car => mapper.Map<CarViewModel>(car));
+            var result = cars.Select(car => mapper.Map<CarViewModel>(car));
             return Json(result.ToDataSourceResult(request));
         }
     }
