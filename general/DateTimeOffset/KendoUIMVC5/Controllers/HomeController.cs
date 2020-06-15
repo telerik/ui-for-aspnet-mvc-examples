@@ -12,9 +12,9 @@ namespace KendoUIMVC5.Controllers
 {
     public class HomeController : Controller
     {
-        private static IMapper mapper;
+        private readonly IMapper mapper;
         private readonly CarsService service = new CarsService();
-        public static IEnumerable<CarViewModel> cars;
+        public static IEnumerable<Car> cars;
 
         public HomeController()
         {
@@ -29,7 +29,7 @@ namespace KendoUIMVC5.Controllers
 
             if (cars == null)
             {
-                cars = service.GetAllCars().Select(car => mapper.Map<CarViewModel>(car));
+                cars = service.GetAllCars();
             }
         }
 
