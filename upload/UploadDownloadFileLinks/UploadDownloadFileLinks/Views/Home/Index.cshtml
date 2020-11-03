@@ -1,0 +1,24 @@
+﻿<script id="fileTemplate" type="text/x-kendo-template">
+    <span class='k-progress'></span>
+    <div class='file-wrapper'>
+        <a href="@Url.Action("GetFiles", "Home")?fileName=#=name#">Get File</a>
+        <h4 class='file-heading file-name-heading'>Name:#=name#</h4>
+        <h4 class='file-heading file-size-heading'>Size: #=size# bytes</h4>
+        <strong class="k-upload-status">
+            <button type='button' class='k-upload-action'></button>
+            <button type='button' class='k-upload-action'></button>
+        </strong>
+    </div>
+</script>
+
+
+@(Html.Kendo().Upload()
+        .Name("files")
+        .Async(async =>
+        {
+            async.Save("Async_Save", "Home");
+            async.Remove("Async_Remove", "Home");
+            async.AutoUpload(true);
+        })
+        .TemplateId("fileTemplate")
+)

@@ -1,0 +1,81 @@
+﻿
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 80px;
+}
+
+/* #region Navbar styles */
+.navbar-header {
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+}
+/* #endregion */
+
+
+/* #region Footer styles */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.85em;
+}
+/* #endregion */
+
+/* #region custom Kendo UI styles */
+#configure {
+    display: none;
+}
+
+.k-panelbar .k-content {
+    padding: 20px;
+}
+
+p .k-button {
+    margin: 0 15px 0 0;
+}
+
+.k-state-active .label {
+    font-size: 1em;
+}
+
+/* #endregion */
+
+@media (max-width: 767px) {
+    #responsive-panel {
+        transition: all linear .2s;
+    }
+
+    #configure {
+        display: block;
+        float: right;
+    }
+
+    .k-rpanel {
+        width: 100%;
+    }
+
+    .k-rpanel-expanded {
+        margin-top: 1rem;
+    }
+
+    .navbar-header {
+        width: 100%;
+    }
+
+    .footer {
+        height: 60px;
+    }
+
+    .k-menu .k-item,
+    .k-menu .k-link {
+        width: 100%;
+    }
+
+    .k-menu .k-link {
+        box-sizing: border-box;
+    }
+}
+
