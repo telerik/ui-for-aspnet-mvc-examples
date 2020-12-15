@@ -10,13 +10,16 @@
 	{
 		public IList<ResourceViewModel> ReadResources(string path)
 		{
+			// Initialize an MPXJ Project reader which is universal (will open any supported file)
 			ProjectReader reader = new UniversalProjectReader();
 			var resources = new List<ResourceViewModel>();
 
 			try
 			{
+				// Read the file at the specified path
 				ProjectFile project = reader.read(path);
 
+				// Create a ResourceViewModel for each defined in the Project resource
 				foreach (Resource res in project.Resources)
 				{
 					var name = res.Name;

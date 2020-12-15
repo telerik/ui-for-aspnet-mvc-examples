@@ -99,6 +99,7 @@
 				assignments: JSON.parse(JSON.stringify(assignments))
 			}
 		}).done(function () {
+			// Redirect so that the saved file would be downloaded on the client
 			window.location = '@Url.Action("ExportFile", "Home")';
 		}).fail(function () {
 			alert("File save failed!");
@@ -112,13 +113,12 @@
 		var assignmentsDs = gantt.assignments.dataSource;
 		var resourcesDs = gantt.resources.dataSource;
 
+		// Force read for each of the Gantt DataSources using the saved file name as a second parameter in the call
 		resourcesDs.read({ fileName: e.response.fileName })
 			.then(tasksDs.read({ fileName: e.response.fileName })
 				.then(dependenciesDs.read({ fileName: e.response.fileName })
 					.then(assignmentsDs.read({ fileName: e.response.fileName }))
 				)
 			);
-			
-
 	}
 </script>

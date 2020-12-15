@@ -10,13 +10,16 @@
 	{
 		public IList<ResourceAssignmentViewModel> ReadAssignments(string path)
 		{
+			// Initialize an MPXJ Project reader which is universal (will open any supported file)
 			var assignments = new List<ResourceAssignmentViewModel>();
 			ProjectReader reader = new UniversalProjectReader();
 
 			try
 			{
+				// Read the file at the specified path
 				ProjectFile project = reader.read(path);
 
+				// Create a ResourceAssignmentViewModel for each defined resource assignment in the Project
 				foreach (ResourceAssignment assignment in project.ResourceAssignments)
 				{
 					var resourceId = assignment.ResourceUniqueID.ToNullableInt().GetValueOrDefault();

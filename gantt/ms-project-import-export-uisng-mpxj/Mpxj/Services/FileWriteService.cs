@@ -75,6 +75,7 @@
 
 		private void WriteFile(string path)
 		{
+			// Create new MPXJ Project and new MPXJ MSPDI (XML) writer
 			ProjectFile project = new ProjectFile();
 			MSPDIWriter writer = new MSPDIWriter();
 

@@ -15,20 +15,24 @@
 	{
 		public IList<DependencyViewModel> ReadDependencies(string path)
 		{
+			// Initialize an MPXJ Project reader which is universal (will open any supported file)
 			ProjectReader reader = new UniversalProjectReader();
 			var dependencies = new List<DependencyViewModel>();
 
 			try
 			{
+				// Read the file at the specified path
 				ProjectFile project = reader.read(path);
 
 				var index = 0;
 
+				// Iterate over all tasks
 				foreach (Task task in project.Tasks)
 				{
 					var successors = task.Successors;
 					Iterator iterator = successors.iterator();
 
+					// Create DependencyViewModel for each relation present in the Project Tasks
 					while (iterator.hasNext())
 					{
 						index++;
