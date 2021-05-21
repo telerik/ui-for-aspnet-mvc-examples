@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-12">
+        @(Html.Kendo().Grid<KendoGridCancellationToken.Models.OrderViewModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.OrderID).Filterable(false);
+            columns.Bound(p => p.Freight);
+            columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}");
+            columns.Bound(p => p.ShipName);
+            columns.Bound(p => p.ShipCity);
+        })
+        .Pageable()
+        .Sortable()
+        .Scrollable()
+        .Filterable()
+        .HtmlAttributes(new { style = "height:550px;" })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Model(model => model.Id(p => p.OrderID))
+            .PageSize(20)
+            .Read(read => read.Action("EditingInline_Read", "Grid"))
+            .Events(e=>e.Error("dataError"))
+        )
+    )
+    </div>
+</div>
+<script>
+    function dataError(e) {
+        if (e.status == "error") {
+            alert("DataBase call timed out.");
+        }
+    }
+</script>

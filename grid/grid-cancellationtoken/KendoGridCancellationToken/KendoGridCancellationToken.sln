@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KendoGridCancellationToken", "KendoGridCancellationToken.csproj", "{FF22E174-477E-4FA3-B1EF-0DF3BEC569C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF22E174-477E-4FA3-B1EF-0DF3BEC569C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF22E174-477E-4FA3-B1EF-0DF3BEC569C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF22E174-477E-4FA3-B1EF-0DF3BEC569C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF22E174-477E-4FA3-B1EF-0DF3BEC569C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC4DADA2-D1F8-4F4F-B0C3-8918E0F37AFF}
+	EndGlobalSection
+EndGlobal
