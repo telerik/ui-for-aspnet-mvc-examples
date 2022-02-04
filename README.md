@@ -12,7 +12,7 @@ This repo contains a collection of Telerik UI for ASP.NET MVC examples. The prov
 To run projects from this repository:
 
 1. Clone the repo.
-2. Open the .sln file in VS2017.
+2. Open the .sln file in Visual Studio.
 3. Clean the solution.
-4. Restore any missing packages.
+4. Restore any missing NuGet packages.
 5. Build the solution and run the project.
