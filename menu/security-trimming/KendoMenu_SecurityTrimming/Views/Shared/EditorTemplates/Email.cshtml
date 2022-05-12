@@ -1,3 +1,5 @@
-﻿@model object 
+@model object 
 
-@Html.TextBoxFor(model => model, new {@class="k-textbox" })
+<span class="k-input k-textbox k-input-solid k-input-md k-rounded-md">
+    @Html.TextBoxFor(model => model, new { @class = "k-input-inner"})
+</span>
