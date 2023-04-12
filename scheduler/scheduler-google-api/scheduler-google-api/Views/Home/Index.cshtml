@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().Scheduler<scheduler_google_api.Models.SchedulerEventModel>()
+	.Name("scheduler")
+	.Date(DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday))
+	.StartTime(new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 2, 00, 00))
+	.Views(views =>
+	{
+		views.DayView();
+		views.WeekView();
+		views.MonthView(mbox => mbox.Selected(true));
+	})
+	.Toolbar(t => t.Pdf())
+	.Pdf(pdf => pdf
+		.FileName("TestExport.pdf")
+		.ProxyURL(Url.Action("Pdf_Export_Save", "Home"))
+	)
+	.Timezone("Etc/UTC")
+	.Height(550)
+	.DataSource(d => d
+		.Model(m =>
+		{
+			m.Id(f => f.TaskID);
+			m.Field(f => f.Title).DefaultValue("No title");
+			m.Field(f => f.RoomID).DefaultValue(1);
+			m.RecurrenceId(f => f.RecurrenceID);
+		})
+		.Read(r => r.Url(Url.Action("Read", "Home")))
+		.Create(r => r.Url(Url.Action("Create", "Home")))
+		.Destroy(r => r.Url(Url.Action("Delete", "Home")))
+		.Update(r => r.Url(Url.Action("Update", "Home")))
+	)
+)
+
+<script>
+	$(document).ready(function () {
+        const BASE_CALENDAR_URL = "https://www.googleapis.com/calendar/v3/calendars";
+        const BASE_CALENDAR_ID_FOR_PUBLIC_HOLIDAY = "holiday@group.v.calendar.google.com";
+        const API_KEY = "YourAPI_KEY";
+		const CALENDAR_REGION = "en.usa"; 
+
+        const url = `${BASE_CALENDAR_URL}/${CALENDAR_REGION}%23${BASE_CALENDAR_ID_FOR_PUBLIC_HOLIDAY}/events?key=${API_KEY}`
+
+        fetch(url).then(response => response.json()).then(data => {
+			const holidays = data.items;
+			var scheduler = $("#scheduler").data("kendoScheduler");
+
+			for (var i = 0; i < holidays.length; i++) {
+
+                scheduler.dataSource.add({
+					start: new Date(holidays[i].start.date),
+                    isAllDay: true,
+                    end: new Date(holidays[i].start.date),
+					title: holidays[i].summary,
+                    description: holidays[i].description
+                });
+            }
+        })
+	})
+</script>
