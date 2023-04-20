@@ -4,6 +4,7 @@ using scheduler_google_api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -20,6 +21,7 @@ namespace scheduler_google_api.Controllers
 
         private List<SchedulerEventModel> appointments = new List<SchedulerEventModel> {
             new SchedulerEventModel {
+                TaskID = 1,
                 Description = "Task 1 Description",
                 Title = "Task 1",
                 Start = new DateTime(2023,4,11,6,00,00),
@@ -28,6 +30,7 @@ namespace scheduler_google_api.Controllers
                 Attendees = new List<int>() { 1, 2 }
             },
             new SchedulerEventModel {
+                TaskID = 2,
                 Description = "Task 2 Description",
                 Title = "Task 2",
                 Start = new DateTime(2023,4,10,12,00,00),
