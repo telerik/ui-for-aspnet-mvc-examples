@@ -28,8 +28,8 @@
             .DataValueField("Value")
             .DataColorField("Color")
             .BindTo(new[] {
-                new { Text = "Meeting Room 101", Value = 1, Color = "#6eb3fa" },
-                new { Text = "Meeting Room 201", Value = 2, Color = "#f58a8a" }
+                new { Text = "Meeting Room 101", Value = 1, Color = "green" },
+                new { Text = "Meeting Room 201", Value = 2, Color = "green" }
             });
         resource.Add(m => m.Attendees)
             .Title("Attendees")
@@ -90,3 +90,10 @@
         })
 	})
 </script>
+
+<style>
+    #scheduler .k-event .k-event-delete,
+    #scheduler tr > td > .k-task .k-event-delete {
+        display: none;
+    }
+</style>
