@@ -36,46 +36,38 @@
         columns.Bound(p => p.UnitPrice).Title("Price").Width(105);
         columns.Bound(p => p.Discontinued).Title("In Stock").Width(130)
     .ClientTemplate(Html.Kendo().Template().AddHtml("<span id='badge_${data.ProductID}' class='badgeTemplate'></span>"));
-        columns.Bound(p => p.Category.CategoryName).Title("Category").EditorTemplateName("ClientCategoryEditor").ClientGroupHeaderTemplate("Category: #=data.value#, Total Sales: #=kendo.format('{0:c}', data.aggregates.TotalSales.sum)#").Width(125);
-        columns.Bound(p => p.CustomerRating).Title("Rating").Width(140).Editable("returnFalse").ClientTemplate(Html.Kendo().Template().AddComponent(rating => rating.Rating()
-                .Name("rating_${data.ProductID}")
-                .Min(1)
-                .Max(5)
-                .Label(false)
-                .HtmlAttributes(new { data_bind = "value: CustomerRating" })
-                .Selection("continuous")
-            ));
-    columns.Bound(p => p.Country.CountryNameLong).Title("Country").EditorTemplateName("Country").ClientTemplate(Html.Kendo().Template().AddHtml(
-    @"<div class='k-text-center'><img src='" + @Url.Content("~/shared/country-flags/${data.Country.CountryNameShort}.png") + "' alt='${ data.Country.CountryNameLong}' title='${ data.Country.CountryNameLong}' width='30' /></div>")).Width(120);
-    columns.Bound(p => p.UnitsInStock).Title("Units").Width(105);
-    columns.Bound(p => p.TotalSales).Title("Total Sales").Width(140).Format("{0:c}");
-    columns.Bound(p => p.TargetSales).Editable("returnFalse").Title("Target Sales")
-      .ClientTemplate(Html.Kendo().Template().AddComponent(sparkline => sparkline.Sparkline()
-      .Name("chart_${data.ProductID}")
-      .Type(SparklineType.Bar)
-      .Data(32)
-          .SeriesDefaults(series => series.Bar().Labels(labels => labels.Visible(true).Format("{0}%").Background("none")))
-           .HtmlAttributes(new { data_series = "labels:{visible:true, format:'{0}%', background:'none'}}]" })
-                          .ChartArea(chartArea => chartArea.Margin(0).Width(180))
-                          .CategoryAxis(axis => axis
-                              
-                              .MajorGridLines(lines => lines.Visible(false))
-                              .MajorTicks(lines => lines.Visible(false))
-                          )
-                          .ChartArea(c => c.Background("transparent"))
-                          .ValueAxis(axis => axis
-                              .Numeric()
-                              .Min(0)
-                              .Max(130)
-                              .Visible(false)
-                              .Labels(l => l.Visible(false))
-                              .MinorTicks(lines => lines.Visible(false))
-                              .MajorGridLines(lines => lines.Visible(false))
-                          )
-                          .Tooltip(tooltip => tooltip
-                              .Visible(false)
-                          )
-                     )).Width(220);
+        columns.Bound(p => p.Category.CategoryName).Title("Category").EditorTemplateName("ClientCategoryEditor")/*.ClientGroupHeaderTemplate(Html.Kendo().Template().AddHtml("Category: ${data.value}, Total Sales: ${kendo.format('{0:c}')}, ${data.aggregates.TotalSales.sum}").ToHtmlString())*/.Width(125);
+        columns.Bound(p => p.Country.CountryNameLong).Title("Country").EditorTemplateName("Country").ClientTemplate(Html.Kendo().Template().AddHtml(
+        @"<div class='k-text-center'><img src='" + @Url.Content("~/Images/country-flags/${data.Country.CountryNameShort}.png") + "' alt='${ data.Country.CountryNameLong}' title='${ data.Country.CountryNameLong}' width='30' /></div>")).Width(120);
+        columns.Bound(p => p.UnitsInStock).Title("Units").Width(105);
+        columns.Bound(p => p.TotalSales).Title("Total Sales").Width(140).Format("{0:c}");
+        columns.Bound(p => p.TargetSales).Editable("returnFalse").Title("Target Sales")
+          .ClientTemplate(Html.Kendo().Template().AddComponent(sparkline => sparkline.Sparkline()
+          .Name("chart_${data.ProductID}")
+          .Type(SparklineType.Bar)
+          .Data(32)
+              .SeriesDefaults(series => series.Bar().Labels(labels => labels.Visible(true).Format("{0}%").Background("none")))
+               .HtmlAttributes(new { data_series = "labels:{visible:true, format:'{0}%', background:'none'}}]" })
+                              .ChartArea(chartArea => chartArea.Margin(0).Width(180))
+                              .CategoryAxis(axis => axis
+
+                                  .MajorGridLines(lines => lines.Visible(false))
+                                  .MajorTicks(lines => lines.Visible(false))
+                              )
+                              .ChartArea(c => c.Background("transparent"))
+                              .ValueAxis(axis => axis
+                                  .Numeric()
+                                  .Min(0)
+                                  .Max(130)
+                                  .Visible(false)
+                                  .Labels(l => l.Visible(false))
+                                  .MinorTicks(lines => lines.Visible(false))
+                                  .MajorGridLines(lines => lines.Visible(false))
+                              )
+                              .Tooltip(tooltip => tooltip
+                                  .Visible(false)
+                              )
+                         )).Width(220);
         columns.Command(command => command.Destroy()).Width(120);
     })
     .ToolBar(toolbar =>
@@ -152,6 +144,7 @@
                         sparkline.refresh();
                     },500)     
                 }
+
             })
 
         grid.table.find("tr").each(function () {
@@ -168,7 +161,6 @@
             kendo.bind($(this), dataItem);
         });
     }
-
     function returnFalse() {
         return false;
     }
@@ -179,7 +171,9 @@
         text-align: center;
         vertical-align: middle;
     }
-
+    .k-rating-container{
+        visibility:hidden;
+    }
     .product-photo {
         display: inline-block;
         width: 32px;

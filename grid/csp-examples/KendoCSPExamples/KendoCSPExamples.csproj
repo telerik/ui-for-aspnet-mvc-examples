@@ -293,6 +293,13 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
+    <Content Include="Images\country-flags\bg.png" />
+    <Content Include="Images\country-flags\br.png" />
+    <Content Include="Images\country-flags\fr.png" />
+    <Content Include="Images\country-flags\gb.png" />
+    <Content Include="Images\country-flags\in.png" />
+    <Content Include="Images\country-flags\it.png" />
+    <Content Include="Images\country-flags\us.png" />
     <Content Include="Images\foods\1.jpg" />
     <Content Include="Images\foods\10.jpg" />
     <Content Include="Images\foods\11.jpg" />

@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://localhost:52626/; img-src 'self'; script-src 'self' https://kendo.cdn.telerik.com https://code.jquery.com/ 'nonce-Telerik-CSP-Examples'; style-src 'self' 'unsafe-inline' https://kendo.cdn.telerik.com; font-src 'self' data:;connect-src 'self' wss://localhost;" />
     <title>@ViewBag.Title - Telerik MVC CSP Examples</title>
+    @{
+        var kendoVersion = "2023.2.829";
+    }
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/6.7.0/default/default-ocean-blue.css">
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.kendostatic.com/2023.2.829/js/jquery.min.js"></script>
-    <script src="https://cdn.kendostatic.com/2023.2.829/js/jszip.min.js"></script>
-    <script src="https://cdn.kendostatic.com/2023.2.829/js/kendo.all.min.js"></script>
-    <script src="https://cdn.kendostatic.com/2023.2.829/js/kendo.aspnetmvc.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
+    <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
 </head>
 <body class="k-content">

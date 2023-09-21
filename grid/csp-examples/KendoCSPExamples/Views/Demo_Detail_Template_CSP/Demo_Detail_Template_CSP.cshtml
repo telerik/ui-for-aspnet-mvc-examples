@@ -8,14 +8,14 @@
             columns.Bound(e => e.FirstName).Width(120);
             columns.Bound(e => e.LastName).Width(120);
             columns.Bound(e => e.Country).Width(120);
-            columns.Bound(e => e.City).ClientTemplateHandler("cityHandler").Width(120);
+            columns.Bound(e => e.City).Width(120);
             columns.Bound(e => e.Title);
         })
         .Sortable()
         .Pageable()
         .Navigatable()
         .Scrollable()
-        .DetailTemplate(template=>Html.Kendo().Template().AddComponent(tabStrip => tabStrip.TabStrip()
+        .ClientDetailTemplate(Html.Kendo().Template().AddComponent(tabStrip => tabStrip.TabStrip()
             .Name("tabStrip_${data.EmployeeID}")
             .Animation(animation => animation.Open(open => open.Fade(FadeDirection.In)))
             .Items(items =>

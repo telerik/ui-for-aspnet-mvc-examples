@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kendo.Mvc.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,11 @@ namespace KendoCSPExamples
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            KendoMvc.Setup(x =>
+            {
+                x.DeferToScriptFiles = true;
+            });
         }
+       
     }
 }
