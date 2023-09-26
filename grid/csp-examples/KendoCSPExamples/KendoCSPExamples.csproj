@@ -426,6 +426,7 @@
     <Content Include="Views\Demo_Detail_Template_CSP\Demo_Detail_Template_CSP.cshtml" />
     <Content Include="Views\Demo_Overview_CSP\Demo_Overview_CSP.cshtml" />
     <Content Include="Views\Shared\_Child_Grid.cshtml" />
+    <Content Include="Views\Shared\_OverviewLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

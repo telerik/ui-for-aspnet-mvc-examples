@@ -1,30 +1,10 @@
 ﻿@using Kendo.Mvc
 @using KendoCSPExamples.Models
 @{
-    Layout = null;
-
+    Layout = "~/Views/Shared/_OverviewLayout.cshtml";
 }
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self' https://kendo.cdn.telerik.com https://code.jquery.com/ 'nonce-Telerik-CSP-Examples'; style-src 'self' 'unsafe-inline' https://kendo.cdn.telerik.com; font-src 'self' data:;" />
-<title>@ViewData["Title"] - Telerik.Examples.Mvc</title>
 
-@{
-    var kendoVersion = "2023.2.718";
-}
-<link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/6.6.0/default/default-ocean-blue.css">
-
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"
-            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-            crossorigin="anonymous"></script>
-<script src="https://kendo.cdn.telerik.com/@kendoVersion/js/jszip.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.all.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
-
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/site.css" />
-
-@(Html.Kendo().Grid<KendoCSPExamples.Models.DetailProductViewModel>()
+    @(Html.Kendo().Grid<KendoCSPExamples.Models.DetailProductViewModel>()
     .Name("grid")
     .Columns(columns =>
     {
@@ -35,8 +15,8 @@
                         style='background-image: url(" + @Url.Content("~/Images/foods/${data.ProductID}.jpg") + ");'></div><div class='product-name'>${ data.ProductName }</div>")).Width(300);
         columns.Bound(p => p.UnitPrice).Title("Price").Width(105);
         columns.Bound(p => p.Discontinued).Title("In Stock").Width(130)
-    .ClientTemplate(Html.Kendo().Template().AddHtml("<span id='badge_${data.ProductID}' class='badgeTemplate'></span>"));
-        columns.Bound(p => p.Category.CategoryName).Title("Category").EditorTemplateName("ClientCategoryEditor")/*.ClientGroupHeaderTemplate(Html.Kendo().Template().AddHtml("Category: ${data.value}, Total Sales: ${kendo.format('{0:c}')}, ${data.aggregates.TotalSales.sum}").ToHtmlString())*/.Width(125);
+            .ClientTemplate(Html.Kendo().Template().AddHtml("<span id='badge_${data.ProductID}' class='badgeTemplate'></span>"));
+        columns.Bound(p => p.Category.CategoryName).Title("Category").EditorTemplateName("ClientCategoryEditor").Width(125);
         columns.Bound(p => p.Country.CountryNameLong).Title("Country").EditorTemplateName("Country").ClientTemplate(Html.Kendo().Template().AddHtml(
         @"<div class='k-text-center'><img src='" + @Url.Content("~/Images/country-flags/${data.Country.CountryNameShort}.png") + "' alt='${ data.Country.CountryNameLong}' title='${ data.Country.CountryNameLong}' width='30' /></div>")).Width(120);
         columns.Bound(p => p.UnitsInStock).Title("Units").Width(105);
@@ -112,114 +92,117 @@
         .Destroy("DetailProducts_Destroy", "Demo_Overview_CSP")
     )
 )
-@(Html.Kendo().DeferredScriptFile("Telerik-CSP-Examples"))
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js" nonce="Telerik-CSP-Examples"></script>
+    @(Html.Kendo().DeferredScriptFile("Telerik-CSP-Examples"))
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js" nonce="Telerik-CSP-Examples"></script>
 
-<script type="text/javascript" nonce="Telerik-CSP-Examples">
-    function error_handler(e) {
-        if (e.errors) {
-            var message = "Errors:\n";
-            $.each(e.errors, function (key, value) {
-                if ('errors' in value) {
-                    $.each(value.errors, function () {
-                        message += this + "\n";
-                    });
-                }
-            });
-            alert(message);
+    <script type="text/javascript" nonce="Telerik-CSP-Examples">
+        function error_handler(e) {
+            if (e.errors) {
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            }
         }
-    }
-    function onDataBound(e) {
-        var grid = this;
-        var rows = $("tr");
-            rows.each((i,row)=>{
+        function onDataBound(e) {
+            var grid = this;
+            var rows = $("tr");
+            rows.each((i, row) => {
                 var dataItem = grid.dataItem($(row));
                 var sparklineElement = $(row).find(".k-sparkline");
-                if(sparklineElement.length>0){
-                    setTimeout(function(){
-                    var sparkline = sparklineElement.data("kendoSparkline")
+                if (sparklineElement.length > 0) {
+                    setTimeout(function () {
+                        var sparkline = sparklineElement.data("kendoSparkline")
                         sparkline.options.series[0].data = [
                             dataItem.TargetSales
                         ];
                         sparkline.refresh();
-                    },500)     
+                    }, 500)
                 }
 
             })
 
-        grid.table.find("tr").each(function () {
-            var dataItem = grid.dataItem(this);
-            var themeColor = dataItem.Discontinued ? 'success' : 'error';
-            var text = dataItem.Discontinued ? 'available' : 'not available';
+            grid.table.find("tr").each(function () {
+                var dataItem = grid.dataItem(this);
+                var themeColor = dataItem.Discontinued ? 'success' : 'error';
+                var text = dataItem.Discontinued ? 'available' : 'not available';
 
-            $(this).find(".badgeTemplate").kendoBadge({
-                themeColor: themeColor,
-                text: text,
+                $(this).find(".badgeTemplate").kendoBadge({
+                    themeColor: themeColor,
+                    text: text,
+                });
+
+
+                kendo.bind($(this), dataItem);
             });
+        }
+        function returnFalse() {
+            return false;
+        }
+    </script>
 
-
-            kendo.bind($(this), dataItem);
-        });
-    }
-    function returnFalse() {
-        return false;
-    }
-</script>
-
-<style>
-    .k-grid tr .checkbox-align {
-        text-align: center;
-        vertical-align: middle;
-    }
-    .k-rating-container{
-        visibility:hidden;
-    }
-    .product-photo {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background-size: 32px 35px;
-        background-position: center center;
-        vertical-align: middle;
-        line-height: 32px;
-        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
-        margin-right: 5px;
-    }
-
-    .product-name {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 32px;
-        padding-left: 3px;
-    }
-
-    .k-rating-container .k-rating-item {
-        padding: 4px 0;
-    }
-
-        .k-rating-container .k-rating-item .k-icon {
-            font-size: 16px;
+    <style>
+        .k-grid tr .checkbox-align {
+            text-align: center;
+            vertical-align: middle;
         }
 
-    .dropdown-country-wrap {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        white-space: nowrap;
-    }
-
-        .dropdown-country-wrap img {
-            margin-right: 10px;
+        .k-rating-container {
+            visibility: hidden;
         }
 
-    #grid .k-grid-edit-row > td > .k-rating {
-        margin-left: 0;
-        width: 100%;
-    }
+        .product-photo {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: 32px 35px;
+            background-position: center center;
+            vertical-align: middle;
+            line-height: 32px;
+            box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+            margin-right: 5px;
+        }
 
-    .k-grid .k-grid-search {
-        margin-left: auto;
-        margin-right: 0;
-    }
-</style>
+        .product-name {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 32px;
+            padding-left: 3px;
+        }
+
+        .k-rating-container .k-rating-item {
+            padding: 4px 0;
+        }
+
+            .k-rating-container .k-rating-item .k-icon {
+                font-size: 16px;
+            }
+
+        .dropdown-country-wrap {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+            .dropdown-country-wrap img {
+                margin-right: 10px;
+            }
+
+        #grid .k-grid-edit-row > td > .k-rating {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        .k-grid .k-grid-search {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    </style>
+</body>
