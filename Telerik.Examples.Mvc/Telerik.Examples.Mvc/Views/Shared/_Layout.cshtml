@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - My Telerik MVC Application</title>
+    @{
+        var kendoVersion = "2023.2.829";
+    }
+
+    <link href="https://kendo.cdn.telerik.com/themes/6.7.0/default/default-ocean-blue.css" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.kendostatic.com/@kendoVersion/js/jszip.min.js"></script>
+    <script src="https://cdn.kendostatic.com/@kendoVersion/js/kendo.all.min.js"></script>
+    <script src="https://cdn.kendostatic.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
+</head>
+    <body class="k-content">
+        <nav class="navbar navbar-inverse navbar-fixed-top p-3">
+            <div class="container p-0 p-sm-3">
+                <div class="navbar-header">
+                    <button id="configure" class="k-rpanel-toggle btn-toggle"></button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                
+            </div>
+        </nav>
+        <main>
+            <div class="container">
+                @RenderBody()
+            </div>
+        </main>
+
+        <footer class="footer text-center d-flex align-items-center">
+            <div class="container pb-0">
+                <hr />
+                <p>Copyright &copy; @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+            </div>
+        </footer>
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
