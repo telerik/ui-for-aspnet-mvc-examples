@@ -251,9 +251,17 @@
     <Compile Include="Areas\Grid\Controllers\CheckboxesBatchEditingController.cs" />
     <Compile Include="Areas\Grid\Controllers\CustomPopupEditorController.cs" />
     <Compile Include="Areas\Grid\Controllers\EditingCascadingDropDownListController.cs" />
+    <Compile Include="Areas\Grid\Controllers\EditingWithComboBoxRemoteBindingAndFilteringController.cs" />
     <Compile Include="Areas\Grid\Controllers\ExternalEditingContainerController.cs" />
+    <Compile Include="Areas\Grid\Controllers\InCellEditingWithCascadingDropDownListsController.cs" />
+    <Compile Include="Areas\Grid\Controllers\InCellEditingWithRadioButtonColumnController.cs" />
+    <Compile Include="Areas\Grid\Controllers\InLineEditingWithNullableBooleanController.cs" />
+    <Compile Include="Areas\Grid\Controllers\PopUpEditingWithRequiredDropDownListForController.cs" />
     <Compile Include="Areas\Grid\GridAreaRegistration.cs" />
+    <Compile Include="Areas\Grid\Models\Category.cs" />
     <Compile Include="Areas\Grid\Models\Customer.cs" />
+    <Compile Include="Areas\Grid\Models\ForeignKeyValues.cs" />
+    <Compile Include="Areas\Grid\Models\InLineEditingProduct.cs" />
     <Compile Include="Areas\Grid\Models\VendorRepository.cs" />
     <Compile Include="Areas\Grid\Models\ProductRepository.cs" />
     <Compile Include="Areas\Grid\Models\LicenseRepository.cs" />
@@ -271,6 +279,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ResultEntry.cs" />
     <Compile Include="Models\ResultEntryViewModel.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -404,6 +413,17 @@
     <Content Include="Areas\Grid\Views\EditingCascadingDropDownList\EditorTemplates\CustomerId.cshtml" />
     <Content Include="Areas\Grid\Views\EditingCascadingDropDownList\EditorTemplates\VendorId.cshtml" />
     <Content Include="Areas\Grid\Views\EditingCascadingDropDownList\EditorTemplates\ProductId.cshtml" />
+    <Content Include="Areas\Grid\Views\EditingWithComboBoxRemoteBindingAndFiltering\Index.cshtml" />
+    <Content Include="Areas\Grid\Views\EditingWithComboBoxRemoteBindingAndFiltering\EditorTemplates\ComboBoxLookup.cshtml" />
+    <Content Include="Areas\Grid\Views\InCellEditingWithRadioButtonColumn\Index.cshtml" />
+    <Content Include="Areas\Grid\Views\InCellEditingWithCascadingDropDownLists\Index.cshtml" />
+    <Content Include="Areas\Grid\Views\InCellEditingWithCascadingDropDownLists\EditorTemplates\CustomerId.cshtml" />
+    <Content Include="Areas\Grid\Views\InCellEditingWithCascadingDropDownLists\EditorTemplates\ProductId.cshtml" />
+    <Content Include="Areas\Grid\Views\InCellEditingWithCascadingDropDownLists\EditorTemplates\VendorId.cshtml" />
+    <Content Include="Areas\Grid\Views\InLineEditingWithNullableBoolean\Index.cshtml" />
+    <Content Include="Areas\Grid\Views\InLineEditingWithNullableBoolean\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Areas\Grid\Views\PopUpEditingWithRequiredDropDownListFor\Index.cshtml" />
+    <Content Include="Areas\Grid\Views\PopUpEditingWithRequiredDropDownListFor\EditorTemplates\Person.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
