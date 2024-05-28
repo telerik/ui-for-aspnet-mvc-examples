@@ -1,7 +1,0 @@
-@model object
-
-@(
- Html.Kendo().DropDownListFor(m => m)
-        .BindTo((SelectList)ViewData[ViewData.TemplateInfo.GetFullHtmlFieldName("") + "_Data"])
-        .HtmlAttributes(new { title = Html.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName("")})
-)
