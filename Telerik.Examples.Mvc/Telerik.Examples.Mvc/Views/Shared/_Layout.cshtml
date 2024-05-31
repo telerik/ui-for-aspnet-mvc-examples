@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title - My Telerik MVC Application</title>
     @{
-        var kendoVersion = "2023.2.829";
+        var kendoVersion = "2024.2.514";
+        var themeVersion = "8.0.1";
     }
 
-    <link href="https://kendo.cdn.telerik.com/themes/6.7.0/default/default-ocean-blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://kendo.cdn.telerik.com/themes/@themeVersion/default/default-ocean-blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://unpkg.com/%40progress/kendo-font-icons/dist/index.css" rel="stylesheet" type="text/css" />
+
 
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
