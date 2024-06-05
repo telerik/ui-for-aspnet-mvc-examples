@@ -263,6 +263,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\GridSelectionColumnWithCheckBox\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridSelectionColumnWithCheckBox\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridSelectionColumnWithCheckBox\Models\ProductViewModel.cs" />
     <Compile Include="Areas\Grid\Controllers\AjaxEditingWithEnumerationController.cs" />
     <Compile Include="Areas\Grid\Controllers\AutoCompleteEditorAllowSettingNewValuesController.cs" />
     <Compile Include="Areas\Grid\Controllers\BatchEditingMultiSelectionDeleteController.cs" />
@@ -287,9 +290,9 @@
     <Compile Include="Areas\Grid\Models\License.cs" />
     <Compile Include="Areas\Grid\Models\Product.cs" />
     <Compile Include="Areas\Grid\Models\Vendor.cs" />
-    <Compile Include="Areas\grid_selection_by_field\Controllers\HomeController.cs" />
-    <Compile Include="Areas\grid_selection_by_field\grid_selection_by_fieldAreaRegistration.cs" />
-    <Compile Include="Areas\grid_selection_by_field\Models\Product.cs" />
+    <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -364,9 +367,13 @@
     <Content Include="Areas\Grid\Views\InLineEditingWithNullableBoolean\EditorTemplates\Boolean.cshtml" />
     <Content Include="Areas\Grid\Views\PopUpEditingWithRequiredDropDownListFor\Index.cshtml" />
     <Content Include="Areas\Grid\Views\PopUpEditingWithRequiredDropDownListFor\EditorTemplates\Person.cshtml" />
-    <Content Include="Areas\grid_selection_by_field\Views\web.config" />
-    <Content Include="Areas\grid_selection_by_field\Views\Home\Index.cshtml" />
-    <Content Include="Areas\grid_selection_by_field\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSelectionByField\Views\web.config" />
+    <Content Include="Areas\GridSelectionByField\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSelectionByField\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\web.config" />
+    <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\Home\IndexAllPages.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

@@ -1,4 +1,4 @@
-﻿using Telerik.Examples.Mvc.Areas.grid_selection_by_field.Models;
+﻿using Telerik.Examples.Mvc.Areas.GridSelectionByField.Models;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Telerik.Examples.Mvc.Areas.grid_selection_by_field.Controllers
+namespace Telerik.Examples.Mvc.Areas.GridSelectionByField.Controllers
 {
     public class HomeController : Controller
     {

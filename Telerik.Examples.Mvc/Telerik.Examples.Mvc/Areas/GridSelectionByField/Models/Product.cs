@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Telerik.Examples.Mvc.Areas.grid_selection_by_field.Models
+namespace Telerik.Examples.Mvc.Areas.GridSelectionByField.Models
 {
     public class Product
     {
