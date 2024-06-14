@@ -1,0 +1,17 @@
+﻿@using Kendo.Mvc.UI
+	﻿
+@model Telerik.Examples.Mvc.Areas.GridEditingAutoCompleteNewItem.Models.ResultEntryViewModel
+
+<script type="text/javascript">
+    function onChange(e) {
+        console.log("asdsa");
+    }
+</script>
+
+@(Html.Kendo().AutoComplete()
+	.Name("Person")
+	.DataTextField("Name")
+	.DataSource(dataSource => dataSource.Read(read => read.Action("GetAutocomplete", "Home", new { Area = "GridEditingAutoCompleteNewItem" }).Data("onAdditionalData")).ServerFiltering(true))
+	.Delay(500)
+	.HighlightFirst(true)
+)
