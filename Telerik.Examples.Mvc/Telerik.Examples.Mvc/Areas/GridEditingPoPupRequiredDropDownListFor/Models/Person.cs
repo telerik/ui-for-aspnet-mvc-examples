@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Telerik.Examples.Mvc.Areas.GridEditingCustomPopupEditor.Models
+namespace Telerik.Examples.Mvc.Areas.GridEditingPoPupRequiredDropDownListFor.Models
 {
     public class Person
     {
@@ -13,9 +13,9 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingCustomPopupEditor.Models
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
 
-        public string Country { get; set; }
+        [Required]
+        public string Gender { get; set; }
 
-        public bool IsAdmin { get; set; }
-        public int? EyeColorIndex { get; set; }
+        public string Country { get; set; }
     }
 }

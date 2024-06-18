@@ -1,0 +1,38 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridEditingPoPupRequiredDropDownListFor.Models.Person>()
+    .Name("persons")
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model => model.Id(m => m.PersonID))
+            .Create(update => update.Action("CreatePerson", "Home"))
+            .Read(read => read.Action("GetPersons", "Home"))
+            .Update(up => up.Action("UpdatePerson", "Home"))
+            .Destroy(destroy => destroy.Action("DestroyPerson", "Home"))
+    )
+    .ToolBar(toolbar => toolbar.Create())
+    .Columns(columns =>
+    {
+        columns.Bound(c => c.Name);
+        columns.Bound(c => c.BirthDate).Format("{0:g}");
+        columns.Bound(c => c.Gender);
+        columns.Bound(c => c.Country);
+        columns.Command(cmd => cmd.Edit());
+        columns.Command(cmd => cmd.Destroy());
+    })
+    .Pageable()
+    .Sortable()
+    .Editable(ed => ed.Mode(GridEditMode.PopUp).TemplateName("Person")
+    )
+    .Events(e => e.Edit("onEdit"))
+)
+
+<script>
+    function onEdit(e) {
+        @Html.Kendo().DeferredScripts(false);
+    }
+</script>
