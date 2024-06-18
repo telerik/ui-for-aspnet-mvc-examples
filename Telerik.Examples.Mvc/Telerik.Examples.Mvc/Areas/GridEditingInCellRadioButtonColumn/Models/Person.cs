@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Telerik.Examples.Mvc.Models;
 
-namespace Telerik.Examples.Mvc.Areas.GridEditingCustomPopupEditor.Models
+namespace Telerik.Examples.Mvc.Areas.GridEditingInCellRadioButtonColumn.Models
 {
     public class Person
     {
@@ -17,5 +18,6 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingCustomPopupEditor.Models
 
         public bool IsAdmin { get; set; }
         public int? EyeColorIndex { get; set; }
+        public Role Role { get; set; }
     }
 }

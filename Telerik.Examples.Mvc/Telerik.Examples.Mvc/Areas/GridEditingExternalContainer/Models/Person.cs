@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Telerik.Examples.Mvc.Areas.GridEditingCustomPopupEditor.Models
+namespace Telerik.Examples.Mvc.Areas.GridEditingExternalContainer.Models
 {
     public class Person
     {
