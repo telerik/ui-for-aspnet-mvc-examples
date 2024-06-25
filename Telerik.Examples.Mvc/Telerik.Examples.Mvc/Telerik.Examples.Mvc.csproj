@@ -44,6 +44,9 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Kendo.Mvc, Version=2024.2.514.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.Trial.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
     </Reference>
@@ -177,6 +180,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
@@ -263,6 +268,26 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\GridAjaxBindingDatabase\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridAjaxBindingDatabase\GridAjaxBindingDatabaseAreaRegistration.cs" />
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\Product.cs">
+      <DependentUpon>ProductViewModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductViewModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductViewModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductViewModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridEditingAjaxWithEnumeration\Controllers\GridEditingAjaxWithEnumerationController.cs" />
     <Compile Include="Areas\GridEditingAjaxWithEnumeration\GridEditingAjaxWithEnumerationAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingAjaxWithEnumeration\Models\Category.cs" />
@@ -360,6 +385,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Sample.mdf" />
+    <Content Include="App_Data\Sample_log.ldf">
+      <DependentUpon>Sample.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ProductViewModel.Context.cs</LastGenOutput>
+      <DependentUpon>ProductViewModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProductViewModel.edmx</DependentUpon>
+      <LastGenOutput>ProductViewModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -483,6 +522,17 @@
     <Content Include="Areas\GridEditingPoPupRequiredDropDownListFor\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridEditingPoPupRequiredDropDownListFor\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridEditingPoPupRequiredDropDownListFor\Views\Home\EditorTemplates\Person.cshtml" />
+    <Content Include="Areas\GridAjaxBindingDatabase\Views\web.config" />
+    <Content Include="Areas\GridAjaxBindingDatabase\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridAjaxBindingDatabase\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridAjaxBindingDatabase\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProductViewModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.edmx.diagram">
+      <DependentUpon>ProductViewModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -2803,7 +2853,7 @@
     <Content Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Areas\GridAjaxBindingDatabase\Data\" />
     <Folder Include="Areas\GridEditingAjaxWithEnumeration\Data\" />
     <Folder Include="Areas\GridEditingAutoCompleteNewItem\Data\" />
     <Folder Include="Areas\GridEditingBatchMultiSelectionDelete\Data\" />
@@ -2823,6 +2873,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.7.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
