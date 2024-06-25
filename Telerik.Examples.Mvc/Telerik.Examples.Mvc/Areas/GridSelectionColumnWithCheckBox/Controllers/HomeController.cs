@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using GridSelectionColumnWithCheckBox.Models;
+using Telerik.Examples.Mvc.Areas.GridSelectionColumnWithCheckBox.Models;
 using Kendo.Mvc.Extensions;
 
 namespace Telerik.Examples.Mvc.Areas.GridSelectionColumnWithCheckBox.Controllers

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace GridSelectionColumnWithCheckBox.Models
+namespace Telerik.Examples.Mvc.Areas.GridSelectionColumnWithCheckBox.Models
 {
     public class ProductViewModel
     {

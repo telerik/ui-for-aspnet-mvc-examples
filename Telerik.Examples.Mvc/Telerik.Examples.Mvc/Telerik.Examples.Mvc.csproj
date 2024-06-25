@@ -263,6 +263,40 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\ChartInGrid\Models\ViewModel.cs" />
+    <Compile Include="Areas\GridContextMenu\Models\Employee.cs" />
+    <Compile Include="Areas\GridContextMenu\Models\EmployeeRepository.cs" />
+    <Compile Include="Areas\GridContextMenu\Models\Order.cs" />
+    <Compile Include="Areas\GridContextMenu\Models\OrderRepository.cs" />
+    <Compile Include="Areas\GridDateUtcOnServerAndClient\Models\Person.cs" />
+    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Models\Employee.cs" />
+    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Models\Order.cs" />
+    <Compile Include="Areas\GridHierarchySelfReferencing\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchySelfReferencing\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
+    <Compile Include="Areas\GridEditTimespan\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditTimespan\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditTimespan\Models\ViewModel.cs" />
+    <Compile Include="Areas\GridContextMenu\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridContextMenu\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridFilterExcelLike\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridFilterExcelLike\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridFilterExcelLike\Models\Product.cs" />
+    <Compile Include="Areas\GridEditPopUpServerValidation\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditPopUpServerValidation\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditPopUpServerValidation\Models\Product.cs" />
+    <Compile Include="Areas\GridPostWithForm\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridPostWithForm\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridPostWithForm\Models\Category.cs" />
+    <Compile Include="Areas\GridPostWithForm\Models\Product.cs" />
+    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridDateUtcOnServerAndClient\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridDateUtcOnServerAndClient\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\ChartInGrid\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ChartInGrid\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MultiColumnComboBoxEdit\Controllers\HomeController.cs" />
+    <Compile Include="Areas\MultiColumnComboBoxEdit\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Models\ProductViewModel.cs" />
@@ -293,6 +327,7 @@
     <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />
+    <Compile Include="Areas\MultiColumnComboBoxEdit\Models\SampleData.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -307,6 +342,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Northwind.mdf" />
+    <Content Include="App_Data\Northwind_log.ldf">
+      <DependentUpon>Northwind.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -374,6 +413,42 @@
     <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\web.config" />
     <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\Home\IndexAllPages.cshtml" />
+    <Content Include="Areas\GridHierarchySelfReferencing\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridHierarchySelfReferencing\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchySelfReferencing\Views\web.config" />
+    <Content Include="Areas\GridEditTimespan\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditTimespan\Views\web.config" />
+    <Content Include="Areas\GridEditTimespan\Views\Home\EditorTemplates\NumericEditor.cshtml" />
+    <Content Include="Areas\GridEditTimespan\Views\Home\EditorTemplates\TimePickerEditor.cshtml" />
+    <Content Include="Areas\GridEditTimespan\Views\Home\NumericEditor.cshtml" />
+    <Content Include="Areas\GridEditTimespan\Views\Home\TimePickerEditor.cshtml" />
+    <Content Include="Areas\GridContextMenu\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridContextMenu\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridContextMenu\Views\web.config" />
+    <Content Include="Areas\GridFilterExcelLike\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridFilterExcelLike\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridFilterExcelLike\Views\web.config" />
+    <Content Include="Areas\GridEditPopUpServerValidation\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditPopUpServerValidation\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditPopUpServerValidation\Views\web.config" />
+    <Content Include="Areas\GridPostWithForm\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridPostWithForm\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridPostWithForm\Views\web.config" />
+    <Content Include="Areas\GridPostWithForm\Views\Home\Save.cshtml" />
+    <Content Include="Areas\GridEditSyncChangesWithOneRequest\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditSyncChangesWithOneRequest\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditSyncChangesWithOneRequest\Views\web.config" />
+    <Content Include="Areas\GridDateUtcOnServerAndClient\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridDateUtcOnServerAndClient\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridDateUtcOnServerAndClient\Views\web.config" />
+    <Content Include="Areas\MultiColumnComboBoxEdit\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\MultiColumnComboBoxEdit\Views\Home\Index.cshtml" />
+    <Content Include="Areas\MultiColumnComboBoxEdit\Views\web.config" />
+    <Content Include="Areas\MultiColumnComboBoxEdit\Views\Home\Create.cshtml" />
+    <Content Include="Areas\MultiColumnComboBoxEdit\Views\Home\Edit.cshtml" />
+    <Content Include="Areas\ChartInGrid\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ChartInGrid\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ChartInGrid\Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -2694,7 +2769,6 @@
     <Content Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Grid\Data\" />
   </ItemGroup>
   <ItemGroup>
