@@ -1,0 +1,112 @@
+﻿@using Kendo.Mvc.UI
+@using Telerik.Examples.Mvc.Areas.GridEditing3LevelHierarchy.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/kendo" id="OrderDetailsTemplate">
+  @(Html.Kendo().Grid<GridEditing3LevelHierarchyOrder_Detail>()
+        .Name("OrderDetails_#=OrderID#")
+        .Columns(columns =>
+        {
+            columns.Bound(od => od.Quantity).Width(200);
+            columns.Bound(od => od.UnitPrice).Width(200);
+            columns.Bound(od => od.Discount);
+            columns.ForeignKey(od=> od.ProductID, (System.Collections.IEnumerable)ViewData["Products"], "ProductID", "ProductName");
+        })
+        .Pageable().Sortable().Filterable()
+        .DataSource(source=> source.Ajax()
+                .Model(model =>
+                {
+                    model.Field(o => o.ProductID).DefaultValue(1);
+                })
+                .Events(events => events.Error("error_handler"))
+                .Read(read => read.Action("Read_OrderDetails", "OrderDetails", new { id = "#=OrderID#" })))
+        .ToClientTemplate()
+    )
+
+</script>
+
+
+<script type="text/kendo" id="OrdersTemplate">
+  @(Html.Kendo().Grid<GridEditing3LevelHierarchyOrder>()
+        .Name("Orders_#=EmployeeID#")
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.OrderID).Width(101);
+            columns.Bound(o => o.ShipCountry).Width(140);
+            columns.Bound(o => o.ShipAddress).Width(200);
+            columns.Bound(o => o.ShipName).Width(200);
+            columns.Bound(o => o.ShippedDate).Format("{0:d}");
+            columns.Command(command =>
+            {
+                command.Edit();
+                command.Destroy();
+            });
+        })
+        .ToolBar(tools => tools.Create())
+        .Pageable().Sortable().Filterable()
+        .DataSource(source => source.Ajax()
+            .Model(model =>
+                    {
+                        model.Id(o => o.OrderID);
+                        model.Field(o => o.OrderID).Editable(false);
+                    })
+            .Events(events => events.Error("error_handler"))
+            .Read(read => read.Action("Read_Orders", "Orders", new { id = "#=EmployeeID#" }))
+            .Update(update => update.Action("Update_Order", "Orders"))
+            .Create(create => create.Action("Create_Order", "Orders", new { id = "#=EmployeeID#" }))
+            .Destroy(destroy => destroy.Action("Destroy_Order", "Orders")))
+        .ClientDetailTemplateId("OrderDetailsTemplate")
+        .ToClientTemplate()
+    )
+
+</script>
+
+@(Html.Kendo().Grid<GridEditing3LevelHierarchyEmployee>()
+    .Name("Employees")
+    .Columns(columns =>
+    {
+        columns.Bound(e => e.FirstName).Width(140);
+        columns.Bound(e => e.LastName).Width(140);
+        columns.Bound(e => e.Title).Width(200);
+        columns.Bound(e => e.Country).Width(200);
+        columns.Bound(e => e.City);
+        columns.Command(command =>
+            {
+                command.Edit();
+                command.Destroy();
+            });
+    })
+    .ToolBar(tools => tools.Create())
+    .Pageable().Sortable().Filterable()
+    .DataSource(source => source.Ajax()
+            .Model(model =>
+                {
+                    model.Id(e => e.EmployeeID);
+                    model.Field(e => e.EmployeeID).Editable(false);
+                })
+                .Events(events => events.Error("error_handler"))
+                .Read(read => read.Action("Read_Employees", "Employees"))
+                .Update(update => update.Action("Update_Employee", "Employees"))
+                .Create(create => create.Action("Create_Employee", "Employees"))
+                .Destroy(destroy => destroy.Action("Destroy_Employee", "Employees")))
+    .ClientDetailTemplateId("OrdersTemplate")
+)
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>
+
