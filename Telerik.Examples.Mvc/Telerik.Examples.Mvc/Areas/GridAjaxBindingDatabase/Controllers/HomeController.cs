@@ -19,7 +19,7 @@ namespace Telerik.Examples.Mvc.Areas.GridAjaxBindingDatabase.Controllers
 
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
-            using (var sample = new SampleEntities())
+            using (var sample = new GridAjaxBindingDatabaseEntities())
             {
                 IQueryable<Product> products = sample.Products;
                 DataSourceResult result = products.ToDataSourceResult(request);

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -22,6 +23,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,8 +47,11 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Kendo.Mvc, Version=2024.2.514.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.Trial.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
@@ -81,7 +87,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -268,25 +273,93 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\GridAjaxBindingCustomJsonResultAreaRegistration.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Models\Product.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Serialization\CustomJavaScriptSerializer.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Serialization\CustomJsonInitializer.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Serialization\CustomJsonResult.cs" />
     <Compile Include="Areas\GridAjaxBindingDatabase\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridAjaxBindingDatabase\GridAjaxBindingDatabaseAreaRegistration.cs" />
     <Compile Include="Areas\GridAjaxBindingDatabase\Models\Product.cs">
-      <DependentUpon>ProductViewModel.tt</DependentUpon>
+      <DependentUpon>SampleModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.Context.cs">
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductViewModel.Context.tt</DependentUpon>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.cs">
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductViewModel.tt</DependentUpon>
+      <DependentUpon>SampleModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.Designer.cs">
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductViewModel.edmx</DependentUpon>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridAlternatingRows\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridAlternatingRows\GridAlternatingRowsAreaRegistration.cs" />
+    <Compile Include="Areas\GridAlternatingRows\Models\Student.cs" />
+    <Compile Include="Areas\GridBatchEditingDatabase\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridBatchEditingDatabase\GridBatchEditingDatabaseAreaRegistration.cs" />
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\GridBatchEditingDatabaseProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridBindingDataTable\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridBindingDataTable\GridBindingDataTableAreaRegistration.cs" />
+    <Compile Include="Areas\GridCheckboxClientTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCheckboxClientTemplate\GridCheckboxClientTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridCheckboxClientTemplate\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\BaseController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\EmployeesController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\OrderDetailsController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\OrdersController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\GridEditing3LevelHierarchyAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\GridEditing3LevelHierarchyEmployee.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\GridEditing3LevelHierarchyOrder.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\GridEditing3LevelHierarchyOrder_Detail.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\GridEditing3LevelHierarchyProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Areas\GridEditingAjaxWithEnumeration\Controllers\GridEditingAjaxWithEnumerationController.cs" />
     <Compile Include="Areas\GridEditingAjaxWithEnumeration\GridEditingAjaxWithEnumerationAreaRegistration.cs" />
@@ -324,12 +397,72 @@
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\GridEditingInCellRadioButtonColumnAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Person.cs" />
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Role.cs" />
+    <Compile Include="Areas\GridEditingInLineDatabase\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingInLineDatabase\GridEditingInLineDatabaseAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingInLineDatabase\Models\GridEditingInLineDatabaseProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridEditingInLineNullableBoolean\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingInLineNullableBoolean\GridEditingInLineNullableBooleanAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingInLineNullableBoolean\Models\InLineEditingProduct.cs" />
+    <Compile Include="Areas\GridEditingModelStateError\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingModelStateError\GridEditingModelStateErrorAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingModelStateError\Models\GridEditingModelStateErrorProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingModelStateError\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingModelStateError\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingModelStateError\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\GridEditingPoPupRequiredDropDownListForAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingPopUpTreeView\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpTreeView\GridEditingPopUpTreeViewAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpTreeView\Models\GridEditingPopUpTreeViewProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\GridEditingWithCascadingDropDownListsAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\Customer.cs" />
@@ -391,15 +524,65 @@
     <Content Include="App_Data\Sample_log.ldf">
       <DependentUpon>Sample.mdf</DependentUpon>
     </Content>
-    <Content Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.Context.tt">
+    <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ProductViewModel.Context.cs</LastGenOutput>
-      <DependentUpon>ProductViewModel.edmx</DependentUpon>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.tt">
+    <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductViewModel.edmx</DependentUpon>
-      <LastGenOutput>ProductViewModel.cs</LastGenOutput>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridBatchEditingDatabase\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridBatchEditingDatabase\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -528,13 +711,85 @@
     <Content Include="Areas\GridAjaxBindingDatabase\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridAjaxBindingDatabase\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridAjaxBindingDatabase\Views\Home\Index.cshtml" />
-    <EntityDeploy Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.edmx">
+    <Content Include="Areas\GridAjaxBindingCustomJsonResult\Views\web.config" />
+    <Content Include="Areas\GridAjaxBindingCustomJsonResult\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridAjaxBindingCustomJsonResult\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridAjaxBindingCustomJsonResult\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridAjaxBindingCustomJsonResult\Views\Home\LocalData.cshtml" />
+    <Content Include="Areas\GridEditingModelStateError\Views\web.config" />
+    <Content Include="Areas\GridEditingModelStateError\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditingModelStateError\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridEditingModelStateError\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductViewModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Areas\GridAjaxBindingDatabase\Models\ProductViewModel.edmx.diagram">
-      <DependentUpon>ProductViewModel.edmx</DependentUpon>
+    <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Areas\GridEditingModelStateError\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Views\web.config" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridEditing3LevelHierarchy\Views\web.config" />
+    <Content Include="Areas\GridEditing3LevelHierarchy\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditing3LevelHierarchy\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridEditing3LevelHierarchy\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpTreeView\Views\web.config" />
+    <Content Include="Areas\GridEditingPopUpTreeView\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditingPopUpTreeView\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridEditingPopUpTreeView\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridAlternatingRows\Views\web.config" />
+    <Content Include="Areas\GridAlternatingRows\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridAlternatingRows\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridAlternatingRows\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridBatchEditingDatabase\Views\web.config" />
+    <Content Include="Areas\GridBatchEditingDatabase\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridBatchEditingDatabase\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridBatchEditingDatabase\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridBatchEditingDatabase\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridBatchEditingDatabase\Models\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridCheckboxClientTemplate\Views\web.config" />
+    <Content Include="Areas\GridCheckboxClientTemplate\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridCheckboxClientTemplate\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridCheckboxClientTemplate\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridBindingDataTable\Views\web.config" />
+    <Content Include="Areas\GridBindingDataTable\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridBindingDataTable\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridBindingDataTable\Views\Home\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -2855,12 +3110,26 @@
     <Content Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\GridAjaxBindingCustomJsonResult\Data\" />
     <Folder Include="Areas\GridAjaxBindingDatabase\Data\" />
+    <Folder Include="Areas\GridAlternatingRows\Data\" />
+    <Folder Include="Areas\GridBatchEditingDatabase\Data\" />
+    <Folder Include="Areas\GridBindingDataTable\Data\" />
+    <Folder Include="Areas\GridCheckboxClientTemplate\Data\" />
+    <Folder Include="Areas\GridEditing3LevelHierarchy\Data\" />
     <Folder Include="Areas\GridEditingAjaxWithEnumeration\Data\" />
     <Folder Include="Areas\GridEditingAutoCompleteNewItem\Data\" />
     <Folder Include="Areas\GridEditingBatchMultiSelectionDelete\Data\" />
     <Folder Include="Areas\GridEditingBatchWithCheckboxes\Data\" />
     <Folder Include="Areas\GridEditingCustomPopupEditor\Data\" />
+    <Folder Include="Areas\GridEditingExternalContainer\Data\" />
+    <Folder Include="Areas\GridEditingInCellCascadingDropDownLists\Data\" />
+    <Folder Include="Areas\GridEditingInCellRadioButtonColumn\Data\" />
+    <Folder Include="Areas\GridEditingInLineDatabase\Data\" />
+    <Folder Include="Areas\GridEditingInLineNullableBoolean\Data\" />
+    <Folder Include="Areas\GridEditingModelStateError\Data\" />
+    <Folder Include="Areas\GridEditingPoPupRequiredDropDownListFor\Data\" />
+    <Folder Include="Areas\GridEditingPopUpTreeView\Data\" />
     <Folder Include="Areas\GridEditingWithCascadingDropDownLists\Data\" />
     <Folder Include="Areas\Grid\Data\" />
   </ItemGroup>
@@ -2902,6 +3171,14 @@
       <UserProperties UseCdnSupport="True" />
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
