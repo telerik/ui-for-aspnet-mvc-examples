@@ -1,0 +1,24 @@
+﻿﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridAjaxBindingCustomJsonResult.Models.Product>()
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ID);
+        columns.Bound(p => p.Name);
+    })
+    .Pageable()
+    .Sortable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .ServerOperation(false)
+        .Read("Read", "Home")
+    )
+)
