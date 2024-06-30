@@ -1,0 +1,76 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<script type="text/x-kendo-template" id="windowTemplate">
+    <p>
+        Delete
+        <strong>#= Name #</strong>, born #= kendo.toString(BirthDate, "dd-MMM-yyyy") #?
+    </p>
+
+    <button class="k-button k-button-solid-base k-button-solid k-button-md k-rounded-md" id="yesButton">Yes</button>
+    <button class="k-button k-button-solid-base k-button-solid k-button-md k-rounded-md" id="noButton"> No</button>
+</script>
+
+<h4>Click a "Delete" button to remove a record</h4>
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridCustomConfirmationWindow.Models.Person>()
+    .Name("peopleGrid")
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model => model.Id(m => m.PersonID))
+            .Read(read => read.Action("GetPeople", "Home"))
+            .Update(up => up.Action("UpdatePerson", "Home"))
+            .Destroy(up => up.Action("DeletePerson", "Home"))
+    )
+    .Columns(columns =>
+    {
+        columns.Bound(c => c.PersonID).Width(200);
+        columns.Bound(c => c.Name);
+        columns.Bound(c => c.BirthDate).Format("{0:g}");
+        columns.Command(cmd => {
+            cmd.Edit();
+            cmd.Custom("CustomDelete").Text("Delete").Click("onClick");
+        });
+    })
+    .Pageable()
+    .Sortable()
+    .Editable(ed => ed.Mode(GridEditMode.InLine))
+)
+
+<script>
+    var windowTemplate = kendo.template($("#windowTemplate").html());
+
+    function onClick(e) {
+        e.preventDefault();
+
+        var window = $("#window").getKendoWindow();
+        var tr = $(e.target).closest("tr"); //get the row for deletion
+        var data = this.dataItem(tr); //get the row data so it can be referred later
+
+        window.content(windowTemplate(data)); //send the row data object to the template and render it
+        window.center().open();
+
+        $("#yesButton").click(function () {
+            var grid = $("#peopleGrid").getKendoGrid()
+            grid.dataSource.remove(data)  //prepare a "destroy" request
+            grid.dataSource.sync()  //actually send the request (might be ommited if the autoSync option is enabled in the dataSource)
+            window.close();
+        });
+
+        $("#noButton").click(function () {
+            window.close();
+        });
+    }
+</script>
+
+@(Html.Kendo().Window()
+        .Name("window")
+        .Width(400)
+        .Height(200)
+        .Visible(false)
+        .Title("Are you sure you want to delete this record?")
+        .Content("windowTemplate")
+)

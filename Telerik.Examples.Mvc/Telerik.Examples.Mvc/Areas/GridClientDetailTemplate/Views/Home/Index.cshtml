@@ -1,0 +1,30 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Index";
+}
+
+﻿@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridClientDetailTemplate.Models.Product>()
+      .Name("grid")
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Read(read => read.Action("Products_Read", "Home"))
+       )
+      .Columns(columns =>
+      {
+          columns.Bound(product => product.ProductID);
+          columns.Bound(product => product.ProductName);
+      })
+      .Pageable()
+      .ClientDetailTemplateId("client-template")
+)
+
+<script id="client-template" type="text/x-kendo-template">
+    <div>ProductID: #: ProductID #</div>
+    <div>ProductName: #: ProductName #</div>
+    <div>UnitsInStock: #: UnitsInStock #</div>
+    <div>UnitPrice: #: UnitPrice #</div>
+    <div>UnitsOnOrder: #: UnitsOnOrder #</div>
+    <div>Discontinued: #: Discontinued #</div>
+</script>
+

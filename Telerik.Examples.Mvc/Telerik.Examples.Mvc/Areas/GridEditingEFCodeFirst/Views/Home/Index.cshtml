@@ -1,0 +1,29 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Add a new record and edit its data</h4>
+﻿@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridEditingEFCodeFirst.Models.Customer>()
+    .Name("Customers")
+    .ToolBar(tb => tb.Create())
+    .Pageable()
+    .DataSource(dataSource => dataSource.Ajax()
+        .Model(model => model.Id(c => c.CustomerID))
+        .Read("GetCustomers", "Home")
+        .Update("UpdateCustomer", "Home")
+        .Create("InsertCustomer", "Home")
+        .Destroy("DeleteCustomer", "Home"))
+    .Columns(cols =>
+    {
+        cols.Bound(c => c.Name).Width(300);
+        cols.Bound(c => c.Phone);
+        cols.Bound(c => c.Email);
+        cols.Command(cmd =>
+        {
+            cmd.Edit();
+            cmd.Destroy();
+        });
+    })
+)
