@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript">
+    function onSelect(e) {
+
+        var itemId = $(e.item).attr("id");
+
+        //Check if the menu item have to open the window
+        if (itemId == "openWindow") {
+            var url = $(e.item).find("a").attr("href");
+            //Stop the link from redirecting to another page
+            e.preventDefault();
+            //Get the window content
+            $.ajax({
+                url: url,
+                success: function (data) {
+                    $("#main").append(data);
+                }
+            });
+        }
+    }
+</script>
+
+@{Html.Kendo()
+              .Menu()
+              .Orientation(MenuOrientation.Horizontal)
+              .Name("applicationMenu")
+              .Items(menu => menu.Add().Text("Home").Items(homeMenu =>
+                  {
+                      homeMenu.Add().Text("Show Window").Action("RenderWindow", "Home").HtmlAttributes(new { id = "openWindow" });
+                  }))
+              .Events(e => e.Select("onSelect"))
+              .Render();
+}
+
+<br />
+Select the "ShowWindow" item from the menu above, in order to open a window with ajax.
+
+<br />
+<div id="main"></div>

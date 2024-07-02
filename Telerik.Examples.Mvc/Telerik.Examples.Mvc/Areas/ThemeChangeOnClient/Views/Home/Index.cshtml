@@ -1,0 +1,60 @@
+﻿<script>
+    var stylesheet = document.querySelector("link[rel=stylesheet]");
+    //retrieve the theme url from the localStorage:
+    var theme = localStorage.getItem('theme');
+    if (theme && theme !== stylesheet.getAttribute('href')) {
+        //pass the url to the stylesheet's href attribute
+        stylesheet.setAttribute('href', theme);
+    }
+</script>
+
+<div class="configurator">
+    <h4>Select Theme:</h4>
+    <button id="load-default">Default Theme</button>
+    <button id="load-bootstrap">Bootstrap Theme</button>
+</div>
+
+<div>
+    <h4>Basic Button</h4>
+    <p>
+        @(Html.Kendo().Button()
+        .Name("primaryTextButton")
+        .ThemeColor(ThemeColor.Primary)
+        .Content("Primary Button"))
+        @(Html.Kendo().Button()
+        .Name("textButton")
+        .HtmlAttributes( new {type = "button"} )
+        .Content("Button"))
+    </p>
+</div>
+
+<div style="text-align: center;">
+    <h4>Pick a date</h4>
+    @(Html.Kendo().Calendar()
+            .Name("calendar")
+    )
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $("#load-default").click(function () {
+            $("link[rel=stylesheet]").attr({ href: "https://kendo.cdn.telerik.com/themes/6.4.0/default/default-main.css" });
+            //save the theme url in localStorage
+            localStorage.setItem('theme', "https://kendo.cdn.telerik.com/themes/6.4.0/default/default-main.css");
+            //reload the whole page:
+            location.reload();
+        });
+
+        $("#load-bootstrap").click(function () {
+            $("link[rel=stylesheet]").attr({ href: "https://kendo.cdn.telerik.com/themes/6.4.0/bootstrap/bootstrap-main.css" });
+            //save the theme url in localStorage
+            localStorage.setItem('theme', "https://kendo.cdn.telerik.com/themes/6.4.0/bootstrap/bootstrap-main.css");
+            //reload the whole page:
+            location.reload();
+        });
+
+        // In order for the whole page to be styled, the <body> element has a 'k-content' class
+        $(document.body).addClass("k-content");
+    });
+</script>
