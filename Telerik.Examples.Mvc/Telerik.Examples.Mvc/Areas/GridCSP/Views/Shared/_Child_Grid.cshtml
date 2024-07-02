@@ -1,0 +1,26 @@
+﻿@using Kendo.Mvc.UI
+
+@model int
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridCSP.Models.OrderViewModel>()
+    .Name("grid_"+Model.ToString())
+    .Columns(columns =>
+    {
+        columns.Bound(o => o.OrderID).Title("ID").Width(80);
+        columns.Bound(o => o.ShipCountry).Width(110);
+        columns.Bound(o => o.ShipAddress);
+        columns.Bound(o => o.ShipName).Width(190);
+    })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(5)
+        .Read(read => read.Action("Children_Read", "Demo_Detail_Template_CSP").Data("additionalData"))
+    )
+    .Pageable()
+    .Sortable()
+    .Deferred()
+)
+
+<script type="text/javascript" nonce="Telerik-CSP-Examples">
+    @(Html.Kendo().DeferredScripts(false))
+</script>
