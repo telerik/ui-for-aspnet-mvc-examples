@@ -273,81 +273,388 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\ChartDynamicSeries\Models\MySeriesData.cs" />
-    <Compile Include="Areas\ChartDynamicSeries\Models\MyViewModel.cs" />
-    <Compile Include="Areas\ChartInGrid\Models\ViewModel.cs" />
-    <Compile Include="Areas\GridContextMenu\Models\Employee.cs" />
-    <Compile Include="Areas\GridContextMenu\Models\EmployeeRepository.cs" />
-    <Compile Include="Areas\GridContextMenu\Models\Order.cs" />
-    <Compile Include="Areas\GridContextMenu\Models\OrderRepository.cs" />
-    <Compile Include="Areas\GridDateUtcOnServerAndClient\Models\Person.cs" />
-    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Models\Employee.cs" />
-    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Models\Order.cs" />
-    <Compile Include="Areas\GridHierarchySelfReferencing\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridHierarchySelfReferencing\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
-    <Compile Include="Areas\GridEditTimespan\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditTimespan\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridEditTimespan\Models\ViewModel.cs" />
-    <Compile Include="Areas\GridContextMenu\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridContextMenu\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridFilterExcelLike\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridFilterExcelLike\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridFilterExcelLike\Models\Product.cs" />
-    <Compile Include="Areas\GridEditPopUpServerValidation\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditPopUpServerValidation\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridEditPopUpServerValidation\Models\Product.cs" />
-    <Compile Include="Areas\GridPostWithForm\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridPostWithForm\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridPostWithForm\Models\Category.cs" />
-    <Compile Include="Areas\GridPostWithForm\Models\Product.cs" />
-    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridDateUtcOnServerAndClient\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridDateUtcOnServerAndClient\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\ChartInGrid\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ChartInGrid\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\ChartDynamicSeries\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ChartDynamicSeries\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\DropDownListVirtualization\Controllers\HomeController.cs" />
-    <Compile Include="Areas\DropDownListVirtualization\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\DropDownListCustomDataSource\Controllers\HomeController.cs" />
-    <Compile Include="Areas\DropDownListCustomDataSource\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\UploadDownloadFileLinks\Controllers\HomeController.cs" />
-    <Compile Include="Areas\UploadDownloadFileLinks\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\TreeViewLoadConditionally\Controllers\HomeController.cs" />
-    <Compile Include="Areas\TreeViewLoadConditionally\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\TreeViewLoadConditionally\Models\ComboItemModel.cs" />
-    <Compile Include="Areas\TreeViewLoadConditionally\Models\TreeViewItemModel.cs" />
-    <Compile Include="Areas\TreeViewSaveItemState\Controllers\HomeController.cs" />
-    <Compile Include="Areas\TreeViewSaveItemState\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\ThemeChangeOnClient\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ThemeChangeOnClient\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\TreeViewSaveItemState\Models\ViewModel.cs" />
-    <Compile Include="Areas\WindowFormWithAjax\Controllers\HomeController.cs" />
-    <Compile Include="Areas\WindowFormWithAjax\Controllers\OrdersDataController.cs" />
-    <Compile Include="Areas\WindowFormWithAjax\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\WindowFormWithAjax\Helpers\OrdersBinderHelper.cs" />
-    <Compile Include="Areas\WindowFormWithAjax\Models\OrderViewModel.cs" />
-    <Compile Include="Areas\PanelBarHierarchyBinding\Controllers\HomeController.cs" />
-    <Compile Include="Areas\PanelBarHierarchyBinding\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\PanelBarSelectItemInitially\Controllers\HomeController.cs" />
-    <Compile Include="Areas\PanelBarSelectItemInitially\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\PanelBarSelectItemInitially\Models\LocalPanelBarItem.cs" />
-    <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiSelectFormPostStronglyTyped\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Models\City.cs" />
-    <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Models\CountryInfo.cs" />
-    <Compile Include="Areas\MultiSelectGetPostData\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiSelectGetPostData\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\MultiSelectGetPostData\Models\MultiSelectItem.cs" />
-    <Compile Include="Areas\MenuOpenWindowWithAjax\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MenuOpenWindowWithAjax\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\MultiColumnComboBoxEdit\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiColumnComboBoxEdit\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridSelectionColumnWithCheckBox\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridSelectionColumnWithCheckBox\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridSelectionColumnWithCheckBox\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\GridAjaxBindingCustomJsonResultAreaRegistration.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Models\Product.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Serialization\CustomJavaScriptSerializer.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Serialization\CustomJsonInitializer.cs" />
+    <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Serialization\CustomJsonResult.cs" />
+    <Compile Include="Areas\GridAjaxBindingDatabase\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridAjaxBindingDatabase\GridAjaxBindingDatabaseAreaRegistration.cs" />
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\Product.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridAlternatingRows\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridAlternatingRows\GridAlternatingRowsAreaRegistration.cs" />
+    <Compile Include="Areas\GridAlternatingRows\Models\Student.cs" />
+    <Compile Include="Areas\GridBatchEditingDatabase\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridBatchEditingDatabase\GridBatchEditingDatabaseAreaRegistration.cs" />
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\GridBatchEditingDatabaseProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridBatchEditingDatabase\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridBindingDataTable\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridBindingDataTable\GridBindingDataTableAreaRegistration.cs" />
+    <Compile Include="Areas\GridCascadingDropDownFilters\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCascadingDropDownFilters\GridCascadingDropDownFiltersAreaRegistration.cs" />
+    <Compile Include="Areas\GridCascadingDropDownFilters\Models\CustomerViewModel.cs" />
+    <Compile Include="Areas\GridCascadingDropDownFilters\Models\GridCascadingDropDownFiltersCustomer.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCascadingDropDownFilters\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCascadingDropDownFilters\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCascadingDropDownFilters\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCheckboxClientTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCheckboxClientTemplate\GridCheckboxClientTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridCheckboxClientTemplate\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\GridClientDetailTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridClientDetailTemplate\GridClientDetailTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridClientDetailTemplate\Models\Product.cs" />
+    <Compile Include="Areas\GridCRUDWithObjectColumn\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCRUDWithObjectColumn\GridCRUDWithObjectColumnAreaRegistration.cs" />
+    <Compile Include="Areas\GridCRUDWithObjectColumn\Models\Category.cs" />
+    <Compile Include="Areas\GridCRUDWithObjectColumn\Models\Product.cs" />
+    <Compile Include="Areas\GridCSP\Controllers\Demo_Detail_Template_CSPController.cs" />
+    <Compile Include="Areas\GridCSP\Controllers\Demo_Overview_CSPController.cs" />
+    <Compile Include="Areas\GridCSP\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCSP\GridCSPAreaRegistration.cs" />
+    <Compile Include="Areas\GridCSP\Models\CategoryViewModel.cs" />
+    <Compile Include="Areas\GridCSP\Models\CountryViewModel.cs" />
+    <Compile Include="Areas\GridCSP\Models\Demo.cs" />
+    <Compile Include="Areas\GridCSP\Models\DetailProductViewModel.cs" />
+    <Compile Include="Areas\GridCSP\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridCSP\Models\ErrorViewModel.cs" />
+    <Compile Include="Areas\GridCSP\Models\ExtendedEmployeeViewModel.cs" />
+    <Compile Include="Areas\GridCSP\Models\Location.cs" />
+    <Compile Include="Areas\GridCSP\Models\OrderViewModel.cs" />
+    <Compile Include="Areas\GridCsvServerExport\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCsvServerExport\GridCsvServerExportAreaRegistration.cs" />
+    <Compile Include="Areas\GridCsvServerExport\Models\Product.cs" />
+    <Compile Include="Areas\GridCustomAjaxBinding\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCustomAjaxBinding\GridCustomAjaxBindingAreaRegistration.cs" />
+    <Compile Include="Areas\GridCustomAjaxBinding\Models\GridCustomAjaxBindingOrder.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCustomAjaxBinding\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCustomAjaxBinding\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCustomAjaxBinding\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCustomConfirmationWindow\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCustomConfirmationWindow\GridCustomConfirmationWindowAreaRegistration.cs" />
+    <Compile Include="Areas\GridCustomConfirmationWindow\Models\Person.cs" />
+    <Compile Include="Areas\GridCustomServerBinding\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCustomServerBinding\GridCustomServerBindingAreaRegistration.cs" />
+    <Compile Include="Areas\GridCustomServerBinding\Models\GridCustomServerBindingOrder.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCustomServerBinding\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCustomServerBinding\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridCustomServerBinding\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridDateIgnoreTimeZones\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridDateIgnoreTimeZones\GridDateIgnoreTimeZonesAreaRegistration.cs" />
+    <Compile Include="Areas\GridDateIgnoreTimeZones\Models\Person.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\BaseController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\EmployeesController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\OrderDetailsController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\OrdersController.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\GridEditing3LevelHierarchyAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\GridEditing3LevelHierarchyEmployee.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\GridEditing3LevelHierarchyOrder.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\GridEditing3LevelHierarchyOrder_Detail.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\GridEditing3LevelHierarchyProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingAjaxWithEnumeration\Controllers\GridEditingAjaxWithEnumerationController.cs" />
+    <Compile Include="Areas\GridEditingAjaxWithEnumeration\GridEditingAjaxWithEnumerationAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingAjaxWithEnumeration\Models\Category.cs" />
+    <Compile Include="Areas\GridEditingAjaxWithEnumeration\Models\Product.cs" />
+    <Compile Include="Areas\GridEditingAutoCompleteNewItem\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingAutoCompleteNewItem\GridEditingAutoCompleteNewItemAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingAutoCompleteNewItem\Models\GridViewModel.cs" />
+    <Compile Include="Areas\GridEditingAutoCompleteNewItem\Models\ResultEntry.cs" />
+    <Compile Include="Areas\GridEditingAutoCompleteNewItem\Models\ResultEntryViewModel.cs" />
+    <Compile Include="Areas\GridEditingBatchMultiSelectionDelete\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingBatchMultiSelectionDelete\GridEditingBatchMultiSelectionDeleteAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingBatchMultiSelectionDelete\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingBatchWithCheckboxes\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingBatchWithCheckboxes\GridEditingBatchWithCheckboxesAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingBatchWithCheckboxes\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingCustomPopupEditor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingCustomPopupEditor\GridEditingCustomPopupEditorAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingCustomPopupEditor\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingEFCodeFirst\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingEFCodeFirst\GridEditingEFCodeFirstAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingEFCodeFirst\Models\Customer.cs" />
+    <Compile Include="Areas\GridEditingEFCodeFirst\Models\CustomerContext.cs" />
+    <Compile Include="Areas\GridEditingEFCodeFirst\Models\CustomerViewModel.cs" />
+    <Compile Include="Areas\GridEditingExternalContainer\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingExternalContainer\GridEditingExternalContainerAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingExternalContainer\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\GridEditingInCellCascadingDropDownListsAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\Customer.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\CustomerRepository.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\ForeignKeyValues.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\License.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\LicenseRepository.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\Product.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\ProductRepository.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\Vendor.cs" />
+    <Compile Include="Areas\GridEditingInCellCascadingDropDownLists\Models\VendorRepository.cs" />
+    <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingInCellRadioButtonColumn\GridEditingInCellRadioButtonColumnAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Role.cs" />
+    <Compile Include="Areas\GridEditingInLineDatabase\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingInLineDatabase\GridEditingInLineDatabaseAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingInLineDatabase\Models\GridEditingInLineDatabaseProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInLineNullableBoolean\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingInLineNullableBoolean\GridEditingInLineNullableBooleanAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingInLineNullableBoolean\Models\InLineEditingProduct.cs" />
+    <Compile Include="Areas\GridEditingModelStateError\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingModelStateError\GridEditingModelStateErrorAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingModelStateError\Models\GridEditingModelStateErrorProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingModelStateError\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingModelStateError\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingModelStateError\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\GridEditingPopUpNestedGridAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Models\GridEditingPopUpNestedGridEmployee.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Models\GridEditingPopUpNestedGridTerritory.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Models\NorthwindRepository.cs" />
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpNestedGrid\Models\TerritoryViewModel.cs" />
+    <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\GridEditingPoPupRequiredDropDownListForAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingPopUpTreeView\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpTreeView\GridEditingPopUpTreeViewAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpTreeView\Models\GridEditingPopUpTreeViewProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\GridEditingWithCascadingDropDownListsAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\Customer.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\CustomerRepository.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\License.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\LicenseRepository.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\Product.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\ProductRepository.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\Vendor.cs" />
+    <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\VendorRepository.cs" />
+    <Compile Include="Areas\GridEditingWithComboBoxServerFiltering\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingWithComboBoxServerFiltering\GridEditingWithComboBoxServerFilteringAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingWithComboBoxServerFiltering\Models\Category.cs" />
+    <Compile Include="Areas\GridEditingWithComboBoxServerFiltering\Models\Product.cs" />
+    <Compile Include="Areas\GridExcelExportCellFormat\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridExcelExportCellFormat\GridExcelExportCellFormatAreaRegistration.cs" />
+    <Compile Include="Areas\GridExcelExportCellFormat\Models\Student.cs" />
+    <Compile Include="Areas\GridExcelExportColumnTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridExcelExportColumnTemplate\GridExcelExportColumnTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridExcelExportColumnTemplate\Models\Order.cs" />
+    <Compile Include="Areas\GridHierarchyClientDetailTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyClientDetailTemplate\GridHierarchyClientDetailTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchyClientDetailTemplate\Models\GridHierarchyClientDetailTemplateCategory.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyClientDetailTemplate\Models\GridHierarchyClientDetailTemplateProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\GridHierarchyExcelExportAllPagesAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\Models\GridHierarchyExcelExportAllPagesEmployee.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\Models\GridHierarchyExcelExportAllPagesOrder.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\Models\OrderViewModel.cs" />
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\Models\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\Models\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyExcelExportAllPages\Models\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridRowsBackgroundConditional\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridRowsBackgroundConditional\GridRowsBackgroundConditionalAreaRegistration.cs" />
+    <Compile Include="Areas\GridRowsBackgroundConditional\Models\EmployeeViewModel.cs" />
     <Compile Include="Areas\Grid\Controllers\AjaxEditingWithEnumerationController.cs" />
     <Compile Include="Areas\Grid\Controllers\AutoCompleteEditorAllowSettingNewValuesController.cs" />
     <Compile Include="Areas\Grid\Controllers\BatchEditingMultiSelectionDeleteController.cs" />
@@ -391,6 +698,130 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Sample.mdf" />
+    <Content Include="App_Data\Sample_log.ldf">
+      <DependentUpon>Sample.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridBatchEditingDatabase\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridBatchEditingDatabase\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridCascadingDropDownFilters\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridCascadingDropDownFilters\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridCustomAjaxBinding\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridCustomAjaxBinding\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridCustomServerBinding\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridCustomServerBinding\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpNestedGrid\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpNestedGrid\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyExcelExportAllPages\Models\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyExcelExportAllPages\Models\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -451,91 +882,9 @@
     <Content Include="Areas\Grid\Views\InLineEditingWithNullableBoolean\EditorTemplates\Boolean.cshtml" />
     <Content Include="Areas\Grid\Views\PopUpEditingWithRequiredDropDownListFor\Index.cshtml" />
     <Content Include="Areas\Grid\Views\PopUpEditingWithRequiredDropDownListFor\EditorTemplates\Person.cshtml" />
-    <Content Include="Areas\GridSelectionByField\Views\web.config" />
-    <Content Include="Areas\GridSelectionByField\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridSelectionByField\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\web.config" />
-    <Content Include="Areas\GridSelectionColumnWithCheckBox\Views\Home\IndexAllPages.cshtml" />
-    <Content Include="Areas\GridHierarchySelfReferencing\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridHierarchySelfReferencing\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridHierarchySelfReferencing\Views\web.config" />
-    <Content Include="Areas\GridEditTimespan\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridEditTimespan\Views\web.config" />
-    <Content Include="Areas\GridEditTimespan\Views\Home\EditorTemplates\NumericEditor.cshtml" />
-    <Content Include="Areas\GridEditTimespan\Views\Home\EditorTemplates\TimePickerEditor.cshtml" />
-    <Content Include="Areas\GridEditTimespan\Views\Home\NumericEditor.cshtml" />
-    <Content Include="Areas\GridEditTimespan\Views\Home\TimePickerEditor.cshtml" />
-    <Content Include="Areas\GridContextMenu\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridContextMenu\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridContextMenu\Views\web.config" />
-    <Content Include="Areas\GridFilterExcelLike\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridFilterExcelLike\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridFilterExcelLike\Views\web.config" />
-    <Content Include="Areas\GridEditPopUpServerValidation\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridEditPopUpServerValidation\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridEditPopUpServerValidation\Views\web.config" />
-    <Content Include="Areas\GridPostWithForm\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridPostWithForm\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridPostWithForm\Views\web.config" />
-    <Content Include="Areas\GridPostWithForm\Views\Home\Save.cshtml" />
-    <Content Include="Areas\GridEditSyncChangesWithOneRequest\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridEditSyncChangesWithOneRequest\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridEditSyncChangesWithOneRequest\Views\web.config" />
-    <Content Include="Areas\GridDateUtcOnServerAndClient\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridDateUtcOnServerAndClient\Views\Home\Index.cshtml" />
-    <Content Include="Areas\GridDateUtcOnServerAndClient\Views\web.config" />
-    <Content Include="Areas\MultiColumnComboBoxEdit\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\MultiColumnComboBoxEdit\Views\Home\Index.cshtml" />
-    <Content Include="Areas\MultiColumnComboBoxEdit\Views\web.config" />
-    <Content Include="Areas\MultiColumnComboBoxEdit\Views\Home\Create.cshtml" />
-    <Content Include="Areas\MultiColumnComboBoxEdit\Views\Home\Edit.cshtml" />
-    <Content Include="Areas\ChartInGrid\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\ChartInGrid\Views\Home\Index.cshtml" />
-    <Content Include="Areas\ChartInGrid\Views\web.config" />
-    <Content Include="Areas\ChartDynamicSeries\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\ChartDynamicSeries\Views\Home\Index.cshtml" />
-    <Content Include="Areas\ChartDynamicSeries\Views\web.config" />
-    <Content Include="Areas\DropDownListVirtualization\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\DropDownListVirtualization\Views\Home\Index.cshtml" />
-    <Content Include="Areas\DropDownListVirtualization\Views\web.config" />
-    <Content Include="Areas\DropDownListCustomDataSource\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\DropDownListCustomDataSource\Views\Home\Index.cshtml" />
-    <Content Include="Areas\DropDownListCustomDataSource\Views\web.config" />
-    <Content Include="Areas\MenuOpenWindowWithAjax\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\MenuOpenWindowWithAjax\Views\Home\Index.cshtml" />
-    <Content Include="Areas\MenuOpenWindowWithAjax\Views\web.config" />
-    <Content Include="Areas\MenuOpenWindowWithAjax\Views\Home\ShowWindow.cshtml" />
-    <Content Include="Areas\MultiSelectGetPostData\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\MultiSelectGetPostData\Views\Home\Index.cshtml" />
-    <Content Include="Areas\MultiSelectGetPostData\Views\web.config" />
-    <Content Include="Areas\MultiSelectGetPostData\Views\Home\Details.cshtml" />
-    <Content Include="Areas\MultiSelectFormPostStronglyTyped\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\MultiSelectFormPostStronglyTyped\Views\Home\Index.cshtml" />
-    <Content Include="Areas\MultiSelectFormPostStronglyTyped\Views\web.config" />
-    <Content Include="Areas\PanelBarSelectItemInitially\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\PanelBarSelectItemInitially\Views\Home\Index.cshtml" />
-    <Content Include="Areas\PanelBarSelectItemInitially\Views\web.config" />
-    <Content Include="Areas\PanelBarHierarchyBinding\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\PanelBarHierarchyBinding\Views\Home\Index.cshtml" />
-    <Content Include="Areas\PanelBarHierarchyBinding\Views\web.config" />
-    <Content Include="Areas\WindowFormWithAjax\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\WindowFormWithAjax\Views\Home\Index.cshtml" />
-    <Content Include="Areas\WindowFormWithAjax\Views\web.config" />
-    <Content Include="Areas\WindowFormWithAjax\Views\Shared\_OrderCreate.cshtml" />
-    <Content Include="Areas\ThemeChangeOnClient\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\ThemeChangeOnClient\Views\web.config" />
-    <Content Include="Areas\TreeViewSaveItemState\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\TreeViewSaveItemState\Views\Home\Index.cshtml" />
-    <Content Include="Areas\TreeViewSaveItemState\Views\web.config" />
-    <Content Include="Areas\TreeViewLoadConditionally\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\TreeViewLoadConditionally\Views\Home\Index.cshtml" />
-    <Content Include="Areas\TreeViewLoadConditionally\Views\web.config" />
-    <Content Include="Areas\UploadDownloadFileLinks\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\UploadDownloadFileLinks\Views\Home\Index.cshtml" />
-    <Content Include="Areas\UploadDownloadFileLinks\Views\web.config" />
-    <Content Include="Areas\ThemeChangeOnClient\Views\Home\Index.cshtml" />
+    <Content Include="Areas\grid_selection_by_field\Views\web.config" />
+    <Content Include="Areas\grid_selection_by_field\Views\Home\Index.cshtml" />
+    <Content Include="Areas\grid_selection_by_field\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
@@ -2944,7 +3293,44 @@
     <Content Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Areas\GridAjaxBindingCustomJsonResult\Data\" />
+    <Folder Include="Areas\GridAjaxBindingDatabase\Data\" />
+    <Folder Include="Areas\GridAlternatingRows\Data\" />
+    <Folder Include="Areas\GridBatchEditingDatabase\Data\" />
+    <Folder Include="Areas\GridBindingDataTable\Data\" />
+    <Folder Include="Areas\GridCascadingDropDownFilters\Data\" />
+    <Folder Include="Areas\GridCheckboxClientTemplate\Data\" />
+    <Folder Include="Areas\GridClientDetailTemplate\Data\" />
+    <Folder Include="Areas\GridCRUDWithObjectColumn\Data\" />
+    <Folder Include="Areas\GridCSP\Data\" />
+    <Folder Include="Areas\GridCsvServerExport\Data\" />
+    <Folder Include="Areas\GridCustomAjaxBinding\Data\" />
+    <Folder Include="Areas\GridCustomConfirmationWindow\Data\" />
+    <Folder Include="Areas\GridCustomServerBinding\Data\" />
+    <Folder Include="Areas\GridDateIgnoreTimeZones\Data\" />
+    <Folder Include="Areas\GridEditing3LevelHierarchy\Data\" />
+    <Folder Include="Areas\GridEditingAjaxWithEnumeration\Data\" />
+    <Folder Include="Areas\GridEditingAutoCompleteNewItem\Data\" />
+    <Folder Include="Areas\GridEditingBatchMultiSelectionDelete\Data\" />
+    <Folder Include="Areas\GridEditingBatchWithCheckboxes\Data\" />
+    <Folder Include="Areas\GridEditingCustomPopupEditor\Data\" />
+    <Folder Include="Areas\GridEditingEFCodeFirst\Data\" />
+    <Folder Include="Areas\GridEditingExternalContainer\Data\" />
+    <Folder Include="Areas\GridEditingInCellCascadingDropDownLists\Data\" />
+    <Folder Include="Areas\GridEditingInCellRadioButtonColumn\Data\" />
+    <Folder Include="Areas\GridEditingInLineDatabase\Data\" />
+    <Folder Include="Areas\GridEditingInLineNullableBoolean\Data\" />
+    <Folder Include="Areas\GridEditingModelStateError\Data\" />
+    <Folder Include="Areas\GridEditingPopUpNestedGrid\Data\" />
+    <Folder Include="Areas\GridEditingPoPupRequiredDropDownListFor\Data\" />
+    <Folder Include="Areas\GridEditingPopUpTreeView\Data\" />
+    <Folder Include="Areas\GridEditingWithCascadingDropDownLists\Data\" />
+    <Folder Include="Areas\GridEditingWithComboBoxServerFiltering\Data\" />
+    <Folder Include="Areas\GridExcelExportCellFormat\Data\" />
+    <Folder Include="Areas\GridExcelExportColumnTemplate\Data\" />
+    <Folder Include="Areas\GridHierarchyClientDetailTemplate\Data\" />
+    <Folder Include="Areas\GridHierarchyExcelExportAllPages\Data\" />
+    <Folder Include="Areas\GridRowsBackgroundConditional\Data\" />
     <Folder Include="Areas\Grid\Data\" />
   </ItemGroup>
   <ItemGroup>
