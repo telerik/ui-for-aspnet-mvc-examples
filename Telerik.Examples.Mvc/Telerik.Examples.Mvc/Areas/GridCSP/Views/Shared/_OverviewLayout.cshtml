@@ -1,0 +1,56 @@
+﻿@using Kendo.Mvc.UI﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' https://cdn.kendostatic.com/ https://kendo.cdn.telerik.com https://code.jquery.com/ 'nonce-Telerik-CSP-Examples'; style-src 'self' 'unsafe-inline' https://kendo.cdn.telerik.com; font-src 'self' data:;" />
+    <title>@ViewData["Title"] - Telerik.Examples.Mvc</title>
+
+    @{
+        var kendoVersion = "2024.2.514";
+        var themeVersion = "8.0.1";
+    }
+
+    <link href="https://kendo.cdn.telerik.com/themes/@themeVersion/default/default-ocean-blue.css" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
+    <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+
+</head>
+<body class="k-content">
+    <div id="responsive-panel" class="navbar navbar-dark bg-light">
+        @(Html.Kendo().Menu()
+            .Name("Menu")
+            .HtmlAttributes(new { style="width:100%" })
+            .Orientation(MenuOrientation.Vertical)
+            .Items(items =>
+            {
+                items.Add().Text("Grid CSP Compatibility Overview Demo").Action("Demo_Overview_CSP", "Demo_Overview_CSP");
+                items.Add().Text("Grid CSP Compatibility DetailTemplate Demo Example").Action("Demo_Detail_Template_CSP", "Demo_Detail_Template_CSP");
+            })
+            .Deferred()
+        )
+    </div>
+
+    <main>
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="footer text-center d-flex align-items-center">
+        <div class="container-fluid">
+            <p class="text-muted">Copyright © @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
