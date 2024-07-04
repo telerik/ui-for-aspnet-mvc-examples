@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>Telerik UI for ASP.NET MVC DropDownList</h3>
+<br />
+<script>
+    function SelectEmployeeValueMapper(options) {
+        $.ajax({
+            url: "@Url.Action("EmployeeValueMapper", "Home")",
+                        data: {
+                            value: options.value || 0,
+                            status: 1,
+                            excludeId: -1
+                        },
+                        success: function (data) {
+                            options.success(data);
+                        }
+                    });
+                }
+</script>
+@(Html.Kendo().DropDownList()
+      .Name("Category")
+      .BindTo(ViewBag.Categories)
+      .DataTextField("CategoryName")
+      .DataValueField("CategoryId")
+)
+
+<h5>Type "4" in the filter input</h5>
+@(Html.Kendo().DropDownList()
+                    .Name("SelectEmployeeId")
+                    .CascadeFrom("Category")
+                    .DataValueField("Id")
+                    .DataTextField("Name")
+                    .OptionLabel("Test")
+                            .HtmlAttributes(new { @class = "width500" })
+                    .Filter("contains")
+                    .Virtual(v => v.ValueMapper("SelectEmployeeValueMapper").ItemHeight(26))
+                    .DataSource(source =>
+                    {
+                        source.Custom()
+                              .ServerFiltering(true)
+                              .ServerPaging(true)
+                              .Type("aspnetmvc-ajax")
+                              .Transport(transport => transport.Read(r => r.Action("GetVirtualData", "Home")))
+                              .Schema(schema =>
+                              {
+                                  schema.Data("Data")
+                                        .Total("Total");
+                              });
+                    }).Deferred()
+                )
+
+@Html.Kendo().DeferredScripts()

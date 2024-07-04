@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "LocalData";
+}
+
+<h2>LocalData</h2>
+
+@(Html.Kendo().PanelBar()
+				.Name("PanelBarNavigation")
+				.BindTo((IEnumerable<Telerik.Examples.Mvc.Areas.PanelBarSelectItemInitially.Models.LocalPanelBarItem>)ViewBag.MyPanelBarItems, (Kendo.Mvc.UI.Fluent.NavigationBindingFactory<PanelBarItem> mappings) =>
+				{
+					mappings.For<Telerik.Examples.Mvc.Areas.PanelBarSelectItemInitially.Models.LocalPanelBarItem>(binding => binding.ItemDataBound((item, dataItemFromModel) =>
+					{
+						item.Text = dataItemFromModel.MenuName;
+						item.Url = dataItemFromModel.MenuUrl;
+						item.Selected = (dataItemFromModel.IsPreSelected == true);
+						if (item.Selected)
+						{
+							PanelBarItem currItem = item;
+							while (currItem.Parent != null)
+							{
+								currItem.Parent.Expanded = true;
+								currItem = currItem.Parent;
+							}
+						}
+
+					})
+					.Children(itm => itm.ChildItems));
+				})
+)

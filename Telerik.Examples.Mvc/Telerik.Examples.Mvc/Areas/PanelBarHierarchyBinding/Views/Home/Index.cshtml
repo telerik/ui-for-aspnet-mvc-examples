@@ -1,0 +1,13 @@
+﻿@using Kendo.Mvc.UI.Fluent;
+@model List<Kendo.Mvc.UI.TreeViewItemModel>
+@(Html.Kendo().PanelBar()
+      .Name("panelbar")
+            .BindTo((List<TreeViewItemModel>)Model, (NavigationBindingFactory<PanelBarItem> mappings) =>
+            {
+                mappings.For<TreeViewItemModel>(binding => binding.ItemDataBound((item, category) =>
+                    {
+                        item.Text = category.Text;
+                    })
+                    .Children(category => category.Items));
+            })
+)

@@ -1,0 +1,126 @@
+﻿@{
+
+    ViewBag.Title = "Home Page 2";
+
+}
+
+@{
+
+    ViewBag.Title = "Index 2";
+}
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridSelectionColumnWithCheckBox.Models.ProductViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+    columns.Template(@<text></text>).ClientTemplate("<input type='checkbox' class='checkbox' />").Width(20).HeaderTemplate("<input id='headerCheckBox' style='cursor: pointer;' type='checkbox' onclick='selectAllItems(this);' />");
+        columns.Bound(p => p.ID);
+        columns.Bound(p => p.ProductName);
+        columns.Bound(p => p.CustomDate);
+        columns.Command(com => com.Edit());
+    })
+    .Filterable()
+    .Pageable(pageable => pageable
+        .Refresh(true)
+        .PageSizes(true)
+        .ButtonCount(5))
+    .Sortable()
+    @* .Selectable(selectable => selectable
+        .Mode(GridSelectionMode.Single)
+        .Type(GridSelectionType.Row))*@
+              .Editable(e => e.Mode(GridEditMode.InLine))
+    .DataSource(dataSource => dataSource
+    .Ajax()
+
+    .PageSize(10)
+     .ServerOperation(false)
+        .Model(model => model.Field(f => f.ProductName).DefaultValue("Test"))
+        .Model(model => model.Id(p => p.ID))
+        .Read(read => read.Action("Read", "Home"))
+            .Create(update => update.Action("Create", "Home"))
+            .Update(update => update.Action("Update", "Home"))
+                .Destroy(update => update.Action("Destroy", "Home"))
+    )
+)
+<br />
+<button id="showSelection">Show selected rows</button>
+<script>
+    $(document).ready(function () {
+        var grid = $("#grid").data("kendoGrid");
+        grid.bind("dataBound", onDataBound);
+        grid.table.on("click", ".checkbox", selectRow);
+
+        $("#showSelection").bind("click", function () {
+            var checked = [];
+            for (var i in checkedIds) {
+                if (checkedIds[i]) {
+                    checked.push(i);
+                }
+            }
+
+            alert(checked);
+        });
+    })
+    var checkedIds = {};
+
+    //on click of the checkbox:
+    function selectRow() {
+        var checked = this.checked,
+        row = $(this).closest("tr"),
+        grid = $("#grid").data("kendoGrid"),
+        dataItem = grid.dataItem(row);
+
+        checkedIds[dataItem.id] = checked;
+        var headerCheckBox = $("#headerCheckBox")[0];
+        headerCheckBox.checked = allChecked(grid);
+    }
+
+    function onDataBound(e) {
+        var view = this.dataSource.view();
+        for (var i = 0; i < view.length; i++) {
+            if (checkedIds[view[i].id]) {
+                this.tbody.find("tr[data-uid='" + view[i].uid + "']")
+                .find(".checkbox")
+                .attr("checked", "checked");
+            }
+        }
+
+        var headerCheckBox = $("#headerCheckBox")[0];
+        headerCheckBox.checked = allChecked(e.sender);
+    }
+    function selectAllItems(headerCheckBox) {
+        var grid = $('#grid').data().kendoGrid;
+
+        // visible rows
+        var rows = grid.items();
+        for (var i = 0; i < rows.length; i++) {
+            var row = $(rows[i]);
+            dataItem = grid.dataItem(row);
+
+            row.find(".checkbox")[0].checked = headerCheckBox.checked;
+        }
+
+        // all records
+        var allItems = grid.dataSource.data();
+        for (var i = 0; i < allItems.length; i++) {
+            var itemID = allItems[i].get("ID");
+            if (headerCheckBox.checked) {
+                checkedIds[itemID] = true;
+            }
+            else {
+                delete checkedIds[itemID];
+            }
+        }
+    }
+    function allChecked(grid) {
+        var allItems = grid.dataSource.data();
+        for (var i = 0; i < allItems.length; i++) {
+            var itemID = allItems[i].get("ID");
+            if (!checkedIds[itemID]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+</script>

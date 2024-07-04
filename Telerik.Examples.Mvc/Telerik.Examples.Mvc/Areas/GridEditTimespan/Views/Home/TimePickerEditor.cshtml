@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script>
+    kendo.data.binders.widget.timespan = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            this.widget = widget;
+            this._change = $.proxy(this.change, this);
+            this.widget.bind("change", this._change);
+        },
+        refresh: function () {
+            var value = this.bindings.timespan.get();
+            var date = null;
+            if (value) {
+                date = new Date();
+                date.setHours(value.Hours);
+                date.setMinutes(value.Minutes);
+                date.setSeconds(value.Seconds);
+            }
+
+            this.widget.value(date);
+        },
+        change: function () {
+            var date = this.widget.value();
+            var value = null;
+            if (date) {
+                value = {
+                    Hours: date.getHours(),
+                    Minutes: date.getMinutes(),
+                    Seconds: date.getSeconds()
+                };
+            }
+            this.bindings.timespan.set(value);
+        },
+        destroy: function () {
+            this.widget.unbind("change", this._change);
+        }
+    });
+
+</script>
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridEditTimespan.Models.ViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Command(comm =>
+        {
+            comm.Edit();
+        });
+        columns.Bound(o => o.ID);
+        columns.Bound(o => o.Time).ClientTemplate("#if (data.Time) {# #:kendo.toString(Time.Hours, '00')#:#:kendo.toString(Time.Minutes, '00')#:#:kendo.toString(Time.Seconds, '00')# #}#").EditorTemplateName("TimePickerEditor");
+    })
+    .ToolBar(tools => tools.Create())
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model =>
+            {
+                model.Id(o => o.ID);
+                model.Field(o => o.ID).Editable(false);
+            })
+        .Read(read => read.Action("Read", "Home"))
+        .Update(update => update.Action("Update", "Home"))
+        .Create(create => create.Action("Create", "Home"))
+    )
+)

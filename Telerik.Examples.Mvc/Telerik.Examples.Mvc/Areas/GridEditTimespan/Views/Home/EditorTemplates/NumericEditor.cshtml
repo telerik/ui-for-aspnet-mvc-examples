@@ -1,0 +1,6 @@
+﻿@model TimeSpan
+
+
+@Html.Kendo().IntegerTextBoxFor(model => model.Hours).HtmlAttributes(new { style = "width: 30px;"}).Spinners(false) :
+@Html.Kendo().IntegerTextBoxFor(model => model.Minutes).HtmlAttributes(new { style = "width: 30px;" }).Spinners(false) : 
+@Html.Kendo().IntegerTextBoxFor(model => model.Seconds).HtmlAttributes(new { style = "width: 30px;" }).Spinners(false)

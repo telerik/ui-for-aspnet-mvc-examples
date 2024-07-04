@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>ASP.NET MVC DropDownList with custom data source</h3>
+
+@(Html.Kendo().DropDownList()
+    .Name("productDropDownList")
+    //DataTextField and DataValueField are not set, because widget is bound to a simple array of strings
+    .DataSource(source =>
+    {
+        source.Custom()
+              .Type("aspnetmvc-ajax")
+              .Transport(transport =>
+              {
+                  transport.Read("_GetData", "Home");
+              })
+              .Schema(schema =>
+              {
+                  schema.Data("Data")
+                        .Total("Total");
+              });
+    })
+)

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@(Html.Kendo().TreeView()
+    .Name("treeview")
+    .Checkboxes(true)
+    .DataTextField("Name")
+    .DataSource(dataSource => dataSource
+        .Read(read => read
+            .Action("Read", "Home")
+        )
+        .Model(model =>
+        {
+            model.Id("ID");
+            model.HasChildren("HasChildren");
+        })
+        .Events(events => events.Change("OnChange"))
+    )
+)
+
+<script>
+    function OnChange(e) {
+        if (e.action == "itemchange") {
+            var item = e.items[0];
+            $.post('@Url.Action("Save", "Home")', {
+                id: item.id,
+                isChecked: item.checked,
+                expanded: item.expanded
+            });
+        }
+
+    }
+</script>
