@@ -356,6 +356,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\GridBindToXMLKendoUI\GridBindToXMLKendoUIAreaRegistration.cs" />
+    <Compile Include="Areas\GridCancellationToken\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCancellationToken\GridCancellationTokenAreaRegistration.cs" />
+    <Compile Include="Areas\GridCancellationToken\Models\OrderViewModel.cs" />
     <Compile Include="Areas\GridCascadingDropDownFilters\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridCascadingDropDownFilters\GridCascadingDropDownFiltersAreaRegistration.cs" />
     <Compile Include="Areas\GridCascadingDropDownFilters\Models\CustomerViewModel.cs" />
@@ -429,6 +433,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\GridCustomCommandsImageButtons\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCustomCommandsImageButtons\GridCustomCommandsImageButtonsAreaRegistration.cs" />
+    <Compile Include="Areas\GridCustomCommandsImageButtons\Models\Employee.cs" />
+    <Compile Include="Areas\GridCustomCommandsImageButtons\Models\Order.cs" />
     <Compile Include="Areas\GridCustomConfirmationWindow\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridCustomConfirmationWindow\GridCustomConfirmationWindowAreaRegistration.cs" />
     <Compile Include="Areas\GridCustomConfirmationWindow\Models\Person.cs" />
@@ -532,6 +540,10 @@
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\GridEditingInCellRadioButtonColumnAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Person.cs" />
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Role.cs" />
+    <Compile Include="Areas\GridEditingInLineColorSelection\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingInLineColorSelection\GridEditingInLineColorSelectionAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingInLineColorSelection\Models\OrderRepository.cs" />
+    <Compile Include="Areas\GridEditingInLineColorSelection\Models\PaintOrder.cs" />
     <Compile Include="Areas\GridEditingInLineDatabase\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingInLineDatabase\GridEditingInLineDatabaseAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingInLineDatabase\Models\GridEditingInLineDatabaseProduct.cs">
@@ -697,6 +709,26 @@
     <Compile Include="Areas\GridFilterExcelLike\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridFilterExcelLike\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridFilterExcelLike\Models\Product.cs" />
+    <Compile Include="Areas\GridForeignKeyColumnCRUD\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridForeignKeyColumnCRUD\GridForeignKeyColumnCRUDAreaRegistration.cs" />
+    <Compile Include="Areas\GridForeignKeyColumnCRUD\Models\Employee.cs" />
+    <Compile Include="Areas\GridForeignKeyColumnCRUD\Models\Order.cs" />
+    <Compile Include="Areas\GridForeignKeyComboBoxColumn\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridForeignKeyComboBoxColumn\GridForeignKeyComboBoxColumnAreaRegistration.cs" />
+    <Compile Include="Areas\GridForeignKeyComboBoxColumn\Models\Employee.cs" />
+    <Compile Include="Areas\GridForeignKeyComboBoxColumn\Models\Order.cs" />
+    <Compile Include="Areas\GridForeignKeyGroupHeaderTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridForeignKeyGroupHeaderTemplate\GridForeignKeyGroupHeaderTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridForeignKeyGroupHeaderTemplate\Models\Employee.cs" />
+    <Compile Include="Areas\GridForeignKeyGroupHeaderTemplate\Models\Order.cs" />
+    <Compile Include="Areas\GridForeignKeySorting\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridForeignKeySorting\GridForeignKeySortingAreaRegistration.cs" />
+    <Compile Include="Areas\GridForeignKeySorting\Models\Category.cs" />
+    <Compile Include="Areas\GridForeignKeySorting\Models\Product.cs" />
+    <Compile Include="Areas\GridHandleServerError\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHandleServerError\GridHandleServerErrorAreaRegistration.cs" />
+    <Compile Include="Areas\GridHandleServerError\Models\CategoryViewModel.cs" />
+    <Compile Include="Areas\GridHandleServerError\Models\OrderViewModel.cs" />
     <Compile Include="Areas\GridHierarchyClientDetailTemplate\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchyClientDetailTemplate\GridHierarchyClientDetailTemplateAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchyClientDetailTemplate\Models\GridHierarchyClientDetailTemplateCategory.cs">
@@ -804,6 +836,12 @@
     <Compile Include="Areas\GridHierarchySelfReferencing\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
+    <Compile Include="Areas\GridModifyFiltersOnTheServer\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridModifyFiltersOnTheServer\GridModifyFiltersOnTheServerAreaRegistration.cs" />
+    <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\Employee.cs" />
+    <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\EmployeeRepository.cs" />
+    <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\Order.cs" />
+    <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\OrderRepository.cs" />
     <Compile Include="Areas\GridPostWithForm\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridPostWithForm\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridPostWithForm\Models\Category.cs" />
@@ -924,6 +962,17 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\books.xml" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\bulletproof-web-design.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\eloquent-javascript.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\handcrafted-css.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\high-performance-javascript.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\javascript-patterns.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\javascript-the-good-parts.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\responsive-web-design.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\secrets-of-the-javascript-ninja.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Content\xml-data\stunning-css3.png" />
+    <Content Include="Areas\GridBindToXMLKendoUI\SamplePage.html" />
     <Content Include="Areas\GridCascadingDropDownFilters\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -944,6 +993,13 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridCustomCommandsImageButtons\Content\icons\add.png" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Content\icons\cancel.png" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Content\icons\edit.png" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Content\icons\ok.png" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Images\accent.png" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Images\bullet.png" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Images\heroAccent.png" />
     <Content Include="Areas\GridCustomServerBinding\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1514,6 +1570,48 @@
     <Content Include="Areas\GridBindingDynamicCollection\Models\SampleModel.edmx.diagram">
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\GridBindToXMLKendoUI\Views\web.config" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridBindToXMLKendoUI\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridCancellationToken\Views\web.config" />
+    <Content Include="Areas\GridCancellationToken\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridCancellationToken\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridCancellationToken\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Views\web.config" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridCustomCommandsImageButtons\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingInLineColorSelection\Views\web.config" />
+    <Content Include="Areas\GridEditingInLineColorSelection\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditingInLineColorSelection\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridEditingInLineColorSelection\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridForeignKeyComboBoxColumn\Views\web.config" />
+    <Content Include="Areas\GridForeignKeyComboBoxColumn\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridForeignKeyComboBoxColumn\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridForeignKeyComboBoxColumn\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridForeignKeyComboBoxColumn\Views\Home\EditorTemplates\ComboBox.cshtml" />
+    <Content Include="Areas\GridForeignKeyColumnCRUD\Views\web.config" />
+    <Content Include="Areas\GridForeignKeyColumnCRUD\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridForeignKeyColumnCRUD\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridForeignKeyColumnCRUD\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridForeignKeySorting\Views\web.config" />
+    <Content Include="Areas\GridForeignKeySorting\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridForeignKeySorting\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridForeignKeySorting\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridForeignKeySorting\Views\Home\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Areas\GridForeignKeyGroupHeaderTemplate\Views\web.config" />
+    <Content Include="Areas\GridForeignKeyGroupHeaderTemplate\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridForeignKeyGroupHeaderTemplate\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridForeignKeyGroupHeaderTemplate\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridModifyFiltersOnTheServer\Views\web.config" />
+    <Content Include="Areas\GridModifyFiltersOnTheServer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridModifyFiltersOnTheServer\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridModifyFiltersOnTheServer\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHandleServerError\Views\web.config" />
+    <Content Include="Areas\GridHandleServerError\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridHandleServerError\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridHandleServerError\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHandleServerError\Views\Home\EditorTemplates\ClientCategory.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
@@ -3928,6 +4026,7 @@
     <Folder Include="Areas\GridBatchEditingDatabase\Data\" />
     <Folder Include="Areas\GridBindingDataTable\Data\" />
     <Folder Include="Areas\GridBindingDynamicCollection\Data\" />
+    <Folder Include="Areas\GridCancellationToken\Data\" />
     <Folder Include="Areas\GridCascadingDropDownFilters\Data\" />
     <Folder Include="Areas\GridCheckboxClientTemplate\Data\" />
     <Folder Include="Areas\GridClientDetailTemplate\Data\" />
@@ -3935,6 +4034,7 @@
     <Folder Include="Areas\GridCSP\Data\" />
     <Folder Include="Areas\GridCsvServerExport\Data\" />
     <Folder Include="Areas\GridCustomAjaxBinding\Data\" />
+    <Folder Include="Areas\GridCustomCommandsImageButtons\Data\" />
     <Folder Include="Areas\GridCustomConfirmationWindow\Data\" />
     <Folder Include="Areas\GridCustomServerBinding\Data\" />
     <Folder Include="Areas\GridDateIgnoreTimeZones\Data\" />
@@ -3948,6 +4048,7 @@
     <Folder Include="Areas\GridEditingExternalContainer\Data\" />
     <Folder Include="Areas\GridEditingInCellCascadingDropDownLists\Data\" />
     <Folder Include="Areas\GridEditingInCellRadioButtonColumn\Data\" />
+    <Folder Include="Areas\GridEditingInLineColorSelection\Data\" />
     <Folder Include="Areas\GridEditingInLineDatabase\Data\" />
     <Folder Include="Areas\GridEditingInLineNullableBoolean\Data\" />
     <Folder Include="Areas\GridEditingModelStateError\Data\" />
@@ -3961,10 +4062,16 @@
     <Folder Include="Areas\GridEditingWithComboBoxServerFiltering\Data\" />
     <Folder Include="Areas\GridExcelExportCellFormat\Data\" />
     <Folder Include="Areas\GridExcelExportColumnTemplate\Data\" />
+    <Folder Include="Areas\GridForeignKeyColumnCRUD\Data\" />
+    <Folder Include="Areas\GridForeignKeyComboBoxColumn\Data\" />
+    <Folder Include="Areas\GridForeignKeyGroupHeaderTemplate\Data\" />
+    <Folder Include="Areas\GridForeignKeySorting\Data\" />
+    <Folder Include="Areas\GridHandleServerError\Data\" />
     <Folder Include="Areas\GridHierarchyClientDetailTemplate\Data\" />
     <Folder Include="Areas\GridHierarchyEditingWithCheckboxes\Data\" />
     <Folder Include="Areas\GridHierarchyExcelExportAllPages\Data\" />
     <Folder Include="Areas\GridHierarchyInCellEditing\Data\" />
+    <Folder Include="Areas\GridModifyFiltersOnTheServer\Data\" />
     <Folder Include="Areas\GridRowsBackgroundConditional\Data\" />
     <Folder Include="Areas\Grid\Data\" />
   </ItemGroup>

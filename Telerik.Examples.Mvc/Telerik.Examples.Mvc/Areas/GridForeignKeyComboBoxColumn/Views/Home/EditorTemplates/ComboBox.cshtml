@@ -1,0 +1,6 @@
+﻿﻿@model object
+
+@(
+ Html.Kendo().ComboBoxFor(m => m)
+        .BindTo((SelectList)ViewData[ViewData.TemplateInfo.GetFullHtmlFieldName("") + "_Data"])
+)
