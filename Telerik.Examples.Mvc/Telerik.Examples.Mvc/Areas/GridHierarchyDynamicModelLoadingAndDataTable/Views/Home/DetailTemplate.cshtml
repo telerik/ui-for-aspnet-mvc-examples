@@ -1,0 +1,33 @@
+﻿﻿@model System.Data.DataTable
+
+@(Html.Kendo().Grid<dynamic>()
+    .Name("grid_" + ViewData["parentFieldValue"]) // template expression, to be evaluated in the master context
+    .Columns(columns =>
+    {
+        foreach (System.Data.DataColumn column in Model.Columns)
+        {
+            columns.Bound(column.ColumnName).Width(120).ClientTemplate("<div style='height: 30px; overflow: hidden;'>#=" + column.ColumnName + "#</div>");
+        }
+    })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Model(model =>
+        {
+            var id = Model.PrimaryKey[0].ColumnName;
+            model.Id(id);
+            foreach (System.Data.DataColumn column in Model.Columns)
+            {
+                var field = model.Field(column.ColumnName, column.DataType);
+                if (column.ColumnName == id)
+                {
+                    field.Editable(false);
+                }
+
+            }
+        })
+        .Read(read => read.Action("Read", "Home", new { tableName = ViewData["tableName"], parentFieldValue = ViewData["parentFieldValue"], parentFieldName = ViewData["parentFieldName"] }))
+    )
+    .Pageable()
+    .Sortable()
+)

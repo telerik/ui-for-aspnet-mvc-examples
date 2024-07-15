@@ -729,6 +729,9 @@
     <Compile Include="Areas\GridHandleServerError\GridHandleServerErrorAreaRegistration.cs" />
     <Compile Include="Areas\GridHandleServerError\Models\CategoryViewModel.cs" />
     <Compile Include="Areas\GridHandleServerError\Models\OrderViewModel.cs" />
+    <Compile Include="Areas\GridHeightBasedOnScreenlockedColumns\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHeightBasedOnScreenlockedColumns\GridHeightBasedOnScreenlockedColumnsAreaRegistration.cs" />
+    <Compile Include="Areas\GridHeightBasedOnScreenlockedColumns\Models\OrderViewModel.cs" />
     <Compile Include="Areas\GridHierarchyClientDetailTemplate\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchyClientDetailTemplate\GridHierarchyClientDetailTemplateAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchyClientDetailTemplate\Models\GridHierarchyClientDetailTemplateCategory.cs">
@@ -752,6 +755,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\GridHierarchyDynamicModelLoadingAndDataTable\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyDynamicModelLoadingAndDataTable\GridHierarchyDynamicModelLoadingAndDataTableAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchyEditingWithCheckboxes\Controllers\BaseController.cs" />
     <Compile Include="Areas\GridHierarchyEditingWithCheckboxes\Controllers\EmployeesController.cs" />
     <Compile Include="Areas\GridHierarchyEditingWithCheckboxes\Controllers\HomeController.cs" />
@@ -836,19 +841,36 @@
     <Compile Include="Areas\GridHierarchySelfReferencing\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
+    <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\GridInPartialViewLoadedInTabStripAreaRegistration.cs" />
+    <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Models\Customer.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\GridModifyFiltersOnTheServerAreaRegistration.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\Employee.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\EmployeeRepository.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\Order.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\OrderRepository.cs" />
+    <Compile Include="Areas\GridMultiSelectFilter\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridMultiSelectFilter\GridMultiSelectFilterAreaRegistration.cs" />
+    <Compile Include="Areas\GridMultiSelectFilter\Models\ViewModel.cs" />
     <Compile Include="Areas\GridPostWithForm\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridPostWithForm\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridPostWithForm\Models\Category.cs" />
     <Compile Include="Areas\GridPostWithForm\Models\Product.cs" />
+    <Compile Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\GridPreserveServerToolbarTemplateAfterSetOptionsAreaRegistration.cs" />
+    <Compile Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Models\Order.cs" />
+    <Compile Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Models\OrderRepository.cs" />
+    <Compile Include="Areas\GridRenderAndPreviewByteAndBase64Images\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.cs" />
+    <Compile Include="Areas\GridRenderAndPreviewByteAndBase64Images\GridRenderAndPreviewByteAndBase64ImagesAreaRegistration.cs" />
+    <Compile Include="Areas\GridRenderAndPreviewByteAndBase64Images\Models\Order.cs" />
     <Compile Include="Areas\GridRowsBackgroundConditional\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridRowsBackgroundConditional\GridRowsBackgroundConditionalAreaRegistration.cs" />
     <Compile Include="Areas\GridRowsBackgroundConditional\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\GridSaveStateWithBrowserHistoryAPIAreaRegistration.cs" />
+    <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Models\Product.cs" />
     <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />
@@ -1114,6 +1136,16 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\alt.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\clock.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\cut.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\download.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\forward.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\music.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\play.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\server.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\web.png" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.htm" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -1612,6 +1644,36 @@
     <Content Include="Areas\GridHandleServerError\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridHandleServerError\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridHandleServerError\Views\Home\EditorTemplates\ClientCategory.cshtml" />
+    <Content Include="Areas\GridHeightBasedOnScreenlockedColumns\Views\web.config" />
+    <Content Include="Areas\GridHeightBasedOnScreenlockedColumns\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridHeightBasedOnScreenlockedColumns\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridHeightBasedOnScreenlockedColumns\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchyDynamicModelLoadingAndDataTable\Views\web.config" />
+    <Content Include="Areas\GridHierarchyDynamicModelLoadingAndDataTable\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridHierarchyDynamicModelLoadingAndDataTable\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridHierarchyDynamicModelLoadingAndDataTable\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchyDynamicModelLoadingAndDataTable\Views\Home\DetailTemplate.cshtml" />
+    <Content Include="Areas\GridInPartialViewLoadedInTabStrip\Views\web.config" />
+    <Content Include="Areas\GridInPartialViewLoadedInTabStrip\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridInPartialViewLoadedInTabStrip\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridInPartialViewLoadedInTabStrip\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridInPartialViewLoadedInTabStrip\Views\Home\Grid.cshtml" />
+    <Content Include="Areas\GridMultiSelectFilter\Views\web.config" />
+    <Content Include="Areas\GridMultiSelectFilter\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridMultiSelectFilter\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridMultiSelectFilter\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Views\web.config" />
+    <Content Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Views\web.config" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\web.config" />
+    <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Home\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
@@ -4067,12 +4129,19 @@
     <Folder Include="Areas\GridForeignKeyGroupHeaderTemplate\Data\" />
     <Folder Include="Areas\GridForeignKeySorting\Data\" />
     <Folder Include="Areas\GridHandleServerError\Data\" />
+    <Folder Include="Areas\GridHeightBasedOnScreenlockedColumns\Data\" />
     <Folder Include="Areas\GridHierarchyClientDetailTemplate\Data\" />
+    <Folder Include="Areas\GridHierarchyDynamicModelLoadingAndDataTable\Data\" />
     <Folder Include="Areas\GridHierarchyEditingWithCheckboxes\Data\" />
     <Folder Include="Areas\GridHierarchyExcelExportAllPages\Data\" />
     <Folder Include="Areas\GridHierarchyInCellEditing\Data\" />
+    <Folder Include="Areas\GridInPartialViewLoadedInTabStrip\Data\" />
     <Folder Include="Areas\GridModifyFiltersOnTheServer\Data\" />
+    <Folder Include="Areas\GridMultiSelectFilter\Data\" />
+    <Folder Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Data\" />
+    <Folder Include="Areas\GridRenderAndPreviewByteAndBase64Images\Data\" />
     <Folder Include="Areas\GridRowsBackgroundConditional\Data\" />
+    <Folder Include="Areas\GridSaveStateWithBrowserHistoryAPI\Data\" />
     <Folder Include="Areas\Grid\Data\" />
   </ItemGroup>
   <ItemGroup>
