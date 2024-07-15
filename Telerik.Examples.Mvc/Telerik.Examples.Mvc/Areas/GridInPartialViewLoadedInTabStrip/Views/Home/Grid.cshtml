@@ -1,0 +1,16 @@
+﻿@using Kendo.Mvc.UI
+    ﻿
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridInPartialViewLoadedInTabStrip.Models.Customer>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(c => c.ID).Width(200);
+        columns.Bound(c => c.Name);
+    })
+    .Pageable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(15)
+        .Read(read => read.Action("Select", "Home"))
+    )
+)

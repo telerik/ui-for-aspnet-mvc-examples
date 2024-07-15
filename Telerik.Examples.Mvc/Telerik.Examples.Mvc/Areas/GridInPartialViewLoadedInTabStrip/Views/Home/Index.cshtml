@@ -1,0 +1,14 @@
+﻿@using Kendo.Mvc.UI
+    ﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().TabStrip()
+    .Name("tabstrip")
+    .Items(tabs =>
+    {
+        tabs.Add().Text("First").Content("Select the 'Grid' tab").Selected(true);
+        tabs.Add().Text("Grid").LoadContentFrom("Grid", "Home");
+    })
+)

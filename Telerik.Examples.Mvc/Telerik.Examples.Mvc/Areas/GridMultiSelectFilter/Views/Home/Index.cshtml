@@ -1,0 +1,80 @@
+﻿@using Kendo.Mvc.UI
+@using Telerik.Examples.Mvc.Areas.GridMultiSelectFilter.Models
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().Grid<ViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(e => e.ID);
+        columns.Bound(e => e.Tags).Filterable(filterable => filterable.Extra(false)
+                .Messages(m=> m.Info("Show items with value that contains"))
+                .UI("multiselectFilter")
+            )
+            .ClientTemplate("#:Tags.join(',')#");
+    })
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Read(read => read.Action("Read", "Home"))
+     )
+)
+<script>
+
+    function multiselectFilter(element) {
+        element.removeAttr("data-bind");
+        var dataSource = $("#grid").data("kendoGrid").dataSource;
+        var multiselect = element.kendoMultiSelect({
+            dataSource: ["Tag1", "Tag2", "Tag3"]
+        }).data("kendoMultiSelect");
+        var form = element.closest("form");
+        var popup = form.data("kendoPopup");
+        form.find("[data-role=dropdownlist]").remove();
+
+        form.find("[type='submit']").click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var filter = dataSource.filter() || { logic: "and", filters: [] };
+            var tags = multiselect.value();
+            removeFiltersForField(filter, "Tags");
+            if (tags.length) {
+                filter.filters = filter.filters.concat($.map(tags, function (value) {
+                    return {
+                        operator: "eq",
+                        value: value,
+                        field: "Tags"
+                    }
+                }));
+            }
+            dataSource.filter(filter);
+            popup.close();
+        }).end()
+            .find("[type='reset']").click(function () {
+                multiselect.value([]);
+            });
+    }
+
+    function removeFiltersForField(expression, field) {
+        if (expression.filters) {
+            expression.filters = $.grep(expression.filters, function (filter) {
+                removeFiltersForField(filter, field);
+                if (filter.filters) {
+                    return filter.filters.length;
+                } else {
+                    return filter.field != field;
+                }
+            });
+        }
+    }
+</script>
+
+<style type="text/css">
+    .k-filter-menu .k-multiselect .k-button {
+        width: auto;
+        margin: 1px 0 1px 1px;
+    }
+</style>

@@ -1,0 +1,88 @@
+﻿@using Kendo.Mvc.UI
+
+@model string
+
+@using (Html.BeginForm("Index", "Home", System.Web.Mvc.FormMethod.Post, null))
+{
+    <h3>Select table to load:</h3>
+
+    @(Html.Kendo().DropDownList()
+        .Name("tableName")
+        .DataTextField("Key")
+        .DataValueField("Key")
+        .Events(ev => ev.Change("onChange"))
+        .BindTo((List<KeyValuePair<string, string>>)ViewData["ParentChildRelations"])
+    )
+}
+<hr />
+@{
+    System.Data.DataTable Table = (System.Data.DataTable)ViewData["Table"];
+}
+
+@(Html.Kendo().Grid<dynamic>()
+    .Name("Grid")
+    .HtmlAttributes(new { style = "height: 600px;" })
+    .Columns(columns =>
+    {
+        foreach (System.Data.DataColumn column in Table.Columns)
+        {
+            columns.Bound(column.ColumnName).Width(120).ClientTemplate("<div style='height: 30px; overflow: hidden;'>#=" + column.ColumnName + "#</div>");
+        }
+    })
+    .Pageable()
+    .Sortable()
+    .Events(events => events.DetailInit("onDetailInit"))
+    .Filterable()
+    .Scrollable()
+    .Groupable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model =>
+            {
+                var id = Table.PrimaryKey[0].ColumnName;
+                model.Id(id);
+                foreach (System.Data.DataColumn column in Table.Columns)
+                {
+                    var field = model.Field(column.ColumnName, column.DataType);
+                    if (column.ColumnName == id)
+                    {
+                        field.Editable(false);
+                    }
+
+                }
+            })
+        .Read(read => read.Action("Read", "Home").Data("getTableName"))
+        .Update(update => update.Action("Update", "Home"))
+    )
+)
+
+<script>
+    function getTableName() {
+        return { tableName: "@Model" };
+    }
+
+    function onChange(e) {
+        $("form").submit();
+    }
+
+    function onDetailInit(e) {
+        var container = e.detailCell;
+
+        var parentFieldName = "@Table.PrimaryKey[0].ColumnName";
+
+        var tableName = "@ViewData["childrenTableName"]";
+
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("DetailTemplate","Home"))",
+            data: {
+                parentFieldName: parentFieldName,
+                parentFieldValue: e.data[parentFieldName],
+                tableName: tableName
+            },
+            success: function (data) {
+                container.html(data);
+            }
+        });
+    }
+</script>
