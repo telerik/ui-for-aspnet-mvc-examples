@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<p>
+    The first two tools are custom. <br />
+    <strong>Export</strong> will export the HTML content to DOCX in <code>~/App_Data/Sample.docx</code> file. <br />
+    And <strong>Import</strong> will import the contents of the same file (Make sure that <code>Sample.docx</code> is not opened in Word).
+</p>
+
+<textarea id="editor"></textarea>
+
+@section scripts{
+    <script>
+        var _editor = null;
+        $(document).ready(function () {
+            $("#editor").kendoEditor({
+                tools: [{
+                    name: "upload",
+                    title: "Export",
+                    exec: exportDocx,
+                },
+                {
+                    name: "download",
+                    title: "Import",
+                    exec: importDocx
+                },
+                    "bold",
+                    "italic",
+                    "underline",
+                    "fontName",
+                {
+                    name: "fontSize",
+                    items: [
+                        { text: "8px", value: "8px" },
+                        { text: "10px", value: "10px" },
+                        { text: "12px", value: "12px" },
+                        { text: "16px", value: "16px" },
+                        { text: "24px", value: "24px" }
+                    ]
+                },
+                    "createLink",
+                    "unlink",
+                    "foreColor",
+                    "backColor"]
+            });
+
+            _editor = $("#editor").data("kendoEditor");
+        })
+
+        function exportDocx() {
+            var html = _editor.value();
+            kendo.ui.progress(_editor.wrapper, true);
+            $.post("@Url.Action("ExportDocx", "Home")", { content: html })
+                .always(function () {
+                    kendo.ui.progress(_editor.wrapper, false);
+                })
+        }
+
+        function importDocx() {
+            kendo.ui.progress(_editor.wrapper, true);
+            $.post("@Url.Action("ImportDocx", "Home")")
+                .done(function (data) {
+                    _editor.value(data)
+                })
+                .always(function () {
+                    kendo.ui.progress(_editor.wrapper, false);
+                })
+        }
+    </script>
+}

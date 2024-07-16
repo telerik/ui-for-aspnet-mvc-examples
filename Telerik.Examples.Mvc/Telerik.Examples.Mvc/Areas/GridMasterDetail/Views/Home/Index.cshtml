@@ -1,0 +1,55 @@
+﻿<h3>Select category to display related products</h3>
+
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridMasterDetail.Models.Category>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(category => category.CategoryID);
+          columns.Bound(category => category.CategoryName);
+      })
+      .DataSource(dataSource =>
+          dataSource.Ajax().Read(read => read.Action("Categories_Read", "Home"))
+      )
+      .Selectable(s=>s.Mode(GridSelectionMode.Single))
+      .Events(e=>e.Change("onChange"))
+)
+
+<br />
+<br />
+<br />
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridMasterDetail.Models.Product>()
+      .Name("detailGrid")
+      .AutoBind(false)
+      .Columns(columns =>
+      {
+          columns.Bound(product => product.ProductID);
+          columns.Bound(product => product.ProductName);
+      })
+      .DataSource(dataSource => dataSource
+        .Ajax()
+        .Read(read => read.Action("Products_Read", "Home").Data("additionalData"))
+      )
+      .Pageable()
+)
+
+<script>
+    function onChange(e) {
+        var detailGrid = $("#detailGrid").getKendoGrid();
+
+        detailGrid.dataSource.read();
+    }
+
+    function additionalData(e) {
+        var masterGrid = $("#grid").getKendoGrid();
+        var selectedRow = masterGrid.select();
+        var selectedItem = masterGrid.dataItem(selectedRow);
+
+        var id = selectedItem ? selectedItem.CategoryID : 1;
+
+        return {
+            categoryId: id
+        }
+    }
+</script>

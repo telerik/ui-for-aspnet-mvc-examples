@@ -1,0 +1,124 @@
+﻿@using Telerik.Examples.Mvc.Areas.GanttImportExportUsingMpxj.Models
+
+<h3>Select MPP, XML or MSPDI file to be loaded in the Gantt:</h3>
+
+@(Html.Kendo().Upload()
+	.Name("files")
+	.Multiple(false)
+	.Async(async => async
+		.Save("UploadFile", "Home")
+		.AutoUpload(true)
+	)
+	.Validation(v => v
+		.AllowedExtensions(new string[] { "mpp", "mspdi", "xml" })
+	)
+	.Events(e => e.Success("onSuccess"))
+)
+
+<h3>Save changes to file and export saved file:</h3>
+
+@(Html.Kendo().Button()
+	.Name("saveBtn")
+	.Content("Update and export XML file")
+	.Events(e => e.Click("saveToFile"))
+)
+
+<br />
+<br />
+<br />
+
+
+@(Html.Kendo().Gantt<TaskViewModel, DependencyViewModel>()
+	.Name("gantt")
+	.ShowPlannedTasks(true)
+	.DataSource(d => d
+		.Model(m =>
+		{
+			m.Id(f => f.TaskID);
+			m.ParentId(f => f.ParentID);
+			m.OrderId(f => f.OrderId);
+		})
+		.Read("ReadTasks", "Home")
+	)
+	.DependenciesDataSource(d => d
+		.Read("ReadDependencies", "Home")
+		.Model(m => {
+			m.Id(f => f.DependencyID);
+			m.PredecessorId(f => f.PredecessorID);
+			m.SuccessorId(f => f.SuccessorID);
+			m.Type(f => f.Type);
+		})
+	)
+	.Resources(r => r
+		.DataColorField("Color")
+		.DataTextField("Name")
+		.DataSource(d => d
+			.Custom()
+			.Schema(s => s
+				.Model(m => m.Id("ID"))
+			)
+			.Transport(t =>
+			{
+				t.Read("ReadResources", "Home");
+			})
+		)
+	)
+	//.Assignments<ResourceAssignmentViewModel>(a => a
+	//	.DataTaskIdField("TaskID")
+	//	.DataResourceIdField("ResourceID")
+	//	.DataValueField("Units")
+	//	.DataSource(d => d
+	//		.Model(m =>
+	//		{
+	//			m.Id(f => f.ID);
+	//		})
+	//		.Read("ReadAssignments", "Home")
+	//	)
+	//)
+	.Views(v => {
+		v.DayView();
+		v.WeekView();
+		v.MonthView(m => m.Selected(true));
+	})
+)
+
+
+<script>
+	function saveToFile() {
+		var gantt = $("#gantt").getKendoGantt();
+		var tasks = gantt.dataSource.data();
+		var dependencies = gantt.dependencies.data();
+		var resources = gantt.resources.dataSource.data();
+		var assignments = gantt.assignments.dataSource.data();
+
+		$.post("@Url.Action("SaveFile", "Home")", {
+			data: {
+				tasks: JSON.parse(JSON.stringify(tasks)),
+				dependencies: JSON.parse(JSON.stringify(dependencies)),
+				resources: JSON.parse(JSON.stringify(resources)),
+				assignments: JSON.parse(JSON.stringify(assignments))
+			}
+		}).done(function () {
+			// Redirect so that the saved file would be downloaded on the client
+			window.location = '@Url.Action("ExportFile", "Home")';
+		}).fail(function () {
+			alert("File save failed!");
+		});
+	}
+
+	function onSuccess(e) {
+		var gantt = $("#gantt").getKendoGantt();
+		var tasksDs = gantt.dataSource;
+		var dependenciesDs = gantt.dependencies;
+		var assignmentsDs = gantt.assignments.dataSource;
+		var resourcesDs = gantt.resources.dataSource;
+
+		// Force read for each of the Gantt DataSources using the saved file name as a second parameter in the call
+		resourcesDs.read({ fileName: e.response.fileName })
+			.then(tasksDs.read({ fileName: e.response.fileName })
+				.then(dependenciesDs.read({ fileName: e.response.fileName })
+					.then(assignmentsDs.read({ fileName: e.response.fileName }))
+				)
+			);
+	}
+</script>

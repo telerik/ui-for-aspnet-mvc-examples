@@ -1,0 +1,23 @@
+﻿@using Telerik.Examples.Mvc.Areas.GridDateTimeOffset.Models
+@model CarViewModel
+
+@Html.LabelFor(x => x.ProductionDate)
+@Html.Kendo().DateTimePickerFor(x => x.ProductionDate)
+
+@(Html.Kendo().Grid<CarViewModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(column => column.Make);
+            columns.Bound(column => column.Model);
+            columns.Bound(column => column.ProductionDate).Format("{0:g}").Filterable(f=>f.UI(GridFilterUIRole.DateTimePicker));
+        })
+        .Pageable()
+        .Filterable()
+        .Sortable()
+        .Groupable()
+        .DataSource(ds =>
+            ds.Ajax()
+                .Read(r => r.Action("AllCars", "Home"))
+            )
+)

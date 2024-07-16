@@ -47,14 +47,143 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-collections4-4.4, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-collections4-4.4.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-io-2.11.0, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-io-2.11.0.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-lang3-3.10, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-lang3-3.10.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-logging-1.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-logging-1.2.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-math3-3.6.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-math3-3.6.1.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Localedata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Nashorn.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="istack-commons-runtime-4.0.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\istack-commons-runtime-4.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="jackcess-4.0.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jackcess-4.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="jakarta.activation-2.0.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jakarta.activation-2.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="jakarta.xml.bind-api-3.0.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jakarta.xml.bind-api-3.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="jaxb-core-3.0.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jaxb-core-3.0.2.dll</HintPath>
+    </Reference>
+    <Reference Include="jaxb-runtime-3.0.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jaxb-runtime-3.0.2.dll</HintPath>
+    </Reference>
+    <Reference Include="jsoup-1.15.3, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jsoup-1.15.3.dll</HintPath>
+    </Reference>
     <Reference Include="Kendo.Mvc, Version=2024.2.514.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.Trial.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4j-api-2.17.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\log4j-api-2.17.2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -65,11 +194,31 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="mpxj-for-csharp, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\mpxj-for-csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MpxjUtilities, Version=11.1.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\MpxjUtilities.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="poi-5.2.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\poi-5.2.2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="rtfparserkit-1.16.0, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\rtfparserkit-1.16.0.dll</HintPath>
+    </Reference>
+    <Reference Include="sqlite-jdbc-3.36.0.3, Version=11.1.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-common.11.1.0\lib\net45\sqlite-jdbc-3.36.0.3.dll</HintPath>
+    </Reference>
+    <Reference Include="sqlite-jdbc-3.42.0.0, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\sqlite-jdbc-3.42.0.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -215,6 +364,9 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -245,6 +397,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -265,9 +418,22 @@
     <Reference Include="Telerik.SvgIcons, Version=3.0.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.SvgIcons.3.0.0\lib\netstandard2.0\Telerik.SvgIcons.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Documents.Core.Trial.2024.2.426\lib\net462\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Documents.Flow.Trial.2024.2.426\lib\net462\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Zip.Trial.2024.2.426\lib\net462\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="txw2-3.0.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\txw2-3.0.2.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -284,6 +450,38 @@
     <Compile Include="Areas\DropDownListCustomDataSource\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\DropDownListVirtualization\Controllers\HomeController.cs" />
     <Compile Include="Areas\DropDownListVirtualization\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.cs">
+      <DependentUpon>Files.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.Designer.cs">
+      <DependentUpon>Files.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\FilesRepository.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Folder.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Image.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\DependencyViewModel.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\GanttDataContainer.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\ResourceAssignmentViewModel.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\ResourceViewModel.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\TaskViewModel.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\FileWriteService.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\GanttAssignmentService.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\GanttDependencyService.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\GanttResourceService.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\GanttTaskService.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\GridAjaxBindingCustomJsonResultAreaRegistration.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Models\Product.cs" />
@@ -463,6 +661,11 @@
     <Compile Include="Areas\GridDateIgnoreTimeZones\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridDateIgnoreTimeZones\GridDateIgnoreTimeZonesAreaRegistration.cs" />
     <Compile Include="Areas\GridDateIgnoreTimeZones\Models\Person.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\Car.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\CarsService.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\CarViewModel.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\MappingProfile.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\Student.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Models\Person.cs" />
@@ -844,6 +1047,27 @@
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\GridInPartialViewLoadedInTabStripAreaRegistration.cs" />
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Models\Customer.cs" />
+    <Compile Include="Areas\GridMasterDetail\Models\Category.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Product.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\GridModifyFiltersOnTheServerAreaRegistration.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\Employee.cs" />
@@ -871,6 +1095,74 @@
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\GridSaveStateWithBrowserHistoryAPIAreaRegistration.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Models\Product.cs" />
+    <Compile Include="Areas\EditorImportExportKendoWidget\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorImportExportKendoWidget\EditorImportExportKendoWidgetAreaRegistration.cs" />
+    <Compile Include="Areas\EditorUploadImage\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorUploadImage\EditorUploadImageAreaRegistration.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\EditorDatabaseImageBrowserAreaRegistration.cs" />
+    <Compile Include="Areas\EditorEnterLinebreakShiftEnterParagraph\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorEnterLinebreakShiftEnterParagraph\EditorEnterLinebreakShiftEnterParagraphAreaRegistration.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\GanttImportExportUsingMpxjAreaRegistration.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\GridDateTimeOffsetAreaRegistration.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\GridExportingExcelMultipleAreaRegistration.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Product.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiselect\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiselect\GridEditingPopUpMultiselectAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiselect\Models\Product.cs" />
+    <Compile Include="Areas\GridMultiSelect\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridMultiSelect\GridMultiSelectAreaRegistration.cs" />
+    <Compile Include="Areas\GridMultiSelect\Models\Product.cs" />
+    <Compile Include="Areas\GridExportingPdfServerSide\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridExportingPdfServerSide\GridExportingPdfServerSideAreaRegistration.cs" />
+    <Compile Include="Areas\GridExportingPdfServerSide\Models\Product.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\GridEditingPopUpServerValidationAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\Models\Product.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\GridHierarchyServerDetailTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\Product.cs" />
+    <Compile Include="Areas\GridHierarchyServer\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyServer\GridHierarchyServerAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchyServer\Models\Product.cs" />
+    <Compile Include="Areas\TreeViewLoadDataConditionally\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeViewLoadDataConditionally\TreeViewLoadDataConditionallyAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewLoadDataConditionally\Models\Product.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerTooltip\SchedulerTooltipAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Models\Product.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerCustomView\SchedulerCustomViewAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Models\Product.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\SchedulerServerFilteringAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Models\Product.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\SchedulerDragAndDropAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\Product.cs" />
+    <Compile Include="Areas\DefineCustomKendoHelper\Controllers\HomeController.cs" />
+    <Compile Include="Areas\DefineCustomKendoHelper\DefineCustomKendoHelperAreaRegistration.cs" />
+    <Compile Include="Areas\DefineCustomKendoHelper\Models\Product.cs" />
+    <Compile Include="Areas\MenuSameControllersInDifferentAreas\Controllers\HomeController.cs" />
+    <Compile Include="Areas\MenuSameControllersInDifferentAreas\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MenuSameControllersInDifferentAreas\Models\Product.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\SchedulerEditingCustomEditorAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\Product.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\TreeViewExpandSelectedItemAsyncAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Product.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\TreeListExportingMultipleAreaRegistration.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Product.cs" />
+    <Compile Include="Areas\GridMasterDetail\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridMasterDetail\GridMasterDetailAreaRegistration.cs" />
+    <Compile Include="Areas\GridTimestamp\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridTimestamp\GridTimestampAreaRegistration.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\Product.cs" />
     <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />
@@ -949,10 +1241,29 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\exported_file.xml" />
+    <Content Include="App_Data\ImageBrowser.mdf" />
+    <Content Include="App_Data\ImageBrowser_log.ldf">
+      <DependentUpon>ImageBrowser.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\OrdersData.xml" />
+    <Content Include="App_Data\ProductsDatabase.mdf" />
+    <Content Include="App_Data\ProductsDatabase_log.ldf">
+      <DependentUpon>ProductsDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Sample.mdf" />
     <Content Include="App_Data\Sample_log.ldf">
       <DependentUpon>Sample.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Files.edmx</DependentUpon>
+      <LastGenOutput>Files.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Files.edmx</DependentUpon>
+      <LastGenOutput>Files.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1146,6 +1457,16 @@
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\server.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\web.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.htm" />
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -1674,6 +1995,99 @@
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorImportExportKendoWidget\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EditorImportExportKendoWidget\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorImportExportKendoWidget\Views\web.config" />
+    <Content Include="App_Data\Sample.docx" />
+    <Content Include="Areas\EditorUploadImage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EditorUploadImage\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorUploadImage\Views\web.config" />
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\web.config" />
+    <EntityDeploy Include="Areas\EditorDatabaseImageBrowser\Models\Files.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Files.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.edmx.diagram">
+      <DependentUpon>Files.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\EditorEnterLinebreakShiftEnterParagraph\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EditorEnterLinebreakShiftEnterParagraph\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorEnterLinebreakShiftEnterParagraph\Views\web.config" />
+    <Content Include="Areas\GanttImportExportUsingMpxj\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GanttImportExportUsingMpxj\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GanttImportExportUsingMpxj\Views\web.config" />
+    <Content Include="App_Data\exported_file.mspdi" />
+    <Content Include="App_Data\SDLC.mpp" />
+    <Content Include="App_Data\test.mspdi" />
+    <Content Include="Areas\GridDateTimeOffset\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridDateTimeOffset\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridDateTimeOffset\Views\web.config" />
+    <Content Include="Areas\GridTimestamp\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridTimestamp\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridTimestamp\Views\web.config" />
+    <Content Include="Areas\GridMasterDetail\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridMasterDetail\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridMasterDetail\Views\web.config" />
+    <Content Include="Areas\GridExportingExcelMultiple\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridExportingExcelMultiple\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridExportingExcelMultiple\Views\web.config" />
+    <Content Include="Areas\GridEditingPopUpMultiselect\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditingPopUpMultiselect\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingPopUpMultiselect\Views\web.config" />
+    <Content Include="Areas\GridMultiSelect\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Views\web.config" />
+    <Content Include="Areas\GridExportingPdfServerSide\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridExportingPdfServerSide\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridExportingPdfServerSide\Views\web.config" />
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\web.config" />
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\web.config" />
+    <Content Include="Areas\GridHierarchyServer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridHierarchyServer\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchyServer\Views\web.config" />
+    <Content Include="Areas\TreeListExportingMultiple\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeListExportingMultiple\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeListExportingMultiple\Views\web.config" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\web.config" />
+    <Content Include="Areas\TreeViewLoadDataConditionally\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeViewLoadDataConditionally\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewLoadDataConditionally\Views\web.config" />
+    <Content Include="Areas\SchedulerTooltip\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerTooltip\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerTooltip\Views\web.config" />
+    <Content Include="Areas\SchedulerCustomView\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerCustomView\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerCustomView\Views\web.config" />
+    <Content Include="Areas\SchedulerServerFiltering\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerServerFiltering\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerServerFiltering\Views\web.config" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\web.config" />
+    <Content Include="Areas\DefineCustomKendoHelper\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\DefineCustomKendoHelper\Views\Home\Index.cshtml" />
+    <Content Include="Areas\DefineCustomKendoHelper\Views\web.config" />
+    <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\Home\Index.cshtml" />
+    <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\web.config" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\web.config" />
+    <EntityDeploy Include="Areas\GridMasterDetail\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
@@ -4188,8 +4602,12 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets'))" />
+    <Error Condition="!Exists('..\packages\net.sf.mpxj-for-csharp.13.0.2\build\net.sf.mpxj-for-csharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-for-csharp.13.0.2\build\net.sf.mpxj-for-csharp.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <Import Project="..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets" Condition="Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" />
+  <Import Project="..\packages\net.sf.mpxj-for-csharp.13.0.2\build\net.sf.mpxj-for-csharp.targets" Condition="Exists('..\packages\net.sf.mpxj-for-csharp.13.0.2\build\net.sf.mpxj-for-csharp.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
