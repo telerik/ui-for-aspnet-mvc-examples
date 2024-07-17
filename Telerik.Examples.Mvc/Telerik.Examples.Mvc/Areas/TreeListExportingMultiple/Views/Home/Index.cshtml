@@ -1,138 +1,121 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.TreeListExportingMultiple.Models.Product>()
-    .Name("grid")
+﻿<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+
+<button class="k-button" id="export">Export TreeLists to Excel</button>
+
+
+<h3>Designers</h3>
+@(Html.Kendo().TreeList<Telerik.Examples.Mvc.Areas.TreeListExportingMultiple.Models.EmployeeDirectoryModel>()
+    .Name("designers")
     .Columns(columns =>
     {
-        columns.Bound(p => p.ProductName);
-        columns.Bound(p => p.UnitPrice).Width(120).Format("{0:c}");
-        columns.Bound(p => p.UnitsInStock).Width(120);
-        columns.Bound(p => p.Discontinued)
-        .ClientTemplate(@"# if (Discontinued) { #
-                            <input type='checkbox' checked='checked' class='checkbox' />
-                          # } else { #
-                            <input type='checkbox' class='checkbox' />
-                          # } #")
-        .HeaderTemplate("<input type='checkbox' class='checkAll' />").Width(120);
+        columns.Add().Field(e => e.FirstName).Width(220);
+        columns.Add().Field(e => e.LastName);
+        columns.Add().Field(e => e.Position);
+        columns.Add().Field(e => e.Address);
     })
-    .Selectable(s => s.Mode(GridSelectionMode.Multiple))
-    .Pageable(p => p.Responsive(false))
-    .Scrollable()
+    .Excel(excel => excel.FileName("Kendo UI TreeList Export.xlsx").ProxyURL(Url.Action("Excel_Export_Save")))
     .Filterable()
-    .Events(ev => ev
-            .DataBound("dataBound")
-            .Change("changed")
-            )
-    .HtmlAttributes(new { style = "height:550px;" })
+    .Sortable()
     .DataSource(dataSource => dataSource
-        .Ajax()
-        .PageSize(20)
-        .Model(model => model.Id(p => p.ProductID))
-        .Read(read => read.Action("Get_Products", "Home"))
-    )
-)
-<div id="count"></div>
-<script>
-    var allChecked = @Html.Raw(Json.Encode(Model)),
-    bound = false;
-    function changed(e)
-    {
-        if(!bound)
+        .Read(read => read.Action("All", "EmployeeDirectory"))
+        .Filter(f => f.Add(m => m.Position).Contains("designer"))
+        .ServerOperation(false)
+        .Model(m =>
         {
-            var grid = e.sender,
-                selected = grid.select(),
-                data= {productsList : []}
+            m.Id(f => f.EmployeeId);
+            m.ParentId(f => f.ReportsTo);
+            m.Expanded(true);
+            m.Field(f => f.FirstName);
+            m.Field(f => f.LastName);
+            m.Field(f => f.ReportsTo);
+        })
+    )
+    .Events(e => e.ExcelExport("onExcelExportDesigners"))
+    .Height(540)
+)
 
-            selected.each(function(){
-                var dataItem = grid.dataItem(this),
-                    checked = $(this).find("input:checkbox").prop("checked");
+<h3>Lead personnel</h3>
+@(Html.Kendo().TreeList<Telerik.Examples.Mvc.Areas.TreeListExportingMultiple.Models.EmployeeDirectoryModel>()
+    .Name("leads")
+    .Columns(columns =>
+    {
+        columns.Add().Field(e => e.FirstName).Width(220);
+        columns.Add().Field(e => e.LastName);
+        columns.Add().Field(e => e.Position);
+        columns.Add().Field(e => e.Address);
+    })
+    .Excel(excel => excel.FileName("Kendo UI TreeList Export.xlsx").ProxyURL(Url.Action("Excel_Export_Save")))
+    .Filterable()
+    .Sortable()
+    .DataSource(dataSource => dataSource
+        .Read(read => read.Action("All", "EmployeeDirectory"))
+        .ServerOperation(false)
+        .Filter(f => f.Add(m => m.Position).Contains("lead"))
+        .Model(m =>
+        {
+            m.Id(f => f.EmployeeId);
+            m.ParentId(f => f.ReportsTo);
+            m.Expanded(true);
+            m.Field(f => f.FirstName);
+            m.Field(f => f.LastName);
+            m.Field(f => f.ReportsTo);
+        })
+    )
+    .Events(e => e.ExcelExport("onExcelExportLead"))
+    .Height(540)
+)
 
-                data.productsList.push({
-                    ProductId: dataItem.ProductID,
-                    ProductName: dataItem.ProductName,
-                    UnitPrice: dataItem.UnitPrice,
-                    UnitsInStock: dataItem.UnitsInStock,
-                    Discontinued: !checked
+<script>
+    function onExcelExportDesigners(e) {
+        e.preventDefault();
+
+        promises[0].resolve(e.workbook);
+    }
+
+    function onExcelExportLead(e) {
+        e.preventDefault();
+
+        promises[1].resolve(e.workbook);
+    }
+
+    // used to sync the exports
+    var promises = [
+        $.Deferred(),
+        $.Deferred()
+    ];
+
+    $("#export").click(function (e) {
+        // trigger export of the products grid
+        $("#designers").data("kendoTreeList").saveAsExcel();
+        // trigger export of the orders grid
+        $("#leads").data("kendoTreeList").saveAsExcel();
+        // wait for both exports to finish
+        $.when.apply(null, promises)
+            .then(function (designersWorkbook, leadsWorkbook) {
+
+                // create a new workbook using the sheets of the products and orders workbooks
+                var sheets = [
+                    designersWorkbook.sheets[0],
+                    leadsWorkbook.sheets[0]
+                ];
+
+                sheets[0].title = "Designers";
+                sheets[1].title = "Leads";
+
+                var workbook = new kendo.ooxml.Workbook({
+                    sheets: sheets
+                });
+
+                promises = [
+                    $.Deferred(),
+                    $.Deferred()
+                ];
+
+                // save the new workbook,b
+                kendo.saveAs({
+                    dataURI: workbook.toDataURL(),
+                    fileName: "DesignersAndLeaders.xlsx"
                 })
             });
-
-            updateData(grid, data);
-        }
-
-    }
-
-    function dataBound(e) {
-        bound = true;
-        var rows = this.tbody.find("tr");
-        var grid = e.sender;
-        rows.each(function () {
-            var row = $(this);
-            if (row.find("input[checked='checked']").length > 0) {
-                grid.select(row);
-            }
-        });
-        bound = false;
-    }
-
-    function updateData(grid, data){
-        $.ajax({
-            url: '@Url.Action("Select_Products", "Home")',
-            data: data,
-            type: "POST",
-            success: function (res) {
-                checkHeader(res);
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    function checkHeader(res) {
-        if(res)
-        {
-            grid.thead.find(".checkAll").prop('checked', 'checked');
-        }
-        else
-        {
-            grid.thead.find(".checkAll").removeProp("checked");
-        }
-    }
-
-    function selectRow() {
-        var checked = this.checked,
-        row = $(this).closest("tr"),
-        dataItem = grid.dataItem(row);
-
-        var data = {productsList:[{
-            ProductId: dataItem.ProductID,
-            ProductName: dataItem.ProductName,
-            UnitPrice: dataItem.UnitPrice,
-            UnitsInStock: dataItem.UnitsInStock,
-            Discontinued: checked}]
-        };
-
-        updateData(grid, data);
-    }
-
-    function selectAll() {
-        var checked = this.checked;
-        $.ajax({
-            url: '@Url.Action("Select_AllProducts", "Home")',
-            data: {
-                checkAll:checked
-            },
-            type: "POST",
-            success: function () {
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    $(document).ready(function () {
-        grid = $("#grid").data("kendoGrid");
-        grid.table.on("click", ".checkbox", selectRow);
-        grid.thead.on("click", ".checkAll", selectAll);
-
-        checkHeader(allChecked);
     });
 </script>

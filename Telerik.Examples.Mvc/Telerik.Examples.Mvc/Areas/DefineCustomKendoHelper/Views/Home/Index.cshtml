@@ -1,138 +1,72 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Models.Product>()
-    .Name("grid")
+
+    <div class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                To learn more about ASP.NET MVC visit
+                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                If you have any questions about ASP.NET MVC visit
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+            </p>
+        </div>
+    </div>
+
+<h3>Telerik UI for ASP.NET MVC PanelBar</h3>
+<br />
+
+@* Using Helpers in Razor *@
+
+@helper MyGridShortCut()
+{
+    Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Models.OrderViewModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.OrderID).Filterable(false);
+            columns.Bound(p => p.Freight);
+            columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}");
+            columns.Bound(p => p.ShipName);
+            columns.Bound(p => p.ShipCity);
+        })
+        .Pageable()
+        .Sortable()
+        .Scrollable()
+        .Filterable()
+        .HtmlAttributes(new { style = "height:550px;" })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(20)
+            .Read(read => read.Action("Orders_Read", "Home"))
+        )
+        .Render();
+}
+
+@MyGridShortCut()
+
+@* Using Helpers defined in Helpers/MyGridHelper.cs file *@
+
+@using Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Helpers
+
+@(Html.MyGrid<Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Models.OrderViewModel>("Grid1")
     .Columns(columns =>
     {
-        columns.Bound(p => p.ProductName);
-        columns.Bound(p => p.UnitPrice).Width(120).Format("{0:c}");
-        columns.Bound(p => p.UnitsInStock).Width(120);
-        columns.Bound(p => p.Discontinued)
-        .ClientTemplate(@"# if (Discontinued) { #
-                            <input type='checkbox' checked='checked' class='checkbox' />
-                          # } else { #
-                            <input type='checkbox' class='checkbox' />
-                          # } #")
-        .HeaderTemplate("<input type='checkbox' class='checkAll' />").Width(120);
+        columns.Bound(p => p.OrderID).Filterable(false);
+        columns.Bound(p => p.Freight);
+        columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}");
+        columns.Bound(p => p.ShipName);
+        columns.Bound(p => p.ShipCity);
     })
-    .Selectable(s => s.Mode(GridSelectionMode.Multiple))
-    .Pageable(p => p.Responsive(false))
-    .Scrollable()
-    .Filterable()
-    .Events(ev => ev
-            .DataBound("dataBound")
-            .Change("changed")
-            )
     .HtmlAttributes(new { style = "height:550px;" })
     .DataSource(dataSource => dataSource
         .Ajax()
         .PageSize(20)
-        .Model(model => model.Id(p => p.ProductID))
-        .Read(read => read.Action("Get_Products", "Home"))
+        .Read(read => read.Action("Orders_Read", "Home"))
     )
 )
-<div id="count"></div>
-<script>
-    var allChecked = @Html.Raw(Json.Encode(Model)),
-    bound = false;
-    function changed(e)
-    {
-        if(!bound)
-        {
-            var grid = e.sender,
-                selected = grid.select(),
-                data= {productsList : []}
-
-            selected.each(function(){
-                var dataItem = grid.dataItem(this),
-                    checked = $(this).find("input:checkbox").prop("checked");
-
-                data.productsList.push({
-                    ProductId: dataItem.ProductID,
-                    ProductName: dataItem.ProductName,
-                    UnitPrice: dataItem.UnitPrice,
-                    UnitsInStock: dataItem.UnitsInStock,
-                    Discontinued: !checked
-                })
-            });
-
-            updateData(grid, data);
-        }
-
-    }
-
-    function dataBound(e) {
-        bound = true;
-        var rows = this.tbody.find("tr");
-        var grid = e.sender;
-        rows.each(function () {
-            var row = $(this);
-            if (row.find("input[checked='checked']").length > 0) {
-                grid.select(row);
-            }
-        });
-        bound = false;
-    }
-
-    function updateData(grid, data){
-        $.ajax({
-            url: '@Url.Action("Select_Products", "Home")',
-            data: data,
-            type: "POST",
-            success: function (res) {
-                checkHeader(res);
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    function checkHeader(res) {
-        if(res)
-        {
-            grid.thead.find(".checkAll").prop('checked', 'checked');
-        }
-        else
-        {
-            grid.thead.find(".checkAll").removeProp("checked");
-        }
-    }
-
-    function selectRow() {
-        var checked = this.checked,
-        row = $(this).closest("tr"),
-        dataItem = grid.dataItem(row);
-
-        var data = {productsList:[{
-            ProductId: dataItem.ProductID,
-            ProductName: dataItem.ProductName,
-            UnitPrice: dataItem.UnitPrice,
-            UnitsInStock: dataItem.UnitsInStock,
-            Discontinued: checked}]
-        };
-
-        updateData(grid, data);
-    }
-
-    function selectAll() {
-        var checked = this.checked;
-        $.ajax({
-            url: '@Url.Action("Select_AllProducts", "Home")',
-            data: {
-                checkAll:checked
-            },
-            type: "POST",
-            success: function () {
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    $(document).ready(function () {
-        grid = $("#grid").data("kendoGrid");
-        grid.table.on("click", ".checkbox", selectRow);
-        grid.thead.on("click", ".checkAll", selectAll);
-
-        checkHeader(allChecked);
-    });
-</script>

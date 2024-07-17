@@ -11,66 +11,25 @@ namespace Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
         public ActionResult Index()
         {
-            if(products.Count == 0)
-            {
-                for (int i = 0; i < 200; i++)
-                {
-                    products.Add(new Product()
-                    {
-                        ProductID = i,
-                        ProductName = "ProductName" + i.ToString(),
-                        UnitPrice = i * 3.14,
-                        UnitsInStock = i * 5,
-                        Discontinued = (i % 2 == 0) ? true : false
-                    });
-                }
-            }
+            ViewBag.Message = "Welcome to ASP.NET MVC!";
 
-            return View(AreAllSelected());
+            return View();
         }
 
-        public bool AreAllSelected()
+        public ActionResult Orders_Read([DataSourceRequest] DataSourceRequest request)
         {
-            var selectAll = true;
-            foreach (var product in products)
+            var result = Enumerable.Range(0, 50).Select(i => new OrderViewModel
             {
-                if (product.Discontinued == false)
-                {
-                    selectAll = false;
-                    break;
-                }
-            }
-            return selectAll;
-        }
+                OrderID = i,
+                Freight = i * 10,
+                OrderDate = DateTime.Now.AddDays(i),
+                ShipName = "ShipName " + i,
+                ShipCity = "ShipCity " + i
+            });
 
-        public ActionResult Get_Products([DataSourceRequest] DataSourceRequest dsRequest)
-        {
-            var result = products.ToDataSourceResult(dsRequest);
-            return Json(result);
-        }
-
-        public ActionResult Select_Products(List<Product> productsList)
-        {
-            foreach (Product product in productsList)
-            {
-                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-                toUpdate.Discontinued = product.Discontinued;
-
-            }
-            return Json(AreAllSelected());
-
-        }
-
-        public ActionResult Select_AllProducts(bool checkAll)
-        {
-            foreach (var product in products)
-            {
-                product.Discontinued = checkAll;
-            }
-            return new EmptyResult();
+            return Json(result.ToDataSourceResult(request));
         }
     }
 }

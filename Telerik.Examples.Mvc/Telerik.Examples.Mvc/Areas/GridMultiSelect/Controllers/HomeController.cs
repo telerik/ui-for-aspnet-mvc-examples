@@ -11,66 +11,43 @@ namespace Telerik.Examples.Mvc.Areas.GridMultiSelect.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
+        private NorthwindRepository repository = new NorthwindRepository();
+
         public ActionResult Index()
         {
-            if(products.Count == 0)
-            {
-                for (int i = 0; i < 200; i++)
-                {
-                    products.Add(new Product()
-                    {
-                        ProductID = i,
-                        ProductName = "ProductName" + i.ToString(),
-                        UnitPrice = i * 3.14,
-                        UnitsInStock = i * 5,
-                        Discontinued = (i % 2 == 0) ? true : false
-                    });
-                }
-            }
+            ViewData["territories"] = repository.Territories;
 
-            return View(AreAllSelected());
+            return View();
         }
 
-        public bool AreAllSelected()
+        public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            var selectAll = true;
-            foreach (var product in products)
-            {
-                if (product.Discontinued == false)
-                {
-                    selectAll = false;
-                    break;
-                }
-            }
-            return selectAll;
+            return Json(repository.Employees.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Get_Products([DataSourceRequest] DataSourceRequest dsRequest)
+        public ActionResult Update(EmployeeViewModel employee)
         {
-            var result = products.ToDataSourceResult(dsRequest);
-            return Json(result);
+            if (ModelState.IsValid)
+            {
+                repository.UpdateEmployee(employee);
+            }
+
+            return Json(new[] { employee }.ToDataSourceResult(new DataSourceRequest(), ModelState));
         }
 
-        public ActionResult Select_Products(List<Product> productsList)
+        public ActionResult Create(EmployeeViewModel employee)
         {
-            foreach (Product product in productsList)
+            if (ModelState.IsValid)
             {
-                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-                toUpdate.Discontinued = product.Discontinued;
-
+                employee.EmployeeID = repository.CreateEmployee(employee);
             }
-            return Json(AreAllSelected());
 
+            return Json(new[] { employee }.ToDataSourceResult(new DataSourceRequest(), ModelState));
         }
 
-        public ActionResult Select_AllProducts(bool checkAll)
+        public ActionResult About()
         {
-            foreach (var product in products)
-            {
-                product.Discontinued = checkAll;
-            }
-            return new EmptyResult();
+            return View();
         }
     }
 }

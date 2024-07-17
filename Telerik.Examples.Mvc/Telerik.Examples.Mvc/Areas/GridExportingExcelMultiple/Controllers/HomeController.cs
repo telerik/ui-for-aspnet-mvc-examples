@@ -11,66 +11,41 @@ namespace Telerik.Examples.Mvc.Areas.GridExportingExcelMultiple.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
         public ActionResult Index()
         {
-            if(products.Count == 0)
+            ViewBag.Message = "Welcome to ASP.NET MVC!";
+
+            return View();
+        }
+
+        public ActionResult Orders_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            using (var northwind = new GridExportingExcelMultipleEntities())
             {
-                for (int i = 0; i < 200; i++)
+                return Json(northwind.Orders.ToDataSourceResult(request, o => new
                 {
-                    products.Add(new Product()
-                    {
-                        ProductID = i,
-                        ProductName = "ProductName" + i.ToString(),
-                        UnitPrice = i * 3.14,
-                        UnitsInStock = i * 5,
-                        Discontinued = (i % 2 == 0) ? true : false
-                    });
-                }
+                    o.OrderID,
+                    o.Freight,
+                    o.OrderDate,
+                    o.ShipName,
+                    o.ShipCity
+                }));
             }
-
-            return View(AreAllSelected());
         }
 
-        public bool AreAllSelected()
+        public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
-            var selectAll = true;
-            foreach (var product in products)
+            using (var northwind = new GridExportingExcelMultipleEntities())
             {
-                if (product.Discontinued == false)
+                return Json(northwind.Products.ToDataSourceResult(request, p => new
                 {
-                    selectAll = false;
-                    break;
-                }
+                    p.ProductID,
+                    p.ProductName,
+                    p.QuantityPerUnit,
+                    p.UnitPrice,
+                    p.UnitsInStock
+                }));
             }
-            return selectAll;
-        }
-
-        public ActionResult Get_Products([DataSourceRequest] DataSourceRequest dsRequest)
-        {
-            var result = products.ToDataSourceResult(dsRequest);
-            return Json(result);
-        }
-
-        public ActionResult Select_Products(List<Product> productsList)
-        {
-            foreach (Product product in productsList)
-            {
-                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-                toUpdate.Discontinued = product.Discontinued;
-
-            }
-            return Json(AreAllSelected());
-
-        }
-
-        public ActionResult Select_AllProducts(bool checkAll)
-        {
-            foreach (var product in products)
-            {
-                product.Discontinued = checkAll;
-            }
-            return new EmptyResult();
         }
     }
 }

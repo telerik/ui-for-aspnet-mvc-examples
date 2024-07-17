@@ -1,0 +1,8 @@
+﻿@model IEnumerable<TerritoryViewModel>
+
+@(
+    Html.Kendo().MultiSelectFor(m => m)
+        .DataTextField("TerritoryDescription")
+        .DataValueField("TerritoryID")
+        .BindTo((IEnumerable<TerritoryViewModel>)ViewData["territories"])
+)

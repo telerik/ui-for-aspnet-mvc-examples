@@ -11,66 +11,59 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerCustomView.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
+        private SchedulerMeetingService meetingService;
+
+
+        public HomeController()
+        {
+            this.meetingService = new SchedulerMeetingService();
+        }
+
         public ActionResult Index()
         {
-            if(products.Count == 0)
-            {
-                for (int i = 0; i < 200; i++)
-                {
-                    products.Add(new Product()
-                    {
-                        ProductID = i,
-                        ProductName = "ProductName" + i.ToString(),
-                        UnitPrice = i * 3.14,
-                        UnitsInStock = i * 5,
-                        Discontinued = (i % 2 == 0) ? true : false
-                    });
-                }
-            }
+            ViewBag.Message = "Welcome to ASP.NET MVC!";
 
-            return View(AreAllSelected());
+            return View(new MeetingViewModel());
         }
 
-        public bool AreAllSelected()
+        public ActionResult About()
         {
-            var selectAll = true;
-            foreach (var product in products)
-            {
-                if (product.Discontinued == false)
-                {
-                    selectAll = false;
-                    break;
-                }
-            }
-            return selectAll;
+            return View();
         }
 
-        public ActionResult Get_Products([DataSourceRequest] DataSourceRequest dsRequest)
+        public virtual JsonResult Meetings_Read([DataSourceRequest] DataSourceRequest request)
         {
-            var result = products.ToDataSourceResult(dsRequest);
-            return Json(result);
+            return Json(meetingService.GetAll().ToDataSourceResult(request));
         }
 
-        public ActionResult Select_Products(List<Product> productsList)
+        public virtual JsonResult Meetings_Destroy([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
         {
-            foreach (Product product in productsList)
+            if (ModelState.IsValid)
             {
-                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-                toUpdate.Discontinued = product.Discontinued;
-
+                meetingService.Delete(meeting, ModelState);
             }
-            return Json(AreAllSelected());
 
+            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Select_AllProducts(bool checkAll)
+        public virtual JsonResult Meetings_Create([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
         {
-            foreach (var product in products)
+            if (ModelState.IsValid)
             {
-                product.Discontinued = checkAll;
+                meetingService.Insert(meeting, ModelState);
             }
-            return new EmptyResult();
+
+            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
+        }
+
+        public virtual JsonResult Meetings_Update([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
+        {
+            if (ModelState.IsValid)
+            {
+                meetingService.Update(meeting, ModelState);
+            }
+
+            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
         }
     }
 }

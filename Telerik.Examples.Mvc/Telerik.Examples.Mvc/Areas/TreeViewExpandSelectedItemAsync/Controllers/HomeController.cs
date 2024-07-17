@@ -11,66 +11,51 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
         public ActionResult Index()
         {
-            if(products.Count == 0)
+            ViewBag.Message = "Welcome to ASP.NET MVC!";
+
+            return View();
+        }
+
+        public JsonResult Employees_Read(int? id)
+        {
+            using (var northwind = new TreeViewExpandSelectedItemAsyncEntities())
             {
-                for (int i = 0; i < 200; i++)
+                var employeesQuery = northwind.Employees.Select(c => new HierarchicalViewModel
                 {
-                    products.Add(new Product()
-                    {
-                        ProductID = i,
-                        ProductName = "ProductName" + i.ToString(),
-                        UnitPrice = i * 3.14,
-                        UnitsInStock = i * 5,
-                        Discontinued = (i % 2 == 0) ? true : false
-                    });
-                }
-            }
-
-            return View(AreAllSelected());
-        }
-
-        public bool AreAllSelected()
-        {
-            var selectAll = true;
-            foreach (var product in products)
-            {
-                if (product.Discontinued == false)
+                    ID = c.EmployeeID,
+                    Name = c.FirstName,
+                    ParentID = null,
+                    HasChildren = c.Orders.Any()
+                })
+                .Union(northwind.Orders.Select(c => new HierarchicalViewModel
                 {
-                    selectAll = false;
-                    break;
-                }
+                    ID = c.OrderID,
+                    Name = c.ShipAddress,
+                    ParentID = c.EmployeeID,
+                    HasChildren = c.Order_Details.Any()
+                }))
+                .Union(northwind.Order_Details.Select(c => new HierarchicalViewModel
+                {
+                    ID = c.OrderID,
+                    Name = c.Product.ProductName,
+                    ParentID = c.Order.OrderID,
+                    HasChildren = false
+                }));
+
+                var result = employeesQuery.ToList()
+                 .Where(x => id.HasValue ? x.ParentID == id : x.ParentID == null)
+                 .Select(item => new {
+                     id = item.ID,
+                     Name = item.Name,
+                     expanded = item.Expanded,
+                     hasChildren = item.HasChildren
+
+                 });
+
+                return Json(result, JsonRequestBehavior.AllowGet);
             }
-            return selectAll;
-        }
-
-        public ActionResult Get_Products([DataSourceRequest] DataSourceRequest dsRequest)
-        {
-            var result = products.ToDataSourceResult(dsRequest);
-            return Json(result);
-        }
-
-        public ActionResult Select_Products(List<Product> productsList)
-        {
-            foreach (Product product in productsList)
-            {
-                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-                toUpdate.Discontinued = product.Discontinued;
-
-            }
-            return Json(AreAllSelected());
-
-        }
-
-        public ActionResult Select_AllProducts(bool checkAll)
-        {
-            foreach (var product in products)
-            {
-                product.Discontinued = checkAll;
-            }
-            return new EmptyResult();
         }
     }
 }

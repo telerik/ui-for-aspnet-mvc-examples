@@ -1,138 +1,59 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models.Product>()
-    .Name("grid")
-    .Columns(columns =>
-    {
-        columns.Bound(p => p.ProductName);
-        columns.Bound(p => p.UnitPrice).Width(120).Format("{0:c}");
-        columns.Bound(p => p.UnitsInStock).Width(120);
-        columns.Bound(p => p.Discontinued)
-        .ClientTemplate(@"# if (Discontinued) { #
-                            <input type='checkbox' checked='checked' class='checkbox' />
-                          # } else { #
-                            <input type='checkbox' class='checkbox' />
-                          # } #")
-        .HeaderTemplate("<input type='checkbox' class='checkAll' />").Width(120);
-    })
-    .Selectable(s => s.Mode(GridSelectionMode.Multiple))
-    .Pageable(p => p.Responsive(false))
-    .Scrollable()
-    .Filterable()
-    .Events(ev => ev
-            .DataBound("dataBound")
-            .Change("changed")
-            )
-    .HtmlAttributes(new { style = "height:550px;" })
+
+@(Html.Kendo().Button()
+    .Name("expandNode")
+    .Content("Expand selected node")
+    .Events(e => e.Click("onExpandClick"))
+)
+@(Html.Kendo().TreeView()
+    .Name("treeview")
+    .DataTextField("Name")
     .DataSource(dataSource => dataSource
-        .Ajax()
-        .PageSize(20)
-        .Model(model => model.Id(p => p.ProductID))
-        .Read(read => read.Action("Get_Products", "Home"))
+        .Read(read => read
+            .Action("Employees_Read", "Home")
+        )
     )
 )
-<div id="count"></div>
+
 <script>
-    var allChecked = @Html.Raw(Json.Encode(Model)),
-    bound = false;
-    function changed(e)
-    {
-        if(!bound)
-        {
-            var grid = e.sender,
-                selected = grid.select(),
-                data= {productsList : []}
+    function onExpandClick(e) {
+        var tree = $("#treeview").data("kendoTreeView"),
+            selected = tree.select(),
+            dataItem = tree.dataItem(selected);
 
-            selected.each(function(){
-                var dataItem = grid.dataItem(this),
-                    checked = $(this).find("input:checkbox").prop("checked");
+        var load = function (item) {
+            var that = this,
+                chain = $.Deferred().resolve();
 
-                data.productsList.push({
-                    ProductId: dataItem.ProductID,
-                    ProductName: dataItem.ProductName,
-                    UnitPrice: dataItem.UnitPrice,
-                    UnitsInStock: dataItem.UnitsInStock,
-                    Discontinued: !checked
-                })
+            chain = chain.then(function () {
+                that.expand(that.findByUid(item.uid));
+                return item.load();
+            }).then(function () {
+                if (item.hasChildren) {
+                    var childrenChain = $.Deferred().resolve();
+
+                    item.children.data().forEach(function (child) {
+                        (function (child) {
+                            childrenChain = childrenChain.then(function () {
+                                return load.bind(that)(child);
+                            })
+                        })(child)
+                    })
+
+                    return childrenChain;
+                }
             });
 
-            updateData(grid, data);
+            return chain;
         }
 
-    }
-
-    function dataBound(e) {
-        bound = true;
-        var rows = this.tbody.find("tr");
-        var grid = e.sender;
-        rows.each(function () {
-            var row = $(this);
-            if (row.find("input[checked='checked']").length > 0) {
-                grid.select(row);
-            }
-        });
-        bound = false;
-    }
-
-    function updateData(grid, data){
-        $.ajax({
-            url: '@Url.Action("Select_Products", "Home")',
-            data: data,
-            type: "POST",
-            success: function (res) {
-                checkHeader(res);
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    function checkHeader(res) {
-        if(res)
-        {
-            grid.thead.find(".checkAll").prop('checked', 'checked');
+        if (selected.length == 0) {
+            alert("Select item first!");
+            return;
         }
-        else
-        {
-            grid.thead.find(".checkAll").removeProp("checked");
-        }
+
+        load.bind(tree)(dataItem);
     }
-
-    function selectRow() {
-        var checked = this.checked,
-        row = $(this).closest("tr"),
-        dataItem = grid.dataItem(row);
-
-        var data = {productsList:[{
-            ProductId: dataItem.ProductID,
-            ProductName: dataItem.ProductName,
-            UnitPrice: dataItem.UnitPrice,
-            UnitsInStock: dataItem.UnitsInStock,
-            Discontinued: checked}]
-        };
-
-        updateData(grid, data);
-    }
-
-    function selectAll() {
-        var checked = this.checked;
-        $.ajax({
-            url: '@Url.Action("Select_AllProducts", "Home")',
-            data: {
-                checkAll:checked
-            },
-            type: "POST",
-            success: function () {
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    $(document).ready(function () {
-        grid = $("#grid").data("kendoGrid");
-        grid.table.on("click", ".checkbox", selectRow);
-        grid.thead.on("click", ".checkAll", selectAll);
-
-        checkHeader(allChecked);
-    });
 </script>

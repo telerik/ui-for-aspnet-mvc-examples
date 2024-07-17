@@ -23,27 +23,27 @@ namespace Telerik.Examples.Mvc.Areas.Grid.Controllers
 			return Json(LicenseRepository.Repository.GetAll().ToDataSourceResult(request));
 		}
 
-		[HttpPost]
-		public JsonResult Create([DataSourceRequest] DataSourceRequest request, Telerik.Examples.Mvc.Areas.Grid.Models.License license)
-		{
-			if (license != null && ModelState.IsValid)
-			{
-				LicenseRepository.Repository.Insert(license);
-			}
+		//[HttpPost]
+		//public JsonResult Create([DataSourceRequest] DataSourceRequest request, Telerik.Examples.Mvc.Areas.Grid.Models.License license)
+		//{
+		//	if (license != null && ModelState.IsValid)
+		//	{
+		//		LicenseRepository.Repository.Insert(license);
+		//	}
 
-			return Json(new[] { license }.ToDataSourceResult(request, ModelState));
-		}
+		//	return Json(new[] { license }.ToDataSourceResult(request, ModelState));
+		//}
 
-		[HttpPost]
-		public JsonResult Update([DataSourceRequest] DataSourceRequest request, Telerik.Examples.Mvc.Areas.Grid.Models.License license)
-		{
-			if (license != null && ModelState.IsValid)
-			{
-				LicenseRepository.Repository.Update(license);
-			}
+		//[HttpPost]
+		//public JsonResult Update([DataSourceRequest] DataSourceRequest request, Telerik.Examples.Mvc.Areas.Grid.Models.License license)
+		//{
+		//	if (license != null && ModelState.IsValid)
+		//	{
+		//		LicenseRepository.Repository.Update(license);
+		//	}
 
-			return Json(ModelState.ToDataSourceResult());
-		}
+		//	return Json(ModelState.ToDataSourceResult());
+		//}
 
 		public JsonResult GetCustomers()
 		{

@@ -11,66 +11,44 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpServerValidation.Controller
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
         public ActionResult Index()
         {
-            if(products.Count == 0)
-            {
-                for (int i = 0; i < 200; i++)
-                {
-                    products.Add(new Product()
-                    {
-                        ProductID = i,
-                        ProductName = "ProductName" + i.ToString(),
-                        UnitPrice = i * 3.14,
-                        UnitsInStock = i * 5,
-                        Discontinued = (i % 2 == 0) ? true : false
-                    });
-                }
-            }
-
-            return View(AreAllSelected());
+            return View();
         }
 
-        public bool AreAllSelected()
+        public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
-            var selectAll = true;
-            foreach (var product in products)
-            {
-                if (product.Discontinued == false)
-                {
-                    selectAll = false;
-                    break;
-                }
-            }
-            return selectAll;
+            return Json(GetProducts().ToDataSourceResult(request));
         }
 
-        public ActionResult Get_Products([DataSourceRequest] DataSourceRequest dsRequest)
+        public ActionResult Products_Create([DataSourceRequest] DataSourceRequest request, Product product)
         {
-            var result = products.ToDataSourceResult(dsRequest);
-            return Json(result);
+            //Manually add an model error in order to simulate validation error
+            ModelState.AddModelError(/* Property name */ "Name", /* Validation message */ "My server error");
+
+
+            //TODO: implement create functionality
+
+            return Json(ModelState.ToDataSourceResult());
         }
 
-        public ActionResult Select_Products(List<Product> productsList)
+        public ActionResult Products_Update([DataSourceRequest] DataSourceRequest request, Product product)
         {
-            foreach (Product product in productsList)
-            {
-                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-                toUpdate.Discontinued = product.Discontinued;
+            //Manually add an model error in order to simulate validation error
+            ModelState.AddModelError(/* Property name */ "Name", /* Validation message */ "My server error");
 
-            }
-            return Json(AreAllSelected());
+            //TODO: implement update functionality
 
+            return Json(ModelState.ToDataSourceResult());
         }
 
-        public ActionResult Select_AllProducts(bool checkAll)
+        private IEnumerable<Product> GetProducts()
         {
-            foreach (var product in products)
+            return Enumerable.Range(1, 10).Select(i => new Product
             {
-                product.Discontinued = checkAll;
-            }
-            return new EmptyResult();
+                Id = i,
+                Name = "Product" + i
+            });
         }
     }
 }

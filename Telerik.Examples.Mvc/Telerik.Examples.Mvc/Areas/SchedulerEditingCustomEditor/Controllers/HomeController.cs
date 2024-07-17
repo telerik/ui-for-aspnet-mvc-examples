@@ -11,66 +11,88 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingCustomEditor.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
+        private SchedulerMeetingService meetingService;
+
+
+        public HomeController()
+        {
+            this.meetingService = new SchedulerMeetingService();
+        }
+
         public ActionResult Index()
         {
-            if(products.Count == 0)
+            ViewBag.Message = "Welcome to ASP.NET MVC!";
+
+            return View(new MeetingViewModel());
+        }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public virtual JsonResult Meetings_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            return Json(meetingService.GetAll().ToDataSourceResult(request));
+        }
+
+        public virtual JsonResult Meetings_Destroy([DataSourceRequest] DataSourceRequest request, IEnumerable<MeetingViewModel> models)
+        {
+            if (ModelState.IsValid)
             {
-                for (int i = 0; i < 200; i++)
+                var list = models.ToList();
+
+                for (int i = 0; i < list.Count; i++)
                 {
-                    products.Add(new Product()
+                    var meeting = list[i];
+
+                    if (meeting.RecurrenceID != null)
                     {
-                        ProductID = i,
-                        ProductName = "ProductName" + i.ToString(),
-                        UnitPrice = i * 3.14,
-                        UnitsInStock = i * 5,
-                        Discontinued = (i % 2 == 0) ? true : false
-                    });
+                        for (int j = 0; j < list.Count; j++)
+                        {
+                            var potentialParent = list[j];
+
+                            if (meeting.RecurrenceID == potentialParent.MeetingID)
+                            {
+                                models = models.Where(m => m.MeetingID != potentialParent.MeetingID);
+                            }
+                        }
+                    }
                 }
-            }
 
-            return View(AreAllSelected());
-        }
-
-        public bool AreAllSelected()
-        {
-            var selectAll = true;
-            foreach (var product in products)
-            {
-                if (product.Discontinued == false)
+                foreach (var meeting in models)
                 {
-                    selectAll = false;
-                    break;
+                    meetingService.Delete(meeting, ModelState);
                 }
             }
-            return selectAll;
+
+            return Json(models.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Get_Products([DataSourceRequest] DataSourceRequest dsRequest)
+        public virtual JsonResult Meetings_Create([DataSourceRequest] DataSourceRequest request, IEnumerable<MeetingViewModel> models)
         {
-            var result = products.ToDataSourceResult(dsRequest);
-            return Json(result);
-        }
-
-        public ActionResult Select_Products(List<Product> productsList)
-        {
-            foreach (Product product in productsList)
+            if (ModelState.IsValid)
             {
-                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-                toUpdate.Discontinued = product.Discontinued;
-
+                foreach (var meeting in models)
+                {
+                    meetingService.Insert(meeting, ModelState);
+                }
             }
-            return Json(AreAllSelected());
 
+            return Json(models.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Select_AllProducts(bool checkAll)
+        public virtual JsonResult Meetings_Update([DataSourceRequest] DataSourceRequest request, IEnumerable<MeetingViewModel> models)
         {
-            foreach (var product in products)
+            if (ModelState.IsValid)
             {
-                product.Discontinued = checkAll;
+                foreach (var meeting in models)
+                {
+                    meetingService.Update(meeting, ModelState);
+                }
             }
-            return new EmptyResult();
+
+            return Json(models.ToDataSourceResult(request, ModelState));
         }
     }
 }

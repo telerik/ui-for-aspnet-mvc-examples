@@ -11,66 +11,59 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerServerFiltering.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
+        private SchedulerTaskService taskService;
+
+        public HomeController()
+        {
+            taskService = new SchedulerTaskService();
+        }
+
         public ActionResult Index()
         {
-            if(products.Count == 0)
+            return View();
+        }
+
+        public virtual JsonResult Read(DataSourceRequest request, FilterRange range)
+        {
+            var data = taskService.GetRange(range.Start, range.End);
+            return Json(data.ToDataSourceResult(request));
+        }
+
+        public virtual JsonResult Destroy([DataSourceRequest] DataSourceRequest request, TaskViewModel task)
+        {
+            if (ModelState.IsValid)
             {
-                for (int i = 0; i < 200; i++)
-                {
-                    products.Add(new Product()
-                    {
-                        ProductID = i,
-                        ProductName = "ProductName" + i.ToString(),
-                        UnitPrice = i * 3.14,
-                        UnitsInStock = i * 5,
-                        Discontinued = (i % 2 == 0) ? true : false
-                    });
-                }
+                taskService.Delete(task, ModelState);
             }
 
-            return View(AreAllSelected());
+            return Json(new[] { task }.ToDataSourceResult(request, ModelState));
         }
 
-        public bool AreAllSelected()
+        public virtual JsonResult Create([DataSourceRequest] DataSourceRequest request, TaskViewModel task)
         {
-            var selectAll = true;
-            foreach (var product in products)
+            if (ModelState.IsValid)
             {
-                if (product.Discontinued == false)
-                {
-                    selectAll = false;
-                    break;
-                }
+                taskService.Insert(task, ModelState);
             }
-            return selectAll;
+
+            return Json(new[] { task }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Get_Products([DataSourceRequest] DataSourceRequest dsRequest)
+        public virtual JsonResult Update([DataSourceRequest] DataSourceRequest request, TaskViewModel task)
         {
-            var result = products.ToDataSourceResult(dsRequest);
-            return Json(result);
-        }
-
-        public ActionResult Select_Products(List<Product> productsList)
-        {
-            foreach (Product product in productsList)
+            if (ModelState.IsValid)
             {
-                var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
-                toUpdate.Discontinued = product.Discontinued;
-
+                taskService.Update(task, ModelState);
             }
-            return Json(AreAllSelected());
 
+            return Json(new[] { task }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Select_AllProducts(bool checkAll)
+        protected override void Dispose(bool disposing)
         {
-            foreach (var product in products)
-            {
-                product.Discontinued = checkAll;
-            }
-            return new EmptyResult();
+            taskService.Dispose();
+            base.Dispose(disposing);
         }
+
     }
 }

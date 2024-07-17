@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpServerValidation.Models
 {
     public class Product
     {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public double UnitPrice { get; set; }
-        public int UnitsInStock { get; set; }
-        public bool Discontinued { get; set; }
+        [ScaffoldColumn(false)]
+        public int Id { get; set; }
+        [Required]
+        public string Name { get; set; }
     }
 }

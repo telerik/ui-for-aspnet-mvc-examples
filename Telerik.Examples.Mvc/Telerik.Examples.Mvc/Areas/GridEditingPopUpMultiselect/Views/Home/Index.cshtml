@@ -1,138 +1,74 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiselect.Models.Product>()
+
+<script type="text/kendo" id="territoriesTemplate">
+    <ul>
+        #for(var i = 0; i< data.length; i++){#
+            <li>#:data[i].TerritoryDescription#</li>
+        #}#
+    </ul>
+</script>
+
+<script type="text/javascript">
+    var territoriesTemplate = kendo.template($("#territoriesTemplate").html(), { useWithBlock: false });
+</script>
+@(Html.Kendo().Grid<EmployeeViewModel>()
     .Name("grid")
     .Columns(columns =>
     {
-        columns.Bound(p => p.ProductName);
-        columns.Bound(p => p.UnitPrice).Width(120).Format("{0:c}");
-        columns.Bound(p => p.UnitsInStock).Width(120);
-        columns.Bound(p => p.Discontinued)
-        .ClientTemplate(@"# if (Discontinued) { #
-                            <input type='checkbox' checked='checked' class='checkbox' />
-                          # } else { #
-                            <input type='checkbox' class='checkbox' />
-                          # } #")
-        .HeaderTemplate("<input type='checkbox' class='checkAll' />").Width(120);
+        columns.Command(comm =>
+        {
+            comm.Edit();
+        });
+        columns.Bound(e => e.EmployeeID);
+        columns.Bound(e => e.FirstName);
+        columns.Bound(e => e.LastName);
+        columns.Bound(e => e.Title);
+        columns.Bound(e => e.HireDate).Format("{0:d}");
+        columns.Bound(e => e.Territories).ClientTemplate("#=territoriesTemplate(Territories)#");
     })
-    .Selectable(s => s.Mode(GridSelectionMode.Multiple))
-    .Pageable(p => p.Responsive(false))
-    .Scrollable()
-    .Filterable()
-    .Events(ev => ev
-            .DataBound("dataBound")
-            .Change("changed")
-            )
-    .HtmlAttributes(new { style = "height:550px;" })
+    .ToolBar(tools=> tools.Create())
+    .Pageable()
+    .Editable(editable => {
+        editable.TemplateName("EmployeeViewModelEditor");
+        editable.Mode(GridEditMode.PopUp);
+    })
     .DataSource(dataSource => dataSource
         .Ajax()
-        .PageSize(20)
-        .Model(model => model.Id(p => p.ProductID))
-        .Read(read => read.Action("Get_Products", "Home"))
-    )
+        .PageSize(5)
+        .Model(model =>
+            {
+                model.Id(e => e.EmployeeID);
+                model.Field(e => e.Territories).DefaultValue(new List<TerritoryViewModel>());
+            })
+        .Read(read => read.Action("Read", "Home"))
+        .Update(update => update.Action("Update", "Home").Data("serialize"))
+        .Create(create => create.Action("Create", "Home").Data("serialize")))
 )
-<div id="count"></div>
-<script>
-    var allChecked = @Html.Raw(Json.Encode(Model)),
-    bound = false;
-    function changed(e)
-    {
-        if(!bound)
-        {
-            var grid = e.sender,
-                selected = grid.select(),
-                data= {productsList : []}
 
-            selected.each(function(){
-                var dataItem = grid.dataItem(this),
-                    checked = $(this).find("input:checkbox").prop("checked");
 
-                data.productsList.push({
-                    ProductId: dataItem.ProductID,
-                    ProductName: dataItem.ProductName,
-                    UnitPrice: dataItem.UnitPrice,
-                    UnitsInStock: dataItem.UnitsInStock,
-                    Discontinued: !checked
-                })
-            });
+<script type="text/javascript">
 
-            updateData(grid, data);
-        }
-
-    }
-
-    function dataBound(e) {
-        bound = true;
-        var rows = this.tbody.find("tr");
-        var grid = e.sender;
-        rows.each(function () {
-            var row = $(this);
-            if (row.find("input[checked='checked']").length > 0) {
-                grid.select(row);
+    function serialize(data) {
+        debugger;
+        for (var property in data) {
+            if ($.isArray(data[property])) {
+                serializeArray(property, data[property], data);
             }
-        });
-        bound = false;
-    }
-
-    function updateData(grid, data){
-        $.ajax({
-            url: '@Url.Action("Select_Products", "Home")',
-            data: data,
-            type: "POST",
-            success: function (res) {
-                checkHeader(res);
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    function checkHeader(res) {
-        if(res)
-        {
-            grid.thead.find(".checkAll").prop('checked', 'checked');
-        }
-        else
-        {
-            grid.thead.find(".checkAll").removeProp("checked");
         }
     }
 
-    function selectRow() {
-        var checked = this.checked,
-        row = $(this).closest("tr"),
-        dataItem = grid.dataItem(row);
-
-        var data = {productsList:[{
-            ProductId: dataItem.ProductID,
-            ProductName: dataItem.ProductName,
-            UnitPrice: dataItem.UnitPrice,
-            UnitsInStock: dataItem.UnitsInStock,
-            Discontinued: checked}]
-        };
-
-        updateData(grid, data);
-    }
-
-    function selectAll() {
-        var checked = this.checked;
-        $.ajax({
-            url: '@Url.Action("Select_AllProducts", "Home")',
-            data: {
-                checkAll:checked
-            },
-            type: "POST",
-            success: function () {
-                grid.dataSource.fetch();
+    function serializeArray(prefix, array, result) {
+        for (var i = 0; i < array.length; i++) {
+            if ($.isPlainObject(array[i])) {
+                for (var property in array[i]) {
+                    result[prefix + "[" + i + "]." + property] = array[i][property];
+                }
             }
-        });
+            else {
+                result[prefix + "[" + i + "]"] = array[i];
+            }
+        }
     }
-
-    $(document).ready(function () {
-        grid = $("#grid").data("kendoGrid");
-        grid.table.on("click", ".checkbox", selectRow);
-        grid.thead.on("click", ".checkAll", selectAll);
-
-        checkHeader(allChecked);
-    });
 </script>
