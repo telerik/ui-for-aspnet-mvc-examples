@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ical.Net.2.2.3\lib\net46\antlr.runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
@@ -53,10 +56,52 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Ical.Net, Version=2.1.0.19502, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ical.Net.2.2.3\lib\net46\Ical.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ical.Net.Collections, Version=2.1.0.19501, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ical.Net.2.2.3\lib\net46\Ical.Net.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Kendo.Mvc, Version=2024.2.514.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.Trial.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.OData, Version=7.7.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.OData.7.7.6\lib\net45\Microsoft.AspNet.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=7.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Core.7.20.0\lib\net45\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=7.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Edm.7.20.0\lib\net45\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.4.2.2\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Hosting.4.2.2\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=7.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Spatial.7.20.0\lib\net45\Microsoft.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
@@ -70,6 +115,17 @@
     </Reference>
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ical.Net.2.2.3\lib\net46\NodaTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.2.88.6\lib\net462\SkiaSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -167,8 +223,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
@@ -197,6 +253,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=6.0.0.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.6.0.3\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
     <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -207,6 +266,13 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
       <Private>True</Private>
@@ -214,6 +280,9 @@
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -226,6 +295,12 @@
     </Reference>
     <Reference Include="System.Web.Http, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.3.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.3.0\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.3.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -245,6 +320,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -259,20 +335,43 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.Documents.Core, Version=2024.2.426.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Documents.Core.Trial.2024.2.426\lib\netstandard2.0\Telerik.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Fixed, Version=2024.2.426.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Documents.Fixed.Trial.2024.2.426\lib\netstandard2.0\Telerik.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.ImageUtils, Version=2024.2.426.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Documents.ImageUtils.Trial.2024.2.426\lib\netstandard2.0\Telerik.Documents.ImageUtils.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.FontIcons, Version=3.0.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.FontIcons.3.0.0\lib\netstandard2.0\Telerik.FontIcons.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.SvgIcons, Version=3.0.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.SvgIcons.3.0.0\lib\netstandard2.0\Telerik.SvgIcons.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Web.Captcha, Version=2.0.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Web.Captcha.Trial.2.0.0\lib\net462\Telerik.Web.Captcha.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Zip.Trial.2024.2.426\lib\net462\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip, Version=2024.2.426.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Zip.Trial.2024.2.426\lib\netstandard2.0\Telerik.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Captcha\Models\CaptchaInputModel.cs" />
+    <Compile Include="Areas\Captcha\Models\UserViewModel.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChartDynamicSeries\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Models\MySeriesData.cs" />
@@ -280,10 +379,84 @@
     <Compile Include="Areas\ChartInGrid\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChartInGrid\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\ChartInGrid\Models\ViewModel.cs" />
+    <Compile Include="Areas\ChartSignalR\Hubs\ProductHub.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\Category.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\CategoryViewModel.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\Customer.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\CustomerDemographic.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Employee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Intraday.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\MeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Order.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Order_Detail.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Product.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\ProductService.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\Region.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Shipper.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Stock.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Supplier.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Task.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Territory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Weather.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\DropDownListCustomDataSource\Controllers\HomeController.cs" />
     <Compile Include="Areas\DropDownListCustomDataSource\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\DropDownListVirtualization\Controllers\HomeController.cs" />
     <Compile Include="Areas\DropDownListVirtualization\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Controllers\SpecialtyController.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Controllers\TypeController.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Models\Specialty.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Models\Type.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\GridAjaxBindingCustomJsonResultAreaRegistration.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Models\Product.cs" />
@@ -540,6 +713,35 @@
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\GridEditingInCellRadioButtonColumnAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Person.cs" />
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Role.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Controllers\EmployeesController.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\Category.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\DbExtensions.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\Employee.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.Context.cs">
+      <DependentUpon>NorthwindEntities.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.Designer.cs">
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\Product.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\ProductsRequest.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\ProductViewModel.cs" />
     <Compile Include="Areas\GridEditingInLineColorSelection\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingInLineColorSelection\GridEditingInLineColorSelectionAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingInLineColorSelection\Models\OrderRepository.cs" />
@@ -676,6 +878,27 @@
     <Compile Include="Areas\GridEditingUploadInPopUp\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingUploadInPopUp\GridEditingUploadInPopUpAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingUploadInPopUp\Models\Category.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingWebApi\GridEditingWebApiAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridEditingWebApi\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridEditingWebApi\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridEditingWebApi\Models\Product.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingWebApi\Models\ProductsController.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\GridEditingWithCascadingDropDownListsAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\Customer.cs" />
@@ -871,12 +1094,368 @@
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\GridSaveStateWithBrowserHistoryAPIAreaRegistration.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Models\Product.cs" />
+    <Compile Include="Areas\Captcha\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Captcha\CaptchaAreaRegistration.cs" />
+    <Compile Include="Areas\ChartSignalR\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ChartSignalR\ChartSignalRAreaRegistration.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Controllers\HomeController.cs" />
+    <Compile Include="Areas\DropDownListWebApi\DropDownListWebApiAreaRegistration.cs" />
+    <Compile Include="Areas\PdfExportingServerSide\Controllers\HomeController.cs" />
+    <Compile Include="Areas\PdfExportingServerSide\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Controllers\HomeController.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\MenuSecurityTrimmingAreaRegistration.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Category.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Employee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Product.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Controllers\EmployeesController.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Models\Category.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Models\Employee.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.Context.cs">
+      <DependentUpon>NorthwindEntities.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.Designer.cs">
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Models\Product.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PdfExportingServerSide\Models\CreatePdfDocument.cs" />
+    <Compile Include="Areas\RequireJS\Models\Product.cs" />
+    <Compile Include="Areas\SalesHub\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SalesHub\SalesHubAreaRegistration.cs" />
+    <Compile Include="Areas\SalesHub\Models\Product.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\Attendie.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\MeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerEditingWebApi\Controllers\TaskController.cs" />
+    <Compile Include="Areas\SchedulerEditingWebApi\ModelBinders\DataSourceRequestModelBinder.cs" />
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\MeetingAtendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\Task.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\TaskViewModel.cs" />
+    <Compile Include="Areas\SchedulerGoogleAPI\Models\SchedulerEventModel.cs" />
+    <Compile Include="Areas\SchedulerGoogleAPI\Models\Task.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Hubs\ProductHub.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Category.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\CategoryViewModel.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Customer.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Employee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\EmployeeTerritory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\MeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Order.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Order_Detail.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Product.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\ProductService.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Models\Task.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Hubs\FilterRange.cs" />
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Hubs\ProductHub.cs" />
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Category.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Customer.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\CustomerDemographic.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Employee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Intraday.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\MeetingAtendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Order.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Order_Detail.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Product.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Region.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Shipper.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Supplier.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Task.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Territory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Weather.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\UploadAmazonS3\Controllers\HomeController.cs" />
+    <Compile Include="Areas\UploadAmazonS3\Models\S3Config.cs" />
+    <Compile Include="Areas\UploadAmazonS3\UploadAmazonS3AreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\GridEditingInCellWebApiAreaRegistration.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\ODataWebApiWidgetsAreaRegistration.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\ODataWebApiWrappersAreaRegistration.cs" />
+    <Compile Include="Areas\Bundles\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Bundles\BundlesAreaRegistration.cs" />
+    <Compile Include="Areas\RequireJS\Controllers\HomeController.cs" />
+    <Compile Include="Areas\RequireJS\RequireJSAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerGoogleAPI\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerGoogleAPI\SchedulerGoogleAPIAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\SchedulerEditingResourcesAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerSignalRLocalHub\SchedulerSignalRLocalHubAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerSignalRServerFiltering\SchedulerSignalRServerFilteringAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\SchedulerValidatingTimeslotAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerEditingWebApi\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerEditingWebApi\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridSignalR\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridSignalR\GridSignalRAreaRegistration.cs" />
+    <Compile Include="Areas\GridSignalR\Hubs\ProductHub.cs" />
     <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\GridSignalR\Models\Category.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\CategoryViewModel.cs" />
+    <Compile Include="Areas\GridSignalR\Models\Customer.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\CustomerDemographic.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Employee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Intraday.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\MeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Order.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Order_Detail.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Product.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\ProductService.cs" />
+    <Compile Include="Areas\GridSignalR\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\GridSignalR\Models\Region.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Shipper.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Stock.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Supplier.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Task.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Territory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Weather.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Grid\Controllers\AjaxEditingWithEnumerationController.cs" />
     <Compile Include="Areas\Grid\Controllers\AutoCompleteEditorAllowSettingNewValuesController.cs" />
     <Compile Include="Areas\Grid\Controllers\BatchEditingMultiSelectionDeleteController.cs" />
@@ -953,6 +1532,18 @@
     <Content Include="App_Data\Sample.mdf" />
     <Content Include="App_Data\Sample_log.ldf">
       <DependentUpon>Sample.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.png" />
+    <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.wav" />
+    <Content Include="Areas\ChartSignalR\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ChartSignalR\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1042,6 +1633,16 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+      <LastGenOutput>NorthwindEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+      <LastGenOutput>NorthwindEntities.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1096,6 +1697,22 @@
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Hydrangeas.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Lighthouse.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Tulips.jpg" />
+    <Content Include="Areas\GridEditingWebApi\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingWebApi\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridEditingWebApi\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingWebApi\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingWebApi\Views\web.config" />
+    <Content Include="Areas\GridEditingWebApi\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1146,6 +1763,88 @@
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\server.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\web.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.htm" />
+    <Content Include="Areas\GridSignalR\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridSignalR\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ODataWebApiWidgets\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ODataWebApiWidgets\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+      <LastGenOutput>NorthwindEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+      <LastGenOutput>NorthwindEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\RequireJS\Scripts\kendo.aspnetmvc.min.js" />
+    <Content Include="Areas\RequireJS\Scripts\kendo.grid.min.js" />
+    <Content Include="Areas\SchedulerEditingResources\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerEditingResources\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerEditingWebApi\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerEditingWebApi\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerSignalRLocalHub\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerSignalRLocalHub\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerSignalRServerFiltering\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerSignalRServerFiltering\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerValidatingTimeslot\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerValidatingTimeslot\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -1372,6 +2071,10 @@
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridEditingWebApi\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
@@ -1674,6 +2377,134 @@
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSignalR\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSignalR\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSignalR\Views\web.config" />
+    <EntityDeploy Include="Areas\GridSignalR\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridSignalR\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\ODataWebApiWrappers\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ODataWebApiWrappers\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ODataWebApiWrappers\Views\web.config" />
+    <Content Include="Areas\SchedulerEditingResources\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerEditingResources\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerEditingResources\Views\web.config" />
+    <Content Include="Areas\SchedulerSignalRLocalHub\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerSignalRLocalHub\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerSignalRLocalHub\Views\web.config" />
+    <Content Include="Areas\SchedulerSignalRServerFiltering\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerSignalRServerFiltering\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerSignalRServerFiltering\Views\web.config" />
+    <Content Include="Areas\SchedulerValidatingTimeslot\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerValidatingTimeslot\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerValidatingTimeslot\Views\web.config" />
+    <Content Include="Areas\SchedulerEditingWebApi\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerEditingWebApi\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerEditingWebApi\Views\web.config" />
+    <Content Include="Areas\Captcha\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Captcha\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Captcha\Views\web.config" />
+    <Content Include="Areas\ChartSignalR\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ChartSignalR\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ChartSignalR\Views\web.config" />
+    <Content Include="Areas\DropDownListWebApi\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\DropDownListWebApi\Views\Home\Index.cshtml" />
+    <Content Include="Areas\DropDownListWebApi\Views\web.config" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Home\Index.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\web.config" />
+    <Content Include="Areas\SalesHub\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SalesHub\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SalesHub\Views\web.config" />
+    <Content Include="Areas\UploadAmazonS3\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\UploadAmazonS3\Views\Home\Index.cshtml" />
+    <Content Include="Areas\UploadAmazonS3\Views\web.config" />
+    <Content Include="Areas\GridEditingInCellWebApi\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridEditingInCellWebApi\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingInCellWebApi\Views\web.config" />
+    <Content Include="Areas\ODataWebApiWidgets\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ODataWebApiWidgets\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ODataWebApiWidgets\Views\web.config" />
+    <Content Include="Areas\Bundles\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Bundles\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Bundles\Views\web.config" />
+    <Content Include="Areas\RequireJS\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\RequireJS\Views\Home\Index.cshtml" />
+    <Content Include="Areas\RequireJS\Views\web.config" />
+    <Content Include="Areas\SchedulerGoogleAPI\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerGoogleAPI\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerGoogleAPI\Views\web.config" />
+    <EntityDeploy Include="Areas\ChartSignalR\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\ChartSignalR\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthwindEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.edmx.diagram">
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Areas\ODataWebApiWidgets\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\ODataWebApiWidgets\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthwindEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.edmx.diagram">
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerEditingResources\Views\Home\EditorTemplates\CustomEditorTemplate.cshtml" />
+    <EntityDeploy Include="Areas\SchedulerEditingResources\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\SchedulerEditingResources\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Areas\SchedulerSignalRLocalHub\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\SchedulerSignalRLocalHub\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Areas\SchedulerSignalRServerFiltering\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\SchedulerSignalRServerFiltering\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Areas\SchedulerValidatingTimeslot\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\SchedulerValidatingTimeslot\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Areas\SchedulerEditingWebApi\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\SchedulerEditingWebApi\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\PdfExportingServerSide\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\PdfExportingServerSide\Views\Home\Index.cshtml" />
+    <Content Include="Areas\PdfExportingServerSide\Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
@@ -4188,8 +5019,12 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
