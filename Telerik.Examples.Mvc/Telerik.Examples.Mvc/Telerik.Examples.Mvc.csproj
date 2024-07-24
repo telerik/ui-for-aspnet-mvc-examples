@@ -449,18 +449,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ChartDynamicSeries\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\ChartDynamicSeries\ChartDynamicSeriesAreaRegistration.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Models\MySeriesData.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Models\MyViewModel.cs" />
     <Compile Include="Areas\ChartInGrid\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ChartInGrid\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\ChartInGrid\ChartInGridAreaRegistration.cs" />
     <Compile Include="Areas\ChartInGrid\Models\ViewModel.cs" />
     <Compile Include="Areas\DefineCustomKendoHelper\Helpers\MyGridHelper.cs" />
     <Compile Include="Areas\DefineCustomKendoHelper\Models\OrderViewModel.cs" />
     <Compile Include="Areas\DropDownListCustomDataSource\Controllers\HomeController.cs" />
-    <Compile Include="Areas\DropDownListCustomDataSource\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\DropDownListCustomDataSource\DropDownListCustomDataSourceAreaRegistration.cs" />
     <Compile Include="Areas\DropDownListVirtualization\Controllers\HomeController.cs" />
-    <Compile Include="Areas\DropDownListVirtualization\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\DropDownListVirtualization\DropDownListVirtualizationAreaRegistration.cs" />
     <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.cs">
       <DependentUpon>Files.Context.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -597,7 +597,7 @@
     <Compile Include="Areas\GridClientDetailTemplate\GridClientDetailTemplateAreaRegistration.cs" />
     <Compile Include="Areas\GridClientDetailTemplate\Models\Product.cs" />
     <Compile Include="Areas\GridContextMenu\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridContextMenu\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridContextMenu\GridContextMenuAreaRegistration.cs" />
     <Compile Include="Areas\GridContextMenu\Models\Employee.cs" />
     <Compile Include="Areas\GridContextMenu\Models\EmployeeRepository.cs" />
     <Compile Include="Areas\GridContextMenu\Models\Order.cs" />
@@ -678,7 +678,7 @@
     <Compile Include="Areas\GridDateTimeOffset\Models\MappingProfile.cs" />
     <Compile Include="Areas\GridDateTimeOffset\Models\Student.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridDateUtcOnServerAndClient\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridDateUtcOnServerAndClient\GridDateUtcOnServerAndClientAreaRegistration.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Models\Person.cs" />
     <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\BaseController.cs" />
     <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\EmployeesController.cs" />
@@ -913,14 +913,14 @@
     <Compile Include="Areas\GridEditingWithComboBoxServerFiltering\Models\Category.cs" />
     <Compile Include="Areas\GridEditingWithComboBoxServerFiltering\Models\Product.cs" />
     <Compile Include="Areas\GridEditPopUpServerValidation\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditPopUpServerValidation\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditPopUpServerValidation\GridEditPopUpServerValidationAreaRegistration.cs" />
     <Compile Include="Areas\GridEditPopUpServerValidation\Models\Product.cs" />
     <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\GridEditSyncChangesWithOneRequestAreaRegistration.cs" />
     <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Models\Employee.cs" />
     <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Models\Order.cs" />
     <Compile Include="Areas\GridEditTimespan\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditTimespan\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditTimespan\GridEditTimespanAreaRegistration.cs" />
     <Compile Include="Areas\GridEditTimespan\Models\ViewModel.cs" />
     <Compile Include="Areas\GridExcelExportCellFormat\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridExcelExportCellFormat\GridExcelExportCellFormatAreaRegistration.cs" />
@@ -953,7 +953,7 @@
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\GridFilterExcelLike\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridFilterExcelLike\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridFilterExcelLike\GridFilterExcelLikeAreaRegistration.cs" />
     <Compile Include="Areas\GridFilterExcelLike\Models\Product.cs" />
     <Compile Include="Areas\GridForeignKeyColumnCRUD\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridForeignKeyColumnCRUD\GridForeignKeyColumnCRUDAreaRegistration.cs" />
@@ -1085,7 +1085,7 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Areas\GridHierarchySelfReferencing\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridHierarchySelfReferencing\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchySelfReferencing\GridHierarchySelfReferencingAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\GridInPartialViewLoadedInTabStripAreaRegistration.cs" />
@@ -1162,7 +1162,7 @@
     <Compile Include="Areas\GridMultiSelectFilter\GridMultiSelectFilterAreaRegistration.cs" />
     <Compile Include="Areas\GridMultiSelectFilter\Models\ViewModel.cs" />
     <Compile Include="Areas\GridEditingPopUpMultiSelect\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditingPopUpMultiSelect\GridMultiSelectAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\GridEditingPopUpMultiSelectAreaRegistration.cs" />
     <Compile Include="Areas\GridMultiSelect\Models\EmployeeViewModel.cs" />
     <Compile Include="Areas\GridMultiSelect\Models\Northwind.Designer.cs">
       <DependentUpon>Northwind.edmx</DependentUpon>
@@ -1172,7 +1172,7 @@
     <Compile Include="Areas\GridMultiSelect\Models\NorthwindRepository.cs" />
     <Compile Include="Areas\GridMultiSelect\Models\TerritoryViewModel.cs" />
     <Compile Include="Areas\GridPostWithForm\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridPostWithForm\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridPostWithForm\GridPostWithFormAreaRegistration.cs" />
     <Compile Include="Areas\GridPostWithForm\Models\Category.cs" />
     <Compile Include="Areas\GridPostWithForm\Models\Product.cs" />
     <Compile Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Controllers\HomeController.cs" />
@@ -1210,6 +1210,8 @@
     <Compile Include="Areas\GridEditingPopUpServerValidation\Models\Product.cs" />
     <Compile Include="Areas\GridHierarchyServer\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchyServer\GridHierarchyServerAreaRegistration.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\ProductContext.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\ProductContexInitializer.cs" />
     <Compile Include="Areas\SchedulerCustomView\Models\DateGreaterThan.cs" />
     <Compile Include="Areas\SchedulerCustomView\Models\Meeting.cs">
       <DependentUpon>Sample.tt</DependentUpon>
@@ -1426,7 +1428,7 @@
     <Compile Include="Areas\DefineCustomKendoHelper\Controllers\HomeController.cs" />
     <Compile Include="Areas\DefineCustomKendoHelper\DefineCustomKendoHelperAreaRegistration.cs" />
     <Compile Include="Areas\MenuSameControllersInDifferentAreas\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MenuSameControllersInDifferentAreas\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MenuSameControllersInDifferentAreas\MenuSameControllersInDifferentAreasAreaRegistration.cs" />
     <Compile Include="Areas\SchedulerEditingCustomEditor\Controllers\HomeController.cs" />
     <Compile Include="Areas\SchedulerEditingCustomEditor\SchedulerEditingCustomEditorAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Controllers\HomeController.cs" />
@@ -1442,7 +1444,7 @@
     <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridSelectionColumnWithCheckBox\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridSelectionColumnWithCheckBox\GridSelectionColumnWithCheckBoxAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Models\ProductViewModel.cs" />
     <Compile Include="Areas\Grid\Controllers\AjaxEditingWithEnumerationController.cs" />
     <Compile Include="Areas\Grid\Controllers\AutoCompleteEditorAllowSettingNewValuesController.cs" />
@@ -1469,37 +1471,37 @@
     <Compile Include="Areas\Grid\Models\Product.cs" />
     <Compile Include="Areas\Grid\Models\Vendor.cs" />
     <Compile Include="Areas\MenuOpenWindowWithAjax\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MenuOpenWindowWithAjax\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MenuOpenWindowWithAjax\MenuOpenWindowWithAjaxAreaRegistration.cs" />
     <Compile Include="Areas\MultiColumnComboBoxEdit\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiColumnComboBoxEdit\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MultiColumnComboBoxEdit\MultiColumnComboBoxEditAreaRegistration.cs" />
     <Compile Include="Areas\MultiColumnComboBoxEdit\Models\SampleData.cs" />
     <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiSelectFormPostStronglyTyped\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MultiSelectFormPostStronglyTyped\MultiSelectFormPostStronglyTypedAreaRegistration.cs" />
     <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Models\City.cs" />
     <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Models\CountryInfo.cs" />
     <Compile Include="Areas\MultiSelectGetPostData\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiSelectGetPostData\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MultiSelectGetPostData\MultiSelectGetPostDataAreaRegistration.cs" />
     <Compile Include="Areas\MultiSelectGetPostData\Models\MultiSelectItem.cs" />
     <Compile Include="Areas\MultiSelectGetPostData\Models\sampleModel.cs" />
     <Compile Include="Areas\PanelBarHierarchyBinding\Controllers\HomeController.cs" />
-    <Compile Include="Areas\PanelBarHierarchyBinding\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\PanelBarHierarchyBinding\PanelBarHierarchyBindingAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\Controllers\HomeController.cs" />
-    <Compile Include="Areas\PanelBarSelectItemInitially\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\PanelBarSelectItemInitially\PanelBarHierarchyBindingAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\Models\LocalPanelBarItem.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ThemeChangeOnClient\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\ThemeChangeOnClient\ThemeChangeOnClientAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewLoadConditionally\Controllers\HomeController.cs" />
     <Compile Include="Areas\TreeViewLoadConditionally\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewLoadConditionally\Models\ComboItemModel.cs" />
     <Compile Include="Areas\TreeViewLoadConditionally\Models\TreeViewItemModel.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\Controllers\HomeController.cs" />
-    <Compile Include="Areas\TreeViewSaveItemState\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewSaveItemState\TreeViewSaveItemStateAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\Models\ViewModel.cs" />
     <Compile Include="Areas\UploadDownloadFileLinks\Controllers\HomeController.cs" />
-    <Compile Include="Areas\UploadDownloadFileLinks\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\UploadDownloadFileLinks\UploadDownloadFileLinksAreaRegistration.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\HomeController.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\OrdersDataController.cs" />
-    <Compile Include="Areas\WindowFormWithAjax\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\WindowFormWithAjax\WindowFormWithAjaxAreaRegistration.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Helpers\OrdersBinderHelper.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Models\OrderViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />

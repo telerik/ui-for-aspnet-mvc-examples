@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Telerik.Examples.Mvc.Areas.GridTimestamp.Models
@@ -41,28 +37,6 @@ namespace Telerik.Examples.Mvc.Areas.GridTimestamp.Models
                     this.RowVersion = Convert.FromBase64String(value);
                 }
             }
-        }
-    }
-
-    public class ProductContext : DbContext
-    {
-        public ProductContext() : base("ProductsConnection") { }
-
-        public DbSet<Product> Products { get; set; }
-    }
-
-    public class ProductContexInitializer : CreateDatabaseIfNotExists<ProductContext>
-    {
-        protected override void Seed(ProductContext context)
-        {
-            context.Products.Add(new Product
-            {
-                ProductName = "Chai"
-            });
-
-            context.SaveChanges();
-
-            base.Seed(context);
         }
     }
 }
