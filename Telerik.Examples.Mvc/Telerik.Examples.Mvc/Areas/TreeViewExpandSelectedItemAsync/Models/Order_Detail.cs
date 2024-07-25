@@ -20,7 +20,7 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
         public short Quantity { get; set; }
         public float Discount { get; set; }
     
-        public virtual Order Order { get; set; }
+        public virtual TreeViewExpandSelectedItemAsyncOrder Order { get; set; }
         public virtual TreeViewExpandSelectedItemAsyncProduct Product { get; set; }
     }
 }

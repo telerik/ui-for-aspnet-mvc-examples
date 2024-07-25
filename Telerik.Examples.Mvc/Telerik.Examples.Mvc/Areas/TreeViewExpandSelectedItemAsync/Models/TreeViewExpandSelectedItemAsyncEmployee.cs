@@ -12,13 +12,13 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class TreeViewExpandSelectedItemAsyncEmployee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employee()
+        public TreeViewExpandSelectedItemAsyncEmployee()
         {
-            this.Employees1 = new HashSet<Employee>();
-            this.Orders = new HashSet<Order>();
+            this.Employees1 = new HashSet<TreeViewExpandSelectedItemAsyncEmployee>();
+            this.Orders = new HashSet<TreeViewExpandSelectedItemAsyncOrder>();
             this.Territories = new HashSet<Territory>();
         }
     
@@ -42,10 +42,10 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
         public string PhotoPath { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employees1 { get; set; }
-        public virtual Employee Employee1 { get; set; }
+        public virtual ICollection<TreeViewExpandSelectedItemAsyncEmployee> Employees1 { get; set; }
+        public virtual TreeViewExpandSelectedItemAsyncEmployee Employee1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<TreeViewExpandSelectedItemAsyncOrder> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Territory> Territories { get; set; }
     }

@@ -8,9 +8,9 @@
         <EntityTypeShape EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncCategory" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NORTHWNDModel.CustomerDemographic" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NORTHWNDModel.Customer" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NORTHWNDModel.Employee" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncEmployee" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="NORTHWNDModel.Order_Detail" Width="1.5" PointX="7.5" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NORTHWNDModel.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncOrder" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncProduct" Width="1.5" PointX="5.25" PointY="20.875" IsExpanded="true" />
         <EntityTypeShape EntityType="NORTHWNDModel.Region" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="NORTHWNDModel.Shipper" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />

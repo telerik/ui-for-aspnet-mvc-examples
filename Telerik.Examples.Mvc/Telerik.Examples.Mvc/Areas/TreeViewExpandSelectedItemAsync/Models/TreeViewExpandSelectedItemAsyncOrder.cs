@@ -12,10 +12,10 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class TreeViewExpandSelectedItemAsyncOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public TreeViewExpandSelectedItemAsyncOrder()
         {
             this.Order_Details = new HashSet<Order_Detail>();
         }
@@ -36,7 +36,7 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
         public string ShipCountry { get; set; }
     
         public virtual Customer Customer { get; set; }
-        public virtual Employee Employee { get; set; }
+        public virtual TreeViewExpandSelectedItemAsyncEmployee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Detail> Order_Details { get; set; }
         public virtual Shipper Shipper { get; set; }

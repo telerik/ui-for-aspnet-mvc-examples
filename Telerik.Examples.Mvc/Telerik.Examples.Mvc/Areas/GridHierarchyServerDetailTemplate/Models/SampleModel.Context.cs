@@ -25,6 +25,6 @@ namespace Telerik.Examples.Mvc.Areas.GridHierarchyServerDetailTemplate.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<GridHierarchyServerDetailTemplateProduct> Products { get; set; }
     }
 }

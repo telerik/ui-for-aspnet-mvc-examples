@@ -924,6 +924,32 @@
     <Compile Include="Areas\GridExcelExportColumnTemplate\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridExcelExportColumnTemplate\GridExcelExportColumnTemplateAreaRegistration.cs" />
     <Compile Include="Areas\GridExcelExportColumnTemplate\Models\Order.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\GridExportingExcelMultipleAreaRegistration.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Employee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\GridExportingExcelMultipleProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Order.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridFilterExcelLike\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridFilterExcelLike\GridFilterExcelLikeAreaRegistration.cs" />
     <Compile Include="Areas\GridFilterExcelLike\Models\Product.cs" />
@@ -1059,6 +1085,26 @@
     <Compile Include="Areas\GridHierarchySelfReferencing\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\GridHierarchySelfReferencingAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\GridHierarchyServerDetailTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\GridEditingInLineDatabaseProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.Context.cs">
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.Designer.cs">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="Areas\GridHierarchyServer\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchyServer\GridHierarchyServerAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchyServer\Models\Category.cs">
@@ -1238,9 +1284,6 @@
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\CustomerDemographic.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Employee.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\HierarchicalViewModel.cs" />
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.Context.cs">
       <DependentUpon>Northwind.Context.tt</DependentUpon>
@@ -1256,9 +1299,6 @@
       <DependentUpon>Northwind.edmx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Order.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Order_Detail.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
@@ -1279,6 +1319,12 @@
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncCategory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncEmployee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncOrder.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncProduct.cs">
@@ -1488,6 +1534,22 @@
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Hydrangeas.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Lighthouse.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Tulips.jpg" />
+    <Content Include="Areas\GridExportingExcelMultiple\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridExportingExcelMultiple\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridExportingExcelMultiple\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridExportingExcelMultiple\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridExportingExcelMultiple\Views\web.config" />
+    <Content Include="Areas\GridExportingExcelMultiple\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1528,6 +1590,22 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.Context.tt">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.tt">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\web.config" />
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridHierarchyServer\Models\Northwind.Context.tt">
       <DependentUpon>Northwind.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1838,6 +1916,10 @@
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridExportingExcelMultiple\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
@@ -2159,6 +2241,10 @@
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\_ViewStart.cshtml" />
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\Home\Index.cshtml" />
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\web.config" />
+    <EntityDeploy Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\GridHierarchyServer\Models\Northwind.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Northwind.Designer.cs</LastGenOutput>

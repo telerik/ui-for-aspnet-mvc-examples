@@ -436,7 +436,7 @@
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Customers" FromRole="Customers" ToRole="Orders" />
           <NavigationProperty Name="CustomerDemographics" Relationship="Self.CustomerCustomerDemo" FromRole="Customers" ToRole="CustomerDemographics" />
         </EntityType>
-        <EntityType Name="Employee">
+        <EntityType Name="TreeViewExpandSelectedItemAsyncEmployee">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
@@ -476,7 +476,7 @@
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_Details_Orders" FromRole="Order_Details" ToRole="Orders" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Order_Details_Products" FromRole="Order_Details" ToRole="Products" />
         </EntityType>
-        <EntityType Name="Order">
+        <EntityType Name="TreeViewExpandSelectedItemAsyncOrder">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
@@ -586,7 +586,7 @@
         </Association>
         <Association Name="FK_Orders_Customers">
           <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
-          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <End Role="Orders" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customers">
               <PropertyRef Name="CustomerID" />
@@ -597,8 +597,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employees_Employees">
-          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
-          <End Role="Employees1" Type="Self.Employee" Multiplicity="*" />
+          <End Role="Employees" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncEmployee" Multiplicity="0..1" />
+          <End Role="Employees1" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncEmployee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="EmployeeID" />
@@ -609,8 +609,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Employees">
-          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
-          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <End Role="Employees" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncEmployee" Multiplicity="0..1" />
+          <End Role="Orders" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="EmployeeID" />
@@ -621,7 +621,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Orders">
-          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="Orders" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncOrder" Multiplicity="1" />
           <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -646,7 +646,7 @@
         </Association>
         <Association Name="FK_Orders_Shippers">
           <End Role="Shippers" Type="Self.Shipper" Multiplicity="0..1" />
-          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <End Role="Orders" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shippers">
               <PropertyRef Name="ShipperID" />
@@ -685,16 +685,16 @@
           <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
         </Association>
         <Association Name="EmployeeTerritories">
-          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <End Role="Employees" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncEmployee" Multiplicity="*" />
           <End Role="Territories" Type="Self.Territory" Multiplicity="*" />
         </Association>
         <EntityContainer Name="TreeViewExpandSelectedItemAsyncEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncCategory" />
           <EntitySet Name="CustomerDemographics" EntityType="Self.CustomerDemographic" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Employees" EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncEmployee" />
           <EntitySet Name="Order_Details" EntityType="Self.Order_Detail" />
-          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Orders" EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncOrder" />
           <EntitySet Name="Products" EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncProduct" />
           <EntitySet Name="Regions" EntityType="Self.Region" />
           <EntitySet Name="Shippers" EntityType="Self.Shipper" />
@@ -788,7 +788,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="NORTHWNDModel.Employee">
+            <EntityTypeMapping TypeName="NORTHWNDModel.TreeViewExpandSelectedItemAsyncEmployee">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -823,7 +823,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="NORTHWNDModel.Order">
+            <EntityTypeMapping TypeName="NORTHWNDModel.TreeViewExpandSelectedItemAsyncOrder">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />

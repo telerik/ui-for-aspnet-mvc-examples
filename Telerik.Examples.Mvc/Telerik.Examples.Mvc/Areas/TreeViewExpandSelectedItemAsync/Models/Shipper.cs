@@ -17,7 +17,7 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Shipper()
         {
-            this.Orders = new HashSet<Order>();
+            this.Orders = new HashSet<TreeViewExpandSelectedItemAsyncOrder>();
         }
     
         public int ShipperID { get; set; }
@@ -25,6 +25,6 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
         public string Phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<TreeViewExpandSelectedItemAsyncOrder> Orders { get; set; }
     }
 }
