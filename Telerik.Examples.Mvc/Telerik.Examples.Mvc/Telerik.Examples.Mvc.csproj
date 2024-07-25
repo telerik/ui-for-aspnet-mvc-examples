@@ -461,6 +461,30 @@
     <Compile Include="Areas\DropDownListCustomDataSource\DropDownListCustomDataSourceAreaRegistration.cs" />
     <Compile Include="Areas\DropDownListVirtualization\Controllers\HomeController.cs" />
     <Compile Include="Areas\DropDownListVirtualization\DropDownListVirtualizationAreaRegistration.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\EditorDatabaseImageBrowserAreaRegistration.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.cs">
+      <DependentUpon>Files.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.Designer.cs">
+      <DependentUpon>Files.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\FilesRepository.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Folder.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Image.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GanttImportExportUsingMpxj\Models\DependencyViewModel.cs" />
     <Compile Include="Areas\GanttImportExportUsingMpxj\Models\GanttDataContainer.cs" />
     <Compile Include="Areas\GanttImportExportUsingMpxj\Models\ResourceAssignmentViewModel.cs" />
@@ -1120,6 +1144,64 @@
     <Compile Include="Areas\PanelBarSelectItemInitially\Models\LocalPanelBarItem.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\Controllers\HomeController.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\ThemeChangeOnClientAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Category.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Customer.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\CustomerDemographic.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Employee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\HierarchicalViewModel.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Order.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Order_Detail.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Product.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Region.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Shipper.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Supplier.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\sysdiagram.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Territory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\TreeViewExpandSelectedItemAsyncAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewLoadConditionally\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeViewLoadConditionally\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewLoadConditionally\Models\ComboItemModel.cs" />
+    <Compile Include="Areas\TreeViewLoadConditionally\Models\TreeViewItemModel.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\Controllers\HomeController.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\TreeViewSaveItemStateAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\Models\ViewModel.cs" />
@@ -1158,6 +1240,22 @@
     <Content Include="App_Data\Sample_log.ldf">
       <DependentUpon>Sample.mdf</DependentUpon>
     </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.tt">
+      <DependentUpon>Files.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Files.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.edmx.diagram">
+      <DependentUpon>Files.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.tt">
+      <DependentUpon>Files.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Files.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\web.config" />
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1350,6 +1448,25 @@
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\server.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\web.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.htm" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\web.config" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeViewLoadConditionally\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewLoadConditionally\Views\web.config" />
+    <Content Include="Areas\TreeViewLoadConditionally\Views\_ViewStart.cshtml" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -1483,6 +1600,10 @@
     <Content Include="Areas\GridEditingModelStateError\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditingModelStateError\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridEditingModelStateError\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\EditorDatabaseImageBrowser\Models\Files.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Files.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
@@ -1897,6 +2018,10 @@
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\_ViewStart.cshtml" />
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\Home\Index.cshtml" />
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\web.config" />
+    <EntityDeploy Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
