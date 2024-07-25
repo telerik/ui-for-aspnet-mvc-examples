@@ -3,9 +3,8 @@
                     .Items(menu =>
                     {
                         menu.Add().Text("Home").Action("Index", "Home", new { area = "" });
-                        menu.Add().Text("Area1").Action("Index", "Area", new { area = "ChartInGrid" });
-                        menu.Add().Text("Area2").Action("Index", "Area", new { area = "GridSelectionByField" });
-                            menu.Add().Text("Register").Action("Register", "Account", new { area = "" }).ContentHtmlAttributes(new { id = "registerLink" });
-                            menu.Add().Text("Log in").Action("Login", "Account", new { area = "" }).ContentHtmlAttributes(new { id = "loginLink" });
+                        menu.Add().Text("Area1").Action("Index", "Home", new { area = "ChartInGrid" });
+                        menu.Add().Text("Area2").Action("Index", "Home", new { area = "GridSelectionByField" });
+                            menu.Add().Text("Register").Action("Index", "Home", new { area = "EditorImportExport" }).ContentHtmlAttributes(new { id = "registerLink" });
                     })
         )

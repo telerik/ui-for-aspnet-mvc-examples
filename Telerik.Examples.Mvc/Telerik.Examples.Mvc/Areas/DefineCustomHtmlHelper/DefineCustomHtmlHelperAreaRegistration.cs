@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Telerik.Examples.Mvc.Areas.EditorImportExportKendoWidget
+namespace Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper
 {
     public class EditorImportExportKendoWidgetAreaRegistration : AreaRegistration 
     {
@@ -8,15 +8,15 @@ namespace Telerik.Examples.Mvc.Areas.EditorImportExportKendoWidget
         {
             get 
             {
-                return "EditorImportExportKendoWidget";
+                return "DefineCustomHtmlHelper";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "EditorImportExportKendoWidget_default",
-                "EditorImportExportKendoWidget/{controller}/{action}/{id}",
+                "DefineCustomHtmlHelper_default",
+                "DefineCustomHtmlHelper/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

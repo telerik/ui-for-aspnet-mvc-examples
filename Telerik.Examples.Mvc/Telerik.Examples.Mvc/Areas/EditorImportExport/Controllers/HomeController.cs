@@ -11,7 +11,7 @@ using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
 using Telerik.Windows.Documents.Flow.FormatProviders.Html;
 using Telerik.Windows.Documents.Flow.Model;
 
-namespace Telerik.Examples.Mvc.Areas.EditorImportExportKendoWidget.Controllers
+namespace Telerik.Examples.Mvc.Areas.EditorImportExport.Controllers
 {
     public class HomeController : Controller
     {

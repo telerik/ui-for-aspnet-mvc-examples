@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Models
+namespace Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Models
 {
     public class OrderViewModel
     {

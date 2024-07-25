@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Kendo.Mvc.UI;
 
-namespace Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Helpers
+namespace Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Helpers
 {
     public static class MyGridHelper
     {

@@ -1,4 +1,4 @@
-﻿using Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Models;
+﻿using Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Models;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Controllers
+namespace Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Controllers
 {
     public class HomeController : Controller
     {

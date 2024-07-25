@@ -2,14 +2,14 @@
     ViewBag.Title = "Home Page";
 }
 
-<h3>Telerik UI for ASP.NET MVC Grid Definition called with a helper</h3>
+<h3>Telerik UI for ASP.NET MVC Grid Definition called with a helper method</h3>
 <br />
 
 @* Using Helpers in Razor *@
 
 @helper MyGridShortCut()
 {
-    Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Models.OrderViewModel>()
+    Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Models.OrderViewModel>()
         .Name("grid")
         .Columns(columns =>
         {
@@ -40,9 +40,9 @@
 
 @* Using Helpers defined in Helpers/MyGridHelper.cs file *@
 
-@using Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Helpers
+@using Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Helpers
 
-@(Html.MyGrid<Telerik.Examples.Mvc.Areas.DefineCustomKendoHelper.Models.OrderViewModel>("Grid1")
+@(Html.MyGrid<Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Models.OrderViewModel>("Grid1")
     .Columns(columns =>
     {
         columns.Bound(p => p.OrderID).Filterable(false);
