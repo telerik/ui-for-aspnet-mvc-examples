@@ -25,7 +25,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingCustomEditor.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<MeetingAttendee> MeetingAttendees { get; set; }
-        public DbSet<Meeting> Meetings { get; set; }
+        public DbSet<SchedulerEditingCustomEditorMeetingAttendee> MeetingAttendees { get; set; }
+        public DbSet<SchedulerEditingCustomEditorMeeting> Meetings { get; set; }
     }
 }

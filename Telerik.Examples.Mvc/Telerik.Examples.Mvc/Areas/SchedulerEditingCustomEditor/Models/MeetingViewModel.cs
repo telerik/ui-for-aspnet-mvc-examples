@@ -56,9 +56,9 @@
         public int? RoomID { get; set; }
         public IEnumerable<int> Attendees { get; set; }
 
-        public Meeting ToEntity()
+        public SchedulerEditingCustomEditorMeeting ToEntity()
         {
-            var meeting = new Meeting
+            var meeting = new SchedulerEditingCustomEditorMeeting
             {
                 MeetingID = MeetingID,
                 Title = Title,

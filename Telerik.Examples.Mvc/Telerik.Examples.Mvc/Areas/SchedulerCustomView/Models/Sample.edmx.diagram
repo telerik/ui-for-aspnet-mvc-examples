@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="533b49605e954d299c9b0e1b5250d24a" Name="Diagram1">
-        <EntityTypeShape EntityType="SampleModel.MeetingAttendee" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="SampleModel.Meeting" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.SchedulerCustomViewMeetingAttendee" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.SchedulerCustomViewMeeting" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="SampleModel.FK_MeetingAtendee_Meeting" ManuallyRouted="false" />
         <AssociationConnector Association="SampleModel.FK_Meetings_Meetings" ManuallyRouted="false" />
       </Diagram>

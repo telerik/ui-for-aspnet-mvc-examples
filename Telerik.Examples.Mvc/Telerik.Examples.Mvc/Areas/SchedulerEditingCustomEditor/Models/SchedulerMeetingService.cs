@@ -58,7 +58,7 @@
 
                 foreach (var attendeeId in meeting.Attendees)
                 {
-                    entity.MeetingAttendees.Add(new MeetingAttendee
+                    entity.MeetingAttendees.Add(new SchedulerEditingCustomEditorMeetingAttendee
                     {
                         AttendeeID = attendeeId
                     });
@@ -103,7 +103,7 @@
                 {
                     foreach (var attendeeId in meeting.Attendees)
                     {
-                        var meetingAttendee = new MeetingAttendee
+                        var meetingAttendee = new SchedulerEditingCustomEditorMeetingAttendee
                         {
                             MeetingID = entity.MeetingID,
                             AttendeeID = attendeeId
@@ -128,7 +128,7 @@
 
             db.Meetings.Attach(entity);
 
-            var attendees = meeting.Attendees.Select(attendee => new MeetingAttendee
+            var attendees = meeting.Attendees.Select(attendee => new SchedulerEditingCustomEditorMeetingAttendee
             {
                 AttendeeID = attendee,
                 MeetingID = entity.MeetingID

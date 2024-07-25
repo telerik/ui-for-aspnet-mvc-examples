@@ -14,7 +14,7 @@
 
 @(Html.Kendo().Scheduler<Telerik.Examples.Mvc.Areas.SchedulerCustomView.Models.MeetingViewModel>()
     .Name("scheduler")
-    .Date(new DateTime(2013, 6, 13))
+    .Date(DateTime.Now)
     .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
     .Height(600)
     .Views(views => {

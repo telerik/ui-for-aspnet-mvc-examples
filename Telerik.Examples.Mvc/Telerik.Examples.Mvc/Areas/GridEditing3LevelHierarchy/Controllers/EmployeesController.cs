@@ -7,7 +7,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Telerik.Examples.Mvc.Areas.GridEditing3LevelHierarchy.Models;
-using Telerik.Examples.Mvc.Areas.GridEditingInLineDatabase.Models;
 
 namespace Telerik.Examples.Mvc.Areas.GridEditing3LevelHierarchy.Controllers
 {

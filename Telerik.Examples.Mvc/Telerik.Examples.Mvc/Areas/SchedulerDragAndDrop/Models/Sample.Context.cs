@@ -25,7 +25,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerDragAndDrop.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<MeetingAttendee> MeetingAttendees { get; set; }
-        public DbSet<Meeting> Meetings { get; set; }
+        public DbSet<SchedulerDragAndDropMeetingAttendee> MeetingAttendees { get; set; }
+        public DbSet<SchedulerDragAndDropMeeting> Meetings { get; set; }
     }
 }

@@ -56,9 +56,9 @@
         public int? RoomID { get; set; }
         public IEnumerable<int> Attendees { get; set; }
 
-        public Meeting ToEntity()
+        public SchedulerDragAndDropMeeting ToEntity()
         {
-            var meeting = new Meeting
+            var meeting = new SchedulerDragAndDropMeeting
             {
                 MeetingID = MeetingID,
                 Title = Title,

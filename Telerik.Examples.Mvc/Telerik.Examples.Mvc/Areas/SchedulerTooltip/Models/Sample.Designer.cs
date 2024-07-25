@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\viliev\Desktop\SchedulerCustomEditor_MVC4_EF5_VS13_902\SchedulerCustomEditor\Models\Sample.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Programming\repos\ui-for-aspnet-mvc-examples\Telerik.Examples.Mvc\Telerik.Examples.Mvc\Areas\SchedulerTooltip\Models\Sample.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

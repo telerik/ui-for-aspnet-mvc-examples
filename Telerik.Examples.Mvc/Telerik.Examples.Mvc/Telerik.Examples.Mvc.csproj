@@ -768,19 +768,19 @@
       <DependentUpon>SampleModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Areas\GridEditingInLineNullableBoolean\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingInLineNullableBoolean\GridEditingInLineNullableBooleanAreaRegistration.cs" />
@@ -871,6 +871,9 @@
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\GridEditingPoPupRequiredDropDownListForAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\GridEditingPopUpServerValidationAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\Models\Product.cs" />
     <Compile Include="Areas\GridEditingPopUpTreeView\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingPopUpTreeView\GridEditingPopUpTreeViewAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingPopUpTreeView\Models\GridEditingPopUpTreeViewProduct.cs">
@@ -1246,6 +1249,139 @@
     <Compile Include="Areas\PanelBarSelectItemInitially\Controllers\HomeController.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\PanelBarHierarchyBindingAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\Models\LocalPanelBarItem.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\SchedulerCustomViewMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\SchedulerCustomViewMeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerCustomView\SchedulerCustomViewAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\SchedulerDragAndDropMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\SchedulerDragAndDropMeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\SchedulerDragAndDropAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\SchedulerEditingCustomEditorMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\SchedulerEditingCustomEditorMeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\SchedulerEditingCustomEditorAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Controllers\FilterRange.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Models\Meeting.cs">
+      <DependentUpon>SchedulerSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\MeetingAtendee.cs">
+      <DependentUpon>SchedulerSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.Context.cs">
+      <DependentUpon>SchedulerSample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.cs">
+      <DependentUpon>SchedulerSample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.Designer.cs">
+      <DependentUpon>SchedulerSample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\SchedulerTaskService.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Models\Task.cs">
+      <DependentUpon>SchedulerSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\TaskViewModel.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\SchedulerServerFilteringAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\MeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerTooltip\SchedulerTooltipAreaRegistration.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\Controllers\HomeController.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\ThemeChangeOnClientAreaRegistration.cs" />
     <Compile Include="Areas\TreeListExportingMultiple\Controllers\EmployeeDirectoryController.cs" />
@@ -1481,15 +1617,22 @@
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx.diagram">
       <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.tt">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\web.config" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1520,6 +1663,9 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\web.config" />
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1651,6 +1797,89 @@
     <Content Include="Areas\GridTimestamp\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridTimestamp\Views\web.config" />
     <Content Include="Areas\GridTimestamp\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerCustomView\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerCustomView\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerCustomView\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerCustomView\Resources\Site.css" />
+    <Content Include="Areas\SchedulerCustomView\Resources\toDoViewStyles.css" />
+    <Content Include="Areas\SchedulerCustomView\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerCustomView\Views\web.config" />
+    <Content Include="Areas\SchedulerCustomView\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerDragAndDrop\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerDragAndDrop\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerDragAndDrop\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerDragAndDrop\Views\Home\EditorTemplates\CustomEditorTemplate.cshtml" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\web.config" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerEditingCustomEditor\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerEditingCustomEditor\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\web.config" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.Context.tt">
+      <DependentUpon>SchedulerSample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SchedulerSample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.edmx.diagram">
+      <DependentUpon>SchedulerSample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.tt">
+      <DependentUpon>SchedulerSample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SchedulerSample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerServerFiltering\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerServerFiltering\Views\web.config" />
+    <Content Include="Areas\SchedulerServerFiltering\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerTooltip\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerTooltip\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerTooltip\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerTooltip\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerTooltip\Views\web.config" />
+    <Content Include="Areas\SchedulerTooltip\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TreeListExportingMultiple\Models\Sample.Context.tt">
       <DependentUpon>Sample.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1830,22 +2059,15 @@
     <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.edmx.diagram">
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\GridEditingModelStateError\Models\SampleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.edmx.diagram">
-      <DependentUpon>SampleModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Areas\GridEditingInLineDatabase\Views\web.config" />
-    <Content Include="Areas\GridEditingInLineDatabase\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridEditingInLineDatabase\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\GridEditingInLineDatabase\Views\Home\Index.cshtml" />
-    <EntityDeploy Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx.diagram">
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\GridEditing3LevelHierarchy\Views\web.config" />
@@ -2253,6 +2475,26 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerCustomView\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerDragAndDrop\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerEditingCustomEditor\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SchedulerSample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerTooltip\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\TreeListExportingMultiple\Models\Sample.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Sample.Designer.cs</LastGenOutput>
@@ -2261,6 +2503,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\Home\EditorTemplates\CustomEditorTemplate.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />

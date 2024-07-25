@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Telerik.Examples.Mvc.Areas.SchedulerCustomView.Models
+namespace Telerik.Examples.Mvc.Areas.SchedulerDragAndDrop.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MeetingAttendee
+    public partial class SchedulerDragAndDropMeetingAttendee
     {
         public int MeetingID { get; set; }
         public int AttendeeID { get; set; }
     
-        public virtual Meeting Meeting { get; set; }
+        public virtual SchedulerDragAndDropMeeting Meeting { get; set; }
     }
 }

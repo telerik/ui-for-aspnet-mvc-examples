@@ -1,13 +1,13 @@
 ﻿<div style="width: 50%; margin-left: auto; margin-right: auto;">
     @(Html.Kendo().Scheduler<Telerik.Examples.Mvc.Areas.SchedulerDragAndDrop.Models.MeetingViewModel>()
         .Name("scheduler")
-        .Date(new DateTime(2013, 6, 13))
+        .Date(new DateTime(2022, 6, 1))
         .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
         .Height(600)
         .Views(views => {
             views.DayView();
-            views.WeekView(weekView => weekView.Selected(true));
-            views.MonthView();
+            views.WeekView();
+            views.MonthView(monthView => monthView.Selected(true));
             views.AgendaView();
         })
         .Editable(editable => {
