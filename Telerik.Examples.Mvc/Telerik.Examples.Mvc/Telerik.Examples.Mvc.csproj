@@ -1092,6 +1092,11 @@
     <Compile Include="Areas\GanttImportExportUsingMpxj\GanttImportExportUsingMpxjAreaRegistration.cs" />
     <Compile Include="Areas\DefineCustomHtmlHelper\Controllers\HomeController.cs" />
     <Compile Include="Areas\DefineCustomHtmlHelper\DefineCustomHtmlHelperAreaRegistration.cs" />
+    <Compile Include="Areas\GridTimestamp\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridTimestamp\GridTimestampAreaRegistration.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\Product.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\ProductContexInitializer.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\ProductContext.cs" />
     <Compile Include="Areas\MenuSameControllersInDifferentAreas\Controllers\HomeController.cs" />
     <Compile Include="Areas\MenuSameControllersInDifferentAreas\MenuSameControllersInDifferentAreasAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
@@ -1144,6 +1149,35 @@
     <Compile Include="Areas\PanelBarSelectItemInitially\Models\LocalPanelBarItem.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\Controllers\HomeController.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\ThemeChangeOnClientAreaRegistration.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Controllers\EmployeeDirectoryController.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Employee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\EmployeeDirectory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\EmployeeDirectoryModel.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Models\EmployeeDirectoryService.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Models\EmployeeTerritory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\TreeListExportingMultipleAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Controllers\HomeController.cs" />
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Category.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
@@ -1448,6 +1482,25 @@
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\server.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\web.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.htm" />
+    <Content Include="Areas\GridTimestamp\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridTimestamp\Views\web.config" />
+    <Content Include="Areas\GridTimestamp\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeListExportingMultiple\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\TreeListExportingMultiple\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\TreeListExportingMultiple\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\TreeListExportingMultiple\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeListExportingMultiple\Views\web.config" />
+    <Content Include="Areas\TreeListExportingMultiple\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.Context.tt">
       <DependentUpon>Northwind.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2018,6 +2071,10 @@
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\_ViewStart.cshtml" />
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\Home\Index.cshtml" />
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\web.config" />
+    <EntityDeploy Include="Areas\TreeListExportingMultiple\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
