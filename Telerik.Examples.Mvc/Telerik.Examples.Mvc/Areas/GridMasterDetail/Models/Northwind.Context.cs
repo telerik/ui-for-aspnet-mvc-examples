@@ -25,7 +25,7 @@ namespace Telerik.Examples.Mvc.Areas.GridMasterDetail.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<GridMasterDetailCategory> Categories { get; set; }
+        public DbSet<GridMasterDetailProduct> Products { get; set; }
     }
 }

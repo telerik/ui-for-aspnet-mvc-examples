@@ -12,11 +12,11 @@ namespace Telerik.Examples.Mvc.Areas.GridMasterDetail.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class GridMasterDetailCategory
     {
-        public Category()
+        public GridMasterDetailCategory()
         {
-            this.Products = new HashSet<Product>();
+            this.Products = new HashSet<GridMasterDetailProduct>();
         }
     
         public int CategoryID { get; set; }
@@ -24,6 +24,6 @@ namespace Telerik.Examples.Mvc.Areas.GridMasterDetail.Models
         public string Description { get; set; }
         public byte[] Picture { get; set; }
     
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<GridMasterDetailProduct> Products { get; set; }
     }
 }

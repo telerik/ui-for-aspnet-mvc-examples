@@ -1,7 +1,7 @@
 ﻿<h3>Select category to display related products</h3>
 
 
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridMasterDetail.Models.Category>()
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridMasterDetail.Models.GridMasterDetailCategory>()
       .Name("grid")
       .Columns(columns =>
       {
@@ -19,7 +19,7 @@
 <br />
 <br />
 
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridMasterDetail.Models.Product>()
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridMasterDetail.Models.GridMasterDetailProduct>()
       .Name("detailGrid")
       .AutoBind(false)
       .Columns(columns =>

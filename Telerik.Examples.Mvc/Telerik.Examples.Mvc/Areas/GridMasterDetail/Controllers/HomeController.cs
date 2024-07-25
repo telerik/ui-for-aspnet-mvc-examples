@@ -20,7 +20,7 @@ namespace Telerik.Examples.Mvc.Areas.GridMasterDetail.Controllers
         {
             using (var northwind = new GridMasterDetailEntities())
             {
-                IQueryable<Category> categories = northwind.Categories;
+                IQueryable<GridMasterDetailCategory> categories = northwind.Categories;
                 // Flatten the Category to avoid circular references during JSON serialization
                 DataSourceResult result = categories.ToDataSourceResult(request, category => new
                 {
@@ -35,7 +35,7 @@ namespace Telerik.Examples.Mvc.Areas.GridMasterDetail.Controllers
         {
             using (var northwind = new GridMasterDetailEntities())
             {
-                IQueryable<Product> products = northwind.Products.Where(product => product.CategoryID == categoryId);
+                IQueryable<GridMasterDetailProduct> products = northwind.Products.Where(product => product.CategoryID == categoryId);
                 // Flatten the Product to avoid circular references during JSON serialization
                 DataSourceResult result = products.ToDataSourceResult(request, product => new
                 {

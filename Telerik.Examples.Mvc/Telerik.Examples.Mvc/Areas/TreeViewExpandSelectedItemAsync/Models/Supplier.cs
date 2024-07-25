@@ -17,7 +17,7 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Supplier()
         {
-            this.Products = new HashSet<Product>();
+            this.Products = new HashSet<TreeViewExpandSelectedItemAsyncProduct>();
         }
     
         public int SupplierID { get; set; }
@@ -34,6 +34,6 @@ namespace Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models
         public string HomePage { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<TreeViewExpandSelectedItemAsyncProduct> Products { get; set; }
     }
 }

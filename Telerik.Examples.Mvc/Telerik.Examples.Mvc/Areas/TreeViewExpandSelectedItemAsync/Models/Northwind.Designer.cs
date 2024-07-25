@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\dkalaydz\Documents\Visual Studio 2017\Projects\Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models\Telerik.Examples.Mvc.Areas.TreeViewExpandSelectedItemAsync.Models\Northwind.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Programming\repos\ui-for-aspnet-mvc-examples\Telerik.Examples.Mvc\Telerik.Examples.Mvc\Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

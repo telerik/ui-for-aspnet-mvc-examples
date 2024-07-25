@@ -674,6 +674,13 @@
     <Compile Include="Areas\GridDateIgnoreTimeZones\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridDateIgnoreTimeZones\GridDateIgnoreTimeZonesAreaRegistration.cs" />
     <Compile Include="Areas\GridDateIgnoreTimeZones\Models\Person.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\GridDateTimeOffsetAreaRegistration.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\Car.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\CarsService.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\CarViewModel.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\MappingProfile.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\Student.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\GridDateUtcOnServerAndClientAreaRegistration.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Models\Person.cs" />
@@ -1052,9 +1059,55 @@
     <Compile Include="Areas\GridHierarchySelfReferencing\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\GridHierarchySelfReferencingAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
+    <Compile Include="Areas\GridHierarchyServer\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyServer\GridHierarchyServerAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchyServer\Models\Category.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Models\Product.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\GridInPartialViewLoadedInTabStripAreaRegistration.cs" />
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Models\Customer.cs" />
+    <Compile Include="Areas\GridMasterDetail\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridMasterDetail\GridMasterDetailAreaRegistration.cs" />
+    <Compile Include="Areas\GridMasterDetail\Models\GridMasterDetailCategory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\GridMasterDetailProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\GridModifyFiltersOnTheServerAreaRegistration.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\Employee.cs" />
@@ -1179,9 +1232,6 @@
     </Compile>
     <Compile Include="Areas\TreeListExportingMultiple\TreeListExportingMultipleAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Controllers\HomeController.cs" />
-    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Category.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Customer.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
@@ -1213,9 +1263,6 @@
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Order_Detail.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Product.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Region.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
@@ -1229,6 +1276,12 @@
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Territory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncCategory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncProduct.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\TreeViewExpandSelectedItemAsyncAreaRegistration.cs" />
@@ -1368,6 +1421,9 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridDateTimeOffset\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridDateTimeOffset\Views\web.config" />
+    <Content Include="Areas\GridDateTimeOffset\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1472,6 +1528,38 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridHierarchyServer\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyServer\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridHierarchyServer\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyServer\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchyServer\Views\web.config" />
+    <Content Include="Areas\GridHierarchyServer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridMasterDetail\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridMasterDetail\Views\web.config" />
+    <Content Include="Areas\GridMasterDetail\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\alt.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\clock.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\cut.png" />
@@ -2071,6 +2159,14 @@
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\_ViewStart.cshtml" />
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\Home\Index.cshtml" />
     <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\web.config" />
+    <EntityDeploy Include="Areas\GridHierarchyServer\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\GridMasterDetail\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\TreeListExportingMultiple\Models\Sample.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Sample.Designer.cs</LastGenOutput>

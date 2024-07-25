@@ -400,7 +400,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NORTHWNDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Category">
+        <EntityType Name="TreeViewExpandSelectedItemAsyncCategory">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
@@ -499,7 +499,7 @@
           <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Orders" FromRole="Orders" ToRole="Order_Details" />
           <NavigationProperty Name="Shipper" Relationship="Self.FK_Orders_Shippers" FromRole="Orders" ToRole="Shippers" />
         </EntityType>
-        <EntityType Name="Product">
+        <EntityType Name="TreeViewExpandSelectedItemAsyncProduct">
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
@@ -573,8 +573,8 @@
           <NavigationProperty Name="Employees" Relationship="Self.EmployeeTerritories" FromRole="Territories" ToRole="Employees" />
         </EntityType>
         <Association Name="FK_Products_Categories">
-          <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
-          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <End Role="Categories" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncProduct" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
               <PropertyRef Name="CategoryID" />
@@ -633,7 +633,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Products">
-          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="Products" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncProduct" Multiplicity="1" />
           <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
@@ -658,7 +658,7 @@
         </Association>
         <Association Name="FK_Products_Suppliers">
           <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
-          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <End Role="Products" Type="NORTHWNDModel.TreeViewExpandSelectedItemAsyncProduct" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Suppliers">
               <PropertyRef Name="SupplierID" />
@@ -689,13 +689,13 @@
           <End Role="Territories" Type="Self.Territory" Multiplicity="*" />
         </Association>
         <EntityContainer Name="TreeViewExpandSelectedItemAsyncEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Categories" EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncCategory" />
           <EntitySet Name="CustomerDemographics" EntityType="Self.CustomerDemographic" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Order_Details" EntityType="Self.Order_Detail" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
-          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Products" EntityType="NORTHWNDModel.TreeViewExpandSelectedItemAsyncProduct" />
           <EntitySet Name="Regions" EntityType="Self.Region" />
           <EntitySet Name="Shippers" EntityType="Self.Shipper" />
           <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
@@ -753,7 +753,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NORTHWNDModelStoreContainer" CdmEntityContainer="TreeViewExpandSelectedItemAsyncEntities">
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="NORTHWNDModel.Category">
+            <EntityTypeMapping TypeName="NORTHWNDModel.TreeViewExpandSelectedItemAsyncCategory">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -843,7 +843,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="NORTHWNDModel.Product">
+            <EntityTypeMapping TypeName="NORTHWNDModel.TreeViewExpandSelectedItemAsyncProduct">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
