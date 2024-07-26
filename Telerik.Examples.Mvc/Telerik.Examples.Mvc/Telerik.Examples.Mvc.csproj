@@ -809,6 +809,32 @@
     <Compile Include="Areas\GridEditingPopUpAccessModel\GridEditingPopUpAccessModelAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingPopUpAccessModel\Models\Employee.cs" />
     <Compile Include="Areas\GridEditingPopUpAccessModel\Models\Order.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\GridEditingPopUpMultiSelectAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\GridMultiSelectEmployee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\GridMultiSelectTerritory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\NorthwindRepository.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\TerritoryViewModel.cs" />
     <Compile Include="Areas\GridEditingPopUpNestedGridBatch\Controllers\BaseController.cs" />
     <Compile Include="Areas\GridEditingPopUpNestedGridBatch\Controllers\EmployeesController.cs" />
     <Compile Include="Areas\GridEditingPopUpNestedGridBatch\Controllers\HomeController.cs" />
@@ -1090,7 +1116,7 @@
     <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
     <Compile Include="Areas\GridHierarchyServerDetailTemplate\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridHierarchyServerDetailTemplate\GridHierarchyServerDetailTemplateAreaRegistration.cs" />
-    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\GridEditingInLineDatabaseProduct.cs">
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\GridHierarchyServerDetailTemplateProduct.cs">
       <DependentUpon>SampleModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.Context.cs">
@@ -1166,6 +1192,27 @@
     <Compile Include="Areas\GridMultiSelectFilter\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridMultiSelectFilter\GridMultiSelectFilterAreaRegistration.cs" />
     <Compile Include="Areas\GridMultiSelectFilter\Models\ViewModel.cs" />
+    <Compile Include="Areas\GridMultiSelect\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridMultiSelect\GridMultiSelectAreaRegistration.cs" />
+    <Compile Include="Areas\GridMultiSelect\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridMultiSelect\Models\GridMultiSelectEmployee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMultiSelect\Models\GridMultiSelectTerritory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMultiSelect\Models\Northwind.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMultiSelect\Models\Northwind.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMultiSelect\Models\NorthwindRepository.cs" />
+    <Compile Include="Areas\GridMultiSelect\Models\TerritoryViewModel.cs" />
     <Compile Include="Areas\GridPostWithForm\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridPostWithForm\GridPostWithFormAreaRegistration.cs" />
     <Compile Include="Areas\GridPostWithForm\Models\Category.cs" />
@@ -1643,6 +1690,21 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\Home\EditorTemplates\EmployeeViewModelEditor.cshtml" />
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\Home\EditorTemplates\TerritoriesEditor.cshtml" />
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\web.config" />
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditingPopUpNestedGridBatch\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1784,6 +1846,16 @@
     <Content Include="Areas\GridMasterDetail\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridMasterDetail\Views\web.config" />
     <Content Include="Areas\GridMasterDetail\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridMultiSelect\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\alt.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\clock.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\cut.png" />
@@ -2504,6 +2576,19 @@
       <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Areas\SchedulerEditingCustomEditor\Views\Home\EditorTemplates\CustomEditorTemplate.cshtml" />
+    <EntityDeploy Include="Areas\GridMultiSelect\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridMultiSelect\Views\Home\EditorTemplates\EmployeeViewModel.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Views\Home\EditorTemplates\TerritoriesEditor.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Views\web.config" />
+    <Content Include="Areas\GridMultiSelect\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
+
 
 namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models
 {
@@ -14,7 +12,6 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models
             this.Territories = new List<TerritoryViewModel>();
         }
 
-        [UIHint("EmployeeID")]
         public int EmployeeID { get; set; }
 
         public string FirstName { get; set; }
@@ -28,7 +25,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models
         [UIHint("TerritoriesEditor")]
         public IEnumerable<TerritoryViewModel> Territories { get; set; }
 
-        public void CopyToEmployee(Employee employee)
+        public void CopyToEmployee(GridEditingPopUpMultiSelectEmployee employee)
         {
             employee.EmployeeID = this.EmployeeID;
             employee.FirstName = this.FirstName;

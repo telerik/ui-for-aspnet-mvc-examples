@@ -58,7 +58,7 @@ namespace Telerik.Examples.Mvc.Areas.GridMultiSelect.Models
 
         public int CreateEmployee(EmployeeViewModel viewModel)
         {
-            var employee = new Employee();
+            var employee = new GridMultiSelectEmployee();
             viewModel.CopyToEmployee(employee);
             if (viewModel.Territories != null)
             {
@@ -69,12 +69,12 @@ namespace Telerik.Examples.Mvc.Areas.GridMultiSelect.Models
                     employee.Territories.Add(employeeTerritory);
                 }
             }
-            context.Employees.AddObject(employee);
+            context.Employees.Add(employee);
             context.SaveChanges();
             return employee.EmployeeID;
         }
 
-        private void UpdateEmployeeTerritories(Employee employee, EmployeeViewModel viewModel)
+        private void UpdateEmployeeTerritories(GridMultiSelectEmployee employee, EmployeeViewModel viewModel)
         {
             var employeeTerritories = employee.Territories.ToList();
             foreach (var territory in employeeTerritories)

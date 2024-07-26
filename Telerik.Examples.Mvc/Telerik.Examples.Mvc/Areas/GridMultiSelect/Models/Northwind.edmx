@@ -4,31 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NorthwindModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="NorthwindModelStoreContainer">
-          <EntitySet Name="Employees" EntityType="NorthwindModel.Store.Employees" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="EmployeeTerritories" EntityType="NorthwindModel.Store.EmployeeTerritories" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Territories" EntityType="NorthwindModel.Store.Territories" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <AssociationSet Name="FK_Employees_Employees" Association="NorthwindModel.Store.FK_Employees_Employees">
-            <End Role="Employees" EntitySet="Employees" />
-            <End Role="Employees1" EntitySet="Employees" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeTerritories_Employees" Association="NorthwindModel.Store.FK_EmployeeTerritories_Employees">
-            <End Role="Employees" EntitySet="Employees" />
-            <End Role="EmployeeTerritories" EntitySet="EmployeeTerritories" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeTerritories_Territories" Association="NorthwindModel.Store.FK_EmployeeTerritories_Territories">
-            <End Role="Territories" EntitySet="Territories" />
-            <End Role="EmployeeTerritories" EntitySet="EmployeeTerritories" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="NorthwindModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="30" />
           <Property Name="TitleOfCourtesy" Type="nvarchar" MaxLength="25" />
           <Property Name="BirthDate" Type="datetime" />
@@ -51,19 +34,19 @@
             <PropertyRef Name="TerritoryID" />
           </Key>
           <Property Name="EmployeeID" Type="int" Nullable="false" />
-          <Property Name="TerritoryID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="TerritoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Territories">
           <Key>
             <PropertyRef Name="TerritoryID" />
           </Key>
-          <Property Name="TerritoryID" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="TerritoryDescription" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="TerritoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TerritoryDescription" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="RegionID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Employees_Employees">
-          <End Role="Employees" Type="NorthwindModel.Store.Employees" Multiplicity="0..1" />
-          <End Role="Employees1" Type="NorthwindModel.Store.Employees" Multiplicity="*" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Employees1" Type="Self.Employees" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="EmployeeID" />
@@ -74,8 +57,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeTerritories_Employees">
-          <End Role="Employees" Type="NorthwindModel.Store.Employees" Multiplicity="1" />
-          <End Role="EmployeeTerritories" Type="NorthwindModel.Store.EmployeeTerritories" Multiplicity="*" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="EmployeeTerritories" Type="Self.EmployeeTerritories" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="EmployeeID" />
@@ -86,8 +69,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeTerritories_Territories">
-          <End Role="Territories" Type="NorthwindModel.Store.Territories" Multiplicity="1" />
-          <End Role="EmployeeTerritories" Type="NorthwindModel.Store.EmployeeTerritories" Multiplicity="*" />
+          <End Role="Territories" Type="Self.Territories" Multiplicity="1" />
+          <End Role="EmployeeTerritories" Type="Self.EmployeeTerritories" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Territories">
               <PropertyRef Name="TerritoryID" />
@@ -97,14 +80,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityContainer Name="NorthwindModelStoreContainer">
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeTerritories" EntityType="Self.EmployeeTerritories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Territories" EntityType="Self.Territories" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Employees_Employees" Association="Self.FK_Employees_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Employees1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeTerritories_Employees" Association="Self.FK_EmployeeTerritories_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeeTerritories" EntitySet="EmployeeTerritories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeTerritories_Territories" Association="Self.FK_EmployeeTerritories_Territories">
+            <End Role="Territories" EntitySet="Territories" />
+            <End Role="EmployeeTerritories" EntitySet="EmployeeTerritories" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NorthwindModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="GridMultiSelectEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-          <EntitySet Name="Employees" EntityType="NorthwindModel.Employee" />
-          <EntitySet Name="Territories" EntityType="NorthwindModel.Territory" />
+          <EntitySet Name="Employees" EntityType="NorthwindModel.GridMultiSelectEmployee" />
+          <EntitySet Name="Territories" EntityType="NorthwindModel.GridMultiSelectTerritory" />
           <AssociationSet Name="FK_Employees_Employees" Association="NorthwindModel.FK_Employees_Employees">
             <End Role="Employees" EntitySet="Employees" />
             <End Role="Employees1" EntitySet="Employees" />
@@ -114,7 +113,7 @@
             <End Role="Territories" EntitySet="Territories" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Employee">
+        <EntityType Name="GridMultiSelectEmployee">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
@@ -123,8 +122,8 @@
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
           <Property Name="Title" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <Property Name="TitleOfCourtesy" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
-          <Property Name="BirthDate" Type="DateTime" />
-          <Property Name="HireDate" Type="DateTime" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="HireDate" Type="DateTime" Precision="3" />
           <Property Name="Address" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
           <Property Name="City" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
           <Property Name="Region" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
@@ -140,7 +139,7 @@
           <NavigationProperty Name="Employee1" Relationship="NorthwindModel.FK_Employees_Employees" FromRole="Employees1" ToRole="Employees" />
           <NavigationProperty Name="Territories" Relationship="NorthwindModel.EmployeeTerritories" FromRole="Employees" ToRole="Territories" />
         </EntityType>
-        <EntityType Name="Territory">
+        <EntityType Name="GridMultiSelectTerritory">
           <Key>
             <PropertyRef Name="TerritoryID" />
           </Key>
@@ -150,8 +149,8 @@
           <NavigationProperty Name="Employees" Relationship="NorthwindModel.EmployeeTerritories" FromRole="Territories" ToRole="Employees" />
         </EntityType>
         <Association Name="FK_Employees_Employees">
-          <End Role="Employees" Type="NorthwindModel.Employee" Multiplicity="0..1" />
-          <End Role="Employees1" Type="NorthwindModel.Employee" Multiplicity="*" />
+          <End Role="Employees" Type="NorthwindModel.GridMultiSelectEmployee" Multiplicity="0..1" />
+          <End Role="Employees1" Type="NorthwindModel.GridMultiSelectEmployee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="EmployeeID" />
@@ -162,8 +161,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EmployeeTerritories">
-          <End Role="Employees" Type="NorthwindModel.Employee" Multiplicity="*" />
-          <End Role="Territories" Type="NorthwindModel.Territory" Multiplicity="*" />
+          <End Role="Employees" Type="NorthwindModel.GridMultiSelectEmployee" Multiplicity="*" />
+          <End Role="Territories" Type="NorthwindModel.GridMultiSelectTerritory" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -172,7 +171,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="GridMultiSelectEntities">
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="NorthwindModel.Employee">
+            <EntityTypeMapping TypeName="NorthwindModel.GridMultiSelectEmployee">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -196,7 +195,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Territories">
-            <EntityTypeMapping TypeName="NorthwindModel.Territory">
+            <EntityTypeMapping TypeName="NorthwindModel.GridMultiSelectTerritory">
               <MappingFragment StoreEntitySet="Territories">
                 <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
                 <ScalarProperty Name="TerritoryDescription" ColumnName="TerritoryDescription" />
@@ -228,13 +227,15 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Northwind">
-        <EntityTypeShape EntityType="NorthwindModel.Employee" Width="1.5" PointX="0.75" PointY="1.125" Height="5.057109375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Territory" Width="1.5" PointX="3" PointY="2.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.GridMultiSelectEmployee" Width="1.5" PointX="0.75" PointY="1.125" Height="5.057109375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.GridMultiSelectTerritory" Width="1.5" PointX="3" PointY="2.75" Height="1.7879850260416674" IsExpanded="true" />
         <AssociationConnector Association="NorthwindModel.FK_Employees_Employees" ManuallyRouted="false">
           <ConnectorPoint PointX="1.2819230769230767" PointY="6.182109375" />
           <ConnectorPoint PointX="1.2819230769230767" PointY="6.432109375" />

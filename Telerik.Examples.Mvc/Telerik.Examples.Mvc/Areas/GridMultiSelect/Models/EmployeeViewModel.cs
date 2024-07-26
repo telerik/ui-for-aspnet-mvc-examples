@@ -25,7 +25,7 @@ namespace Telerik.Examples.Mvc.Areas.GridMultiSelect.Models
         [UIHint("TerritoriesEditor")]
         public IEnumerable<TerritoryViewModel> Territories { get; set; }
 
-        public void CopyToEmployee(Employee employee)
+        public void CopyToEmployee(GridMultiSelectEmployee employee)
         {
             employee.EmployeeID = this.EmployeeID;
             employee.FirstName = this.FirstName;

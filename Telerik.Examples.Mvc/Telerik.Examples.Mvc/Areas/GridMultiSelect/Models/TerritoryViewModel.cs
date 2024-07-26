@@ -10,9 +10,9 @@ namespace Telerik.Examples.Mvc.Areas.GridMultiSelect.Models
         public string TerritoryID { get; set; }
         public string TerritoryDescription { get; set; }
 
-        public Territory ToTerritory()
+        public GridMultiSelectTerritory ToTerritory()
         {
-            Territory territory = new Territory();
+            GridMultiSelectTerritory territory = new GridMultiSelectTerritory();
             territory.TerritoryID = this.TerritoryID;
             territory.TerritoryDescription = this.TerritoryDescription;
             return territory;

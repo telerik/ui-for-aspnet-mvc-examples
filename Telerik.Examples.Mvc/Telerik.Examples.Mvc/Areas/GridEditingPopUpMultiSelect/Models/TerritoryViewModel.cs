@@ -10,9 +10,9 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models
         public string TerritoryID { get; set; }
         public string TerritoryDescription { get; set; }
 
-        public Territory ToTerritory()
+        public GridEditingPopUpMultiSelectTerritory ToTerritory()
         {
-            Territory territory = new Territory();
+            GridEditingPopUpMultiSelectTerritory territory = new GridEditingPopUpMultiSelectTerritory();
             territory.TerritoryID = this.TerritoryID;
             territory.TerritoryDescription = this.TerritoryDescription;
             return territory;

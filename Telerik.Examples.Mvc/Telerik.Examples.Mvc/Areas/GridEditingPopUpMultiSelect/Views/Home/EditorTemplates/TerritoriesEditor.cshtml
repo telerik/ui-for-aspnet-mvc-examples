@@ -1,8 +1,8 @@
-﻿@model IEnumerable<TerritoryViewModel>
+﻿@model IEnumerable<Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models.TerritoryViewModel>
 
 @(
     Html.Kendo().MultiSelectFor(m => m)
         .DataTextField("TerritoryDescription")
         .DataValueField("TerritoryID")
-        .BindTo((IEnumerable<TerritoryViewModel>)ViewData["territories"])
+        .BindTo((IEnumerable<Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models.TerritoryViewModel>)ViewData["territories"])
 )
