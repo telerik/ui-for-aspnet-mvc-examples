@@ -1,12 +1,9 @@
-﻿using Telerik.Examples.Mvc.Areas.EditorDatabaseImageBrowser.Models;
-using Kendo.Mvc.Extensions;
-using Kendo.Mvc.UI;
-using System;
-using System.Collections.Generic;
+﻿using Kendo.Mvc.UI;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.IO;
+using Telerik.Examples.Mvc.Areas.EditorDatabaseImageBrowser.Models;
 
 namespace Telerik.Examples.Mvc.Areas.EditorDatabaseImageBrowser.Controllers
 {
@@ -87,18 +84,11 @@ namespace Telerik.Examples.Mvc.Areas.EditorDatabaseImageBrowser.Controllers
 
             var files = new FilesRepository();
             var image = files.ImageByPath(path);
+            const string contentType = "image/png";
+
             if (image != null)
             {
-                var desiredSize = new ImageSize { Width = ThumbnailWidth, Height = ThumbnailHeight };
-
-                const string contentType = "image/png";
-
-                var thumbnailCreator = new ThumbnailCreator(new FitImageResizer());
-
-                using (var stream = new MemoryStream(image.Image1.ToArray()))
-                {
-                    return File(thumbnailCreator.Create(stream, desiredSize, contentType), contentType);
-                }
+                return File(image.Image1.ToArray(), contentType);
             }
             throw new HttpException(404, "File Not Found");
         }
