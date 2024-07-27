@@ -28,7 +28,7 @@ namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide
             page.Size = new Size(600, 750);
             FixedContentEditor editor = new FixedContentEditor(page);
             editor.Position.Translate(defaultLeftIndent, 50);
-            using (FileStream fs = new FileStream(System.Web.HttpContext.Current.Server.MapPath("~/Content/web/pdfprocessing/pdfProcessingAjax.png"),
+            using (FileStream fs = new FileStream(System.Web.HttpContext.Current.Server.MapPath("~/Areas/PdfExportingServerSide/Images/documentajax.png"),
                 FileMode.Open, FileAccess.Read))
             {
                 editor.DrawImage(fs);

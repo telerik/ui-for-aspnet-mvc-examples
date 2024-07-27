@@ -1793,8 +1793,7 @@
       <DependentUpon>NorthwindEntities.edmx</DependentUpon>
       <LastGenOutput>NorthwindEntities.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\RequireJS\Scripts\kendo.aspnetmvc.min.js" />
-    <Content Include="Areas\RequireJS\Scripts\kendo.grid.min.js" />
+    <Content Include="Areas\PdfExportingServerSide\Images\documentajax.png" />
     <Content Include="Areas\SchedulerEditingResources\Models\Sample.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sample.edmx</DependentUpon>

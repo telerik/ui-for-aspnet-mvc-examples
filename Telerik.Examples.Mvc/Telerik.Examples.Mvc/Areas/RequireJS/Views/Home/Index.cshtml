@@ -1,8 +1,10 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = null;
 }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/8.0.1/default/default-main.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.1/require.js"></script>
 
     <div class="featured">
         <div class="content-wrapper">
@@ -20,8 +22,21 @@
 )
 
 <script>
-    require([ "kendo.grid.min", "kendo.aspnetmvc.min"], initApp);
-    function initApp() {
+    require.config({
+        baseUrl: "https://kendo.cdn.telerik.com/2024.2.514/js/",
+        paths: {
+          "jquery": "https://code.jquery.com/jquery-1.9.1.min",
+          "jszip": "https://unpkg.com/jszip@3.10.1/dist/jszip.min",
+          "kendo.grid.min": "https://kendo.cdn.telerik.com/2024.2.514/js/kendo.all.min",
+          "kendo.aspnetmvc.min": "https://kendo.cdn.telerik.com/2024.2.514/js/kendo.aspnetmvc.min",
+        }
+      });
+
+    require(["jquery", "jszip", "kendo.grid.min", "kendo.aspnetmvc.min" ], initApp);
+
+    function initApp($, JSZip, kendo) {
+        window.JSZip = JSZip;
+
         @Html.Kendo().DeferredScripts(false)
     }
 </script>
