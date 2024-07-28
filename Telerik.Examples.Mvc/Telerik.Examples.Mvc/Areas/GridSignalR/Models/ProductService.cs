@@ -9,9 +9,9 @@ namespace Telerik.Examples.Mvc.Areas.GridSignalR.Models
 {
     public class ProductService : IDisposable
     {
-        private SampleEntities entities;
+        private GridSignalREntities entities;
 
-        public ProductService(SampleEntities entities)
+        public ProductService(GridSignalREntities entities)
         {
             this.entities = entities;
         }

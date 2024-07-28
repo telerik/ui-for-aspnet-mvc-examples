@@ -1100,6 +1100,7 @@
     <Compile Include="Areas\ChartSignalR\ChartSignalRAreaRegistration.cs" />
     <Compile Include="Areas\DropDownListWebApi\Controllers\HomeController.cs" />
     <Compile Include="Areas\DropDownListWebApi\DropDownListWebApiAreaRegistration.cs" />
+    <Compile Include="Areas\GridSignalR\Hubs\ProductHub.cs" />
     <Compile Include="Areas\PdfExportingServerSide\Controllers\HomeController.cs" />
     <Compile Include="Areas\PdfExportingServerSide\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\MenuSecurityTrimming\Controllers\HomeController.cs" />
@@ -1377,7 +1378,6 @@
     <Compile Include="Areas\SchedulerEditingWebApi\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSignalR\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSignalR\GridSignalRAreaRegistration.cs" />
-    <Compile Include="Areas\GridSignalR\Hubs\ProductHub.cs" />
     <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />

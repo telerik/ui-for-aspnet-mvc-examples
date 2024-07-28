@@ -15,9 +15,5 @@ namespace Telerik.Examples.Mvc.Areas.ChartSignalR.Controllers
         {
             return View();
         }
-        public ActionResult Grid()
-        {
-            return View();
-        }
     }
 }

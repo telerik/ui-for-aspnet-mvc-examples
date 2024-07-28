@@ -13,10 +13,10 @@ namespace Telerik.Examples.Mvc.Areas.GridSignalR.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SampleEntities : DbContext
+    public partial class GridSignalREntities : DbContext
     {
-        public SampleEntities()
-            : base("name=SampleEntities")
+        public GridSignalREntities()
+            : base("name=GridSignalREntities")
         {
         }
     

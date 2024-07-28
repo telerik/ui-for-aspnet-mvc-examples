@@ -549,7 +549,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SampleModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="SampleEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="GridSignalREntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="SampleModel.Category" />
           <EntitySet Name="CustomerDemographics" EntityType="SampleModel.CustomerDemographic" />
           <EntitySet Name="Customers" EntityType="SampleModel.Customer" />
@@ -1039,7 +1039,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="SampleEntities">
+        <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="GridSignalREntities">
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="SampleModel.Category">
               <MappingFragment StoreEntitySet="Categories">

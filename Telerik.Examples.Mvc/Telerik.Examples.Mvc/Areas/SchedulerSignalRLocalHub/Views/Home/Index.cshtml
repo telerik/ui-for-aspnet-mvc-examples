@@ -1,25 +1,23 @@
-﻿<script src="@Url.Content("~/Scripts/jquery.signalR-2.0.2.min.js")"></script>
-<script src="@Url.Content("~/signalr/hubs")"></script>
+﻿<script src="https://cdn.jsdelivr.net/npm/signalr@2.4.3/jquery.signalR.min.js"></script>
 
 <script>
-
     var lockedRecords = {};
-    var productHub = {};
     var hubStart = {};
-    $(function () {
-        productHub = $.connection.productHub;
 
-        productHub.client.lockRecord = function (record) {
-            debugger;
+    var hubUrl = "https://demos.telerik.com/kendo-ui/service/signalr/hubs";
+    var connection = $.hubConnection(hubUrl, { useDefaultPath: false });
+    var productHub = connection.createHubProxy("productHub");
+
+    $(function () {
+        productHub.lockRecord = function (record) {
             lockedRecords[record.id] = true;
         };
 
-        productHub.client.unlockRecord = function (record) {
-            debugger;
+        productHub.unlockRecord = function (record) {
             lockedRecords[record.id] = false;
         }
 
-        hubStart = $.connection.hub.start();
+        hubStart = connection.start();
     })
 </script>
 
@@ -31,14 +29,14 @@
 )
 @(Html.Kendo().Scheduler<Telerik.Examples.Mvc.Areas.SchedulerSignalRLocalHub.Models.MeetingViewModel>()
     .Name("scheduler")
-    .Date(new DateTime(2013, 6, 13))
+    .Date(DateTime.Now)
     .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
     .Height(600)
     .Views(views =>
     {
         views.DayView();
-        views.WeekView(weekView => weekView.Selected(true));
-        views.MonthView();
+        views.WeekView();
+        views.MonthView(monthView => monthView.Selected(true));
         views.AgendaView();
     })
     .Events(e => {

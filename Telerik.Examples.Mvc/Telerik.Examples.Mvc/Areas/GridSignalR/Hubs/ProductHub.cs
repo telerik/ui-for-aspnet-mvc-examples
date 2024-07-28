@@ -10,7 +10,7 @@ namespace Telerik.Examples.Mvc.Areas.GridSignalR.Hubs
 
         public ProductHub()
         {
-            productService = new ProductService(new SampleEntities());
+            productService = new ProductService(new GridSignalREntities());
         }
 
         public IEnumerable<ProductViewModel> Read()
