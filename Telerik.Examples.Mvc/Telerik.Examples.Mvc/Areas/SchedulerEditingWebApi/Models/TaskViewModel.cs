@@ -48,9 +48,9 @@
         public bool IsAllDay { get; set; }
         public int? OwnerID { get; set; }
 
-        public Task ToEntity()
+        public SchedulerEditingWebApiTask ToEntity()
         {
-            return new Task
+            return new SchedulerEditingWebApiTask
             {
                 TaskID = TaskID,
                 Title = Title,

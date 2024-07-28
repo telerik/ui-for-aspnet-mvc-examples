@@ -1186,12 +1186,6 @@
     <Compile Include="Areas\SchedulerEditingResources\Models\SchedulerMeetingService.cs" />
     <Compile Include="Areas\SchedulerEditingWebApi\Controllers\TaskController.cs" />
     <Compile Include="Areas\SchedulerEditingWebApi\ModelBinders\DataSourceRequestModelBinder.cs" />
-    <Compile Include="Areas\SchedulerEditingWebApi\Models\Meeting.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerEditingWebApi\Models\MeetingAtendee.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
     <Compile Include="Areas\SchedulerEditingWebApi\Models\Sample.Context.cs">
       <DependentUpon>Sample.Context.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1207,7 +1201,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Areas\SchedulerEditingWebApi\Models\Task.cs">
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\SchedulerEditingWebApiMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\SchedulerEditingWebApiMeetingAtendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingWebApi\Models\SchedulerEditingWebApiTask.cs">
       <DependentUpon>Sample.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\SchedulerEditingWebApi\Models\TaskViewModel.cs" />

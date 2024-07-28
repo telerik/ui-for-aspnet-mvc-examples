@@ -12,11 +12,11 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class MeetingAtendee
+    public partial class SchedulerEditingWebApiMeetingAtendee
     {
         public int MeetingID { get; set; }
         public int AtendeeID { get; set; }
     
-        public virtual Meeting Meeting { get; set; }
+        public virtual SchedulerEditingWebApiMeeting Meeting { get; set; }
     }
 }

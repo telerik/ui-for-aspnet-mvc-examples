@@ -14,7 +14,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Controllers
 {
     public class TaskController : ApiController
     {
-        private SampleEntities db = new SampleEntities();
+        private SchedulerEditingWebApiEntities db = new SchedulerEditingWebApiEntities();
 
         public DataSourceResult GetTask([ModelBinder(typeof(Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.ModelBinders.DataSourceRequestModelBinder))] DataSourceRequest request)
         {
@@ -37,9 +37,9 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Controllers
         }
 
         // GET api/Task/5
-        public Task GetTask(int id)
+        public SchedulerEditingWebApiTask GetTask(int id)
         {
-            Task task = db.Tasks.Single(p => p.TaskID == id);
+            SchedulerEditingWebApiTask task = db.Tasks.Single(p => p.TaskID == id);
             if (task == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
@@ -53,7 +53,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Controllers
         {
             if (ModelState.IsValid && id == task.TaskID)
             {
-                var entity = new Task
+                var entity = new SchedulerEditingWebApiTask
                 {
                     TaskID = task.TaskID,
                     Title = task.Title,
@@ -94,7 +94,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var entity = new Task
+                var entity = new SchedulerEditingWebApiTask
                 {
                     TaskID = task.TaskID,
                     Title = task.Title,
@@ -126,7 +126,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Controllers
         // DELETE api/Task/5
         public HttpResponseMessage DeleteTask(int id)
         {
-            Task task = db.Tasks.Single(p => p.TaskID == id);
+            SchedulerEditingWebApiTask task = db.Tasks.Single(p => p.TaskID == id);
             if (task == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);

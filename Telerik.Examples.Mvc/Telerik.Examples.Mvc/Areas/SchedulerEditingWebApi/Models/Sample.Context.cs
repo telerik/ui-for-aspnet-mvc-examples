@@ -13,10 +13,10 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SampleEntities : DbContext
+    public partial class SchedulerEditingWebApiEntities : DbContext
     {
-        public SampleEntities()
-            : base("name=SampleEntities")
+        public SchedulerEditingWebApiEntities()
+            : base("name=SchedulerEditingWebApiEntities")
         {
         }
     
@@ -25,8 +25,8 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<MeetingAtendee> MeetingAtendees { get; set; }
-        public DbSet<Meeting> Meetings { get; set; }
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<SchedulerEditingWebApiMeetingAtendee> MeetingAtendees { get; set; }
+        public DbSet<SchedulerEditingWebApiMeeting> Meetings { get; set; }
+        public DbSet<SchedulerEditingWebApiTask> Tasks { get; set; }
     }
 }

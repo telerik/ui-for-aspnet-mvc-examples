@@ -12,12 +12,12 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Meeting
+    public partial class SchedulerEditingWebApiMeeting
     {
-        public Meeting()
+        public SchedulerEditingWebApiMeeting()
         {
-            this.MeetingAtendees = new HashSet<MeetingAtendee>();
-            this.Meetings1 = new HashSet<Meeting>();
+            this.MeetingAtendees = new HashSet<SchedulerEditingWebApiMeetingAtendee>();
+            this.Meetings1 = new HashSet<SchedulerEditingWebApiMeeting>();
         }
     
         public int MeetingID { get; set; }
@@ -33,8 +33,8 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Models
         public string StartTimezone { get; set; }
         public string EndTimezone { get; set; }
     
-        public virtual ICollection<MeetingAtendee> MeetingAtendees { get; set; }
-        public virtual ICollection<Meeting> Meetings1 { get; set; }
-        public virtual Meeting Meeting1 { get; set; }
+        public virtual ICollection<SchedulerEditingWebApiMeetingAtendee> MeetingAtendees { get; set; }
+        public virtual ICollection<SchedulerEditingWebApiMeeting> Meetings1 { get; set; }
+        public virtual SchedulerEditingWebApiMeeting Meeting1 { get; set; }
     }
 }

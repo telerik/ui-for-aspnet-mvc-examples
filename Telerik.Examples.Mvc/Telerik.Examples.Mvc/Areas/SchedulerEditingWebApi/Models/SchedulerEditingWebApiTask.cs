@@ -12,11 +12,11 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Task
+    public partial class SchedulerEditingWebApiTask
     {
-        public Task()
+        public SchedulerEditingWebApiTask()
         {
-            this.Tasks1 = new HashSet<Task>();
+            this.Tasks1 = new HashSet<SchedulerEditingWebApiTask>();
         }
     
         public int TaskID { get; set; }
@@ -32,7 +32,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Models
         public string StartTimezone { get; set; }
         public string EndTimezone { get; set; }
     
-        public virtual ICollection<Task> Tasks1 { get; set; }
-        public virtual Task Task1 { get; set; }
+        public virtual ICollection<SchedulerEditingWebApiTask> Tasks1 { get; set; }
+        public virtual SchedulerEditingWebApiTask Task1 { get; set; }
     }
 }

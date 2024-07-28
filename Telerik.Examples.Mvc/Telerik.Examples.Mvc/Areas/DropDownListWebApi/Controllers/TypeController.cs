@@ -11,7 +11,7 @@ namespace Telerik.Examples.Mvc.Areas.DropDownListWebApi.Controllers
 {
     public class TypeController : ApiController
     {
-        // GET api/Specialty
+        // GET api/Type
         public IEnumerable<Type> Get()
         {
             List<Type> types = new List<Type>();

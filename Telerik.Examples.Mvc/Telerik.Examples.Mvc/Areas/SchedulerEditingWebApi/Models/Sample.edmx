@@ -105,10 +105,10 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SampleModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="SampleEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="MeetingAtendees" EntityType="SampleModel.MeetingAtendee" />
-          <EntitySet Name="Meetings" EntityType="SampleModel.Meeting" />
-          <EntitySet Name="Tasks" EntityType="SampleModel.Task" />
+        <EntityContainer Name="SchedulerEditingWebApiEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="MeetingAtendees" EntityType="SampleModel.SchedulerEditingWebApiMeetingAtendee" />
+          <EntitySet Name="Meetings" EntityType="SampleModel.SchedulerEditingWebApiMeeting" />
+          <EntitySet Name="Tasks" EntityType="SampleModel.SchedulerEditingWebApiTask" />
           <AssociationSet Name="FK_MeetingAtendee_Meeting" Association="SampleModel.FK_MeetingAtendee_Meeting">
             <End Role="Meetings" EntitySet="Meetings" />
             <End Role="MeetingAtendees" EntitySet="MeetingAtendees" />
@@ -122,7 +122,7 @@
             <End Role="Tasks1" EntitySet="Tasks" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="MeetingAtendee">
+        <EntityType Name="SchedulerEditingWebApiMeetingAtendee">
           <Key>
             <PropertyRef Name="MeetingID" />
             <PropertyRef Name="AtendeeID" />
@@ -131,7 +131,7 @@
           <Property Name="AtendeeID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Meeting" Relationship="SampleModel.FK_MeetingAtendee_Meeting" FromRole="MeetingAtendees" ToRole="Meetings" />
         </EntityType>
-        <EntityType Name="Meeting">
+        <EntityType Name="SchedulerEditingWebApiMeeting">
           <Key>
             <PropertyRef Name="MeetingID" />
           </Key>
@@ -151,7 +151,7 @@
           <NavigationProperty Name="Meetings1" Relationship="SampleModel.FK_Meetings_Meetings" FromRole="Meetings" ToRole="Meetings1" />
           <NavigationProperty Name="Meeting1" Relationship="SampleModel.FK_Meetings_Meetings" FromRole="Meetings1" ToRole="Meetings" />
         </EntityType>
-        <EntityType Name="Task">
+        <EntityType Name="SchedulerEditingWebApiTask">
           <Key>
             <PropertyRef Name="TaskID" />
           </Key>
@@ -171,8 +171,8 @@
           <NavigationProperty Name="Task1" Relationship="SampleModel.FK_Tasks_Tasks" FromRole="Tasks1" ToRole="Tasks" />
         </EntityType>
         <Association Name="FK_MeetingAtendee_Meeting">
-          <End Role="Meetings" Type="SampleModel.Meeting" Multiplicity="1" />
-          <End Role="MeetingAtendees" Type="SampleModel.MeetingAtendee" Multiplicity="*" />
+          <End Role="Meetings" Type="SampleModel.SchedulerEditingWebApiMeeting" Multiplicity="1" />
+          <End Role="MeetingAtendees" Type="SampleModel.SchedulerEditingWebApiMeetingAtendee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Meetings">
               <PropertyRef Name="MeetingID" />
@@ -183,8 +183,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Meetings_Meetings">
-          <End Role="Meetings" Type="SampleModel.Meeting" Multiplicity="0..1" />
-          <End Role="Meetings1" Type="SampleModel.Meeting" Multiplicity="*" />
+          <End Role="Meetings" Type="SampleModel.SchedulerEditingWebApiMeeting" Multiplicity="0..1" />
+          <End Role="Meetings1" Type="SampleModel.SchedulerEditingWebApiMeeting" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Meetings">
               <PropertyRef Name="MeetingID" />
@@ -195,8 +195,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tasks_Tasks">
-          <End Role="Tasks" Type="SampleModel.Task" Multiplicity="0..1" />
-          <End Role="Tasks1" Type="SampleModel.Task" Multiplicity="*" />
+          <End Role="Tasks" Type="SampleModel.SchedulerEditingWebApiTask" Multiplicity="0..1" />
+          <End Role="Tasks1" Type="SampleModel.SchedulerEditingWebApiTask" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tasks">
               <PropertyRef Name="TaskID" />
@@ -211,9 +211,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="SampleEntities">
+        <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="SchedulerEditingWebApiEntities">
           <EntitySetMapping Name="MeetingAtendees">
-            <EntityTypeMapping TypeName="SampleModel.MeetingAtendee">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerEditingWebApiMeetingAtendee">
               <MappingFragment StoreEntitySet="MeetingAtendees">
                 <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
                 <ScalarProperty Name="AtendeeID" ColumnName="AtendeeID" />
@@ -221,7 +221,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Meetings">
-            <EntityTypeMapping TypeName="SampleModel.Meeting">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerEditingWebApiMeeting">
               <MappingFragment StoreEntitySet="Meetings">
                 <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
                 <ScalarProperty Name="Start" ColumnName="Start" />
@@ -239,7 +239,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tasks">
-            <EntityTypeMapping TypeName="SampleModel.Task">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerEditingWebApiTask">
               <MappingFragment StoreEntitySet="Tasks">
                 <ScalarProperty Name="TaskID" ColumnName="TaskID" />
                 <ScalarProperty Name="Start" ColumnName="Start" />

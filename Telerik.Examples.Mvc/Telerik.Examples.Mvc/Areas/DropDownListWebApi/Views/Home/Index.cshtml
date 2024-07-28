@@ -22,7 +22,7 @@
                     transport: {
                         read: {
                             dataType: "json",
-                            url: "api/Type",
+                            url: "../../api/Type/get",
                         }
                     }
                 }
@@ -38,7 +38,7 @@
                     transport: {
                         read: {
                             dataType: "json",
-                            url: "api/Specialty",
+                            url: "../../api/Specialty/get",
                             data: function () {
                                 return {
                                     typeId: $("#type").val(),
