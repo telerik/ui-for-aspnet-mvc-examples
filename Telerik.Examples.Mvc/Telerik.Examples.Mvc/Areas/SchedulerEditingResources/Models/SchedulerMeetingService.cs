@@ -8,15 +8,15 @@
 
     public class SchedulerMeetingService : ISchedulerEventService<MeetingViewModel>
     {
-        private SampleEntities db;
+        private SchedulerEditingResourcesEntities db;
 
-        public SchedulerMeetingService(SampleEntities context)
+        public SchedulerMeetingService(SchedulerEditingResourcesEntities context)
         {
             db = context;
         }
 
         public SchedulerMeetingService()
-            : this(new SampleEntities())
+            : this(new SchedulerEditingResourcesEntities())
         {
         }
 
@@ -58,7 +58,7 @@
 
                 foreach (var attendeeId in meeting.Attendees)
                 {
-                    entity.MeetingAttendees.Add(new MeetingAttendee
+                    entity.MeetingAttendees.Add(new SchedulerEditingResourcesMeetingAttendee
                     {
                         AttendeeID = attendeeId
                     });
@@ -103,7 +103,7 @@
                 {
                     foreach (var attendeeId in meeting.Attendees)
                     {
-                        var meetingAttendee = new MeetingAttendee
+                        var meetingAttendee = new SchedulerEditingResourcesMeetingAttendee
                         {
                             MeetingID = entity.MeetingID,
                             AttendeeID = attendeeId
@@ -128,7 +128,7 @@
 
             db.Meetings.Attach(entity);
 
-            var attendees = meeting.Attendees.Select(attendee => new MeetingAttendee
+            var attendees = meeting.Attendees.Select(attendee => new SchedulerEditingResourcesMeetingAttendee
             {
                 AttendeeID = attendee,
                 MeetingID = entity.MeetingID

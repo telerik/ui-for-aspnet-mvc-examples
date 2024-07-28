@@ -13,10 +13,10 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SampleEntities : DbContext
+    public partial class SchedulerValidatingTimeslotEntities : DbContext
     {
-        public SampleEntities()
-            : base("name=SampleEntities")
+        public SchedulerValidatingTimeslotEntities()
+            : base("name=SchedulerValidatingTimeslotEntities")
         {
         }
     
@@ -25,21 +25,21 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<CustomerDemographic> CustomerDemographics { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Intraday> Intradays { get; set; }
-        public DbSet<MeetingAtendee> MeetingAtendees { get; set; }
-        public DbSet<Meeting> Meetings { get; set; }
-        public DbSet<Order_Detail> Order_Details { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Region> Regions { get; set; }
-        public DbSet<Shipper> Shippers { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<Task> Tasks { get; set; }
-        public DbSet<Territory> Territories { get; set; }
-        public DbSet<Weather> Weathers { get; set; }
+        public DbSet<SchedulerValidatingTimeslotCategory> Categories { get; set; }
+        public DbSet<SchedulerValidatingTimeslotCustomerDemographic> CustomerDemographics { get; set; }
+        public DbSet<SchedulerValidatingTimeslotCustomer> Customers { get; set; }
+        public DbSet<SchedulerValidatingTimeslotEmployee> Employees { get; set; }
+        public DbSet<SchedulerValidatingTimeslotIntraday> Intradays { get; set; }
+        public DbSet<SchedulerValidatingTimeslotMeetingAtendee> MeetingAtendees { get; set; }
+        public DbSet<SchedulerValidatingTimeslotMeeting> Meetings { get; set; }
+        public DbSet<SchedulerValidatingTimeslotOrder_Detail> Order_Details { get; set; }
+        public DbSet<SchedulerValidatingTimeslotOrder> Orders { get; set; }
+        public DbSet<SchedulerValidatingTimeslotProduct> Products { get; set; }
+        public DbSet<SchedulerValidatingTimeslotRegion> Regions { get; set; }
+        public DbSet<SchedulerValidatingTimeslotShipper> Shippers { get; set; }
+        public DbSet<SchedulerValidatingTimeslotSupplier> Suppliers { get; set; }
+        public DbSet<SchedulerValidatingTimeslotTask> Tasks { get; set; }
+        public DbSet<SchedulerValidatingTimeslotTerritory> Territories { get; set; }
+        public DbSet<SchedulerValidatingTimeslotWeather> Weathers { get; set; }
     }
 }

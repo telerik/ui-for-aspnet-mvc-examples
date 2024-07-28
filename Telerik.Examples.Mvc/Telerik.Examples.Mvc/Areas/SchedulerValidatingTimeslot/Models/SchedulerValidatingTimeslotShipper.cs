@@ -12,11 +12,17 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class MeetingAtendee
+    public partial class SchedulerValidatingTimeslotShipper
     {
-        public int MeetingID { get; set; }
-        public int AtendeeID { get; set; }
+        public SchedulerValidatingTimeslotShipper()
+        {
+            this.Orders = new HashSet<SchedulerValidatingTimeslotOrder>();
+        }
     
-        public virtual Meeting Meeting { get; set; }
+        public int ShipperID { get; set; }
+        public string CompanyName { get; set; }
+        public string Phone { get; set; }
+    
+        public virtual ICollection<SchedulerValidatingTimeslotOrder> Orders { get; set; }
     }
 }

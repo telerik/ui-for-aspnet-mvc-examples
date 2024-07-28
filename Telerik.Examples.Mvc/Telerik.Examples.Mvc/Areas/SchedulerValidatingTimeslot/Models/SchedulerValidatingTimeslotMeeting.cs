@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Telerik.Examples.Mvc.Areas.SchedulerEditingResources.Models
+namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Meeting
+    public partial class SchedulerValidatingTimeslotMeeting
     {
-        public Meeting()
+        public SchedulerValidatingTimeslotMeeting()
         {
-            this.MeetingAttendees = new HashSet<MeetingAttendee>();
-            this.Meetings1 = new HashSet<Meeting>();
+            this.MeetingAtendees = new HashSet<SchedulerValidatingTimeslotMeetingAtendee>();
+            this.Meetings1 = new HashSet<SchedulerValidatingTimeslotMeeting>();
         }
     
         public int MeetingID { get; set; }
@@ -33,8 +33,8 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingResources.Models
         public string StartTimezone { get; set; }
         public string EndTimezone { get; set; }
     
-        public virtual ICollection<MeetingAttendee> MeetingAttendees { get; set; }
-        public virtual ICollection<Meeting> Meetings1 { get; set; }
-        public virtual Meeting Meeting1 { get; set; }
+        public virtual ICollection<SchedulerValidatingTimeslotMeetingAtendee> MeetingAtendees { get; set; }
+        public virtual ICollection<SchedulerValidatingTimeslotMeeting> Meetings1 { get; set; }
+        public virtual SchedulerValidatingTimeslotMeeting Meeting1 { get; set; }
     }
 }

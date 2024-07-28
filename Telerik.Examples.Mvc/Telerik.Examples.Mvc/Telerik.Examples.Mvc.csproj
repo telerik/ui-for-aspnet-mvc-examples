@@ -1158,17 +1158,8 @@
     </Compile>
     <Compile Include="Areas\PdfExportingServerSide\Models\CreatePdfDocument.cs" />
     <Compile Include="Areas\RequireJS\Models\Product.cs" />
-    <Compile Include="Areas\SalesHub\Controllers\HomeController.cs" />
-    <Compile Include="Areas\SalesHub\SalesHubAreaRegistration.cs" />
-    <Compile Include="Areas\SalesHub\Models\Product.cs" />
     <Compile Include="Areas\SchedulerEditingResources\Models\Attendie.cs" />
     <Compile Include="Areas\SchedulerEditingResources\Models\DateGreaterThan.cs" />
-    <Compile Include="Areas\SchedulerEditingResources\Models\Meeting.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerEditingResources\Models\MeetingAttendee.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
     <Compile Include="Areas\SchedulerEditingResources\Models\MeetingViewModel.cs" />
     <Compile Include="Areas\SchedulerEditingResources\Models\Sample.Context.cs">
       <DependentUpon>Sample.Context.tt</DependentUpon>
@@ -1184,6 +1175,12 @@
       <DependentUpon>Sample.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\SchedulerEditingResourcesMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\SchedulerEditingResourcesMeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\SchedulerEditingResources\Models\SchedulerMeetingService.cs" />
     <Compile Include="Areas\SchedulerEditingWebApi\Controllers\TaskController.cs" />
@@ -1288,40 +1285,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Areas\SchedulerSignalRServerFiltering\Models\SchedulerMeetingService.cs" />
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Category.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Customer.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\CustomerDemographic.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Employee.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Intraday.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Meeting.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\MeetingAtendee.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
     <Compile Include="Areas\SchedulerValidatingTimeslot\Models\MeetingViewModel.cs" />
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Order.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Order_Detail.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Product.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Region.cs">
-      <DependentUpon>Sample.tt</DependentUpon>
-    </Compile>
     <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Sample.Context.cs">
       <DependentUpon>Sample.Context.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1338,19 +1302,52 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerMeetingService.cs" />
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Shipper.cs">
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotCategory.cs">
       <DependentUpon>Sample.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Supplier.cs">
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotCustomer.cs">
       <DependentUpon>Sample.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Task.cs">
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotCustomerDemographic.cs">
       <DependentUpon>Sample.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Territory.cs">
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotEmployee.cs">
       <DependentUpon>Sample.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Weather.cs">
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotIntraday.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotMeetingAtendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotOrder.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotOrder_Detail.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotProduct.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotRegion.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotShipper.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotSupplier.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotTask.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotTerritory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotWeather.cs">
       <DependentUpon>Sample.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\UploadAmazonS3\Controllers\HomeController.cs" />
@@ -2416,9 +2413,6 @@
     <Content Include="Areas\MenuSecurityTrimming\Views\_ViewStart.cshtml" />
     <Content Include="Areas\MenuSecurityTrimming\Views\Home\Index.cshtml" />
     <Content Include="Areas\MenuSecurityTrimming\Views\web.config" />
-    <Content Include="Areas\SalesHub\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\SalesHub\Views\Home\Index.cshtml" />
-    <Content Include="Areas\SalesHub\Views\web.config" />
     <Content Include="Areas\UploadAmazonS3\Views\_ViewStart.cshtml" />
     <Content Include="Areas\UploadAmazonS3\Views\Home\Index.cshtml" />
     <Content Include="Areas\UploadAmazonS3\Views\web.config" />

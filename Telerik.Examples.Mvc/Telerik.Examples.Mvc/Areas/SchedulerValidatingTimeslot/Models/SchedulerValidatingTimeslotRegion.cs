@@ -7,16 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Telerik.Examples.Mvc.Areas.SchedulerEditingResources.Models
+namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MeetingAttendee
+    public partial class SchedulerValidatingTimeslotRegion
     {
-        public int MeetingID { get; set; }
-        public int AttendeeID { get; set; }
+        public SchedulerValidatingTimeslotRegion()
+        {
+            this.Territories = new HashSet<SchedulerValidatingTimeslotTerritory>();
+        }
     
-        public virtual Meeting Meeting { get; set; }
+        public int RegionID { get; set; }
+        public string RegionDescription { get; set; }
+    
+        public virtual ICollection<SchedulerValidatingTimeslotTerritory> Territories { get; set; }
     }
 }

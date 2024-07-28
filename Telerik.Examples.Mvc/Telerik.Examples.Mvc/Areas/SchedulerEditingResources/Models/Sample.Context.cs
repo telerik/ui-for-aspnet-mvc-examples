@@ -13,10 +13,10 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingResources.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SampleEntities : DbContext
+    public partial class SchedulerEditingResourcesEntities : DbContext
     {
-        public SampleEntities()
-            : base("name=SampleEntities")
+        public SchedulerEditingResourcesEntities()
+            : base("name=SchedulerEditingResourcesEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerEditingResources.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<MeetingAttendee> MeetingAttendees { get; set; }
-        public DbSet<Meeting> Meetings { get; set; }
+        public DbSet<SchedulerEditingResourcesMeetingAttendee> MeetingAttendees { get; set; }
+        public DbSet<SchedulerEditingResourcesMeeting> Meetings { get; set; }
     }
 }

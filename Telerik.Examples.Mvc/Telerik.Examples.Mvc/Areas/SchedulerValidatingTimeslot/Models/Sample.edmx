@@ -535,23 +535,23 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SampleModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="SampleEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Categories" EntityType="SampleModel.Category" />
-          <EntitySet Name="CustomerDemographics" EntityType="SampleModel.CustomerDemographic" />
-          <EntitySet Name="Customers" EntityType="SampleModel.Customer" />
-          <EntitySet Name="Employees" EntityType="SampleModel.Employee" />
-          <EntitySet Name="Intradays" EntityType="SampleModel.Intraday" />
-          <EntitySet Name="MeetingAtendees" EntityType="SampleModel.MeetingAtendee" />
-          <EntitySet Name="Meetings" EntityType="SampleModel.Meeting" />
-          <EntitySet Name="Order_Details" EntityType="SampleModel.Order_Detail" />
-          <EntitySet Name="Orders" EntityType="SampleModel.Order" />
-          <EntitySet Name="Products" EntityType="SampleModel.Product" />
-          <EntitySet Name="Regions" EntityType="SampleModel.Region" />
-          <EntitySet Name="Shippers" EntityType="SampleModel.Shipper" />
-          <EntitySet Name="Suppliers" EntityType="SampleModel.Supplier" />
-          <EntitySet Name="Tasks" EntityType="SampleModel.Task" />
-          <EntitySet Name="Territories" EntityType="SampleModel.Territory" />
-          <EntitySet Name="Weathers" EntityType="SampleModel.Weather" />
+        <EntityContainer Name="SchedulerValidatingTimeslotEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="SampleModel.SchedulerValidatingTimeslotCategory" />
+          <EntitySet Name="CustomerDemographics" EntityType="SampleModel.SchedulerValidatingTimeslotCustomerDemographic" />
+          <EntitySet Name="Customers" EntityType="SampleModel.SchedulerValidatingTimeslotCustomer" />
+          <EntitySet Name="Employees" EntityType="SampleModel.SchedulerValidatingTimeslotEmployee" />
+          <EntitySet Name="Intradays" EntityType="SampleModel.SchedulerValidatingTimeslotIntraday" />
+          <EntitySet Name="MeetingAtendees" EntityType="SampleModel.SchedulerValidatingTimeslotMeetingAtendee" />
+          <EntitySet Name="Meetings" EntityType="SampleModel.SchedulerValidatingTimeslotMeeting" />
+          <EntitySet Name="Order_Details" EntityType="SampleModel.SchedulerValidatingTimeslotOrder_Detail" />
+          <EntitySet Name="Orders" EntityType="SampleModel.SchedulerValidatingTimeslotOrder" />
+          <EntitySet Name="Products" EntityType="SampleModel.SchedulerValidatingTimeslotProduct" />
+          <EntitySet Name="Regions" EntityType="SampleModel.SchedulerValidatingTimeslotRegion" />
+          <EntitySet Name="Shippers" EntityType="SampleModel.SchedulerValidatingTimeslotShipper" />
+          <EntitySet Name="Suppliers" EntityType="SampleModel.SchedulerValidatingTimeslotSupplier" />
+          <EntitySet Name="Tasks" EntityType="SampleModel.SchedulerValidatingTimeslotTask" />
+          <EntitySet Name="Territories" EntityType="SampleModel.SchedulerValidatingTimeslotTerritory" />
+          <EntitySet Name="Weathers" EntityType="SampleModel.SchedulerValidatingTimeslotWeather" />
           <AssociationSet Name="FK_Products_Categories" Association="SampleModel.FK_Products_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -609,7 +609,7 @@
             <End Role="Territories" EntitySet="Territories" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Category">
+        <EntityType Name="SchedulerValidatingTimeslotCategory">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
@@ -619,7 +619,7 @@
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Products" Relationship="SampleModel.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
         </EntityType>
-        <EntityType Name="CustomerDemographic">
+        <EntityType Name="SchedulerValidatingTimeslotCustomerDemographic">
           <Key>
             <PropertyRef Name="CustomerTypeID" />
           </Key>
@@ -627,7 +627,7 @@
           <Property Name="CustomerDesc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Customers" Relationship="SampleModel.CustomerCustomerDemo" FromRole="CustomerDemographics" ToRole="Customers" />
         </EntityType>
-        <EntityType Name="Customer">
+        <EntityType Name="SchedulerValidatingTimeslotCustomer">
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
@@ -646,7 +646,7 @@
           <NavigationProperty Name="Orders" Relationship="SampleModel.FK_Orders_Customers" FromRole="Customers" ToRole="Orders" />
           <NavigationProperty Name="CustomerDemographics" Relationship="SampleModel.CustomerCustomerDemo" FromRole="Customers" ToRole="CustomerDemographics" />
         </EntityType>
-        <EntityType Name="Employee">
+        <EntityType Name="SchedulerValidatingTimeslotEmployee">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
@@ -673,7 +673,7 @@
           <NavigationProperty Name="Orders" Relationship="SampleModel.FK_Orders_Employees" FromRole="Employees" ToRole="Orders" />
           <NavigationProperty Name="Territories" Relationship="SampleModel.EmployeeTerritories" FromRole="Employees" ToRole="Territories" />
         </EntityType>
-        <EntityType Name="Intraday">
+        <EntityType Name="SchedulerValidatingTimeslotIntraday">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -686,7 +686,7 @@
           <Property Name="Close" Type="Decimal" Nullable="false" Precision="9" Scale="3" />
           <Property Name="Volume" Type="Int64" Nullable="false" />
         </EntityType>
-        <EntityType Name="MeetingAtendee">
+        <EntityType Name="SchedulerValidatingTimeslotMeetingAtendee">
           <Key>
             <PropertyRef Name="MeetingID" />
             <PropertyRef Name="AtendeeID" />
@@ -695,7 +695,7 @@
           <Property Name="AtendeeID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Meeting" Relationship="SampleModel.FK_MeetingAtendee_Meeting" FromRole="MeetingAtendees" ToRole="Meetings" />
         </EntityType>
-        <EntityType Name="Meeting">
+        <EntityType Name="SchedulerValidatingTimeslotMeeting">
           <Key>
             <PropertyRef Name="MeetingID" />
           </Key>
@@ -715,7 +715,7 @@
           <NavigationProperty Name="Meetings1" Relationship="SampleModel.FK_Meetings_Meetings" FromRole="Meetings" ToRole="Meetings1" />
           <NavigationProperty Name="Meeting1" Relationship="SampleModel.FK_Meetings_Meetings" FromRole="Meetings1" ToRole="Meetings" />
         </EntityType>
-        <EntityType Name="Order_Detail">
+        <EntityType Name="SchedulerValidatingTimeslotOrder_Detail">
           <Key>
             <PropertyRef Name="OrderID" />
             <PropertyRef Name="ProductID" />
@@ -728,7 +728,7 @@
           <NavigationProperty Name="Order" Relationship="SampleModel.FK_Order_Details_Orders" FromRole="Order_Details" ToRole="Orders" />
           <NavigationProperty Name="Product" Relationship="SampleModel.FK_Order_Details_Products" FromRole="Order_Details" ToRole="Products" />
         </EntityType>
-        <EntityType Name="Order">
+        <EntityType Name="SchedulerValidatingTimeslotOrder">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
@@ -751,7 +751,7 @@
           <NavigationProperty Name="Order_Details" Relationship="SampleModel.FK_Order_Details_Orders" FromRole="Orders" ToRole="Order_Details" />
           <NavigationProperty Name="Shipper" Relationship="SampleModel.FK_Orders_Shippers" FromRole="Orders" ToRole="Shippers" />
         </EntityType>
-        <EntityType Name="Product">
+        <EntityType Name="SchedulerValidatingTimeslotProduct">
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
@@ -769,7 +769,7 @@
           <NavigationProperty Name="Order_Details" Relationship="SampleModel.FK_Order_Details_Products" FromRole="Products" ToRole="Order_Details" />
           <NavigationProperty Name="Supplier" Relationship="SampleModel.FK_Products_Suppliers" FromRole="Products" ToRole="Suppliers" />
         </EntityType>
-        <EntityType Name="Region">
+        <EntityType Name="SchedulerValidatingTimeslotRegion">
           <Key>
             <PropertyRef Name="RegionID" />
           </Key>
@@ -777,7 +777,7 @@
           <Property Name="RegionDescription" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
           <NavigationProperty Name="Territories" Relationship="SampleModel.FK_Territories_Region" FromRole="Region" ToRole="Territories" />
         </EntityType>
-        <EntityType Name="Shipper">
+        <EntityType Name="SchedulerValidatingTimeslotShipper">
           <Key>
             <PropertyRef Name="ShipperID" />
           </Key>
@@ -786,7 +786,7 @@
           <Property Name="Phone" Type="String" MaxLength="24" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Orders" Relationship="SampleModel.FK_Orders_Shippers" FromRole="Shippers" ToRole="Orders" />
         </EntityType>
-        <EntityType Name="Supplier">
+        <EntityType Name="SchedulerValidatingTimeslotSupplier">
           <Key>
             <PropertyRef Name="SupplierID" />
           </Key>
@@ -804,7 +804,7 @@
           <Property Name="HomePage" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Products" Relationship="SampleModel.FK_Products_Suppliers" FromRole="Suppliers" ToRole="Products" />
         </EntityType>
-        <EntityType Name="Task">
+        <EntityType Name="SchedulerValidatingTimeslotTask">
           <Key>
             <PropertyRef Name="TaskID" />
           </Key>
@@ -823,7 +823,7 @@
           <NavigationProperty Name="Tasks1" Relationship="SampleModel.FK_Tasks_Tasks" FromRole="Tasks" ToRole="Tasks1" />
           <NavigationProperty Name="Task1" Relationship="SampleModel.FK_Tasks_Tasks" FromRole="Tasks1" ToRole="Tasks" />
         </EntityType>
-        <EntityType Name="Territory">
+        <EntityType Name="SchedulerValidatingTimeslotTerritory">
           <Key>
             <PropertyRef Name="TerritoryID" />
           </Key>
@@ -833,7 +833,7 @@
           <NavigationProperty Name="Region" Relationship="SampleModel.FK_Territories_Region" FromRole="Territories" ToRole="Region" />
           <NavigationProperty Name="Employees" Relationship="SampleModel.EmployeeTerritories" FromRole="Territories" ToRole="Employees" />
         </EntityType>
-        <EntityType Name="Weather">
+        <EntityType Name="SchedulerValidatingTimeslotWeather">
           <Key>
             <PropertyRef Name="ID" />
             <PropertyRef Name="Station" />
@@ -855,8 +855,8 @@
           <Property Name="Events" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Products_Categories">
-          <End Role="Categories" Type="SampleModel.Category" Multiplicity="0..1" />
-          <End Role="Products" Type="SampleModel.Product" Multiplicity="*" />
+          <End Role="Categories" Type="SampleModel.SchedulerValidatingTimeslotCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="SampleModel.SchedulerValidatingTimeslotProduct" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
               <PropertyRef Name="CategoryID" />
@@ -867,8 +867,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Customers">
-          <End Role="Customers" Type="SampleModel.Customer" Multiplicity="0..1" />
-          <End Role="Orders" Type="SampleModel.Order" Multiplicity="*" />
+          <End Role="Customers" Type="SampleModel.SchedulerValidatingTimeslotCustomer" Multiplicity="0..1" />
+          <End Role="Orders" Type="SampleModel.SchedulerValidatingTimeslotOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customers">
               <PropertyRef Name="CustomerID" />
@@ -879,8 +879,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employees_Employees">
-          <End Role="Employees" Type="SampleModel.Employee" Multiplicity="0..1" />
-          <End Role="Employees1" Type="SampleModel.Employee" Multiplicity="*" />
+          <End Role="Employees" Type="SampleModel.SchedulerValidatingTimeslotEmployee" Multiplicity="0..1" />
+          <End Role="Employees1" Type="SampleModel.SchedulerValidatingTimeslotEmployee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="EmployeeID" />
@@ -891,8 +891,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Employees">
-          <End Role="Employees" Type="SampleModel.Employee" Multiplicity="0..1" />
-          <End Role="Orders" Type="SampleModel.Order" Multiplicity="*" />
+          <End Role="Employees" Type="SampleModel.SchedulerValidatingTimeslotEmployee" Multiplicity="0..1" />
+          <End Role="Orders" Type="SampleModel.SchedulerValidatingTimeslotOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="EmployeeID" />
@@ -903,8 +903,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MeetingAtendee_Meeting">
-          <End Role="Meetings" Type="SampleModel.Meeting" Multiplicity="1" />
-          <End Role="MeetingAtendees" Type="SampleModel.MeetingAtendee" Multiplicity="*" />
+          <End Role="Meetings" Type="SampleModel.SchedulerValidatingTimeslotMeeting" Multiplicity="1" />
+          <End Role="MeetingAtendees" Type="SampleModel.SchedulerValidatingTimeslotMeetingAtendee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Meetings">
               <PropertyRef Name="MeetingID" />
@@ -915,8 +915,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Meetings_Meetings">
-          <End Role="Meetings" Type="SampleModel.Meeting" Multiplicity="0..1" />
-          <End Role="Meetings1" Type="SampleModel.Meeting" Multiplicity="*" />
+          <End Role="Meetings" Type="SampleModel.SchedulerValidatingTimeslotMeeting" Multiplicity="0..1" />
+          <End Role="Meetings1" Type="SampleModel.SchedulerValidatingTimeslotMeeting" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Meetings">
               <PropertyRef Name="MeetingID" />
@@ -927,8 +927,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Orders">
-          <End Role="Orders" Type="SampleModel.Order" Multiplicity="1" />
-          <End Role="Order_Details" Type="SampleModel.Order_Detail" Multiplicity="*" />
+          <End Role="Orders" Type="SampleModel.SchedulerValidatingTimeslotOrder" Multiplicity="1" />
+          <End Role="Order_Details" Type="SampleModel.SchedulerValidatingTimeslotOrder_Detail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="OrderID" />
@@ -939,8 +939,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Products">
-          <End Role="Products" Type="SampleModel.Product" Multiplicity="1" />
-          <End Role="Order_Details" Type="SampleModel.Order_Detail" Multiplicity="*" />
+          <End Role="Products" Type="SampleModel.SchedulerValidatingTimeslotProduct" Multiplicity="1" />
+          <End Role="Order_Details" Type="SampleModel.SchedulerValidatingTimeslotOrder_Detail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
               <PropertyRef Name="ProductID" />
@@ -951,8 +951,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Shippers">
-          <End Role="Shippers" Type="SampleModel.Shipper" Multiplicity="0..1" />
-          <End Role="Orders" Type="SampleModel.Order" Multiplicity="*" />
+          <End Role="Shippers" Type="SampleModel.SchedulerValidatingTimeslotShipper" Multiplicity="0..1" />
+          <End Role="Orders" Type="SampleModel.SchedulerValidatingTimeslotOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shippers">
               <PropertyRef Name="ShipperID" />
@@ -963,8 +963,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Products_Suppliers">
-          <End Role="Suppliers" Type="SampleModel.Supplier" Multiplicity="0..1" />
-          <End Role="Products" Type="SampleModel.Product" Multiplicity="*" />
+          <End Role="Suppliers" Type="SampleModel.SchedulerValidatingTimeslotSupplier" Multiplicity="0..1" />
+          <End Role="Products" Type="SampleModel.SchedulerValidatingTimeslotProduct" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Suppliers">
               <PropertyRef Name="SupplierID" />
@@ -975,8 +975,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Territories_Region">
-          <End Role="Region" Type="SampleModel.Region" Multiplicity="1" />
-          <End Role="Territories" Type="SampleModel.Territory" Multiplicity="*" />
+          <End Role="Region" Type="SampleModel.SchedulerValidatingTimeslotRegion" Multiplicity="1" />
+          <End Role="Territories" Type="SampleModel.SchedulerValidatingTimeslotTerritory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Region">
               <PropertyRef Name="RegionID" />
@@ -987,8 +987,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tasks_Tasks">
-          <End Role="Tasks" Type="SampleModel.Task" Multiplicity="0..1" />
-          <End Role="Tasks1" Type="SampleModel.Task" Multiplicity="*" />
+          <End Role="Tasks" Type="SampleModel.SchedulerValidatingTimeslotTask" Multiplicity="0..1" />
+          <End Role="Tasks1" Type="SampleModel.SchedulerValidatingTimeslotTask" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tasks">
               <PropertyRef Name="TaskID" />
@@ -999,21 +999,21 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="CustomerCustomerDemo">
-          <End Role="CustomerDemographics" Type="SampleModel.CustomerDemographic" Multiplicity="*" />
-          <End Role="Customers" Type="SampleModel.Customer" Multiplicity="*" />
+          <End Role="CustomerDemographics" Type="SampleModel.SchedulerValidatingTimeslotCustomerDemographic" Multiplicity="*" />
+          <End Role="Customers" Type="SampleModel.SchedulerValidatingTimeslotCustomer" Multiplicity="*" />
         </Association>
         <Association Name="EmployeeTerritories">
-          <End Role="Employees" Type="SampleModel.Employee" Multiplicity="*" />
-          <End Role="Territories" Type="SampleModel.Territory" Multiplicity="*" />
+          <End Role="Employees" Type="SampleModel.SchedulerValidatingTimeslotEmployee" Multiplicity="*" />
+          <End Role="Territories" Type="SampleModel.SchedulerValidatingTimeslotTerritory" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="SampleEntities">
+        <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="SchedulerValidatingTimeslotEntities">
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="SampleModel.Category">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotCategory">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -1023,7 +1023,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CustomerDemographics">
-            <EntityTypeMapping TypeName="SampleModel.CustomerDemographic">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotCustomerDemographic">
               <MappingFragment StoreEntitySet="CustomerDemographics">
                 <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
                 <ScalarProperty Name="CustomerDesc" ColumnName="CustomerDesc" />
@@ -1031,7 +1031,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="SampleModel.Customer">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotCustomer">
               <MappingFragment StoreEntitySet="Customers">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -1049,7 +1049,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="SampleModel.Employee">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotEmployee">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -1073,7 +1073,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Intradays">
-            <EntityTypeMapping TypeName="SampleModel.Intraday">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotIntraday">
               <MappingFragment StoreEntitySet="Intraday">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Symbol" ColumnName="Symbol" />
@@ -1087,7 +1087,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MeetingAtendees">
-            <EntityTypeMapping TypeName="SampleModel.MeetingAtendee">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotMeetingAtendee">
               <MappingFragment StoreEntitySet="MeetingAtendees">
                 <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
                 <ScalarProperty Name="AtendeeID" ColumnName="AtendeeID" />
@@ -1095,7 +1095,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Meetings">
-            <EntityTypeMapping TypeName="SampleModel.Meeting">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotMeeting">
               <MappingFragment StoreEntitySet="Meetings">
                 <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
                 <ScalarProperty Name="Start" ColumnName="Start" />
@@ -1113,7 +1113,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order_Details">
-            <EntityTypeMapping TypeName="SampleModel.Order_Detail">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotOrder_Detail">
               <MappingFragment StoreEntitySet="Order Details">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -1124,7 +1124,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="SampleModel.Order">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotOrder">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
@@ -1144,7 +1144,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="SampleModel.Product">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotProduct">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
@@ -1160,7 +1160,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Regions">
-            <EntityTypeMapping TypeName="SampleModel.Region">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotRegion">
               <MappingFragment StoreEntitySet="Region">
                 <ScalarProperty Name="RegionID" ColumnName="RegionID" />
                 <ScalarProperty Name="RegionDescription" ColumnName="RegionDescription" />
@@ -1168,7 +1168,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Shippers">
-            <EntityTypeMapping TypeName="SampleModel.Shipper">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotShipper">
               <MappingFragment StoreEntitySet="Shippers">
                 <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -1177,7 +1177,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="SampleModel.Supplier">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotSupplier">
               <MappingFragment StoreEntitySet="Suppliers">
                 <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -1195,7 +1195,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tasks">
-            <EntityTypeMapping TypeName="SampleModel.Task">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotTask">
               <MappingFragment StoreEntitySet="Tasks">
                 <ScalarProperty Name="TaskID" ColumnName="TaskID" />
                 <ScalarProperty Name="Start" ColumnName="Start" />
@@ -1213,7 +1213,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Territories">
-            <EntityTypeMapping TypeName="SampleModel.Territory">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotTerritory">
               <MappingFragment StoreEntitySet="Territories">
                 <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
                 <ScalarProperty Name="TerritoryDescription" ColumnName="TerritoryDescription" />
@@ -1222,7 +1222,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Weathers">
-            <EntityTypeMapping TypeName="SampleModel.Weather">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerValidatingTimeslotWeather">
               <MappingFragment StoreEntitySet="Weather">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Station" ColumnName="Station" />

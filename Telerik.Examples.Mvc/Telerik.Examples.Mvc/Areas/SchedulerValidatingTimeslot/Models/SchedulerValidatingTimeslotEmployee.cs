@@ -12,13 +12,13 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class SchedulerValidatingTimeslotEmployee
     {
-        public Employee()
+        public SchedulerValidatingTimeslotEmployee()
         {
-            this.Employees1 = new HashSet<Employee>();
-            this.Orders = new HashSet<Order>();
-            this.Territories = new HashSet<Territory>();
+            this.Employees1 = new HashSet<SchedulerValidatingTimeslotEmployee>();
+            this.Orders = new HashSet<SchedulerValidatingTimeslotOrder>();
+            this.Territories = new HashSet<SchedulerValidatingTimeslotTerritory>();
         }
     
         public int EmployeeID { get; set; }
@@ -40,9 +40,9 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
         public Nullable<int> ReportsTo { get; set; }
         public string PhotoPath { get; set; }
     
-        public virtual ICollection<Employee> Employees1 { get; set; }
-        public virtual Employee Employee1 { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<Territory> Territories { get; set; }
+        public virtual ICollection<SchedulerValidatingTimeslotEmployee> Employees1 { get; set; }
+        public virtual SchedulerValidatingTimeslotEmployee Employee1 { get; set; }
+        public virtual ICollection<SchedulerValidatingTimeslotOrder> Orders { get; set; }
+        public virtual ICollection<SchedulerValidatingTimeslotTerritory> Territories { get; set; }
     }
 }

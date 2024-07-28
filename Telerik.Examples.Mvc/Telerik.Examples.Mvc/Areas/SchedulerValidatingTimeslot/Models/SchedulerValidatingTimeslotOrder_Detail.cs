@@ -12,15 +12,15 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Intraday
+    public partial class SchedulerValidatingTimeslotOrder_Detail
     {
-        public int ID { get; set; }
-        public string Symbol { get; set; }
-        public System.DateTime Date { get; set; }
-        public decimal Open { get; set; }
-        public decimal High { get; set; }
-        public decimal Low { get; set; }
-        public decimal Close { get; set; }
-        public long Volume { get; set; }
+        public int OrderID { get; set; }
+        public int ProductID { get; set; }
+        public decimal UnitPrice { get; set; }
+        public short Quantity { get; set; }
+        public float Discount { get; set; }
+    
+        public virtual SchedulerValidatingTimeslotOrder Order { get; set; }
+        public virtual SchedulerValidatingTimeslotProduct Product { get; set; }
     }
 }

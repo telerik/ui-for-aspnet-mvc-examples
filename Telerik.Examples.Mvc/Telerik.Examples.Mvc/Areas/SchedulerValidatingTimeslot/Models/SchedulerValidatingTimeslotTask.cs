@@ -12,20 +12,19 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Meeting
+    public partial class SchedulerValidatingTimeslotTask
     {
-        public Meeting()
+        public SchedulerValidatingTimeslotTask()
         {
-            this.MeetingAtendees = new HashSet<MeetingAtendee>();
-            this.Meetings1 = new HashSet<Meeting>();
+            this.Tasks1 = new HashSet<SchedulerValidatingTimeslotTask>();
         }
     
-        public int MeetingID { get; set; }
+        public int TaskID { get; set; }
         public System.DateTime Start { get; set; }
         public System.DateTime End { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Nullable<int> RoomID { get; set; }
+        public Nullable<int> OwnerID { get; set; }
         public bool IsAllDay { get; set; }
         public string RecurrenceRule { get; set; }
         public Nullable<int> RecurrenceID { get; set; }
@@ -33,8 +32,7 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
         public string StartTimezone { get; set; }
         public string EndTimezone { get; set; }
     
-        public virtual ICollection<MeetingAtendee> MeetingAtendees { get; set; }
-        public virtual ICollection<Meeting> Meetings1 { get; set; }
-        public virtual Meeting Meeting1 { get; set; }
+        public virtual ICollection<SchedulerValidatingTimeslotTask> Tasks1 { get; set; }
+        public virtual SchedulerValidatingTimeslotTask Task1 { get; set; }
     }
 }

@@ -10,15 +10,15 @@
 
     public class SchedulerMeetingService : ISchedulerEventService<MeetingViewModel>
     {
-        private SampleEntities db;
+        private SchedulerValidatingTimeslotEntities db;
 
-        public SchedulerMeetingService(SampleEntities context)
+        public SchedulerMeetingService(SchedulerValidatingTimeslotEntities context)
         {
             db = context;
         }
 
         public SchedulerMeetingService()
-            : this(new SampleEntities())
+            : this(new SchedulerValidatingTimeslotEntities())
         {
         }
 
@@ -55,7 +55,7 @@
 
                 foreach (var atendeeId in meeting.Atendees)
                 {
-                    entity.MeetingAtendees.Add(new MeetingAtendee
+                    entity.MeetingAtendees.Add(new SchedulerValidatingTimeslotMeetingAtendee
                     {
                         AtendeeID = atendeeId
                     });
@@ -81,7 +81,7 @@
 
                 db.Meetings.Attach(entity);
 
-                var atendees = meeting.Atendees.Select(atendee => new MeetingAtendee
+                var atendees = meeting.Atendees.Select(atendee => new SchedulerValidatingTimeslotMeetingAtendee
                 {
                     AtendeeID = atendee
                 });
@@ -115,7 +115,7 @@
 
             db.Meetings.Attach(entity);
 
-            var atendees = meeting.Atendees.Select(atendee => new MeetingAtendee
+            var atendees = meeting.Atendees.Select(atendee => new SchedulerValidatingTimeslotMeetingAtendee
             {
                 AtendeeID = atendee
             });

@@ -7,20 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
+namespace Telerik.Examples.Mvc.Areas.SchedulerEditingResources.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Order_Detail
+    public partial class SchedulerEditingResourcesMeetingAttendee
     {
-        public int OrderID { get; set; }
-        public int ProductID { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short Quantity { get; set; }
-        public float Discount { get; set; }
+        public int MeetingID { get; set; }
+        public int AttendeeID { get; set; }
     
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual SchedulerEditingResourcesMeeting Meeting { get; set; }
     }
 }

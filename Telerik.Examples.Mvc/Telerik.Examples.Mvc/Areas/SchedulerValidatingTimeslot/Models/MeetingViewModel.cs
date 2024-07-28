@@ -51,9 +51,9 @@
         public int? RoomID { get; set; }
         public IEnumerable<int> Atendees { get; set; }
 
-        public Meeting ToEntity()
+        public SchedulerValidatingTimeslotMeeting ToEntity()
         {
-            return new Meeting
+            return new SchedulerValidatingTimeslotMeeting
             {
                 MeetingID = MeetingID,
                 Title = Title,

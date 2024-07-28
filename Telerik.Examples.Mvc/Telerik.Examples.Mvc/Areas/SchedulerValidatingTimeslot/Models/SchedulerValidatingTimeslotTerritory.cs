@@ -12,17 +12,18 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Weather
+    public partial class SchedulerValidatingTimeslotTerritory
     {
-        public int ID { get; set; }
-        public string Station { get; set; }
-        public System.DateTime Date { get; set; }
-        public decimal TMax { get; set; }
-        public decimal TMin { get; set; }
-        public decimal Wind { get; set; }
-        public Nullable<decimal> Gust { get; set; }
-        public decimal Rain { get; set; }
-        public Nullable<decimal> Snow { get; set; }
-        public string Events { get; set; }
+        public SchedulerValidatingTimeslotTerritory()
+        {
+            this.Employees = new HashSet<SchedulerValidatingTimeslotEmployee>();
+        }
+    
+        public string TerritoryID { get; set; }
+        public string TerritoryDescription { get; set; }
+        public int RegionID { get; set; }
+    
+        public virtual SchedulerValidatingTimeslotRegion Region { get; set; }
+        public virtual ICollection<SchedulerValidatingTimeslotEmployee> Employees { get; set; }
     }
 }

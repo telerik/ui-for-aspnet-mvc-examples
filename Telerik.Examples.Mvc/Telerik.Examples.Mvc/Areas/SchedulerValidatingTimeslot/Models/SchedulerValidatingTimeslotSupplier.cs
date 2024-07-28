@@ -12,15 +12,14 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class SchedulerValidatingTimeslotSupplier
     {
-        public Customer()
+        public SchedulerValidatingTimeslotSupplier()
         {
-            this.Orders = new HashSet<Order>();
-            this.CustomerDemographics = new HashSet<CustomerDemographic>();
+            this.Products = new HashSet<SchedulerValidatingTimeslotProduct>();
         }
     
-        public string CustomerID { get; set; }
+        public int SupplierID { get; set; }
         public string CompanyName { get; set; }
         public string ContactName { get; set; }
         public string ContactTitle { get; set; }
@@ -31,9 +30,8 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerValidatingTimeslot.Models
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-        public Nullable<bool> Bool { get; set; }
+        public string HomePage { get; set; }
     
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<CustomerDemographic> CustomerDemographics { get; set; }
+        public virtual ICollection<SchedulerValidatingTimeslotProduct> Products { get; set; }
     }
 }

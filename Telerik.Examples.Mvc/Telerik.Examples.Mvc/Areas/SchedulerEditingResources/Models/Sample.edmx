@@ -71,9 +71,9 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SampleModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="SampleEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="MeetingAttendees" EntityType="SampleModel.MeetingAttendee" />
-          <EntitySet Name="Meetings" EntityType="SampleModel.Meeting" />
+        <EntityContainer Name="SchedulerEditingResourcesEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="MeetingAttendees" EntityType="SampleModel.SchedulerEditingResourcesMeetingAttendee" />
+          <EntitySet Name="Meetings" EntityType="SampleModel.SchedulerEditingResourcesMeeting" />
           <AssociationSet Name="FK_MeetingAtendee_Meeting" Association="SampleModel.FK_MeetingAtendee_Meeting">
             <End Role="Meetings" EntitySet="Meetings" />
             <End Role="MeetingAttendees" EntitySet="MeetingAttendees" />
@@ -83,7 +83,7 @@
             <End Role="Meetings1" EntitySet="Meetings" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="MeetingAttendee">
+        <EntityType Name="SchedulerEditingResourcesMeetingAttendee">
           <Key>
             <PropertyRef Name="MeetingID" />
             <PropertyRef Name="AttendeeID" />
@@ -92,7 +92,7 @@
           <Property Name="AttendeeID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Meeting" Relationship="SampleModel.FK_MeetingAtendee_Meeting" FromRole="MeetingAttendees" ToRole="Meetings" />
         </EntityType>
-        <EntityType Name="Meeting">
+        <EntityType Name="SchedulerEditingResourcesMeeting">
           <Key>
             <PropertyRef Name="MeetingID" />
           </Key>
@@ -113,8 +113,8 @@
           <NavigationProperty Name="Meeting1" Relationship="SampleModel.FK_Meetings_Meetings" FromRole="Meetings1" ToRole="Meetings" />
         </EntityType>
         <Association Name="FK_MeetingAtendee_Meeting">
-          <End Role="Meetings" Type="SampleModel.Meeting" Multiplicity="1" />
-          <End Role="MeetingAttendees" Type="SampleModel.MeetingAttendee" Multiplicity="*" />
+          <End Role="Meetings" Type="SampleModel.SchedulerEditingResourcesMeeting" Multiplicity="1" />
+          <End Role="MeetingAttendees" Type="SampleModel.SchedulerEditingResourcesMeetingAttendee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Meetings">
               <PropertyRef Name="MeetingID" />
@@ -125,8 +125,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Meetings_Meetings">
-          <End Role="Meetings" Type="SampleModel.Meeting" Multiplicity="0..1" />
-          <End Role="Meetings1" Type="SampleModel.Meeting" Multiplicity="*" />
+          <End Role="Meetings" Type="SampleModel.SchedulerEditingResourcesMeeting" Multiplicity="0..1" />
+          <End Role="Meetings1" Type="SampleModel.SchedulerEditingResourcesMeeting" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Meetings">
               <PropertyRef Name="MeetingID" />
@@ -141,9 +141,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="SampleEntities">
+        <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="SchedulerEditingResourcesEntities">
           <EntitySetMapping Name="MeetingAttendees">
-            <EntityTypeMapping TypeName="SampleModel.MeetingAttendee">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerEditingResourcesMeetingAttendee">
               <MappingFragment StoreEntitySet="MeetingAttendees">
                 <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
                 <ScalarProperty Name="AttendeeID" ColumnName="AttendeeID" />
@@ -151,7 +151,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Meetings">
-            <EntityTypeMapping TypeName="SampleModel.Meeting">
+            <EntityTypeMapping TypeName="SampleModel.SchedulerEditingResourcesMeeting">
               <MappingFragment StoreEntitySet="Meetings">
                 <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
                 <ScalarProperty Name="Start" ColumnName="Start" />
