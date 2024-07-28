@@ -26,17 +26,17 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Controllers
 
     public class EmployeesController : ODataController
     {
-        private NorthwindEntities db = new NorthwindEntities();
+        private GridEditingInCellWebApiEntities db = new GridEditingInCellWebApiEntities();
 
         // GET: odata/Employees
         [EnableQuery]
-        public IQueryable<Employee> GetEmployees()
+        public IQueryable<GridEditingInCellWebApiEmployee> GetEmployees()
         {
             return db.Employees;
         }
 
         // PUT: odata/Employees(5)
-        public IHttpActionResult Put([FromODataUri] int key, Employee employee)
+        public IHttpActionResult Put([FromODataUri] int key, GridEditingInCellWebApiEmployee employee)
         {   
             if (!ModelState.IsValid)
             {

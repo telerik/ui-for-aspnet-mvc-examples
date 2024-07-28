@@ -20,12 +20,10 @@ namespace Telerik.Examples.Mvc
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //GlobalConfiguration.Configure(WebApiConfig.Register);
-
-            GlobalConfiguration.Configure(WebApiConfig.Register);
             List<ODataPayloadKind> data = new List<ODataPayloadKind>()
             {
                 ODataPayloadKind.Value,

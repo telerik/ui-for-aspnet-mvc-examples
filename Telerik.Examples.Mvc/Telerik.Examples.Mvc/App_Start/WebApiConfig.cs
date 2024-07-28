@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Routing;
 
 namespace Telerik.Examples.Mvc.App_Start
 {
@@ -14,11 +15,11 @@ namespace Telerik.Examples.Mvc.App_Start
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            RouteTable.Routes.MapHttpRoute(
+                 name: "DefaultApi",
+                 routeTemplate: "api/{controller}/{action}/{id}",
+                 defaults: new { id = RouteParameter.Optional });
         }
     }
 }
+

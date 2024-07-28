@@ -12,11 +12,11 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class GridEditingInCellWebApiEmployee
     {
-        public Employee()
+        public GridEditingInCellWebApiEmployee()
         {
-            this.Employees1 = new HashSet<Employee>();
+            this.Employees1 = new HashSet<GridEditingInCellWebApiEmployee>();
         }
     
         public int EmployeeID { get; set; }
@@ -38,7 +38,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
         public Nullable<int> ReportsTo { get; set; }
         public string PhotoPath { get; set; }
     
-        public virtual ICollection<Employee> Employees1 { get; set; }
-        public virtual Employee Employee1 { get; set; }
+        public virtual ICollection<GridEditingInCellWebApiEmployee> Employees1 { get; set; }
+        public virtual GridEditingInCellWebApiEmployee Employee1 { get; set; }
     }
 }

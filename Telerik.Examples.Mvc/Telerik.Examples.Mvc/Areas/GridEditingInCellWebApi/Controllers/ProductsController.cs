@@ -12,11 +12,11 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Controllers
 {
     public class ProductController : ApiController
     {
-        private NorthwindEntities db;
+        private GridEditingInCellWebApiEntities db;
 
         public ProductController()
         {
-            db = new NorthwindEntities();
+            db = new GridEditingInCellWebApiEntities();
         }
         protected override void Dispose(bool disposing)
         {

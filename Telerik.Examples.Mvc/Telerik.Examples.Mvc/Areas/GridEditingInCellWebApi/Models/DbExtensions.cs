@@ -8,7 +8,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
 {
     public static class DbExtensions
     {
-        public static IQueryable<ProductViewModel> GetProducts(this NorthwindEntities db)
+        public static IQueryable<ProductViewModel> GetProducts(this GridEditingInCellWebApiEntities db)
         {
             return db.Products.Select(p => new ProductViewModel
             {
@@ -20,12 +20,12 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
             });
         }
 
-        public static ProductViewModel GetProduct(this NorthwindEntities db, int id)
+        public static ProductViewModel GetProduct(this GridEditingInCellWebApiEntities db, int id)
         {
             return db.GetProducts().FirstOrDefault(x => x.ProductID == id);
         }
 
-        public static IEnumerable<ProductViewModel> AddProducts(this NorthwindEntities db, ProductsRequest request)
+        public static IEnumerable<ProductViewModel> AddProducts(this GridEditingInCellWebApiEntities db, ProductsRequest request)
         {
             foreach (var product in request.Models)
             {
@@ -35,7 +35,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
             return request.Models;
         }
 
-        public static void AddProduct(this NorthwindEntities db, ProductViewModel product)
+        public static void AddProduct(this GridEditingInCellWebApiEntities db, ProductViewModel product)
         {
             var entity = product.ToProduct();
 
@@ -45,7 +45,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
             product.ProductID = entity.ProductID;
         }
 
-        public static void UpdateProducts(this NorthwindEntities db, ProductsRequest request)
+        public static void UpdateProducts(this GridEditingInCellWebApiEntities db, ProductsRequest request)
         {
             foreach (var product in request.Models)
             {
@@ -53,7 +53,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
             }
         }
 
-        public static void UpdateProduct(this NorthwindEntities db, ProductViewModel product)
+        public static void UpdateProduct(this GridEditingInCellWebApiEntities db, ProductViewModel product)
         {
             var entity = product.ToProduct();
 
@@ -64,7 +64,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
             db.SaveChanges();
         }
 
-        public static void RemoveProducts(this NorthwindEntities db, ProductsRequest request)
+        public static void RemoveProducts(this GridEditingInCellWebApiEntities db, ProductsRequest request)
         {
             foreach (var product in request.Models)
             {
@@ -72,9 +72,9 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
             }
         }
 
-        public static void RemoveProduct(this NorthwindEntities db, int id)
+        public static void RemoveProduct(this GridEditingInCellWebApiEntities db, int id)
         {
-            var entity = new Product();
+            var entity = new GridEditingInCellWebApiProduct();
 
             entity.ProductID = id;
 
@@ -84,9 +84,9 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
             db.SaveChanges();
         }
 
-        private static Product ToProduct(this ProductViewModel viewModel)
+        private static GridEditingInCellWebApiProduct ToProduct(this ProductViewModel viewModel)
         {
-            return new Product
+            return new GridEditingInCellWebApiProduct
             {
                 ProductName = viewModel.ProductName,
                 UnitPrice = viewModel.UnitPrice,

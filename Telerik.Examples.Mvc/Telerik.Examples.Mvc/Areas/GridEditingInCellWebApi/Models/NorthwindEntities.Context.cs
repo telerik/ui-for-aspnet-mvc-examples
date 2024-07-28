@@ -13,10 +13,10 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NorthwindEntities : DbContext
+    public partial class GridEditingInCellWebApiEntities : DbContext
     {
-        public NorthwindEntities()
-            : base("name=NorthwindEntities")
+        public GridEditingInCellWebApiEntities()
+            : base("name=GridEditingInCellWebApiEntities")
         {
         }
     
@@ -25,8 +25,8 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<GridEditingInCellWebApiCategory> Categories { get; set; }
+        public virtual DbSet<GridEditingInCellWebApiEmployee> Employees { get; set; }
+        public virtual DbSet<GridEditingInCellWebApiProduct> Products { get; set; }
     }
 }

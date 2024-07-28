@@ -12,11 +12,11 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class GridEditingInCellWebApiCategory
     {
-        public Category()
+        public GridEditingInCellWebApiCategory()
         {
-            this.Products = new HashSet<Product>();
+            this.Products = new HashSet<GridEditingInCellWebApiProduct>();
         }
     
         public int CategoryID { get; set; }
@@ -24,6 +24,6 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models
         public string Description { get; set; }
         public byte[] Picture { get; set; }
     
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<GridEditingInCellWebApiProduct> Products { get; set; }
     }
 }
