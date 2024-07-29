@@ -369,6 +369,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="App_Start\ODataConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Captcha\Models\CaptchaInputModel.cs" />
     <Compile Include="Areas\Captcha\Models\UserViewModel.cs" />
@@ -1101,6 +1102,15 @@
     <Compile Include="Areas\DropDownListWebApi\Controllers\HomeController.cs" />
     <Compile Include="Areas\DropDownListWebApi\DropDownListWebApiAreaRegistration.cs" />
     <Compile Include="Areas\GridSignalR\Hubs\ProductHub.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Models\ODataWebApiWrappersCategory.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Models\ODataWebApiWrappersEmployee.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Models\ODataWebApiWrappersProduct.cs">
+      <DependentUpon>NorthwindEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\PdfExportingServerSide\Controllers\HomeController.cs" />
     <Compile Include="Areas\PdfExportingServerSide\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\MenuSecurityTrimming\Controllers\HomeController.cs" />
@@ -1131,14 +1141,8 @@
     <Compile Include="Areas\ODataWebApiWidgets\Models\Product.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\ODataWebApiWrappers\Controllers\EmployeesController.cs" />
-    <Compile Include="Areas\ODataWebApiWrappers\Controllers\ProductsController.cs" />
-    <Compile Include="Areas\ODataWebApiWrappers\Models\Category.cs">
-      <DependentUpon>NorthwindEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\ODataWebApiWrappers\Models\Employee.cs">
-      <DependentUpon>NorthwindEntities.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Controllers\ODataWebApiWrappersEmployeesController.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Controllers\ODataWebApiWrappersProductsController.cs" />
     <Compile Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.Context.cs">
       <DependentUpon>NorthwindEntities.Context.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1153,9 +1157,6 @@
       <DependentUpon>NorthwindEntities.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Areas\ODataWebApiWrappers\Models\Product.cs">
-      <DependentUpon>NorthwindEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\PdfExportingServerSide\Models\CreatePdfDocument.cs" />
     <Compile Include="Areas\RequireJS\Models\Product.cs" />

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Routing;
+using Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models;
+using Microsoft.AspNet.OData;
+using Microsoft.AspNet.OData.Extensions;
+using Microsoft.AspNet.OData.Builder;
 
 namespace Telerik.Examples.Mvc.App_Start
 {
@@ -10,11 +14,6 @@ namespace Telerik.Examples.Mvc.App_Start
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
             RouteTable.Routes.MapHttpRoute(
                  name: "DefaultApi",
                  routeTemplate: "api/{controller}/{action}/{id}",

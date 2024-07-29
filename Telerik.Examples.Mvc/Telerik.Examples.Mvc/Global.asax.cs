@@ -1,5 +1,6 @@
 ﻿using Kendo.Mvc;
 using Kendo.Mvc.Infrastructure;
+using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNet.OData.Formatter;
 using Microsoft.OData;
 using System;
@@ -19,8 +20,13 @@ namespace Telerik.Examples.Mvc
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configure(config =>
+            {
+                ODataConfig.Register(config); 
+                WebApiConfig.Register(config);
+
+            });
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 

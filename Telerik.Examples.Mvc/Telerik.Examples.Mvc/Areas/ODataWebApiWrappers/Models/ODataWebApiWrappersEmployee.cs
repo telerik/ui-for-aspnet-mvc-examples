@@ -11,21 +11,22 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Employee
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class ODataWebApiWrappersEmployee
     {
-        public Employee()
+        public ODataWebApiWrappersEmployee()
         {
-            this.Employees1 = new HashSet<Employee>();
+            this.Employees1 = new HashSet<ODataWebApiWrappersEmployee>();
         }
-    
+        [Key]
         public int EmployeeID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Title { get; set; }
         public string TitleOfCourtesy { get; set; }
-        public System.DateTimeOffset BirthDate { get; set; }
-        public System.DateTimeOffset HireDate { get; set; }
+        public Nullable<System.DateTime> BirthDate { get; set; }
+        public Nullable<System.DateTime> HireDate { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string Region { get; set; }
@@ -38,7 +39,7 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models
         public Nullable<int> ReportsTo { get; set; }
         public string PhotoPath { get; set; }
     
-        public virtual ICollection<Employee> Employees1 { get; set; }
-        public virtual Employee Employee1 { get; set; }
+        public virtual ICollection<ODataWebApiWrappersEmployee> Employees1 { get; set; }
+        public virtual ODataWebApiWrappersEmployee Employee1 { get; set; }
     }
 }

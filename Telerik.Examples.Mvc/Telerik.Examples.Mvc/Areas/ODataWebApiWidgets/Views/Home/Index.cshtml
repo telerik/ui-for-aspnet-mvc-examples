@@ -7,18 +7,18 @@
             type: "odata-v4",
             transport: {
                 read: {
-                    url: "/odata/Products",
+                    url: "https://demos.telerik.com/kendo-ui/service-v4/odata/Products",
                     data: {
                         $expand: "Category"
                     }
                 },
                 update: {
                     url: function (data) {
-                        return "/odata/Products(" + data.ProductID + ")";
+                        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Products(" + data.ProductID + ")";
                     }
                 },
                 create: {
-                    url: "/odata/Products?$expand=Category"
+                    url: "https://demos.telerik.com/kendo-ui/service-v4/odata/Products?$expand=Category"
                 }
             },
             sort: {
@@ -88,7 +88,7 @@
                     pageSize: 10,
                     transport: {
                         read: {
-                            url: "/odata/Categories"
+                            url: "https://demos.telerik.com/kendo-ui/service-v4/odata/Categories"
                         }
                     }
                 }

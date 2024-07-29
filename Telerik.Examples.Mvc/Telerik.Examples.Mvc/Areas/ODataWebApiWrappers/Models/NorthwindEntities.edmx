@@ -94,7 +94,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NorthwindModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Category">
+        <EntityType Name="ODataWebApiWrappersCategory">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
@@ -104,7 +104,7 @@
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
         </EntityType>
-        <EntityType Name="Employee">
+        <EntityType Name="ODataWebApiWrappersEmployee">
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
@@ -129,7 +129,7 @@
           <NavigationProperty Name="Employees1" Relationship="Self.FK_Employees_Employees" FromRole="Employees" ToRole="Employees1" />
           <NavigationProperty Name="Employee1" Relationship="Self.FK_Employees_Employees" FromRole="Employees1" ToRole="Employees" />
         </EntityType>
-        <EntityType Name="Product">
+        <EntityType Name="ODataWebApiWrappersProduct">
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
@@ -146,8 +146,8 @@
           <NavigationProperty Name="Category" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
         </EntityType>
         <Association Name="FK_Products_Categories">
-          <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
-          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <End Role="Categories" Type="NorthwindModel.ODataWebApiWrappersCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="NorthwindModel.ODataWebApiWrappersProduct" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
               <PropertyRef Name="CategoryID" />
@@ -158,8 +158,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employees_Employees">
-          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
-          <End Role="Employees1" Type="Self.Employee" Multiplicity="*" />
+          <End Role="Employees" Type="NorthwindModel.ODataWebApiWrappersEmployee" Multiplicity="0..1" />
+          <End Role="Employees1" Type="NorthwindModel.ODataWebApiWrappersEmployee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="EmployeeID" />
@@ -169,10 +169,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NorthwindEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Categories" EntityType="Self.Category" />
-          <EntitySet Name="Employees" EntityType="Self.Employee" />
-          <EntitySet Name="Products" EntityType="Self.Product" />
+        <EntityContainer Name="ODataWebApiWrappersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="NorthwindModel.ODataWebApiWrappersCategory" />
+          <EntitySet Name="Employees" EntityType="NorthwindModel.ODataWebApiWrappersEmployee" />
+          <EntitySet Name="Products" EntityType="NorthwindModel.ODataWebApiWrappersProduct" />
           <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -187,9 +187,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="NorthwindEntities">
+        <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="ODataWebApiWrappersEntities">
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="NorthwindModel.Category">
+            <EntityTypeMapping TypeName="NorthwindModel.ODataWebApiWrappersCategory">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -199,7 +199,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="NorthwindModel.Employee">
+            <EntityTypeMapping TypeName="NorthwindModel.ODataWebApiWrappersEmployee">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -223,7 +223,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="NorthwindModel.Product">
+            <EntityTypeMapping TypeName="NorthwindModel.ODataWebApiWrappersProduct">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />

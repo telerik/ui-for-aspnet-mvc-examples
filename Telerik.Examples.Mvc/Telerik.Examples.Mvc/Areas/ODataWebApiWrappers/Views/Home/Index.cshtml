@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models.Product>()
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models.ODataWebApiWrappersProduct>()
     .Name("products")
     .Columns(columns =>
     {
@@ -28,18 +28,23 @@
         .Type("odata-v4")
         .Transport(transport =>
         {
-            transport.Create(create => create.Url("/odata/Products"));
-            transport.Read(read => read.Url("/odata/Products").Data("function() {return {'$expand': 'Category'} }"));
-            transport.Update(new
-            {
-                url = new Kendo.Mvc.ClientHandlerDescriptor
-                {
-                    HandlerName = @"function(data) {
-                                            return '/odata/Products(' + data.ProductID + ')';
-                                       }"
-                }
-            });
-        })
+            transport.Read(read => read.Url("https://demos.telerik.com/kendo-ui/service-v4/odata/Products"));
+        }
+        )
+        //.Transport(transport =>
+        //{
+        //    transport.Create(create => create.Url("/odata/ODataWebApiWrappersProducts"));
+        //    transport.Read(read => read.Url("/odata/ODataWebApiWrappersProducts").Data("function() {return {'$expand': 'Category'} }"));
+        //    transport.Update(new
+        //    {
+        //        url = new Kendo.Mvc.ClientHandlerDescriptor
+        //        {
+        //            HandlerName = @"function(data) {
+        //                                    return '/odata/ODataWebApiWrappersProducts(' + data.ProductID + ')';
+        //                               }"
+        //        }
+        //    });
+        //})
         .Events(ev => ev.RequestEnd("onRequestEnd"))
         .PageSize(20)
         .ServerPaging(true)
@@ -50,7 +55,7 @@
     .Pageable()
     .Filterable(ftb => ftb.Mode(GridFilterMode.Row))
 )
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models.Employee>()
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models.ODataWebApiWrappersEmployee>()
     .Name("employees")
     .Columns(columns =>
     {
@@ -70,20 +75,24 @@
             });
         })
         .Type("odata-v4")
-        .Transport(transport =>
-        {
-            transport.Read(read => read.Url("/odata/Employees"));
-            transport.Create(create => create.Url("/odata/Employees"));
-            transport.Update(new
-            {
-                url = new Kendo.Mvc.ClientHandlerDescriptor
-                {
-                    HandlerName = @"function(data) {
-                                            return '/odata/Employees(' + data.EmployeeID + ')';
-                                       }"
-                }
-            });
-        })
+        .Transport(transport => {
+            transport.Read(read => read.Url("https://demos.telerik.com/kendo-ui/service-v4/odata/Employees"));
+        }
+        )
+        //.Transport(transport =>
+        //{
+        //    transport.Read(read => read.Url("/odata/ODataWebApiWrappersEmployees/GetEmployees"));
+        //    transport.Create(create => create.Url("/odata/ODataWebApiWrappersEmployees"));
+        //    transport.Update(new
+        //    {
+        //        url = new Kendo.Mvc.ClientHandlerDescriptor
+        //        {
+        //            HandlerName = @"function(data) {
+        //                                    return '/odata/ODataWebApiWrappersEmployees(' + data.EmployeeID + ')';
+        //                               }"
+        //        }
+        //    });
+        //})
         .Events(ev => ev.RequestEnd("onRequestEnd"))
         .PageSize(20)
         .ServerPaging(true)

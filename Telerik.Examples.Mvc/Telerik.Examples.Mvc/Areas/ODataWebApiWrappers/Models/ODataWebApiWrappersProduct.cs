@@ -11,9 +11,11 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Product
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class ODataWebApiWrappersProduct
     {
+        [Key]
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public Nullable<int> SupplierID { get; set; }
@@ -25,6 +27,6 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models
         public Nullable<short> ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
     
-        public virtual Category Category { get; set; }
+        public virtual ODataWebApiWrappersCategory Category { get; set; }
     }
 }

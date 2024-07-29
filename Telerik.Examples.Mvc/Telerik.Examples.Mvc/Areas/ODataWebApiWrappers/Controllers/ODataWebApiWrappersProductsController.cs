@@ -1,5 +1,4 @@
-﻿using Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -7,8 +6,8 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
-//using System.Web.OData;
-//using System.Web.OData.Query;
+using System.Threading.Tasks;
+using Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models;
 using Microsoft.AspNet.OData;
 
 namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Controllers
@@ -19,42 +18,37 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Controllers
     using System.Web.Http.OData.Builder;
     using OdataTest.Models;
     ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Employee>("Employees");
-    builder.EntitySet<Employee>("Employees"); 
+    builder.EntitySet<Product>("Products");
+    builder.EntitySet<Employee>("Categories"); 
     config.Routes.MapODataRoute("odata", "odata", builder.GetEdmModel());
     */
 
-    public class EmployeesController : ODataController
+    public class ODataWebApiWrappersProductsController : ODataController
     {
-        private NorthwindEntities db = new NorthwindEntities();
+        private ODataWebApiWrappersEntities db = new ODataWebApiWrappersEntities();
 
-        // GET: odata/Employees
+        // GET: odata/ODataWebApiWrappersProducts
         [EnableQuery]
-        public IQueryable<Employee> GetEmployees()
+        public IQueryable<ODataWebApiWrappersProduct> GetProducts()
         {
-            return db.Employees;
+            return db.Products;
         }
 
-        // PUT: odata/Employees(5)
-        public IHttpActionResult Put([FromODataUri] int key, Employee employee)
+        // PUT: odata/ODataWebApiWrappersProducts(5)
+        public IHttpActionResult Put([FromODataUri] int key, ODataWebApiWrappersProduct product)
         {   
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (key != employee.EmployeeID)
+            if (key != product.ProductID)
             {
                 return BadRequest();
             }
 
-            db.Employees.Attach(employee);
-            db.Entry(employee).State = EntityState.Modified;
+            db.Products.Attach(product);
+            db.Entry(product).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +56,7 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmployeeExists(key))
+                if (!ProductExists(key))
                 {
                     return NotFound();
                 }
@@ -72,12 +66,23 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Controllers
                 }
             }
 
-            return Updated(employee);
+            return Updated(product);
         }
 
-        private bool EmployeeExists(int key)
+        public IHttpActionResult Post(ODataWebApiWrappersProduct product)
         {
-            return db.Employees.Count(e => e.EmployeeID == key) > 0;
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            db.Products.Add(product);
+            //db.SaveChanges();
+            return Created(product);
+        }
+
+        private bool ProductExists(int key)
+        {
+            return db.Products.Count(e => e.ProductID == key) > 0;
         }
     }
 }

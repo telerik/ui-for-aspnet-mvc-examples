@@ -11,19 +11,20 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWrappers.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Category
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class ODataWebApiWrappersCategory
     {
-        public Category()
+        public ODataWebApiWrappersCategory()
         {
-            this.Products = new HashSet<Product>();
+            this.Products = new HashSet<ODataWebApiWrappersProduct>();
         }
-    
+        [Key]
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
         public byte[] Picture { get; set; }
     
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<ODataWebApiWrappersProduct> Products { get; set; }
     }
 }
