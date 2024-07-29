@@ -65,6 +65,15 @@
     <Reference Include="Kendo.Mvc, Version=2024.2.514.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.Trial.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.4\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.OData, Version=7.7.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.OData.7.7.6\lib\net45\Microsoft.AspNet.OData.dll</HintPath>
     </Reference>
@@ -93,11 +102,20 @@
     <Reference Include="Microsoft.Owin.Host.HttpListener, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.4.2.2\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Hosting, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Hosting.4.2.2\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Spatial, Version=7.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Spatial.7.20.0\lib\net45\Microsoft.Spatial.dll</HintPath>
@@ -367,6 +385,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\ODataConfig.cs" />
@@ -1102,6 +1121,11 @@
     <Compile Include="Areas\DropDownListWebApi\Controllers\HomeController.cs" />
     <Compile Include="Areas\DropDownListWebApi\DropDownListWebApiAreaRegistration.cs" />
     <Compile Include="Areas\GridSignalR\Hubs\ProductHub.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Controllers\AccountController.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Controllers\ManageController.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Models\AccountViewModels.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Models\IdentityModels.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Models\ManageViewModels.cs" />
     <Compile Include="Areas\ODataWebApiWrappers\Models\ODataWebApiWrappersCategory.cs">
       <DependentUpon>NorthwindEntities.tt</DependentUpon>
     </Compile>
@@ -2499,6 +2523,28 @@
     <Content Include="Areas\PdfExportingServerSide\Views\_ViewStart.cshtml" />
     <Content Include="Areas\PdfExportingServerSide\Views\Home\Index.cshtml" />
     <Content Include="Areas\PdfExportingServerSide\Views\web.config" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\Login.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\Register.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ResetPassword.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\SendCode.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\VerifyCode.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Home\About.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Home\Contact.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\Index.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\SetPassword.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Shared\Lockout.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
