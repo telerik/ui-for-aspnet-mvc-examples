@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Load Modernizr from CDN, and check if Modernizr was loaded, if not use Modernizr from local server -->
+@{string modernizrVersion = "2.8.3";}
+<script type="text/javascript" src='@("https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-"+modernizrVersion+".js")'></script>
+<script type="text/javascript">
+        // Fallback to loading from a local path if the CDN is unavailable
+        (window.Modernizr || document.write('<script src="@(Url.Content("~/Areas/CdnFallback/Scripts/modernizr-"+ modernizrVersion + ".js"))"><\/script>'));
+</script>
+
+@RenderBody()
