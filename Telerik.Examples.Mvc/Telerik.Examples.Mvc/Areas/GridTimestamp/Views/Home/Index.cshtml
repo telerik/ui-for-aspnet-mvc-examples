@@ -10,6 +10,7 @@
         {
             columns.Bound(p => p.ProductID);
             columns.Bound(p => p.ProductName);
+            columns.Bound(p => p.RowVersionString);
             columns.Command(command => command.Edit());
         })
         .DataSource(source =>
