@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employee>
+    <employeeId>1</employeeId>
+    <name>Andrew Fuller</name>
+    <items>
+      <Employee>
+        <employeeId>2</employeeId>
+        <name>Nancy Davolio</name>
+        <items>
+          <Employee>
+            <employeeId>3</employeeId>
+            <name>Janet Leverling</name>
+            <items>
+              <Employee>
+                <employeeId>4</employeeId>
+                <name>Margaret Peacock</name>
+              </Employee>
+              <Employee>
+                <employeeId>5</employeeId>
+                <name>Steven Buchanan</name>
+                <items>
+                  <Employee>
+                    <employeeId>14</employeeId>
+                    <name>Michael Suyama</name>
+                  </Employee>
+                  <Employee>
+                    <employeeId>15</employeeId>
+                    <name>Robert King</name>
+                    <items>
+                      <Employee>
+                        <employeeId>16</employeeId>
+                        <name>Anne Dodsworth</name>
+                      </Employee>
+                      <Employee>
+                        <employeeId>17</employeeId>
+                        <name>Laura Callahan</name>
+                      </Employee>
+                      <Employee>
+                        <employeeId>18</employeeId>
+                        <name>Alexander Lee</name>
+                      </Employee>
+                      <Employee>
+                        <employeeId>19</employeeId>
+                        <name>Avery Davis</name>
+                      </Employee>
+                    </items>
+                  </Employee>
+                </items>
+              </Employee>
+            </items>
+          </Employee>
+          <Employee>
+            <employeeId>6</employeeId>
+            <name>Barbara Bennett</name>
+          </Employee>
+          <Employee>
+            <employeeId>7</employeeId>
+            <name>Billy Butler</name>
+          </Employee>
+          <Employee>
+            <employeeId>8</employeeId>
+            <name>Cate Watson</name>
+          </Employee>
+        </items>
+      </Employee>
+      <Employee>
+        <employeeId>9</employeeId>
+        <name>Charley Dixon</name>
+      </Employee>
+      <Employee>
+        <employeeId>10</employeeId>
+        <name>Lynda LLoyd</name>
+      </Employee>
+      <Employee>
+        <employeeId>11</employeeId>
+        <name>Iana Murray</name>
+      </Employee>
+      <Employee>
+        <employeeId>12</employeeId>
+        <name>Andrey Rogers</name>
+      </Employee>
+      <Employee>
+        <employeeId>13</employeeId>
+        <name>Andrew Russel</name>
+      </Employee>
+    </items>
+  </Employee>
+</ArrayOfEmployee>

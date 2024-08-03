@@ -1,0 +1,42 @@
+﻿@using Telerik.Examples.Mvc.Areas.UploadFilesToDataBase.Models
+
+<h2>Upload files</h2>
+
+@(Html.Kendo().Grid<UserFileViewModel>()
+      .Name("filesGrid")
+      .ToolBar(t => t.Template(
+          @<text>
+            @(Html.Kendo().Upload()
+                  .Name("files")
+                  .Async(a => a.Save("Save", "Home"))
+                  .Events(e => e.Success("onUploadSuccess"))
+                  .ShowFileList(false) // Hide the file list as we're displaying uploaded files in the Grid
+            )
+          </text>
+      ))
+      .Columns(columns =>
+      {
+          columns.Bound(f => f.Name).ClientTemplate("<a href='Home/Download?id=#= Id #'>#= Name #</a>").Title("File name");
+
+          // Calculate the file size in KB, round it up and display it in a client template
+          columns.Bound(f => f.DataLength).ClientTemplate("#= Math.ceil(DataLength / 1024) #").Title("File size in KB").Width(150);
+
+          columns.Command(command => command.Destroy()).Width(100);
+      })
+      .Sortable()
+      .Pageable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .PageSize(10)
+          .Model(m => m.Id(f => f.Id))
+          .Read(read => read.Action("FilesRead", "Home"))
+          .Destroy(update => update.Action("FilesDestroy", "Home"))
+      )
+)
+
+<script type="text/javascript">
+    function onUploadSuccess() {
+        // Force the rebinding of the Grid on successful upload
+        $("#filesGrid").data("kendoGrid").dataSource.read();
+    }
+</script>

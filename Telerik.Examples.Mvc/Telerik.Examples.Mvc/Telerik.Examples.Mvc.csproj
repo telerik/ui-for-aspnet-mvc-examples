@@ -871,6 +871,13 @@
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\GridSaveStateWithBrowserHistoryAPIAreaRegistration.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Models\Product.cs" />
+    <Compile Include="Areas\UploadFilesToDataBase\Controllers\HomeController.cs" />
+    <Compile Include="Areas\UploadFilesToDataBase\EditorUploadingFilesToDataBaseAreaRegistration.cs" />
+    <Compile Include="Areas\CdnFallback\Controllers\HomeController.cs" />
+    <Compile Include="Areas\CdnFallback\CdnFallbackAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewBindingToXml\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeViewBindingToXml\Models\Employee.cs" />
+    <Compile Include="Areas\TreeViewBindingToXml\TreeViewBindingToXmlAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />
@@ -930,6 +937,25 @@
     <Compile Include="Areas\TreeViewSaveItemState\Models\ViewModel.cs" />
     <Compile Include="Areas\UploadDownloadFileLinks\Controllers\HomeController.cs" />
     <Compile Include="Areas\UploadDownloadFileLinks\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFile.cs">
+      <DependentUpon>UserFiles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFiles.Context.cs">
+      <DependentUpon>UserFiles.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFiles.cs">
+      <DependentUpon>UserFiles.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFiles.Designer.cs">
+      <DependentUpon>UserFiles.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFileViewModel.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\HomeController.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\OrdersDataController.cs" />
     <Compile Include="Areas\WindowFormWithAjax\GridSelectionByFieldAreaRegistration.cs" />
@@ -949,11 +975,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\employees.xml" />
     <Content Include="App_Data\OrdersData.xml" />
     <Content Include="App_Data\Sample.mdf" />
     <Content Include="App_Data\Sample_log.ldf">
       <DependentUpon>Sample.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\UserFiles.mdf" />
+    <Content Include="App_Data\UserFiles_log.ldf">
+      <DependentUpon>UserFiles.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\CdnFallback\Scripts\modernizr-2.8.3.js" />
     <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1146,6 +1178,16 @@
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\server.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\web.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.htm" />
+    <Content Include="Areas\UploadFilesToDataBase\Models\UserFiles.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserFiles.edmx</DependentUpon>
+      <LastGenOutput>UserFiles.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\UploadFilesToDataBase\Models\UserFiles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserFiles.edmx</DependentUpon>
+      <LastGenOutput>UserFiles.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -1674,6 +1716,23 @@
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewBindingToXml\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeViewBindingToXml\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewBindingToXml\Views\web.config" />
+    <Content Include="Areas\UploadFilesToDataBase\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\UploadFilesToDataBase\Views\Home\Index.cshtml" />
+    <Content Include="Areas\UploadFilesToDataBase\Views\web.config" />
+    <Content Include="Areas\CdnFallback\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\CdnFallback\Views\Home\Index.cshtml" />
+    <Content Include="Areas\CdnFallback\Views\web.config" />
+    <Content Include="Areas\CdnFallback\Views\Shared\_Layout.cshtml" />
+    <EntityDeploy Include="Areas\UploadFilesToDataBase\Models\UserFiles.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserFiles.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\UploadFilesToDataBase\Models\UserFiles.edmx.diagram">
+      <DependentUpon>UserFiles.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
@@ -4143,6 +4202,7 @@
     <Folder Include="Areas\GridRowsBackgroundConditional\Data\" />
     <Folder Include="Areas\GridSaveStateWithBrowserHistoryAPI\Data\" />
     <Folder Include="Areas\Grid\Data\" />
+    <Folder Include="Views\Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
