@@ -8,22 +8,22 @@
 
 @(Html.Kendo().MultiColumnComboBox()
 						  .Name("multicolumncombobox")
-						  .DataTextField("theText")
-						  .DataValueField("theValue")
+						  .DataTextField("Text")
+						  .DataValueField("Value")
 						  .HtmlAttributes(new { style = "width: 400px;" })
 						  .Columns(columns =>
 						  {
 							  columns.Add()
-								  .Field("theValue")
+								  .Field("Value")
 								  .Title("Value")
 								  .Width("100px");
 
 							  columns.Add()
-								  .Field("theText")
+								  .Field("Text")
 								  .Title("Description");
 
 							  columns.Add()
-									.Template("<div class=\"btnContainer\" data-info=\"#=theValue#\"><button class=\"k-button editBtn\"><span class=\"k-icon k-i-edit\"></span>Edit</button> <button class=\"k-button deleteBtn\"><span class=\"k-icon k-i-delete\"></span>Delete</button></div>")
+									.Template("<div class=\"btnContainer\" data-info=\"#=Value#\"><button class=\"k-button editBtn\"><span class=\"k-icon k-i-edit\"></span>Edit</button> <button class=\"k-button deleteBtn\"><span class=\"k-icon k-i-delete\"></span>Delete</button></div>")
 									.Title("Edit/Delete");
 
 						  })

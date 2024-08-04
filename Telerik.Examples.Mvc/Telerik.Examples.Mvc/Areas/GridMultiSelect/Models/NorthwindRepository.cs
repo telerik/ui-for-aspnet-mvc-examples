@@ -18,7 +18,6 @@ namespace Telerik.Examples.Mvc.Areas.GridMultiSelect.Models
                     EmployeeID = e.EmployeeID,
                     FirstName = e.FirstName,
                     LastName = e.LastName,
-                    HireDate = e.HireDate,
                     Title = e.Title,
                     Territories = e.Territories.Select(t => new TerritoryViewModel
                     {

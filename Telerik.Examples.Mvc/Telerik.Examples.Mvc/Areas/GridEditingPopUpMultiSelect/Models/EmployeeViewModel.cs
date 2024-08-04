@@ -20,8 +20,6 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models
 
         public string Title { get; set; }
 
-        public DateTime? HireDate { get; set; }
-
         [UIHint("TerritoriesEditor")]
         public IEnumerable<TerritoryViewModel> Territories { get; set; }
 
@@ -31,7 +29,6 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models
             employee.FirstName = this.FirstName;
             employee.LastName = this.LastName;
             employee.Title = this.Title;
-            employee.HireDate = this.HireDate;
         }
     }
 }

@@ -25,7 +25,6 @@
         columns.Bound(e => e.FirstName);
         columns.Bound(e => e.LastName);
         columns.Bound(e => e.Title);
-        columns.Bound(e => e.HireDate).Format("{0:d}");
         columns.Bound(e => e.Territories).ClientTemplate("#=territoriesTemplate(Territories)#");
     })
     .ToolBar(tools=> tools.Create())
@@ -49,7 +48,6 @@
 <script type="text/javascript">
 
     function serialize(data) {
-        debugger;
         for (var property in data) {
             if ($.isArray(data[property])) {
                 serializeArray(property, data[property], data);
