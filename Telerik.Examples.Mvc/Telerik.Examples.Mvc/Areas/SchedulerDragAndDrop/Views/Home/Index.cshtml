@@ -145,4 +145,8 @@
             })
         }
     }
+    $(document).on("mousedown", ".k-master-row",function () {
+        var grid = $("#grid").data("kendoGrid");
+        grid.select(this);
+    });
 </script>

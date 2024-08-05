@@ -812,10 +812,10 @@
     <Compile Include="Areas\GridEditingPopUpMultiSelect\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingPopUpMultiSelect\GridEditingPopUpMultiSelectAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\EmployeeViewModel.cs" />
-    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\GridMultiSelectEmployee.cs">
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\GridEditingPopUpMultiSelectEmployee.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\GridMultiSelectTerritory.cs">
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\GridEditingPopUpMultiSelectTerritory.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.Context.cs">
@@ -981,7 +981,24 @@
     </Compile>
     <Compile Include="Areas\GridFilterExcelLike\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridFilterExcelLike\GridFilterExcelLikeAreaRegistration.cs" />
-    <Compile Include="Areas\GridFilterExcelLike\Models\Product.cs" />
+    <Compile Include="Areas\GridFilterExcelLike\Models\GridFilterExcelLikeProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridFilterExcelLike\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridFilterExcelLike\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridFilterExcelLike\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Areas\GridForeignKeyColumnCRUD\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridForeignKeyColumnCRUD\GridForeignKeyColumnCRUDAreaRegistration.cs" />
     <Compile Include="Areas\GridForeignKeyColumnCRUD\Models\Employee.cs" />
@@ -1758,6 +1775,16 @@
     <Content Include="Areas\GridExportingExcelMultiple\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridExportingExcelMultiple\Views\web.config" />
     <Content Include="Areas\GridExportingExcelMultiple\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridFilterExcelLike\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridFilterExcelLike\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -2589,6 +2616,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Northwind1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Areas\GridFilterExcelLike\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridFilterExcelLike\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />

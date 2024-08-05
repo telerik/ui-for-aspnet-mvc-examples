@@ -1,4 +1,6 @@
-﻿<button id="export" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base"><span class="k-icon k-font-icon k-i-excel"></span>Export to Excel</button>
+﻿<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+
+<button id="export" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base"><span class="k-icon k-font-icon k-i-excel"></span>Export to Excel</button>
 
 @(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridExportingExcelMultiple.Models.GridExportingExcelMultipleProduct>()
     .Name("products")

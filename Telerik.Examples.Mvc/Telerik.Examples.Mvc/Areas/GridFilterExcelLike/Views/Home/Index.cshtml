@@ -1,138 +1,73 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridFilterExcelLike.Models.Product>()
-    .Name("grid")
-    .Columns(columns =>
-    {
-        columns.Bound(p => p.ProductName);
-        columns.Bound(p => p.UnitPrice).Width(120).Format("{0:c}");
-        columns.Bound(p => p.UnitsInStock).Width(120);
-        columns.Bound(p => p.Discontinued)
-        .ClientTemplate(@"# if (Discontinued) { #
-                            <input type='checkbox' checked='checked' class='checkbox' />
-                          # } else { #
-                            <input type='checkbox' class='checkbox' />
-                          # } #")
-        .HeaderTemplate("<input type='checkbox' class='checkAll' />").Width(120);
-    })
-    .Selectable(s => s.Mode(GridSelectionMode.Multiple))
-    .Pageable(p => p.Responsive(false))
-    .Scrollable()
-    .Filterable()
-    .Events(ev => ev
-            .DataBound("dataBound")
-            .Change("changed")
-            )
-    .HtmlAttributes(new { style = "height:550px;" })
-    .DataSource(dataSource => dataSource
-        .Ajax()
-        .PageSize(20)
-        .Model(model => model.Id(p => p.ProductID))
-        .Read(read => read.Action("Get_Products", "Home"))
+﻿<script>
+
+
+    function onChange(e) {
+        dataSourceShared.data(e.items);
+    }
+
+    function onFilterMenuInit(e) {
+        var grid = e.sender;
+        e.container.data("kendoPopup").bind("open", function () {
+            dataSourceShared.sort({ field: e.field, dir: "asc" });
+            var uniqueDsResult = removeDuplicates(grid.dataSource.view(), e.field);
+            dataSourceShared.data(uniqueDsResult);
+        })
+
+        function removeDuplicates(items, field) {
+            var getter = function (item) { return item[field] },
+                result = [],
+                index = 0,
+                seen = {};
+
+            while (index < items.length) {
+                var item = items[index++],
+                    text = getter(item);
+
+                if (text !== undefined && text !== null && !seen.hasOwnProperty(text)) {
+                    result.push(item);
+                    seen[text] = true;
+                }
+            }
+
+            return result;
+        }
+    }
+</script>
+
+
+
+@(Html.Kendo().DataSource<Telerik.Examples.Mvc.Areas.GridFilterExcelLike.Models.GridFilterExcelLikeProduct>()
+    .Name("dataSourceShared")
+    .Ajax(dataSource => dataSource
+       .Read(read => read.Action("Products_Read", "Home"))
+       .ServerOperation(false)
     )
 )
-<div id="count"></div>
-<script>
-    var allChecked = @Html.Raw(Json.Encode(Model)),
-    bound = false;
-    function changed(e)
-    {
-        if(!bound)
-        {
-            var grid = e.sender,
-                selected = grid.select(),
-                data= {productsList : []}
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridFilterExcelLike.Models.GridFilterExcelLikeProduct>()
+      .Name("grid")
+      .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Products_Read", "Home"))
+            .PageSize(20)
+            .Events(events => events
+             .Change("onChange")
+      )
+        )
+      .Events(events => events
+       .FilterMenuInit("onFilterMenuInit")
+      )
+      .Columns(columns =>
+      {
 
-            selected.each(function(){
-                var dataItem = grid.dataItem(this),
-                    checked = $(this).find("input:checkbox").prop("checked");
+          columns.Bound(product => product.ProductID).Filterable(ftb => ftb.Multi(true).DataSource("dataSourceShared"));
 
-                data.productsList.push({
-                    ProductId: dataItem.ProductID,
-                    ProductName: dataItem.ProductName,
-                    UnitPrice: dataItem.UnitPrice,
-                    UnitsInStock: dataItem.UnitsInStock,
-                    Discontinued: !checked
-                })
-            });
+          columns.Bound(product => product.ProductName).Filterable(ftb => ftb.Multi(true).DataSource("dataSourceShared"));
 
-            updateData(grid, data);
-        }
+          columns.Bound(product => product.UnitsInStock).Filterable(ftb => ftb.Multi(true).DataSource("dataSourceShared"));
 
-    }
-
-    function dataBound(e) {
-        bound = true;
-        var rows = this.tbody.find("tr");
-        var grid = e.sender;
-        rows.each(function () {
-            var row = $(this);
-            if (row.find("input[checked='checked']").length > 0) {
-                grid.select(row);
-            }
-        });
-        bound = false;
-    }
-
-    function updateData(grid, data){
-        $.ajax({
-            url: '@Url.Action("Select_Products", "Home")',
-            data: data,
-            type: "POST",
-            success: function (res) {
-                checkHeader(res);
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    function checkHeader(res) {
-        if(res)
-        {
-            grid.thead.find(".checkAll").prop('checked', 'checked');
-        }
-        else
-        {
-            grid.thead.find(".checkAll").removeProp("checked");
-        }
-    }
-
-    function selectRow() {
-        var checked = this.checked,
-        row = $(this).closest("tr"),
-        dataItem = grid.dataItem(row);
-
-        var data = {productsList:[{
-            ProductId: dataItem.ProductID,
-            ProductName: dataItem.ProductName,
-            UnitPrice: dataItem.UnitPrice,
-            UnitsInStock: dataItem.UnitsInStock,
-            Discontinued: checked}]
-        };
-
-        updateData(grid, data);
-    }
-
-    function selectAll() {
-        var checked = this.checked;
-        $.ajax({
-            url: '@Url.Action("Select_AllProducts", "Home")',
-            data: {
-                checkAll:checked
-            },
-            type: "POST",
-            success: function () {
-                grid.dataSource.fetch();
-            }
-        });
-    }
-
-    $(document).ready(function () {
-        grid = $("#grid").data("kendoGrid");
-        grid.table.on("click", ".checkbox", selectRow);
-        grid.thead.on("click", ".checkAll", selectAll);
-
-        checkHeader(allChecked);
-    });
-</script>
+          columns.Bound(product => product.UnitPrice).Filterable(ftb => ftb.Multi(true).DataSource("dataSourceShared"));
+      })
+      .Pageable()
+      .Filterable()
+      .Sortable()
+)
