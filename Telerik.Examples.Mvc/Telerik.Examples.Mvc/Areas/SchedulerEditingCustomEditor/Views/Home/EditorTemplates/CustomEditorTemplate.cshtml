@@ -38,7 +38,6 @@
 
     @(Html.Kendo().DateTimePickerFor(model => model.Start)
         .HtmlAttributes(generateDatePickerAttributes("startDateTime", "start", "value:start,invisible:isAllDay")))
-
     @(Html.Kendo().DatePickerFor(model => model.Start)
         .HtmlAttributes(generateDatePickerAttributes("startDate", "start", "value:start,visible:isAllDay")))
 
@@ -52,18 +51,17 @@
 <div data-container-for="end" class="k-edit-field">
 
     @(Html.Kendo().DateTimePickerFor(model => model.End)
-        .HtmlAttributes(generateDatePickerAttributes(
-            "endDateTime",
-            "end",
-            "value:end,invisible:isAllDay",
-            new Dictionary<string, object>() {{"data-dateCompare-msg", "End date should be greater than or equal to the start date"}})))
-        
+                .HtmlAttributes(generateDatePickerAttributes(
+                    "endDateTime",
+                    "end",
+                    "value:end,invisible:isAllDay",
+                    new Dictionary<string, object>() {{"data-dateCompare-msg", "End date should be greater than or equal to the start date"}})))
     @(Html.Kendo().DatePickerFor(model => model.End)
-        .HtmlAttributes(generateDatePickerAttributes(
-            "endDate", 
-            "end", 
-            "value:end,visible:isAllDay",
-            new Dictionary<string, object>() {{"data-dateCompare-msg", "End date should be greater than or equal to the start date"}})))
+                .HtmlAttributes(generateDatePickerAttributes(
+                    "endDate",
+                    "end",
+                    "value:end,visible:isAllDay",
+                    new Dictionary<string, object>() {{"data-dateCompare-msg", "End date should be greater than or equal to the start date"}})))
 
     <span data-bind="text: endTimezone"></span>
     <span data-for="end" class="k-invalid-msg"></span>
@@ -73,8 +71,8 @@
     @(Html.LabelFor(model => model.IsAllDay))
 </div>
 <div data-container-for="isAllDay" class="k-edit-field">
-    @(Html.CheckBoxFor(model => model.IsAllDay, new { data_bind = "checked:isAllDay" }))
-</div>
+        @(Html.Kendo().CheckBoxFor(model => model.IsAllDay).HtmlAttributes(new { data_bind = "checked:isAllDay" }))
+    </div>
 
 
 <div class="endTimezoneRow">
@@ -114,7 +112,7 @@
 </div>
 <div data-container-for="startTimezone" class="k-edit-field">
     @(Html.Kendo().TimezoneEditorFor(model => model.StartTimezone)
-        .HtmlAttributes(new { data_bind = "value:startTimezone" }))
+            .HtmlAttributes(new { data_bind = "value:startTimezone" }))
 </div>
 
 <div class="k-edit-label">
@@ -122,7 +120,7 @@
 </div>
 <div data-container-for="endTimezone" class="k-edit-field">
     @(Html.Kendo().TimezoneEditorFor(model => model.EndTimezone)
-        .HtmlAttributes(new { data_bind = "value:endTimezone" }))
+            .HtmlAttributes(new { data_bind = "value:endTimezone" }))
 </div>
 
 <div class="k-edit-label">
@@ -130,7 +128,7 @@
 </div>
 <div data-container-for="recurrenceRule" class="k-edit-field">
     @(Html.Kendo().RecurrenceEditorFor(model => model.RecurrenceRule)
-        .HtmlAttributes(new { data_bind = "value:recurrenceRule" }))
+            .HtmlAttributes(new { data_bind = "value:recurrenceRule" }))
 </div>
 
 <div class="k-edit-label">
@@ -145,17 +143,17 @@
 </div>
 <div data-container-for="RoomID" class="k-edit-field">
     @(Html.Kendo().DropDownListFor(model => model.RoomID)
-        .HtmlAttributes(new { data_bind = "value:RoomID", style = "width: 200px" })
-        .DataTextField("Text")
-        .DataValueField("Value")
-        .OptionLabel("None")
-        .ValuePrimitive(true)
-        .Template("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
-        .BindTo(new[] { 
-                new { Text = "Meeting Room 101", Value = 1, Color = "\\#6eb3fa" },
-                new { Text = "Meeting Room 201", Value = 2, Color = "\\#f58a8a" } 
-            }).ToClientTemplate()
-    )
+            .HtmlAttributes(new { data_bind = "value:RoomID", style = "width: 200px" })
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .OptionLabel("None")
+            .ValuePrimitive(true)
+            .Template("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
+            .BindTo(new[] {
+                    new { Text = "Meeting Room 101", Value = 1, Color = "\\#6eb3fa" },
+                    new { Text = "Meeting Room 201", Value = 2, Color = "\\#f58a8a" }
+                }).ToClientTemplate()
+        )
 </div>
 
 <div class="k-edit-label">
@@ -163,18 +161,18 @@
 </div>
 <div data-container-for="Attendees" class="k-edit-field">
     @(Html.Kendo().MultiSelectFor(model => model.Attendees)
-        .HtmlAttributes(new { data_bind = "value:Attendees" })
-        .DataTextField("Text")
-        .DataValueField("Value")
-        .ValuePrimitive(true)
-        .TagTemplate("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
-        .ItemTemplate("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
-        .BindTo(new[] { 
-                new { Text = "Alex", Value = 1, Color = "\\#f8a398" },
-                new { Text = "Bob", Value = 2, Color = "\\#51a0ed" },
-                new { Text = "Charlie", Value = 3, Color = "\\#56ca85" } 
-            })
-    )
+            .HtmlAttributes(new { data_bind = "value:Attendees" })
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .ValuePrimitive(true)
+            .TagTemplate("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
+            .ItemTemplate("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
+            .BindTo(new[] {
+                    new { Text = "Alex", Value = 1, Color = "\\#f8a398" },
+                    new { Text = "Bob", Value = 2, Color = "\\#51a0ed" },
+                    new { Text = "Charlie", Value = 3, Color = "\\#56ca85" }
+                })
+        )
 </div>
 
 @{

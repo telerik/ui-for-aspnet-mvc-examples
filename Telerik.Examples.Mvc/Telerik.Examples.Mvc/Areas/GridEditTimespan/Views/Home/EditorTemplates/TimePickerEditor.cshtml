@@ -1,6 +1,9 @@
 ﻿@model TimeSpan?
 
 @(
-    Html.Kendo().TimePickerFor(model => model).HtmlAttributes(new { data_skip = "true", data_bind = "timespan:" + ViewData.TemplateInfo.GetFullHtmlFieldName(string.Empty) })
-    .Format("HH:mm:ss")
-)
+        Html.Kendo().TimePicker().HtmlAttributes(new { data_skip=true, data_bind = "timespan:Time" })
+        .Name("timepicker")
+        .Format("HH:mm:ss")
+    )
+@Html.HiddenFor(model => model)
+
