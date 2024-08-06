@@ -10,23 +10,29 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using Telerik.Examples.Mvc.Areas.GridEditingInCellWebApi.Models;
 
 namespace Telerik.Examples.Mvc.Areas.GridEditingWebApi.Models
 {
-    public class ProductsController : ApiController
+    public class GridEditingWebApiProductController : ApiController
     {
-        private NorthwindEntities db = new NorthwindEntities();
+        private GridEditingWebApiEntities db;
 
-        // GET api/Products
+        public GridEditingWebApiProductController()
+        {
+            db = new GridEditingWebApiEntities();
+        }
+
+        // GET api/GridEditingWebApiProduct
         public DataSourceResult GetProducts([System.Web.Http.ModelBinding.ModelBinder(typeof(WebApiDataSourceRequestModelBinder))]DataSourceRequest request)
         {
             return db.Products.ToDataSourceResult(request);
         }
 
-        // GET api/Products/5
-        public Product GetProduct(int id)
+        // GET api/GridEditingWebApiProduct/5
+        public GridEditingWebApiProduct GetProduct(int id)
         {
-            Product product = db.Products.Find(id);
+            GridEditingWebApiProduct product = db.Products.Find(id);
             if (product == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
@@ -35,8 +41,8 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingWebApi.Models
             return product;
         }
 
-        // PUT api/Products/5
-        public HttpResponseMessage PutProduct(int id, Product product)
+        // PUT api/GridEditingWebApiProduct/PutProduct/5
+        public HttpResponseMessage PutProduct(int id, GridEditingWebApiProduct product)
         {
             if (!ModelState.IsValid)
             {
@@ -62,8 +68,8 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingWebApi.Models
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        // POST api/Products
-        public HttpResponseMessage PostProduct(Product product)
+        // POST api/GridEditingWebApiProduct/PostProduct
+        public HttpResponseMessage PostProduct(GridEditingWebApiProduct product)
         {
             if (ModelState.IsValid)
             {
@@ -85,10 +91,10 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingWebApi.Models
             }
         }
 
-        // DELETE api/Products/5
+        // DELETE api/GridEditingWebApiProduct/DeleteProduct/5
         public HttpResponseMessage DeleteProduct(int id)
         {
-            Product product = db.Products.Find(id);
+            GridEditingWebApiProduct product = db.Products.Find(id);
             if (product == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);

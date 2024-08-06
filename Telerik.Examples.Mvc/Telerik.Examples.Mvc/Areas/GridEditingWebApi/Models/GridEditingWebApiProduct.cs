@@ -12,7 +12,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingWebApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class GridEditingWebApiProduct
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }

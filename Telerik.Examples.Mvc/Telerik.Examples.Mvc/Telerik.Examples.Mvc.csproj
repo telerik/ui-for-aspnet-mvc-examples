@@ -900,6 +900,9 @@
     <Compile Include="Areas\GridEditingUploadInPopUp\Models\Category.cs" />
     <Compile Include="Areas\GridEditingWebApi\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingWebApi\GridEditingWebApiAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Models\GridEditingWebApiProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridEditingWebApi\Models\Northwind.Context.cs">
       <DependentUpon>Northwind.Context.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -915,10 +918,7 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Areas\GridEditingWebApi\Models\Product.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\GridEditingWebApi\Models\ProductsController.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Controllers\GridEditingWebApiProductController.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\GridEditingWithCascadingDropDownListsAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\Customer.cs" />

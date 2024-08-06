@@ -42,7 +42,7 @@
 
 <script>
     function audioHandler(args) {
-        args.success("@Url.Content("~/Content/Captcha/")" + args.data.CaptchaID + ".wav");
+        args.success("@Url.Content("~/Areas/Captcha/Files/")" + args.data.CaptchaID + ".wav");
     }
 </script>
 

@@ -1,4 +1,4 @@
-﻿@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridEditingWebApi.Models.Product>()
+﻿@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridEditingWebApi.Models.GridEditingWebApiProduct>()
       .Name("grid")
       .Columns(columns =>
       {
@@ -20,10 +20,10 @@
                 model.Id(product => product.ProductID); // Specify the property which is the unique identifier of the model
                 model.Field(product => product.ProductID).Editable(false); // Make the ProductID property not editable
             })
-            .Create(create => create.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Product", action = "post" }))) // Action invoked when the user saves a new data item
-            .Read(read => read.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Product", action = "get" }))) // Action invoked when the grid needs data
-            .Update(update => update.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Product", action = "put", id = "{0}" })))  // Action invoked when the user saves an updated data item
-            .Destroy(destroy => destroy.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Product", action = "delete", id = "{0}" }))) // Action invoked when the user removes a data item
+            .Create(create => create.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "GridEditingWebApiProduct", action = "PostProduct" }))) // Action invoked when the user saves a new data item
+            .Read(read => read.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "GridEditingWebApiProduct", action = "GetProducts" }))) // Action invoked when the grid needs data
+            .Update(update => update.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "GridEditingWebApiProduct", action = "PutProduct", id = "{0}" })))  // Action invoked when the user saves an updated data item
+            .Destroy(destroy => destroy.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "GridEditingWebApiProduct", action = "DeleteProduct", id = "{0}" }))) // Action invoked when the user removes a data item
       )
       .Pageable()
 )
