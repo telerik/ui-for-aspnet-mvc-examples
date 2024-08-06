@@ -47,14 +47,143 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-collections4-4.4, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-collections4-4.4.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-io-2.11.0, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-io-2.11.0.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-lang3-3.10, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-lang3-3.10.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-logging-1.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-logging-1.2.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-math3-3.6.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\commons-math3-3.6.1.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Localedata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Nashorn.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="istack-commons-runtime-4.0.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\istack-commons-runtime-4.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="jackcess-4.0.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jackcess-4.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="jakarta.activation-2.0.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jakarta.activation-2.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="jakarta.xml.bind-api-3.0.1, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jakarta.xml.bind-api-3.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="jaxb-core-3.0.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jaxb-core-3.0.2.dll</HintPath>
+    </Reference>
+    <Reference Include="jaxb-runtime-3.0.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jaxb-runtime-3.0.2.dll</HintPath>
+    </Reference>
+    <Reference Include="jsoup-1.15.3, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jsoup-1.15.3.dll</HintPath>
+    </Reference>
     <Reference Include="Kendo.Mvc, Version=2024.2.514.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.Trial.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4j-api-2.17.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\log4j-api-2.17.2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -65,11 +194,34 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="mpxj-for-csharp, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\mpxj-for-csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MpxjUtilities, Version=11.1.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\MpxjUtilities.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="poi-5.2.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\poi-5.2.2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="rtfparserkit-1.16.0, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\rtfparserkit-1.16.0.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.2.88.6\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="sqlite-jdbc-3.36.0.3, Version=11.1.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-common.11.1.0\lib\net45\sqlite-jdbc-3.36.0.3.dll</HintPath>
+    </Reference>
+    <Reference Include="sqlite-jdbc-3.42.0.0, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\sqlite-jdbc-3.42.0.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -197,6 +349,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=6.0.0.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.6.0.3\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
     <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -214,6 +369,9 @@
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -245,6 +403,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -265,25 +424,77 @@
     <Reference Include="Telerik.SvgIcons, Version=3.0.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.SvgIcons.3.0.0\lib\netstandard2.0\Telerik.SvgIcons.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Documents.Core.Trial.2024.2.426\lib\net462\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Documents.Flow.Trial.2024.2.426\lib\net462\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Zip.Trial.2024.2.426\lib\net462\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip, Version=2024.2.426.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Zip.Trial.2024.2.426\lib\netstandard2.0\Telerik.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="txw2-3.0.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\txw2-3.0.2.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ChartDynamicSeries\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\ChartDynamicSeries\ChartDynamicSeriesAreaRegistration.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Models\MySeriesData.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Models\MyViewModel.cs" />
     <Compile Include="Areas\ChartInGrid\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ChartInGrid\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\ChartInGrid\ChartInGridAreaRegistration.cs" />
     <Compile Include="Areas\ChartInGrid\Models\ViewModel.cs" />
+    <Compile Include="Areas\DefineCustomHtmlHelper\Helpers\MyGridHelper.cs" />
+    <Compile Include="Areas\DefineCustomHtmlHelper\Models\OrderViewModel.cs" />
     <Compile Include="Areas\DropDownListCustomDataSource\Controllers\HomeController.cs" />
-    <Compile Include="Areas\DropDownListCustomDataSource\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\DropDownListCustomDataSource\DropDownListCustomDataSourceAreaRegistration.cs" />
     <Compile Include="Areas\DropDownListVirtualization\Controllers\HomeController.cs" />
-    <Compile Include="Areas\DropDownListVirtualization\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\DropDownListVirtualization\DropDownListVirtualizationAreaRegistration.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\EditorDatabaseImageBrowserAreaRegistration.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.cs">
+      <DependentUpon>Files.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.Designer.cs">
+      <DependentUpon>Files.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\FilesRepository.cs" />
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Folder.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Image.cs">
+      <DependentUpon>Files.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\DependencyViewModel.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\GanttDataContainer.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\ResourceAssignmentViewModel.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\ResourceViewModel.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Models\TaskViewModel.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\FileWriteService.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\GanttAssignmentService.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\GanttDependencyService.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\GanttResourceService.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Services\GanttTaskService.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\GridAjaxBindingCustomJsonResultAreaRegistration.cs" />
     <Compile Include="Areas\GridAjaxBindingCustomJsonResult\Models\Product.cs" />
@@ -388,7 +599,7 @@
     <Compile Include="Areas\GridClientDetailTemplate\GridClientDetailTemplateAreaRegistration.cs" />
     <Compile Include="Areas\GridClientDetailTemplate\Models\Product.cs" />
     <Compile Include="Areas\GridContextMenu\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridContextMenu\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridContextMenu\GridContextMenuAreaRegistration.cs" />
     <Compile Include="Areas\GridContextMenu\Models\Employee.cs" />
     <Compile Include="Areas\GridContextMenu\Models\EmployeeRepository.cs" />
     <Compile Include="Areas\GridContextMenu\Models\Order.cs" />
@@ -463,8 +674,15 @@
     <Compile Include="Areas\GridDateIgnoreTimeZones\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridDateIgnoreTimeZones\GridDateIgnoreTimeZonesAreaRegistration.cs" />
     <Compile Include="Areas\GridDateIgnoreTimeZones\Models\Person.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\GridDateTimeOffsetAreaRegistration.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\Car.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\CarsService.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\CarViewModel.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\MappingProfile.cs" />
+    <Compile Include="Areas\GridDateTimeOffset\Models\Student.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridDateUtcOnServerAndClient\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridDateUtcOnServerAndClient\GridDateUtcOnServerAndClientAreaRegistration.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Models\Person.cs" />
     <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\BaseController.cs" />
     <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\EmployeesController.cs" />
@@ -550,19 +768,19 @@
       <DependentUpon>SampleModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Areas\GridEditingInLineNullableBoolean\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingInLineNullableBoolean\GridEditingInLineNullableBooleanAreaRegistration.cs" />
@@ -591,6 +809,32 @@
     <Compile Include="Areas\GridEditingPopUpAccessModel\GridEditingPopUpAccessModelAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingPopUpAccessModel\Models\Employee.cs" />
     <Compile Include="Areas\GridEditingPopUpAccessModel\Models\Order.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\GridEditingPopUpMultiSelectAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\GridEditingPopUpMultiSelectEmployee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\GridEditingPopUpMultiSelectTerritory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\NorthwindRepository.cs" />
+    <Compile Include="Areas\GridEditingPopUpMultiSelect\Models\TerritoryViewModel.cs" />
     <Compile Include="Areas\GridEditingPopUpNestedGridBatch\Controllers\BaseController.cs" />
     <Compile Include="Areas\GridEditingPopUpNestedGridBatch\Controllers\EmployeesController.cs" />
     <Compile Include="Areas\GridEditingPopUpNestedGridBatch\Controllers\HomeController.cs" />
@@ -653,6 +897,9 @@
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\GridEditingPoPupRequiredDropDownListForAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingPoPupRequiredDropDownListFor\Models\Person.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\GridEditingPopUpServerValidationAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingPopUpServerValidation\Models\Product.cs" />
     <Compile Include="Areas\GridEditingPopUpTreeView\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingPopUpTreeView\GridEditingPopUpTreeViewAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingPopUpTreeView\Models\GridEditingPopUpTreeViewProduct.cs">
@@ -691,14 +938,14 @@
     <Compile Include="Areas\GridEditingWithComboBoxServerFiltering\Models\Category.cs" />
     <Compile Include="Areas\GridEditingWithComboBoxServerFiltering\Models\Product.cs" />
     <Compile Include="Areas\GridEditPopUpServerValidation\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditPopUpServerValidation\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditPopUpServerValidation\GridEditPopUpServerValidationAreaRegistration.cs" />
     <Compile Include="Areas\GridEditPopUpServerValidation\Models\Product.cs" />
     <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditSyncChangesWithOneRequest\GridEditSyncChangesWithOneRequestAreaRegistration.cs" />
     <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Models\Employee.cs" />
     <Compile Include="Areas\GridEditSyncChangesWithOneRequest\Models\Order.cs" />
     <Compile Include="Areas\GridEditTimespan\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridEditTimespan\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditTimespan\GridEditTimespanAreaRegistration.cs" />
     <Compile Include="Areas\GridEditTimespan\Models\ViewModel.cs" />
     <Compile Include="Areas\GridExcelExportCellFormat\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridExcelExportCellFormat\GridExcelExportCellFormatAreaRegistration.cs" />
@@ -706,9 +953,52 @@
     <Compile Include="Areas\GridExcelExportColumnTemplate\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridExcelExportColumnTemplate\GridExcelExportColumnTemplateAreaRegistration.cs" />
     <Compile Include="Areas\GridExcelExportColumnTemplate\Models\Order.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\GridExportingExcelMultipleAreaRegistration.cs" />
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Employee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\GridExportingExcelMultipleProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridExportingExcelMultiple\Models\Order.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridFilterExcelLike\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridFilterExcelLike\GridSelectionByFieldAreaRegistration.cs" />
-    <Compile Include="Areas\GridFilterExcelLike\Models\Product.cs" />
+    <Compile Include="Areas\GridFilterExcelLike\GridFilterExcelLikeAreaRegistration.cs" />
+    <Compile Include="Areas\GridFilterExcelLike\Models\GridFilterExcelLikeProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridFilterExcelLike\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridFilterExcelLike\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\GridFilterExcelLike\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Areas\GridForeignKeyColumnCRUD\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridForeignKeyColumnCRUD\GridForeignKeyColumnCRUDAreaRegistration.cs" />
     <Compile Include="Areas\GridForeignKeyColumnCRUD\Models\Employee.cs" />
@@ -839,11 +1129,77 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Areas\GridHierarchySelfReferencing\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridHierarchySelfReferencing\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchySelfReferencing\GridHierarchySelfReferencingAreaRegistration.cs" />
     <Compile Include="Areas\GridHierarchySelfReferencing\Models\Customer.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\GridHierarchyServerDetailTemplateAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\GridHierarchyServerDetailTemplateProduct.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.Context.cs">
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.Designer.cs">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridHierarchyServer\GridHierarchyServerAreaRegistration.cs" />
+    <Compile Include="Areas\GridHierarchyServer\Models\Category.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridHierarchyServer\Models\Product.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\GridInPartialViewLoadedInTabStripAreaRegistration.cs" />
     <Compile Include="Areas\GridInPartialViewLoadedInTabStrip\Models\Customer.cs" />
+    <Compile Include="Areas\GridMasterDetail\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridMasterDetail\GridMasterDetailAreaRegistration.cs" />
+    <Compile Include="Areas\GridMasterDetail\Models\GridMasterDetailCategory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\GridMasterDetailProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\GridMasterDetail\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\GridModifyFiltersOnTheServerAreaRegistration.cs" />
     <Compile Include="Areas\GridModifyFiltersOnTheServer\Models\Employee.cs" />
@@ -853,8 +1209,29 @@
     <Compile Include="Areas\GridMultiSelectFilter\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridMultiSelectFilter\GridMultiSelectFilterAreaRegistration.cs" />
     <Compile Include="Areas\GridMultiSelectFilter\Models\ViewModel.cs" />
+    <Compile Include="Areas\GridMultiSelect\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridMultiSelect\GridMultiSelectAreaRegistration.cs" />
+    <Compile Include="Areas\GridMultiSelect\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridMultiSelect\Models\GridMultiSelectEmployee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMultiSelect\Models\GridMultiSelectTerritory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMultiSelect\Models\Northwind.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMultiSelect\Models\Northwind.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridMultiSelect\Models\NorthwindRepository.cs" />
+    <Compile Include="Areas\GridMultiSelect\Models\TerritoryViewModel.cs" />
     <Compile Include="Areas\GridPostWithForm\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridPostWithForm\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridPostWithForm\GridPostWithFormAreaRegistration.cs" />
     <Compile Include="Areas\GridPostWithForm\Models\Category.cs" />
     <Compile Include="Areas\GridPostWithForm\Models\Product.cs" />
     <Compile Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Controllers\HomeController.cs" />
@@ -871,11 +1248,28 @@
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\GridSaveStateWithBrowserHistoryAPIAreaRegistration.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Models\Product.cs" />
+    <Compile Include="Areas\EditorImportExport\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorImportExport\EditorImportExportAreaRegistration.cs" />
+    <Compile Include="Areas\EditorUploadImage\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorUploadImage\EditorUploadImageAreaRegistration.cs" />
+    <Compile Include="Areas\EditorEnterLinebreakShiftEnterParagraph\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EditorEnterLinebreakShiftEnterParagraph\EditorEnterLinebreakShiftEnterParagraphAreaRegistration.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GanttImportExportUsingMpxj\GanttImportExportUsingMpxjAreaRegistration.cs" />
+    <Compile Include="Areas\DefineCustomHtmlHelper\Controllers\HomeController.cs" />
+    <Compile Include="Areas\DefineCustomHtmlHelper\DefineCustomHtmlHelperAreaRegistration.cs" />
+    <Compile Include="Areas\GridTimestamp\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridTimestamp\GridTimestampAreaRegistration.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\Product.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\ProductContexInitializer.cs" />
+    <Compile Include="Areas\GridTimestamp\Models\ProductContext.cs" />
+    <Compile Include="Areas\MenuSameControllersInDifferentAreas\Controllers\HomeController.cs" />
+    <Compile Include="Areas\MenuSameControllersInDifferentAreas\MenuSameControllersInDifferentAreasAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSelectionByField\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionByField\Models\Product.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Controllers\HomeController.cs" />
-    <Compile Include="Areas\GridSelectionColumnWithCheckBox\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridSelectionColumnWithCheckBox\GridSelectionColumnWithCheckBoxAreaRegistration.cs" />
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Models\ProductViewModel.cs" />
     <Compile Include="Areas\Grid\Controllers\AjaxEditingWithEnumerationController.cs" />
     <Compile Include="Areas\Grid\Controllers\AutoCompleteEditorAllowSettingNewValuesController.cs" />
@@ -902,37 +1296,253 @@
     <Compile Include="Areas\Grid\Models\Product.cs" />
     <Compile Include="Areas\Grid\Models\Vendor.cs" />
     <Compile Include="Areas\MenuOpenWindowWithAjax\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MenuOpenWindowWithAjax\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MenuOpenWindowWithAjax\MenuOpenWindowWithAjaxAreaRegistration.cs" />
     <Compile Include="Areas\MultiColumnComboBoxEdit\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiColumnComboBoxEdit\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MultiColumnComboBoxEdit\MultiColumnComboBoxEditAreaRegistration.cs" />
     <Compile Include="Areas\MultiColumnComboBoxEdit\Models\SampleData.cs" />
     <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiSelectFormPostStronglyTyped\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MultiSelectFormPostStronglyTyped\MultiSelectFormPostStronglyTypedAreaRegistration.cs" />
     <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Models\City.cs" />
     <Compile Include="Areas\MultiSelectFormPostStronglyTyped\Models\CountryInfo.cs" />
     <Compile Include="Areas\MultiSelectGetPostData\Controllers\HomeController.cs" />
-    <Compile Include="Areas\MultiSelectGetPostData\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\MultiSelectGetPostData\MultiSelectGetPostDataAreaRegistration.cs" />
     <Compile Include="Areas\MultiSelectGetPostData\Models\MultiSelectItem.cs" />
     <Compile Include="Areas\MultiSelectGetPostData\Models\sampleModel.cs" />
     <Compile Include="Areas\PanelBarHierarchyBinding\Controllers\HomeController.cs" />
-    <Compile Include="Areas\PanelBarHierarchyBinding\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\PanelBarHierarchyBinding\PanelBarHierarchyBindingAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\Controllers\HomeController.cs" />
-    <Compile Include="Areas\PanelBarSelectItemInitially\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\PanelBarSelectItemInitially\PanelBarHierarchyBindingAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\Models\LocalPanelBarItem.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerCustomView\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\SchedulerCustomViewMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\SchedulerCustomViewMeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerCustomView\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerCustomView\SchedulerCustomViewAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\SchedulerDragAndDropMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\SchedulerDragAndDropMeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerDragAndDrop\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerDragAndDrop\SchedulerDragAndDropAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\SchedulerEditingCustomEditorMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\SchedulerEditingCustomEditorMeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingCustomEditor\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerEditingCustomEditor\SchedulerEditingCustomEditorAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Controllers\FilterRange.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Models\Meeting.cs">
+      <DependentUpon>SchedulerSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\MeetingAtendee.cs">
+      <DependentUpon>SchedulerSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.Context.cs">
+      <DependentUpon>SchedulerSample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.cs">
+      <DependentUpon>SchedulerSample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.Designer.cs">
+      <DependentUpon>SchedulerSample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\SchedulerTaskService.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\Models\Task.cs">
+      <DependentUpon>SchedulerSample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerServerFiltering\Models\TaskViewModel.cs" />
+    <Compile Include="Areas\SchedulerServerFiltering\SchedulerServerFilteringAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\MeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerTooltip\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\SchedulerTooltip\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerTooltip\SchedulerTooltipAreaRegistration.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ThemeChangeOnClient\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\ThemeChangeOnClient\ThemeChangeOnClientAreaRegistration.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Controllers\EmployeeDirectoryController.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Employee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\EmployeeDirectory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\EmployeeDirectoryModel.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Models\EmployeeDirectoryService.cs" />
+    <Compile Include="Areas\TreeListExportingMultiple\Models\EmployeeTerritory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Sample.Context.cs">
+      <DependentUpon>Sample.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Sample.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeListExportingMultiple\TreeListExportingMultipleAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Customer.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\CustomerDemographic.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\HierarchicalViewModel.cs" />
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.Context.cs">
+      <DependentUpon>Northwind.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Order_Detail.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Region.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Shipper.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Supplier.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\sysdiagram.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Territory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncCategory.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncEmployee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncOrder.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\TreeViewExpandSelectedItemAsyncProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TreeViewExpandSelectedItemAsync\TreeViewExpandSelectedItemAsyncAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewLoadConditionally\Controllers\HomeController.cs" />
     <Compile Include="Areas\TreeViewLoadConditionally\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewLoadConditionally\Models\ComboItemModel.cs" />
     <Compile Include="Areas\TreeViewLoadConditionally\Models\TreeViewItemModel.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\Controllers\HomeController.cs" />
-    <Compile Include="Areas\TreeViewSaveItemState\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewSaveItemState\TreeViewSaveItemStateAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\Models\ViewModel.cs" />
     <Compile Include="Areas\UploadDownloadFileLinks\Controllers\HomeController.cs" />
-    <Compile Include="Areas\UploadDownloadFileLinks\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\UploadDownloadFileLinks\UploadDownloadFileLinksAreaRegistration.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\HomeController.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\OrdersDataController.cs" />
-    <Compile Include="Areas\WindowFormWithAjax\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\WindowFormWithAjax\WindowFormWithAjaxAreaRegistration.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Helpers\OrdersBinderHelper.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Models\OrderViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -949,11 +1559,36 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\exported_file.xml" />
+    <Content Include="App_Data\ImageBrowser.mdf" />
+    <Content Include="App_Data\ImageBrowser_log.ldf">
+      <DependentUpon>ImageBrowser.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\OrdersData.xml" />
+    <Content Include="App_Data\ProductsDatabase.mdf" />
+    <Content Include="App_Data\ProductsDatabase_log.ldf">
+      <DependentUpon>ProductsDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Sample.mdf" />
     <Content Include="App_Data\Sample_log.ldf">
       <DependentUpon>Sample.mdf</DependentUpon>
     </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.tt">
+      <DependentUpon>Files.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Files.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.edmx.diagram">
+      <DependentUpon>Files.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.tt">
+      <DependentUpon>Files.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Files.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\web.config" />
+    <Content Include="Areas\EditorDatabaseImageBrowser\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1032,6 +1667,9 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridDateTimeOffset\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridDateTimeOffset\Views\web.config" />
+    <Content Include="Areas\GridDateTimeOffset\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditing3LevelHierarchy\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1043,15 +1681,22 @@
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx.diagram">
       <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.tt">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridEditingInLineDatabase\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\web.config" />
+    <Content Include="Areas\GridEditingInLineDatabase\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1062,6 +1707,21 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\Home\EditorTemplates\EmployeeViewModelEditor.cshtml" />
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\Home\EditorTemplates\TerritoriesEditor.cshtml" />
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\web.config" />
+    <Content Include="Areas\GridEditingPopUpMultiSelect\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditingPopUpNestedGridBatch\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1082,6 +1742,9 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\web.config" />
+    <Content Include="Areas\GridEditingPopUpServerValidation\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditingPopUpTreeView\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1096,6 +1759,32 @@
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Hydrangeas.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Lighthouse.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Tulips.jpg" />
+    <Content Include="Areas\GridExportingExcelMultiple\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridExportingExcelMultiple\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridExportingExcelMultiple\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridExportingExcelMultiple\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridExportingExcelMultiple\Views\web.config" />
+    <Content Include="Areas\GridExportingExcelMultiple\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridFilterExcelLike\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridFilterExcelLike\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SampleModel.edmx</DependentUpon>
@@ -1136,6 +1825,64 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.Context.tt">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.tt">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\web.config" />
+    <Content Include="Areas\GridHierarchyServerDetailTemplate\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridHierarchyServer\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyServer\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridHierarchyServer\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridHierarchyServer\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridHierarchyServer\Views\web.config" />
+    <Content Include="Areas\GridHierarchyServer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridMasterDetail\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridMasterDetail\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridMasterDetail\Views\web.config" />
+    <Content Include="Areas\GridMasterDetail\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridMultiSelect\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\alt.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\clock.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\cut.png" />
@@ -1146,6 +1893,127 @@
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\server.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\web.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.htm" />
+    <Content Include="Areas\GridTimestamp\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridTimestamp\Views\web.config" />
+    <Content Include="Areas\GridTimestamp\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerCustomView\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerCustomView\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerCustomView\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerCustomView\Resources\Site.css" />
+    <Content Include="Areas\SchedulerCustomView\Resources\toDoViewStyles.css" />
+    <Content Include="Areas\SchedulerCustomView\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerCustomView\Views\web.config" />
+    <Content Include="Areas\SchedulerCustomView\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerDragAndDrop\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerDragAndDrop\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerDragAndDrop\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerDragAndDrop\Views\Home\EditorTemplates\CustomEditorTemplate.cshtml" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\web.config" />
+    <Content Include="Areas\SchedulerDragAndDrop\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerEditingCustomEditor\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerEditingCustomEditor\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\web.config" />
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.Context.tt">
+      <DependentUpon>SchedulerSample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SchedulerSample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.edmx.diagram">
+      <DependentUpon>SchedulerSample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.tt">
+      <DependentUpon>SchedulerSample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SchedulerSample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerServerFiltering\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerServerFiltering\Views\web.config" />
+    <Content Include="Areas\SchedulerServerFiltering\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerTooltip\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerTooltip\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerTooltip\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerTooltip\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerTooltip\Views\web.config" />
+    <Content Include="Areas\SchedulerTooltip\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeListExportingMultiple\Models\Sample.Context.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\TreeListExportingMultiple\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\TreeListExportingMultiple\Models\Sample.tt">
+      <DependentUpon>Sample.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\TreeListExportingMultiple\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeListExportingMultiple\Views\web.config" />
+    <Content Include="Areas\TreeListExportingMultiple\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.Context.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.tt">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\web.config" />
+    <Content Include="Areas\TreeViewExpandSelectedItemAsync\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\TreeViewLoadConditionally\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewLoadConditionally\Views\web.config" />
+    <Content Include="Areas\TreeViewLoadConditionally\Views\_ViewStart.cshtml" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -1279,6 +2147,10 @@
     <Content Include="Areas\GridEditingModelStateError\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridEditingModelStateError\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridEditingModelStateError\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\EditorDatabaseImageBrowser\Models\Files.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Files.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
@@ -1286,22 +2158,15 @@
     <Content Include="Areas\GridAjaxBindingDatabase\Models\SampleModel.edmx.diagram">
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\GridEditingModelStateError\Models\SampleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Areas\GridEditingModelStateError\Models\SampleModel.edmx.diagram">
-      <DependentUpon>SampleModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Areas\GridEditingInLineDatabase\Views\web.config" />
-    <Content Include="Areas\GridEditingInLineDatabase\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\GridEditingInLineDatabase\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\GridEditingInLineDatabase\Views\Home\Index.cshtml" />
-    <EntityDeploy Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.edmx.diagram">
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\GridEditing3LevelHierarchy\Views\web.config" />
@@ -1372,6 +2237,10 @@
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridHierarchyClientDetailTemplate\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Areas\GridExportingExcelMultiple\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Areas\GridHierarchyClientDetailTemplate\Models\SampleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
@@ -1534,9 +2403,6 @@
     <Content Include="Areas\ThemeChangeOnClient\Views\Home\Index.cshtml" />
     <Content Include="Areas\ThemeChangeOnClient\Views\web.config" />
     <Content Include="Areas\ThemeChangeOnClient\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\TreeViewLoadConditionally\Views\Home\Index.cshtml" />
-    <Content Include="Areas\TreeViewLoadConditionally\Views\web.config" />
-    <Content Include="Areas\TreeViewLoadConditionally\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TreeViewSaveItemState\Views\Home\Index.cshtml" />
     <Content Include="Areas\TreeViewSaveItemState\Views\web.config" />
     <Content Include="Areas\TreeViewSaveItemState\Views\_ViewStart.cshtml" />
@@ -1674,6 +2540,89 @@
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridSaveStateWithBrowserHistoryAPI\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorImportExport\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EditorImportExport\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorImportExport\Views\web.config" />
+    <Content Include="App_Data\Sample.docx" />
+    <Content Include="Areas\EditorUploadImage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EditorUploadImage\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorUploadImage\Views\web.config" />
+    <Content Include="Areas\EditorEnterLinebreakShiftEnterParagraph\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EditorEnterLinebreakShiftEnterParagraph\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EditorEnterLinebreakShiftEnterParagraph\Views\web.config" />
+    <Content Include="Areas\GanttImportExportUsingMpxj\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GanttImportExportUsingMpxj\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GanttImportExportUsingMpxj\Views\web.config" />
+    <Content Include="App_Data\exported_file.mspdi" />
+    <Content Include="App_Data\SDLC.mpp" />
+    <Content Include="App_Data\test.mspdi" />
+    <Content Include="Areas\DefineCustomHtmlHelper\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\DefineCustomHtmlHelper\Views\Home\Index.cshtml" />
+    <Content Include="Areas\DefineCustomHtmlHelper\Views\web.config" />
+    <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\Home\Index.cshtml" />
+    <Content Include="Areas\MenuSameControllersInDifferentAreas\Views\web.config" />
+    <EntityDeploy Include="Areas\GridHierarchyServerDetailTemplate\Models\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\GridHierarchyServer\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\GridMasterDetail\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerCustomView\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerDragAndDrop\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerEditingCustomEditor\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SchedulerSample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\SchedulerTooltip\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\TreeListExportingMultiple\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\TreeViewExpandSelectedItemAsync\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\SchedulerEditingCustomEditor\Views\Home\EditorTemplates\CustomEditorTemplate.cshtml" />
+    <EntityDeploy Include="Areas\GridMultiSelect\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridMultiSelect\Views\Home\EditorTemplates\EmployeeViewModel.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Views\Home\EditorTemplates\TerritoriesEditor.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridMultiSelect\Views\web.config" />
+    <Content Include="Areas\GridMultiSelect\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\GridEditingPopUpMultiSelect\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Areas\GridFilterExcelLike\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridFilterExcelLike\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
@@ -4171,7 +5120,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62242</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62242/</IISUrl>
+          <IISUrl>https://localhost:44346/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -4188,8 +5137,16 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets'))" />
+    <Error Condition="!Exists('..\packages\net.sf.mpxj-for-csharp.13.0.2\build\net.sf.mpxj-for-csharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-for-csharp.13.0.2\build\net.sf.mpxj-for-csharp.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <Import Project="..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets" Condition="Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" />
+  <Import Project="..\packages\net.sf.mpxj-for-csharp.13.0.2\build\net.sf.mpxj-for-csharp.targets" Condition="Exists('..\packages\net.sf.mpxj-for-csharp.13.0.2\build\net.sf.mpxj-for-csharp.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

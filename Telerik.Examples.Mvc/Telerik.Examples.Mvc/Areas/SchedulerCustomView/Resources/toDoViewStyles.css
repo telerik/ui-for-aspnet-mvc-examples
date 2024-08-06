@@ -1,0 +1,21 @@
+﻿.k-task-delete {
+    display: none;
+}
+
+.k-task:hover .k-task-delete,
+td:hover > .k-task .k-task-delete {
+    display: inline-block;
+}
+
+.k-task {
+    cursor: default;
+    height: 1.4em;
+}
+
+.k-scheduler-content td {
+    vertical-align: middle;
+}
+
+.k-event > .k-link, .k-task > .k-link {
+    top: 0px !important;
+}

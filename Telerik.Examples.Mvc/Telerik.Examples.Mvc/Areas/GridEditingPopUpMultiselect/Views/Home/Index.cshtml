@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/kendo" id="territoriesTemplate">
+    <ul>
+        #for(var i = 0; i< data.length; i++){#
+            <li>#:data[i].TerritoryDescription#</li>
+        #}#
+    </ul>
+</script>
+
+<script type="text/javascript">
+    var territoriesTemplate = kendo.template($("#territoriesTemplate").html(), { useWithBlock: false });
+</script>
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models.EmployeeViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Command(comm =>
+        {
+            comm.Edit();
+        });
+        columns.Bound(e => e.EmployeeID);
+        columns.Bound(e => e.FirstName);
+        columns.Bound(e => e.LastName);
+        columns.Bound(e => e.Title);
+        columns.Bound(e => e.Territories).ClientTemplate("#=territoriesTemplate(Territories)#");
+    })
+    .ToolBar(tools=> tools.Create())
+    .Pageable()
+    .Editable(editable => {
+        editable.TemplateName("EmployeeViewModelEditor");
+        editable.Mode(GridEditMode.PopUp);
+    })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(5)
+        .Model(model =>
+            {
+                model.Id(e => e.EmployeeID);
+                model.Field(e => e.Territories).DefaultValue(new List<Telerik.Examples.Mvc.Areas.GridEditingPopUpMultiSelect.Models.TerritoryViewModel>());
+            })
+        .Read(read => read.Action("Read", "Home"))
+        .Update(update => update.Action("Update", "Home").Data("serialize"))
+        .Create(create => create.Action("Create", "Home").Data("serialize")))
+)
+
+
+<script type="text/javascript">
+
+    function serialize(data) {
+        for (var property in data) {
+            if ($.isArray(data[property])) {
+                serializeArray(property, data[property], data);
+            }
+        }
+    }
+
+    function serializeArray(prefix, array, result) {
+        for (var i = 0; i < array.length; i++) {
+            if ($.isPlainObject(array[i])) {
+                for (var property in array[i]) {
+                    result[prefix + "[" + i + "]." + property] = array[i][property];
+                }
+            }
+            else {
+                result[prefix + "[" + i + "]"] = array[i];
+            }
+        }
+    }
+</script>

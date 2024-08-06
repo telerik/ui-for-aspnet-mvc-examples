@@ -2,7 +2,7 @@
 
 namespace Telerik.Examples.Mvc.Areas.GridSelectionByField
 {
-    public class GridSelectionByFieldAreaRegistration : AreaRegistration 
+    public class EditorImportExportKendoWidgetAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {

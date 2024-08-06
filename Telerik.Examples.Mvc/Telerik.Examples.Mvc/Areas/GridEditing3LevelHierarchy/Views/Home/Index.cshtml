@@ -13,15 +13,25 @@
             columns.Bound(od => od.UnitPrice).Width(200);
             columns.Bound(od => od.Discount);
             columns.ForeignKey(od=> od.ProductID, (System.Collections.IEnumerable)ViewData["Products"], "ProductID", "ProductName");
+            columns.Command(command =>
+            {
+                command.Edit();
+                command.Destroy();
+            });
         })
+        .ToolBar(tools => tools.Create())
         .Pageable().Sortable().Filterable()
         .DataSource(source=> source.Ajax()
                 .Model(model =>
                 {
+                    model.Id(o => o.OrderID);
                     model.Field(o => o.ProductID).DefaultValue(1);
                 })
                 .Events(events => events.Error("error_handler"))
-                .Read(read => read.Action("Read_OrderDetails", "OrderDetails", new { id = "#=OrderID#" })))
+                .Read(read => read.Action("Read_OrderDetails", "OrderDetails", new { id = "#=OrderID#" }))
+                .Update(update => update.Action("Update_Order_Detail", "OrderDetails"))
+                .Create(create => create.Action("Create_Order_Detail", "OrderDetails", new { id = "#=OrderID#" }))
+                .Destroy(destroy => destroy.Action("Destroy_Order_Detail", "OrderDetails")))
         .ToClientTemplate()
     )
 

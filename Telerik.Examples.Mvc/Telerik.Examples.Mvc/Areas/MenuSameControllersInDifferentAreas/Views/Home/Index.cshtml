@@ -1,0 +1,10 @@
+﻿@(Html.Kendo().Menu()
+                    .Name("menu")
+                    .Items(menu =>
+                    {
+                        menu.Add().Text("Home").Action("Index", "Home", new { area = "" });
+                        menu.Add().Text("Area1").Action("Index", "Home", new { area = "ChartInGrid" });
+                        menu.Add().Text("Area2").Action("Index", "Home", new { area = "GridSelectionByField" });
+                            menu.Add().Text("Register").Action("Index", "Home", new { area = "EditorImportExport" }).ContentHtmlAttributes(new { id = "registerLink" });
+                    })
+        )
