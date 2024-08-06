@@ -1,5 +1,0 @@
-## MS Project Import Export using MPXJ library
-
-The sample project demonstrates how to import MPP, MSPDI or XML files containing MS Project project data into the [Telerik UI for ASP.NET MVC Gantt component](https://docs.telerik.com/aspnet-mvc/html-helpers/scheduling/gantt/overview). It also shows how to export Gantt data to MSPDI-based XML file that could be then loaded in MS Project.
-
-Importing/exporting between MS Project and Kendo Gantt is possible thanks to the [MPXJ library](http://www.mpxj.org/). MPXJ "provides a set of facilities to allow project information to be manipulated from a number of different programming languages". It is implemented in Java, but it also has a .net Framework distribution, which is used in this example. It supports reading from and writing to a number of different file formats, including XML, MSPDI, and MPP (reading only). MPXJ is distributed under the terms of the [GNU LGPL](http://www.gnu.org/licenses/licenses.html#LGPL) license.
