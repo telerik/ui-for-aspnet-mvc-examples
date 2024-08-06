@@ -1,16 +1,4 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Kendo UI Upload to Amazon S3</title>
-    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.2.624/styles/kendo.common.min.css">
-    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.2.624/styles/kendo.default.min.css">
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://cdn.kendostatic.com/2015.2.624/js/kendo.all.min.js"></script>
-    <script src="http://cdn.kendostatic.com/2015.2.624/js/kendo.aspnetmvc.min.js"></script>
-</head>
-<body>
-    @(Html.Kendo().Upload()
+﻿@(Html.Kendo().Upload()
         .Name("file")
         .Async(async => async
             .SaveUrl(ViewBag.S3Config.BucketUrl)
@@ -21,7 +9,7 @@
         )
     )
 
-    <script>
+<script>
         function mimeType(extension) {
             var types = {
                 ".jpg": "image/jpeg",
@@ -70,6 +58,5 @@
                 "success_action_redirect": redirect
             };
         }
-    </script>
-</body>
-</html>
+</script>
+

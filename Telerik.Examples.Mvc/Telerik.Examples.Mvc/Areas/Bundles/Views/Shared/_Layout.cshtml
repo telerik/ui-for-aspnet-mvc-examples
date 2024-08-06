@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - My Telerik MVC Application</title>
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/kendo")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+
+</head>
+    <body class="k-content">
+        <nav class="navbar navbar-inverse navbar-fixed-top p-3">
+            <div class="container p-0 p-sm-3">
+                <div class="navbar-header">
+                    <button id="configure" class="k-rpanel-toggle btn-toggle"></button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                
+            </div>
+        </nav>
+        <main>
+            <div class="container">
+                @RenderBody()
+            </div>
+        </main>
+
+        <footer class="footer text-center d-flex align-items-center">
+            <div class="container pb-0">
+                <hr />
+                <p>Copyright &copy; @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+            </div>
+        </footer>
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

@@ -1555,6 +1555,10 @@
     <Content Include="App_Data\Sample_log.ldf">
       <DependentUpon>Sample.mdf</DependentUpon>
     </Content>
+    <Content Include="Areas\Bundles\Scripts\kendo.all.min.js" />
+    <Content Include="Areas\Bundles\Scripts\kendo.aspnetmvc.min.js" />
+    <Content Include="Areas\Bundles\Styles\default-ocean-blue.css" />
+    <Content Include="Areas\Bundles\Styles\index.css" />
     <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.png" />
     <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.wav" />
     <Content Include="Areas\ChartSignalR\Models\Sample.Context.tt">
@@ -2545,6 +2549,7 @@
     <Content Include="Areas\MenuSecurityTrimming\Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Areas\MenuSecurityTrimming\Views\Shared\Error.cshtml" />
     <Content Include="Areas\MenuSecurityTrimming\Views\Shared\Lockout.cshtml" />
+    <Content Include="Areas\Bundles\Views\Shared\_Layout.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
