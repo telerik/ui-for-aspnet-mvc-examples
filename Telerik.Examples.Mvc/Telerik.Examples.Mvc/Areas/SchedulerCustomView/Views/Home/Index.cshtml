@@ -23,6 +23,7 @@
         views.MonthView();
         views.AgendaView();
         views.CustomView("CustomAgenda", view => view.Title("Custom Agenda").Selected(true));
+        views.CustomView("kendo.ui.ToDoView", view => view.Title("To Do"));
     })
     .Timezone("Etc/UTC")
     .Resources(resource => {

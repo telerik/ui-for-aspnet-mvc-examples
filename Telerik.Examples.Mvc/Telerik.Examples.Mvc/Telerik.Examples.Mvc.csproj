@@ -180,7 +180,7 @@
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\jsoup-1.15.3.dll</HintPath>
     </Reference>
     <Reference Include="Kendo.Mvc, Version=2024.2.514.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.Trial.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="log4j-api-2.17.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\log4j-api-2.17.2.dll</HintPath>
@@ -425,16 +425,16 @@
       <HintPath>..\packages\Telerik.SvgIcons.3.0.0\lib\netstandard2.0\Telerik.SvgIcons.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Windows.Documents.Core.2024.2.426\lib\net462\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\packages\Telerik.Windows.Documents.Core.Trial.2024.2.426\lib\net462\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Flow, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Windows.Documents.Flow.2024.2.426\lib\net462\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <HintPath>..\packages\Telerik.Windows.Documents.Flow.Trial.2024.2.426\lib\net462\Telerik.Windows.Documents.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip, Version=2024.2.426.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Windows.Zip.2024.2.426\lib\net462\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>..\packages\Telerik.Windows.Zip.Trial.2024.2.426\lib\net462\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Zip, Version=2024.2.426.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Zip.2024.2.426\lib\netstandard2.0\Telerik.Zip.dll</HintPath>
+      <HintPath>..\packages\Telerik.Zip.Trial.2024.2.426\lib\netstandard2.0\Telerik.Zip.dll</HintPath>
     </Reference>
     <Reference Include="txw2-3.0.2, Version=13.0.2.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.0.2\lib\net45\txw2-3.0.2.dll</HintPath>
