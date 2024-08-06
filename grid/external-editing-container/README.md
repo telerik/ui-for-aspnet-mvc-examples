@@ -1,2 +1,0 @@
-#  External editor for batch editable grid
-This approach can be used in sceanrios where the users want to select an item from the Grid and in separate element edit the properties of the selected model.
