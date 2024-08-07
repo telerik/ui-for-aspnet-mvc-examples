@@ -1,15 +1,10 @@
 ﻿<script src="https://cdn.jsdelivr.net/npm/signalr@2.4.3/jquery.signalR.min.js"></script>
 
 <script>
-    var productHub = {};
-    var hubStart = {};
-
-    $(function () {
-        var hubUrl = "https://demos.telerik.com/kendo-ui/service/signalr/hubs";
-        var connection = $.hubConnection(hubUrl, { useDefaultPath: false });
-        var meetingHub = connection.createHubProxy("productHub");
-        var hubStart = connection.start({ jsonp: true });
-    })
+    var hubUrl = "https://demos.telerik.com/kendo-ui/service/signalr/hubs";
+    var connection = $.hubConnection(hubUrl, { useDefaultPath: false });
+    var meetingHub = connection.createHubProxy("meetingHub");
+    var hubStart = connection.start({ jsonp: true });
 
     function forRead(data, type) {
         var scheduler = $("#scheduler").data("kendoScheduler");
@@ -42,6 +37,11 @@
             }
         }
     }
+
+    function onPush(e) {
+        var notification = $("#notification").data("kendoNotification");
+        notification.success(e.type);
+    }
 </script>
 
 
@@ -50,7 +50,6 @@
       .Width("100%")
       .Position(position => position.Top(0).Left(0))
 )
-
 @(Html.Kendo().Scheduler<Telerik.Examples.Mvc.Areas.SchedulerSignalRServerFiltering.Models.MeetingViewModel>()
     .Name("scheduler")
     .Date(DateTime.Now)
@@ -79,11 +78,12 @@
     .Editable(editable => editable.Update(false))
     .DataSource(dataSource => dataSource
         .SignalR()
-        .ServerFiltering(true)
+        .Events(events => events.Push("onPush"))
+        //.ServerFiltering(true)
         .Transport(tr => tr
-            .ParameterMap("onMap")
+            //.ParameterMap("onMap")
             .Promise("hubStart")
-            .Hub("productHub")
+            .Hub("meetingHub")
             .Client(c => c
                 .Read("read")
                 .Create("create")

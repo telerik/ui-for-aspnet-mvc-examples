@@ -18,39 +18,21 @@
             .DataTextField("Text")
             .DataValueField("Value")
             .DataColorField("Color")
-            .BindTo(new[] { 
+            .BindTo(new[] {
                 new { Text = "Alex", Value = 1, Color = "#f8a398" } ,
                 new { Text = "Bob", Value = 2, Color = "#51a0ed" } ,
-                new { Text = "Charlie", Value = 3, Color = "#56ca85" } 
+                new { Text = "Charlie", Value = 3, Color = "#56ca85" }
             });
     })
     .DataSource(d => d
+        .WebApi()
         .Model(m => {
             m.Id(f => f.TaskID);
             m.Field(f => f.OwnerID).DefaultValue(1);
         })
-        .Read(read => read.Url("../../api/Task/GetTask").Type(HttpVerbs.Get))
-        .Create(create => create.Url("../../api/Task/PostTask").Type(HttpVerbs.Post))
-        .Update(update => update.Url("../../api/Task/PutTask").Type(HttpVerbs.Put))
-        .Destroy(destroy => destroy.Url("../../api/Task/DeleteTask").Type(HttpVerbs.Delete))
+            .Read(read => read.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Task", action = "GetTask" }))) // Action invoked when the scheduler needs data
+            .Create(create => create.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Task", action = "PostTask" }))) // Action invoked when the user saves a new data item
+            .Update(update => update.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Task", action = "PutTask", id = "{0}" })))  // Action invoked when the user saves an updated data item
+            .Destroy(destroy => destroy.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Task", action = "DeleteTask", id = "{0}" }))) // Action invoked when the user removes a data item
     )
 )
-
-
-<script>
-
-$(function() {
-    var scheduler = $("#scheduler").data("kendoScheduler");
-
-    // WebAPI needs the ID of the entity to be part of the URL e.g. PUT /api/Task/80
-    scheduler.dataSource.transport.options.update.url = function (data) {
-        return "api/Task/" + data.TaskID;
-    }
-
-    // WebAPI needs the ID of the entity to be part of the URL e.g. DELETE /api/Task/80
-    scheduler.dataSource.transport.options.destroy.url = function (data) {
-        return "api/Task/" + data.TaskID;
-    }
-});
-
-</script>

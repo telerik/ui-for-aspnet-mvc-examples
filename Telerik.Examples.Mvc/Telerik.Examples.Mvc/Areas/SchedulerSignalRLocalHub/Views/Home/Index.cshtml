@@ -6,7 +6,7 @@
 
     var hubUrl = "https://demos.telerik.com/kendo-ui/service/signalr/hubs";
     var connection = $.hubConnection(hubUrl, { useDefaultPath: false });
-    var productHub = connection.createHubProxy("productHub");
+    var productHub = connection.createHubProxy("meetingHub");
 
     $(function () {
         productHub.lockRecord = function (record) {
@@ -17,8 +17,13 @@
             lockedRecords[record.id] = false;
         }
 
-        hubStart = connection.start();
+        hubStart = connection.start({ jsonp: true });
     })
+
+    function onPush(e) {
+        var notification = $("#notification").data("kendoNotification");
+        notification.success(e.type);
+    }
 </script>
 
 
@@ -39,7 +44,8 @@
         views.MonthView(monthView => monthView.Selected(true));
         views.AgendaView();
     })
-    .Events(e => {
+    .Events(e =>
+    {
         e.Save("onSave");
         e.Edit("onEdit");
         e.MoveStart("onMoveStart");
@@ -75,6 +81,7 @@
     .Editable(editable => editable.Update(false))
     .DataSource(dataSource => dataSource
         .SignalR()
+        .Events(events => events.Push("onPush"))
         .Transport(tr => tr
             .Promise("hubStart")
             .Hub("productHub")
@@ -153,7 +160,7 @@
     }
 
     function onSave(e) {
-        $.connection.productHub.server.unlockRecord(e.event.id);
+        productHub.unlockRecord(e.event.id);
     }
 
     function onMoveStart(e) {

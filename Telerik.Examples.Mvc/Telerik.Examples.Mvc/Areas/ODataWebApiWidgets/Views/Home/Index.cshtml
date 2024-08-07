@@ -5,6 +5,7 @@
     $("#products").kendoGrid({
         dataSource: {
             type: "odata-v4",
+            batch: true,
             transport: {
                 read: {
                     url: "https://demos.telerik.com/kendo-ui/service-v4/odata/Products",
@@ -15,6 +16,11 @@
                 update: {
                     url: function (data) {
                         return "https://demos.telerik.com/kendo-ui/service-v4/odata/Products(" + data.ProductID + ")";
+                    }
+                },
+                batch: {
+                    url: function () {
+                        return "https://demos.telerik.com/kendo-ui/service-v4/odata/$batch";
                     }
                 },
                 create: {
@@ -54,7 +60,7 @@
             serverSorting: true
         },
         height: 650,
-        toolbar: ["create"],
+        toolbar: ["create","save"],
         groupable: true,
         sortable: true,
         filterable: {
@@ -73,9 +79,9 @@
             { field: "ProductID" },
             { field: "ProductName", width: 300 },
             { field: "Category", template: "#: Category ? Category.CategoryName : '' #", editor: categoryEditor },
-            "UnitPrice", "UnitsOnOrder", "Discontinued", { command: "edit" }
+            "UnitPrice", "UnitsOnOrder", "Discontinued"
         ],
-        editable: "inline"
+        editable: true
     });
 
     function categoryEditor(container, options) {
