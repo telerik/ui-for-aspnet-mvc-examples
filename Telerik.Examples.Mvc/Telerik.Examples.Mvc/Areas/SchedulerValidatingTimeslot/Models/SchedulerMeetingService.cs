@@ -37,8 +37,7 @@
                     RoomID = meeting.RoomID,
                     RecurrenceRule = meeting.RecurrenceRule,
                     RecurrenceException = meeting.RecurrenceException,
-                    RecurrenceID = meeting.RecurrenceID,
-                    Atendees = meeting.MeetingAtendees.Select(m => m.AtendeeID).ToArray()
+                    RecurrenceID = meeting.RecurrenceID
                 }).AsQueryable();
         }
 
