@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@(
+
+ Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridTimestamp.Models.Product>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.ProductID);
+            columns.Bound(p => p.ProductName);
+            columns.Bound(p => p.RowVersionString);
+            columns.Command(command => command.Edit());
+        })
+        .DataSource(source =>
+        {
+            source.Ajax()
+                    .Model(model =>
+                        {
+                            model.Id(p => p.ProductID);
+                            model.Field(p => p.ProductID).Editable(false);
+                        })
+                    .Read("Read", "Home")
+                    .Update("Update", "Home");
+        })
+)

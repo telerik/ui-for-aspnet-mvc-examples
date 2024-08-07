@@ -13,11 +13,20 @@
         refresh: function () {
             var value = this.bindings.timespan.get();
             var date = null;
+           
             if (value) {
                 date = new Date();
-                date.setHours(value.Hours);
-                date.setMinutes(value.Minutes);
-                date.setSeconds(value.Seconds);
+                if (value.Ticks) {
+                    date.setHours(value.Hours);
+                    date.setMinutes(value.Minutes);
+                    date.setSeconds(value.Seconds);
+                }
+                else {
+                    var parts = value.split(':');
+                    date.setHours(parts[0]);
+                    date.setMinutes(parts[1]);
+                    date.setSeconds(parts[2]);
+                }
             }
 
             this.widget.value(date);
@@ -32,7 +41,9 @@
                     Seconds: date.getSeconds()
                 };
             }
-            this.bindings.timespan.set(value);
+            var input = $('input[data-bind="value:Time"]');
+            input.val(value.Hours + ":" + value.Minutes + ":" + value.Seconds);
+            input.trigger("change");
         },
         destroy: function () {
             this.widget.unbind("change", this._change);
@@ -55,11 +66,12 @@
     .ToolBar(tools => tools.Create())
     .DataSource(dataSource => dataSource
         .Ajax()
+        .ServerOperation(false)
         .Model(model =>
-            {
-                model.Id(o => o.ID);
-                model.Field(o => o.ID).Editable(false);
-            })
+        {
+            model.Id(o => o.ID);
+            model.Field(o => o.ID).Editable(false);
+        })
         .Read(read => read.Action("Read", "Home"))
         .Update(update => update.Action("Update", "Home"))
         .Create(create => create.Action("Create", "Home"))

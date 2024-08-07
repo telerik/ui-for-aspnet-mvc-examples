@@ -6,10 +6,18 @@
 
 <div class="container-fluid placeholders">
     <div class="row">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-9">
             <h2>All the Data</h2>
             @(Html.Kendo().Grid<OrderViewModel>()
                 .Name("grid")
+                .Columns(columns =>
+                {
+                    columns.Bound(order => order.OrderID);
+                    columns.Bound(order => order.CustomerID);
+                    columns.Bound(order => order.ContactName);
+                    columns.Bound(order => order.OrderDate).Format("{0:d}");
+                    columns.Bound(order => order.ShippedDate).Format("{0:d}");
+                })
                 .DataSource(datasource => datasource
                     .Ajax()
                     .Read(read => read.Action("GetOrders", "OrdersData"))
@@ -18,8 +26,7 @@
             )
         </div>
 
-
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-3">
             <h2>Add Data</h2>
             @(Html.Kendo().Button()
                 .Name("openCreateBtn")

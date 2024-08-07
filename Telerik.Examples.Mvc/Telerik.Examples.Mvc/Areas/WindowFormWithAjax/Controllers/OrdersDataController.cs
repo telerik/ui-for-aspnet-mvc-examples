@@ -29,7 +29,7 @@ namespace Telerik.Examples.Mvc.Areas.WindowFormWithAjax.Controllers
                 OrdersBinderHelper.AddOrder(model);
             }
 
-            return PartialView("_OrderCreate", model);
+            return View("../Home/Index");
         }
     }
 }

@@ -38,12 +38,16 @@ namespace Telerik.Examples.Mvc.Areas.GridEditTimespan.Controllers
             return Json(data.ToDataSourceResult(request));
         }
 
-        public ActionResult Update(int id)
+        public ActionResult Update(ViewModel viewModel)
         {
-            TryUpdateModel(data.First(v => v.ID == id));
-            return Json(ModelState.ToDataSourceResult());
-        }
+            if (ModelState.IsValid)
+            {
+                //repository.Update(viewModel);
+            }
 
+            return Json(new[] { viewModel }.ToDataSourceResult(new DataSourceRequest(), ModelState), JsonRequestBehavior.AllowGet);
+        }
+      
         public ActionResult Create(ViewModel model)
         {
             if (ModelState.IsValid)

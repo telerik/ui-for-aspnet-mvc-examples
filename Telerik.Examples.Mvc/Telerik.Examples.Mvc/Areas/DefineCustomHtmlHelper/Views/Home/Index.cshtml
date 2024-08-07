@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>Telerik UI for ASP.NET MVC Grid Definition called with a helper method</h3>
+<br />
+
+@* Using Helpers in Razor *@
+
+@helper MyGridShortCut()
+{
+    Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Models.OrderViewModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.OrderID).Filterable(false);
+            columns.Bound(p => p.Freight);
+            columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}");
+            columns.Bound(p => p.ShipName);
+            columns.Bound(p => p.ShipCity);
+        })
+        .Pageable()
+        .Sortable()
+        .Scrollable()
+        .Filterable()
+        .HtmlAttributes(new { style = "height:550px;" })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(20)
+            .Read(read => read.Action("Orders_Read", "Home"))
+        )
+        .Render();
+}
+
+@MyGridShortCut()
+
+<br />
+<h3>Custom Grid Definition created using a helper class</h3>
+<br />
+
+@* Using Helpers defined in Helpers/MyGridHelper.cs file *@
+
+@using Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Helpers
+
+@(Html.MyGrid<Telerik.Examples.Mvc.Areas.DefineCustomHtmlHelper.Models.OrderViewModel>("Grid1")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.OrderID).Filterable(false);
+        columns.Bound(p => p.Freight);
+        columns.Bound(p => p.OrderDate).Format("{0:MM/dd/yyyy}");
+        columns.Bound(p => p.ShipName);
+        columns.Bound(p => p.ShipCity);
+    })
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("Orders_Read", "Home"))
+    )
+)

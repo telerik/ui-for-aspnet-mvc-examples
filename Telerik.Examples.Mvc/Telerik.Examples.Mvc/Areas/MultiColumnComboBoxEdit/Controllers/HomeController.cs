@@ -13,9 +13,9 @@ namespace Telerik.Examples.Mvc.Areas.MultiColumnComboBoxEdit.Controllers
     public class HomeController : Controller
     {
         private static List<SampleData> data = new List<SampleData>() {
-            new SampleData {theText = "first", theValue = 1},
-            new SampleData {theText = "second", theValue = 2},
-            new SampleData {theText = "third", theValue = 3},
+            new SampleData {Text = "first", Value = 1},
+            new SampleData {Text = "second", Value = 2},
+            new SampleData {Text = "third", Value = 3},
         };
 
         // GET: MccbCRUD
@@ -51,7 +51,7 @@ namespace Telerik.Examples.Mvc.Areas.MultiColumnComboBoxEdit.Controllers
         {
             //TODO: implement actual operations, error handling and validation.
             //This sample assumes operations will always be successful and that data is always valid
-            SampleData currItem = data.Where(d => d.theValue == id).FirstOrDefault();
+            SampleData currItem = data.Where(d => d.Value == id).FirstOrDefault();
             if (currItem != null)
             {
                 return PartialView(currItem);
@@ -68,11 +68,11 @@ namespace Telerik.Examples.Mvc.Areas.MultiColumnComboBoxEdit.Controllers
         {
             //TODO: implement actual operations, error handling and validation.
             //This sample assumes operations will always be successful and that data is always valid
-            SampleData currItem = data.Where(d => d.theValue == id).FirstOrDefault();
+            SampleData currItem = data.Where(d => d.Value == id).FirstOrDefault();
             if (currItem != null)
             {
-                currItem.theValue = editedItem.theValue;
-                currItem.theText = editedItem.theText;
+                currItem.Value = editedItem.Value;
+                currItem.Text = editedItem.Text;
             }
 
             return PartialView();
@@ -88,7 +88,7 @@ namespace Telerik.Examples.Mvc.Areas.MultiColumnComboBoxEdit.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SampleData currItem = data.Where(d => d.theValue == id).FirstOrDefault();
+            SampleData currItem = data.Where(d => d.Value == id).FirstOrDefault();
             if (currItem == null)
             {
                 return HttpNotFound();
