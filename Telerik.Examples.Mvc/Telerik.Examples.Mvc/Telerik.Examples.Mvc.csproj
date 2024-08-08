@@ -543,6 +543,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Areas\Bundles\BundlesAreaRegistration.cs" />
+    <Compile Include="Areas\Bundles\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Captcha\CaptchaAreaRegistration.cs" />
+    <Compile Include="Areas\Captcha\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Captcha\Models\CaptchaInputModel.cs" />
+    <Compile Include="Areas\Captcha\Models\UserViewModel.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChartDynamicSeries\ChartDynamicSeriesAreaRegistration.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Models\MySeriesData.cs" />
@@ -1408,6 +1414,9 @@
     <Compile Include="Areas\PanelBarSelectItemInitially\Controllers\HomeController.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\PanelBarHierarchyBindingAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\Models\LocalPanelBarItem.cs" />
+    <Compile Include="Areas\RequireJS\Controllers\HomeController.cs" />
+    <Compile Include="Areas\RequireJS\Models\Product.cs" />
+    <Compile Include="Areas\RequireJS\RequireJSAreaRegistration.cs" />
     <Compile Include="Areas\SchedulerCustomView\Controllers\HomeController.cs" />
     <Compile Include="Areas\SchedulerCustomView\Models\DateGreaterThan.cs" />
     <Compile Include="Areas\SchedulerCustomView\Models\MeetingViewModel.cs" />
@@ -1633,6 +1642,9 @@
     <Compile Include="Areas\TreeViewSaveItemState\Controllers\HomeController.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\TreeViewSaveItemStateAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewSaveItemState\Models\ViewModel.cs" />
+    <Compile Include="Areas\UploadAmazonS3\Controllers\HomeController.cs" />
+    <Compile Include="Areas\UploadAmazonS3\Models\S3Config.cs" />
+    <Compile Include="Areas\UploadAmazonS3\UploadAmazonS3AreaRegistration.cs" />
     <Compile Include="Areas\UploadDownloadFileLinks\Controllers\HomeController.cs" />
     <Compile Include="Areas\UploadDownloadFileLinks\UploadDownloadFileLinksAreaRegistration.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\HomeController.cs" />
@@ -1668,6 +1680,16 @@
     <Content Include="App_Data\Sample_log.ldf">
       <DependentUpon>Sample.mdf</DependentUpon>
     </Content>
+    <Content Include="Areas\Bundles\Scripts\kendo.all.min.js" />
+    <Content Include="Areas\Bundles\Scripts\kendo.aspnetmvc.min.js" />
+    <Content Include="Areas\Bundles\Styles\default-ocean-blue.css" />
+    <Content Include="Areas\Bundles\Styles\index.css" />
+    <Content Include="Areas\Captcha\Files\479a8ab8-402d-4af1-91b2-b43e7787a8bf.png" />
+    <Content Include="Areas\Captcha\Files\479a8ab8-402d-4af1-91b2-b43e7787a8bf.wav" />
+    <Content Include="Areas\Captcha\Files\6733c999-f235-4bc4-86e3-94310f6469c1.png" />
+    <Content Include="Areas\Captcha\Files\6733c999-f235-4bc4-86e3-94310f6469c1.wav" />
+    <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.png" />
+    <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.wav" />
     <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.tt">
       <DependentUpon>Files.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2718,6 +2740,19 @@
     <Content Include="Areas\GridFilterExcelLike\Models\Northwind.edmx.diagram">
       <DependentUpon>Northwind.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Bundles\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Bundles\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Bundles\Views\web.config" />
+    <Content Include="Areas\Bundles\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Captcha\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Captcha\Views\web.config" />
+    <Content Include="Areas\Captcha\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\RequireJS\Views\Home\Index.cshtml" />
+    <Content Include="Areas\RequireJS\Views\web.config" />
+    <Content Include="Areas\RequireJS\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\UploadAmazonS3\Views\Home\Index.cshtml" />
+    <Content Include="Areas\UploadAmazonS3\Views\web.config" />
+    <Content Include="Areas\UploadAmazonS3\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
