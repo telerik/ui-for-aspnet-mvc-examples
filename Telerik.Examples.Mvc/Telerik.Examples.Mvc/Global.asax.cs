@@ -11,7 +11,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Telerik.Examples.Mvc.App_Start;
+//using Telerik.Examples.Mvc.App_Start;
 
 namespace Telerik.Examples.Mvc
 {
@@ -20,12 +20,12 @@ namespace Telerik.Examples.Mvc
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(config =>
-            {
-                ODataConfig.Register(config); 
-                WebApiConfig.Register(config);
+            //GlobalConfiguration.Configure(config =>
+            //{
+            //    ODataConfig.Register(config); 
+            //    WebApiConfig.Register(config);
 
-            });
+            //});
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
