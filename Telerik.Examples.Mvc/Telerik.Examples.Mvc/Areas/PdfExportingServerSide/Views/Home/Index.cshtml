@@ -1,0 +1,28 @@
+﻿<div id="example">
+    <div class="demo-section">
+        <img alt="Telerik UI for ASP.NET MVC PdfProcessing sample document" src="~/Areas/PdfExportingServerSide/Images/documentajax.png" class="documentImage"  />
+
+        @using (Html.BeginForm("Download_Document", "Home"))
+        {
+            <input type="submit" value="Download Document" class="k-button k-button-solid-primary k-button-solid k-button-md k-rounded-md downloadBtn" />
+        }
+
+    </div>
+</div>
+
+<style>
+    .downloadBtn {
+        margin: 0 auto;
+        margin-top: 15px;
+        display: block;
+        width: 200px;
+    }
+
+    .documentImage {
+        width: 400px;
+    }
+
+    .demo-section{
+        text-align: center;
+    }
+</style>

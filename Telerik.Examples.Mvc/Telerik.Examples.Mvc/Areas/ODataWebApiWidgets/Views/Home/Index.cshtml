@@ -1,0 +1,103 @@
+﻿
+<h4>Odata 4 with WebAPI</h4>
+<div id="products"></div>
+<script>
+    $("#products").kendoGrid({
+        dataSource: {
+            type: "odata-v4",
+            batch: true,
+            transport: {
+                read: {
+                    url: "https://demos.telerik.com/kendo-ui/service-v4/odata/Products",
+                    data: {
+                        $expand: "Category"
+                    }
+                },
+                update: {
+                    url: function (data) {
+                        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Products(" + data.ProductID + ")";
+                    }
+                },
+                batch: {
+                    url: function () {
+                        return "https://demos.telerik.com/kendo-ui/service-v4/odata/$batch";
+                    }
+                },
+                create: {
+                    url: "https://demos.telerik.com/kendo-ui/service-v4/odata/Products?$expand=Category"
+                }
+            },
+            sort: {
+                field: "ProductID",
+                dir: "desc"
+            },
+            schema: {
+                model: {
+                    id: "ProductID",
+                    fields: {
+                        UnitPrice: { type: "number" },
+                        SupplierID: { type: "number" },
+                        UnitsInStock: { type: "number" },
+                        UnitsOnOrder: { type: "number" },
+                        ProductID: { type: "number", editable: false },
+                        SupplierID: { type: "number", defaultValue: 1 },
+                        Discontinued: { type: "boolean" },
+                        CategoryID: { type: "number" },
+                        Category: { defaultValue: { CategoryID: 1, CategoryName: "Beverages" } }
+                    }
+                }
+
+            },
+            requestEnd: function (e) {
+                if (e.type == "create") {
+                    // Make a read request to expand Category. By default the OData controller doesn't expand on create.
+                    this.read();
+                }
+            },
+            pageSize: 10,
+            serverFiltering: true,
+            serverPaging: true,
+            serverSorting: true
+        },
+        height: 650,
+        toolbar: ["create","save"],
+        groupable: true,
+        sortable: true,
+        filterable: {
+            mode: "row"
+        },
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        save: function (e) {
+            // Sync Product.CategoryID with Product.Category.CategoryID to avoid referential integrity constraint errors.
+            e.model.set("CategoryID", e.model.Category.CategoryID);
+        },
+        columns: [
+            { field: "ProductID" },
+            { field: "ProductName", width: 300 },
+            { field: "Category", template: "#: Category ? Category.CategoryName : '' #", editor: categoryEditor },
+            "UnitPrice", "UnitsOnOrder", "Discontinued"
+        ],
+        editable: true
+    });
+
+    function categoryEditor(container, options) {
+        $('<input required data-text-field="CategoryName" data-value-field="CategoryID" data-bind="value:' + options.field + '"/>')
+            .appendTo(container)
+            .kendoDropDownList({
+                autoBind: false,
+                dataSource: {
+                    type: "odata-v4",
+                    pageSize: 10,
+                    transport: {
+                        read: {
+                            url: "https://demos.telerik.com/kendo-ui/service-v4/odata/Categories"
+                        }
+                    }
+                }
+            });
+    }
+</script>

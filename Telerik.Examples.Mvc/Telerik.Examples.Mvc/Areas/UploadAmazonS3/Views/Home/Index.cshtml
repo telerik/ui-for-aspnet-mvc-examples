@@ -1,0 +1,62 @@
+﻿@(Html.Kendo().Upload()
+        .Name("file")
+        .Async(async => async
+            .SaveUrl(ViewBag.S3Config.BucketUrl)
+        )
+        .Events(events => events
+            .Upload("onUpload")
+            .Select("onSelect")
+        )
+    )
+
+<script>
+        function mimeType(extension) {
+            var types = {
+                ".jpg": "image/jpeg",
+                ".jpeg": "image/jpeg",
+                ".png": "image/png",
+                ".gif": "image/gif"
+                // ...
+            };
+
+            return types[extension.toLowerCase()];
+        }
+
+        function onSelect(e) {
+                // Filter selected files by extension
+                for (var i = 0; i < e.files.length; i++) {
+                    var file = e.files[i];
+                    var type = mimeType(file.extension);
+                    if (!type || type.indexOf("@ViewBag.S3Config.ContentTypePrefix") !== 0) {
+                    alert("Only image files are supported");
+
+                    e.preventDefault();
+                    return;
+                }
+            }
+        }
+
+        function onUpload(e) {
+            var redirect = "";
+
+            if (typeof FormData === "undefined") {
+                // Redirect to an empty page is required for IE < 10
+                redirect = "@ViewBag.S3Config.SuccessUrl";
+            }
+
+            var file = e.files[0];
+            var type = mimeType(file.extension);
+
+            e.data = {
+                "key": "@ViewBag.S3Config.KeyPrefix" + file.name,
+                "acl": "@ViewBag.S3Config.Acl",
+                "Content-Type": type,
+                "x-amz-meta-uuid": "@ViewBag.S3Config.Uuid",
+                "AWSAccessKeyId": "@ViewBag.S3Config.AccessKey",
+                "Policy": "@ViewBag.Policy",
+                "Signature": "@ViewBag.PolicySignature",
+                "success_action_redirect": redirect
+            };
+        }
+</script>
+

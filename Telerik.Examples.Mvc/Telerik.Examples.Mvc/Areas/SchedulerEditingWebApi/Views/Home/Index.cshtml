@@ -1,0 +1,38 @@
+﻿@(Html.Kendo().Scheduler<Telerik.Examples.Mvc.Areas.SchedulerEditingWebApi.Models.TaskViewModel>()
+    .Name("scheduler")
+    .Date(DateTime.Now)
+    .StartTime(new DateTime(2013, 6, 13, 7, 00, 00))
+    .Height(600)
+    .Views(views =>
+    {
+        views.DayView();
+        views.WeekView();
+        views.MonthView(monthView => monthView.Selected(true));
+        views.AgendaView();
+    })
+    .Timezone("Etc/UTC")
+    .Resources(resource =>
+    {
+        resource.Add(m => m.OwnerID)
+            .Title("Owner")
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .DataColorField("Color")
+            .BindTo(new[] {
+                new { Text = "Alex", Value = 1, Color = "#f8a398" } ,
+                new { Text = "Bob", Value = 2, Color = "#51a0ed" } ,
+                new { Text = "Charlie", Value = 3, Color = "#56ca85" }
+            });
+    })
+    .DataSource(d => d
+        .WebApi()
+        .Model(m => {
+            m.Id(f => f.TaskID);
+            m.Field(f => f.OwnerID).DefaultValue(1);
+        })
+            .Read(read => read.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Task", action = "GetTask" }))) // Action invoked when the scheduler needs data
+            .Create(create => create.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Task", action = "PostTask" }))) // Action invoked when the user saves a new data item
+            .Update(update => update.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Task", action = "PutTask", id = "{0}" })))  // Action invoked when the user saves an updated data item
+            .Destroy(destroy => destroy.Url(Url.HttpRouteUrl("DefaultApi", new { controller = "Task", action = "DeleteTask", id = "{0}" }))) // Action invoked when the user removes a data item
+    )
+)

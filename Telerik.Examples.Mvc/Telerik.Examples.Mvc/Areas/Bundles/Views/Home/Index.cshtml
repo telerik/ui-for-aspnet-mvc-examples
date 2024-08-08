@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+ 
+@(Html.Kendo().TabStrip()
+      .Name("TabStrip")
+      .Items(tabs =>
+      {
+          tabs.Add().Text("First").Content(@<text>
+            <strong>First</strong> tab
+          </text>).Selected(true);
+
+          tabs.Add().Text("Second").Content(@<text>
+            <strong>Second</strong> tab
+          </text>);
+      })
+)

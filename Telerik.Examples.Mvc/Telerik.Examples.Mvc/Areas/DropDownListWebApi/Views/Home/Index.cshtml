@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>Telerik UI for ASP.NET MVC Cascading ComboBoxes</h3>
+<br />
+
+<div id="example">
+    <div class="demo-section k-header">
+        <h4>Type</h4>
+        <input id="type" style="width: 400px" />
+        <h4>Specialty</h4>
+        <input id="specialty" style="width: 400px" />
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#type").kendoComboBox({
+                dataTextField: "Name",
+                dataValueField: "Id",
+                dataSource: {
+                    transport: {
+                        read: {
+                            dataType: "json",
+                            url: "../../api/Type/get",
+                        }
+                    }
+                }
+            });
+
+            $("#specialty").kendoComboBox({
+                cascadeFrom: "type",
+                cascadeFromField: "TypeId",
+                dataTextField: "Name",
+                dataValueField: "Value",
+                dataSource: {
+                    serverFiltering: true,
+                    transport: {
+                        read: {
+                            dataType: "json",
+                            url: "../../api/Specialty/get",
+                            data: function () {
+                                return {
+                                    typeId: $("#type").val(),
+                                    filterValue: $("#specialty").data("kendoComboBox").input.val()
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+    <style scoped>
+        .demo-section {
+            width: 400px;
+        }
+
+            .demo-section h2 {
+                text-transform: uppercase;
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+    </style>
+</div>
