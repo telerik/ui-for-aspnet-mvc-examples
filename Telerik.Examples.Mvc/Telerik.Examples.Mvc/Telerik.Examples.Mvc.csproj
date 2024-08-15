@@ -699,6 +699,9 @@
     <Compile Include="Areas\GridClientDetailTemplate\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridClientDetailTemplate\GridClientDetailTemplateAreaRegistration.cs" />
     <Compile Include="Areas\GridClientDetailTemplate\Models\Product.cs" />
+    <Compile Include="Areas\GridContextMenuDisabledItems\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridContextMenuDisabledItems\GridContextMenuDisabledItemsAreaRegistration.cs" />
+    <Compile Include="Areas\GridContextMenuDisabledItems\Models\Product.cs" />
     <Compile Include="Areas\GridContextMenu\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridContextMenu\GridContextMenuAreaRegistration.cs" />
     <Compile Include="Areas\GridContextMenu\Models\Employee.cs" />
@@ -745,6 +748,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\GridCustomCommandButtons\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridCustomCommandButtons\GridCustomCommandButtonsAreaRegistration.cs" />
+    <Compile Include="Areas\GridCustomCommandButtons\Models\OrderRepository.cs" />
+    <Compile Include="Areas\GridCustomCommandButtons\Models\OrderViewModel.cs" />
     <Compile Include="Areas\GridCustomCommandsImageButtons\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridCustomCommandsImageButtons\GridCustomCommandsImageButtonsAreaRegistration.cs" />
     <Compile Include="Areas\GridCustomCommandsImageButtons\Models\Employee.cs" />
@@ -785,6 +792,10 @@
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\GridDateUtcOnServerAndClientAreaRegistration.cs" />
     <Compile Include="Areas\GridDateUtcOnServerAndClient\Models\Person.cs" />
+    <Compile Include="Areas\GridDropDownListEditorBoundToNullableField\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridDropDownListEditorBoundToNullableField\GridDropDownListEditorBoundToNullableFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridDropDownListEditorBoundToNullableField\Models\Category.cs" />
+    <Compile Include="Areas\GridDropDownListEditorBoundToNullableField\Models\Product.cs" />
     <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\BaseController.cs" />
     <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\EmployeesController.cs" />
     <Compile Include="Areas\GridEditing3LevelHierarchy\Controllers\HomeController.cs" />
@@ -1080,6 +1091,9 @@
     <Compile Include="Areas\GridExportingExcelMultiple\Models\Order.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\GridFilterAsYouType\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridFilterAsYouType\GridFilterAsYouTypeAreaRegistration.cs" />
+    <Compile Include="Areas\GridFilterAsYouType\Models\OrderViewModel.cs" />
     <Compile Include="Areas\GridFilterExcelLike\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridFilterExcelLike\GridFilterExcelLikeAreaRegistration.cs" />
     <Compile Include="Areas\GridFilterExcelLike\Models\GridFilterExcelLikeProduct.cs">
@@ -1346,6 +1360,13 @@
     <Compile Include="Areas\GridRowsBackgroundConditional\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridRowsBackgroundConditional\GridRowsBackgroundConditionalAreaRegistration.cs" />
     <Compile Include="Areas\GridRowsBackgroundConditional\Models\EmployeeViewModel.cs" />
+    <Compile Include="Areas\GridSaveAllChangesOneRequest\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridSaveAllChangesOneRequest\GridSaveAllChangesOneRequestAreaRegistration.cs" />
+    <Compile Include="Areas\GridSaveAllChangesOneRequest\Models\Employee.cs" />
+    <Compile Include="Areas\GridSaveAllChangesOneRequest\Models\Order.cs" />
+    <Compile Include="Areas\GridSaveStateInSessionServerSide\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridSaveStateInSessionServerSide\GridSaveStateInSessionServerSideAreaRegistration.cs" />
+    <Compile Include="Areas\GridSaveStateInSessionServerSide\Models\Product.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\GridSaveStateWithBrowserHistoryAPIAreaRegistration.cs" />
     <Compile Include="Areas\GridSaveStateWithBrowserHistoryAPI\Models\Product.cs" />
@@ -1746,6 +1767,10 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridCustomCommandButtons\Content\icons\add.png" />
+    <Content Include="Areas\GridCustomCommandButtons\Content\icons\cancel.png" />
+    <Content Include="Areas\GridCustomCommandButtons\Content\icons\edit.png" />
+    <Content Include="Areas\GridCustomCommandButtons\Content\icons\ok.png" />
     <Content Include="Areas\GridCustomCommandsImageButtons\Content\icons\add.png" />
     <Content Include="Areas\GridCustomCommandsImageButtons\Content\icons\cancel.png" />
     <Content Include="Areas\GridCustomCommandsImageButtons\Content\icons\edit.png" />
@@ -2708,6 +2733,31 @@
     <Content Include="Areas\GridSaveStateOnServerSide\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GridSaveStateOnServerSide\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridSaveStateOnServerSide\Views\web.config" />
+    <Content Include="Areas\GridContextMenuDisabledItems\Views\web.config" />
+    <Content Include="Areas\GridSaveAllChangesOneRequest\Views\web.config" />
+    <Content Include="Areas\GridContextMenuDisabledItems\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridContextMenuDisabledItems\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridContextMenuDisabledItems\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSaveAllChangesOneRequest\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSaveAllChangesOneRequest\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridSaveAllChangesOneRequest\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSaveStateInSessionServerSide\Views\web.config" />
+    <Content Include="Areas\GridSaveStateInSessionServerSide\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSaveStateInSessionServerSide\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridSaveStateInSessionServerSide\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridFilterAsYouType\Views\web.config" />
+    <Content Include="Areas\GridFilterAsYouType\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridFilterAsYouType\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridFilterAsYouType\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridCustomCommandButtons\Views\web.config" />
+    <Content Include="Areas\GridCustomCommandButtons\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridCustomCommandButtons\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridCustomCommandButtons\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridDropDownListEditorBoundToNullableField\Views\web.config" />
+    <Content Include="Areas\GridDropDownListEditorBoundToNullableField\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridDropDownListEditorBoundToNullableField\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\GridDropDownListEditorBoundToNullableField\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridDropDownListEditorBoundToNullableField\Views\Home\EditorTemplates\NullableDropDown.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
@@ -5126,14 +5176,17 @@
     <Folder Include="Areas\GridCascadingDropDownFilters\Data\" />
     <Folder Include="Areas\GridCheckboxClientTemplate\Data\" />
     <Folder Include="Areas\GridClientDetailTemplate\Data\" />
+    <Folder Include="Areas\GridContextMenuDisabledItems\Data\" />
     <Folder Include="Areas\GridCRUDWithObjectColumn\Data\" />
     <Folder Include="Areas\GridCSP\Data\" />
     <Folder Include="Areas\GridCsvServerExport\Data\" />
     <Folder Include="Areas\GridCustomAjaxBinding\Data\" />
+    <Folder Include="Areas\GridCustomCommandButtons\Data\" />
     <Folder Include="Areas\GridCustomCommandsImageButtons\Data\" />
     <Folder Include="Areas\GridCustomConfirmationWindow\Data\" />
     <Folder Include="Areas\GridCustomServerBinding\Data\" />
     <Folder Include="Areas\GridDateIgnoreTimeZones\Data\" />
+    <Folder Include="Areas\GridDropDownListEditorBoundToNullableField\Data\" />
     <Folder Include="Areas\GridEditing3LevelHierarchy\Data\" />
     <Folder Include="Areas\GridEditingAjaxWithEnumeration\Data\" />
     <Folder Include="Areas\GridEditingAutoCompleteNewItem\Data\" />
@@ -5158,6 +5211,7 @@
     <Folder Include="Areas\GridEditingWithComboBoxServerFiltering\Data\" />
     <Folder Include="Areas\GridExcelExportCellFormat\Data\" />
     <Folder Include="Areas\GridExcelExportColumnTemplate\Data\" />
+    <Folder Include="Areas\GridFilterAsYouType\Data\" />
     <Folder Include="Areas\GridForeignKeyColumnCRUD\Data\" />
     <Folder Include="Areas\GridForeignKeyComboBoxColumn\Data\" />
     <Folder Include="Areas\GridForeignKeyGroupHeaderTemplate\Data\" />
@@ -5175,6 +5229,8 @@
     <Folder Include="Areas\GridPreserveServerToolbarTemplateAfterSetOptions\Data\" />
     <Folder Include="Areas\GridRenderAndPreviewByteAndBase64Images\Data\" />
     <Folder Include="Areas\GridRowsBackgroundConditional\Data\" />
+    <Folder Include="Areas\GridSaveAllChangesOneRequest\Data\" />
+    <Folder Include="Areas\GridSaveStateInSessionServerSide\Data\" />
     <Folder Include="Areas\GridSaveStateWithBrowserHistoryAPI\Data\" />
   </ItemGroup>
   <ItemGroup>

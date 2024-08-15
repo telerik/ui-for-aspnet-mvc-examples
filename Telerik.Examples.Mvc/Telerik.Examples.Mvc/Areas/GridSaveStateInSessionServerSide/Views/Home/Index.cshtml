@@ -1,0 +1,74 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<button id="save">Save state</button>
+<button id="load">Load state</button>
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridSaveStateInSessionServerSide.Models.Product>()
+      .Name("grid")
+      .DataSource(ds => ds.Ajax().Read("Read", "Home"))
+      .Pageable()
+      .Groupable()
+      .Sortable()
+      .Reorderable(r => r.Columns(true))
+      .Resizable(r => r.Columns(true))
+)
+
+<script>
+    $("#save").click(function () {
+        var grid = $("#grid").data("kendoGrid");
+
+        var dataSource = grid.dataSource;
+
+        var state = {
+            columns: grid.columns,
+            page: dataSource.page(),
+            pageSize: dataSource.pageSize(),
+            sort: dataSource.sort(),
+            filter: dataSource.filter(),
+            group: dataSource.group()
+        };
+
+        debugger;
+        $.ajax({
+            url: "/GridSaveStateInSessionServerSide/Home/Save",
+            method: 'POST',
+            data: {
+                data: JSON.stringify(state)
+            }
+        });
+    });
+
+    $("#load").click(function () {
+        var grid = $("#grid").data("kendoGrid");
+
+        var dataSource = grid.dataSource;
+
+        $.ajax({
+            url: "/GridSaveStateInSessionServerSide/Home/Load",
+            success: function (state) {
+                state = JSON.parse(state);
+
+                var options = grid.options;
+
+                options.columns = state.columns;
+
+                options.dataSource.page = state.page;
+                options.dataSource.pageSize = state.pageSize;
+                options.dataSource.sort = state.sort;
+                options.dataSource.filter = state.filter;
+                options.dataSource.group = state.group;
+
+                grid.destroy();
+
+                $("#grid")
+                    .empty()
+                    .kendoGrid(options);
+            }
+        });
+    });
+
+</script>
+

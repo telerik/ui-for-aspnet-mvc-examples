@@ -1,0 +1,61 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridContextMenuDisabledItems.Models.Product>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ProductName);
+        columns.Bound(p => p.UnitPrice).Width(120).Format("{0:c}");
+        columns.Bound(p => p.UnitsInStock).Width(120);
+        columns.Bound(p => p.Discontinued);
+    })
+    .Selectable(s => s.Mode(GridSelectionMode.Multiple))
+    .Pageable(p => p.Responsive(false))
+    .Scrollable()
+    .Filterable()
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Model(model => model.Id(p => p.ProductID))
+        .Read(read => read.Action("Get_Products", "Home"))
+    )
+)
+
+@(Html.Kendo().ContextMenu()
+    .Name("context-menu")
+    .Target("#grid")
+    .Filter("tr[role='row']")
+    .Events(ev => ev.Select("onSelect").Open("onOpen"))
+    .Items(items =>
+    {
+        items.Add().Text("Details");
+        items.Add().Text("Edit");
+        items.Add().Text("Delete");
+    })
+)
+
+<script>
+    function onOpen(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var model = grid.dataItem(e.target);
+        var menu = $("#context-menu").data("kendoContextMenu");
+
+        if (model.UnitPrice < 30) {
+            menu.enable("li:last", true);
+        }
+        else {
+            menu.enable("li:last", false);
+        }
+    }
+
+    function onSelect(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var model = grid.dataItem(e.target);
+        console.log(model.ProductName);
+    }
+</script>
