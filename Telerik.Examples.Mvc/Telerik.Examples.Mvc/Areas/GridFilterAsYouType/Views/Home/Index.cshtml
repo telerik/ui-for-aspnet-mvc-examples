@@ -1,0 +1,42 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridFilterAsYouType.Models.OrderViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.OrderID).Filterable(false).Width(100);
+        columns.Bound(p => p.ShipName).HeaderTemplate("<label for='ship'>Ship Name</label> <input type='text' id='ship' />").Width(260);
+        columns.Bound(p => p.ShipCity).HeaderTemplate("<label for='city'>Ship City</label> <input type='text' id='city' />").Width(260);
+    })
+    .Pageable()
+    .Scrollable()
+    .HtmlAttributes(new { style = "height:430px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("Orders_Read", "Home"))
+    )
+)
+
+
+<script>
+    $(document).ready(function () {
+        var grid = $('#grid').data('kendoGrid');
+
+        $("#ship").on('keyup', function () {
+            var value = $(this).val();
+            grid.dataSource.filter({ field: "ShipName", operator: "contains", value: value })
+        })
+
+        $("#city").on('keyup', function () {
+            var value = $(this).val();
+            grid.dataSource.filter({ field: "ShipCity", operator: "contains", value: value })
+        })
+    })
+</script>
+
+

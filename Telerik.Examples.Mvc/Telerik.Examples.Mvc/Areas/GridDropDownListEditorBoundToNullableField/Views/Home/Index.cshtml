@@ -1,0 +1,34 @@
+﻿@using Kendo.Mvc.UI
+@using Telerik.Examples.Mvc.Areas.GridDropDownListEditorBoundToNullableField.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@(Html.Kendo().Grid<Product>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Command(comm =>
+        {
+            comm.Edit();
+        }).Width(200);
+        columns.Bound(p => p.ProductID).Width(60);
+        columns.Bound(p => p.ProductName);
+        columns.ForeignKey(p => p.CategoryID, (System.Collections.IEnumerable)ViewData["categories"],
+            "CategoryID", "CategoryName").EditorTemplateName("NullableDropDown");
+    })
+    .Pageable()
+    .Sortable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model =>
+            {
+                model.Id(p=> p.ProductID);
+                model.Field(p => p.ProductID).Editable(false);
+            })
+        .Read(read => read.Action("Read", "Home"))
+        .Update(update => update.Action("Update", "Home"))
+    )
+)

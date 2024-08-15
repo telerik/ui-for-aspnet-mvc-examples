@@ -1,0 +1,12 @@
+﻿@using Kendo.Mvc.UI
+@model int?
+
+@(Html.Kendo().DropDownListFor(m => m)
+    //enable ValuePrimitive
+    .ValuePrimitive(true)
+    //or alternatively .HtmlAttributes(new { data_value_primitive = "true" })
+    .OptionLabel("Select a category")
+    .BindTo((System.Collections.IEnumerable)ViewData["categories"])
+    .DataValueField("CategoryID")
+    .DataTextField("CategoryName")
+)
