@@ -2755,6 +2755,7 @@
     <Content Include="Areas\UploadAmazonS3\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\country-flags\bg.png" />
     <Content Include="Images\country-flags\br.png" />
     <Content Include="Images\country-flags\fr.png" />

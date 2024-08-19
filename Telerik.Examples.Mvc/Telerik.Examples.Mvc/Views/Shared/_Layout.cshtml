@@ -7,7 +7,35 @@
     @{
         var kendoVersion = "2024.2.514";
         var themeVersion = "8.0.1";
+
+        string path = Server.MapPath("~/Areas");
+        List<string> allfiles = Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly).ToList();
+
+        string pathInner = Server.MapPath("~/Areas/"+ ViewContext.RequestContext.HttpContext.Request.RawUrl.Split('/')[1]);
+        List<string> innerFiles=new List<string>();
+        if (!string.IsNullOrEmpty(ViewContext.RequestContext.HttpContext.Request.RawUrl.Split('/')[1]))
+        {
+            innerFiles = Directory.GetFiles(pathInner, "*", SearchOption.AllDirectories)
+            .Where(file =>
+            ((file.ToLower().EndsWith("cs") ||
+            file.ToLower().EndsWith("cshtml")) &&
+            !file.EndsWith("_Layout.cshtml") &&
+            !file.EndsWith("_ViewStart.cshtml") &&
+            !file.EndsWith("Designer.cs") &&
+            !file.EndsWith("Context.cs")
+            &&
+            !file.EndsWith("AreaRegistration.cs"))
+            )
+
+            .ToList();
+            innerFiles.Reverse();
+        }
+
     }
+
+<script>
+        DISABLE_WATERMARK = "2024.2.514";
+</script>
 
     <link href="https://kendo.cdn.telerik.com/themes/@themeVersion/default/default-ocean-blue.css" rel="stylesheet" type="text/css" />
     <link href="https://unpkg.com/%40progress/kendo-font-icons/dist/index.css" rel="stylesheet" type="text/css" />
@@ -27,15 +55,138 @@
             <div class="container p-0 p-sm-3">
                 <div class="navbar-header">
                     <button id="configure" class="k-rpanel-toggle btn-toggle"></button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Telerik UI for ASP.NET Examples", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
                 
             </div>
         </nav>
         <main>
-            <div class="container">
-                @RenderBody()
+            <style>
+                .toc {
+                    float: left;
+                    display: inline;
+                    margin-left: 50px;
+                }
+                .k-tabstrip-content {
+                    overflow: hidden !important;
+                }
+                .k-panelbar-item,
+                .k-panelbar,
+                .k-link {
+                    cursor: pointer !important;
+                }
+                .toc > ul {
+                    width: 350px;
+                    overflow-y: scroll;
+                    height: 650px;
+                }
+                .container{
+                    margin-left: 450px;
+                }
+            </style>
+            <div class="toc">
+                <h4>Examples</h4>
+                @*<ul>
+            @{
+                string path = Server.MapPath("~/Areas");
+                List<string> allfiles = Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly).ToList();
+                foreach (string item in allfiles)
+                {
+                    <li><a href="@("../../"+@item.Split('\\').Last()+"/Home/Index")">@System.Text.RegularExpressions.Regex.Replace(item.Split('\\').Last(), "(\\B[A-Z])", " $1")</a></li>
+                }
+            }
+        </ul>*@
+            <script>
+                function gridSelect(e) {
+                    sessionStorage["position"] = e.sender.element.scrollTop();
+                    window.location = "../../" + e.item.textContent.replaceAll(" ", "") + "/Home/Index";
+                }
+                $(document).ready(function () {
+                    setTimeout(function () {
+                        var item = $(".k-panelbar-item")
+                            .filter(function (index) {
+                                return $(this).find(".k-panelbar-item-text").text() == $(".title-container").text().trim();
+                            })
+                        var panelBar = $("#panelbar").data().kendoPanelBar;
+                        panelBar.select(item);
+                        if (sessionStorage["position"]) {
+                            //panelBar.element.animate({
+                            //    scrollTop: sessionStorage["position"]
+                            //}, 'slow');
+                            panelBar.element.scrollTop(sessionStorage["position"]);
+                        }
+                    },20)
+
+                })
+            </script>
+                @(Html.Kendo().PanelBar()
+    .Name("panelbar")
+    .Events(e=>e.Select("gridSelect"))
+    .ExpandMode(PanelBarExpandMode.Single)
+    .Items(panelbar =>
+    {
+        foreach (string item in allfiles)
+        {
+            var value = @System.Text.RegularExpressions.Regex.Replace(item.Split('\\').Last(), "(\\B[A-Z])", " $1").Split(' ')[0];
+            var values = new string[] { "Editor","Grid","Scheduler"};
+            panelbar.Add().Text(@System.Text.RegularExpressions.Regex.Replace(item.Split('\\').Last(), "(\\B[A-Z])", " $1"));
+            //.ImageUrl("https://demos.telerik.com/aspnet-mvc/content/shared/images/components/"+(values.Contains(value)?value:"DropDownList")  + ".svg");
+        }
+    }))
+                <style>
+                    .k-panelbar-item-icon{
+                        width: 25px;
+                        margin-right:5px;
+                    }
+                    pre{
+                        margin: 0;
+                        color: darkblue;
+                    }
+                </style>
             </div>
+            <div class="container">
+                <h4 class="title-container">  @System.Text.RegularExpressions.Regex.Replace(ViewContext.RequestContext.HttpContext.Request.RawUrl.Split('/')[1], "(\\B[A-Z])", " $1")</h4>
+
+                @(Html.Kendo().TabStrip()
+          .Name("tabstrip-images")
+          .Items(tabstrip =>
+          {
+              tabstrip.Add().Text("Sample")
+              .Selected(true)
+                  .Content(@<text>
+                @RenderBody()
+                  </text>);
+                      @*tabstrip.Add().Text("Code")
+            .Content(@<text>
+             @{
+                 string test = ViewContext.RequestContext.HttpContext.Request.RawUrl;
+
+             }
+                @test
+            </text>);*@
+
+              foreach (string itemTest in innerFiles)
+              {
+                    tabstrip.Add().Text(itemTest.Split('\\').Last())
+                  .Content(@<text>
+                                @{
+                    string line;
+                    System.IO.StreamReader file = new System.IO.StreamReader(itemTest);
+                    var fileLines = new List<string>();
+                    while ((line = file.ReadLine()) != null)
+                    {
+                       // fileLines.Add(line);
+                                   <pre>@line</pre>
+                    }
+                }
+
+                </text>);
+              }
+          }))
+                @*@RenderBody()*@
+
+            </div>
+
         </main>
 
         <footer class="footer text-center d-flex align-items-center">
