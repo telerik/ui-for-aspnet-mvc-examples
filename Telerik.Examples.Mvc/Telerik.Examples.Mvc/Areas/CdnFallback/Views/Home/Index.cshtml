@@ -9,14 +9,13 @@
         <em>Answer: your application breaks down looking ugly...</em></br>
     </p>
     <p>
-        So the solution it to first try to load from a CDN, then load from the Local Server files if Javascript was not loaded correctly from the CDN (the fallback).
+        So the solution it to first try to load from a CDN, then load from the Local Server files if the script files were not loaded correctly from the CDN source.
     </p>
     <p>
-        This project shows how to load jQuery/Kendo/Modernizr from a Cache Delivery Network, and fallback to local server files if the CDN were unavailable.<br />
-        It even tries several CDN for jQuery and Kendo, prefering CDN which are compatible with https.
+        This project shows how to load Modernizr, jQuery and Kendo from a Cache Delivery Network, and fallback to local server files if the CDN were unavailable.<br />
     </p>
 
-    <p>All this implementation CDN-Fallback for resides in the <strong>Views/Shared/_Layout.cshtml</strong> file (in the html/head section)</p>
+    <p>All this implementation CDN-Fallback for resides in the <strong>/Areas/CdnFallback/Views/Shared/_Layout.cshtml</strong> file (in the html/head section)</p>
 
     <em>Happy coding!</em>
     <br />
