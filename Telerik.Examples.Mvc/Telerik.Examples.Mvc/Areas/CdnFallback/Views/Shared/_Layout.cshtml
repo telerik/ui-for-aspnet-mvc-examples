@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Load Modernizr from CDN, and check if Modernizr was loaded, if not use Modernizr from local server -->
+@{
+    string modernizrVersion = "2.8.3";
+    string jQueryVersion = "3.7.0";
+    var kendoVersion = "2024.2.514";
+}
+
+<script type="text/javascript" src='@("https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-"+modernizrVersion+".js")'></script>
+
+<!--
+    Using Cache Delivery Network (CDN) is great, but what if the CDN server fails?
+    So the following solution shows load from the Local Server files if the script file was not loaded correctly from the CDN
+    -->
+
+<script type="text/javascript">
+    // Fallback to loading from a local path if the CDN is unavailable
+    (window.Modernizr || document.write('<script src="@(Url.Content("~/Areas/CdnFallback/Scripts/modernizr-"+ modernizrVersion + ".js"))"><\/script>'));
+
+    // Fallback to loading jQuery script from a local path if the CDN is unavailable
+    (window.jQuery || document.write('<script src="@(Url.Content("~/Areas/CdnFallback/Scripts/jquery-" + jQueryVersion + ".min.js"))"><\/script>'));
+
+    // Fallback to loading Kendo from a local path if the CDN is unavailable
+    (window.jQuery || document.write('<script src="@(Url.Content("~/Areas/CdnFallback/Scripts/kendo.all-" + kendoVersion + ".min.js"))"><\/script>'));
+
+     // Fallback to loading Kendo aspnetmvc script from a local path if the CDN is unavailable
+     (window.jQuery || document.write('<script src="@(Url.Content("~/Areas/CdnFallback/Scripts/kendo.aspnetmvc-" + kendoVersion + ".min.js"))"><\/script>'));
+</script>
+
+@RenderBody()

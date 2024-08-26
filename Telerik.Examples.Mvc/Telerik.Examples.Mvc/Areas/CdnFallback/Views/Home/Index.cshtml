@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>CDN Fallback</h1>
+    <p>
+        <strong>Using Cache Delivery Network (CDN) for loading Javascript and CSS files is great, but what if the CDN server fails?</strong><br />
+        <em>Answer: your application breaks down looking ugly...</em></br>
+    </p>
+    <p>
+        So the solution it to first try to load from a CDN, then load from the Local Server files if the script files were not loaded correctly from the CDN source.
+    </p>
+    <p>
+        This project shows how to load Modernizr, jQuery and Kendo from a Cache Delivery Network, and fallback to local server files if the CDN were unavailable.<br />
+    </p>
+
+    <p>All this implementation CDN-Fallback for resides in the <strong>/Areas/CdnFallback/Views/Shared/_Layout.cshtml</strong> file (in the html/head section)</p>
+
+    <em>Happy coding!</em>
+    <br />
+
+    <hr />
+    <p>If it works you should see a Kendo Calendar here:</p>
+    <div id="calendar"></div>
+    <script>
+        $(document).ready(function () {
+            // create Calendar from div HTML element
+            $("#calendar").kendoCalendar();
+        });
+    </script>
+
+    <hr />
+    <div class="alert is-warning">
+        <p class="alert-title"> Warning</p>
+        <p>Production applications should not take a hard dependency on CDN assets. Applications should test for the CDN asset referenced, and use a fallback asset when the CDN is not available.</p>
+        <p>The Microsoft Ajax CDN has no SLA above and beyond using an Azure CDN.</p>
+        <p>Use <a href="https://github.com/dotnet/AspNetDocs/issues/116" data-linktype="external">this GitHub issue</a> to report problems with the Microsoft Ajax CDN.</p>
+    </div>
+</div>
+
+<style>
+    .alert.is-warning {
+        background-color: antiquewhite;
+        border: 1px solid black;
+    }
+
+    .alert-title {
+        font-weight: bolder;
+    }
+</style>
