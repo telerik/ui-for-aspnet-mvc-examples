@@ -1359,6 +1359,9 @@
     <Compile Include="Areas\GanttImportExportUsingMpxj\GanttImportExportUsingMpxjAreaRegistration.cs" />
     <Compile Include="Areas\DefineCustomHtmlHelper\Controllers\HomeController.cs" />
     <Compile Include="Areas\DefineCustomHtmlHelper\DefineCustomHtmlHelperAreaRegistration.cs" />
+    <Compile Include="Areas\GridSaveStateOnServerSide\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridSaveStateOnServerSide\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\GridSaveStateOnServerSide\Models\Product.cs" />
     <Compile Include="Areas\GridTimestamp\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridTimestamp\GridTimestampAreaRegistration.cs" />
     <Compile Include="Areas\GridTimestamp\Models\Product.cs" />
@@ -2702,6 +2705,9 @@
     <Content Include="Areas\UploadAmazonS3\Views\Home\Index.cshtml" />
     <Content Include="Areas\UploadAmazonS3\Views\web.config" />
     <Content Include="Areas\UploadAmazonS3\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSaveStateOnServerSide\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\GridSaveStateOnServerSide\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSaveStateOnServerSide\Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Images\200.png" />
     <Content Include="Images\country-flags\bg.png" />
