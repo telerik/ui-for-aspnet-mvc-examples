@@ -43,7 +43,7 @@
 						{
 							DependencyID = index,
 							PredecessorID = task.UniqueID.ToNullableInt().GetValueOrDefault(),
-							SuccessorID = succ.TargetTask.UniqueID.ToNullableInt().GetValueOrDefault(),
+							SuccessorID = succ.SuccessorTask.UniqueID.ToNullableInt().GetValueOrDefault(),
 							Type = (DependencyType)succ.Type.Value
 						};
 
