@@ -50,20 +50,20 @@
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="commons-collections4-4.4, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\commons-collections4-4.4.dll</HintPath>
+    <Reference Include="commons-collections4-4.4, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\commons-collections4-4.4.dll</HintPath>
     </Reference>
-    <Reference Include="commons-io-2.11.0, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\commons-io-2.11.0.dll</HintPath>
+    <Reference Include="commons-io-2.11.0, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\commons-io-2.11.0.dll</HintPath>
     </Reference>
-    <Reference Include="commons-lang3-3.10, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\commons-lang3-3.10.dll</HintPath>
+    <Reference Include="commons-lang3-3.10, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\commons-lang3-3.10.dll</HintPath>
     </Reference>
-    <Reference Include="commons-logging-1.2, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\commons-logging-1.2.dll</HintPath>
+    <Reference Include="commons-logging-1.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\commons-logging-1.2.dll</HintPath>
     </Reference>
-    <Reference Include="commons-math3-3.6.1, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\commons-math3-3.6.1.dll</HintPath>
+    <Reference Include="commons-math3-3.6.1, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\commons-math3-3.6.1.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
@@ -75,118 +75,118 @@
       <HintPath>..\packages\Ical.Net.4.3.1\lib\netstandard2.0\Ical.Net.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.AWT.WinForms.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.AWT.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Beans, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Beans.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Beans.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Charsets, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Charsets.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Charsets.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Cldrdata.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Corba, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Corba.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Corba.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Core.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Jdbc.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Jdbc.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Localedata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Localedata.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Localedata.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Management, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Management.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Management.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Media, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Media.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Media.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Misc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Misc.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Misc.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Naming, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Naming.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Naming.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Nashorn.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Nashorn.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Remoting, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Remoting.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Remoting.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Security, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Security.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Security.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.SwingAWT.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Text.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Text.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Tools, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Tools.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Tools.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.Util.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.Util.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.XML.API.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.XML.API.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.XML.Bind.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.XML.Parse.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.XML.Transform.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.OpenJDK.XML.XPath.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.Reflection, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.Reflection.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.Runtime.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.Runtime.JNI, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\IKVM.Runtime.JNI.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\IKVM.Runtime.JNI.dll</HintPath>
     </Reference>
-    <Reference Include="istack-commons-runtime-4.0.1, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\istack-commons-runtime-4.0.1.dll</HintPath>
+    <Reference Include="istack-commons-runtime-4.0.1, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\istack-commons-runtime-4.0.1.dll</HintPath>
     </Reference>
-    <Reference Include="jackcess-4.0.1, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\jackcess-4.0.1.dll</HintPath>
+    <Reference Include="jackcess-4.0.1, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jackcess-4.0.1.dll</HintPath>
     </Reference>
-    <Reference Include="jakarta.activation-2.0.1, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\jakarta.activation-2.0.1.dll</HintPath>
+    <Reference Include="jakarta.activation-2.0.1, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jakarta.activation-2.0.1.dll</HintPath>
     </Reference>
-    <Reference Include="jakarta.xml.bind-api-3.0.1, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\jakarta.xml.bind-api-3.0.1.dll</HintPath>
+    <Reference Include="jakarta.xml.bind-api-3.0.1, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jakarta.xml.bind-api-3.0.1.dll</HintPath>
     </Reference>
-    <Reference Include="jaxb-core-3.0.2, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\jaxb-core-3.0.2.dll</HintPath>
+    <Reference Include="jaxb-core-3.0.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jaxb-core-3.0.2.dll</HintPath>
     </Reference>
-    <Reference Include="jaxb-runtime-3.0.2, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\jaxb-runtime-3.0.2.dll</HintPath>
+    <Reference Include="jaxb-runtime-3.0.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jaxb-runtime-3.0.2.dll</HintPath>
     </Reference>
-    <Reference Include="jsoup-1.15.3, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\jsoup-1.15.3.dll</HintPath>
+    <Reference Include="jsoup-1.15.3, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jsoup-1.15.3.dll</HintPath>
     </Reference>
     <Reference Include="Kendo.Mvc, Version=2024.2.514.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.Trial.2024.2.514\lib\net45\Kendo.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="log4j-api-2.17.2, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\log4j-api-2.17.2.dll</HintPath>
+    <Reference Include="log4j-api-2.17.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\log4j-api-2.17.2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -197,27 +197,27 @@
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.4\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.OData, Version=7.7.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.OData.7.7.7\lib\net45\Microsoft.AspNet.OData.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.OData, Version=7.7.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.OData.7.7.8\lib\net45\Microsoft.AspNet.OData.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.2\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.Cryptography, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.Cryptography.9.0.1\lib\net462\Microsoft.Bcl.Cryptography.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.Cryptography, Version=9.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Cryptography.9.0.2\lib\net462\Microsoft.Bcl.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=9.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.9.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=9.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.9.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.ObjectPool, Version=8.0.12.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.8.0.12\lib\net462\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=9.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.9.0.2\lib\net462\Microsoft.Extensions.ObjectPool.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.OData.Core, Version=7.21.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.OData.Core.7.21.6\lib\net45\Microsoft.OData.Core.dll</HintPath>
@@ -257,11 +257,11 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="mpxj-for-csharp, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\mpxj-for-csharp.dll</HintPath>
+    <Reference Include="mpxj-for-csharp, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\mpxj-for-csharp.dll</HintPath>
     </Reference>
     <Reference Include="MpxjUtilities, Version=11.1.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\MpxjUtilities.dll</HintPath>
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\MpxjUtilities.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -269,19 +269,19 @@
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.3\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="NodaTime, Version=3.2.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NodaTime.3.2.0\lib\netstandard2.0\NodaTime.dll</HintPath>
+    <Reference Include="NodaTime, Version=3.2.1.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.3.2.1\lib\netstandard2.0\NodaTime.dll</HintPath>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="poi-5.2.2, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\poi-5.2.2.dll</HintPath>
+    <Reference Include="poi-5.2.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\poi-5.2.2.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="rtfparserkit-1.16.0, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\rtfparserkit-1.16.0.dll</HintPath>
+    <Reference Include="rtfparserkit-1.16.0, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\rtfparserkit-1.16.0.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp, Version=3.116.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\SkiaSharp.3.116.1\lib\net462\SkiaSharp.dll</HintPath>
@@ -289,8 +289,8 @@
     <Reference Include="sqlite-jdbc-3.36.0.3, Version=11.1.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-common.11.1.0\lib\net45\sqlite-jdbc-3.36.0.3.dll</HintPath>
     </Reference>
-    <Reference Include="sqlite-jdbc-3.42.0.0, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\sqlite-jdbc-3.42.0.0.dll</HintPath>
+    <Reference Include="sqlite-jdbc-3.42.0.0, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\sqlite-jdbc-3.42.0.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -308,8 +308,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.9.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=9.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.9.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
@@ -317,8 +317,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Formats.Asn1, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Formats.Asn1.9.0.1\lib\net462\System.Formats.Asn1.dll</HintPath>
+    <Reference Include="System.Formats.Asn1, Version=9.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.9.0.2\lib\net462\System.Formats.Asn1.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
@@ -351,8 +351,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Pipelines, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.Pipelines.9.0.1\lib\net462\System.IO.Pipelines.dll</HintPath>
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.2\lib\net462\System.IO.Pipelines.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
@@ -424,8 +424,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Pkcs, Version=9.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Pkcs.9.0.1\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=9.0.0.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.9.0.2\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
@@ -438,11 +438,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Speech" />
-    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encodings.Web.9.0.1\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.2\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Json, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Json.9.0.1\lib\net462\System.Text.Json.dll</HintPath>
+    <Reference Include="System.Text.Json, Version=9.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.2\lib\net462\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
@@ -536,8 +536,8 @@
     <Reference Include="Telerik.Zip, Version=2024.2.426.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.Zip.Trial.2024.2.426\lib\netstandard2.0\Telerik.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="txw2-3.0.2, Version=13.9.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.9.0\lib\net45\txw2-3.0.2.dll</HintPath>
+    <Reference Include="txw2-3.0.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\txw2-3.0.2.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -5290,13 +5290,13 @@
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets'))" />
-    <Error Condition="!Exists('..\packages\net.sf.mpxj-for-csharp.13.9.0\build\net.sf.mpxj-for-csharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-for-csharp.13.9.0\build\net.sf.mpxj-for-csharp.targets'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+    <Error Condition="!Exists('..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
   <Import Project="..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets" Condition="Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" />
-  <Import Project="..\packages\net.sf.mpxj-for-csharp.13.9.0\build\net.sf.mpxj-for-csharp.targets" Condition="Exists('..\packages\net.sf.mpxj-for-csharp.13.9.0\build\net.sf.mpxj-for-csharp.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets" Condition="Exists('..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
