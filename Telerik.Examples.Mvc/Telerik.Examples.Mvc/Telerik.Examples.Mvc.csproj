@@ -562,6 +562,9 @@
     <Compile Include="Areas\ChartInGrid\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChartInGrid\ChartInGridAreaRegistration.cs" />
     <Compile Include="Areas\ChartInGrid\Models\ViewModel.cs" />
+    <Compile Include="Areas\ChatPeerToPeer\ChatPeerToPeerAreaRegistration.cs" />
+    <Compile Include="Areas\ChatPeerToPeer\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ChatPeerToPeer\Hubs\ChatHub.cs" />
     <Compile Include="Areas\DefineCustomHtmlHelper\Helpers\MyGridHelper.cs" />
     <Compile Include="Areas\DefineCustomHtmlHelper\Models\OrderViewModel.cs" />
     <Compile Include="Areas\DropDownListCustomDataSource\Controllers\HomeController.cs" />
@@ -2769,6 +2772,9 @@
     <Content Include="Areas\GridDropDownListEditorBoundToNullableField\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\GridDropDownListEditorBoundToNullableField\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridDropDownListEditorBoundToNullableField\Views\Home\EditorTemplates\NullableDropDown.cshtml" />
+    <Content Include="Areas\ChatPeerToPeer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ChatPeerToPeer\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ChatPeerToPeer\Views\web.config" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
@@ -2877,6 +2883,7 @@
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.3.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
