@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/jquery.signalR-2.4.3.min.js"></script>
+<script src="~/signalr/hubs"></script>
+
+@{
+    var name = Guid.NewGuid().ToString();
+}
+
+@(Html.Kendo().Chat()
+    .Name("chat")
+    .User(user => user
+        .Name(@name)
+        .IconUrl("https://demos.telerik.com/kendo-ui/content/chat/avatar.png")
+    )
+    .Events(events => events
+        .TypingStart("onTypingStart")
+        .Post("onPost")
+    )
+)
+
+<script>
+    function startHub(startCallback) {
+        var hub = $.connection.chatHub;
+
+        $.connection.hub.start().done(function () {
+            startCallback(hub)
+        });
+
+        return hub;
+    }
+
+    $(document).ready(function () {
+        window.chat = $('#chat').getKendoChat();
+        window.chatHub = startHub(function (hub) { });
+
+        chatHub.on("broadcastMessage", function (sender, message) {
+            var message = {
+                type: "text",
+                text: message
+            };
+
+            chat.renderMessage(message, sender);
+        });
+
+        chatHub.on("typing", function (sender) {
+            chat.renderMessage({ type: "typing" }, sender);
+        });
+    });
+
+    function onTypingStart(e) {
+        chatHub.invoke("sendTyping", chat.getUser());
+    }
+
+    function onPost(args) {
+        chatHub.invoke("send", chat.getUser(), args.text);
+    }
+</script>
+
