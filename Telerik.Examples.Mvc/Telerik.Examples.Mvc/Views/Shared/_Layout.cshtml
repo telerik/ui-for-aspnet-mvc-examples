@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html> 
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,11 +7,34 @@
     @{
         var kendoVersion = "2025.2.520";
         var themeVersion = "11.0.2";
+
+        string path = Server.MapPath("~/Areas");
+        List<string> allfiles = Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly).ToList();
+
+        List<string> innerFiles = new List<string>();
+        string areaName = ViewContext.RequestContext.HttpContext.Request.RawUrl.Split('/')[1];
+        if (!string.IsNullOrEmpty(areaName) && areaName != "Home")
+        {
+            string pathInner = Server.MapPath("~/Areas/" + areaName);
+            innerFiles = Directory.GetFiles(pathInner, "*", SearchOption.AllDirectories)
+            .Where(file =>
+            ((file.ToLower().EndsWith("cs") ||
+            file.ToLower().EndsWith("cshtml")) &&
+            !file.EndsWith("_Layout.cshtml") &&
+            !file.EndsWith("_ViewStart.cshtml") &&
+            !file.EndsWith("Designer.cs") &&
+            !file.EndsWith("Context.cs")
+            &&
+            !file.EndsWith("AreaRegistration.cs"))
+            )
+
+            .ToList();
+            innerFiles.Reverse();
+        }
     }
 
     <link href="https://kendo.cdn.telerik.com/themes/@themeVersion/default/default-ocean-blue.css" rel="stylesheet" type="text/css" />
     <link href="https://unpkg.com/%40progress/kendo-font-icons/dist/index.css" rel="stylesheet" type="text/css" />
-
 
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
@@ -21,29 +44,135 @@
     <script src="https://cdn.kendostatic.com/@kendoVersion/js/kendo.all.min.js"></script>
     <script src="https://cdn.kendostatic.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.timezones.min.js"></script>
-</head>
-    <body class="k-content">
-        <nav class="navbar navbar-inverse navbar-fixed-top p-3">
-            <div class="container p-0 p-sm-3">
-                <div class="navbar-header">
-                    <button id="configure" class="k-rpanel-toggle btn-toggle"></button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                
-            </div>
-        </nav>
-        <main>
-            <div class="container">
-                @RenderBody()
-            </div>
-        </main>
 
-        <footer class="footer text-center d-flex align-items-center">
-            <div class="container pb-0">
-                <hr />
-                <p>Copyright &copy; @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+    <script>
+        function searchExamples() {
+            sessionStorage["searchValue"] = $(".k-searchbox input").val();
+            $("#panelbar").data().kendoPanelBar.items().each(function (i, el) {
+                var item = $(el);
+                var condition = true;
+                var literals = $(".k-searchbox input").val().split(' ');
+                for (var i = 0; i < literals.length; i++) {
+                    if (!item.text().replaceAll(' ', '').toLowerCase().includes(literals[i].toLowerCase())) {
+                        condition = false;
+                        break;
+                    }
+                }
+                if (condition) {
+                    item.parent().show();
+                }
+                else {
+                    item.parent().hide();
+                }
+            })
+        }
+    </script>
+</head>
+<body class="k-content">
+    <nav class="navbar navbar-inverse navbar-fixed-top p-3">
+        <div class="container p-0 p-sm-3">
+            <div class="navbar-header">
+                <button id="configure" class="k-rpanel-toggle btn-toggle"></button>
+                @Html.ActionLink("Telerik UI for ASP.NET Examples", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-        </footer>
-        @RenderSection("scripts", required: false)
-    </body>
+        </div>
+    </nav>
+    <main>
+        <div class="toc">
+            <span class="k-searchbox k-input k-input-md k-rounded-md k-input-solid">
+                <span class="k-icon k-svg-icon k-svg-i-search k-input-icon">
+                    <svg viewBox="0 0 512 512" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M365.3 320h-22.7l-26.7-26.7C338.5 265.7 352 230.4 352 192c0-88.4-71.6-160-160-160S32 103.6 32 192s71.6 160 160 160c38.4 0 73.7-13.5 101.3-36.1l26.7 26.7v22.7L434.7 480l45.3-45.3zM64 192c0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128S64 262.7 64 192">
+                        </path>
+                    </svg>
+                </span>
+                <input autocomplete="off" placeholder="Search..." title="Search..." aria-label="Search..." class="k-input-inner" onkeyup="searchExamples();">
+            </span>
+            <script>
+                function gridSelect(e) {
+                    sessionStorage["position"] = e.sender.element.scrollTop();
+                    window.location = "../../" + e.item.textContent.replaceAll(" ", "") + "/Home/Index";
+                }
+                $(document).ready(function () {
+                    setTimeout(function () {
+                        if (sessionStorage["searchValue"]) {
+                            $(".k-searchbox input").val(sessionStorage["searchValue"]);
+                            $(".k-searchbox input").trigger("onkeyup");
+                        }
+
+                        var item = $(".k-panelbar-item")
+                            .filter(function (index) {
+                                return $(this).find(".k-panelbar-item-text").text() == $(".title-container").text().trim();
+                            })
+                        var panelBar = $("#panelbar").data().kendoPanelBar;
+                        panelBar.select(item);
+                        if (sessionStorage["position"]) {
+                            panelBar.element.scrollTop(sessionStorage["position"]);
+                        }
+                    }, 20)
+                })
+            </script>
+            @(Html.Kendo().PanelBar()
+               .Name("panelbar")
+               .Events(e=>e.Select("gridSelect"))
+               .ExpandMode(PanelBarExpandMode.Single)
+               .Items(panelbar =>
+               {
+                   foreach (string item in allfiles)
+                   {
+                       var sampleName = item.Split('\\').Last();
+                       var removed = new string[] { "Bundles", "GridCSP", "RequireJS", "GridBindToXMLKendoUI" };
+
+                       if (!removed.Contains(sampleName)) {
+                           string metadata = File.ReadAllText(Server.MapPath("~/Telerik.Examples.Mvc.csproj"));
+                           if (metadata.Contains(sampleName))
+                           {
+                               panelbar.Add().Text(@System.Text.RegularExpressions.Regex.Replace(sampleName, "(\\B[A-Z])", " $1"));
+                           }
+                       }
+                   }
+               }))
+        </div>
+        <div class="container">
+            <h4 class="title-container">  @(System.Text.RegularExpressions.Regex.Replace(ViewContext.RequestContext.HttpContext.Request.RawUrl.Split('/')[1], "(\\B[A-Z])", " $1"))</h4>
+
+            @(Html.Kendo().TabStrip()
+          .Name("tabstrip-images")
+          .Items(tabstrip =>
+          {
+              tabstrip.Add().Text("Sample")
+              .Selected(true)
+                  .Content(@<text>
+                       @RenderBody()
+                  </text>);
+
+              foreach (string itemTest in innerFiles)
+              {
+                    tabstrip.Add().Text(itemTest.Split('\\').Last())
+                  .Content(@<text>
+                                @{
+                    string line;
+                    System.IO.StreamReader file = new System.IO.StreamReader(itemTest);
+                    var fileLines = new List<string>();
+                    while ((line = file.ReadLine()) != null)
+                    {
+                                   <pre>@line</pre>
+                    }
+                }
+
+                </text>);
+              }
+          }))
+        </div>
+
+    </main>
+
+    <footer class="footer text-center d-flex align-items-center">
+        <div class="container pb-0">
+            <hr />
+            <p>Copyright &copy; @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+        </div>
+    </footer>
+    @RenderSection("scripts", required: false)
+</body>
 </html>
