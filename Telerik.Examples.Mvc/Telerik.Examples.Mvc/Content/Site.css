@@ -1,4 +1,30 @@
-﻿
+﻿/*#region Layout styles*/
+.toc {
+    float: left;
+    display: inline;
+    margin-left: 50px;
+}
+
+.k-tabstrip-content {
+    overflow: hidden !important;
+}
+
+.k-panelbar-item,
+.k-panelbar,
+.k-link {
+    cursor: pointer !important;
+}
+
+.toc > ul {
+    width: 350px;
+    overflow-y: scroll;
+    height: 750px;
+}
+
+.container {
+    margin-left: 450px;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -6,6 +32,21 @@ html {
 
 body {
     margin-bottom: 80px;
+}
+
+.k-panelbar-item-icon {
+    width: 25px;
+    margin-right: 5px;
+}
+
+pre {
+    margin: 0;
+    color: darkblue;
+}
+
+.k-searchbox {
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
 /* #region Navbar styles */
@@ -82,4 +123,3 @@ p .k-button {
         flex-direction: column;
     }
 }
-
