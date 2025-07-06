@@ -11,13 +11,13 @@
         columns.Bound(e => e.UnitPrice).Width(300);
         columns.Bound(e => e.UnitsOnOrder).Width(300);
         columns.Bound(e => e.Discontinued).Width(200);
-        columns.Command(cmd => cmd.Edit()).Width(300);
+        columns.Command(cmd => cmd.Destroy()).Width(300);
     })
     .Scrollable()
     .ToolBar(tb => {
         tb.Create();
         tb.Save();
-        })
+    })
     .DataSource(dataSource => dataSource
         .Custom()
         .Batch(true)
@@ -38,7 +38,6 @@
             t.Destroy(new { url = new Kendo.Mvc.ClientHandlerDescriptor() { HandlerName = "destroyProduct" } });
             t.Batch(new { url = new Kendo.Mvc.ClientHandlerDescriptor() { HandlerName = "batchProduct" } });
         })
-        .Events(ev => ev.RequestEnd("onRequestEnd"))
         .PageSize(20)
         .ServerPaging(true)
         .ServerSorting(true)
@@ -62,11 +61,12 @@
     .Scrollable()
     .ToolBar(tb =>
     {
-            tb.Create();
-            tb.Save();
+        tb.Create();
+        tb.Save();
     })
     .DataSource(dataSource => dataSource
         .Custom()
+        .Type("odata-v4")
         .Batch(true)
         .Schema(sch =>
         {
@@ -75,11 +75,6 @@
                 m.Field("BirthDate", typeof(DateTime));
             });
         })
-        .Type("odata-v4")
-        .Transport(transport => {
-            transport.Read(read => read.Url("https://demos.telerik.com/kendo-ui/service-v4/odata/Employees"));
-        }
-        )
         .Transport(t =>
         {
             t.Read(new { url = new Kendo.Mvc.ClientHandlerDescriptor() { HandlerName = "readEmployee" } });
@@ -88,7 +83,6 @@
             t.Destroy(new { url = new Kendo.Mvc.ClientHandlerDescriptor() { HandlerName = "destroyEmployee" } });
             t.Batch(new { url = new Kendo.Mvc.ClientHandlerDescriptor() { HandlerName = "batchEmployee" } });
         })
-        .Events(ev => ev.RequestEnd("onRequestEnd"))
         .PageSize(20)
         .ServerPaging(true)
         .ServerSorting(true)
@@ -101,51 +95,45 @@
 )
 
 <script>
-    function onRequestEnd(e) { //this is no longer needed in latest after Q3 internal build
-        if (e.type == "create") {
-            delete e.response["@@odata.context"];
-        }
-    }
-
     function batchProduct() {
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/$batch";
+        return "https://demos.telerik.com/service/v2/odata/$batch";
     }
 
     function readProduct() {
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Products";
+        return "https://demos.telerik.com/service/v2/odata/Products";
     }
 
     function updateProduct(dataItem) {
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Products(" + dataItem.ProductID + ")";
+        return "https://demos.telerik.com/service/v2/odata/Products(" + dataItem.ProductID + ")";
     }
 
     function createProduct(dataItem) {
         delete dataItem.ProductID;
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Products";
+        return "https://demos.telerik.com/service/v2/odata/Products";
     }
 
     function destroyProduct(dataItem) {
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Products(" + dataItem.ProductID + ")";
+        return "https://demos.telerik.com/service/v2/odata/Products(" + dataItem.ProductID + ")";
     }
 
     function batchEmployee() {
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/$batch";
+        return "https://demos.telerik.com/service/v2/odata/$batch";
     }
 
     function readEmployee() {
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Employees";
+        return "https://demos.telerik.com/service/v2/odata/Employees";
     }
 
     function updateEmployee(dataItem) {
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Employees(" + dataItem.EmployeeID + ")";
+        return "https://demos.telerik.com/service/v2/odata/Employees(" + dataItem.EmployeeID + ")";
     }
 
     function createEmployee(dataItem) {
         delete dataItem.EmployeeID;
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Employees";
+        return "https://demos.telerik.com/service/v2/odata/Employees";
     }
 
     function destroyEmployee(dataItem) {
-        return "https://demos.telerik.com/kendo-ui/service-v4/odata/Employees(" + dataItem.EmployeeID + ")";
+        return "https://demos.telerik.com/service/v2/odata/Employees(" + dataItem.EmployeeID + ")";
     }
 </script>

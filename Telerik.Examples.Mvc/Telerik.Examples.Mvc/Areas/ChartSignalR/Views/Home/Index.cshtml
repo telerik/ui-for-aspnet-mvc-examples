@@ -1,17 +1,31 @@
-﻿<script src="https://cdn.jsdelivr.net/npm/signalr@2.4.3/jquery.signalR.min.js"></script>
-
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"
+        integrity="sha512-7SRCYIJtR6F8ocwW7UxW6wGKqbSyqREDbfCORCbGLatU0iugBLwyOXpzhkPyHIFdBO0K2VCu57fvP2Twgx1o2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    var hubUrl = "https://demos.telerik.com/kendo-ui/service/signalr/hubs";
-    var connection = $.hubConnection(hubUrl, { useDefaultPath: false });
-    var hub = connection.createHubProxy("productHub");
-    var hubStart = connection.start({ jsonp: true });
+    var hubUrl = "https://demos.telerik.com/service/v2/signalr/products";
+    var hub = new signalR.HubConnectionBuilder()
+        .withUrl(hubUrl, {
+            skipNegotiation: true,
+            transport: signalR.HttpTransportType.WebSockets
+        })
+        .build();
+
+    var hubStart = hub.start()
+        .then(function (e) {
+            $("#notification").data("kendoNotification").success("SignalR Hub Started!");
+        })
+        .catch(function (err) {
+            return console.error(err.toString());
+        });
 </script>
 
 @(Html.Kendo().Notification()
       .Name("notification")
       .Width("100%")
       .Position(position => position.Top(0).Left(0))
+      .AppendTo("#notification-container")
 )
+<div id="notification-container"></div>
 @(Html.Kendo().Chart<Telerik.Examples.Mvc.Areas.ChartSignalR.Models.ProductViewModel>()
         .Name("chart")
         .Legend(false)

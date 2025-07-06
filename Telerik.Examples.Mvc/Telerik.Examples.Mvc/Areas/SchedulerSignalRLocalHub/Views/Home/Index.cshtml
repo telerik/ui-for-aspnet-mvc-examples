@@ -1,12 +1,18 @@
-﻿<script src="https://cdn.jsdelivr.net/npm/signalr@2.4.3/jquery.signalR.min.js"></script>
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"
+        integrity="sha512-7SRCYIJtR6F8ocwW7UxW6wGKqbSyqREDbfCORCbGLatU0iugBLwyOXpzhkPyHIFdBO0K2VCu57fvP2Twgx1o2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
     var lockedRecords = {};
     var hubStart = {};
 
-    var hubUrl = "https://demos.telerik.com/kendo-ui/service/signalr/hubs";
-    var connection = $.hubConnection(hubUrl, { useDefaultPath: false });
-    var productHub = connection.createHubProxy("meetingHub");
+    var hubUrl = "https://demos.telerik.com/service/v2/signalr/meetings";
+    var productHub = new signalR.HubConnectionBuilder()
+    .withUrl(hubUrl, {
+        skipNegotiation: true,
+        transport: signalR.HttpTransportType.WebSockets
+    })
+    .build();
 
     $(function () {
         productHub.lockRecord = function (record) {
@@ -17,15 +23,20 @@
             lockedRecords[record.id] = false;
         }
 
-        hubStart = connection.start({ jsonp: true });
-    })
+        hubStart = productHub.start()
+        .then(function(e) {
+            $("#notification").data("kendoNotification").success("SignalR Hub Started!");
+        })
+        .catch(function(err) {
+            return console.error(err.toString());
+        });
+    });
 
     function onPush(e) {
         var notification = $("#notification").data("kendoNotification");
         notification.success(e.type);
     }
 </script>
-
 
 @(Html.Kendo().Notification()
       .Name("notification")
@@ -116,11 +127,10 @@
 )
 
 <script>
-
     function onDataBound(e) {
-
         this.view().content.on("click", ".k-event-delete", preventEvent);
     }
+
     $(function () {
         var scheduler = $("#scheduler").data("kendoScheduler");
 
@@ -131,10 +141,11 @@
             var event = scheduler.occurrenceByUid(eventUid);
 
             if (!lockedRecords[event.id]) {
-                $.connection.productHub.server.lockRecord(event.id);
+                productHub.on("lockRecord", function(){
+                    lockedRecords[event.id] = true;
+                });
                 scheduler.view().trigger("edit", { uid: eventUid });
-            }
-            else {
+            } else {
                 alert("Currently the event cannot be edited");
                 return false;
             }
@@ -155,50 +166,57 @@
     function onEdit(e) {
         var model = e.event;
         e.container.find(".k-grid-cancel").click(function () {
-            $.connection.productHub.server.unlockRecord(model.id);
+            productHub.on("unlockRecord", function(){
+                unlockRecord[model.id] = true;
+            });
         });
     }
 
     function onSave(e) {
-        productHub.unlockRecord(e.event.id);
+        productHub.on("unlockRecord", function(){
+            unlockRecord[e.event.id] = true;
+        });
     }
 
     function onMoveStart(e) {
         var scheduler = this;
         var event = e.event;
 
-
         if (!lockedRecords[event.id]) {
-            $.connection.productHub.server.lockRecord(event.id);
-        }
-        else {
+            productHub.on("lockRecord", function(){
+                lockedRecords[event.id] = true;
+            });
+        } else {
             alert("Currently the event cannot be moved");
             e.preventDefault();
         }
     }
 
     function onMoveEnd(e) {
-        $.connection.productHub.server.unlockRecord(e.event.id);
+        productHub.on("unlockRecord", function(){
+            unlockRecord[e.event.id] = true;
+        });
     }
 
     function onResizeStart(e) {
         var scheduler = this;
         var event = e.event;
 
-
         if (!lockedRecords[event.id]) {
-            $.connection.productHub.server.lockRecord(event.id);
-        }
-        else {
+            productHub.on("lockRecord", function(){
+                lockedRecords[event.id] = true;
+            });
+        } else {
             alert("Currently the event cannot be resized");
             e.preventDefault();
         }
     }
 
     function onResizeEnd(e) {
-        $.connection.productHub.server.unlockRecord(e.event.id);
+        productHub.on("unlockRecord", function(){
+            unlockRecord[e.event.id] = true;
+        });
     }
-
 </script>
 
 <br />
@@ -211,7 +229,7 @@
         To see the real-time updates:
     </p>
     <ol>
-        <li>Open this page in another browser window by clicking <a href="signalr" target="_new">here</a></li>
+        <li>Open this page in another browser window by clicking <a href="" target="_new">here</a></li>
         <li>Create, update or destroy grid items.</li>
     </ol>
 </div>
