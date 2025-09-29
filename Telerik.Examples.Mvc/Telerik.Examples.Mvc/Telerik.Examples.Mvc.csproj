@@ -182,8 +182,8 @@
     <Reference Include="jsoup-1.15.3, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jsoup-1.15.3.dll</HintPath>
     </Reference>
-    <Reference Include="Kendo.Mvc, Version=2025.2.520.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.2025.2.520\lib\net462\Kendo.Mvc.dll</HintPath>
+    <Reference Include="Kendo.Mvc, Version=2025.3.825.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.2025.3.825\lib\net462\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="log4j-api-2.17.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\log4j-api-2.17.2.dll</HintPath>
@@ -506,38 +506,38 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.Documents.Core, Version=2025.2.520.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Documents.Core.2025.2.520\lib\netstandard2.0\Telerik.Documents.Core.dll</HintPath>
+    <Reference Include="Telerik.Documents.Core, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Documents.Core.2025.3.806\lib\netstandard2.0\Telerik.Documents.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Documents.Fixed, Version=2025.2.520.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Documents.Fixed.2025.2.520\lib\netstandard2.0\Telerik.Documents.Fixed.dll</HintPath>
+    <Reference Include="Telerik.Documents.Fixed, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Documents.Fixed.2025.3.806\lib\netstandard2.0\Telerik.Documents.Fixed.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Documents.ImageUtils, Version=2025.2.520.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Documents.ImageUtils.2025.2.520\lib\netstandard2.0\Telerik.Documents.ImageUtils.dll</HintPath>
+    <Reference Include="Telerik.Documents.ImageUtils, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Documents.ImageUtils.2025.3.806\lib\netstandard2.0\Telerik.Documents.ImageUtils.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.FontIcons, Version=4.3.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.FontIcons.4.3.0\lib\netstandard2.0\Telerik.FontIcons.dll</HintPath>
+    <Reference Include="Telerik.FontIcons, Version=4.5.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.FontIcons.4.5.0\lib\netstandard2.0\Telerik.FontIcons.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Licensing.Runtime, Version=1.6.5.0, Culture=neutral, PublicKeyToken=98bb5b04e55c09ef, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Licensing.1.6.5\lib\net462\Telerik.Licensing.Runtime.dll</HintPath>
+    <Reference Include="Telerik.Licensing.Runtime, Version=1.6.16.0, Culture=neutral, PublicKeyToken=98bb5b04e55c09ef, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Licensing.1.6.16\lib\net462\Telerik.Licensing.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.SvgIcons, Version=4.3.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.SvgIcons.4.3.0\lib\netstandard2.0\Telerik.SvgIcons.dll</HintPath>
+    <Reference Include="Telerik.SvgIcons, Version=4.5.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.SvgIcons.4.5.0\lib\netstandard2.0\Telerik.SvgIcons.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Web.Captcha, Version=2.0.2.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Web.Captcha.2.0.2\lib\net462\Telerik.Web.Captcha.dll</HintPath>
+    <Reference Include="Telerik.Web.Captcha, Version=2.0.3.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Web.Captcha.2.0.3\lib\net462\Telerik.Web.Captcha.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Core, Version=2025.2.520.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Windows.Documents.Core.2025.2.520\lib\net462\Telerik.Windows.Documents.Core.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2025.3.806.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Documents.Core.2025.3.806\lib\net462\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Flow, Version=2025.2.520.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Windows.Documents.Flow.2025.2.520\lib\net462\Telerik.Windows.Documents.Flow.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2025.3.806.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Documents.Flow.2025.3.806\lib\net462\Telerik.Windows.Documents.Flow.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Zip, Version=2025.2.520.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Windows.Zip.2025.2.520\lib\net462\Telerik.Windows.Zip.dll</HintPath>
+    <Reference Include="Telerik.Windows.Zip, Version=2025.3.806.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Zip.2025.3.806\lib\net462\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Zip, Version=2025.2.520.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Zip.2025.2.520\lib\netstandard2.0\Telerik.Zip.dll</HintPath>
+    <Reference Include="Telerik.Zip, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Zip.2025.3.806\lib\netstandard2.0\Telerik.Zip.dll</HintPath>
     </Reference>
     <Reference Include="txw2-3.0.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\txw2-3.0.2.dll</HintPath>
@@ -2793,6 +2793,21 @@
     <Content Include="Content\kendo\2025.2.520\razor\Country.cshtml" />
     <Content Include="Content\kendo\2025.2.520\razor\Boolean.cshtml" />
     <Content Include="Content\kendo\2025.2.520\razor\AdaptiveProductCustomEditor.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Url.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Time.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\String.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Password.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Number.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Integer.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\GridForeignKey.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\EmailAddress.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Email.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\DateTime.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Date.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Currency.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Country.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\Boolean.cshtml" />
+    <Content Include="Content\kendo\2025.3.825\razor\AdaptiveProductCustomEditor.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
@@ -5318,13 +5333,13 @@
     <Error Condition="!Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets'))" />
-    <Error Condition="!Exists('..\packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets'))" />
+    <Error Condition="!Exists('..\packages\Telerik.Licensing.1.6.16\build\Telerik.Licensing.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Telerik.Licensing.1.6.16\build\Telerik.Licensing.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
   <Import Project="..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets" Condition="Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets" Condition="Exists('..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets')" />
-  <Import Project="..\packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets" Condition="Exists('..\packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets')" />
+  <Import Project="..\packages\Telerik.Licensing.1.6.16\build\Telerik.Licensing.targets" Condition="Exists('..\packages\Telerik.Licensing.1.6.16\build\Telerik.Licensing.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
