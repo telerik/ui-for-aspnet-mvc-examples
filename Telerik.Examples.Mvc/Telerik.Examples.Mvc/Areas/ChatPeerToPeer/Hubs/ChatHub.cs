@@ -4,13 +4,16 @@ namespace Telerik.Examples.Mvc.Areas.ChatPeerToPeer.Hubs
 {
     public class ChatHub : Hub
     {
-        public void Send(object sender, string message)
+        public void Send(string senderId, string senderName, string message)
         {
-            Clients.Others.broadcastMessage(sender, message);
+            // Broadcast the message to all clients except the sender.
+            Clients.Others.broadcastMessage(senderId, senderName, message);
         }
-        public void SendTyping(object sender)
+
+        public void SendTyping(string senderId, string senderName)
         {
-            Clients.Others.typing(sender);
+            // Broadcast the typing notification to all clients except the sender.
+            Clients.Others.typing(senderId, senderName);
         }
     }
 }
