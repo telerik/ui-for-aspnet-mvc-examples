@@ -2808,6 +2808,8 @@
     <Content Include="Content\kendo\2025.3.825\razor\Country.cshtml" />
     <Content Include="Content\kendo\2025.3.825\razor\Boolean.cshtml" />
     <Content Include="Content\kendo\2025.3.825\razor\AdaptiveProductCustomEditor.cshtml" />
+    <Content Include="Areas\Bundles\README.md" />
+    <Content Include="Areas\Captcha\README.md" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
