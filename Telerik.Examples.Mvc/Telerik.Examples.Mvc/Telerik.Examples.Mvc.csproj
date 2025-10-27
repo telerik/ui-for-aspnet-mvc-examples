@@ -2810,6 +2810,9 @@
     <Content Include="Content\kendo\2025.3.825\razor\AdaptiveProductCustomEditor.cshtml" />
     <Content Include="Areas\Bundles\README.md" />
     <Content Include="Areas\Captcha\README.md" />
+    <Content Include="Areas\ChartDynamicSeries\README.md" />
+    <Content Include="Areas\ChartInGrid\README.md" />
+    <Content Include="Areas\ChartSignalR\README.md" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
