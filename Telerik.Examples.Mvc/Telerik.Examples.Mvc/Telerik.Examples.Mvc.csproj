@@ -2813,6 +2813,12 @@
     <Content Include="Areas\ChartDynamicSeries\README.md" />
     <Content Include="Areas\ChartInGrid\README.md" />
     <Content Include="Areas\ChartSignalR\README.md" />
+    <Content Include="Areas\CdnFallback\README.md" />
+    <Content Include="Areas\DropDownListWebApi\README.md" />
+    <Content Include="Areas\GridAjaxBindingDatabase\README.md" />
+    <Content Include="Areas\GridBatchEditingDatabase\README.md" />
+    <Content Include="Areas\GridBindingDynamicCollection\README.md" />
+    <Content Include="Areas\GridBindingDataTable\README.md" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
