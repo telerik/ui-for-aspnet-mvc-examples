@@ -1,3 +1,8 @@
+## Sample Overview
+This area demonstrates the GridEditingPopUpNestedGridBatch sample using Telerik UI components in ASP.NET MVC.
+
+---
+
 UI for ASP.NET MVC Examples
 ==========================
 
