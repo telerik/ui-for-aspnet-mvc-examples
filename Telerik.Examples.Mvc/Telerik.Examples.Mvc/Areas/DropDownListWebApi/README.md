@@ -1,3 +1,8 @@
+## Sample Overview
+This area demonstrates how to bind a Telerik DropDownList component to a Web API data source in ASP.NET MVC. The sample shows how to configure the component to consume data from a RESTful Web API endpoint using AJAX calls.
+
+---
+
 UI for ASP.NET MVC Examples
 ==========================
 
@@ -36,4 +41,4 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-```
+

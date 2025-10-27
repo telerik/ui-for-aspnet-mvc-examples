@@ -1,3 +1,8 @@
+## Sample Overview
+This area demonstrates how to implement a custom data source for Telerik DropDownList component in ASP.NET MVC. The sample shows how to bind the DropDownList to a server-side action method that returns data using the DataSourceRequest and ToDataSourceResult pattern.
+
+---
+
 UI for ASP.NET MVC Examples
 ==========================
 
@@ -27,7 +32,7 @@ To add a new sample, you can
 
 2. Delete the web.config file and Views/Shared folder as they are optional.
 3. Alternatively, you can copy another working Area and do mass-renaming.
-4. It is important to apply namespaces to the Controllers and Models of the example so the classes do not become ambiguous, e.g.  Telerik.Examples.Mvc.Areas.GridSelectionByField.Models
+4. It is important to apply namespaces to the Controllers and Models of the example so the classes do not become ambiguous, e.g. Telerik.Examples.Mvc.Areas.GridSelectionByField.Models
 5. If you are adding an example with database, ensure that you change the EF model class names, but not the collection names:
 
 ![model-browser](Telerik.Examples.Mvc/Telerik.Examples.Mvc/Images/readme-images/model-browser.png)
@@ -35,6 +40,4 @@ To add a new sample, you can
 And then you can add new Entity definition to the Web.config like this:
 
 ```
-	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-
-```
+	 <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\\MSSQLLocalDB;attachdbfilename=|DataDirectory|\\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
