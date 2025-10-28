@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the SchedulerTooltip sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates custom tooltips for Scheduler appointments in ASP.NET MVC. The sample shows how to display appointment details in tooltips when hovering over events in the calendar.
+
+Common techniques shown in this sample:
+- Configuring Scheduler tooltip templates
+- Displaying appointment data in tooltips
+- Using template syntax for tooltip content
+- Handling tooltip show/hide events
+- Customizing tooltip appearance
+- Showing additional appointment information on hover
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

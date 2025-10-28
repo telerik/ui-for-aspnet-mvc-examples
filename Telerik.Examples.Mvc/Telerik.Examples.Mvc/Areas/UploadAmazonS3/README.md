@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the UploadAmazonS3 sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates file upload to Amazon S3 storage using Telerik Upload component in ASP.NET MVC. The sample shows how to configure Upload to send files directly to S3 buckets with proper authentication.
+
+Common techniques shown in this sample:
+- Configuring Upload for Amazon S3 integration
+- Implementing AWS S3 authentication
+- Using AWS SDK for file uploads
+- Generating S3 pre-signed URLs
+- Handling S3 bucket permissions
+- Managing uploaded files in S3 storage
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

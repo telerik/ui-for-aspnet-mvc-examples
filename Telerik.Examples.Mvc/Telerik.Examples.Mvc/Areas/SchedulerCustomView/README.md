@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the SchedulerCustomView sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates custom view implementation for Telerik Scheduler in ASP.NET MVC. The sample shows how to create custom calendar views beyond the built-in day, week, and month views for specialized scheduling scenarios.
+
+Common techniques shown in this sample:
+- Creating custom Scheduler views
+- Implementing custom view rendering logic
+- Extending built-in Scheduler view types
+- Configuring custom view templates
+- Handling custom view date navigation
+- Displaying appointments in custom layouts
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the MenuOpenWindowWithAjax sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates opening Telerik Window with AJAX content from Menu in ASP.NET MVC. The sample shows how to trigger Window popups with dynamically loaded content when clicking Menu items.
+
+Common techniques shown in this sample:
+- Handling Menu item click events
+- Opening Window component programmatically
+- Loading Window content via AJAX
+- Configuring Window with dynamic content URLs
+- Passing parameters to Window content
+- Managing Window lifecycle from Menu interactions
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

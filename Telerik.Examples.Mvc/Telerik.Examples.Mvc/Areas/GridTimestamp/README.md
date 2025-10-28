@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridTimestamp sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates handling timestamp/rowversion concurrency columns in Telerik Grid in ASP.NET MVC. The sample shows how to implement optimistic concurrency control using timestamp fields to prevent conflicting updates.
+
+Common techniques shown in this sample:
+- Using timestamp/rowversion columns for concurrency
+- Implementing optimistic concurrency checks
+- Handling DbUpdateConcurrencyException
+- Displaying concurrency conflict messages
+- Refreshing data after concurrency conflicts
+- Working with EF concurrency tokens
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

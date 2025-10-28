@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the MenuSameControllersInDifferentAreas sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Menu navigation with same controller names across different areas in ASP.NET MVC. The sample shows how to properly route Menu items when controllers have identical names in multiple areas.
+
+Common techniques shown in this sample:
+- Configuring Menu items with area-specific routing
+- Using area parameter in Menu URL generation
+- Handling controller name conflicts across areas
+- Implementing proper route values for areas
+- Navigating between different MVC areas
+- Setting up Menu with multi-area architecture
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

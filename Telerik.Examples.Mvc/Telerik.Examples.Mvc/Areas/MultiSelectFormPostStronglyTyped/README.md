@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the MultiSelectFormPostStronglyTyped sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates strongly-typed form post with MultiSelect component in ASP.NET MVC. The sample shows how to bind MultiSelect to model properties and handle form submissions with selected values.
+
+Common techniques shown in this sample:
+- Binding MultiSelect to strongly-typed models
+- Using MultiSelectFor() helper method
+- Handling form post with multiple selections
+- Model binding for collection properties
+- Processing selected values in controller
+- Validating MultiSelect selections
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

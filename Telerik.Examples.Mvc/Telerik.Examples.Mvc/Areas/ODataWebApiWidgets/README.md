@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the ODataWebApiWidgets sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates binding Telerik UI components to OData Web API endpoints in ASP.NET MVC. The sample shows how to configure components to work with OData protocol for remote operations and querying.
+
+Common techniques shown in this sample:
+- Configuring DataSource for OData endpoints
+- Using OData transport type
+- Implementing OData Web API controllers
+- Handling OData query options ($filter, $orderby, $skip, $top)
+- Working with OData v4 protocol
+- Binding Grid and other components to OData services
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

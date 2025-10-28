@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the SchedulerSignalRServerFiltering sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates combining SignalR real-time updates with server-side filtering in Telerik Scheduler in ASP.NET MVC. The sample shows live appointment synchronization with server-filtered data for optimal performance.
+
+Common techniques shown in this sample:
+- Combining SignalR with server-side filtering
+- Implementing filtered real-time updates
+- Optimizing data transfer with range filtering
+- Broadcasting only relevant appointments
+- Handling SignalR with date range requests
+- Managing real-time filtered data synchronization
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

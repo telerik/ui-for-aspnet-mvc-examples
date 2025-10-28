@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the WindowFormWithAjax sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates displaying forms in Telerik Window with AJAX content loading in ASP.NET MVC. The sample shows how to load and submit forms within Window popups using AJAX for seamless user interaction.
+
+Common techniques shown in this sample:
+- Loading forms via AJAX in Window
+- Configuring Window with ContentUrl
+- Handling form submissions in Window
+- Using AJAX form posts from Window
+- Refreshing parent page after Window form submit
+- Managing Window lifecycle with forms
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

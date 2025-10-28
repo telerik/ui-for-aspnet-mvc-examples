@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the SchedulerGoogleAPI sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Google Calendar API integration with Telerik Scheduler in ASP.NET MVC. The sample shows how to sync appointments with Google Calendar using the Google Calendar API for bidirectional synchronization.
+
+Common techniques shown in this sample:
+- Integrating Google Calendar API
+- Authenticating with Google OAuth
+- Syncing appointments to Google Calendar
+- Reading events from Google Calendar
+- Handling Google Calendar event updates
+- Managing calendar synchronization conflicts
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

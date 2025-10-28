@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the MultiSelectGetPostData sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates retrieving posted data from MultiSelect component in ASP.NET MVC. The sample shows how to access selected values on form submission and bind them to controller action parameters.
+
+Common techniques shown in this sample:
+- Handling MultiSelect form submissions
+- Accessing selected values in controller action
+- Binding posted data to action parameters
+- Processing array of selected values
+- Using Request.Form to get MultiSelect data
+- Working with multiple value selections
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the SchedulerSignalRLocalHub sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates real-time Scheduler updates using local SignalR hub in ASP.NET MVC. The sample shows how to push appointment changes to all connected clients using SignalR for collaborative scheduling.
+
+Common techniques shown in this sample:
+- Setting up local SignalR hub for Scheduler
+- Broadcasting appointment changes to clients
+- Implementing real-time appointment synchronization
+- Handling SignalR hub methods for CRUD operations
+- Managing concurrent appointment edits
+- Using SignalR DataSource transport
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

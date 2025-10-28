@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the SchedulerValidatingTimeslot sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates timeslot validation in Telerik Scheduler in ASP.NET MVC. The sample shows how to restrict appointment creation to specific time ranges or validate appointment durations based on business rules.
+
+Common techniques shown in this sample:
+- Implementing timeslot validation rules
+- Restricting appointments to business hours
+- Validating appointment start/end times
+- Preventing overlapping appointments
+- Using Edit event for validation
+- Displaying validation error messages
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

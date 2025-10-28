@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the SchedulerEditingWebApi sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Scheduler CRUD operations with Web API backend in ASP.NET MVC. The sample shows how to configure appointment editing to communicate with Web API controllers for RESTful data operations.
+
+Common techniques shown in this sample:
+- Configuring Scheduler DataSource for Web API
+- Implementing Web API controllers for appointments
+- Handling Create, Read, Update, Delete via Web API
+- Working with JSON appointment data
+- Managing recurring appointments in Web API
+- Implementing proper HTTP status codes
 
 ---
 
@@ -43,3 +51,4 @@ And then you can add new Entity definition to the Web.config like this:
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
 ```
+

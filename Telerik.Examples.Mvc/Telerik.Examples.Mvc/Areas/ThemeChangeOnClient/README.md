@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the ThemeChangeOnClient sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates dynamic theme switching for Telerik UI components on the client side in ASP.NET MVC. The sample shows how to change component themes at runtime without page reload for user customization.
+
+Common techniques shown in this sample:
+- Implementing client-side theme switching
+- Loading theme stylesheets dynamically
+- Removing previous theme styles
+- Handling theme change events
+- Persisting user theme preferences
+- Supporting multiple theme options
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

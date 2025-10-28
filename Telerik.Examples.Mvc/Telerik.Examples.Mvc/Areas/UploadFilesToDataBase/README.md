@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the UploadFilesToDataBase sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates uploading and storing files in database using Telerik Upload component in ASP.NET MVC. The sample shows how to save uploaded files as binary data in database tables instead of file system.
+
+Common techniques shown in this sample:
+- Storing uploaded files in database
+- Converting files to byte arrays
+- Saving file binary data with Entity Framework
+- Retrieving files from database
+- Returning FileResult from database records
+- Managing file metadata in database
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

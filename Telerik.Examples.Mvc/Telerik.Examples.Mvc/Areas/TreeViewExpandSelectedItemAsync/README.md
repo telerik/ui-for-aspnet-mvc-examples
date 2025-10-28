@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the TreeViewExpandSelectedItemAsync sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates asynchronous expansion and selection of TreeView items in ASP.NET MVC. The sample shows how to programmatically expand parent nodes and select items loaded via AJAX for deep-linking scenarios.
+
+Common techniques shown in this sample:
+- Expanding TreeView nodes programmatically
+- Selecting items after async data load
+- Using expand() and select() API methods
+- Handling load-on-demand node expansion
+- Implementing deep-linking to tree items
+- Waiting for async operations before selection
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

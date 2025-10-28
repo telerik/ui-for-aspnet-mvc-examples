@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the PanelBarSelectItemInitially sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates initially selecting a PanelBar item on page load in ASP.NET MVC. The sample shows how to expand and select specific PanelBar items programmatically when the page loads.
+
+Common techniques shown in this sample:
+- Selecting PanelBar items programmatically
+- Expanding parent items on initialization
+- Using SelectedIndex property
+- Implementing initial selection in PanelBar
+- Handling PanelBar item activation
+- Setting default expanded/selected state
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

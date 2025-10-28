@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the TreeViewBindingToXml sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates binding Telerik TreeView to XML data in ASP.NET MVC. The sample shows how to load and display hierarchical XML structures in a TreeView component for document or configuration visualization.
+
+Common techniques shown in this sample:
+- Parsing XML documents for TreeView binding
+- Using LINQ to XML for data extraction
+- Creating hierarchical models from XML
+- Binding TreeView to XML node structure
+- Handling XML attributes and elements
+- Displaying XML hierarchy in tree format
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

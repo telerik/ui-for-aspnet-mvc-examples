@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the TreeViewLoadConditionally sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates conditional loading of TreeView child nodes in ASP.NET MVC. The sample shows how to load child nodes on demand based on parent node selection or other conditions for performance optimization.
+
+Common techniques shown in this sample:
+- Implementing load-on-demand for TreeView
+- Conditionally loading child nodes
+- Using TreeView DataBound event
+- Filtering child nodes based on parent
+- Implementing lazy loading for tree data
+- Optimizing initial page load with deferred loading
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

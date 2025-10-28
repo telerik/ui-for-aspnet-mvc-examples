@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the UploadDownloadFileLinks sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates file upload with downloadable file links in ASP.NET MVC. The sample shows how to display download links for uploaded files after successful upload, enabling file management.
+
+Common techniques shown in this sample:
+- Handling Upload success event
+- Generating download links for uploaded files
+- Displaying file list with download links
+- Storing uploaded file paths
+- Creating FileResult for downloads
+- Managing uploaded file metadata
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the TreeViewSaveItemState sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates persisting TreeView expanded/collapsed state in ASP.NET MVC. The sample shows how to save and restore which nodes are expanded across page loads for improved user experience.
+
+Common techniques shown in this sample:
+- Saving TreeView expanded node state
+- Using cookies or session for state persistence
+- Restoring expanded nodes on page load
+- Handling expand/collapse events
+- Tracking node state changes
+- Implementing user-specific tree state
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

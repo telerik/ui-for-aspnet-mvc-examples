@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the RequireJS sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates integrating Telerik UI components with RequireJS for AMD module loading in ASP.NET MVC. The sample shows how to configure components to work with RequireJS module system for modular JavaScript architecture.
+
+Common techniques shown in this sample:
+- Configuring RequireJS for Telerik components
+- Loading Telerik scripts as AMD modules
+- Using require() to initialize components
+- Managing script dependencies with RequireJS
+- Implementing modular JavaScript architecture
+- Optimizing script loading with AMD
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

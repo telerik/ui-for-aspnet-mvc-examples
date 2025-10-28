@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridSelectionColumnWithCheckBox sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates checkbox selection column in Telerik Grid in ASP.NET MVC. The sample shows how to add a dedicated checkbox column for multi-row selection, enabling users to select multiple rows for batch operations.
+
+Common techniques shown in this sample:
+- Adding selection checkbox column to Grid
+- Configuring selectable rows with checkboxes
+- Implementing select all functionality in header
+- Handling selection change events
+- Getting selected rows for batch operations
+- Using persistent selection across pages
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

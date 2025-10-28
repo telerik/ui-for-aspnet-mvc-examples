@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridSignalR sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates real-time Grid updates using SignalR in ASP.NET MVC. The sample shows how to push data changes from server to Grid using SignalR for live updates, enabling collaborative scenarios where multiple users see changes instantly.
+
+Common techniques shown in this sample:
+- Configuring Grid with SignalR data source
+- Connecting to SignalR hub for real-time updates
+- Handling push notifications for CRUD operations
+- Implementing hub methods for broadcasting changes
+- Synchronizing Grid data across multiple clients
+- Using SignalR transport for Grid DataSource
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```
