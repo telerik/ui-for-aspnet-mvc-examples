@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingModelStateError sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates model state error handling during Grid editing in ASP.NET MVC. The sample shows how to display validation errors from server-side ModelState back to the user in the Grid, ensuring data integrity and providing clear feedback.
+
+Common techniques shown in this sample:
+- Validating model data in controller actions
+- Returning ModelState errors to Grid
+- Displaying validation messages in Grid edit forms
+- Using ModelState.AddModelError for custom validations
+- Implementing Data Annotations for automatic validation
+- Preventing save operations when validation fails
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

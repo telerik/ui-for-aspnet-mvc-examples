@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridMultiSelect sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates MultiSelect integration with Grid for many-to-many relationships in ASP.NET MVC. The sample shows how to use MultiSelect component to edit collection properties in Grid rows during editing.
+
+Common techniques shown in this sample:
+- Integrating MultiSelect in Grid editors
+- Handling many-to-many relationships
+- Binding MultiSelect to collection properties
+- Saving selected items to junction tables
+- Using EditorTemplate for MultiSelect configuration
+- Managing related entity selections
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

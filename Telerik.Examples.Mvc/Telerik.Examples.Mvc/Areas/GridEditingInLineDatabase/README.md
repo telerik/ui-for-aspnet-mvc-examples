@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingInLineDatabase sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates inline editing with database persistence in Telerik Grid in ASP.NET MVC. The sample shows row-by-row inline editing with Entity Framework integration, allowing users to edit rows directly in the Grid and save changes to the database.
+
+Common techniques shown in this sample:
+- Enabling inline editing mode in Grid
+- Configuring CRUD operations with Entity Framework
+- Implementing Update, Create, and Destroy actions
+- Using DataSourceRequest for automatic data operations
+- Handling model validation during inline editing
+- Refreshing Grid after database updates
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

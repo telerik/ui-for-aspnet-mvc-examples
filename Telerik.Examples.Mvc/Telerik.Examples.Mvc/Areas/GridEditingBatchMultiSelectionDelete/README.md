@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingBatchMultiSelectionDelete sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates batch deletion of multiple selected rows in Telerik Grid in ASP.NET MVC. The sample shows how to enable multi-row selection with checkboxes and delete multiple rows in a single batch operation, improving efficiency for bulk delete scenarios.
+
+Common techniques shown in this sample:
+- Enabling Grid selection with checkboxes
+- Implementing batch delete for multiple selected rows
+- Using Grid's getSelectedRows() API to retrieve selections
+- Processing multiple deletes in single server request
+- Handling batch delete operations with Entity Framework
+- Refreshing Grid after batch delete completion
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

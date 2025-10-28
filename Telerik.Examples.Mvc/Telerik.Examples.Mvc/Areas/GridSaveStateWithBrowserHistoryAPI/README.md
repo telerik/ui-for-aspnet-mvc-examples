@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridSaveStateWithBrowserHistoryAPI sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Grid state persistence using browser History API in ASP.NET MVC. The sample shows how to save Grid state in browser history for back/forward navigation support, enabling users to navigate through Grid states.
+
+Common techniques shown in this sample:
+- Using HTML5 History API for state management
+- Saving Grid state with pushState()
+- Handling popstate events for navigation
+- Restoring Grid state on back/forward
+- Updating URL with Grid state parameters
+- Implementing browser-native navigation
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

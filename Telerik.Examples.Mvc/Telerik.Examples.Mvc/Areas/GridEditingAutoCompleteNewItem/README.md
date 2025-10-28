@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingAutoCompleteNewItem sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates using AutoComplete for adding new items during Grid editing in ASP.NET MVC. The sample shows how to allow users to either select existing items from autocomplete suggestions or create new entries on-the-fly, combining search and create functionality.
+
+Common techniques shown in this sample:
+- Configuring AutoComplete as Grid column editor
+- Implementing server-side search for AutoComplete filtering
+- Handling new item creation from AutoComplete input
+- Using NoDataTemplate to display 'Add New' option
+- Validating and saving new AutoComplete entries to database
+- Synchronizing new items with Grid data source automatically
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridRowsBackgroundConditional sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates conditional row background styling in Telerik Grid in ASP.NET MVC. The sample shows how to apply different row colors based on data values using row templates or CSS classes.
+
+Common techniques shown in this sample:
+- Using RowTemplate for conditional styling
+- Applying CSS classes based on row data
+- Implementing conditional background colors
+- Using template syntax to evaluate data conditions
+- Highlighting rows based on business rules
+- Creating visual indicators for row states
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingBatchWithCheckboxes sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates batch editing with checkbox columns in Telerik Grid in ASP.NET MVC. The sample shows how to use checkboxes for boolean fields within batch editing mode, enabling users to quickly toggle multiple checkbox values and save all changes together.
+
+Common techniques shown in this sample:
+- Enabling Grid batch editing mode
+- Using checkbox editors for boolean columns
+- Handling checkbox state changes in batch mode
+- Implementing EditorTemplate for checkbox inputs
+- Saving multiple checkbox changes in batch
+- Working with nullable boolean fields in checkboxes
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

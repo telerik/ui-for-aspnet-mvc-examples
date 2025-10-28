@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingUploadInPopUp sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates file upload within Grid popup editors in ASP.NET MVC. The sample shows how to integrate Telerik Upload component in popup edit forms for file attachments, enabling users to upload files as part of Grid row data.
+
+Common techniques shown in this sample:
+- Including Telerik Upload component in popup editor
+- Configuring async file upload in edit forms
+- Saving uploaded file paths to Grid data model
+- Handling file upload success/error events
+- Storing file references in database
+- Displaying uploaded file names in Grid columns
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridForeignKeyComboBoxColumn sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates using ComboBox for foreign key columns in Telerik Grid in ASP.NET MVC. The sample shows how to display related entity data via ComboBox editors bound to lookup tables, providing autocomplete and search functionality.
+
+Common techniques shown in this sample:
+- Configuring ComboBox editors for foreign key fields
+- Binding ComboBox to lookup table data
+- Implementing server-side filtering for ComboBox
+- Displaying related entity properties
+- Handling foreign key selection and validation
+- Using ComboBox DataTextField and DataValueField
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

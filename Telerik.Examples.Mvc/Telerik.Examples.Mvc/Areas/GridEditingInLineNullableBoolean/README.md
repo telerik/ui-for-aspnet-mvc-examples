@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingInLineNullableBoolean sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates inline editing of nullable boolean fields in Telerik Grid in ASP.NET MVC. The sample shows how to handle three-state (true/false/null) boolean columns with appropriate editors, enabling users to set, clear, or leave boolean values undefined.
+
+Common techniques shown in this sample:
+- Configuring Grid columns for nullable bool properties
+- Using tri-state checkbox or dropdown for nullable booleans
+- Handling null, true, and false states in editors
+- Implementing EditorTemplate for nullable boolean fields
+- Displaying null values with custom text or icons
+- Saving null boolean values to database
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

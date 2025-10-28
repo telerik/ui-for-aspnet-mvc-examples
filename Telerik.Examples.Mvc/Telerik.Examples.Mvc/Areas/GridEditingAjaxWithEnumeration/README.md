@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingAjaxWithEnumeration sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Grid editing with enumeration fields using AJAX binding in ASP.NET MVC. The sample shows how to display enum values as dropdown lists during editing and properly serialize/deserialize enum types during CRUD operations.
+
+Common techniques shown in this sample:
+- Binding enum properties to Grid columns
+- Creating dropdown editors for enum fields automatically
+- Converting enum values to display text
+- Using Enum.GetValues() for dropdown data source
+- Handling enum serialization in JSON responses
+- Implementing enum validation in edit forms
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

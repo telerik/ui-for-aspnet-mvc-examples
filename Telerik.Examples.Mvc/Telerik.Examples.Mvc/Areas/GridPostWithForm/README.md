@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridPostWithForm sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Grid data submission via form post in ASP.NET MVC. The sample shows how to collect Grid data and post it as part of a standard HTML form submission instead of using AJAX.
+
+Common techniques shown in this sample:
+- Collecting Grid row data for form submission
+- Using hidden fields to store Grid data
+- Serializing Grid data to JSON for post
+- Handling form submit with Grid data
+- Processing Grid data in controller action
+- Working with model binding for Grid collections
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

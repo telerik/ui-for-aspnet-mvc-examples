@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingPoPupRequiredDropDownListFor sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates popup editing with required DropDownList validation in Telerik Grid in ASP.NET MVC. The sample shows how to enforce required field validation on dropdown editors within popup edit forms, ensuring data completeness.
+
+Common techniques shown in this sample:
+- Implementing required validation for DropDownList editors
+- Using Data Annotations [Required] attribute
+- Displaying validation messages in popup editor
+- Preventing save with invalid dropdown selections
+- Configuring DropDownList without default empty option
+- Client and server-side validation for required dropdowns
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

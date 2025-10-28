@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridExportingExcelMultiple sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates exporting multiple grids to a single Excel workbook in ASP.NET MVC. The sample shows how to create an Excel file with multiple worksheets, each containing data from a different Grid component.
+
+Common techniques shown in this sample:
+- Creating Excel workbook with multiple sheets
+- Exporting multiple Grid instances to same file
+- Configuring separate worksheets for each Grid
+- Using Telerik SpreadProcessing library
+- Combining multiple data sources in Excel
+- Downloading multi-sheet Excel file
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

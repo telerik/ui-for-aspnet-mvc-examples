@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridMultiSelectFilter sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates multi-select filtering in Telerik Grid in ASP.NET MVC. The sample shows how to implement filter UI that allows selecting multiple filter values simultaneously for more flexible data filtering.
+
+Common techniques shown in this sample:
+- Configuring multi-value filter UI
+- Using MultiSelect for filter inputs
+- Handling multiple filter value selections
+- Implementing OR logic for multiple values
+- Applying multi-value filters to data source
+- Displaying selected filter values
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

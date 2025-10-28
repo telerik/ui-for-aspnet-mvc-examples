@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingPopUpNestedGrid sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates popup editor containing a nested Grid in ASP.NET MVC. The sample shows how to include a child Grid within the popup editor for editing master-detail related data in a single form.
+
+Common techniques shown in this sample:
+- Including nested Grid in popup editor template
+- Configuring child Grid for detail records editing
+- Synchronizing parent and child data during save
+- Handling CRUD operations in nested Grid
+- Using separate data sources for master and detail
+- Managing foreign key relationships between grids
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

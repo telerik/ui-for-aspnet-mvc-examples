@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridHierarchyServer sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates server-side hierarchical Grid binding in ASP.NET MVC. The sample shows how to configure master-detail grids with server-side data operations for both parent and child levels.
+
+Common techniques shown in this sample:
+- Using server binding for hierarchical grids
+- Configuring detail template with server binding
+- Implementing Read actions for both grid levels
+- Handling paging and sorting at each level
+- Managing parent-child data relationships
+- Using separate models for master and detail
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

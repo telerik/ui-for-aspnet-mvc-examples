@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingExternalContainer sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Grid editing with an external edit form container in ASP.NET MVC. The sample shows how to place the edit form outside the Grid in a separate container on the page, useful for complex forms that need more space or custom positioning.
+
+Common techniques shown in this sample:
+- Configuring Grid to use external edit container
+- Specifying EditTemplate container element
+- Positioning edit form in custom page location
+- Handling form visibility with external container
+- Implementing custom form layouts outside Grid
+- Synchronizing external form with Grid data operations
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridRenderAndPreviewByteAndBase64Images sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates rendering and previewing byte array and Base64 encoded images in Telerik Grid in ASP.NET MVC. The sample shows how to display images stored as binary data or Base64 strings directly in Grid columns.
+
+Common techniques shown in this sample:
+- Displaying images from byte arrays in Grid
+- Converting byte[] to Base64 for image display
+- Using ClientTemplate for image rendering
+- Creating data URIs for inline images
+- Handling image previews in Grid cells
+- Storing and retrieving image binary data
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

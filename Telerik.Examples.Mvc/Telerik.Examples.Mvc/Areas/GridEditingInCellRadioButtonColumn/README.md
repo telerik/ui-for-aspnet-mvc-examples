@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingInCellRadioButtonColumn sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates in-cell editing with radio button columns in Telerik Grid in ASP.NET MVC. The sample shows how to use radio buttons for selecting a single option per column during cell editing, useful for mutually exclusive choices within Grid rows.
+
+Common techniques shown in this sample:
+- Creating radio button editors in Grid cells
+- Implementing EditorTemplate for radio button inputs
+- Handling radio button selection in in-cell edit mode
+- Binding radio buttons to enum or limited value sets
+- Grouping radio buttons by row for mutual exclusivity
+- Saving radio button selections during batch editing
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

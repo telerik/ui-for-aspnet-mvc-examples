@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingInCellWebApi sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates in-cell editing with Web API data source in Telerik Grid in ASP.NET MVC. The sample shows how to configure the Grid to perform CRUD operations via Web API endpoints, supporting RESTful architecture patterns.
+
+Common techniques shown in this sample:
+- Configuring Grid DataSource for Web API endpoints
+- Setting transport URLs for Create, Read, Update, Destroy operations
+- Handling HTTP verbs (GET, POST, PUT, DELETE) in Web API
+- Working with JSON data from Web API responses
+- Implementing Web API controllers for Grid operations
+- Managing CORS and authentication with Web API
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridHierarchyServerDetailTemplate sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates server-rendered detail templates in hierarchical Grid in ASP.NET MVC. The sample shows how to use server-side partial views for detail row content, enabling complex server-side logic in detail templates.
+
+Common techniques shown in this sample:
+- Using server DetailTemplate with partial views
+- Rendering detail content on server-side
+- Passing model data to detail partial views
+- Implementing complex detail layouts
+- Using server logic in detail templates
+- Handling postbacks from detail content
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

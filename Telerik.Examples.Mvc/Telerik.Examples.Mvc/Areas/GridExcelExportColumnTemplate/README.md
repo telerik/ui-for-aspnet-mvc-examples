@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridExcelExportColumnTemplate sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates using column templates during Excel export in Telerik Grid in ASP.NET MVC. The sample shows how to customize exported cell content based on column templates, applying transformations to data during export.
+
+Common techniques shown in this sample:
+- Using ColumnTemplate for custom export content
+- Transforming data values during Excel export
+- Handling template expressions in export
+- Formatting dates and numbers for Excel
+- Exporting calculated or derived column values
+- Applying conditional formatting based on templates
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

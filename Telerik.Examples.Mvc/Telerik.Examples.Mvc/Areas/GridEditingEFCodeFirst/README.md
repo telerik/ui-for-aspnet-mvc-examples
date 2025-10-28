@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingEFCodeFirst sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Grid editing with Entity Framework Code First approach in ASP.NET MVC. The sample shows CRUD operations using EF Code First models and DbContext, demonstrating modern data access patterns without EDMX files.
+
+Common techniques shown in this sample:
+- Using Entity Framework Code First models
+- Configuring DbContext for Grid data operations
+- Implementing CRUD actions with Code First approach
+- Using Data Annotations for model validation
+- Handling migrations and database initialization
+- Working with navigation properties in Code First
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

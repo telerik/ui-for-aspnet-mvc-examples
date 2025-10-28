@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridHandleServerError sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates error handling for server-side Grid operations in ASP.NET MVC. The sample shows how to catch and display server errors in a user-friendly manner within the Grid, improving user experience when errors occur.
+
+Common techniques shown in this sample:
+- Implementing try-catch in Grid data operations
+- Returning error messages to Grid client-side
+- Handling Error event in Grid DataSource
+- Displaying error notifications to users
+- Logging server-side exceptions
+- Implementing graceful error recovery
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

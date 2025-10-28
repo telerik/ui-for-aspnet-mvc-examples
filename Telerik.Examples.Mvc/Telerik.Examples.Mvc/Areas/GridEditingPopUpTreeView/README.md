@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingPopUpTreeView sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates popup editor containing a TreeView component in Telerik Grid in ASP.NET MVC. The sample shows how to use TreeView for selecting hierarchical data within Grid popup editors, useful for category selection or organizational hierarchies.
+
+Common techniques shown in this sample:
+- Including Telerik TreeView in popup editor template
+- Configuring TreeView for hierarchical data selection
+- Binding TreeView to hierarchical data sources
+- Handling TreeView selection in editor
+- Saving selected TreeView node values to Grid
+- Using EditorTemplate with TreeView component
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

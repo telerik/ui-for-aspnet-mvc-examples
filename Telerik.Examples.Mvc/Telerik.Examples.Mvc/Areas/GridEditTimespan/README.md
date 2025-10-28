@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditTimespan sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates editing TimeSpan columns in Telerik Grid in ASP.NET MVC. The sample shows how to bind and edit time duration values using appropriate editors, handling TimeSpan formatting and parsing.
+
+Common techniques shown in this sample:
+- Binding Grid columns to TimeSpan properties
+- Creating custom editors for TimeSpan input
+- Formatting TimeSpan for display (HH:mm:ss format)
+- Parsing user input to TimeSpan values
+- Handling TimeSpan validation
+- Storing durations in database as TimeSpan type
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridForeignKeySorting sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates sorting by foreign key display values in Telerik Grid in ASP.NET MVC. The sample shows how to sort Grid rows by related entity display text instead of foreign key ID values, providing intuitive sorting behavior.
+
+Common techniques shown in this sample:
+- Implementing custom sorting for foreign key columns
+- Sorting by related entity text properties
+- Using LINQ to join tables for sorting
+- Configuring Sortable property for foreign keys
+- Handling sort requests for lookup data
+- Optimizing queries with proper joins
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

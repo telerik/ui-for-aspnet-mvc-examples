@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditPopUpServerValidation sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates server-side validation for popup edit mode in Telerik Grid in ASP.NET MVC. The sample shows how to validate user input on the server and return validation messages to the popup editor, ensuring data integrity and business rule enforcement.
+
+Common techniques shown in this sample:
+- Implementing ModelState validation in controller actions
+- Returning validation errors to popup editor
+- Displaying field-level error messages
+- Using Data Annotations for automatic validation
+- Implementing custom business rule validations
+- Preventing save operations when validation fails
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

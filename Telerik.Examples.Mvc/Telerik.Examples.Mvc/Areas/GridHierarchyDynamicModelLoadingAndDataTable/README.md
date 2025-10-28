@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridHierarchyDynamicModelLoadingAndDataTable sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates dynamic model loading in hierarchical Grid using DataTable in ASP.NET MVC. The sample shows how to build master-detail grids with dynamic schemas from DataTable objects, useful for runtime-defined structures.
+
+Common techniques shown in this sample:
+- Creating hierarchical grids with DataTable
+- Loading dynamic schemas at runtime
+- Building column definitions from DataTable structure
+- Handling master-detail with dynamic data
+- Using DataRow for grid row data
+- Working with ADO.NET in hierarchical grids
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

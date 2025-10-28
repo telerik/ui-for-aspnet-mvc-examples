@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingPopUpNestedGridBatch sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates popup editor with nested Grid in batch mode in ASP.NET MVC. The sample shows batch editing in a child Grid that appears within the parent Grid's popup editor, enabling efficient multi-record editing of related data.
+
+Common techniques shown in this sample:
+- Configuring nested Grid with batch editing mode
+- Implementing popup editor with editable child Grid
+- Handling batch updates for detail records
+- Synchronizing parent-child data in batch operations
+- Managing multiple levels of unsaved changes
+- Saving both parent and detail records together
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

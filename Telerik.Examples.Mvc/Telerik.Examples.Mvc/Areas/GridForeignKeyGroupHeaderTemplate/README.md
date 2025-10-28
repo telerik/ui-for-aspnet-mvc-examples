@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridForeignKeyGroupHeaderTemplate sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates custom group header templates for foreign key columns in Telerik Grid in ASP.NET MVC. The sample shows how to display friendly names instead of IDs in group headers when grouping by foreign key columns.
+
+Common techniques shown in this sample:
+- Configuring GroupHeaderTemplate for foreign key columns
+- Displaying related entity text in group headers
+- Using template syntax to access foreign key data
+- Customizing group header formatting
+- Handling grouping with lookup data
+- Showing aggregates with foreign key grouping
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

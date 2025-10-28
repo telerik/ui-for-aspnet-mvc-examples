@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingInLineColorSelection sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates inline editing with color picker for Grid columns in ASP.NET MVC. The sample shows how to use Telerik ColorPicker component as an editor within Grid rows, enabling users to select colors visually during inline editing.
+
+Common techniques shown in this sample:
+- Configuring ColorPicker as Grid column editor
+- Using EditorTemplate to specify ColorPicker editor
+- Binding color values to string or hex format properties
+- Handling color selection changes in Grid cells
+- Displaying selected colors in Grid display mode
+- Saving color values to database during updates
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

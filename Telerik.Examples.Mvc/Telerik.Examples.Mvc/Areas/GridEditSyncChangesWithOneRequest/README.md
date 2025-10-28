@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditSyncChangesWithOneRequest sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates synchronizing all Grid changes in a single request in ASP.NET MVC. The sample shows how to batch multiple create, update, and delete operations into one server call, improving performance and maintaining data consistency.
+
+Common techniques shown in this sample:
+- Configuring Grid batch mode for synchronized saves
+- Implementing batch save action on server
+- Processing multiple operations in single transaction
+- Handling creates, updates, and deletes together
+- Using Entity Framework for batch persistence
+- Returning all updated records after batch save
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

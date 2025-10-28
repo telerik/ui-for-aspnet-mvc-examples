@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridPreserveServerToolbarTemplateAfterSetOptions sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates preserving server toolbar template after client-side setOptions in Telerik Grid in ASP.NET MVC. The sample shows how to maintain server-rendered toolbar content when modifying Grid options dynamically on the client.
+
+Common techniques shown in this sample:
+- Using server-side toolbar templates
+- Calling setOptions() to modify Grid configuration
+- Preserving toolbar HTML after setOptions
+- Storing toolbar content before Grid updates
+- Re-inserting toolbar after configuration changes
+- Handling dynamic Grid reconfiguration
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

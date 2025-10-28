@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridDropDownListEditorBoundToNullableField sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to bind a DropDownList editor to nullable foreign key fields in Telerik Grid in ASP.NET MVC. The sample shows handling null values in dropdown editors during Grid editing, including providing an empty option for nullable fields to allow users to clear selections.
+
+Common techniques shown in this sample:
+- Configuring DropDownList with OptionLabel for null values
+- Binding to nullable int or foreign key properties
+- Handling DBNull and null in dropdown selections
+- Implementing validation for nullable dropdown fields
+- Setting default null option in edit mode
+- Managing foreign key relationships with optional values
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

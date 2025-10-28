@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridModifyFiltersOnTheServer sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates server-side filter modification in Telerik Grid in ASP.NET MVC. The sample shows how to intercept and modify filter requests on the server before applying them to the data source, enabling custom filtering logic.
+
+Common techniques shown in this sample:
+- Intercepting DataSourceRequest filter parameters
+- Modifying filter expressions on server-side
+- Adding custom filter conditions programmatically
+- Combining user filters with business rules
+- Implementing complex filter transformations
+- Applying security-based filtering
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

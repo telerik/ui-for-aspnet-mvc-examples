@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridHierarchySelfReferencing sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates self-referencing hierarchical Grid in ASP.NET MVC. The sample shows how to display tree-like data where rows can have parent-child relationships with other rows in the same table (e.g., employee management hierarchy).
+
+Common techniques shown in this sample:
+- Configuring self-referencing hierarchy with ParentId
+- Binding to single table with parent-child relationships
+- Displaying organizational or category hierarchies
+- Handling recursive data structures
+- Implementing expand/collapse for tree rows
+- Managing self-referential foreign keys
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

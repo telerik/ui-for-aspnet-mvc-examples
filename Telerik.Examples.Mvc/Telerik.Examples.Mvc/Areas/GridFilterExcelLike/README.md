@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridFilterExcelLike sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Excel-like filtering in Telerik Grid in ASP.NET MVC. The sample shows how to enable the multi-checkbox filter mode similar to Excel's filter dropdowns, allowing users to select multiple values to filter by.
+
+Common techniques shown in this sample:
+- Enabling Excel-style multi-checkbox filtering
+- Configuring FilterMode as CheckBoxes
+- Displaying unique column values in filter list
+- Handling multiple value selections
+- Implementing server-side multi-value filtering
+- Showing filter count and selection status
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

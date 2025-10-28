@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridDateUtcOnServerAndClient sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates UTC date handling for both server and client sides in Telerik Grid in ASP.NET MVC. The sample shows how to ensure consistent timezone handling across server-side operations and client-side display using UTC as the standard, preventing timezone-related data inconsistencies.
+
+Common techniques shown in this sample:
+- Storing dates in UTC format in database
+- Converting local dates to UTC before saving
+- Displaying UTC dates in user's local timezone on client
+- Configuring JSON serialization for UTC dates
+- Handling timezone conversions in Grid editors
+- Using JavaScript Date objects with UTC methods
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

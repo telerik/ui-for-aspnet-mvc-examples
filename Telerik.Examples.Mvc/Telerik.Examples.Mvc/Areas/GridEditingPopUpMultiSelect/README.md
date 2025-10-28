@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingPopUpMultiSelect sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates popup editing with MultiSelect component for many-to-many relationships in Telerik Grid in ASP.NET MVC. The sample shows how to use MultiSelect to edit junction table relationships, allowing users to select multiple related items.
+
+Common techniques shown in this sample:
+- Configuring MultiSelect in Grid popup editors
+- Handling many-to-many relationships with junction tables
+- Binding MultiSelect to collection properties
+- Saving selected items to junction table
+- Loading existing relationships into MultiSelect
+- Using EditorTemplate for MultiSelect configuration
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

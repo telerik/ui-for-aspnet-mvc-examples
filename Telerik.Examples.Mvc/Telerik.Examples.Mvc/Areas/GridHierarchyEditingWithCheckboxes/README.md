@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridHierarchyEditingWithCheckboxes sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates editing in hierarchical Grid with checkbox columns in ASP.NET MVC. The sample shows CRUD operations in parent-child grids with checkbox selection support and batch editing capabilities.
+
+Common techniques shown in this sample:
+- Configuring hierarchical grid with editing enabled
+- Implementing checkbox selection in both levels
+- Handling CRUD operations for parent and child grids
+- Managing foreign key relationships in hierarchy
+- Using separate controllers for each grid level
+- Synchronizing parent-child data changes
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

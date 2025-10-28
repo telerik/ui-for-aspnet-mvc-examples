@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridMasterDetail sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates master-detail Grid relationship in ASP.NET MVC. The sample shows how to display related data in child grids that appear when expanding master grid rows, creating hierarchical data visualization.
+
+Common techniques shown in this sample:
+- Configuring master-detail Grid relationship
+- Using DetailTemplate to define child grid
+- Filtering detail data by parent row ID
+- Implementing separate Read actions for master and detail
+- Handling foreign key relationships
+- Expanding/collapsing detail rows
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

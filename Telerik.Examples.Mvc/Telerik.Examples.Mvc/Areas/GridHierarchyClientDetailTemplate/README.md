@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridHierarchyClientDetailTemplate sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates hierarchical Grid with client-side detail templates in ASP.NET MVC. The sample shows how to render child grids or custom content using client templates for master-detail relationships, improving performance over server rendering.
+
+Common techniques shown in this sample:
+- Configuring ClientDetailTemplate for hierarchy
+- Converting server-side Grid to client template
+- Rendering nested grids on row expansion
+- Binding detail templates to row data
+- Using ToClientTemplate() method
+- Handling detail grid initialization events
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

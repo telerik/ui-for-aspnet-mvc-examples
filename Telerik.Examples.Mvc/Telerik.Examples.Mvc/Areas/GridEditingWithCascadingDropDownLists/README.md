@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingWithCascadingDropDownLists sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Grid editing with cascading dropdown lists in ASP.NET MVC. The sample shows how to implement dependent foreign key fields where child dropdown options depend on parent dropdown selection (e.g., Country -> State -> City).
+
+Common techniques shown in this sample:
+- Configuring cascading DropDownList editors in Grid
+- Implementing CascadeFrom property for dependencies
+- Filtering child dropdown data based on parent selection
+- Handling foreign key relationships with cascading logic
+- Managing multiple levels of cascading dropdowns
+- Implementing server-side filtering for cascaded data
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

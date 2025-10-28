@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingPopUpAccessModel sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates accessing the model in custom popup editors for Grid in ASP.NET MVC. The sample shows how to pass and use the data item model within custom popup editor templates, enabling access to row data for conditional logic or related data display.
+
+Common techniques shown in this sample:
+- Passing model data to custom popup editor templates
+- Using EditorTemplate with model parameter
+- Accessing row data properties in editor template
+- Implementing conditional editor behavior based on model
+- Displaying read-only fields from model in editor
+- Using model values to populate related dropdowns
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

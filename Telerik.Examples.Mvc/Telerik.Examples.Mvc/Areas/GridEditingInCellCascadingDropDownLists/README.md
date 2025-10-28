@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingInCellCascadingDropDownLists sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates in-cell editing with cascading dropdown lists in Telerik Grid in ASP.NET MVC. The sample shows how to implement dependent dropdowns within Grid cells during inline editing, where child dropdown options depend on parent dropdown selection.
+
+Common techniques shown in this sample:
+- Configuring cascading DropDownLists in Grid cells
+- Implementing editor templates for cascading dropdowns
+- Handling parent dropdown change to filter child options
+- Using CascadeFrom property for dropdown dependencies
+- Managing foreign key relationships with cascading editors
+- Synchronizing cascading dropdown values during cell editing
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

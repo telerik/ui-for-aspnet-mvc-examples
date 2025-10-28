@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditingCustomPopupEditor sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates custom popup editor implementation for Grid editing in ASP.NET MVC. The sample shows how to create a completely custom edit form using Telerik Window component instead of the default popup editor, providing full control over editor layout and functionality.
+
+Common techniques shown in this sample:
+- Creating custom Telerik Window for popup editing
+- Replacing default Grid popup editor with custom Window
+- Designing custom edit form layouts with multiple sections
+- Handling Window open/close events for data binding
+- Implementing custom save/cancel logic in Window
+- Synchronizing custom editor changes with Grid data
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

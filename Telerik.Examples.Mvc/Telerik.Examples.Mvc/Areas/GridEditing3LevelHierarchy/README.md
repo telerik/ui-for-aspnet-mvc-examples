@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridEditing3LevelHierarchy sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates editing in a 3-level hierarchical Grid structure in ASP.NET MVC. The sample shows CRUD operations across parent-child-grandchild relationships (Employees -> Orders -> Order Details) with proper data synchronization and navigation between hierarchy levels.
+
+Common techniques shown in this sample:
+- Configuring 3-level master-detail Grid hierarchy
+- Implementing separate CRUD operations at each hierarchy level
+- Managing foreign key relationships across three levels
+- Using separate controllers for each Grid level
+- Synchronizing data changes across hierarchy levels
+- Handling complex data relationships in nested Grids
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 
