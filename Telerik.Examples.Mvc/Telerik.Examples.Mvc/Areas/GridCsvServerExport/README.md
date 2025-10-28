@@ -36,14 +36,14 @@ To add a new sample, you can
 
 1. Create a new Area which will contain all the necessary files. The Naming of the sample should follow this logic:
 
-![naming](Telerik.Examples.Mvc/Telerik.Examples.Mvc/Images/readme-images/naming.png)
+![naming](../../../../Telerik.Examples.Mvc/Telerik.Examples.Mvc/Images/readme-images/naming.png)
 
 2. Delete the web.config file and Views/Shared folder as they are optional.
 3. Alternatively, you can copy another working Area and do mass-renaming.
 4. It is important to apply namespaces to the Controllers and Models of the example so the classes do not become ambiguous, e.g. Telerik.Examples.Mvc.Areas.GridSelectionByField.Models
 5. If you are adding an example with database, ensure that you change the EF model class names, but not the collection names:
 
-![model-browser](Telerik.Examples.Mvc/Telerik.Examples.Mvc/Images/readme-images/model-browser.png)
+![model-browser](../../../../Telerik.Examples.Mvc/Telerik.Examples.Mvc/Images/readme-images/model-browser.png)
 
 And then you can add new Entity definition to the Web.config like this:
 
