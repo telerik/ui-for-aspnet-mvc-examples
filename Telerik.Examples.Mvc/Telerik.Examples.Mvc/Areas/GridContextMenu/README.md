@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridContextMenu sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to implement a context menu for Grid rows in ASP.NET MVC. The sample shows how to display a custom right-click menu with actions like edit, delete, or custom operations when users right-click on Grid rows, providing intuitive data manipulation options.
+
+Common techniques shown in this sample:
+- Integrating Telerik ContextMenu component with Grid
+- Handling Grid row context click events
+- Showing context menu at mouse cursor position
+- Getting data item from clicked row for menu actions
+- Implementing menu item selection handlers
+- Executing CRUD operations from context menu selections
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to implement a custom data source for Telerik DropDownList component in ASP.NET MVC. The sample shows how to bind the DropDownList to a server-side action method that returns data using the DataSourceRequest and ToDataSourceResult pattern.
+This area demonstrates how to implement a custom data source for the Telerik DropDownList component in ASP.NET MVC. The sample shows how to bind the DropDownList to a server-side action method that returns data using the DataSourceRequest and ToDataSourceResult pattern, enabling server-side filtering and data operations.
+
+Common techniques shown in this sample:
+- Configuring DropDownList with Ajax data source
+- Using [DataSourceRequest] parameter attribute for automatic request parsing
+- Implementing Read action that returns data using ToDataSourceResult()
+- Handling server-side data processing and filtering
+- Binding DropDownList to action method endpoints
+- Working with DataSourceRequest for server operations
 
 ---
 

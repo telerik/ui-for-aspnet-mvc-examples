@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridBindingDynamicCollection sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to bind a Telerik Grid component to a dynamically created collection in ASP.NET MVC. The sample shows working with dynamic data structures where columns and data are generated at runtime, useful for scenarios where the data schema is not known until execution time.
+
+Common techniques shown in this sample:
+- Creating dynamic object collections at runtime
+- Defining Grid columns dynamically based on data structure
+- Using server binding with dynamic data types
+- Working with ExpandoObject or dynamic types
+- Generating column definitions programmatically
+- Handling dynamic property access in Grid templates
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

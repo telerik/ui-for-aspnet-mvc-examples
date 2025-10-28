@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCsvServerExport sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates server-side CSV export functionality for Telerik Grid in ASP.NET MVC. The sample shows how to export Grid data to CSV format on the server and provide the file for download, enabling data export for reporting and data analysis purposes.
+
+Common techniques shown in this sample:
+- Implementing server-side CSV generation from Grid data
+- Using StringBuilder or TextWriter for CSV formatting
+- Handling CSV field delimiters and escape characters
+- Setting proper content-type headers for file download
+- Converting Grid datasource to CSV rows
+- Returning FileResult for CSV file download
 
 ---
 
@@ -41,5 +49,6 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-```
+
+
 

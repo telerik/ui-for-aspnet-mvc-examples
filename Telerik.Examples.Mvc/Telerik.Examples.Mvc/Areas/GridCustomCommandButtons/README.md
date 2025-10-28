@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCustomCommandButtons sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to add custom command buttons to Grid rows in ASP.NET MVC. The sample shows how to define custom buttons with icons, text, and click handlers for row-specific actions beyond the standard Edit/Delete commands.
+
+Common techniques shown in this sample:
+- Defining custom command columns in Grid
+- Adding buttons with custom text and CSS classes
+- Implementing Click event handlers for custom commands
+- Passing row data to command button handlers
+- Using icons from Telerik icon fonts or custom images
+- Accessing Grid dataItem from command button clicks
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

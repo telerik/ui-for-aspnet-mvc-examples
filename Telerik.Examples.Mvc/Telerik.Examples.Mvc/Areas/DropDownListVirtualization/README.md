@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to implement virtualization for large data sets in a Telerik DropDownList component. The sample shows how to configure virtual scrolling to efficiently load and display thousands of items by fetching data on demand as the user scrolls through the list.
+This area demonstrates how to implement virtualization for large data sets in a Telerik DropDownList component in ASP.NET MVC. The sample shows how to configure virtual scrolling to efficiently load and display thousands of items by fetching data on demand as the user scrolls through the list, improving performance and reducing initial load time.
+
+Common techniques shown in this sample:
+- Enabling virtual scrolling on DropDownList component
+- Configuring virtual item height and container settings
+- Implementing server-side paging for virtual data requests
+- Handling large datasets with thousands of items efficiently
+- Using virtual DataSource configuration for on-demand loading
+- Optimizing initial page load by deferring data retrieval
 
 ---
 

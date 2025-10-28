@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to export and import DOCX documents using the Telerik Editor component in ASP.NET MVC. The sample shows how to implement custom toolbar buttons that export HTML content to a Word document and import content from a DOCX file back into the Editor using Telerik Document Processing libraries.
+This area demonstrates how to export and import Microsoft Word (DOCX) documents using the Telerik Editor component in ASP.NET MVC. The sample shows how to implement custom toolbar buttons that export HTML content to a Word document and import content from a DOCX file back into the Editor using Telerik Document Processing libraries (RadFlowDocument).
+
+Common techniques shown in this sample:
+- Creating custom Editor toolbar buttons with custom exec functions
+- Using HtmlFormatProvider to convert between HTML and RadFlowDocument
+- Using DocxFormatProvider to read and write DOCX files
+- Implementing server-side export action to save HTML as DOCX
+- Implementing server-side import action to read DOCX and return HTML
+- Configuring DocumentExportLevel and StylesExportMode for clean HTML output
 
 ---
 

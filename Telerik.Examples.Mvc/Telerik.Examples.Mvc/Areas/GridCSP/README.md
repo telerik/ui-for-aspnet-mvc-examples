@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCSP sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates Content Security Policy (CSP) compatibility with Telerik Grid component in ASP.NET MVC. The sample shows how to configure the Grid to work within strict CSP environments by using nonces, avoiding inline scripts, and externalizing event handlers to comply with security policies.
+
+Common techniques shown in this sample:
+- Configuring Grid without inline JavaScript
+- Using CSP nonces for script execution
+- Externalizing event handlers to separate script files
+- Avoiding eval() and inline event attributes
+- Implementing CSP-compliant templates and configurations
+- Using data attributes for component initialization
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

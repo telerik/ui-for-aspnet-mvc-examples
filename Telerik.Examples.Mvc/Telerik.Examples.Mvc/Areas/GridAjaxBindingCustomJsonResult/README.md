@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to use a custom JSON serialization library (Json.NET) instead of the default JavaScriptSerializer for Grid AJAX binding in ASP.NET MVC. The sample shows how to override the Json method in the controller to return a CustomJsonResult that uses Newtonsoft.Json for improved performance when working with large datasets.
+This area demonstrates how to use a custom JSON serialization library (Json.NET/Newtonsoft.Json) instead of the default JavaScriptSerializer for Grid AJAX binding in ASP.NET MVC. The sample shows how to override the Json method in the controller to return a CustomJsonResult that uses Newtonsoft.Json for improved performance and better handling of large datasets.
+
+Common techniques shown in this sample:
+- Creating custom JsonResult class that uses Newtonsoft.Json
+- Overriding controller's Json() method to return custom result
+- Handling JsonRequestBehavior for GET/POST request validation
+- Serializing large datasets more efficiently than JavaScriptSerializer
+- Working with DataSourceResult and ToDataSourceResult() extension
+- Improving JSON serialization performance for Grid data operations
 
 ---
 

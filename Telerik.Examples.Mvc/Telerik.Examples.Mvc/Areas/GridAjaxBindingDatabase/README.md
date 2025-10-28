@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridAjaxBindingDatabase sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to bind a Telerik Grid component to a database using AJAX in ASP.NET MVC. The sample shows server-side data operations including paging, sorting, and filtering with Entity Framework integration, providing a complete data-driven Grid implementation with database persistence.
+
+Common techniques shown in this sample:
+- Configuring Grid with Ajax data source binding
+- Using Entity Framework DbContext for database operations
+- Implementing Read action with [DataSourceRequest] parameter
+- Using ToDataSourceResult() for automatic paging, sorting, and filtering
+- Working with EF-generated entity models
+- Returning DataSourceResult as JSON from controller actions
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

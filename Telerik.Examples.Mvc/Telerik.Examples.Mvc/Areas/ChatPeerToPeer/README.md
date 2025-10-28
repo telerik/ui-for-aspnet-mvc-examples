@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the ChatPeerToPeer sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates a peer-to-peer chat application using SignalR and Telerik Chat component in ASP.NET MVC. The sample shows how to establish real-time bidirectional communication between multiple clients, enabling instant message exchange and presence notifications.
+
+Common techniques shown in this sample:
+- Implementing SignalR Hub for message broadcasting
+- Configuring Telerik Chat component with SignalR integration
+- Handling real-time message send and receive events
+- Managing user connections and presence information
+- Implementing typing indicators and message timestamps
+- Using Hub methods for broadcasting messages to connected clients
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

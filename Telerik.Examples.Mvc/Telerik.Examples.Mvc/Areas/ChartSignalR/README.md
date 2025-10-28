@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates real-time chart updates using Telerik Chart and SignalR in ASP.NET MVC. It shows how to push live data to chart components in the browser, enabling dynamic visualization of changing data streams. The sample is useful for dashboards and monitoring scenarios where data changes frequently and must be reflected instantly in the UI.
+This area demonstrates real-time chart updates using SignalR in ASP.NET MVC. The sample shows how to connect a Telerik Chart component to a SignalR hub for live data push notifications, enabling the chart to automatically update when data changes on the server without requiring page refreshes.
+
+Common techniques shown in this sample:
+- Configuring Telerik Chart with SignalR data source transport
+- Connecting to remote SignalR hubs using HubConnectionBuilder
+- Implementing client-side hub methods for real-time data synchronization
+- Handling push notifications for create, update, and destroy operations
+- Using Promise-based hub connection with automatic reconnection
+- Displaying real-time notifications when data changes occur
 
 ---
 
@@ -40,5 +48,4 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
 	 <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-```
 

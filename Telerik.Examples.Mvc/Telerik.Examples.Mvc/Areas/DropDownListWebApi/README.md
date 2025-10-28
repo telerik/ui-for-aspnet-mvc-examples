@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to bind a Telerik DropDownList component to a Web API data source in ASP.NET MVC. The sample shows how to configure the component to consume data from a RESTful Web API endpoint using AJAX calls.
+This area demonstrates how to bind a Telerik DropDownList component to a Web API data source in ASP.NET MVC. The sample shows how to configure the component to consume data from RESTful Web API endpoints using AJAX calls, supporting modern service-oriented architectures.
+
+Common techniques shown in this sample:
+- Configuring DropDownList DataSource to use Web API endpoints
+- Setting up transport Read configuration for Web API URLs
+- Handling JSON data returned from Web API controllers
+- Implementing RESTful data retrieval patterns
+- Using AJAX transport for cross-controller data access
+- Working with Web API routing and endpoint configuration
 
 ---
 

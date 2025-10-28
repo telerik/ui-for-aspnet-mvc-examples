@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCRUDWithObjectColumn sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates CRUD operations with object-type columns in a Telerik Grid in ASP.NET MVC. The sample shows how to handle complex objects as column values, including editing and binding nested object properties within Grid cells and editors.
+
+Common techniques shown in this sample:
+- Binding Grid columns to nested object properties
+- Using dot notation for complex property paths
+- Implementing editors for object-type fields
+- Handling serialization of complex object types
+- Using custom templates to display object properties
+- Working with view models that contain complex nested objects
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

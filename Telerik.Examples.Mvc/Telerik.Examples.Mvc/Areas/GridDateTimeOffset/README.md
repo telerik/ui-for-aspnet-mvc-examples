@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridDateTimeOffset sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to work with DateTimeOffset values in Telerik Grid in ASP.NET MVC. The sample shows binding, displaying, and editing DateTimeOffset columns with proper timezone handling, preserving offset information during CRUD operations.
+
+Common techniques shown in this sample:
+- Binding Grid columns to DateTimeOffset properties
+- Handling timezone offsets in display and editing
+- Using AutoMapper for DateTimeOffset conversions  
+- Preserving timezone information during saves
+- Formatting DateTimeOffset with timezone display
+- Working with UTC offsets in model binding
 
 ---
 
@@ -41,5 +49,6 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-```
+
+
 

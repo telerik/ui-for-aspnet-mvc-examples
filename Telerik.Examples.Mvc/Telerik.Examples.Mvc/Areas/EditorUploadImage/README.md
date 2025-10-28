@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to implement drag-and-drop image upload functionality in the Telerik Editor component using ASP.NET MVC. The sample shows how to configure an Upload component with a drop zone overlay on the Editor, allowing users to drag images directly into the editor content area where they are automatically uploaded and inserted.
+This area demonstrates how to implement drag-and-drop image upload functionality in the Telerik Editor component using ASP.NET MVC. The sample shows how to configure an Upload component with a drop zone overlay that covers the Editor, allowing users to drag images directly into the editor content area where they are automatically uploaded to the server and inserted at the cursor position.
+
+Common techniques shown in this sample:
+- Configuring Telerik Upload component with async save mode
+- Setting DropZone to enable drag-and-drop file uploads
+- Handling Upload Success event to insert uploaded content into Editor
+- Creating invisible overlay for drag-and-drop detection
+- Using Editor.paste() method to insert content programmatically
+- Handling dragenter events to show/hide drop zone overlays
 
 ---
 

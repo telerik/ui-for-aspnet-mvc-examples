@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridBindToXMLKendoUI sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to bind a Telerik Grid component to XML data in ASP.NET MVC. The sample shows parsing and transforming XML documents into a format suitable for Grid binding, enabling Grid to display hierarchical or structured XML data in a tabular format.
+
+Common techniques shown in this sample:
+- Parsing XML documents using XDocument or XmlDocument
+- Converting XML nodes to strongly-typed models
+- Using LINQ to XML for querying XML data
+- Mapping XML attributes and elements to Grid columns
+- Handling XML namespaces in data parsing
+- Transforming hierarchical XML to flat tabular data
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridBatchEditingDatabase sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates batch editing with database persistence for the Telerik Grid component in ASP.NET MVC. The sample shows how to enable inline batch editing mode where users can modify multiple rows, and then save all changes to the database in a single request using Entity Framework, improving performance and user experience.
+
+Common techniques shown in this sample:
+- Enabling Grid batch editing mode
+- Handling Create, Update, and Destroy operations in batch
+- Using Entity Framework DbContext for database persistence
+- Processing multiple changes in single server request
+- Implementing batch save actions with transaction support
+- Returning updated data after batch operations complete
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

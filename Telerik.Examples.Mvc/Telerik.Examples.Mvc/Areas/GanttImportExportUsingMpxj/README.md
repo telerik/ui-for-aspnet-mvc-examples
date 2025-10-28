@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to import and export project files (MPP, MSPDI, XML) to a Telerik Gantt component using the MPXJ library in ASP.NET MVC. The sample shows how to read tasks, dependencies, resources, and assignments from Microsoft Project files, display them in the Gantt component, allow modifications, and export the updated data back to file format.
+This area demonstrates how to import and export Microsoft Project files (MPP, MSPDI, XML) using the Telerik Gantt component and MPXJ library in ASP.NET MVC. The sample shows how to read tasks, dependencies, resources, and assignments from Project files, display and edit them in the Gantt component, and export the modified data back to XML file format.
+
+Common techniques shown in this sample:
+- Using MPXJ UniversalProjectReader to read multiple Project file formats
+- Converting MPXJ Project entities to Telerik Gantt view models
+- Mapping tasks, dependencies, resources, and resource assignments
+- Handling hierarchical task structures with parent-child relationships
+- Implementing file upload for Project file import
+- Exporting Gantt data to XML format using MPXJ ProjectWriter
 
 ---
 

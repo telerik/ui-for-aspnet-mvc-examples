@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCustomConfirmationWindow sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to implement a custom confirmation dialog for Grid delete operations in ASP.NET MVC. The sample shows how to replace the default browser confirmation with a custom Telerik Window component, providing better UI consistency and customization options.
+
+Common techniques shown in this sample:
+- Creating custom Telerik Window for confirmations
+- Replacing default confirm() dialogs with Window component
+- Handling Grid remove event to show custom confirmation
+- Preventing default delete action until confirmation
+- Using Window API to show/hide dialogs programmatically
+- Implementing custom action buttons in confirmation window
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

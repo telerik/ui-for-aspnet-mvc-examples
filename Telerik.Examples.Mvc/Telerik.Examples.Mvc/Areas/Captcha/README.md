@@ -1,9 +1,16 @@
 ## Sample Overview
-This area demonstrates how to integrate a Telerik Captcha component in ASP.NET MVC to prevent automated submissions. The sample includes server-side generation and validation of captcha images and audio, user input models, and AJAX-based refresh and validation endpoints. It provides a secure and user-friendly way to add anti-bot protection to forms.
+This area demonstrates how to implement CAPTCHA validation using the Telerik Captcha component in ASP.NET MVC. The sample shows image and audio CAPTCHA generation, server-side validation, and AJAX-based refresh functionality to prevent automated form submissions.
+
+Common techniques shown in this sample:
+- Generating CAPTCHA images and audio files using Telerik.Web.Captcha helper
+- Storing CAPTCHA text in server-side session
+- Implementing server-side validation of user input against CAPTCHA text
+- Handling AJAX-based CAPTCHA reset and validation events
+- Rendering CAPTCHA with image and audio accessibility options
 
 ---
 
-# Telerik.Examples.Mvc
+UI for ASP.NET MVC Examples
 
 This repo contains a collection of Telerik UI for ASP.NET MVC examples. They are located in the Area folder of the project for convenience to the user. The provided samples:
 
@@ -40,5 +47,4 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
 	 <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-```
 

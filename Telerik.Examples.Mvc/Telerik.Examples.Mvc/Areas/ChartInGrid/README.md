@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to embed a Telerik Chart component inside a Grid row in ASP.NET MVC. Each grid row displays its own chart, with data loaded dynamically per row. The sample includes models for grid and chart data, and controller actions for reading and binding data sources. This approach is useful for visualizing detailed metrics for each record in a tabular layout.
+This area demonstrates how to embed Telerik Chart components inside Grid rows using client templates in ASP.NET MVC. The sample shows two approaches: charts that load data remotely via AJAX and charts that use data from the Grid's own data source, enabling powerful data visualization within tabular layouts.
+
+Common techniques shown in this sample:
+- Using Grid ClientTemplate to render Chart components in rows
+- Implementing remote data binding for charts via AJAX Read actions
+- Binding charts to local data from Grid row data items
+- Converting server-side Chart declarations to client templates using ToClientTemplate()
+- Handling chart initialization and data binding in Grid's DataBound event
+- Destroying and reinitializing components on Grid data operations
 
 ---
 

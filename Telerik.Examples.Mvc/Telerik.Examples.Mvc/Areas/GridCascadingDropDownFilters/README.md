@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCascadingDropDownFilters sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates cascading dropdown filters in a Telerik Grid component in ASP.NET MVC. The sample shows how to configure filter dropdowns where the options in one filter depend on the selection in another filter, enabling hierarchical filtering scenarios like Country -> State -> City.
+
+Common techniques shown in this sample:
+- Configuring Grid columns with filterable dropdown lists
+- Implementing cascading filter logic with dependent data sources
+- Handling filter change events to update dependent filters
+- Using server-side filtering based on parent filter values
+- Configuring DataSource filtering for cascading scenarios
+- Synchronizing multiple filter dropdowns with master-detail relationships
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

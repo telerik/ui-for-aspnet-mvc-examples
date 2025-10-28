@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCheckboxClientTemplate sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to use checkboxes in Grid columns with client templates in ASP.NET MVC. The sample shows how to render and handle checkbox selection within Grid cells using client-side templates, enabling custom checkbox behavior and styling without server-side rendering.
+
+Common techniques shown in this sample:
+- Using Grid ClientTemplate for checkbox rendering
+- Binding checkboxes to boolean data fields
+- Handling checkbox change events with client-side logic
+- Implementing row selection with checkboxes
+- Using template syntax to conditionally render checked state
+- Working with Grid's client-side API to manipulate checkbox values
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

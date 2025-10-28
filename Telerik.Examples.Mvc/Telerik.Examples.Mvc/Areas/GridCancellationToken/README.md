@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCancellationToken sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to implement cancellation token support for asynchronous Grid data operations in ASP.NET MVC. The sample shows how to cancel long-running server requests when the user navigates away or initiates a new request, preventing unnecessary server processing and improving application responsiveness.
+
+Common techniques shown in this sample:
+- Using CancellationToken in async controller actions
+- Implementing Task-based asynchronous data retrieval
+- Handling request cancellation in Entity Framework queries
+- Passing cancellation tokens through async operation chains
+- Configuring timeouts for long-running operations
+- Implementing proper async/await patterns with cancellation support
 
 ---
 
@@ -41,5 +49,6 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-```
+
+
 

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to create custom HTML helper methods and extension classes to simplify Telerik UI component definitions in ASP.NET MVC. The sample shows both inline Razor helpers and reusable helper classes that wrap Grid component configurations with pre-defined settings.
+This area demonstrates how to create custom HTML helper methods and extension classes to simplify and standardize Telerik UI component definitions in ASP.NET MVC. The sample shows both inline Razor helpers and reusable helper classes that wrap Grid component configurations with pre-defined settings, promoting code reuse and consistency.
+
+Common techniques shown in this sample:
+- Creating extension methods for HtmlHelper to define custom component helpers
+- Using @helper syntax to define inline reusable templates
+- Wrapping Telerik component builders with custom configuration
+- Setting default properties and behaviors for components
+- Returning fluent builder instances for further customization
+- Creating strongly-typed generic helpers for multiple model types
 
 ---
 

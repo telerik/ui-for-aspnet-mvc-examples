@@ -1,5 +1,12 @@
 ## Sample Overview
-This area demonstrates the CdnFallback sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to implement CDN fallback for static resources (scripts and styles) in an ASP.NET MVC application using Telerik assets. The sample shows how to configure the application to first load resources from a CDN and automatically fall back to local copies if the CDN is unavailable.
+
+Common techniques shown in this sample:
+- Configuring CDN URLs for Telerik scripts and stylesheets
+- Implementing fallback logic to detect CDN failures
+- Using conditional script loading based on object detection (e.g., checking for window.kendo)
+- Providing local file copies as backup resources
+- Ensuring application reliability when external CDN services are down
 
 ---
 
@@ -42,4 +49,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

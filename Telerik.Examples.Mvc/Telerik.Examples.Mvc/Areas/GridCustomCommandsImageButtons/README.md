@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCustomCommandsImageButtons sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to use image buttons for custom commands in Grid rows in ASP.NET MVC. The sample shows rendering custom command buttons with images instead of text labels, providing visual icons for actions like approve, reject, or other business-specific operations.
+
+Common techniques shown in this sample:
+- Creating command buttons with image content
+- Using HTML image tags within command button templates
+- Applying custom CSS classes to image buttons
+- Handling image button click events
+- Creating icon-based action columns
+- Implementing tooltip support for image-only buttons
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

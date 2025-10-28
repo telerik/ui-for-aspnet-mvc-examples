@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridDateIgnoreTimeZones sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to handle dates without timezone conversion in Telerik Grid in ASP.NET MVC. The sample shows how to display and edit date values as-is without automatic UTC conversion, useful for scenarios where dates represent local events or business dates that shouldn't be adjusted.
+
+Common techniques shown in this sample:
+- Configuring Grid to preserve original date values
+- Preventing automatic UTC/local timezone conversions
+- Using DateTimeKind.Unspecified for date fields
+- Customizing date serialization in JSON responses
+- Handling date editing without timezone adjustments
+- Display formatting dates without timezone conversion
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

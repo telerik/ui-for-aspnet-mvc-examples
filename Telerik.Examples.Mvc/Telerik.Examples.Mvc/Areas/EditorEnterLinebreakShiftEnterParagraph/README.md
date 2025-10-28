@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to configure the Telerik Editor component to use Enter key for line breaks and Shift+Enter for paragraphs in ASP.NET MVC. The sample shows how to register custom tools to override the default behavior, allowing users to insert line breaks with Enter and create new paragraphs with Shift+Enter.
+This area demonstrates how to configure the Telerik Editor component to customize Enter key behavior in ASP.NET MVC. The sample shows how to register custom tools to override the default Enter key action, making Enter insert line breaks (&lt;br&gt;) and Shift+Enter insert paragraphs (&lt;p&gt;), which is the opposite of the default behavior.
+
+Common techniques shown in this sample:
+- Registering custom Editor tools using EditorUtils.registerTool
+- Creating Tool instances with custom keyboard shortcuts
+- Using NewLineCommand for line break insertion
+- Using ParagraphCommand for paragraph element creation
+- Overriding default keyboard behavior with custom commands
+- Configuring key combinations (key + shift modifier) for different actions
 
 ---
 
@@ -41,4 +49,3 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
 	 <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\\MSSQLLocalDB;attachdbfilename=|DataDirectory|\\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-```

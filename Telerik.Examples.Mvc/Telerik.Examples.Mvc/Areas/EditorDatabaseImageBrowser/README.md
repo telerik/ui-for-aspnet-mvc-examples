@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates how to implement a database-driven image browser for the Telerik Editor component in ASP.NET MVC. The sample shows how to store and retrieve images from a database using Entity Framework, providing custom file and folder management for the Editor's image browser functionality.
+This area demonstrates how to implement a database-driven image browser for the Telerik Editor component in ASP.NET MVC. The sample shows how to store and retrieve images and folders from a database using Entity Framework, providing custom file and folder management for the Editor's ImageBrowser tool instead of using file system storage.
+
+Common techniques shown in this sample:
+- Implementing custom IImageBrowserController operations for database storage
+- Using Entity Framework to manage images and folders as database entities
+- Converting image binary data to byte arrays for database storage
+- Generating thumbnail images programmatically
+- Handling Create, Read, Update, Delete, and Upload operations for database files
+- Returning images from database as FileResult responses
 
 ---
 

@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridAlternatingRows sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to style alternating rows in a Telerik Grid component using CSS in ASP.NET MVC. The sample shows how to apply different background colors or styles to even and odd rows for improved readability and visual distinction in tabular data displays.
+
+Common techniques shown in this sample:
+- Using CSS pseudo-selectors to target alternating rows
+- Applying custom styles with nth-child(even) and nth-child(odd)
+- Overriding default Grid row styling
+- Creating custom CSS classes for row backgrounds
+- Implementing zebra-striping pattern for better data readability
+- Working with Grid's generated HTML structure for styling
 
 ---
 
@@ -42,4 +50,3 @@ And then you can add new Entity definition to the Web.config like this:
 ```
 	  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 
-```

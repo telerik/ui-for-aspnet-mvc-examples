@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridCustomServerBinding sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates custom server binding implementation for Telerik Grid in ASP.NET MVC. The sample shows how to manually handle data operations without using Ajax binding, including custom paging, sorting, and filtering logic for complete control over server-side data processing.
+
+Common techniques shown in this sample:
+- Using Server binding mode instead of Ajax
+- Implementing manual paging calculations
+- Custom sorting logic for IQueryable data
+- Handling page and sort parameters manually
+- Building custom query expressions
+- Returning model data directly to views
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

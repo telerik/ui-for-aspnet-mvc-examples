@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridContextMenuDisabledItems sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to conditionally enable or disable context menu items based on row data in a Telerik Grid in ASP.NET MVC. The sample shows how to implement business logic that controls which menu options are available for different rows, providing context-sensitive menu behavior.
+
+Common techniques shown in this sample:
+- Evaluating row data to determine menu item availability
+- Using ContextMenu Open event to modify menu state
+- Enabling/disabling menu items dynamically based on row properties
+- Implementing conditional menu item visibility
+- Accessing Grid row data in ContextMenu events
+- Creating role-based or status-based menu restrictions
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

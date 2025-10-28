@@ -1,5 +1,13 @@
 ## Sample Overview
-This area demonstrates the GridBindingDataTable sample using Telerik UI components in ASP.NET MVC.
+This area demonstrates how to bind a Telerik Grid component to a DataTable in ASP.NET MVC. The sample shows working with legacy ADO.NET DataTable objects as a data source for the Grid, useful when integrating with existing code that uses DataSet/DataTable patterns or stored procedures.
+
+Common techniques shown in this sample:
+- Creating and populating DataTable programmatically
+- Binding Grid to DataTable data source
+- Converting DataTable to List for ToDataSourceResult()
+- Working with DataColumn definitions for Grid columns
+- Handling dynamic schema from DataTable structures
+- Integrating Grid with ADO.NET data access patterns
 
 ---
 
@@ -42,4 +50,6 @@ And then you can add new Entity definition to the Web.config like this:
 ```
  <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
 ```
+
+
 

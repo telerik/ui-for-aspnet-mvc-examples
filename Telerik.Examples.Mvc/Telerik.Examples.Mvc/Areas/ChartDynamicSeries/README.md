@@ -1,5 +1,12 @@
 ## Sample Overview
-This area demonstrates how to dynamically generate and bind multiple series to a Telerik Chart component in ASP.NET MVC. The sample includes a view model for series and categories, and a controller that populates the chart with grouped and stacked data. It is useful for visualizing complex datasets with dynamic structure and multiple series in a single chart.
+This area demonstrates how to dynamically generate and bind multiple series to a Telerik Chart component in ASP.NET MVC. The sample shows how to create chart visualizations with dynamically determined number of series and categories, useful for scenarios where the data structure is not known at compile time.
+
+Common techniques shown in this sample:
+- Creating view models that hold series data collections
+- Dynamically generating chart series based on data
+- Configuring column or bar series with multiple data sets
+- Binding chart to controller-generated dynamic data
+- Rendering multiple series with different configurations
 
 ---
 
@@ -40,5 +47,4 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
 	 <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
-```
 
