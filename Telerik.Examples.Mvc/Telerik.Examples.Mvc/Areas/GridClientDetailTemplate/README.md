@@ -2,8 +2,8 @@
 This area demonstrates how to implement client-side detail templates for hierarchical Telerik Grid in ASP.NET MVC. The sample shows how to use client templates to render nested grids or custom content in detail rows without server-side rendering, improving performance and enabling rich hierarchical data visualization.
 
 Common techniques shown in this sample:
-- Configuring Grid with ClientDetailTemplate
-- Using ToClientTemplate() to convert server-side components to client templates
+- Configuring Grid with `ClientDetailTemplate`
+- Using `ToClientTemplate()` to convert server-side components to client templates
 - Rendering child grids dynamically on expand
 - Binding detail templates to row data using template syntax
 - Implementing master-detail relationships with client-side templates

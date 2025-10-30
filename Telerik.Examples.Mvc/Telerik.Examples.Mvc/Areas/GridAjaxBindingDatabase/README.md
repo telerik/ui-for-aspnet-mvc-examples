@@ -2,7 +2,7 @@
 This area demonstrates how to bind a Telerik Grid component to a database using AJAX in ASP.NET MVC. The sample shows server-side data operations including paging, sorting, and filtering with Entity Framework integration, providing a complete data-driven Grid implementation with database persistence.
 
 Common techniques shown in this sample:
-- Configuring Grid with Ajax data source binding
+- Configuring Grid with AJAX DataSource binding
 - Using Entity Framework DbContext for database operations
 - Implementing Read action with [DataSourceRequest] parameter
 - Using ToDataSourceResult() for automatic paging, sorting, and filtering

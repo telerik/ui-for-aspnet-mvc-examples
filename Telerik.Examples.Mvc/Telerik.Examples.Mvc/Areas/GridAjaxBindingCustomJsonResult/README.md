@@ -4,9 +4,9 @@ This area demonstrates how to use a custom JSON serialization library (Json.NET/
 Common techniques shown in this sample:
 - Creating custom JsonResult class that uses Newtonsoft.Json
 - Overriding controller's Json() method to return custom result
-- Handling JsonRequestBehavior for GET/POST request validation
-- Serializing large datasets more efficiently than JavaScriptSerializer
-- Working with DataSourceResult and ToDataSourceResult() extension
+- Handling `JsonRequestBehavior` for GET/POST request validation
+- Serializing large datasets more efficiently than `JavaScriptSerializer`
+- Working with `DataSourceResult` and `ToDataSourceResult()` extension
 - Improving JSON serialization performance for Grid data operations
 
 ---

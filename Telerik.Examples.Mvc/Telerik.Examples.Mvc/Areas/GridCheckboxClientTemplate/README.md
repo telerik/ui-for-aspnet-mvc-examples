@@ -2,7 +2,7 @@
 This area demonstrates how to use checkboxes in Grid columns with client templates in ASP.NET MVC. The sample shows how to render and handle checkbox selection within Grid cells using client-side templates, enabling custom checkbox behavior and styling without server-side rendering.
 
 Common techniques shown in this sample:
-- Using Grid ClientTemplate for checkbox rendering
+- Using Grid `ClientTemplate` for checkbox rendering
 - Binding checkboxes to boolean data fields
 - Handling checkbox change events with client-side logic
 - Implementing row selection with checkboxes

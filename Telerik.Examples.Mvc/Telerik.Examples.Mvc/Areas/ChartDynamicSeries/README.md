@@ -1,5 +1,5 @@
 ## Sample Overview
-This area demonstrates how to dynamically generate and bind multiple series to a Telerik Chart component in ASP.NET MVC. The sample shows how to create chart visualizations with dynamically determined number of series and categories, useful for scenarios where the data structure is not known at compile time.
+This area demonstrates how to dynamically generate and bind multiple series to a Telerik Chart component in ASP.NET MVC. The sample shows how to create Chart visualizations with dynamically determined number of series and categories, useful for scenarios where the data structure is not known at compile time.
 
 Common techniques shown in this sample:
 - Creating view models that hold series data collections

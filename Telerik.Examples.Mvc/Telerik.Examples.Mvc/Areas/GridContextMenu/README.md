@@ -3,7 +3,7 @@ This area demonstrates how to implement a context menu for Grid rows in ASP.NET 
 
 Common techniques shown in this sample:
 - Integrating Telerik ContextMenu component with Grid
-- Handling Grid row context click events
+- Handling Grid row context Click events
 - Showing context menu at mouse cursor position
 - Getting data item from clicked row for menu actions
 - Implementing menu item selection handlers

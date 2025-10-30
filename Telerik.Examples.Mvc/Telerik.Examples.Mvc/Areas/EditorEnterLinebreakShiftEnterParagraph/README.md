@@ -7,7 +7,7 @@ Common techniques shown in this sample:
 - Using NewLineCommand for line break insertion
 - Using ParagraphCommand for paragraph element creation
 - Overriding default keyboard behavior with custom commands
-- Configuring key combinations (key + shift modifier) for different actions
+- Configuring key combinations (Key + Shift modifier) for different actions
 
 ---
 

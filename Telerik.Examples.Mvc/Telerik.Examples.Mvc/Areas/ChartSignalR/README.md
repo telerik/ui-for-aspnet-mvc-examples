@@ -5,7 +5,7 @@ Common techniques shown in this sample:
 - Configuring Telerik Chart with SignalR data source transport
 - Connecting to remote SignalR hubs using HubConnectionBuilder
 - Implementing client-side hub methods for real-time data synchronization
-- Handling push notifications for create, update, and destroy operations
+- Handling push notifications for Create, Update, and Destroy operations
 - Using Promise-based hub connection with automatic reconnection
 - Displaying real-time notifications when data changes occur
 

@@ -1,5 +1,5 @@
 ## Sample Overview
-This area demonstrates custom server binding implementation for Telerik Grid in ASP.NET MVC. The sample shows how to manually handle data operations without using Ajax binding, including custom paging, sorting, and filtering logic for complete control over server-side data processing.
+This area demonstrates custom server binding implementation for Telerik Grid in ASP.NET MVC. The sample shows how to manually handle data operations without using AJAX binding, including custom paging, sorting, and filtering logic for complete control over server-side data processing.
 
 Common techniques shown in this sample:
 - Using Server binding mode instead of Ajax
