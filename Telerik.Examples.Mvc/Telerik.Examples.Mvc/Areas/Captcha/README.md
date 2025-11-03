@@ -11,6 +11,7 @@ Common techniques shown in this sample:
 ---
 
 UI for ASP.NET MVC Examples
+==========================
 
 This repo contains a collection of Telerik UI for ASP.NET MVC examples. They are located in the Area folder of the project for convenience to the user. The provided samples:
 
@@ -18,7 +19,7 @@ This repo contains a collection of Telerik UI for ASP.NET MVC examples. They are
 - Are not part of our testing procedures and should be regarded as a knowledge base. 
 - Might contain custom implementations which can be changed or integrated built-in with future release versions of the Product.
 
-**DISCLAIMER:** The samples are for demonstration purposes only.
+**DISCLAIMER: The Telerik.Examples.Mvc project is created only for demonstration purpose of the code samples and syntax. Its references, external packages and current versions should not be used in production and we don't claim responsibility for any package security.**
 
 To run projects from this repository:
 
@@ -47,4 +48,5 @@ And then you can add new Entity definition to the Web.config like this:
 
 ```
 	 <add name="GridEditingInLineDatabaseEntities" connectionString="metadata=res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.csdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.ssdl|res://*/Areas.GridEditingInLineDatabase.Models.SampleModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Sample.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" providerName="System.Data.EntityClient" />
+
 
