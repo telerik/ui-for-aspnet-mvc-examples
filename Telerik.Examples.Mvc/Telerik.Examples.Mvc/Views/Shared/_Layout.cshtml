@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title - My Telerik MVC Application</title>
     @{
-        var kendoVersion = "2025.3.825";
-        var themeVersion = "12.0.0";
-
+        var kendoVersion = "1";
+        var themeVersion = "2";
         string path = Server.MapPath("~/Areas");
         List<string> allfiles = Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly).ToList();
 
