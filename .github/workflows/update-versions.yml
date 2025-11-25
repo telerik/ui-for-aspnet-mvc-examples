@@ -58,7 +58,7 @@ jobs:
       - name: Update dependencies
         shell: pwsh
         run: |
-          ./scripts/update_versions.ps1 -newKendoVersion "$env:new_kendo_version" -newThemesVersion "$env:new_themes_version" -newDplVersion "$env:new_common_web_versions" -newIconsVersion "$env:new_icons_version" -newCaptchaVersion "$env:new_captcha_version" -newLicensingVersion "$env:new_licensing_version"
+          ./scripts/update_versions.ps1 -newKendoVersion "$env:new_kendo_version" -newThemesVersion "$env:new_themes_version" -newDplVersion "$env:new_dpl_versions" -newIconsVersion "$env:new_icons_version" -newCaptchaVersion "$env:new_captcha_version" -newLicensingVersion "$env:new_licensing_version"
       
       - name: Create PR
         run: |
