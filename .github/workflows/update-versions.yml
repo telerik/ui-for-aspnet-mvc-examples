@@ -69,3 +69,5 @@ jobs:
           git commit -m "chore: update kendo, themes, dpl, captcha, icons and licensing versions"
           git push --set-upstream origin "test-version-update"
           gh pr create --base master --head "test-version-update" --title "Update dependencies" --body "Updated kendo, themes, dpl, captcha, icons and licensing versions"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
