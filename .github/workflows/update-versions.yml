@@ -1,0 +1,71 @@
+name: "Update Kendo, Themes, DPL, Captcha, Icons and Licensing versions"
+
+on:
+  workflow_dispatch:
+    inputs:
+      new_kendo_version:
+        description: "The new Kendo version to apply"
+        type: string
+        required: true
+
+      new_themes_version:
+        description: "The new themes version to apply"
+        type: string
+        required: true
+
+      new_dpl_versions:
+        description: "The new dpl versions to apply"
+        type: string
+        required: true
+
+      new_icons_version:
+        description: "The new icon versions to apply"
+        type: string
+        required: true
+
+      new_captcha_version:
+        description: "The Web Captcha version to apply"
+        type: string
+        required: true
+
+      new_licensing_version:
+        description: "The new licensing version to apply"
+        type: string
+        required: true
+  push:
+jobs:
+  update-versions:
+    runs-on: ubuntu-latest
+
+    permissions:
+        pull-requests: write
+
+    env:
+      new_kendo_version:  1
+      new_themes_version: 2
+      new_dpl_versions: 3
+      new_icons_version: 4
+      new_captcha_version:  5
+      new_licensing_version:  6
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update dependencies
+        shell: pwsh
+        run: |
+          ./scripts/update_versions.ps1 -newKendoVersion "$env:new_kendo_version" -newThemesVersion "$env:new_themes_version" -newDplVersion "$env:new_common_web_versions" -newIconsVersion "$env:new_icons_version" -newCaptchaVersion "$env:new_captcha_version" -newLicensingVersion "$env:new_licensing_version"
+      
+      - name: Create PR
+        run: |
+          git checkout -b "test-version-update"
+          git config user.email "kendo-bot@progress.com"
+          git config user.name "kendo-bot"
+          git add .
+          git status
+          git commit -m "chore: update kendo, themes, dpl, captcha, icons and licensing versions"
+          git push --set-upstream origin "test-version-update"
+          gh pr create --base master --head "test-version-update" --title "Update dependencies" --body "Updated kendo, themes, dpl, captcha, icons and licensing versions"
