@@ -162,6 +162,56 @@ function Update_ProjectVersions {
     }
 }
 
+function Update_IconsWebConfig {
+    param(
+        [string] $webConfigContent,
+        [string[]] $iconPackages
+    )   
+
+    foreach($iconPackage in $iconPackages) {
+       $webConfigContent = Replace_Reference -fileContent $webConfigContent -oldReference "<assemblyIdentity(.+)name=""${iconPackage}""(.+)\n(.+)oldVersion=""(\d).(\d).(\d).(\d)-(\d+).(\d+).(\d+)"  -newReference "<assemblyIdentity name=""${iconPackage}"" publicKeyToken=""20b4b0547069c4f8"" culture=""neutral"" />
+        <bindingRedirect oldVersion=""0.0.0.0-${newIconsVersion}"
+
+        $webConfigContent = Replace_Reference -fileContent $webConfigContent -oldReference "<assemblyIdentity(.+)name=""${iconPackage}""(.+)\n(.+)newVersion=""(\d+).(\d+).(\d+)"  -newReference "<assemblyIdentity name=""${iconPackage}"" publicKeyToken=""20b4b0547069c4f8"" culture=""neutral"" />
+        <bindingRedirect oldVersion=""0.0.0.0-${newIconsVersion}"" newVersion=""${newIconsVersion}"
+    }
+
+    return $webConfigContent
+}
+
+function Update_LicensingWebConfig {
+    param(
+        [string] $webConfigContent
+    ) 
+
+        $webConfigContent = Replace_Reference -fileContent $webConfigContent -oldReference "<assemblyIdentity(.+)name=""Telerik.Licensing.Runtime""(.+)\n(.+)oldVersion=""(\d).(\d).(\d).(\d)-(\d+).(\d+).(\d+)"  -newReference "<assemblyIdentity name=""Telerik.Licensing.Runtime"" publicKeyToken=""98bb5b04e55c09ef"" culture=""neutral"" />
+        <bindingRedirect oldVersion=""0.0.0.0-${newLicensingVersion}"
+
+
+        $webConfigContent = Replace_Reference -fileContent $webConfigContent -oldReference "<assemblyIdentity(.+)name=""Telerik.Licensing.Runtime""(.+)\n(.+)newVersion=""(\d+).(\d+).(\d+)"  -newReference "<assemblyIdentity name=""Telerik.Licensing.Runtime"" publicKeyToken=""98bb5b04e55c09ef"" culture=""neutral"" />
+        <bindingRedirect oldVersion=""0.0.0.0-${newLicensingVersion}"" newVersion=""${newLicensingVersion}"
+
+    return $webConfigContent
+}
+
+function Update_WebConfig {
+    param(
+        [string[]]$webConfigPathsToUpdate
+    )
+
+    foreach($webConfigPath in $webConfigPathsToUpdate) {
+        if(Test-Path $webConfigPath) {
+            $webConfigContent = Get-Content -Path $webConfigPath -Raw
+
+            $webConfigContent = Update_IconsWebConfig -webConfigContent $webConfigContent -iconPackages $iconPackages
+            $webConfigContent = Update_LicensingWebConfig -webConfigContent $webConfigContent
+        }
+
+        
+         $webConfigContent | Set-Content -Path $webConfigPath -NoNewline
+    }
+}
+
 $layoutPathsToUpdate = @(
     'Telerik.Examples.Mvc\Telerik.Examples.Mvc\Views\Shared\_Layout.cshtml'
 )
@@ -172,6 +222,10 @@ $csprojPathsToUpdate = @(
 
 $packagesConfigPathsToUpdate = @(
     'Telerik.Examples.Mvc\Telerik.Examples.Mvc\packages.config'
+)
+
+$webConfigPathsToUpdate = @(
+    'Telerik.Examples.Mvc\Web.config'
 )
 
 $dplPackages = @(
@@ -193,3 +247,4 @@ $iconPackages = @(
 Update_LayoutVersions -layoutPathsToUpdate $layoutPathsToUpdate
 Update_PackagesConfig -packagesConfigPathsToUpdate $packagesConfigPathsToUpdate
 Update_ProjectVersions -csprojPathsToUpdate $csprojPathsToUpdate
+Update_WebConfig -webConfigPathsToUpdate $webConfigPathsToUpdate
