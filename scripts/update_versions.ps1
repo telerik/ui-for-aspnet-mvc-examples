@@ -170,10 +170,10 @@ function Update_IconsWebConfig {
 
     foreach($iconPackage in $iconPackages) {
        $webConfigContent = Replace_Reference -fileContent $webConfigContent -oldReference "<assemblyIdentity(.+)name=""${iconPackage}""(.+)\n(.+)oldVersion=""(\d).(\d).(\d).(\d)-(\d+).(\d+).(\d+)"  -newReference "<assemblyIdentity name=""${iconPackage}"" publicKeyToken=""20b4b0547069c4f8"" culture=""neutral"" />
-        <bindingRedirect oldVersion=""0.0.0.0-${newIconsVersion}"
+        <bindingRedirect oldVersion=""0.0.0.0-${newIconsVersion}.0"
 
         $webConfigContent = Replace_Reference -fileContent $webConfigContent -oldReference "<assemblyIdentity(.+)name=""${iconPackage}""(.+)\n(.+)newVersion=""(\d+).(\d+).(\d+)"  -newReference "<assemblyIdentity name=""${iconPackage}"" publicKeyToken=""20b4b0547069c4f8"" culture=""neutral"" />
-        <bindingRedirect oldVersion=""0.0.0.0-${newIconsVersion}"" newVersion=""${newIconsVersion}"
+        <bindingRedirect oldVersion=""0.0.0.0-${newIconsVersion}.0"" newVersion=""${newIconsVersion}"
     }
 
     return $webConfigContent
@@ -185,11 +185,11 @@ function Update_LicensingWebConfig {
     ) 
 
         $webConfigContent = Replace_Reference -fileContent $webConfigContent -oldReference "<assemblyIdentity(.+)name=""Telerik.Licensing.Runtime""(.+)\n(.+)oldVersion=""(\d).(\d).(\d).(\d)-(\d+).(\d+).(\d+)"  -newReference "<assemblyIdentity name=""Telerik.Licensing.Runtime"" publicKeyToken=""98bb5b04e55c09ef"" culture=""neutral"" />
-        <bindingRedirect oldVersion=""0.0.0.0-${newLicensingVersion}"
+        <bindingRedirect oldVersion=""0.0.0.0-${newLicensingVersion}.0"
 
 
         $webConfigContent = Replace_Reference -fileContent $webConfigContent -oldReference "<assemblyIdentity(.+)name=""Telerik.Licensing.Runtime""(.+)\n(.+)newVersion=""(\d+).(\d+).(\d+)"  -newReference "<assemblyIdentity name=""Telerik.Licensing.Runtime"" publicKeyToken=""98bb5b04e55c09ef"" culture=""neutral"" />
-        <bindingRedirect oldVersion=""0.0.0.0-${newLicensingVersion}"" newVersion=""${newLicensingVersion}"
+        <bindingRedirect oldVersion=""0.0.0.0-${newLicensingVersion}.0"" newVersion=""${newLicensingVersion}"
 
     return $webConfigContent
 }
