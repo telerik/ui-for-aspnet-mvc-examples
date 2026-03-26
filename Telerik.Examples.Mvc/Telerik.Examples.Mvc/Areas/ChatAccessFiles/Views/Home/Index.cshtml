@@ -1,0 +1,247 @@
+@model List<Kendo.Mvc.UI.ChatMessage>
+
+<div class="k-d-flex k-justify-content-center">
+    @(Html.Kendo().Chat()
+        .Name("chat")
+        .Height("600px")
+        .Width("400px")
+        .FileAttachment(f => f.Restrictions(r => r.AllowedExtensions(".jpg", ".png", ".pdf", ".xlsx", ".docx", ".txt")))
+        .FileActions(actions =>
+        {
+            actions.Add().Name("download").Text("Download").Icon("download");
+            actions.Add().Name("viewdetails").Text("View Details").Icon("eye");
+        })
+        .AuthorId("1")
+        .BindTo(Model)
+        .Events(ev =>
+        {
+            ev.SendMessage("onSendMessage");
+            ev.Download("onDownload");
+            ev.FileMenuAction("onFileMenuAction");
+        })
+    )
+</div>
+
+@(Html.Kendo().Window()
+    .Name("fileDetailsWindow")
+    .Title("File Details")
+    .Visible(false)
+    .Modal(true)
+    .Width(420)
+    .Actions(actions => actions.Close())
+)
+
+@section scripts {
+    <script>
+        var currentUser = {
+            id: 1,
+            name: "John Doe",
+            iconUrl: "https://demos.telerik.com/aspnet-mvc/content/web/Customers/RICSU.jpg",
+            iconAltText: "John's profile picture"
+        };
+
+        // Map to track uploaded file URLs by file uid
+        var uploadedFileUrls = {};
+
+        var imageExtensions = [".ai", ".dds", ".heic", ".jpe", ".jfif", ".jif", ".jp2", ".jps",
+            ".eps", ".bmp", ".gif", ".jpeg", ".jpg", ".png", ".ps", ".psd", ".svg", ".svgz", ".tif", ".tiff"];
+
+        function isImageFile(extension) {
+            if (!extension) return false;
+            var ext = extension.toLowerCase();
+            if (ext.charAt(0) !== ".") ext = "." + ext;
+            return imageExtensions.indexOf(ext) > -1;
+        }
+
+        function isDisplayableImage(extension) {
+            if (!extension) return false;
+            var ext = extension.toLowerCase();
+            if (ext.charAt(0) !== ".") ext = "." + ext;
+            var displayable = [".bmp", ".gif", ".jpeg", ".jpg", ".png", ".svg", ".svgz"];
+            return displayable.indexOf(ext) > -1;
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return "0 Bytes";
+            var sizes = ["Bytes", "KB", "MB", "GB"];
+            var i = Math.floor(Math.log(bytes) / Math.log(1024));
+            return parseFloat((bytes / Math.pow(1024, i)).toFixed(2)) + " " + sizes[i];
+        }
+
+        function uploadFileToServer(file) {
+            return new Promise(function (resolve, reject) {
+                var formData = new FormData();
+                formData.append("file", file.rawFile);
+
+                $.ajax({
+                    url: "@Url.Action("SaveFile", "Home")",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        if (result.success) {
+                            resolve(result);
+                        } else {
+                            reject(new Error(result.message || "Upload failed."));
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        reject(new Error("Upload failed: " + error));
+                    }
+                });
+            });
+        }
+
+        function onSendMessage(e) {
+            e.message.authorId = currentUser.id;
+            e.message.authorName = currentUser.name;
+            e.message.authorImageUrl = currentUser.iconUrl;
+            e.message.authorImageAltText = currentUser.iconAltText;
+
+            if (e.message.files && e.message.files.length > 0) {
+                var files = e.message.files;
+                var uploadPromises = [];
+
+                files.forEach(function (file) {
+                    uploadPromises.push(
+                        uploadFileToServer(file).then(function (result) {
+                            // Store the server URL mapped to the file uid for later download
+                            uploadedFileUrls[file.uid] = result.url;
+                            // Also set the url directly on the file object
+                            file.url = result.url;
+                        })
+                    );
+                });
+
+                Promise.all(uploadPromises).then(function () {
+                    // Simulate a peer response acknowledging the uploaded files
+                    setTimeout(function () {
+                        // Build file references with server URLs for the peer
+                        var peerFiles = files.map(function (file) {
+                            return {
+                                name: file.name,
+                                size: file.size,
+                                extension: file.extension,
+                                url: uploadedFileUrls[file.uid] || file.url
+                            };
+                        });
+
+                        // Build a file details summary
+                        var fileDetails = peerFiles.map(function (f) {
+                            return "Name: " + f.name +
+                                " Size: " + formatFileSize(f.size) +
+                                ", Type: " + f.extension;
+                        }).join("\n\n");
+
+                        e.sender.postMessage({
+                            authorId: 2,
+                            authorName: "Peter Smith",
+                            authorImageUrl: "https://demos.telerik.com/aspnet-mvc/content/web/Customers/GOURL.jpg",
+                            authorImageAltText: "Peter's profile picture",
+                            text: "Thanks for uploading " + files.length + " file(s). I can now access and download them!\n\nFile details:\n" + fileDetails,
+                            files: peerFiles,
+                            timestamp: new Date()
+                        });
+                    }, 500);
+                }).catch(function (error) {
+                    kendo.alert("File upload failed: " + error.message);
+                });
+            } else {
+                setTimeout(function () {
+                    e.sender.postMessage({
+                        authorId: 2,
+                        authorName: "Peter Smith",
+                        authorImageUrl: "https://demos.telerik.com/aspnet-mvc/content/web/Customers/GOURL.jpg",
+                        authorImageAltText: "Peter's profile picture",
+                        text: "Got it! You can also attach files using the file button in the message input area.",
+                        timestamp: new Date()
+                    });
+                }, 500);
+            }
+        }
+
+        function onFileMenuAction(e) {
+            if (e.type === "viewdetails") {
+                showFileDetails(e.file);
+            }
+        }
+
+        function showFileDetails(file) {
+            var fileUrl = file.url || uploadedFileUrls[file.uid];
+            var extension = file.extension || "";
+            var canPreview = isDisplayableImage(extension) && fileUrl;
+            var iconName = kendo.getFileGroup(extension, true);
+            var contentHtml = "";
+
+            if (canPreview) {
+                contentHtml += '<div style="text-align: center; margin-bottom: 16px;">' +
+                    '<img src="' + kendo.htmlEncode(fileUrl) + '" alt="' + kendo.htmlEncode(file.name) + '" style="max-width: 100%; max-height: 200px; border-radius: 4px;" />' +
+                    '</div>';
+            } else {
+                contentHtml += '<div style="text-align: center; margin-bottom: 16px;">' +
+                    kendo.ui.icon({ icon: iconName, size: "xxxlarge" }) +
+                    '</div>';
+            }
+
+            contentHtml += '<table class="k-table" style="width: 100%; border-collapse: collapse;">' +
+                '<tbody>' +
+                '<tr><td style="padding: 8px; font-weight: bold; width: 100px;">Name</td><td style="padding: 8px;">' + kendo.htmlEncode(file.name || "N/A") + '</td></tr>' +
+                '<tr><td style="padding: 8px; font-weight: bold;">Size</td><td style="padding: 8px;">' + formatFileSize(file.size || 0) + '</td></tr>' +
+                '<tr><td style="padding: 8px; font-weight: bold;">Type</td><td style="padding: 8px;">' + kendo.htmlEncode(extension || "Unknown") + '</td></tr>' +
+                '<tr><td style="padding: 8px; font-weight: bold;">Category</td><td style="padding: 8px;">' + kendo.htmlEncode(kendo.getFileGroup(extension, false) || "file") + '</td></tr>' +
+                '</tbody></table>';
+
+            var window = $("#fileDetailsWindow").data("kendoWindow");
+            window.content(contentHtml);
+            window.title("File Details - " + (file.name || "Unknown"));
+            window.center().open();
+        }
+
+        function onDownload(e) {
+            // Handle all file downloads — both from the "Download" file action and "Download All"
+            if (!e.files || e.files.length === 0) {
+                return;
+            }
+
+            e.files.forEach(function (file) {
+                var fileUrl = file.url || uploadedFileUrls[file.uid];
+
+                if (fileUrl) {
+                    createBlobFromFileUrl(fileUrl)
+                        .then(function (blob) {
+                            kendo.saveAs({
+                                dataURI: blob,
+                                fileName: file.name
+                            });
+                        })
+                        .catch(function (err) {
+                            console.error("Download error:", err);
+                            kendo.alert("Failed to download: " + file.name);
+                        });
+                } else if (file.rawFile) {
+                    kendo.saveAs({
+                        dataURI: file.rawFile,
+                        fileName: file.name
+                    });
+                } else {
+                    kendo.alert("File is not available for download: " + file.name);
+                }
+            });
+        }
+
+        async function createBlobFromFileUrl(fileUrl) {
+            var response = await fetch(fileUrl);
+            if (!response.ok) {
+                throw new Error("Failed to fetch file: " + response.status);
+            }
+            return await response.blob();
+        }
+    </script>
+}
+
+<style>
+    .k-chat {
+        min-width: 300px !important;
+    }
+</style>

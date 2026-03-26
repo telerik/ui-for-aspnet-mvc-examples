@@ -182,8 +182,8 @@
     <Reference Include="jsoup-1.15.3, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jsoup-1.15.3.dll</HintPath>
     </Reference>
-    <Reference Include="Kendo.Mvc, Version=2025.3.825.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.2025.3.825\lib\net462\Kendo.Mvc.dll</HintPath>
+    <Reference Include="Kendo.Mvc, Version=2026.1.325.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.2026.1.325\lib\net462\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="log4j-api-2.17.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\log4j-api-2.17.2.dll</HintPath>
@@ -515,14 +515,14 @@
     <Reference Include="Telerik.Documents.ImageUtils, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.Documents.ImageUtils.2025.3.806\lib\netstandard2.0\Telerik.Documents.ImageUtils.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.FontIcons, Version=4.5.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.FontIcons.4.5.0\lib\netstandard2.0\Telerik.FontIcons.dll</HintPath>
+    <Reference Include="Telerik.FontIcons, Version=4.0.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.FontIcons.4.0.0\lib\netstandard2.0\Telerik.FontIcons.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Licensing.Runtime, Version=1.6.16.0, Culture=neutral, PublicKeyToken=98bb5b04e55c09ef, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Licensing.1.6.16\lib\net462\Telerik.Licensing.Runtime.dll</HintPath>
+    <Reference Include="Telerik.Licensing.Runtime, Version=1.6.40.0, Culture=neutral, PublicKeyToken=98bb5b04e55c09ef, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Licensing.1.6.40\lib\net462\Telerik.Licensing.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.SvgIcons, Version=4.5.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.SvgIcons.4.5.0\lib\netstandard2.0\Telerik.SvgIcons.dll</HintPath>
+    <Reference Include="Telerik.SvgIcons, Version=4.0.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.SvgIcons.4.0.0\lib\netstandard2.0\Telerik.SvgIcons.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Web.Captcha, Version=2.0.3.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.Web.Captcha.2.0.3\lib\net462\Telerik.Web.Captcha.dll</HintPath>
@@ -565,6 +565,9 @@
     <Compile Include="Areas\ChartInGrid\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChartInGrid\ChartInGridAreaRegistration.cs" />
     <Compile Include="Areas\ChartInGrid\Models\ViewModel.cs" />
+    <Compile Include="Areas\ChatAccessFiles\ChatAccessFilesAreaRegistration.cs" />
+    <Compile Include="Areas\ChatAccessFiles\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ChatAccessFiles\Models\ChatUploadedFile.cs" />
     <Compile Include="Areas\ChatPeerToPeer\ChatPeerToPeerAreaRegistration.cs" />
     <Compile Include="Areas\ChatPeerToPeer\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChatPeerToPeer\Hubs\ChatHub.cs" />
@@ -1707,6 +1710,9 @@
     <Content Include="Areas\Captcha\Files\6733c999-f235-4bc4-86e3-94310f6469c1.wav" />
     <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.png" />
     <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.wav" />
+    <Content Include="Areas\ChatAccessFiles\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ChatAccessFiles\Views\web.config" />
+    <Content Include="Areas\ChatAccessFiles\Views\_ViewStart.cshtml" />
     <Content Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.tt">
       <DependentUpon>Files.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -3079,13 +3085,13 @@
     <Error Condition="!Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets'))" />
-    <Error Condition="!Exists('..\packages\Telerik.Licensing.1.6.16\build\Telerik.Licensing.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Telerik.Licensing.1.6.16\build\Telerik.Licensing.targets'))" />
+    <Error Condition="!Exists('..\packages\Telerik.Licensing.1.6.40\build\Telerik.Licensing.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Telerik.Licensing.1.6.40\build\Telerik.Licensing.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
   <Import Project="..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets" Condition="Exists('..\packages\net.sf.mpxj-ikvm.11.1.0\build\net.sf.mpxj-ikvm.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets" Condition="Exists('..\packages\net.sf.mpxj-for-csharp.13.10.0\build\net.sf.mpxj-for-csharp.targets')" />
-  <Import Project="..\packages\Telerik.Licensing.1.6.16\build\Telerik.Licensing.targets" Condition="Exists('..\packages\Telerik.Licensing.1.6.16\build\Telerik.Licensing.targets')" />
+  <Import Project="..\packages\Telerik.Licensing.1.6.40\build\Telerik.Licensing.targets" Condition="Exists('..\packages\Telerik.Licensing.1.6.40\build\Telerik.Licensing.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
