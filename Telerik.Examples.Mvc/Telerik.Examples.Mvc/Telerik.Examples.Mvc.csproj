@@ -567,6 +567,68 @@
     <Compile Include="Areas\ChartInGrid\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChartInGrid\ChartInGridAreaRegistration.cs" />
     <Compile Include="Areas\ChartInGrid\Models\ViewModel.cs" />
+    <Compile Include="Areas\ChartSignalR\ChartSignalRAreaRegistration.cs" />
+    <Compile Include="Areas\ChartSignalR\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ChartSignalR\Hubs\ProductHub.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\Category.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\CategoryViewModel.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\Customer.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\CustomerDemographic.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Employee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Intraday.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\MeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Order.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Order_Detail.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Product.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\ProductService.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\Region.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Sample.Context.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\Sample.cs" />
+    <Compile Include="Areas\ChartSignalR\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Shipper.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Stock.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Supplier.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Task.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Territory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChartSignalR\Models\Weather.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\ChatAccessFiles\ChatAccessFilesAreaRegistration.cs" />
     <Compile Include="Areas\ChatAccessFiles\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChatAccessFiles\Models\ChatUploadedFile.cs" />
@@ -1824,6 +1886,14 @@
     <Content Include="Areas\CdnFallback\Scripts\kendo.all-2024.2.514.min.js" />
     <Content Include="Areas\CdnFallback\Scripts\kendo.aspnetmvc-2024.2.514.min.js" />
     <Content Include="Areas\CdnFallback\Scripts\modernizr-2.8.3.js" />
+    <Content Include="Areas\ChartSignalR\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ChartSignalR\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample1.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\ChatAccessFiles\Views\Home\Index.cshtml" />
     <Content Include="Areas\ChatAccessFiles\Views\web.config" />
     <Content Include="Areas\ChatAccessFiles\Views\_ViewStart.cshtml" />
@@ -3017,6 +3087,16 @@
     <Content Include="Areas\DropDownListWebApi\Views\Home\Index.cshtml" />
     <Content Include="Areas\DropDownListWebApi\Views\web.config" />
     <Content Include="Areas\DropDownListWebApi\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\ChartSignalR\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\ChartSignalR\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\ChartSignalR\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ChartSignalR\Views\web.config" />
+    <Content Include="Areas\ChartSignalR\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
