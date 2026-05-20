@@ -1670,6 +1670,17 @@
     <Compile Include="Areas\UploadAmazonS3\UploadAmazonS3AreaRegistration.cs" />
     <Compile Include="Areas\UploadDownloadFileLinks\Controllers\HomeController.cs" />
     <Compile Include="Areas\UploadDownloadFileLinks\UploadDownloadFileLinksAreaRegistration.cs" />
+    <Compile Include="Areas\UploadFilesToDataBase\Controllers\HomeController.cs" />
+    <Compile Include="Areas\UploadFilesToDataBase\EditorUploadingFilesToDataBaseAreaRegistration.cs" />
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFile.cs">
+      <DependentUpon>UserFiles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFiles.Context.cs" />
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFiles.cs" />
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFiles.Designer.cs">
+      <DependentUpon>UserFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\UploadFilesToDataBase\Models\UserFileViewModel.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\HomeController.cs" />
     <Compile Include="Areas\WindowFormWithAjax\Controllers\OrdersDataController.cs" />
     <Compile Include="Areas\WindowFormWithAjax\WindowFormWithAjaxAreaRegistration.cs" />
@@ -2161,6 +2172,14 @@
     <Content Include="Areas\TreeViewLoadConditionally\Views\Home\Index.cshtml" />
     <Content Include="Areas\TreeViewLoadConditionally\Views\web.config" />
     <Content Include="Areas\TreeViewLoadConditionally\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\UploadFilesToDataBase\Models\UserFiles.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UserFiles.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\UploadFilesToDataBase\Models\UserFiles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UserFiles1.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -2823,6 +2842,17 @@
     <Content Include="Areas\TreeViewBindingToXml\Views\Home\Index.cshtml" />
     <Content Include="Areas\TreeViewBindingToXml\Views\web.config" />
     <Content Include="Areas\TreeViewBindingToXml\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\UploadFilesToDataBase\Models\UserFiles.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserFiles1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\UploadFilesToDataBase\Models\UserFiles.edmx.diagram">
+      <DependentUpon>UserFiles.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\UploadFilesToDataBase\README.md" />
+    <Content Include="Areas\UploadFilesToDataBase\Views\Home\Index.cshtml" />
+    <Content Include="Areas\UploadFilesToDataBase\Views\web.config" />
+    <Content Include="Areas\UploadFilesToDataBase\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />

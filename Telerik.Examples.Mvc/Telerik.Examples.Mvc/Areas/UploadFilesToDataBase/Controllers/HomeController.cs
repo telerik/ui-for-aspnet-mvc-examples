@@ -13,13 +13,17 @@ namespace Telerik.Examples.Mvc.Areas.UploadFilesToDataBase.Controllers
 {
     public class HomeController : Controller
     {
+        private static bool _initialized;
+
         public ActionResult Index()
         {
+            EnsureTableExists();
             return View();
         }
 
         public ActionResult FilesRead([DataSourceRequest] DataSourceRequest request)
         {
+            EnsureTableExists();
             UserFilesEntities db = new UserFilesEntities();
 
             var userFiles = db.UserFile.Select(f => new UserFileViewModel()
@@ -84,6 +88,26 @@ namespace Telerik.Examples.Mvc.Areas.UploadFilesToDataBase.Controllers
             file.InputStream.CopyTo(target);
 
             return target.ToArray();
+        }
+
+        private void EnsureTableExists()
+        {
+            if (_initialized) return;
+
+            using (var db = new UserFilesEntities())
+            {
+                db.Database.ExecuteSqlCommand(@"
+                    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'UserFile')
+                    BEGIN
+                        CREATE TABLE [dbo].[UserFile](
+                            [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+                            [Name] NVARCHAR(255) NULL,
+                            [Data] VARBINARY(MAX) NULL
+                        )
+                    END");
+            }
+
+            _initialized = true;
         }
     }
 }
