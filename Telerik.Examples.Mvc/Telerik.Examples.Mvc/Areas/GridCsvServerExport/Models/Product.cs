@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Telerik.Examples.Mvc.Areas.GridCsvServerExport.Models
 {
-    public class Product
+    public class GridCsvServerExportProduct
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }

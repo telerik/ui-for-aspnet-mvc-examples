@@ -17,7 +17,7 @@ namespace Telerik.Examples.Mvc.Areas.GridAjaxBindingDatabase
             context.MapRoute(
                 "GridAjaxBindingDatabase_default",
                 "GridAjaxBindingDatabase/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

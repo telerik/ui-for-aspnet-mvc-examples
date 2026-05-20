@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Telerik.Examples.Mvc.Areas.GridClientDetailTemplate.Models
 {
-    public class Product
+    public class GridClientDetailTemplateProduct
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }

@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-﻿@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridCsvServerExport.Models.Product>()
+﻿@(Html.Kendo().Grid<Telerik.Examples.Mvc.Areas.GridCsvServerExport.Models.GridCsvServerExportProduct>()
     .Name("Grid")
     .DataSource(ds => ds.Ajax()
                     .Model(m =>

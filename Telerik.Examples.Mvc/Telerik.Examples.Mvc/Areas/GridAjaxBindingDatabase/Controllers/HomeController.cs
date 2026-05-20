@@ -21,9 +21,10 @@ namespace Telerik.Examples.Mvc.Areas.GridAjaxBindingDatabase.Controllers
         {
             using (var sample = new GridAjaxBindingDatabaseEntities())
             {
+                sample.Configuration.ProxyCreationEnabled = false;
                 IQueryable<Product> products = sample.Products;
                 DataSourceResult result = products.ToDataSourceResult(request);
-                return Json(result);
+                return Json(result, JsonRequestBehavior.AllowGet);
             }
         }
     }
