@@ -20,12 +20,15 @@ namespace Telerik.Examples.Mvc
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            //GlobalConfiguration.Configure(config =>
-            //{
-            //    ODataConfig.Register(config); 
-            //    WebApiConfig.Register(config);
-
-            //});
+            GlobalConfiguration.Configure(config =>
+            {
+                config.MapHttpAttributeRoutes();
+                config.Routes.MapHttpRoute(
+                    name: "DefaultApi",
+                    routeTemplate: "api/{controller}/{action}/{id}",
+                    defaults: new { id = RouteParameter.Optional }
+                );
+            });
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

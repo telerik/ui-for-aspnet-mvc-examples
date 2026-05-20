@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -885,6 +885,21 @@
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\GridEditingInCellRadioButtonColumnAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Person.cs" />
     <Compile Include="Areas\GridEditingInCellRadioButtonColumn\Models\Role.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Controllers\EmployeesController.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\GridEditingInCellWebApiAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\Category.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\DbExtensions.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\Employee.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.Context.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.Designer.cs">
+      <DependentUpon>NorthwindEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\Product.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\ProductsRequest.cs" />
+    <Compile Include="Areas\GridEditingInCellWebApi\Models\ProductViewModel.cs" />
     <Compile Include="Areas\GridEditingInLineColorSelection\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingInLineColorSelection\GridEditingInLineColorSelectionAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingInLineColorSelection\Models\OrderRepository.cs" />
@@ -1050,6 +1065,17 @@
     <Compile Include="Areas\GridEditingUploadInPopUp\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingUploadInPopUp\GridEditingUploadInPopUpAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingUploadInPopUp\Models\Category.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Controllers\GridEditingWebApiProductController.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridEditingWebApi\GridEditingWebApiAreaRegistration.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Models\GridEditingWebApiProduct.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridEditingWebApi\Models\Northwind.Context.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Models\Northwind.cs" />
+    <Compile Include="Areas\GridEditingWebApi\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.cs</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\GridEditingWithCascadingDropDownListsAreaRegistration.cs" />
     <Compile Include="Areas\GridEditingWithCascadingDropDownLists\Models\Customer.cs" />
@@ -1838,6 +1864,8 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.Context.tt"><Generator>TextTemplatingFileGenerator</Generator><LastGenOutput>NorthwindEntities.Context.cs</LastGenOutput></Content>
+    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.tt"><Generator>TextTemplatingFileGenerator</Generator><LastGenOutput>NorthwindEntities.cs</LastGenOutput></Content>
     <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.tt">
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1917,6 +1945,8 @@
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Hydrangeas.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Lighthouse.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Tulips.jpg" />
+    <Content Include="Areas\GridEditingWebApi\Models\Northwind.Context.tt"><Generator>TextTemplatingFileGenerator</Generator><LastGenOutput>Northwind.Context.cs</LastGenOutput></Content>
+    <Content Include="Areas\GridEditingWebApi\Models\Northwind.tt"><Generator>TextTemplatingFileGenerator</Generator><LastGenOutput>Northwind.cs</LastGenOutput></Content>
     <Content Include="Areas\GridExportingExcelMultiple\Models\Northwind.Context.tt">
       <DependentUpon>Northwind.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2853,6 +2883,28 @@
     <Content Include="Areas\UploadFilesToDataBase\Views\Home\Index.cshtml" />
     <Content Include="Areas\UploadFilesToDataBase\Views\web.config" />
     <Content Include="Areas\UploadFilesToDataBase\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\GridEditingWebApi\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridEditingWebApi\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridEditingWebApi\README.md" />
+    <Content Include="Areas\GridEditingWebApi\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingWebApi\Views\web.config" />
+    <Content Include="Areas\GridEditingWebApi\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthwindEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.edmx.diagram">
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridEditingInCellWebApi\README.md" />
+    <Content Include="Areas\GridEditingInCellWebApi\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridEditingInCellWebApi\Views\web.config" />
+    <Content Include="Areas\GridEditingInCellWebApi\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
