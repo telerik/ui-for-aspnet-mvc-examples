@@ -579,6 +579,12 @@
     <Compile Include="Areas\DropDownListCustomDataSource\DropDownListCustomDataSourceAreaRegistration.cs" />
     <Compile Include="Areas\DropDownListVirtualization\Controllers\HomeController.cs" />
     <Compile Include="Areas\DropDownListVirtualization\DropDownListVirtualizationAreaRegistration.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Controllers\HomeController.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Controllers\SpecialtyController.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Controllers\TypeController.cs" />
+    <Compile Include="Areas\DropDownListWebApi\DropDownListWebApiAreaRegistration.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Models\Specialty.cs" />
+    <Compile Include="Areas\DropDownListWebApi\Models\Type.cs" />
     <Compile Include="Areas\EditorDatabaseImageBrowser\Controllers\HomeController.cs" />
     <Compile Include="Areas\EditorDatabaseImageBrowser\EditorDatabaseImageBrowserAreaRegistration.cs" />
     <Compile Include="Areas\EditorDatabaseImageBrowser\Models\Files.Context.cs">
@@ -3008,6 +3014,9 @@
     <Content Include="Areas\CdnFallback\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\CdnFallback\Views\web.config" />
     <Content Include="Areas\CdnFallback\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\DropDownListWebApi\Views\Home\Index.cshtml" />
+    <Content Include="Areas\DropDownListWebApi\Views\web.config" />
+    <Content Include="Areas\DropDownListWebApi\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
