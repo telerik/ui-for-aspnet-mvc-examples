@@ -1601,6 +1601,9 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Areas\TreeListExportingMultiple\TreeListExportingMultipleAreaRegistration.cs" />
+    <Compile Include="Areas\TreeViewBindingToXml\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TreeViewBindingToXml\Models\Employee.cs" />
+    <Compile Include="Areas\TreeViewBindingToXml\TreeViewBindingToXmlAreaRegistration.cs" />
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Controllers\HomeController.cs" />
     <Compile Include="Areas\TreeViewExpandSelectedItemAsync\Models\Customer.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
@@ -2816,6 +2819,10 @@
     <Content Include="Areas\GridDropDownListEditorBoundToNullableField\README.md" />
     <Content Include="Areas\GridEditing3LevelHierarchy\README.md" />
     <Content Include="Areas\GridEditingAjaxWithEnumeration\README.md" />
+    <Content Include="Areas\TreeViewBindingToXml\README.md" />
+    <Content Include="Areas\TreeViewBindingToXml\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TreeViewBindingToXml\Views\web.config" />
+    <Content Include="Areas\TreeViewBindingToXml\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
