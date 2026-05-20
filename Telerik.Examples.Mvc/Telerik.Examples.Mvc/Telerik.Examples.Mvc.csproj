@@ -1429,6 +1429,68 @@
     <Compile Include="Areas\GridSaveStateOnServerSide\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridSaveStateOnServerSide\GridSelectionByFieldAreaRegistration.cs" />
     <Compile Include="Areas\GridSaveStateOnServerSide\Models\Product.cs" />
+    <Compile Include="Areas\GridSignalR\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GridSignalR\GridSignalRAreaRegistration.cs" />
+    <Compile Include="Areas\GridSignalR\Hubs\ProductHub.cs" />
+    <Compile Include="Areas\GridSignalR\Models\Category.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\CategoryViewModel.cs" />
+    <Compile Include="Areas\GridSignalR\Models\Customer.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\CustomerDemographic.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Employee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Intraday.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Meeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\MeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Order.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Order_Detail.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Product.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\ProductService.cs" />
+    <Compile Include="Areas\GridSignalR\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\GridSignalR\Models\Region.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Sample.Context.cs" />
+    <Compile Include="Areas\GridSignalR\Models\Sample.cs" />
+    <Compile Include="Areas\GridSignalR\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Shipper.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Stock.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Supplier.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Task.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Territory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\GridSignalR\Models\Weather.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\GridTimestamp\Controllers\HomeController.cs" />
     <Compile Include="Areas\GridTimestamp\GridTimestampAreaRegistration.cs" />
     <Compile Include="Areas\GridTimestamp\Models\Product.cs" />
@@ -1864,8 +1926,14 @@
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <LastGenOutput>SampleModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.Context.tt"><Generator>TextTemplatingFileGenerator</Generator><LastGenOutput>NorthwindEntities.Context.cs</LastGenOutput></Content>
-    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.tt"><Generator>TextTemplatingFileGenerator</Generator><LastGenOutput>NorthwindEntities.cs</LastGenOutput></Content>
+    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NorthwindEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingInCellWebApi\Models\NorthwindEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NorthwindEntities.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\GridEditingInLineDatabase\Models\SampleModel.Context.tt">
       <DependentUpon>SampleModel.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1945,8 +2013,14 @@
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Hydrangeas.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Lighthouse.jpg" />
     <Content Include="Areas\GridEditingUploadInPopUp\CategoryImage\Tulips.jpg" />
-    <Content Include="Areas\GridEditingWebApi\Models\Northwind.Context.tt"><Generator>TextTemplatingFileGenerator</Generator><LastGenOutput>Northwind.Context.cs</LastGenOutput></Content>
-    <Content Include="Areas\GridEditingWebApi\Models\Northwind.tt"><Generator>TextTemplatingFileGenerator</Generator><LastGenOutput>Northwind.cs</LastGenOutput></Content>
+    <Content Include="Areas\GridEditingWebApi\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridEditingWebApi\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\GridExportingExcelMultiple\Models\Northwind.Context.tt">
       <DependentUpon>Northwind.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2081,6 +2155,14 @@
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\server.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Content\icons\web.png" />
     <Content Include="Areas\GridRenderAndPreviewByteAndBase64Images\Convertors\ImageConverter.htm" />
+    <Content Include="Areas\GridSignalR\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\GridSignalR\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample1.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\GridTimestamp\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridTimestamp\Views\web.config" />
     <Content Include="Areas\GridTimestamp\Views\_ViewStart.cshtml" />
@@ -2905,6 +2987,17 @@
     <Content Include="Areas\GridEditingInCellWebApi\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridEditingInCellWebApi\Views\web.config" />
     <Content Include="Areas\GridEditingInCellWebApi\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\GridSignalR\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\GridSignalR\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\GridSignalR\README.md" />
+    <Content Include="Areas\GridSignalR\Views\Home\Index.cshtml" />
+    <Content Include="Areas\GridSignalR\Views\web.config" />
+    <Content Include="Areas\GridSignalR\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
