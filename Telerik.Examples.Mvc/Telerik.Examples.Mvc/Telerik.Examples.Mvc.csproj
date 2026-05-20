@@ -558,6 +558,8 @@
     <Compile Include="Areas\Captcha\Controllers\HomeController.cs" />
     <Compile Include="Areas\Captcha\Models\CaptchaInputModel.cs" />
     <Compile Include="Areas\Captcha\Models\UserViewModel.cs" />
+    <Compile Include="Areas\CdnFallback\CdnFallbackAreaRegistration.cs" />
+    <Compile Include="Areas\CdnFallback\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Controllers\HomeController.cs" />
     <Compile Include="Areas\ChartDynamicSeries\ChartDynamicSeriesAreaRegistration.cs" />
     <Compile Include="Areas\ChartDynamicSeries\Models\MySeriesData.cs" />
@@ -1812,6 +1814,10 @@
     <Content Include="Areas\Captcha\Files\6733c999-f235-4bc4-86e3-94310f6469c1.wav" />
     <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.png" />
     <Content Include="Areas\Captcha\Files\bb5460c1-2c98-45bc-ac9f-62130bf7edea.wav" />
+    <Content Include="Areas\CdnFallback\Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Areas\CdnFallback\Scripts\kendo.all-2024.2.514.min.js" />
+    <Content Include="Areas\CdnFallback\Scripts\kendo.aspnetmvc-2024.2.514.min.js" />
+    <Content Include="Areas\CdnFallback\Scripts\modernizr-2.8.3.js" />
     <Content Include="Areas\ChatAccessFiles\Views\Home\Index.cshtml" />
     <Content Include="Areas\ChatAccessFiles\Views\web.config" />
     <Content Include="Areas\ChatAccessFiles\Views\_ViewStart.cshtml" />
@@ -2998,6 +3004,10 @@
     <Content Include="Areas\GridSignalR\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridSignalR\Views\web.config" />
     <Content Include="Areas\GridSignalR\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\CdnFallback\Views\Home\Index.cshtml" />
+    <Content Include="Areas\CdnFallback\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\CdnFallback\Views\web.config" />
+    <Content Include="Areas\CdnFallback\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
