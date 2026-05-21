@@ -1587,6 +1587,36 @@
     <Compile Include="Areas\MultiSelectGetPostData\MultiSelectGetPostDataAreaRegistration.cs" />
     <Compile Include="Areas\MultiSelectGetPostData\Models\MultiSelectItem.cs" />
     <Compile Include="Areas\MultiSelectGetPostData\Models\sampleModel.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Category.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Employee.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Northwind.Context.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Northwind.cs" />
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Northwind.Designer.cs">
+      <DependentUpon>Northwind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\Models\Product.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWidgets\ODataWebApiWidgetsAreaRegistration.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Controllers\ODataWebApiWrappersEmployeesController.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Controllers\ODataWebApiWrappersProductsController.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.Context.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.Designer.cs">
+      <DependentUpon>NorthwindEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ODataWebApiWrappers\Models\ODataWebApiWrappersCategory.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Models\ODataWebApiWrappersEmployee.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\Models\ODataWebApiWrappersProduct.cs" />
+    <Compile Include="Areas\ODataWebApiWrappers\ODataWebApiWrappersAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarHierarchyBinding\Controllers\HomeController.cs" />
     <Compile Include="Areas\PanelBarHierarchyBinding\PanelBarHierarchyBindingAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\Controllers\HomeController.cs" />
@@ -2248,6 +2278,22 @@
     <Content Include="Areas\GridTimestamp\Views\Home\Index.cshtml" />
     <Content Include="Areas\GridTimestamp\Views\web.config" />
     <Content Include="Areas\GridTimestamp\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ODataWebApiWidgets\Models\Northwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ODataWebApiWidgets\Models\Northwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Northwind1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NorthwindEntities.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NorthwindEntities1.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\SchedulerCustomView\Models\Sample.Context.tt">
       <DependentUpon>Sample.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -3097,6 +3143,28 @@
     <Content Include="Areas\ChartSignalR\Views\Home\Index.cshtml" />
     <Content Include="Areas\ChartSignalR\Views\web.config" />
     <Content Include="Areas\ChartSignalR\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\ODataWebApiWidgets\Models\Northwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Northwind1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\ODataWebApiWidgets\Models\Northwind.edmx.diagram">
+      <DependentUpon>Northwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\ODataWebApiWidgets\README.md" />
+    <Content Include="Areas\ODataWebApiWidgets\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ODataWebApiWidgets\Views\web.config" />
+    <Content Include="Areas\ODataWebApiWidgets\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthwindEntities1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\ODataWebApiWrappers\Models\NorthwindEntities.edmx.diagram">
+      <DependentUpon>NorthwindEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\ODataWebApiWrappers\README.md" />
+    <Content Include="Areas\ODataWebApiWrappers\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ODataWebApiWrappers\Views\web.config" />
+    <Content Include="Areas\ODataWebApiWrappers\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
