@@ -1576,6 +1576,10 @@
     <Compile Include="Areas\GridSelectionColumnWithCheckBox\Models\ProductViewModel.cs" />
     <Compile Include="Areas\MenuOpenWindowWithAjax\Controllers\HomeController.cs" />
     <Compile Include="Areas\MenuOpenWindowWithAjax\MenuOpenWindowWithAjaxAreaRegistration.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Controllers\AccountController.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Controllers\HomeController.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\Controllers\ManageController.cs" />
+    <Compile Include="Areas\MenuSecurityTrimming\MenuSecurityTrimmingAreaRegistration.cs" />
     <Compile Include="Areas\MultiColumnComboBoxEdit\Controllers\HomeController.cs" />
     <Compile Include="Areas\MultiColumnComboBoxEdit\MultiColumnComboBoxEditAreaRegistration.cs" />
     <Compile Include="Areas\MultiColumnComboBoxEdit\Models\SampleData.cs" />
@@ -3419,6 +3423,32 @@
     <Content Include="Areas\SchedulerSignalRServerFiltering\Views\Home\Index.cshtml" />
     <Content Include="Areas\SchedulerSignalRServerFiltering\Views\web.config" />
     <Content Include="Areas\SchedulerSignalRServerFiltering\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\README.md" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\Login.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\Register.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ResetPassword.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\SendCode.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\VerifyCode.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Home\About.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Home\Contact.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Home\Index.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\Index.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\SetPassword.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\Shared\Lockout.cshtml" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\web.config" />
+    <Content Include="Areas\MenuSecurityTrimming\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
@@ -3640,6 +3670,7 @@
     <Folder Include="Areas\GridSaveAllChangesOneRequest\Data\" />
     <Folder Include="Areas\GridSaveStateInSessionServerSide\Data\" />
     <Folder Include="Areas\GridSaveStateWithBrowserHistoryAPI\Data\" />
+    <Folder Include="Areas\MenuSecurityTrimming\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
