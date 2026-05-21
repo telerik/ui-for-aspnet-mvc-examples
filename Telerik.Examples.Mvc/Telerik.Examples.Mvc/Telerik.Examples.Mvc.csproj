@@ -1703,6 +1703,23 @@
     </Compile>
     <Compile Include="Areas\SchedulerEditingCustomEditor\Models\SchedulerMeetingService.cs" />
     <Compile Include="Areas\SchedulerEditingCustomEditor\SchedulerEditingCustomEditorAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\Attendie.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\DateGreaterThan.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\Sample.Context.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\Sample.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\SchedulerEditingResourcesMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\SchedulerEditingResourcesMeetingAttendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerEditingResources\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerEditingResources\SchedulerEditingResourcesAreaRegistration.cs" />
     <Compile Include="Areas\SchedulerServerFiltering\Controllers\FilterRange.cs" />
     <Compile Include="Areas\SchedulerServerFiltering\Controllers\HomeController.cs" />
     <Compile Include="Areas\SchedulerServerFiltering\Models\Meeting.cs">
@@ -1758,6 +1775,63 @@
     </Compile>
     <Compile Include="Areas\SchedulerTooltip\Models\SchedulerMeetingService.cs" />
     <Compile Include="Areas\SchedulerTooltip\SchedulerTooltipAreaRegistration.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\MeetingViewModel.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Sample.Context.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Sample.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\Sample.Designer.cs">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerMeetingService.cs" />
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotCategory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotCustomer.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotCustomerDemographic.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotEmployee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotIntraday.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotMeeting.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotMeetingAtendee.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotOrder.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotOrder_Detail.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotProduct.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotRegion.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotShipper.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotSupplier.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotTask.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotTerritory.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\Models\SchedulerValidatingTimeslotWeather.cs">
+      <DependentUpon>Sample.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SchedulerValidatingTimeslot\SchedulerValidatingTimeslotAreaRegistration.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\Controllers\HomeController.cs" />
     <Compile Include="Areas\ThemeChangeOnClient\ThemeChangeOnClientAreaRegistration.cs" />
     <Compile Include="Areas\TreeListExportingMultiple\Controllers\EmployeeDirectoryController.cs" />
@@ -2345,6 +2419,14 @@
     <Content Include="Areas\SchedulerEditingCustomEditor\Views\Home\Index.cshtml" />
     <Content Include="Areas\SchedulerEditingCustomEditor\Views\web.config" />
     <Content Include="Areas\SchedulerEditingCustomEditor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerEditingResources\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerEditingResources\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample1.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\SchedulerServerFiltering\Models\SchedulerSample.Context.tt">
       <DependentUpon>SchedulerSample.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2377,6 +2459,14 @@
     <Content Include="Areas\SchedulerTooltip\Views\Home\Index.cshtml" />
     <Content Include="Areas\SchedulerTooltip\Views\web.config" />
     <Content Include="Areas\SchedulerTooltip\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SchedulerValidatingTimeslot\Models\Sample.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\SchedulerValidatingTimeslot\Models\Sample.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Sample1.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\TreeListExportingMultiple\Models\Sample.Context.tt">
       <DependentUpon>Sample.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -3165,6 +3255,29 @@
     <Content Include="Areas\ODataWebApiWrappers\Views\Home\Index.cshtml" />
     <Content Include="Areas\ODataWebApiWrappers\Views\web.config" />
     <Content Include="Areas\ODataWebApiWrappers\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\SchedulerValidatingTimeslot\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\SchedulerValidatingTimeslot\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerValidatingTimeslot\README.md" />
+    <Content Include="Areas\SchedulerValidatingTimeslot\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerValidatingTimeslot\Views\web.config" />
+    <Content Include="Areas\SchedulerValidatingTimeslot\Views\_ViewStart.cshtml" />
+    <EntityDeploy Include="Areas\SchedulerEditingResources\Models\Sample.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Sample1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\SchedulerEditingResources\Models\Sample.edmx.diagram">
+      <DependentUpon>Sample.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\SchedulerEditingResources\README.md" />
+    <Content Include="Areas\SchedulerEditingResources\Views\Home\EditorTemplates\CustomEditorTemplate.cshtml" />
+    <Content Include="Areas\SchedulerEditingResources\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SchedulerEditingResources\Views\web.config" />
+    <Content Include="Areas\SchedulerEditingResources\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
