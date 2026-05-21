@@ -506,15 +506,6 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.Documents.Core, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Documents.Core.2025.3.806\lib\netstandard2.0\Telerik.Documents.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Fixed, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Documents.Fixed.2025.3.806\lib\netstandard2.0\Telerik.Documents.Fixed.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.ImageUtils, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Documents.ImageUtils.2025.3.806\lib\netstandard2.0\Telerik.Documents.ImageUtils.dll</HintPath>
-    </Reference>
     <Reference Include="Telerik.FontIcons, Version=4.8.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.FontIcons.4.0.0\lib\netstandard2.0\Telerik.FontIcons.dll</HintPath>
     </Reference>
@@ -533,11 +524,11 @@
     <Reference Include="Telerik.Windows.Documents.Flow, Version=2025.3.806.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.Windows.Documents.Flow.2025.3.806\lib\net462\Telerik.Windows.Documents.Flow.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2025.3.806.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.Windows.Documents.Fixed.2025.3.806\lib\net462\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Windows.Zip, Version=2025.3.806.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.Windows.Zip.2025.3.806\lib\net462\Telerik.Windows.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Zip, Version=2025.3.806.20, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Zip.2025.3.806\lib\netstandard2.0\Telerik.Zip.dll</HintPath>
     </Reference>
     <Reference Include="txw2-3.0.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\txw2-3.0.2.dll</HintPath>
@@ -1626,6 +1617,9 @@
     <Compile Include="Areas\PanelBarSelectItemInitially\Controllers\HomeController.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\PanelBarHierarchyBindingAreaRegistration.cs" />
     <Compile Include="Areas\PanelBarSelectItemInitially\Models\LocalPanelBarItem.cs" />
+    <Compile Include="Areas\PdfExportingServerSide\Controllers\HomeController.cs" />
+    <Compile Include="Areas\PdfExportingServerSide\GridSelectionByFieldAreaRegistration.cs" />
+    <Compile Include="Areas\PdfExportingServerSide\Models\CreatePdfDocument.cs" />
     <Compile Include="Areas\RequireJS\Controllers\HomeController.cs" />
     <Compile Include="Areas\RequireJS\Models\Product.cs" />
     <Compile Include="Areas\RequireJS\RequireJSAreaRegistration.cs" />
@@ -2452,6 +2446,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NorthwindEntities1.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\PdfExportingServerSide\Images\documentajax.png" />
+    <Content Include="Areas\PdfExportingServerSide\Images\pdfprocessingajax.png" />
     <Content Include="Areas\SchedulerCustomView\Models\Sample.Context.tt">
       <DependentUpon>Sample.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -3449,6 +3445,10 @@
     <Content Include="Areas\MenuSecurityTrimming\Views\Shared\Lockout.cshtml" />
     <Content Include="Areas\MenuSecurityTrimming\Views\web.config" />
     <Content Include="Areas\MenuSecurityTrimming\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\PdfExportingServerSide\README.md" />
+    <Content Include="Areas\PdfExportingServerSide\Views\Home\Index.cshtml" />
+    <Content Include="Areas\PdfExportingServerSide\Views\web.config" />
+    <Content Include="Areas\PdfExportingServerSide\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="Images\200.png" />
