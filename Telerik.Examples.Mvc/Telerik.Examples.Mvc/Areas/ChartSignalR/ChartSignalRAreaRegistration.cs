@@ -2,7 +2,7 @@
 
 namespace Telerik.Examples.Mvc.Areas.ChartSignalR
 {
-    public class GridSignalRAreaRegistration : AreaRegistration 
+    public class ChartSignalRAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {

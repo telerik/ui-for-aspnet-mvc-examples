@@ -53,11 +53,11 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="NorthwindModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+      <Schema Namespace="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="GridHierarchyServerEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-          <EntitySet Name="Categories" EntityType="NorthwindModel.Category" />
-          <EntitySet Name="Products" EntityType="NorthwindModel.Product" />
-          <AssociationSet Name="FK_Products_Categories" Association="NorthwindModel.FK_Products_Categories">
+          <EntitySet Name="Categories" EntityType="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.Category" />
+          <EntitySet Name="Products" EntityType="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.GridHierarchyServerProduct" />
+          <AssociationSet Name="FK_Products_Categories" Association="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.FK_Products_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
@@ -70,9 +70,9 @@
           <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Products" Relationship="NorthwindModel.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
+          <NavigationProperty Name="Products" Relationship="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
         </EntityType>
-        <EntityType Name="Product">
+        <EntityType Name="GridHierarchyServerProduct">
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
@@ -86,11 +86,11 @@
           <Property Name="UnitsOnOrder" Type="Int16" />
           <Property Name="ReorderLevel" Type="Int16" />
           <Property Name="Discontinued" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Category" Relationship="NorthwindModel.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
+          <NavigationProperty Name="Category" Relationship="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
         </EntityType>
         <Association Name="FK_Products_Categories">
-          <End Role="Categories" Type="NorthwindModel.Category" Multiplicity="0..1" />
-          <End Role="Products" Type="NorthwindModel.Product" Multiplicity="*" />
+          <End Role="Categories" Type="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.Category" Multiplicity="0..1" />
+          <End Role="Products" Type="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.GridHierarchyServerProduct" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
               <PropertyRef Name="CategoryID" />
@@ -107,7 +107,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="GridHierarchyServerEntities">
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="NorthwindModel.Category">
+            <EntityTypeMapping TypeName="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.Category">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -117,7 +117,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="NorthwindModel.Product">
+            <EntityTypeMapping TypeName="Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models.GridHierarchyServerProduct">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />

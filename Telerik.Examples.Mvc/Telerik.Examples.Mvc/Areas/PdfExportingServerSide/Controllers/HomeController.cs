@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
-using Telerik.Documents.ImageUtils;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.Model;
@@ -25,9 +24,6 @@ namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide.Controllers
         {
             PdfFormatProvider formatProvider = new PdfFormatProvider();
             formatProvider.ExportSettings.ImageQuality = ImageQuality.High;
-
-            ImagePropertiesResolver defaultImagePropertiesResolver = new ImagePropertiesResolver();
-            Telerik.Windows.Documents.Extensibility.FixedExtensibilityManager.ImagePropertiesResolver = defaultImagePropertiesResolver;
 
             byte[] renderedBytes = null;
             using (MemoryStream ms = new MemoryStream())

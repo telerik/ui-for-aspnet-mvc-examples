@@ -16,7 +16,7 @@ namespace Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models
     {
         public Category()
         {
-            this.Products = new HashSet<Product>();
+            this.Products = new HashSet<GridHierarchyServerProduct>();
         }
     
         public int CategoryID { get; set; }
@@ -24,6 +24,6 @@ namespace Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models
         public string Description { get; set; }
         public byte[] Picture { get; set; }
     
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<GridHierarchyServerProduct> Products { get; set; }
     }
 }

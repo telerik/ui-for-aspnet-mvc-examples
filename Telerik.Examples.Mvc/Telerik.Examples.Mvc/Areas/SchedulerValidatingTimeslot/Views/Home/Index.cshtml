@@ -26,15 +26,6 @@
                     new { Text = "Meeting Room 101", Value = 1, Color = "#6eb3fa" },
                     new { Text = "Meeting Room 201", Value = 2, Color = "#f58a8a" }
             });
-        resource.Add(m => m.RoomID)
-            .Title("Room")
-            .DataTextField("Text")
-            .DataValueField("Value")
-            .DataColorField("Color")
-            .BindTo(new[] {
-            new { Text = "Meeting Room 101", Value = 1, Color = "#6eb3fa" },
-            new { Text = "Meeting Room 201", Value = 2, Color = "#f58a8a" }
-        });
     })
     .DataSource(d => d
             .Model(m => {

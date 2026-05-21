@@ -27,7 +27,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SampleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Telerik.Examples.Mvc.Areas.GridHierarchyServerDetailTemplate.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="GridHierarchyServerDetailTemplateProduct">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -44,7 +44,7 @@
           <Property Name="Discontinued" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GridHierarchyServerDetailTemplateEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Products" EntityType="SampleModel.GridHierarchyServerDetailTemplateProduct" />
+          <EntitySet Name="Products" EntityType="Telerik.Examples.Mvc.Areas.GridHierarchyServerDetailTemplate.Models.GridHierarchyServerDetailTemplateProduct" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -53,7 +53,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="GridHierarchyServerDetailTemplateEntities">
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="SampleModel.GridHierarchyServerDetailTemplateProduct">
+            <EntityTypeMapping TypeName="Telerik.Examples.Mvc.Areas.GridHierarchyServerDetailTemplate.Models.GridHierarchyServerDetailTemplateProduct">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />

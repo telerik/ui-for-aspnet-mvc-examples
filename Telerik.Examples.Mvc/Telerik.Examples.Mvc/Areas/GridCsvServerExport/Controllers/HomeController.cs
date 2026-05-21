@@ -13,7 +13,7 @@ namespace Telerik.Examples.Mvc.Areas.GridCsvServerExport.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
+        public static List<GridCsvServerExportProduct> products = new List<GridCsvServerExportProduct>();
 
         public ActionResult Index()
         {
@@ -22,7 +22,7 @@ namespace Telerik.Examples.Mvc.Areas.GridCsvServerExport.Controllers
 
         public HomeController()
         {
-            products = Enumerable.Range(1, 100).Select(i => new Product
+            products = Enumerable.Range(1, 100).Select(i => new GridCsvServerExportProduct
             {
                 ProductID = i,
                 ProductName = "ProductName" + i,
@@ -52,7 +52,7 @@ namespace Telerik.Examples.Mvc.Areas.GridCsvServerExport.Controllers
             writer.Write("QuantityPerUnit");
             writer.WriteLine();
 
-            foreach (Product product in data)
+            foreach (GridCsvServerExportProduct product in data)
             {
                 writer.Write(product.ProductName);
                 writer.Write(",");

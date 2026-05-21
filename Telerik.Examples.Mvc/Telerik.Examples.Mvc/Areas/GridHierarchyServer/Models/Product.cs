@@ -12,7 +12,7 @@ namespace Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class GridHierarchyServerProduct
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }

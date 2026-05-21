@@ -26,6 +26,6 @@ namespace Telerik.Examples.Mvc.Areas.GridHierarchyServer.Models
         }
     
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<GridHierarchyServerProduct> Products { get; set; }
     }
 }

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Telerik.Documents.Primitives;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
 using Telerik.Windows.Documents.Fixed.Model;
@@ -13,6 +12,7 @@ using Telerik.Windows.Documents.Fixed.Model.Editing;
 using Telerik.Windows.Documents.Fixed.Model.Editing.Flow;
 using Telerik.Windows.Documents.Fixed.Model.Fonts;
 using Telerik.Windows.Documents.Fixed.Model.Graphics;
+using System.Windows;
 
 namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide
 {
@@ -28,7 +28,7 @@ namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide
             page.Size = new Size(600, 750);
             FixedContentEditor editor = new FixedContentEditor(page);
             editor.Position.Translate(defaultLeftIndent, 50);
-            using (FileStream fs = new FileStream(System.Web.HttpContext.Current.Server.MapPath("~/Areas/PdfExportingServerSide/Images/documentajax.png"),
+            using (FileStream fs = new FileStream(System.Web.HttpContext.Current.Server.MapPath("~/Areas/PdfExportingServerSide/Images/pdfprocessingajax.png"),
                 FileMode.Open, FileAccess.Read))
             {
                 editor.DrawImage(fs);

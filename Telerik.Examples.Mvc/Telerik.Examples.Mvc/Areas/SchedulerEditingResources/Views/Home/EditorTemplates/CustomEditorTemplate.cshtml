@@ -163,35 +163,34 @@
 </div>
 
 <div data-container-for="Attendees" class="k-edit-field">
-    <hr />
-    <div style="width: 280px; display: inline-block">
-        @(Html.Kendo().MultiSelectFor(model => model.Attendees)
-            .HtmlAttributes(new { data_bind = "value:Attendees"})
-            .DataTextField("Text")
-            .DataValueField("Value")
-            .ValuePrimitive(true)
-            .TagTemplate("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
-            .ItemTemplate("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
-            .DataSource(ds => ds
-                .Custom()
-                .Type("aspnetmvc-ajax")
-                .Transport(transport => transport.Read(read => read.Action("Read_Attendees", "Home")))
-                .Schema(schema => schema
-                    .Data("Data")
-                    .Total("Total")
-                    .Errors("Errors")
-                    .Model(model =>
-                    {
-                        model.Id("Value");
-                        model.Field("Value", typeof(int));
-                        model.Field("Text", typeof(string));
-                        model.Field("Color", typeof(string));
-                    })
-                )
-            ))
-    </div>
+<hr />
+@(Html.Kendo().MultiSelectFor(model => model.Attendees)
+    .HtmlAttributes(new { data_bind = "value:Attendees"})
+    .DataTextField("Text")
+    .DataValueField("Value")
+    .ValuePrimitive(true)
+    .TagTemplate("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
+    .ItemTemplate("<span class='k-scheduler-mark' style='background-color:\\#= data.Color?Color:'' \\#'></span>\\#=Text\\#")
+    .DataSource(ds => ds
+        .Custom()
+        .Type("aspnetmvc-ajax")
+        .Transport(transport => transport.Read(read => read.Action("Read_Attendees", "Home")))
+        .Schema(schema => schema
+            .Data("Data")
+            .Total("Total")
+            .Errors("Errors")
+            .Model(model =>
+            {
+                model.Id("Value");
+                model.Field("Value", typeof(int));
+                model.Field("Text", typeof(string));
+                model.Field("Color", typeof(string));
+            })
+        )
+    ))
 
-    <button class="k-button" style="float:right;" id="editAttendees">Edit attendees</button>
+<button class="k-button" style="float: right; margin-top: 5px;" id="editAttendees">Edit attendees</button>
+<div style="clear: both;"></div>
 
     <div id="insertNewAttendeeDialog">
         <div id="editResources"></div>
