@@ -1,0 +1,30 @@
+name: Build Telerik.Examples.Mvc Project
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      TELERIK_LICENSE: ${{ secrets.TELERIK_LICENSE }}
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2.0.1
+
+    - name: Restore NuGet Packages for Telerik.Examples.Mvc
+      run: nuget restore Telerik.Examples.Mvc/Telerik.Examples.Mvc.sln -ConfigFile NuGet.Config
+      env: 
+        TELERIK_NUGET_KEY: ${{secrets.TELERIK_NUGET_KEY}}
+
+    - name: Build Telerik.Examples.Mvc Project
+      run: msbuild Telerik.Examples.Mvc/Telerik.Examples.Mvc.sln -t:rebuild -property:Configuration=Release
+      env:
+        TELERIK_LICENSE: ${{secrets.TELERIK_LICENSE_KEY}}
