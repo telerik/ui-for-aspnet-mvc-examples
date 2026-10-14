@@ -1,10 +1,18 @@
 ﻿<script>
-    var stylesheet = document.querySelector("link[rel=stylesheet]");
+    var stylesheet = document.querySelector("#kendo-theme");
     //retrieve the theme url from the localStorage:
     var theme = localStorage.getItem('theme');
-    if (theme && theme !== stylesheet.getAttribute('href')) {
+    var themeIntegrityByUrl = {
+        "https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@8.2.1/dist/default-main.css": "sha256-QZTDNQ1IW640uEy/n46E8CqW22HgLPRfQBNkpZ1r9Ho=",
+        "https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-bootstrap@6.4.0/dist/all.css": "sha256-XrVJxJbHLyDk/Om1Mbk5D03SRRuUYlw2KVGdi3UF+Zg="
+    };
+    if (theme && themeIntegrityByUrl[theme] && theme !== stylesheet.getAttribute('href')) {
         //pass the url to the stylesheet's href attribute
         stylesheet.setAttribute('href', theme);
+        stylesheet.setAttribute('integrity', themeIntegrityByUrl[theme]);
+        stylesheet.setAttribute('crossorigin', 'anonymous');
+    } else if (theme && !themeIntegrityByUrl[theme]) {
+        localStorage.removeItem('theme');
     }
 </script>
 
@@ -39,17 +47,19 @@
     $(document).ready(function () {
 
         $("#load-default").click(function () {
-            $("link[rel=stylesheet]").attr({ href: "https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css" });
+            var themeUrl = "https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@8.2.1/dist/default-main.css";
+            $("#kendo-theme").attr({ href: themeUrl, integrity: themeIntegrityByUrl[themeUrl], crossorigin: "anonymous" });
             //save the theme url in localStorage
-            localStorage.setItem('theme', "https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css");
+            localStorage.setItem('theme', themeUrl);
             //reload the whole page:
             location.reload();
         });
 
         $("#load-bootstrap").click(function () {
-            $("link[rel=stylesheet]").attr({ href: "https://kendo.cdn.telerik.com/themes/6.4.0/bootstrap/bootstrap-main.css" });
+            var themeUrl = "https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-bootstrap@6.4.0/dist/all.css";
+            $("#kendo-theme").attr({ href: themeUrl, integrity: themeIntegrityByUrl[themeUrl], crossorigin: "anonymous" });
             //save the theme url in localStorage
-            localStorage.setItem('theme', "https://kendo.cdn.telerik.com/themes/6.4.0/bootstrap/bootstrap-main.css");
+            localStorage.setItem('theme', themeUrl);
             //reload the whole page:
             location.reload();
         });

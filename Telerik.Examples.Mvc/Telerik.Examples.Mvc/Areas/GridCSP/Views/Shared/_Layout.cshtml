@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://localhost:62242/; img-src 'self' data:; script-src 'self' https://cdn.kendostatic.com https://kendo.cdn.telerik.com https://code.jquery.com/ 'nonce-Telerik-CSP-Examples'; style-src 'self' 'unsafe-inline' https://kendo.cdn.telerik.com; font-src 'self' data:;connect-src 'self' wss://localhost;" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://localhost:62242/; img-src 'self' data:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com/ 'nonce-Telerik-CSP-Examples'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self' data:;connect-src 'self' wss://localhost;" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @{
         var kendoVersion = "2024.2.514";
         var themeVersion = "8.0.1";
     }
 
-    <link href="https://kendo.cdn.telerik.com/themes/@themeVersion/default/default-ocean-blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@@@themeVersion/dist/all.css" integrity="sha256-wKb7X906MramyzxzSdhx7inevPcnEaC2ZIasIg3nnwY=" crossorigin="anonymous" rel="stylesheet" type="text/css" />
 
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
@@ -18,8 +18,8 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
             integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
             crossorigin="anonymous"></script>
-    <script src="https://cdn.kendostatic.com/@kendoVersion/js/kendo.all.min.js"></script>
-    <script src="https://cdn.kendostatic.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@@@kendoVersion/umd/kendo.all.min.js" integrity="sha256-IXsN3dTg0X4feeQgMcjsjxyKAi+ysqKKGhkMNFYSnOw=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@@@kendoVersion/umd/kendo.aspnetmvc.min.js" integrity="sha256-lrBA/9nfQjjsWsEg/ll9spSpccZmq7rpoxSnmpJdO+w=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="responsive-panel" class="navbar navbar-dark bg-light">
