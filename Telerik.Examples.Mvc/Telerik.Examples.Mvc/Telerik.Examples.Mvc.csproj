@@ -182,8 +182,8 @@
     <Reference Include="jsoup-1.15.3, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\jsoup-1.15.3.dll</HintPath>
     </Reference>
-    <Reference Include="Kendo.Mvc, Version=2026.1.325.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.2026.1.325\lib\net462\Kendo.Mvc.dll</HintPath>
+    <Reference Include="Kendo.Mvc, Version=2026.3.1015.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik.UI.for.AspNet.Mvc5.Lite.2026.3.1015\lib\net462\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="log4j-api-2.17.2, Version=13.10.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\net.sf.mpxj-for-csharp.13.10.0\lib\net45\log4j-api-2.17.2.dll</HintPath>

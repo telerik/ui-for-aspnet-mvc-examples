@@ -3,7 +3,7 @@
     Layout = null;
 }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@8.0.1/dist/all.css" integrity="sha256-wKb7X906MramyzxzSdhx7inevPcnEaC2ZIasIg3nnwY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@14.6.1/dist/all.css"  />
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.7/require.js" integrity="sha256-ghW5AAC1cb0kHShRLIP1mFXOzDFY25S3my2XTJkjtdI=" crossorigin="anonymous"></script>
 
     <div class="featured">
@@ -23,22 +23,12 @@
 
 <script>
     require.config({
-                baseUrl: "https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@2024.2.514/umd/",
+                baseUrl: "https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@2026.3.1015/umd/",
         paths: {
           "jquery": "https://code.jquery.com/jquery-1.9.1.min",
           "jszip": "https://unpkg.com/jszip@3.10.1/dist/jszip.min",
                     "kendo.grid.min": "kendo.all.min",
                     "kendo.aspnetmvc.min": "kendo.aspnetmvc.min",
-                },
-                onNodeCreated: function (node, config, moduleName) {
-                        if (moduleName === "kendo.grid.min") {
-                                node.integrity = "sha256-IXsN3dTg0X4feeQgMcjsjxyKAi+ysqKKGhkMNFYSnOw=";
-                                node.crossOrigin = "anonymous";
-                        }
-                        if (moduleName === "kendo.aspnetmvc.min") {
-                                node.integrity = "sha256-lrBA/9nfQjjsWsEg/ll9spSpccZmq7rpoxSnmpJdO+w=";
-                                node.crossOrigin = "anonymous";
-                        }
                 }
       });
 

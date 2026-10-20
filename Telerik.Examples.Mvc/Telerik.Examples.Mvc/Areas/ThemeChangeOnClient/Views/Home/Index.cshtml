@@ -2,17 +2,10 @@
     var stylesheet = document.querySelector("#kendo-theme");
     //retrieve the theme url from the localStorage:
     var theme = localStorage.getItem('theme');
-    var themeIntegrityByUrl = {
-        "https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@8.2.1/dist/default-main.css": "sha256-QZTDNQ1IW640uEy/n46E8CqW22HgLPRfQBNkpZ1r9Ho=",
-        "https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-bootstrap@6.4.0/dist/all.css": "sha256-XrVJxJbHLyDk/Om1Mbk5D03SRRuUYlw2KVGdi3UF+Zg="
-    };
+
     if (theme && themeIntegrityByUrl[theme] && theme !== stylesheet.getAttribute('href')) {
         //pass the url to the stylesheet's href attribute
         stylesheet.setAttribute('href', theme);
-        stylesheet.setAttribute('integrity', themeIntegrityByUrl[theme]);
-        stylesheet.setAttribute('crossorigin', 'anonymous');
-    } else if (theme && !themeIntegrityByUrl[theme]) {
-        localStorage.removeItem('theme');
     }
 </script>
 
@@ -48,7 +41,7 @@
 
         $("#load-default").click(function () {
             var themeUrl = "https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@8.2.1/dist/default-main.css";
-            $("#kendo-theme").attr({ href: themeUrl, integrity: themeIntegrityByUrl[themeUrl], crossorigin: "anonymous" });
+            $("#kendo-theme").attr({ href: themeUrl });
             //save the theme url in localStorage
             localStorage.setItem('theme', themeUrl);
             //reload the whole page:
@@ -57,7 +50,7 @@
 
         $("#load-bootstrap").click(function () {
             var themeUrl = "https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-bootstrap@6.4.0/dist/all.css";
-            $("#kendo-theme").attr({ href: themeUrl, integrity: themeIntegrityByUrl[themeUrl], crossorigin: "anonymous" });
+            $("#kendo-theme").attr({ href: themeUrl });
             //save the theme url in localStorage
             localStorage.setItem('theme', themeUrl);
             //reload the whole page:
