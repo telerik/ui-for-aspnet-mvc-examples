@@ -7,13 +7,14 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Telerik.Examples.Mvc.Areas.GridAjaxBindingCustomJsonResult.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridAjaxBindingCustomJsonResult.Models.Product;
 using Telerik.Examples.Mvc.Areas.GridAjaxBindingCustomJsonResult.Serialization;
 
 namespace Telerik.Examples.Mvc.Areas.GridAjaxBindingCustomJsonResult.Controllers
 {
     public class HomeController : Controller
     {
-        private static List<Product> products = new List<Product>();
+        private static List<ProductModel> products = new List<ProductModel>();
         private static int id;
 
         static HomeController()
@@ -21,7 +22,7 @@ namespace Telerik.Examples.Mvc.Areas.GridAjaxBindingCustomJsonResult.Controllers
             // create some large data
             for (id = 1; id < 100000; id++)
             {
-                products.Add(new Product()
+                products.Add(new ProductModel()
                 {
                     ID = id,
                     Name = "Product" + id

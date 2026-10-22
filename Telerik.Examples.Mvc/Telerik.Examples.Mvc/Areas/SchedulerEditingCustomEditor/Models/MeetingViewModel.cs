@@ -55,6 +55,7 @@
         public string Timezone { get; set; }
         public int? RoomID { get; set; }
         public IEnumerable<int> Attendees { get; set; }
+        public bool IsReadonly { get; set; }
 
         public SchedulerEditingCustomEditorMeeting ToEntity()
         {

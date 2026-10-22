@@ -31,9 +31,14 @@
             .ToList();
             innerFiles.Reverse();
         }
+        var themeHref = String.Format("https://cdn.jsdelivr.net/npm/@progress/kendo-theme-default@{0}/dist/default-ocean-blue.css",themeVersion);
+        var kendoAllSrc = String.Format("https://cdn.jsdelivr.net/npm/@progress/kendo-ui@{0}/umd/kendo.all.min.js", kendoVersion);
+        var kendoAspnetmvcSrc = String.Format("https://cdn.jsdelivr.net/npm/@progress/kendo-ui@{0}/umd/kendo.aspnetmvc.min.js",kendoVersion);
+        var kendoTimeZonesSrc = String.Format("https://cdn.jsdelivr.net/npm/@progress/kendo-ui@{0}/umd/kendo.timezones.min.js",kendoVersion);
+
     }
 
-    <link id="kendo-theme" href="https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@@@themeVersion/dist/default-ocean-blue.css" rel="stylesheet" type="text/css" />
+    <link id="kendo-theme" href=@themeHref rel="stylesheet" type="text/css" />
     <link href="https://unpkg.com/%40progress/kendo-font-icons/dist/index.css" rel="stylesheet" type="text/css" />
 
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
@@ -41,9 +46,9 @@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@@@kendoVersion/umd/kendo.all.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@@@kendoVersion/umd/kendo.aspnetmvc.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@@@kendoVersion/umd/kendo.timezones.min.js" ></script>
+    <script src=@kendoAllSrc ></script>
+    <script src=@kendoAspnetmvcSrc ></script>
+    <script src=@kendoTimeZonesSrc ></script>
 
     <script>
         function searchExamples() {

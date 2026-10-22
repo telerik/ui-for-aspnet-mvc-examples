@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Telerik.Examples.Mvc.Areas.GridEditPopUpServerValidation.Models
 {
-    public class Product
+    public class ProductViewModel
     {
         [ScaffoldColumn(false)]
         public int Id { get; set; }

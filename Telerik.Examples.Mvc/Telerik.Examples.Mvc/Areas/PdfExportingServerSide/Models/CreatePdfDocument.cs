@@ -4,14 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
-using Telerik.Windows.Documents.Fixed.Model;
-using Telerik.Windows.Documents.Fixed.Model.ColorSpaces;
-using Telerik.Windows.Documents.Fixed.Model.Editing;
-using Telerik.Windows.Documents.Fixed.Model.Editing.Flow;
-using Telerik.Windows.Documents.Fixed.Model.Fonts;
-using Telerik.Windows.Documents.Fixed.Model.Graphics;
+using Telerik.Documents.Fixed.FormatProviders.Pdf;
+using Telerik.Documents.Fixed.FormatProviders.Pdf.Export;
+using Telerik.Documents.Fixed.Model;
+using Telerik.Documents.Fixed.Model.ColorSpaces;
+using Telerik.Documents.Fixed.Model.Editing;
+using Telerik.Documents.Fixed.Model.Editing.Flow;
+using Telerik.Documents.Fixed.Model.Fonts;
+using Telerik.Documents.Fixed.Model.Graphics;
 using System.Windows;
 
 namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide
@@ -64,7 +64,7 @@ namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide
         {
             Block block = new Block();
             block.GraphicProperties.FillColor = RgbColors.Black;
-            block.HorizontalAlignment = Telerik.Windows.Documents.Fixed.Model.Editing.Flow.HorizontalAlignment.Left;
+            block.HorizontalAlignment = Telerik.Documents.Fixed.Model.Editing.Flow.HorizontalAlignment.Left;
 
             block.TextProperties.Font = FontsRepository.HelveticaBoldOblique;
             block.InsertText("RadPdfProcessing");
@@ -135,8 +135,8 @@ namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide
 
             Block block = new Block();
             block.TextProperties.Font = FontsRepository.Helvetica;
-            block.HorizontalAlignment = Telerik.Windows.Documents.Fixed.Model.Editing.Flow.HorizontalAlignment.Center;
-            block.VerticalAlignment = Telerik.Windows.Documents.Fixed.Model.Editing.Flow.VerticalAlignment.Center;
+            block.HorizontalAlignment = Telerik.Documents.Fixed.Model.Editing.Flow.HorizontalAlignment.Center;
+            block.VerticalAlignment = Telerik.Documents.Fixed.Model.Editing.Flow.VerticalAlignment.Center;
             editor.DrawBlock(block, new Size(96, 96));
 
             using (editor.SaveGraphicProperties())
@@ -204,8 +204,8 @@ namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide
 
             block = new Block();
             block.GraphicProperties.FillColor = RgbColors.Black;
-            block.HorizontalAlignment = Telerik.Windows.Documents.Fixed.Model.Editing.Flow.HorizontalAlignment.Center;
-            block.VerticalAlignment = Telerik.Windows.Documents.Fixed.Model.Editing.Flow.VerticalAlignment.Top;
+            block.HorizontalAlignment = Telerik.Documents.Fixed.Model.Editing.Flow.HorizontalAlignment.Center;
+            block.VerticalAlignment = Telerik.Documents.Fixed.Model.Editing.Flow.VerticalAlignment.Top;
             block.TextProperties.FontSize = 18;
             block.InsertText("PDF");
 
