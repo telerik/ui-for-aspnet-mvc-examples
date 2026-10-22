@@ -55,6 +55,7 @@
         public int? RoomID { get; set; }
         public int? StylistID { get; set; }
         public IEnumerable<int> Attendees { get; set; }
+        public bool IsReadonly { get; set; }
 
         public Meeting ToEntity()
         {

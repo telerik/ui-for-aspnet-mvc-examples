@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @{
-        var kendoVersion = "2024.2.514";
-        var themeVersion = "8.0.1";
+        var kendoVersion = "2026.3.1015";
+        var themeVersion = "14.6.1";
     }
 
-    <link href="https://kendo.cdn.telerik.com/themes/@themeVersion/default/default-ocean-blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@@@themeVersion/dist/all.css" rel="stylesheet" type="text/css" />
     <link href="https://unpkg.com/%40progress/kendo-font-icons/dist/index.css" rel="stylesheet" type="text/css" />
 
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.kendostatic.com/@kendoVersion/js/kendo.all.min.js"></script>
-    <script src="https://cdn.kendostatic.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@@@kendoVersion/umd/kendo.all.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@@@kendoVersion/umd/kendo.aspnetmvc.min.js" ></script>
 </head>
 <body>
     @RenderBody()

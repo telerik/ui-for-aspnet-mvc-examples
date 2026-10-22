@@ -21,7 +21,7 @@ namespace Telerik.Examples.Mvc.Areas.RequireJS.Controllers
         public ActionResult Read([DataSourceRequest]DataSourceRequest request)
         {
             var products = new[] {
-                new Product
+                new Models.Product
                 {
                     ProductID = 1,
                     ProductName = "Product 1"

@@ -47,6 +47,7 @@
         public string RecurrenceException { get; set; }
         public bool IsAllDay { get; set; }
         public int? OwnerID { get; set; }
+        public bool IsReadonly { get; set; }
 
         public SchedulerEditingWebApiTask ToEntity()
         {
