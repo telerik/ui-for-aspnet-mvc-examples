@@ -9,6 +9,7 @@ using System.Web.Http;
 //using System.Web.OData;
 //using System.Web.OData.Query;
 using Telerik.Examples.Mvc.Areas.ODataWebApiWidgets.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.ODataWebApiWidgets.Models.Product;
 using System.Threading.Tasks;
 using Microsoft.AspNet.OData;
 
@@ -20,7 +21,7 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWidgets.Controllers
     using System.Web.Http.OData.Builder;
     using Telerik.Examples.Mvc.Areas.ODataWebApiWidgets.Models;
     ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Product>("Products");
+    builder.EntitySet<ProductModel>("Products");
     builder.EntitySet<Employee>("Categories"); 
     config.Routes.MapODataRoute("odata", "odata", builder.GetEdmModel());
     */
@@ -31,13 +32,13 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWidgets.Controllers
 
         // GET: odata/Products
         [EnableQuery]
-        public IQueryable<Product> GetProducts()
+        public IQueryable<ProductModel> GetProducts()
         {
             return db.Products;
         }
 
         // PUT: odata/Products(5)
-        public IHttpActionResult Put([FromODataUri] int key, Product product)
+        public IHttpActionResult Put([FromODataUri] int key, ProductModel product)
         {   
             if (!ModelState.IsValid)
             {
@@ -76,7 +77,7 @@ namespace Telerik.Examples.Mvc.Areas.ODataWebApiWidgets.Controllers
             return Updated(product);
         }
 
-        public IHttpActionResult Post(Product product)
+        public IHttpActionResult Post(ProductModel product)
         {
             if (!ModelState.IsValid)
             {

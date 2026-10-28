@@ -21,7 +21,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpServerValidation.Controller
             return Json(GetProducts().ToDataSourceResult(request));
         }
 
-        public ActionResult Products_Create([DataSourceRequest] DataSourceRequest request, Product product)
+        public ActionResult Products_Create([DataSourceRequest] DataSourceRequest request, Models.Product product)
         {
             //Manually add an model error in order to simulate validation error
             ModelState.AddModelError(/* Property name */ "Name", /* Validation message */ "My server error");
@@ -32,7 +32,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpServerValidation.Controller
             return Json(ModelState.ToDataSourceResult());
         }
 
-        public ActionResult Products_Update([DataSourceRequest] DataSourceRequest request, Product product)
+        public ActionResult Products_Update([DataSourceRequest] DataSourceRequest request, Models.Product product)
         {
             //Manually add an model error in order to simulate validation error
             ModelState.AddModelError(/* Property name */ "Name", /* Validation message */ "My server error");
@@ -42,9 +42,9 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingPopUpServerValidation.Controller
             return Json(ModelState.ToDataSourceResult());
         }
 
-        private IEnumerable<Product> GetProducts()
+        private IEnumerable<Models.Product> GetProducts()
         {
-            return Enumerable.Range(1, 10).Select(i => new Product
+            return Enumerable.Range(1, 10).Select(i => new Models.Product
             {
                 Id = i,
                 Name = "Product" + i

@@ -6,12 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Telerik.Examples.Mvc.Areas.GridDropDownListEditorBoundToNullableField.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridDropDownListEditorBoundToNullableField.Models.Product;
 
 namespace Telerik.Examples.Mvc.Areas.GridDropDownListEditorBoundToNullableField.Controllers
 {
     public class HomeController : Controller
     {
-        static List<Product> products = new List<Product>();
+        static List<ProductModel> products = new List<ProductModel>();
         static List<Category> categories = new List<Category>();
 
         static HomeController()
@@ -27,19 +28,19 @@ namespace Telerik.Examples.Mvc.Areas.GridDropDownListEditorBoundToNullableField.
                 CategoryID = 2,
                 CategoryName = "Condiments"
             });
-            products.Add(new Product
+            products.Add(new ProductModel
             {
                 ProductID = 1,
                 ProductName = "Chai",
                 CategoryID = 1
             });
-            products.Add(new Product
+            products.Add(new ProductModel
             {
                 ProductID = 3,
                 ProductName = "Aniseed Syrup",
                 CategoryID = 2
             });
-            products.Add(new Product
+            products.Add(new ProductModel
             {
                 ProductID = 7,
                 ProductName = "Uncle Bob's Organic Dried Pears",
@@ -58,7 +59,7 @@ namespace Telerik.Examples.Mvc.Areas.GridDropDownListEditorBoundToNullableField.
             return Json(products.ToDataSourceResult(request));
         }
 
-        public ActionResult Update(Product product)
+        public ActionResult Update(ProductModel product)
         {
             if (product != null && ModelState.IsValid)
             {

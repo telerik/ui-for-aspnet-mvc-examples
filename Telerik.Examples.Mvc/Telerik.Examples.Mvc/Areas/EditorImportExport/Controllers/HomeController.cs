@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.IO;
 using System.Net;
-using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
-using Telerik.Windows.Documents.Flow.FormatProviders.Html;
-using Telerik.Windows.Documents.Flow.Model;
+using Telerik.Documents.Flow.FormatProviders.Docx;
+using Telerik.Documents.Flow.FormatProviders.Html;
+using Telerik.Documents.Flow.Model;
 
 namespace Telerik.Examples.Mvc.Areas.EditorImportExport.Controllers
 {
@@ -25,12 +25,12 @@ namespace Telerik.Examples.Mvc.Areas.EditorImportExport.Controllers
         public ActionResult ExportDocx(string content)
         {
             HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
-            RadFlowDocument htmlDocument = htmlProvider.Import(content);
+            RadFlowDocument htmlDocument = htmlProvider.Import(content, new TimeSpan(0, 1, 0));
 
             DocxFormatProvider docxProvider = new DocxFormatProvider();
             using (Stream output = System.IO.File.OpenWrite(Server.MapPath("~/App_Data/Sample.docx")))
             {
-                docxProvider.Export(htmlDocument, output);
+                docxProvider.Export(htmlDocument, output, new TimeSpan(0, 1, 0));
             }
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
@@ -44,7 +44,7 @@ namespace Telerik.Examples.Mvc.Areas.EditorImportExport.Controllers
 
             using (Stream input = System.IO.File.OpenRead(Server.MapPath("~/App_Data/Sample.docx")))
             {
-                flowDocument = docxProvider.Import(input);
+                flowDocument = docxProvider.Import(input, new TimeSpan(0,1,0));
             }
 
             HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
@@ -52,7 +52,7 @@ namespace Telerik.Examples.Mvc.Areas.EditorImportExport.Controllers
             htmlProvider.ExportSettings.DocumentExportLevel = DocumentExportLevel.Fragment;
             htmlProvider.ExportSettings.StylesExportMode = StylesExportMode.Inline;
 
-            string html = htmlProvider.Export(flowDocument);
+            string html = htmlProvider.Export(flowDocument, new TimeSpan(0, 1, 0));
 
             return Content(html);
         }

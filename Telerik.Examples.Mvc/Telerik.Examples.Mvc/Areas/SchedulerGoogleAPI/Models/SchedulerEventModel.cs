@@ -50,6 +50,8 @@ namespace Telerik.Examples.Mvc.Areas.SchedulerGoogleAPI.Models
         public int? RoomID { get; set; }
         public int? CityId { get; set; }
         public IEnumerable<int> Attendees { get; set; }
+        public bool IsReadonly { get; set; }
+
 
         public Task ToEntity()
         {
