@@ -1,4 +1,5 @@
 ﻿using Telerik.Examples.Mvc.Areas.GridTimestamp.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridTimestamp.Models.Product;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using System;
@@ -25,7 +26,7 @@ namespace Telerik.Examples.Mvc.Areas.GridTimestamp.Controllers
             return Json(context.Products.ToDataSourceResult(request));
         }
 
-        public ActionResult Update(Product product)
+        public ActionResult Update(ProductModel product)
         {
             if (ModelState.IsValid)
             {

@@ -6,12 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Telerik.Examples.Mvc.Areas.GridCRUDWithObjectColumn.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridCRUDWithObjectColumn.Models.Product;
 
 namespace Telerik.Examples.Mvc.Areas.GridCRUDWithObjectColumn.Controllers
 {
     public class HomeController : Controller
     {
-        private static ICollection<Product> products;
+        private static ICollection<ProductModel> products;
         private static ICollection<Category> categories;
 
         public HomeController()
@@ -19,7 +20,7 @@ namespace Telerik.Examples.Mvc.Areas.GridCRUDWithObjectColumn.Controllers
             if (products == null)
             {
                 var random = new Random();
-                products = Enumerable.Range(1, 100).Select(x => new Product
+                products = Enumerable.Range(1, 100).Select(x => new ProductModel
                 {
                     Discontinued = x % 2 == 1,
                     ProductID = x,
@@ -61,14 +62,14 @@ namespace Telerik.Examples.Mvc.Areas.GridCRUDWithObjectColumn.Controllers
 
 
         [AcceptVerbs("Post")]
-        public ActionResult Create([DataSourceRequest] DataSourceRequest request, Product product)
+        public ActionResult Create([DataSourceRequest] DataSourceRequest request, ProductModel product)
         {
             //save item to database
             return Json(new[] { product }.ToDataSourceResult(request, ModelState));
         }
 
         [AcceptVerbs("Post")]
-        public ActionResult Update([DataSourceRequest] DataSourceRequest request, Product product)
+        public ActionResult Update([DataSourceRequest] DataSourceRequest request, ProductModel product)
         {
             //save item to database
             products.Add(product);
@@ -76,7 +77,7 @@ namespace Telerik.Examples.Mvc.Areas.GridCRUDWithObjectColumn.Controllers
         }
 
         [AcceptVerbs("Post")]
-        public ActionResult Destroy([DataSourceRequest] DataSourceRequest request, Product product)
+        public ActionResult Destroy([DataSourceRequest] DataSourceRequest request, ProductModel product)
         {
             //remove item from database
             products.Remove(product);

@@ -16,9 +16,9 @@ namespace Telerik.Examples.Mvc.Areas.GridPostWithForm.Controllers
             return View(new Category
             {
                 Name = "Category 1",
-                Products = new List<Product> 
+                Products = new List<Models.Product> 
                 {
-                    new Product
+                    new Models.Product
                     {
                         Name = "Product 1"
                     }

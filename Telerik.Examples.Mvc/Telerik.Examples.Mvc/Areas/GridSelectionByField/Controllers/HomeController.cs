@@ -1,4 +1,5 @@
 ﻿using Telerik.Examples.Mvc.Areas.GridSelectionByField.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridSelectionByField.Models.Product;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using System;
@@ -11,14 +12,14 @@ namespace Telerik.Examples.Mvc.Areas.GridSelectionByField.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
+        public static List<ProductModel> products = new List<ProductModel>();
         public ActionResult Index()
         {
             if(products.Count == 0)
             {
                 for (int i = 0; i < 200; i++)
                 {
-                    products.Add(new Product()
+                    products.Add(new Models.Product()
                     {
                         ProductID = i,
                         ProductName = "ProductName" + i.ToString(),
@@ -52,9 +53,9 @@ namespace Telerik.Examples.Mvc.Areas.GridSelectionByField.Controllers
             return Json(result);
         }
 
-        public ActionResult Select_Products(List<Product> productsList)
+        public ActionResult Select_Products(List<ProductModel> productsList)
         {
-            foreach (Product product in productsList)
+            foreach (ProductModel product in productsList)
             {
                 var toUpdate = products.FirstOrDefault(p => p.ProductID == product.ProductID);
                 toUpdate.Discontinued = product.Discontinued;

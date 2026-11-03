@@ -6,12 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Telerik.Examples.Mvc.Areas.GridForeignKeySorting.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridForeignKeySorting.Models.Product;
 
 namespace Telerik.Examples.Mvc.Areas.GridForeignKeySorting.Controllers
 {
     public class HomeController : Controller
     {
-        static List<Product> products = new List<Product>();
+        static List<ProductModel> products = new List<ProductModel>();
         static List<Category> categories = new List<Category>();
         static HomeController()
         {
@@ -26,7 +27,7 @@ namespace Telerik.Examples.Mvc.Areas.GridForeignKeySorting.Controllers
 
             for (int i = 1; i < 10; i++)
             {
-                products.Add(new Product
+                products.Add(new ProductModel
                 {
                     ProductID = i,
                     ProductName = "product" + i,
@@ -48,7 +49,7 @@ namespace Telerik.Examples.Mvc.Areas.GridForeignKeySorting.Controllers
             return Json(products.ToDataSourceResult(request));
         }
 
-        public ActionResult Update(Product product)
+        public ActionResult Update(ProductModel product)
         {
             return Json(ModelState.ToDataSourceResult());
         }

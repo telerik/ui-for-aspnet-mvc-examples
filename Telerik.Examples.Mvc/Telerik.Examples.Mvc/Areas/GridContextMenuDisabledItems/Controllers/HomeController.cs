@@ -5,17 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Telerik.Examples.Mvc.Areas.GridContextMenuDisabledItems.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridContextMenuDisabledItems.Models.Product;
 
 namespace Telerik.Examples.Mvc.Areas.GridContextMenuDisabledItems.Controllers
 {
     public class HomeController : Controller
     {
-        public static List<Product> products = new List<Product>();
+        public static List<ProductModel> products = new List<ProductModel>();
 
         static HomeController()
         {
-            products.Add(new Product()
+            products.Add(new ProductModel()
             {
                 ProductID = 1,
                 ProductName = "Whiskey",
@@ -23,7 +23,7 @@ namespace Telerik.Examples.Mvc.Areas.GridContextMenuDisabledItems.Controllers
                 UnitsInStock = 50,
                 Discontinued = false
             });
-            products.Add(new Product()
+            products.Add(new ProductModel()
             {
                 ProductID = 2,
                 ProductName = "Wine",
@@ -31,7 +31,7 @@ namespace Telerik.Examples.Mvc.Areas.GridContextMenuDisabledItems.Controllers
                 UnitsInStock = 0,
                 Discontinued = true
             });
-            products.Add(new Product()
+            products.Add(new ProductModel()
             {
                 ProductID = 3,
                 ProductName = "Beer",
@@ -39,7 +39,7 @@ namespace Telerik.Examples.Mvc.Areas.GridContextMenuDisabledItems.Controllers
                 UnitsInStock = 100,
                 Discontinued = false
             });
-            products.Add(new Product()
+            products.Add(new ProductModel()
             {
                 ProductID = 1,
                 ProductName = "Cognac",

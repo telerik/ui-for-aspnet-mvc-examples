@@ -3,8 +3,8 @@
     Layout = null;
 }
 
-<link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/8.0.1/default/default-main.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.1/require.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@progress/kendo-theme-default@14.6.1/dist/all.css"  />
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.7/require.js" integrity="sha256-ghW5AAC1cb0kHShRLIP1mFXOzDFY25S3my2XTJkjtdI=" crossorigin="anonymous"></script>
 
     <div class="featured">
         <div class="content-wrapper">
@@ -23,13 +23,13 @@
 
 <script>
     require.config({
-        baseUrl: "https://kendo.cdn.telerik.com/2024.2.514/js/",
+                baseUrl: "https://cdn.jsdelivr.net/npm/@@progress/kendo-ui@2026.3.1015/umd/",
         paths: {
           "jquery": "https://code.jquery.com/jquery-1.9.1.min",
           "jszip": "https://unpkg.com/jszip@3.10.1/dist/jszip.min",
-          "kendo.grid.min": "https://kendo.cdn.telerik.com/2024.2.514/js/kendo.all.min",
-          "kendo.aspnetmvc.min": "https://kendo.cdn.telerik.com/2024.2.514/js/kendo.aspnetmvc.min",
-        }
+                    "kendo.grid.min": "kendo.all.min",
+                    "kendo.aspnetmvc.min": "kendo.aspnetmvc.min",
+                }
       });
 
     require(["jquery", "jszip", "kendo.grid.min", "kendo.aspnetmvc.min" ], initApp);

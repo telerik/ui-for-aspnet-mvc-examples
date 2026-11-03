@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Telerik.Examples.Mvc.Areas.GridEditingWithComboBoxServerFiltering.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridEditingWithComboBoxServerFiltering.Models.Product;
 
 namespace Telerik.Examples.Mvc.Areas.GridEditingWithComboBoxServerFiltering.Controllers
 {
@@ -17,7 +18,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingWithComboBoxServerFiltering.Cont
             return View();
         }
 
-        private static List<Product> products;
+        private static List<ProductModel> products;
         private static List<Category> categories;
 
         static HomeController()
@@ -32,7 +33,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingWithComboBoxServerFiltering.Cont
             var rand = new Random();
 
             products = Enumerable.Range(1, 20)
-                .Select(i => new Product
+                .Select(i => new ProductModel
                 {
                     ProductId = i,
                     ProductName = "Product" + i,
@@ -45,7 +46,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingWithComboBoxServerFiltering.Cont
             return Json(products.ToDataSourceResult(request));
         }
 
-        public ActionResult Update([DataSourceRequest] DataSourceRequest request, Product product)
+        public ActionResult Update([DataSourceRequest] DataSourceRequest request, ProductModel product)
         {
             if (product != null && ModelState.IsValid)
             {

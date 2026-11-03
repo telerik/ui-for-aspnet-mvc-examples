@@ -6,9 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Fixed.Model;
+using Telerik.Documents.Fixed.FormatProviders.Pdf.Export;
+using Telerik.Documents.Fixed.FormatProviders.Pdf;
+using Telerik.Documents.Fixed.Model;
 
 namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide.Controllers
 {
@@ -29,7 +29,7 @@ namespace Telerik.Examples.Mvc.Areas.PdfExportingServerSide.Controllers
             using (MemoryStream ms = new MemoryStream())
             {
                 RadFixedDocument document = CreatePdfDocument.CreateDocument();
-                formatProvider.Export(document, ms);
+                formatProvider.Export(document, ms, new TimeSpan(0, 1, 0));
                 renderedBytes = ms.ToArray();
             }
 

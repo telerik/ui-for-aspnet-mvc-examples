@@ -21,7 +21,7 @@ namespace Telerik.Examples.Mvc.Areas.GridSaveStateInSessionServerSide.Controller
 
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            var products = Enumerable.Range(1, 100).Select(index => new Product
+            var products = Enumerable.Range(1, 100).Select(index => new Models.Product
             {
                 ProductID = index,
                 ProductName = index + " Product Name"

@@ -6,18 +6,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Telerik.Examples.Mvc.Areas.GridEditingAjaxWithEnumeration.Models;
+using ProductModel = Telerik.Examples.Mvc.Areas.GridEditingAjaxWithEnumeration.Models.Product;
 
 namespace Telerik.Examples.Mvc.Areas.GridEditingAjaxWithEnumeration.Controllers
 {
     public class GridEditingAjaxWithEnumerationController : Controller
     {
-        private static List<Product> products = new List<Product>();
+        private static List<ProductModel> products = new List<ProductModel>();
         private static int id;
         static GridEditingAjaxWithEnumerationController()
         {
             for (id = 1; id < 10; id++)
             {
-                products.Add(new Product()
+                products.Add(new ProductModel()
                 {
                     ID = id,
                     Name = "Product" + id,
@@ -37,7 +38,7 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingAjaxWithEnumeration.Controllers
             return Json(products.ToDataSourceResult(request));
         }
 
-        public ActionResult Update([DataSourceRequest] DataSourceRequest request, IEnumerable<Product> models)
+        public ActionResult Update([DataSourceRequest] DataSourceRequest request, IEnumerable<ProductModel> models)
         {
             if (products != null && ModelState.IsValid)
             {
@@ -55,9 +56,9 @@ namespace Telerik.Examples.Mvc.Areas.GridEditingAjaxWithEnumeration.Controllers
             return Json(ModelState.ToDataSourceResult());
         }
 
-        public ActionResult Create([DataSourceRequest] DataSourceRequest request, IEnumerable<Product> models)
+        public ActionResult Create([DataSourceRequest] DataSourceRequest request, IEnumerable<ProductModel> models)
         {
-            var results = new List<Product>();
+            var results = new List<ProductModel>();
 
             if (products != null && ModelState.IsValid)
             {
